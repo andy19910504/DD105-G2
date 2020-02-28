@@ -1,0 +1,25 @@
+// 所有 CSS 設定，匯集為 main.css
+
+
+// --- resetCss --
+// @import "base/reset.scss"; 另外分成一隻單獨的 css 做 link
+
+// --- btnCss ---
+@import "modules/btn.scss";
+
+// --- card ---
+@import "layout/card.scss";
+
+.card{
+    @include card(520px);
+    
+}
+
+// --- header ---
+@import "layout/header.scss";
+
+// --- banner ---
+@import "layout/banner.scss";
+
+// --- breadCrumb ---
+@import "layout/breadCrumb.scss";
