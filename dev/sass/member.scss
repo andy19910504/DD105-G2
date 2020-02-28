@@ -1,0 +1,123 @@
+@import "base/var";
+@import "base/reset.scss";
+img{
+    width: 100%;
+}
+.member_content{
+    width: 100%;
+    // border: 1px solid blue;
+    background-image: url(/dev/images/hip-square.png);
+    
+}
+.member_all{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    // border: 1px solid red;
+}.member_bread{
+    padding: 3% 3% 1.5% 0%;
+    // border: 1px solid blueviolet;
+    font-size: $fzInfo;
+    color: $fcInfo;
+}
+.member_point{
+    padding: 1.5% 3% 3% 0%;
+    // border: 1px solid brown;
+    font-size: 0px;
+    padding-left: 100px;
+
+}
+.member_left{
+    // border: 1px solid firebrick;
+    width: 50px;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align:bottom;
+    margin-right: 1%;
+}
+.member_right{
+    // border: 1px solid firebrick;
+    display: inline-block;
+    font-size: $fzInfo;
+    color: $fcInfo;
+    line-height: 2 * $fzInfo;
+
+    
+}
+.member_info{
+    width: 100%;
+    border: 1px solid red;
+    background-color: white;
+    box-shadow: 10px 10px 5px gray;
+}
+.member_info_nav{
+    // margin: 0 auto;
+    // width: 100%;
+    border: 1px solid navy;
+    ul{
+        // margin: 0 auto;
+        // width: 100%;
+        font-size: 0px;
+        li{
+            // border: 1px solid aqua;
+            display: inline-block; 
+            height: 125px;
+            width: 13%;
+            text-align: center;
+            font-size: $fzInfo;
+            color: $fcContent;
+            line-height:125px;
+            margin-right:2.5%; 
+            background-image:url(../images/stamp.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            cursor: pointer;
+            margin-top: 100px;
+            font-weight: bolder;
+            position: relative;
+            img{
+                position: absolute;
+                left: -11px;
+                top: 10px;
+                opacity: .2;
+                width: 120%;
+            }
+           
+           
+        }
+        li:nth-child(1){
+            margin-left: 4.75%;
+        }
+        li:nth-child(6){
+            margin-right: 4.75%;
+        }
+    }
+}
+.member_info_info{
+    border: 1px solid red;
+    // height: 100px;
+    font-size: 0px;
+}
+.member_info_info_left{
+    width: 50%;
+    border: 1px solid red;
+    font-size: 0px;
+    div:nth-child(1){
+        padding: 10% 25% 0% 25%;
+        font-size: 16px;
+        border: 1px solid green;
+        img{
+            border: 1px solid aquamarine;
+        }
+    }
+    div:nth-child(2){
+        font-size: 16px;
+        border: 1px solid green;
+    }
+}
+.member_info_info_line{
+    font-size: 16px;
+}
+.member_info_info_right{
+    font-size: 16px;
+}
