@@ -42,12 +42,12 @@
     border: 1px solid #fff;
     border-radius: 5px; }
     .fuda-container .progress-bar .progress {
-      width: 20%;
-      border: 1px solid #ee0000;
+      width: 22%;
+      border: 2px solid #ee0000;
       border-radius: 5px; }
     .fuda-container .progress-bar .index:nth-child(2) {
       position: absolute;
-      top: -5px;
+      top: -4px;
       left: -1px;
       display: inline-block;
       width: 12px;
@@ -56,7 +56,7 @@
       background-color: #ee0000; }
     .fuda-container .progress-bar .index:nth-child(3) {
       position: absolute;
-      top: -5px;
+      top: -4px;
       left: 20%;
       display: inline-block;
       width: 12px;
@@ -65,7 +65,7 @@
       background-color: #ee0000; }
     .fuda-container .progress-bar .index:nth-child(4) {
       position: absolute;
-      top: -5px;
+      top: -4px;
       left: 43%;
       display: inline-block;
       width: 12px;
@@ -74,7 +74,7 @@
       background-color: #fff; }
     .fuda-container .progress-bar .index:nth-child(5) {
       position: absolute;
-      top: -5px;
+      top: -4px;
       left: 67%;
       display: inline-block;
       width: 12px;
@@ -83,7 +83,7 @@
       background-color: #fff; }
     .fuda-container .progress-bar .index:nth-child(6) {
       position: absolute;
-      top: -5px;
+      top: -4px;
       right: -1px;
       display: inline-block;
       width: 12px;
@@ -141,4 +141,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, 100%);
+    position: absolute; }
+  .game-container .walking {
+    width: 170px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
     position: absolute; }
