@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>samplePage</title>
-    <!-- 每一頁分頁，都需要遷入這兩隻css -->
-    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 每一頁分頁，都需要遷入這隻main.css -->
     <link rel="stylesheet" href="./css/main.css">
 
 </head>
@@ -71,17 +70,22 @@
 
         <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
-    src：放上圖片的路徑
+    innerText：為你的麵包屑層級的名稱
+    註：在最後產出dest的HTML那裏要將多出的部分刪除（刪除後不能執行gulp不然會覆蓋）
     -->
         @@include('./layout/breadCrumb.html',{
         "link1":"./google.com.tw",
-        "src1":"./img/123",
+        "innerText1":"台北散步",
         "link2":"./google.com.tw",
-        "src2":"./img/123",
+        "innerText2":"散步遊台北",
         "link3":"./google.com.tw",
-        "src3":"./img/123",
+        "innerText3":"",
         "link4":"./google.com.tw",
-        "src4":"./img/123"
+        "innerText4":"",
+        "link5":"./google.com.tw",
+        "innerText5":"",
+        "link6":"./google.com.tw",
+        "innerText6":""
         })
 
         <!-- banner // 各自的banner，直接套class
@@ -96,11 +100,10 @@
 
         <!-- footer // -->
         @@include('./layout/footer.html')
-        <div class="image"></div>
     </div>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/goTop.js"></script>
+    <script src="./js/common.js"></script>
 </body>
 
 </html>
