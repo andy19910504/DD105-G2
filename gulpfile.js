@@ -45,8 +45,9 @@ gulp.task('font', function () {
 });
 
 //任務串連
-gulp.task('concatcss', ['sass'], function () {
-    gulp.src('css/*.css')
+
+gulp.task('concatcss', ['sass'], function () {  //目前沒用到
+    gulp.src('/css/*.css')
         .pipe(cleanCSS({
             compatibility: 'ie9'
         }))
@@ -57,7 +58,7 @@ gulp.task('sass', function () {
     gulp.src('dev/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         // .pipe(cleanCSS({compatibility: 'ie9'}))
-        .pipe(gulp.dest('dest/css/'));
+        .pipe(gulp.dest('dest/css'));
 });
 
 //打包html

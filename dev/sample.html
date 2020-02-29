@@ -15,64 +15,65 @@
 </style>
 
 <body>
-    <!-- header
+    <div class="wrapper">
+        <!-- header
     在你的分頁的display:"加上show"
     -->
 
-    @@include('./layout/header.html',{
+        @@include('./layout/header.html',{
         "display1":"",
         "display2":"",
         "display3":"",
         "display4":"",
         "display5":""
-    })
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <!-- 回到頂端的連結 -->
-    <a name="GoTop"></a>
+        })
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- 回到頂端的連結 -->
+        <a name="GoTop"></a>
 
-    <!-- 主要按鈕 // btnRed
+        <!-- 主要按鈕 // btnRed
     link：連結的網址
     innerText：按鈕名稱 -->
-    @@include('./layout/btnRed.html',{
-    "link":"./google.com.tw",
-    "innerText":"More"
-    })
+        @@include('./layout/btnRed.html',{
+        "link":"./google.com.tw",
+        "innerText":"More"
+        })
 
-    <!-- 次要要按鈕 // btnPink
+        <!-- 次要要按鈕 // btnPink
     link：連結的網址
     innerText：按鈕名稱 -->
-    @@include('./layout/btnPink.html',{
-    "link":"./google.com.tw",
-    "innerText":"More"
-    })
+        @@include('./layout/btnPink.html',{
+        "link":"./google.com.tw",
+        "innerText":"More"
+        })
 
-    <!-- 次要按鈕_不能按 // btnPinkStop
-
-    link：連結的網址
-    innerText：按鈕名稱 -->
-    @@include('./layout/btnPinkStop.html',{
-    "link":"./google.com.tw",
-    "innerText":"More"
-    })
-
-    <!-- 回到頂端 // btnGoTop -->
-    
-    @@include('./layout/btnGoTop.html',{})
-
-    <!-- 自訂按鈕 // btnCust
+        <!-- 次要按鈕_不能按 // btnPinkStop
 
     link：連結的網址
     innerText：按鈕名稱 -->
-    @@include('./layout/btnCust.html',{
-    "link":"./google.com.tw",
-    "innerText":"自訂"
-    })
+        @@include('./layout/btnPinkStop.html',{
+        "link":"./google.com.tw",
+        "innerText":"More"
+        })
 
-    <!-- breadCrumb // breadCrumb
+        <!-- 回到頂端 // btnGoTop -->
+
+        @@include('./layout/btnGoTop.html',{})
+
+        <!-- 自訂按鈕 // btnCust
+
+    link：連結的網址
+    innerText：按鈕名稱 -->
+        @@include('./layout/btnCust.html',{
+        "link":"./google.com.tw",
+        "innerText":"自訂"
+        })
+
+        <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
     src：放上圖片的路徑
     -->
-    @@include('./layout/breadCrumb.html',{
+        @@include('./layout/breadCrumb.html',{
         "link1":"./google.com.tw",
         "src1":"./img/123",
         "link2":"./google.com.tw",
@@ -81,7 +82,7 @@
         "src3":"./img/123",
         "link4":"./google.com.tw",
         "src4":"./img/123"
-    })
+        })
 
         <!-- banner // 各自的banner，直接套class
             順序，以導覽列（不含頁首）的順序依序
@@ -92,8 +93,14 @@
         <div class="banner_04"></div>
         <div class="banner_05"></div>
         <div class="banner_06"></div>
-<script src="./js/jquery-3.4.1.min.js"></script>    
-<script src="./js/goTop.js"></script>
+
+        <!-- footer // -->
+        @@include('./layout/footer.html')
+        <div class="image"></div>
+    </div>
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/goTop.js"></script>
 </body>
 
 </html>
