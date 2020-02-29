@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "bourbon-neat": "^4.0.0",
     "browser-sync": "^2.26.7",
     "gulp-clean-css": "^4.2.0",
     "gulp-file-include": "^2.1.1",
@@ -16,7 +17,8 @@
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.5"
   },
   "description": ""
 }

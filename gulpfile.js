@@ -46,17 +46,15 @@ gulp.task('font', function () {
 
 //任務串連
 gulp.task('concatcss', ['sass'], function () {
-    gulp.src('css/*.css')
-        .pipe(cleanCSS({
-            compatibility: 'ie9'
-        }))
-        .pipe(gulp.dest('dest/css'));
+    gulp.src('dev/css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie9'}))
+    .pipe(gulp.dest('dest/css'));
 });
 
 gulp.task('sass', function () {
     gulp.src('dev/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        // .pipe(cleanCSS({compatibility: 'ie9'}))
+        .pipe(cleanCSS({compatibility: 'ie9'}))
         .pipe(gulp.dest('dest/css/'));
 });
 
@@ -82,7 +80,7 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     browserSync.init({
         server: {
             baseDir: "./dest",
-            index: "sample.html"
+            index: "postcard.html"
         }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);

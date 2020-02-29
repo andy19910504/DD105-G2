@@ -1,72 +1,54 @@
-.postcard h1{
-    color: red;
-}
-header{
-    width: 100%;
-    height: 100px;
-    background-color:lightblue;
-}
+@import "main.scss";
+@import "reset.scss";
+
+
+/*------------小朱-----------------*/
 footer{
     width: 100%;
-    height: 100px;
-    background-color:lightcoral;
+    height: 200px;
+    background-color:black;
 }
-.banner{
-    width: 100%;
-    height: 100px;
-    background-color:lightgreen;
-}
+
 // 1.1明信片中間大區域
 .postcardcontent{
-    position: relative;
     width: 100%;
     height: 100%;
-    background-color:lightpink;
 }
 //---------------------------------------------
 // 1.2明信片步驟
 .postcardStepbox{
     display: flex;
     margin:0px auto;
-    max-width: 1200px;
-    height: 150px;
-    background-color:lightseagreen;
-}
-.postStep{
+    min-width: 1200px;
     width: 1200px;
     height: 150px;
+}
+.postStep{
+    width:100%;
     background-image:url(../img/postcard/框-1.png);
     background-size: contain;
+    background-position:center;
     background-repeat: no-repeat;
-    // border: 1px red solid;
+    text-align: center;
+    
+}
+
+.arrow1{
+    background-image:url(../img/postcard/手繪藍箭頭.png);
+    width:500px;
+    background-size: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 //暫時文字
-p{
-    font-size: 24px;
+.stepname{
+    font-size: 20px;
     font-family: "微軟正黑體";
-   
+    margin-top: 50px;
 }
-.postStep_btn{
-    position: absolute;
-    width: 150px;
-    height: 100px; 
-    top: 10px;
-    margin-left:30px;
-}
-.arrow1:after,
-.arrow2:after,
-.arrow3:after,
-.arrow4:after{
-    content: "";
-    display: flex;
-    background-image:url(../img/postcard/手繪藍箭頭.png);
-    height: 80px;
-    width: 80px;
-    background-size: cover;
-    position: absolute;
-    top: 25px;
-    margin-left: 120px;
-}
+
+
 //-------------------------------------------
 // 1.3明信片客製畫面
 .postcardMain{
