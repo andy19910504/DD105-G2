@@ -45,17 +45,32 @@ gulp.task('font', function () {
 });
 
 //任務串連
+<<<<<<< HEAD
 gulp.task('concatcss', ['sass'], function () {
     gulp.src('dev/css/*.css')
     .pipe(cleanCSS({compatibility: 'ie9'}))
     .pipe(gulp.dest('dest/css'));
+=======
+
+gulp.task('concatcss', ['sass'], function () {  //目前沒用到
+    gulp.src('/css/*.css')
+        .pipe(cleanCSS({
+            compatibility: 'ie9'
+        }))
+        .pipe(gulp.dest('dest/css'));
+>>>>>>> 1f48b9e69cfaa3344427e530b0deaa5333c86021
 });
 
 gulp.task('sass', function () {
     gulp.src('dev/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
+<<<<<<< HEAD
         .pipe(cleanCSS({compatibility: 'ie9'}))
         .pipe(gulp.dest('dest/css/'));
+=======
+        // .pipe(cleanCSS({compatibility: 'ie9'}))
+        .pipe(gulp.dest('dest/css'));
+>>>>>>> 1f48b9e69cfaa3344427e530b0deaa5333c86021
 });
 
 //打包html
