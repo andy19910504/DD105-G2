@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北散步｜散步遊台北</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/route.css">
+</head>
+
+<body><a name="GoTop"></a>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('./layout/header.html',{
+        "display1":"show",
+        "display2":"",
+        "display3":"",
+        "display4":"",
+        "display5":""
+        })
+        <!-- banner -->
+        <div class="banner_01">
+            <div class="routeTitle">
+                <div class="routeTitleMoveBlock">
+                    <img src="./img/route/routeTitle1.png" class="routeTitleImage1">
+                    <img src="./img/route/routeTitle2.png" class="routeTitleImage2">
+                </div>
+            </div>
+
+        </div>
+        <!-- breadCrumb -->
+        @@include('./layout/breadCrumb.html',{
+        "link1":"./google.com.tw",
+        "innerText1":"台北散步",
+        "link2":"./google.com.tw",
+        "innerText2":"散步遊台北",
+        "link3":"./google.com.tw",
+        "innerText3":"",
+        "link4":"./google.com.tw",
+        "innerText4":"",
+        "link5":"./google.com.tw",
+        "innerText5":"",
+        "link6":"./google.com.tw",
+        "innerText6":""
+        })
+        <div class="routeContent">
+
+
+        </div>
+        <!-- footer -->
+        @@include('./layout/footer.html')
+
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+
+</html>
