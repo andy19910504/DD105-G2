@@ -4,42 +4,48 @@
 
 /*------------小朱-----------------*/
 // 1.1明信片中間大區域
-.postcardcontent{
+.postcardcontent {
     min-width: 1200px;
-    margin:0px auto;
+    margin: 0px auto;
     width: 1200px;
     height: 100%;
 }
 
 //---------------------------------------------
 // 1.2明信片步驟
-.postcardStepbox{
+.postcardStepbox {
     display: flex;
-    margin:0px auto;
+    margin: 0px auto;
     min-width: 1200px;
     width: 1200px;
     height: 150px;
 }
-.postStep{
-    width:100%;
-    background-image:url(../img/postcard/框-1.png);
-    background-size: contain;
-    background-position:center;
-    background-repeat: no-repeat;
-    text-align: center;
-    
+
+@each $var in 1,2,3,4,5{
+    .step#{$var} {
+        width: 100%;
+        background-image: url(../img/postcard/六邊形-白色.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
 }
 
-.arrow1{
-    background-image:url(../img/postcard/手繪藍箭頭.png);
-    width:500px;
+
+
+
+.arrow1 {
+    background-image: url(../img/postcard/手繪藍箭頭.png);
+    width: 500px;
     background-size: contain;
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
     text-align: center;
 }
+
 //暫時文字
-.stepname{
+.stepname {
     font-size: 20px;
     font-family: "微軟正黑體";
     margin-top: 50px;
@@ -48,21 +54,22 @@
 
 //-------------------------------------------
 // 1.3明信片客製畫面
-.postcardMain{
+.postcardMain {
     display: flex;
-    margin:0px auto;
+    margin: 0px auto;
     max-width: 1200px;
     height: 600px;
-    background-color:lightsalmon;
+    background-color: lightsalmon;
 }
 
-.postLeft{
+.postLeft {
     width: 50%;
     height: 100%;
-    background-color:lightblue;
+    background-color: lightblue;
 }
-.postRight{
+
+.postRight {
     width: 50%;
     height: 100%;
-    background-color:lightgreen;
+    background-color: lightgreen;
 }

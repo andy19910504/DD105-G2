@@ -915,9 +915,45 @@ blockquote, q {
   height: 150px;
 }
 
-.postStep {
+.step1 {
   width: 100%;
-  background-image: url(../img/postcard/框-1.png);
+  background-image: url(../img/postcard/六邊形-白色.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.step2 {
+  width: 100%;
+  background-image: url(../img/postcard/六邊形-白色.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.step3 {
+  width: 100%;
+  background-image: url(../img/postcard/六邊形-白色.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.step4 {
+  width: 100%;
+  background-image: url(../img/postcard/六邊形-白色.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.step5 {
+  width: 100%;
+  background-image: url(../img/postcard/六邊形-白色.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
