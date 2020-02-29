@@ -3,17 +3,14 @@
 
 
 /*------------小朱-----------------*/
-footer{
-    width: 100%;
-    height: 200px;
-    background-color:black;
-}
-
 // 1.1明信片中間大區域
 .postcardcontent{
-    width: 100%;
+    min-width: 1200px;
+    margin:0px auto;
+    width: 1200px;
     height: 100%;
 }
+
 //---------------------------------------------
 // 1.2明信片步驟
 .postcardStepbox{
@@ -55,7 +52,7 @@ footer{
     display: flex;
     margin:0px auto;
     max-width: 1200px;
-    height: 800px;
+    height: 600px;
     background-color:lightsalmon;
 }
 
