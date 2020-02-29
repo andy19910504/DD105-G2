@@ -4,21 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>samplePage</title>
-    <!-- 每一頁分頁，都需要遷入這隻main.css -->
+    <title>台北散步｜散步遊台北</title>
     <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="stylesheet" href="./css/route.css">
 </head>
-<style>
 
-</style>
-
-<body>
+<body><a name="GoTop"></a>
     <div class="wrapper">
-        <!-- header
-    在你的分頁的display:"加上show"
-    -->
-
+        <!-- header -->
         <!-- 1200px上 滿版時，使用的選單 -->
 <header class="fullHeader">
     <h1>
@@ -28,7 +21,7 @@
     </h1>
     <nav>
         <ul>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover show"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
             <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
             <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
             <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
@@ -76,50 +69,17 @@
     </div>
 </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <!-- 回到頂端的連結 -->
-        <a name="GoTop"></a>
+        <!-- banner -->
+        <div class="banner_01">
+            <div class="routeTitle">
+                <div class="routeTitleMoveBlock">
+                    <img src="./img/route/routeTitle1.png" class="routeTitleImage1">
+                    <img src="./img/route/routeTitle2.png" class="routeTitleImage2">
+                </div>
+            </div>
 
-        <!-- 主要按鈕 // btnRed
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnRed">
-    More
-</a>
-
-        <!-- 次要要按鈕 // btnPink
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPink">
-    More
-</a>
-
-        <!-- 次要按鈕_不能按 // btnPinkStop
-
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPinkStop">
-    More
-</a>
-
-        <!-- 回到頂端 // btnGoTop -->
-
-        <!-- 還需要遷入jQuery -->
-<a id="btnGoTop"></a>
-
-        <!-- 自訂按鈕 // btnCust
-
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnCust">
-    自訂
-</a>
-
-        <!-- breadCrumb // breadCrumb
-    link：依序填入連結位子
-    innerText：為你的麵包屑層級的名稱
-    註：在最後產出dest的HTML那裏要將多出的部分刪除（刪除後不能執行gulp不然會覆蓋）
-    -->
+        </div>
+        <!-- breadCrumb -->
         <ul class="breadCrumb">
     <li><a href="./google.com.tw">台北散步</a></li>
     <li><a href="./google.com.tw">散步遊台北</a></li>
@@ -128,18 +88,11 @@
     <li><a href="./google.com.tw"></a></li>
     <li><a href="./google.com.tw"></a></li>
 </ul>
+        <div class="routeContent">
 
-        <!-- banner // 各自的banner，直接套class
-            順序，以導覽列（不含頁首）的順序依序
-        -->
-        <div class="banner_01"></div>
-        <div class="banner_02"></div>
-        <div class="banner_03"></div>
-        <div class="banner_04"></div>
-        <div class="banner_05"></div>
-        <div class="banner_06"></div>
 
-        <!-- footer // -->
+        </div>
+        <!-- footer -->
         <footer>
     <div class="footerCloud">
         <img src="./img/footer/footerCloud170.png" class="footerCloud170">
@@ -152,9 +105,8 @@
         <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
     </div>
 </footer>
-        <div class="image"></div>
-    </div>
 
+    </div>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/common.js"></script>
 </body>

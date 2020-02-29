@@ -34,7 +34,31 @@ footer .footerCloud .footerCloud122{
 footer .footerLogo{
     margin-bottom: 20px;
 }
+footer .footerLogo img{
+    width:100%;
+}
 footer .footerText p{
     margin-bottom: 10px;
     font-size: $fzInfo;
 }
+
+// footer RWD
+@media screen and (max-width:$small){
+    footer .footerText p{
+        font-size: $fzInfo * 0.8;
+    }
+    footer .footerLogo{
+        width: 200px;
+    }
+    footer .footerCloud{
+        margin-left: 10px;
+    }
+    footer .footerCloud .footerCloud170{
+        width: 100px;
+    }
+    footer .footerCloud .footerCloud122{
+        width: 80px;
+    }
+}
+
+

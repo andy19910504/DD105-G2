@@ -2,7 +2,7 @@
 
 
 // --- resetCss --
-// @import "base/reset.scss"; 另外分成一隻單獨的 css 做 link
+@import "base/reset.scss";
 
 // --- btnCss ---
 @import "modules/btn.scss";
