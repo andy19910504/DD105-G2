@@ -1,0 +1,172 @@
+.header, .fullHeader {
+    z-index: 2;
+}
+.title {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.pic-container {
+    margin: 100px auto 200px;
+    width: 1200px;
+    position: relative;
+}
+.bubble {
+    width: 150px;
+    top: -30px;
+    left: 30px;
+    position: absolute;
+}
+.fuda-container {
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+    table {
+        top: 106px;
+        left: 109px;
+        position: absolute;
+    }
+    tr {
+        line-height: 2;
+        font-size: 14px;
+    }
+    .spot {
+        width: 100px;
+    }
+    .check {
+        width: 20px;
+    }
+    .hide-check {
+        display: none;
+    }
+    .progress-bar {
+        position: relative;
+        margin-top: 15px;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        .progress {
+            width: 22%;
+            border: 2px solid #ee0000;
+            border-radius: 5px;
+        }
+        .index:nth-child(2) {
+            position: absolute;
+            top: -4px;
+            left: -1px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ee0000;
+        }
+        .index:nth-child(3) {
+            position: absolute;
+            top: -4px;
+            left: 20%;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ee0000;
+        }
+        .index:nth-child(4) {
+            position: absolute;
+            top: -4px;
+            left: 43%;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .index:nth-child(5) {
+            position: absolute;
+            top: -4px;
+            left: 67%;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+        .index:nth-child(6) {
+            position: absolute;
+            top: -4px;
+            right: -1px;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+    }
+    .indicator {
+        margin-top: 10px;
+        color: #fff;
+    }
+    .fuda {
+        width: 350px;
+    }
+}
+.campus {
+    width: 200px;
+    right: 0;
+    transform: rotate(30deg);
+    position: absolute;
+}
+.select {
+    margin: 0 auto;
+    width: 63%;
+    .option {
+        width: 200px;
+        display: inline-block;
+        position: relative;
+    }
+    .route-name {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        letter-spacing: 4px;
+        height: 1.2em;
+        position: absolute;
+    }
+    .label {
+        width: 100%;
+    }
+    .hide-label {
+        visibility: hidden;
+    }
+}
+.game-container {
+    margin: 0 auto;
+    width: 63%;
+    height: 550px;
+    border: 6px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    .map {
+        width: 3000px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-47%,-74%);
+        position: absolute;
+    }
+    .btnRed {
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,100%);
+        position: absolute;
+    }
+    .walking {
+        width: 170px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-60%);
+        position: absolute;
+    }
+}

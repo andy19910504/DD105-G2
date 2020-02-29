@@ -1,4 +1,54 @@
 @charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  text-decoration: none;
+  font-family: "微軟正黑體";
+  vertical-align: baseline; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+* {
+  box-sizing: border-box; }
+
 /* btnClass */
 .btnRed {
   /*主要按鈕*/
@@ -98,6 +148,7 @@ header.fullHeader {
   height: 170px;
   display: flex;
   position: fixed;
+  z-index: 100;
   justify-content: center;
   align-items: center;
   background-image: url("../img/header/headerBgImage.png");
@@ -151,9 +202,9 @@ header.fullHeader nav ul li a:hover .navIcon {
 
 @keyframes shake {
   from {
-    transform: translateY(-10px); }
+    transform: translateY(0px); }
   to {
-    transform: translateY(-5px); } }
+    transform: translateY(-10px); } }
 
 header.fullHeader nav ul li a .navHover {
   width: 0px;
@@ -191,7 +242,7 @@ header.hamburgerHeader {
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 3;
+  z-index: 100;
   transform: translateY(-100%);
   transition: transform 1s; }
 
@@ -343,7 +394,7 @@ h1.smartPhoneLogo img {
     display: inline-block;
     position: fixed;
     right: 5px;
-    z-index: 5; } }
+    z-index: 101; } }
 
 .banner_01 {
   background-image: url("../img/banner/banner_01.jpg");
@@ -352,7 +403,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_01 {
@@ -382,7 +433,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_02 {
@@ -412,7 +463,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_03 {
@@ -442,7 +493,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_04 {
@@ -472,7 +523,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_05 {
@@ -502,7 +553,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px; }
+  height: 550px; }
 
 @media all and (max-width: 1024px) {
   .banner_06 {
@@ -526,12 +577,90 @@ h1.smartPhoneLogo img {
     padding-top: 100%; } }
 
 /* 麵包屑 */
-.breadCrumb li {
-  width: 170px;
-  height: 30px;
-  display: inline-block;
-  list-style-type: none;
-  margin-right: 45px; }
+.breadCrumb {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  padding-left: 20px;
+  margin: 20px auto; }
 
-.breadCrumb li:last-child {
-  margin-right: unset; }
+.breadCrumb li {
+  display: inline-block;
+  list-style-type: none; }
+
+.breadCrumb li::after {
+  content: '｜'; }
+
+.breadCrumb li a {
+  color: #1e1e1e; }
+
+.breadCrumb li a:hover {
+  color: #a5361c;
+  font-weight: bold; }
+
+.breadCrumb li:last-child::after {
+  content: ''; }
+
+.breadCrumb li:last-child a {
+  font-weight: bold;
+  color: #a5361c; }
+
+footer {
+  width: 100%;
+  height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-image: url("../img/footer/footerBgImage.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+footer .footerCloud {
+  align-self: flex-start;
+  margin-left: 80px; }
+
+footer .footerCloud .footerCloud170 {
+  transform: translateY(-10px);
+  animation: cloudMove1 2s cubic-bezier(0.14, 0.47, 0.82, 0.46) alternate infinite; }
+
+footer .footerCloud .footerCloud122 {
+  animation: cloudMove2 1.5s linear alternate infinite; }
+
+@keyframes cloudMove1 {
+  from {
+    transform: translateY(-10px); }
+  to {
+    transform: translateY(20px); } }
+
+@keyframes cloudMove2 {
+  from {
+    transform: translateY(0px); }
+  to {
+    transform: translateY(15px); } }
+
+footer .footerLogo {
+  margin-bottom: 20px; }
+
+footer .footerLogo img {
+  width: 100%; }
+
+footer .footerText p {
+  margin-bottom: 10px;
+  font-size: 16px; }
+
+@media screen and (max-width: 576px) {
+  footer .footerText p {
+    font-size: 12.8px; }
+  footer .footerLogo {
+    width: 200px; }
+  footer .footerCloud {
+    margin-left: 10px; }
+  footer .footerCloud .footerCloud170 {
+    width: 100px; }
+  footer .footerCloud .footerCloud122 {
+    width: 80px; } }
+
+.wrapper {
+  background-image: url("../img/element/bgImage.png");
+  position: relative; }

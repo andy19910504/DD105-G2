@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,SAAS,CAAC,EAAE,CAAA;EACR,KAAK,EAAE,GAAG;CACb;;AACD,AAAA,KAAK,CAAA;EACD,KAAK,EAAE,IAAI;EACX,gBAAgB,EAAC,GAAG;EACpB,MAAM,EAAE,MAAM;CACjB",
-    "sources": [
-        "../sass/stylepostcard.scss"
-    ],
-    "names": [],
-    "file": "stylepostcard.css"
-}
