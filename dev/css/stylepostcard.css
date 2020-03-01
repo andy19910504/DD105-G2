@@ -1,58 +1,71 @@
 @charset "UTF-8";
 .postcard h1 {
-  color: red; }
+  color: red;
+}
 
 header {
   width: 100%;
   height: 100px;
-  background-color: lightblue; }
+  background-color: lightblue;
+}
 
 footer {
   width: 100%;
   height: 100px;
-  background-color: lightcoral; }
+  background-color: lightcoral;
+}
 
 .banner {
   width: 100%;
   height: 100px;
-  background-color: lightgreen; }
+  background-color: lightgreen;
+}
 
 .postcardcontent {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: lightpink; }
+  background-color: lightpink;
+}
 
 .postcardStepbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0px auto;
   max-width: 1200px;
   height: 150px;
-  background-color: lightseagreen; }
+  background-color: lightseagreen;
+}
 
 .postStep {
   width: 1200px;
   height: 150px;
   background-image: url(../img/postcard/框-1.png);
   background-size: contain;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
 
 p {
   font-size: 24px;
-  font-family: "微軟正黑體"; }
+  font-family: "微軟正黑體";
+}
 
 .postStep_btn {
   position: absolute;
   width: 150px;
   height: 100px;
   top: 10px;
-  margin-left: 30px; }
+  margin-left: 30px;
+}
 
 .arrow1:after,
 .arrow2:after,
 .arrow3:after,
 .arrow4:after {
   content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-image: url(../img/postcard/手繪藍箭頭.png);
   height: 80px;
@@ -60,21 +73,28 @@ p {
   background-size: cover;
   position: absolute;
   top: 25px;
-  margin-left: 120px; }
+  margin-left: 120px;
+}
 
 .postcardMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 0px auto;
   max-width: 1200px;
   height: 800px;
-  background-color: lightsalmon; }
+  background-color: lightsalmon;
+}
 
 .postLeft {
   width: 50%;
   height: 100%;
-  background-color: lightblue; }
+  background-color: lightblue;
+}
 
 .postRight {
   width: 50%;
   height: 100%;
-  background-color: lightgreen; }
+  background-color: lightgreen;
+}
+/*# sourceMappingURL=stylepostcard.css.map */
