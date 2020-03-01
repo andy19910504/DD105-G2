@@ -14,9 +14,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline;
-  text-decoration: none;
 }
 
 /* remember to define focus styles! */
@@ -52,5 +52,10 @@ q:before, q:after {
 
 blockquote, q {
   quotes: "" "";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=reset.css.map */
