@@ -7,14 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/member.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>會員中心</title>
 
 </head>
 
 <body>
     <div class="wrapper">
-        <nav></nav>
-        <div class="banner"></div>
+                <!-- header -->
+        @@include('./layout/header.html',{
+            
+        })
+        <div class="banner_06">
+            <img src="./img/member/membertitle.png" alt="" class="title">
+        </div>
         <div class="member_content">
             <div class="member_all">
                 <!-- 插圖 -->
@@ -40,10 +46,25 @@
                     <img src="./img/member/memberclound.png" alt="">
                 </div>
                 <!-- 插圖結束 -->
-                <div class="member_bread">
+                <!-- <div class="member_bread">
                     <span>台北散步 / 會員中心 / </span>
                     <span>我的資料</span>
-                </div>
+                </div> -->
+                <!-- breadCrumb -->
+        @@include('./layout/breadCrumb.html',{
+            "link1":"./google.com.tw",
+            "innerText1":"台北散步",
+            "link2":"./google.com.tw",
+            "innerText2":"會員中心",
+            "link3":"./google.com.tw",
+            "innerText3":"我的資料",
+            "link4":"./google.com.tw",
+            "innerText4":"",
+            "link5":"./google.com.tw",
+            "innerText5":"",
+            "link6":"./google.com.tw",
+            "innerText6":""
+            })
                 <div class="member_point">
                     <div class="member_point_left">
                         <img src="./img/member/membergold.png" alt="">
@@ -335,61 +356,14 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+         <!-- footer // -->
+         @@include('./layout/footer.html')
+         @@include('./layout/login.html')
 
-        <div class="login" style="display: none;">
-            <div class="login_all">
-                <div class="login_all_all" style="display: none;">
-                    <h1>會員登入</h1>
-                    <form action="">
-                        <input type="text" placeholder="帳號">
-                        <input type="text" placeholder="密碼">
-                    </form>
-                    <a href="#">忘記密碼</a>
-                    <div>
-                        <div class="login_login btnPink">登入</div>
-                        <div class="login_register btnPink">註冊</div>
-                    </div>
-                    <div class="login_close">
-                        <img src="./img/login/XX.png" alt="">
-                    </div>
-                </div>
-                <div class="register" >
-                    <h1>會員註冊</h1>
-                    <form action="">
-                        <div class="register_item">
-                            <label for="">帳號 :</label>
-                            <input type="text">
-                        </div>
-                        <div class="register_item">
-                            <label for="">暱稱 :</label>
-                            <input type="text">
-                        </div>
-                        <div class="register_item">
-                            <label for="">信箱 :</label>
-                            <input type="text">
-                        </div>
-                        <div class="register_item">
-                            <label for="">密碼 :</label>
-                            <input type="text" placeholder="請輸入至少數字&英文字各一">
-                        </div>
-                        <div class="register_item">
-                            <label for="">確認密碼 :</label>
-                            <input type="text" placeholder="請輸入上述相同密碼">
-                        </div>
-                        
-                    </form>
-                    <div>
-                        <div class="login_register btnPink">註冊</div>
-                    </div>
-                    <div class="login_close">
-                        <img src="./img/login/XX.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/member.js"></script>
 </body>
 
 </html>

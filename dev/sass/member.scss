@@ -1,6 +1,16 @@
 @import "base/var.scss";
 @import "base/reset.scss";
 
+header.fullHeader nav ul li img{
+    width: auto;
+}
+footer .footerCloud .footerCloud170{
+    width: auto;
+}
+footer .footerCloud .footerCloud122{
+    width: auto;
+}
+
 img {
     width: 100%;
 }
@@ -18,7 +28,7 @@ img {
     width: 100%;
     padding-bottom: 100px;
     // border: 1px solid blue;
-    background-image: url(../img/member/hip-square.png);
+    background-image: url(../img/member/gridme.png);
 
 }
 
@@ -129,6 +139,7 @@ img {
 }
 
 .member_info {
+    background-image: url(../img/member/hip-square.png);
     width: 100%;
     // border: 1px solid red;
     background-color: white;
@@ -160,7 +171,7 @@ img {
             background-repeat: no-repeat;
             background-size: contain;
             cursor: pointer;
-            margin-top: 100px;
+            margin-top: 50px;
             // font-weight: bolder;
             position: relative;
 
@@ -253,12 +264,12 @@ img {
 .member_info_info_line {
     position: absolute;
     left: 50%;
-    top: 50px;
+    top: 100px;
     // border: 1px solid red;
     display: inline-block;
     font-size: 16px;
     width: 2px;
-    height: 500px;
+    height: 450px;
     background-color: gray;
     opacity: .5;
 }
@@ -728,7 +739,8 @@ img {
 
 
 .login{
-    border: 1px solid red;
+    z-index: 999;
+    // border: 1px solid red;
     position: fixed;
     left: 0;
     top: 0;
@@ -809,13 +821,13 @@ img {
 
 }
 .login_close{
-    padding: 1%;
+    padding:1%;
     border-radius: 50%;
     background-color: $importantColor;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 5%;
+    right: 10px;
+    top: 10px;
+    width: 6%;
     cursor: pointer;
 }
 

@@ -59,6 +59,18 @@ blockquote, q {
           box-sizing: border-box;
 }
 
+header.fullHeader nav ul li img {
+  width: auto;
+}
+
+footer .footerCloud .footerCloud170 {
+  width: auto;
+}
+
+footer .footerCloud .footerCloud122 {
+  width: auto;
+}
+
 img {
   width: 100%;
 }
@@ -75,7 +87,7 @@ img {
   overflow: hidden;
   width: 100%;
   padding-bottom: 100px;
-  background-image: url(../img/member/hip-square.png);
+  background-image: url(../img/member/gridme.png);
 }
 
 .member_all {
@@ -163,6 +175,7 @@ img {
 }
 
 .member_info {
+  background-image: url(../img/member/hip-square.png);
   width: 100%;
   background-color: white;
   -webkit-box-shadow: 10px 10px 5px gray;
@@ -186,7 +199,7 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-  margin-top: 100px;
+  margin-top: 50px;
   position: relative;
 }
 
@@ -258,11 +271,11 @@ img {
 .member_info_info_line {
   position: absolute;
   left: 50%;
-  top: 50px;
+  top: 100px;
   display: inline-block;
   font-size: 16px;
   width: 2px;
-  height: 500px;
+  height: 450px;
   background-color: gray;
   opacity: .5;
 }
@@ -665,7 +678,7 @@ img {
 }
 
 .login {
-  border: 1px solid red;
+  z-index: 999;
   position: fixed;
   left: 0;
   top: 0;
@@ -737,9 +750,9 @@ img {
   border-radius: 50%;
   background-color: #a5361c;
   position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 5%;
+  right: 10px;
+  top: 10px;
+  width: 6%;
   cursor: pointer;
 }
 
