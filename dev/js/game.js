@@ -71,7 +71,7 @@ $(document).ready(function(){
 
                 //make a Google map
                 let area = document.getElementById('map');
-                let position = new google.maps.LatLng(24.9726123,121.1855099);
+                let position = new google.maps.LatLng(lati, longi);
                 let options = {
                     zoom: 16,
                     center: position,

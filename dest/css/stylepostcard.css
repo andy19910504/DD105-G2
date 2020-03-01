@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-.postcard h1 {
-  color: red; }
-
-.wrap {
-  width: 100%;
-  background-color: red;
-  height: 1000px; }
-=======
 @charset "UTF-8";
 .postcard h1 {
   color: red; }
@@ -87,4 +78,3 @@ p {
   width: 50%;
   height: 100%;
   background-color: lightgreen; }
->>>>>>> a93d3605924f6e450bbbf2b082e0b5a2c8953770
