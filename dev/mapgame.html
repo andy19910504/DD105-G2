@@ -15,7 +15,7 @@
             "display2":"show"
         })
         <!-- breadCrumb -->
-        @@include('./layout/breadCrumb.html',{
+        <!-- @@include('./layout/breadCrumb.html',{
             "link1":"./google.com.tw",
             "src1":"./img/123",
             "link2":"./google.com.tw",
@@ -24,7 +24,7 @@
             "src3":"./img/123",
             "link4":"./google.com.tw",
             "src4":"./img/123"
-        })
+        }) -->
         <!-- banner -->
         <div class="banner_02">
             <img src="./img/mapgame/title-game.png" alt="" class="title">
@@ -32,6 +32,36 @@
 
         <div class="pic-container">
             <img src="./img/mapgame/select.png" alt="" class="bubble">
+            <div class="select">
+                <div class="option">
+                    <span class="route-name">日式舊屋行</span>
+                    <img src="./img/mapgame/label.png" alt="" class="label">
+                </div>
+                <div class="option">
+                    <span class="route-name">文青品味旅</span>
+                    <img src="./img/mapgame/label.png" alt="" class="label hide-label">
+                </div>
+                <div class="option">
+                    <span class="route-name">職人散步去</span>
+                    <img src="./img/mapgame/label.png" alt="" class="label hide-label">
+                </div>
+                <div class="switch">
+                    <div class="mapMode off">GPS地圖模式</div>
+                    <div class="button"></div>
+                    <div class="gameMode">小遊戲模式</div>
+                </div>
+            </div>
+            <div class="game-container">
+                <img src="./img/mapgame/map.jpg" alt="" class="map">
+                @@include('./layout/btnRed.html',{
+                    "link":"#",
+                    "innerText":"start"
+                })
+                <img src="./img/mapgame/gou.gif" alt="" class="walking">
+            </div>
+            <div class="map-container hide-container">
+                <div id="map"></div>
+            </div>
             <div class="fuda-container">
                 <table>
                     <tr>
@@ -70,28 +100,6 @@
                 </table>
                 <img src="./img/mapgame/fuda.png" alt="" class="fuda">
             </div>
-            <div class="select">
-                <div class="option">
-                    <span class="route-name">日式舊屋行</span>
-                    <img src="./img/mapgame/label.png" alt="" class="label">
-                </div>
-                <div class="option">
-                    <span class="route-name">文青品味旅</span>
-                    <img src="./img/mapgame/label.png" alt="" class="label hide-label">
-                </div>
-                <div class="option">
-                    <span class="route-name">職人散步去</span>
-                    <img src="./img/mapgame/label.png" alt="" class="label hide-label">
-                </div>
-            </div>
-            <div class="game-container">
-                <img src="./img/mapgame/map.jpg" alt="" class="map">
-                @@include('./layout/btnRed.html',{
-                    "link":"#",
-                    "innerText":"start"
-                })
-                <img src="./img/mapgame/gou.gif" alt="" class="walking">
-            </div>
             <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
 
@@ -101,6 +109,7 @@
     </div>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/game.js"></script>
 </body>
