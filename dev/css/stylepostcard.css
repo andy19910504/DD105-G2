@@ -1,4 +1,5 @@
 @charset "UTF-8";
+<<<<<<< HEAD
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -1069,6 +1070,83 @@ div.postcardimg4 {
   font-size: 24px;
   margin-top: 50px;
   color: #1e1e1e;
+=======
+.postcard h1 {
+  color: red;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: lightblue;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: lightcoral;
+}
+
+.banner {
+  width: 100%;
+  height: 100px;
+  background-color: lightgreen;
+}
+
+.postcardcontent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: lightpink;
+}
+
+.postcardStepbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px auto;
+  max-width: 1200px;
+  height: 150px;
+  background-color: lightseagreen;
+}
+
+.postStep {
+  width: 1200px;
+  height: 150px;
+  background-image: url(../img/postcard/框-1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+p {
+  font-size: 24px;
+  font-family: "微軟正黑體";
+}
+
+.postStep_btn {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  top: 10px;
+  margin-left: 30px;
+}
+
+.arrow1:after,
+.arrow2:after,
+.arrow3:after,
+.arrow4:after {
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url(../img/postcard/手繪藍箭頭.png);
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  position: absolute;
+  top: 25px;
+  margin-left: 120px;
+>>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 }
 
 .postcardMain {
@@ -1078,6 +1156,7 @@ div.postcardimg4 {
   margin: 0px auto;
   max-width: 1200px;
   height: 800px;
+<<<<<<< HEAD
 }
 
 /*預覽畫面*/
@@ -1138,11 +1217,21 @@ div.postcardimg4 {
 
 .postRight_5 {
   display: none;
+=======
+  background-color: lightsalmon;
+}
+
+.postLeft {
+  width: 50%;
+  height: 100%;
+  background-color: lightblue;
+>>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 }
 
 .postRight {
   width: 50%;
   height: 100%;
+<<<<<<< HEAD
   border: black 1px solid;
   background-image: url(../img/postcard/just-waves.png);
   border-image-source: url(../img/postcard/postline.svg);
@@ -1290,5 +1379,8 @@ div.postcardimg4 {
 /*下一步按鍵*/
 .step_btn1 {
   text-align: center;
+=======
+  background-color: lightgreen;
+>>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 }
 /*# sourceMappingURL=stylepostcard.css.map */

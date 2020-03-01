@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <title>自訂路線</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <!-- 1200px上 滿版時，使用的選單 -->
+<header class="fullHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display1"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover show"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display3"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display4"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display5"><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+
+</header>
+<!-- 1200px下時，轉乘使用漢堡選單 -->
+
+<header class="hamburgerHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+</header>
+<h1 class="smartPhoneLogo">
+    <a href="./index.html">
+        <img src="./img/header/logo272x170.png" alt="">
+    </a>
+</h1>
+<div class="hamburger hamburger--spring">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</div>
+
+        <!-- breadCrumb -->
+        
+        <!-- banner -->
+        <div class="banner_02">
+            <img src="./img/mapgame/title-game.png" alt="" class="title">
+        </div>
+        <div class="pic-container">
+            <img src="./img/mapgame/select.png" alt="" class="bubble">
+            <div class="search-area">
+                <input type="text" class="search">
+                <a href="#" class="btnPink">
+    搜尋
+</a>
+                <a href="#" class="btnRed">
+    確定地點
+</a>
+            </div>
+            <div class="map-container">
+                <iframe src="" frameborder="0" id="map"></iframe>
+            </div>
+            <img src="./img/mapgame/campus.png" alt="" class="campus">
+        </div>
+
+        <!-- footer // -->
+        <footer>
+    <div class="footerCloud">
+        <img src="./img/footer/footerCloud170.png" class="footerCloud170">
+        <img src="./img/footer/footerCloud122.png" class="footerCloud122">
+    </div>
+    <div class="footerLogo">
+        <img src="./img/footer/logo320x200.png">
+    </div>
+    <div class="footerText">
+        <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
+    </div>
+</footer>
+        <div class="image"></div>
+    </div>
+
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+@import "base/var.scss";
+@import "base/reset.scss";
+
+.login{
+    z-index: 999;
+    // border: 1px solid red;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+.login_all{
+    // padding-bottom: 2%;
+    position: relative;
+    // opacity: 1;
+    // background-color: black;
+    background-image: url(../img/login/267836-1F31110113738.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+    width: 25%;
+    margin: 10% auto 0% auto;
+    // height: 300px;
+    // border: 1px solid red;
+    
+}
+.login_all_all{
+    padding: 8% 0;
+    // background-image: url(../img/login/267836-1F31110113738.jpg);
+    //  background-repeat: no-repeat;
+    //  background-size: cover;
+    // border: 1px solid blue;
+    h1{
+        // margin: 0 auto;
+        // width: 75%;
+        // // display: inline-block;
+        // background-image: url(../img/member/hip-square.png);
+        text-shadow: 3px 3px 3px gray;
+        // padding: 0% 7% 0 7%;
+        text-align: center;
+        // border: 1px solid aqua;
+        font-size: $fzTitle;
+    }
+    input{
+        border: 3px dashed $importantColor;
+        width: 75%;
+        background-image: url(../img/member/hip-square.png);
+        opacity: .8;
+        padding: 3%;
+        // border: 1px solid khaki;
+        display: block;
+        font-size: $fzContent;
+        margin: 10% auto 0 auto;
+    }
+    input:nth-child(2){
+        margin-top: 5%;
+    }
+    a{
+        color: black;
+        padding: 1% 2% 1% 1%;
+        text-align: right;
+        width: 18%;
+        // border: 1px solid indianred;
+        display: inline-block;
+        margin-left: 69.5%;
+        font-size: $fzInfo;
+        margin-top: 5%;
+        background-image: url(../img/member/hip-square.png);
+        border: 1px dashed $importantColor;
+    }
+}
+.login_login{
+    display: block;
+    margin: 0 auto;
+    margin-top: 8%;
+    // border: 1px solid red;
+}
+.login_register{
+    display: block;
+    margin: 3% auto 0% auto;
+    // border: 1px solid red;
+
+}
+.login_close{
+    padding:1%;
+    border-radius: 50%;
+    background-color: $importantColor;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 6%;
+    cursor: pointer;
+}
+
+
+.register{
+    padding:8% 0;
+    // background-image: url(../img/login/267836-1F31110113738.jpg);
+    //  background-repeat: no-repeat;
+    //  background-size: cover;
+    // border: 1px solid blue;
+    h1{
+        // margin: 0 auto;
+        // width: 75%;
+        // // display: inline-block;
+        // background-image: url(../img/member/hip-square.png);
+        text-shadow: 3px 3px 3px gray;
+        // padding-top: 10%;
+        text-align: center;
+        // border: 1px solid aqua;
+        font-size: $fzTitle;
+    }
+    // input{
+    //     border: 3px dashed $importantColor;
+    //     width: 75%;
+    //     background-image: url(../img/member/hip-square.png);
+    //     opacity: .8;
+    //     padding: 3%;
+    //     // border: 1px solid khaki;
+    //     display: block;
+    //     font-size: $fzContent;
+    //     margin: 8% auto 0 auto;
+    // }
+    // input:nth-child(2){
+    //     margin-top: 5%;
+    // }
+
+}
+.register_item {
+    // border: 1px solid red;
+    font-size: 0px;
+    padding-top: 8%;
+    label{
+        height: 46px;
+        display: inline-block;
+        font-size: $fzContent;
+        width: 25%;
+        padding: 3% 1% 3% 5%;
+        // border: 3px dashed $importantColor;
+    }
+    input{
+        // display: inline-block;
+        // margin-left: 3%;
+        border: 3px dashed $importantColor;
+        width: 70%;
+        background-image: url(../img/member/hip-square.png);
+        // opacity: .8;
+        padding: 3%;
+        // border: 1px solid khaki;
+        display: inline-block;
+        font-size: $fzContent;
+        // margin-top: 5%;
+    }
+}
