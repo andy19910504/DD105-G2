@@ -1,0 +1,255 @@
+@import "./base/var.scss";
+@import "./base/reset.scss";
+@import "./layout/card.scss";
+@font-face {
+    font-family: "JasonHandwriting3";
+    src: url("../font/JasonHandwriting3-Regular.ttf");
+}
+
+//   banner文字
+.eventTitle {
+    padding-top: 10%;
+    width: 100%;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
+//內容
+.eventContent {
+    max-width: 1200px;
+    border: 1px solid red;
+    margin: 70px auto;
+    .newEvent {
+        width: 100%;
+        // border: 1px solid green;
+        position: relative;
+        .newEventTitle {
+            display: inline-block;
+            position: absolute;
+            left: -160px;
+            top: -160px;
+        }
+        #slideBoard {
+            width: 100%;
+            border: 1px solid black;
+            overflow: hidden;
+            ul {
+                position: relative;
+                display: flex;
+                a {
+                    display: inline-block;
+                    li {
+                        display: inline-flex;
+                        float: left;
+                        width: 1200px;
+                        .newEventPic {
+                            background-color: #f2fbff;
+                            padding: 30px 48px 50px 48px;
+                            border: 1px solid #b0b0b0;
+                        }
+                        .newEventText {
+                            position: relative;
+                            margin: 0 auto;
+                            p {
+                                padding-top: 32%;
+                                font-size: 36px;
+                                color: $fcInfo;
+                                font-family: JasonHandwriting3, 微軟正黑體;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 輪播按鈕...
+#contentButton {
+    /* border: 1px solid red; */
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    li {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #589fb2;
+        margin: 25px 8px;
+        cursor: pointer;
+    }
+    li.clickMe {
+        background-color: #589fb2;
+        opacity: 0.6;
+    }
+}
+
+// 分隔線-剪刀
+.cutLine {
+    width: 100%;
+    margin: 15px 0 80px 0;
+    img {
+        width: 100%;
+    }
+}
+
+// 活動瀏覽
+.eventScan {
+    border: 1px solid green;
+    //分類bar
+    .catalog {
+        width: 100%;
+        position: relative;
+        margin: 60px 0;
+        &:before {
+            content: "";
+            background-image: url(../img/event/event_bluepointl.png);
+            height: 30px;
+            width: 1200px;
+            position: absolute;
+            bottom: -40px;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            li {
+                font-size: 36px;
+                color: $fcContent;
+                margin: 10px 0px 0 0;
+                padding: 5px 25px;
+                cursor: pointer;
+                &.color {
+                    background-image: url(../img/event/event_mark1.png);
+                    height: 45px;
+                    width: 200px;
+                }
+                p {
+                    font-family: JasonHandwriting3, 微軟正黑體;
+                }
+            }
+        }
+    }
+}
+
+//下拉選單
+@mixin select {
+    width: 190px;
+    height: 30px;
+    padding: 5px;
+    color: $fcInfo;
+    font-size: $fzInfo;
+}
+
+.selector select {
+    @include select;
+}
+
+//卡片區
+.cardBox {
+    padding: 20px 0;
+    .cardLine {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 25px 0;
+        .event {
+            width: 30%;
+            background-image: url(../img/event/event_cardback.png);
+            &.card {
+                @include card(510px)
+            }
+            .cardPic {
+                margin: 15px auto;
+                text-align: center;
+            }
+            .cardText {
+                width: 310px;
+                margin: 0 auto;
+                text-align: center;
+                letter-spacing: 3px;
+                h1 {
+                    font-size: $fzTitle;
+                    color: $fcContent;
+                    font-weight: 550;
+                }
+                p {
+                    font-size: $fzContent;
+                    color: $fcInfo;
+                    margin: 10px;
+                    text-align: left;
+                    letter-spacing: 4px;
+                }
+                span {
+                    color: $fcInfo;
+                    font-size: $fzInfo;
+                    display: inline-block;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// viewMore
+.viewMore {
+    margin: 10px auto;
+    text-align: center;
+}
+
+//燈箱---------------發起揪團燈箱
+.lightbox_holdevent-target {
+    position: fixed;
+    background-color: rgba(255, 255, 255, .7);
+    top: -100%;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+    //設定內容的樣式及位置(白底區塊) 
+    .lightbox_holdevent_info {
+        width: 90%;
+        height: 90%;
+        background: #fff;
+        color: #333;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid #fff;
+        // 預設寬高為 0，觸發 :target 後，利用動畫效果展開寬與高
+        max-height: 0%;
+        max-width: 0%;
+    }
+}
+
+// 當 :target 觸發後
+.lightbox_holdevent-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    .content,
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .lightbox-close {
+        top: 5%;
+    }
+}
+
+//關閉 Lightbox 按鈕的位置及樣式 
+.lightbox-close {
+    display: block;
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    background: #139dd7;
+    color: #fff;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}

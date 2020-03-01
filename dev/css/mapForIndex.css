@@ -22,7 +22,8 @@
 }
 
 .fuda-container {
-  bottom: 0;
+  top: 200px;
+  left: 0;
   position: absolute;
   z-index: 1;
 }
@@ -130,6 +131,7 @@
 }
 
 .campus {
+  display: block;
   width: 200px;
   right: 0;
   -webkit-transform: rotate(30deg);
@@ -137,84 +139,11 @@
   position: absolute;
 }
 
-.select {
-  margin: 0 auto;
-  width: 63%;
-}
-
-.select .option {
-  width: 200px;
-  display: inline-block;
-  position: relative;
-}
-
-.select .option .route-name {
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  letter-spacing: 4px;
-  height: 1.2em;
-  position: absolute;
-}
-
-.select .option .label {
-  width: 100%;
-}
-
-.select .option .hide-label {
-  visibility: hidden;
-}
-
-.select .switch {
-  top: -20px;
-  width: 100px;
-  height: 20px;
-  display: inline-block;
-  border: 2px solid #B3523A;
-  border-radius: 15px;
-  background-color: #fff;
-  position: relative;
-}
-
-.select .switch .button {
-  width: 25px;
-  height: 25px;
-  background-color: #B3523A;
-  border: 2px solid #B3523A;
-  border-radius: 50%;
-  position: absolute;
-  top: -4px;
-  left: -2px;
-}
-
-.select .switch .on {
-  left: 74px;
-}
-
-.select .switch .mapMode, .select .switch .gameMode {
-  font-size: 10px;
-}
-
-.select .switch .mapMode {
-  margin-left: 2px;
-  line-height: 1.3;
-  text-align-last: left;
-}
-
-.select .switch .gameMode {
-  margin-right: 10px;
-  line-height: 1.3;
-  text-align: right;
-}
-
-.select .switch .off {
-  display: none;
-}
-
 .game-container {
+  display: inline-block;
   margin: 0 auto;
-  width: 63%;
+  margin-left: 200px;
+  width: 30%;
   height: 550px;
   border: 6px solid #ccc;
   border-radius: 6px;
@@ -222,7 +151,7 @@
   position: relative;
 }
 
-.game-container .map {
+.game-container #map {
   width: 3000px;
   top: 50%;
   left: 50%;
@@ -251,34 +180,40 @@
 }
 
 .map-container {
-  margin: 0 auto;
-  width: 63%;
-  height: 550px;
+  top: -30px;
+  display: inline-block;
+  margin: 0 0 0 200px;
+  width: 25%;
+  height: 500px;
   border: 6px solid #ccc;
   border-radius: 6px;
+  position: relative;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
-#map {
+.map-container .iphone {
+  width: 120%;
+  height: 120%;
+  top: -48px;
+  left: -34px;
+  position: absolute;
+}
+
+#google-map {
   width: 100%;
   height: 100%;
 }
 
-.hide-container {
-  display: none;
-}
-
 @media (max-width: 576px) {
   .pic-container {
+    margin: 0 auto;
     width: 90%;
   }
-  .switch {
-    display: block;
-    margin: 30px 50px 0;
-  }
-  .bubble {
-    position: relative;
-  }
   .fuda-container {
+    top: 100px;
+    display: block;
+    width: 100%;
     position: relative;
   }
   .campus {
@@ -286,10 +221,18 @@
             transform: rotate(0deg);
   }
   .game-container {
-    width: 100%;
+    margin: 0 auto;
+    margin-left: 16px;
+    width: 90%;
   }
   .map-container {
-    width: 100%;
+    margin: 100px 30px;
+    width: 80%;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .map-container .iphone {
+    left: -29px;
   }
 }
-/*# sourceMappingURL=mapgame.css.map */
+/*# sourceMappingURL=mapForIndex.css.map */
