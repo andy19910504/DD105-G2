@@ -1,0 +1,747 @@
+@charset "UTF-8";
+/* btnClass */
+.btnRed {
+  /*主要按鈕*/
+  width: 175px;
+  height: 60px;
+  position: relative;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 24pt;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  background-image: url("../img/element/btnRed.png");
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+}
+
+.btnRed:hover {
+  -webkit-filter: brightness(1.09);
+          filter: brightness(1.09);
+}
+
+.btnPink {
+  /*次要按鈕*/
+  width: 120px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background-image: url("../img/element/btnPink.png");
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+}
+
+.btnPink:hover {
+  -webkit-filter: brightness(1.05);
+          filter: brightness(1.05);
+}
+
+.btnPinkStop {
+  /*次要按鈕_不能按*/
+  width: 120px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background-image: url("../img/element/btnPink.png");
+  -webkit-filter: grayscale(1.1);
+          filter: grayscale(1.1);
+}
+
+#btnGoTop {
+  /*回到頂端*/
+  width: 50px;
+  height: 200px;
+  position: relative;
+  display: inline-block;
+  background-image: url("../img/element/btnGoTop.png");
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+}
+
+.btnCust {
+  /*自訂按鈕*/
+  width: 105px;
+  height: 105px;
+  font-size: 16pt;
+  color: #1e1e1e;
+  font-weight: bold;
+  text-align: center;
+  line-height: 130px;
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  background-image: url("../img/element/btnCust.png");
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+}
+
+.btnCust:hover {
+  -webkit-filter: brightness(1.05);
+          filter: brightness(1.05);
+}
+
+/*
+     卡片：首頁、路線、心情、揪團，要使用的sample
+    
+     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
+
+    */
+.card {
+  width: 340px;
+  height: 520px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+          box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+}
+
+header.fullHeader {
+  width: 100%;
+  height: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../img/header/headerBgImage.png");
+  background-repeat: no-repeat;
+}
+
+header.fullHeader h1 {
+  display: block;
+  width: 270px;
+  height: 170px;
+  -webkit-transform: translate(-300px, 35px);
+          transform: translate(-300px, 35px);
+}
+
+header.fullHeader h1 img {
+  width: 100%;
+  height: 100%;
+  vertical-align: center;
+}
+
+header.fullHeader nav {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+header.fullHeader nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header.fullHeader nav ul li {
+  width: 135px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+header.fullHeader nav ul li:last-child {
+  margin-right: unset;
+}
+
+header.fullHeader nav ul li img {
+  vertical-align: center;
+}
+
+header.fullHeader nav ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  color: #1e1e1e;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+header.fullHeader nav ul li a .navIcon {
+  margin-right: 5px;
+}
+
+header.fullHeader nav ul li a:hover .navIcon {
+  -webkit-animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
+          animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
+}
+
+@-webkit-keyframes shake {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes shake {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+header.fullHeader nav ul li a .navHover {
+  width: 0px;
+  position: absolute;
+  left: 23px;
+  z-index: -1;
+  -webkit-filter: brightness(1.09);
+          filter: brightness(1.09);
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header.fullHeader nav ul li a:hover .navHover {
+  opacity: 1;
+  width: 120px;
+}
+
+header.fullHeader nav ul li a .navHover.show {
+  opacity: 1;
+  width: 120px;
+}
+
+header.fullHeader .memberIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translate(300px, -30px);
+          transform: translate(300px, -30px);
+}
+
+header.fullHeader .memberIcon div {
+  margin-right: 15px;
+}
+
+header.fullHeader .memberIcon div:last-child {
+  margin-right: 0px;
+}
+
+header.hamburgerHeader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  z-index: 3;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+header.hamburgerHeader.showHeader {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+header.hamburgerHeader nav ul li {
+  width: 180px;
+  height: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 20px;
+}
+
+header.hamburgerHeader nav ul li a {
+  font-size: 24px;
+  color: #1e1e1e;
+  font-weight: bold;
+  text-align: right;
+  padding-left: 10px;
+}
+
+header.hamburgerHeader li a .navIcon {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+header.hamburgerHeader .memberIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+}
+
+header.hamburgerHeader .memberIcon div {
+  margin-right: 15px;
+}
+
+header.hamburgerHeader .memberIcon div:last-child {
+  margin-right: 0px;
+}
+
+h1.smartPhoneLogo {
+  width: 120px;
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 5px;
+}
+
+h1.smartPhoneLogo img {
+  width: 100%;
+}
+
+.hamburger {
+  padding: 15px 15px;
+  display: none;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #a5361c;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #a5361c;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--spring .hamburger-inner {
+  top: 2px;
+  -webkit-transition: background-color 0s 0.13s linear;
+  transition: background-color 0s 0.13s linear;
+}
+
+.hamburger--spring .hamburger-inner::before {
+  top: 10px;
+  -webkit-transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring .hamburger-inner::after {
+  top: 20px;
+  -webkit-transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spring.is-active .hamburger-inner {
+  -webkit-transition-delay: 0.22s;
+          transition-delay: 0.22s;
+  background-color: transparent !important;
+}
+
+.hamburger--spring.is-active .hamburger-inner::before {
+  top: 0;
+  -webkit-transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transform: translate3d(0, 10px, 0) rotate(45deg);
+          transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--spring.is-active .hamburger-inner::after {
+  top: 0;
+  -webkit-transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transform: translate3d(0, 10px, 0) rotate(-45deg);
+          transform: translate3d(0, 10px, 0) rotate(-45deg);
+}
+
+@media all and (max-width: 1805px) {
+  header.fullHeader h1 {
+    display: block;
+    width: 200px;
+    height: unset;
+    -webkit-transform: translate(-20px, 0px);
+            transform: translate(-20px, 0px);
+  }
+  header.fullHeader nav {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  header.fullHeader .memberIcon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
+}
+
+@media all and (max-width: 1199px) {
+  header.fullHeader {
+    display: none;
+  }
+  header.hamburgerHeader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  h1.smartPhoneLogo {
+    display: block;
+  }
+  .hamburger {
+    display: inline-block;
+    position: fixed;
+    right: 5px;
+    z-index: 5;
+  }
+}
+
+.banner_01 {
+  background-image: url("../img/banner/banner_01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_01 {
+    background-image: url("../img/banner/banner_01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_01 {
+    background-image: url("../img/banner/banner_01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+.banner_02 {
+  background-image: url("../img/banner/banner_02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_02 {
+    background-image: url("../img/banner/banner_02.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_02 {
+    background-image: url("../img/banner/banner_02.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+.banner_03 {
+  background-image: url("../img/banner/banner_03.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_03 {
+    background-image: url("../img/banner/banner_03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_03 {
+    background-image: url("../img/banner/banner_03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+.banner_04 {
+  background-image: url("../img/banner/banner_04.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_04 {
+    background-image: url("../img/banner/banner_04.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_04 {
+    background-image: url("../img/banner/banner_04.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+.banner_05 {
+  background-image: url("../img/banner/banner_05.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_05 {
+    background-image: url("../img/banner/banner_05.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_05 {
+    background-image: url("../img/banner/banner_05.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+.banner_06 {
+  background-image: url("../img/banner/banner_06.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
+  width: 100%;
+  height: 450px;
+}
+
+@media all and (max-width: 1024px) {
+  .banner_06 {
+    background-image: url("../img/banner/banner_06.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  .banner_06 {
+    background-image: url("../img/banner/banner_06.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: unset;
+    background-position: center bottom;
+    width: 100%;
+    height: unset;
+    padding-top: 100%;
+  }
+}
+
+/* 麵包屑 */
+.breadCrumb li {
+  width: 170px;
+  height: 30px;
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 45px;
+}
+
+.breadCrumb li:last-child {
+  margin-right: unset;
+}
+/*# sourceMappingURL=main.css.map */
