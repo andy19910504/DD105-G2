@@ -84,9 +84,12 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
         server: {
             baseDir: "./dest",
 <<<<<<< HEAD
+<<<<<<< HEAD
             index: "index.html"
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
             index: "mapgame.html"
 =======
 <<<<<<< HEAD
@@ -95,6 +98,9 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
             index: "index.html"
 >>>>>>> 324b287ad0de31a0b49b765bf63e1823ea6bf94e
 >>>>>>> 6c530ef2b3ea209e3ec11d6ab803a8f03927ec9b
+<<<<<<< HEAD
+>>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
+=======
 >>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
         }
     });
