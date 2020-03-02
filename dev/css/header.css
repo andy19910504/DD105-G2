@@ -5,6 +5,7 @@ header.fullHeader {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  z-index: 100;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -86,23 +87,23 @@ header.fullHeader nav ul li a:hover .navIcon {
 
 @-webkit-keyframes shake {
   from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
 @keyframes shake {
   from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
@@ -160,7 +161,7 @@ header.hamburgerHeader {
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
-  z-index: 3;
+  z-index: 100;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: -webkit-transform 1s;
@@ -392,7 +393,7 @@ h1.smartPhoneLogo img {
     display: inline-block;
     position: fixed;
     right: 5px;
-    z-index: 5;
+    z-index: 101;
   }
 }
 /*# sourceMappingURL=header.css.map */

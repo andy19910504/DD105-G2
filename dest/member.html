@@ -5,15 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/member.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>會員中心</title>
 
 </head>
 
 <body>
-    <div class="wrap">
-        <nav></nav>
-        <div class="banner"></div>
+    <div class="wrapper">
+                <!-- header -->
+        <!-- 1200px上 滿版時，使用的選單 -->
+<header class="fullHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display1"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display2"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display3"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display4"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover @@display5"><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+
+</header>
+<!-- 1200px下時，轉乘使用漢堡選單 -->
+
+<header class="hamburgerHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+</header>
+<h1 class="smartPhoneLogo">
+    <a href="./index.html">
+        <img src="./img/header/logo272x170.png" alt="">
+    </a>
+</h1>
+<div class="hamburger hamburger--spring">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</div>
+
+        <div class="banner_06">
+            <img src="./img/member/membertitle.png" alt="" class="title">
+        </div>
         <div class="member_content">
             <div class="member_all">
                 <!-- 插圖 -->
@@ -39,10 +100,19 @@
                     <img src="./img/member/memberclound.png" alt="">
                 </div>
                 <!-- 插圖結束 -->
-                <div class="member_bread">
+                <!-- <div class="member_bread">
                     <span>台北散步 / 會員中心 / </span>
                     <span>我的資料</span>
-                </div>
+                </div> -->
+                <!-- breadCrumb -->
+        <ul class="breadCrumb">
+    <li><a href="./google.com.tw">台北散步</a></li>
+    <li><a href="./google.com.tw">會員中心</a></li>
+    <li><a href="./google.com.tw">會員資料</a></li>
+    <li><a href="./google.com.tw"></a></li>
+    <li><a href="./google.com.tw"></a></li>
+    <li><a href="./google.com.tw"></a></li>
+</ul>
                 <div class="member_point">
                     <div class="member_point_left">
                         <img src="./img/member/membergold.png" alt="">
@@ -58,16 +128,26 @@
                     <nav class="member_info_nav">
                         <ul>
                             <li>會員資料
+                                <img src="./img/member/memberstamp.png" style="opacity: .2;" alt="">
+                            </li>
+                            <li>路線紀錄
                                 <img src="./img/member/memberstamp.png" alt="">
                             </li>
-                            <li>路線紀錄</li>
-                            <li>分享紀錄</li>
-                            <li>訂單紀錄</li>
-                            <li>開團紀錄</li>
-                            <li>參團紀錄</li>
+                            <li>分享紀錄
+                                <img src="./img/member/memberstamp.png" alt="">
+                            </li>
+                            <li>訂單紀錄
+                                <img src="./img/member/memberstamp.png" alt="">
+                            </li>
+                            <li>開團紀錄
+                                <img src="./img/member/memberstamp.png" alt="">
+                            </li>
+                            <li>參團紀錄
+                                <img src="./img/member/memberstamp.png" alt="">
+                            </li>
                         </ul>
                     </nav>
-                    <div class="member_info_info" >
+                    <div class="member_info_info">
                         <div class="member_info_info_all">
                             <div class="member_info_info_left">
                                 <div>
@@ -94,33 +174,33 @@
                                 </div>
                                 <div>
                                     <label for="">帳號 :</label>
-                                    <input type="text">
+                                    <input type="text" readonly>
                                 </div>
                                 <div>
                                     <label for="">密碼 :</label>
-                                    <input type="text">
+                                    <input type="text" readonly>
                                 </div>
                                 <div>
                                     <label for="">暱稱 :</label>
-                                    <input type="text">
+                                    <input type="text"readonly>
                                 </div>
                                 <div>
                                     <label for="">手機 :</label>
-                                    <input type="text">
+                                    <input type="text" readonly>
                                 </div>
                                 <div>
                                     <label for="">信箱 :</label>
-                                    <input type="text">
+                                    <input type="text" readonly>
                                 </div>
                             </div>
-                            <div class="member_info_info_button">
-                                <div>
+                            <div class="member_info_info_button ">
+                                <div class="btnPinkStop">
                                     修改確認
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="member_info_line minheightbig" >
+                    <div class="member_info_line minheightbig " style="display: none;" >
                         <div class="minheightmiddle">
                             <div>
                                 <p>吃貨之行</p>
@@ -143,7 +223,7 @@
                         </div>
 
                     </div>
-                    <div class="member_info_share minheightbig" >
+                    <div class="member_info_share minheightbig" style="display: none;">
                         <div class="minheightmiddle">
                             <div>
                                 <div>
@@ -216,7 +296,7 @@
 
                         </div>
                     </div>
-                    <div class="member_info_order minheightbig" >
+                    <div class="member_info_order minheightbig" style="display: none;">
                         <div class="minheightmiddle">
                             <div>
                                 <div>
@@ -247,7 +327,7 @@
 
                         </div>
                     </div>
-                    <div class="member_info_open minheightbig" >
+                    <div class="member_info_open minheightbig"  style="display: none;">
                         <div class="member_info_open_all minheightmiddle">
                             <div class="member_info_open_all_all">
                                 <h1>
@@ -303,7 +383,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="member_info_join minheightbig" >
+                    <div class="member_info_join minheightbig" style="display: none;">
                         <div class="member_info_join_all minheightmiddle">
                             <div class="member_info_join_all_all">
                                 <h1>
@@ -334,9 +414,79 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
+        
+         <!-- footer // -->
+         <footer>
+    <a id="btnGoTop"></a>
+    <div class="footerCloud">
+        <img src="./img/footer/footerCloud170.png" class="footerCloud170">
+        <img src="./img/footer/footerCloud122.png" class="footerCloud122">
     </div>
+    <div class="footerLogo">
+        <img src="./img/footer/logo320x200.png">
+    </div>
+    <div class="footerText">
+        <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
+    </div>
+</footer>
+         <div class="login" style="display: none;" >
+    <div class="login_all">
+        <div class="login_all_all" >
+            <h1>會員登入</h1>
+            <form action="">
+                <input type="text" placeholder="帳號">
+                <input type="text" placeholder="密碼">
+            </form>
+            <a href="#">忘記密碼</a>
+            <div>
+                <div class="login_login btnPink">登入</div>
+                <div class="login_register btnPink">註冊</div>
+            </div>
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
+            </div>
+        </div>
+        <div class="register" style="display: none;">
+            <h1>會員註冊</h1>
+            <form action="">
+                <div class="register_item">
+                    <label for="">帳號 :</label>
+                    <input type="text">
+                </div>
+                <div class="register_item">
+                    <label for="">暱稱 :</label>
+                    <input type="text">
+                </div>
+                <div class="register_item">
+                    <label for="">信箱 :</label>
+                    <input type="text">
+                </div>
+                <div class="register_item">
+                    <label for="">密碼 :</label>
+                    <input type="text" placeholder="請輸入至少數字&英文字各一">
+                </div>
+                <div class="register_item">
+                    <label for="">確認密碼 :</label>
+                    <input type="text" placeholder="請輸入上述相同密碼">
+                </div>
+                
+            </form>
+            <div>
+                <div class="login_register btnPink">註冊</div>
+            </div>
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
 
+    
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/member.js"></script>
 </body>
 
 </html>

@@ -83,7 +83,15 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     browserSync.init({
         server: {
             baseDir: "./dest",
+<<<<<<< HEAD
             index: "mapgame.html"
+=======
+<<<<<<< HEAD
+            index: "postcard.html"
+=======
+            index: "index.html"
+>>>>>>> 324b287ad0de31a0b49b765bf63e1823ea6bf94e
+>>>>>>> 6c530ef2b3ea209e3ec11d6ab803a8f03927ec9b
         }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);

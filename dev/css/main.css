@@ -1,4 +1,64 @@
 @charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  text-decoration: none;
+  font-family: "微軟正黑體";
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 /* btnClass */
 .btnRed {
   /*主要按鈕*/
@@ -7,7 +67,7 @@
   position: relative;
   display: inline-block;
   border-radius: 25px;
-  font-size: 24pt;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -34,7 +94,7 @@
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  font-size: 18pt;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -59,7 +119,7 @@
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  font-size: 18pt;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -87,7 +147,7 @@
   /*自訂按鈕*/
   width: 105px;
   height: 105px;
-  font-size: 16pt;
+  font-size: 16px;
   color: #1e1e1e;
   font-weight: bold;
   text-align: center;
@@ -131,6 +191,7 @@ header.fullHeader {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
+  z-index: 100;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -212,23 +273,23 @@ header.fullHeader nav ul li a:hover .navIcon {
 
 @-webkit-keyframes shake {
   from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
 @keyframes shake {
   from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-5px);
-            transform: translateY(-5px);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 
@@ -286,7 +347,7 @@ header.hamburgerHeader {
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
-  z-index: 3;
+  z-index: 100;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: -webkit-transform 1s;
@@ -518,7 +579,7 @@ h1.smartPhoneLogo img {
     display: inline-block;
     position: fixed;
     right: 5px;
-    z-index: 5;
+    z-index: 101;
   }
 }
 
@@ -529,7 +590,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -564,7 +625,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -599,7 +660,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -634,7 +695,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -669,7 +730,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -704,7 +765,7 @@ h1.smartPhoneLogo img {
   background-attachment: fixed;
   background-position: center bottom;
   width: 100%;
-  height: 450px;
+  height: 550px;
 }
 
 @media all and (max-width: 1024px) {
@@ -733,15 +794,159 @@ h1.smartPhoneLogo img {
 }
 
 /* 麵包屑 */
-.breadCrumb li {
-  width: 170px;
-  height: 30px;
-  display: inline-block;
-  list-style-type: none;
-  margin-right: 45px;
+.breadCrumb {
+  width: 100%;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20px;
+  margin: 20px auto;
 }
 
-.breadCrumb li:last-child {
-  margin-right: unset;
+.breadCrumb li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.breadCrumb li::after {
+  content: '｜';
+}
+
+.breadCrumb li a {
+  color: #1e1e1e;
+}
+
+.breadCrumb li a:hover {
+  color: #a5361c;
+  font-weight: bold;
+}
+
+.breadCrumb li:last-child::after {
+  content: '';
+}
+
+.breadCrumb li:last-child a {
+  font-weight: bold;
+  color: #a5361c;
+}
+
+footer {
+  width: 100%;
+  height: 275px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../img/footer/footerBgImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer .footerCloud {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 80px;
+}
+
+footer .footerCloud .footerCloud170 {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: cloudMove1 2s cubic-bezier(0.14, 0.47, 0.82, 0.46) alternate infinite;
+          animation: cloudMove1 2s cubic-bezier(0.14, 0.47, 0.82, 0.46) alternate infinite;
+}
+
+footer .footerCloud .footerCloud122 {
+  -webkit-animation: cloudMove2 1.5s linear alternate infinite;
+          animation: cloudMove2 1.5s linear alternate infinite;
+}
+
+@-webkit-keyframes cloudMove1 {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes cloudMove1 {
+  from {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@-webkit-keyframes cloudMove2 {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+@keyframes cloudMove2 {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+}
+
+footer .footerLogo {
+  margin-bottom: 20px;
+}
+
+footer .footerLogo img {
+  width: 100%;
+}
+
+footer .footerText p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 576px) {
+  footer .footerText p {
+    font-size: 12.8px;
+  }
+  footer .footerLogo {
+    width: 200px;
+  }
+  footer .footerCloud {
+    margin-left: 10px;
+  }
+  footer .footerCloud .footerCloud170 {
+    width: 100px;
+  }
+  footer .footerCloud .footerCloud122 {
+    width: 80px;
+  }
+}
+
+.wrapper {
+  background-image: url("../img/element/bgImage.png");
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

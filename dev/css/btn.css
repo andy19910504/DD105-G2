@@ -7,7 +7,7 @@
   position: relative;
   display: inline-block;
   border-radius: 25px;
-  font-size: 24pt;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -34,7 +34,7 @@
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  font-size: 18pt;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -59,7 +59,7 @@
   position: relative;
   display: inline-block;
   border-radius: 15px;
-  font-size: 18pt;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   text-align: center;
@@ -87,7 +87,7 @@
   /*自訂按鈕*/
   width: 105px;
   height: 105px;
-  font-size: 16pt;
+  font-size: 16px;
   color: #1e1e1e;
   font-weight: bold;
   text-align: center;

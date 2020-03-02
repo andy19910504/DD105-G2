@@ -14,6 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline; }
@@ -49,9 +50,6 @@ blockquote, q {
 * {
   box-sizing: border-box; }
 
-img {
-  width: 100%; }
-
 .minheightbig {
   min-height: 656px; }
 
@@ -62,7 +60,7 @@ img {
   overflow: hidden;
   width: 100%;
   padding-bottom: 100px;
-  background-image: url(../img/member/hip-square.png); }
+  background-image: url(../img/member/gridme.png); }
 
 .member_all {
   margin: 0 auto;
@@ -75,42 +73,56 @@ img {
   position: absolute;
   left: -270px;
   top: 100px; }
+  .member_sun img {
+    width: 100%; }
 
 .member_ballon {
   width: 15%;
   position: absolute;
   left: -175px;
   top: 350px; }
+  .member_ballon img {
+    width: 100%; }
 
 .member_ballon_two {
   width: 7%;
   position: absolute;
   left: -230px;
   top: 500px; }
+  .member_ballon_two img {
+    width: 100%; }
 
 .member_ballon_blue {
-  width: 10%;
+  width: 15%;
   position: absolute;
   right: -100px;
-  top: 80px; }
+  top: 0px; }
+  .member_ballon_blue img {
+    width: 100%; }
 
 .member_light {
   width: 20%;
   position: absolute;
   right: -270px;
   bottom: -100px; }
+  .member_light img {
+    width: 100%; }
 
 .member_clound {
   width: 15%;
   position: absolute;
   right: -200px;
   bottom: 60px; }
+  .member_clound img {
+    width: 100%; }
 
 .member_clound2 {
   width: 8%;
   position: absolute;
   right: -250px;
   bottom: 95px; }
+  .member_clound2 img {
+    width: 100%; }
 
 .member_bread {
   padding: 3% 3% 1.5% 0%;
@@ -121,6 +133,8 @@ img {
   padding: 1.5% 3% 3% 0%;
   font-size: 0px;
   padding-left: 100px; }
+  .member_point img {
+    width: 100%; }
 
 .member_point_left {
   width: 50px;
@@ -137,9 +151,12 @@ img {
   color: #646464; }
 
 .member_info {
+  background-image: url(../img/member/hip-square.png);
   width: 100%;
   background-color: white;
   box-shadow: 10px 10px 5px gray; }
+  .member_info img {
+    width: 100%; }
 
 .member_info_nav ul {
   font-size: 0px; }
@@ -156,13 +173,13 @@ img {
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
-    margin-top: 100px;
+    margin-top: 50px;
     position: relative; }
     .member_info_nav ul li img {
       position: absolute;
       left: -11px;
       top: 10px;
-      opacity: .2;
+      opacity: 0;
       width: 120%; }
   .member_info_nav ul li:nth-child(1) {
     margin-left: 4.75%; }
@@ -186,7 +203,7 @@ img {
     margin: 0 auto;
     width: 228px;
     background-image: url(../img/member/hip-square.png);
-    border: 3px dashed #a5361c;
+    border: 3px dashed transparent;
     padding: 1% 1% 1% 1%; }
     .member_info_info_left div div:nth-child(1) {
       width: 100%;
@@ -195,6 +212,7 @@ img {
     .member_info_info_left div div:nth-child(2) {
       margin: 0 auto;
       font-size: 0px;
+      pointer-events: none;
       border: none;
       width: 100%;
       text-align: center; }
@@ -208,11 +226,11 @@ img {
 .member_info_info_line {
   position: absolute;
   left: 50%;
-  top: 50px;
+  top: 100px;
   display: inline-block;
   font-size: 16px;
   width: 2px;
-  height: 500px;
+  height: 450px;
   background-color: gray;
   opacity: .5; }
 
@@ -245,34 +263,23 @@ img {
       top: 8px;
       cursor: pointer; }
   .member_info_info_right div {
-    opacity: .5;
     font-size: 18px;
     padding: 10px;
     margin-bottom: 10px; }
     .member_info_info_right div label {
       margin-left: 5%;
-      margin-right: 10%; }
+      margin-right: 5%; }
     .member_info_info_right div input {
       text-align: center;
       width: 70%;
       height: 30px;
       font-size: 18px;
-      border: 3px dashed #a5361c; }
+      border: none;
+      cursor: default; }
 
 .member_info_info_button {
-  padding: 7% 0 3% 0; }
-  .member_info_info_button div {
-    text-align: center;
-    color: white;
-    line-height: 40px;
-    margin: 0 auto;
-    font-size: 18px;
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
-    background-image: url(../img/member/memberbtnPink.png);
-    background-repeat: no-repeat;
-    background-size: cover; }
+  padding: 7% 0 3% 0;
+  text-align: center; }
 
 .member_info_line {
   padding: 4.75%; }
@@ -521,3 +528,92 @@ img {
     background-image: url(../img/member/memberbtnRed.png);
     background-repeat: no-repeat;
     background-size: cover; }
+
+.login {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); }
+
+.login_all {
+  position: relative;
+  background-image: url(../img/login/267836-1F31110113738.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 25%;
+  margin: 10% auto 0% auto; }
+
+.login_all_all {
+  padding: 8% 0; }
+  .login_all_all h1 {
+    text-shadow: 3px 3px 3px gray;
+    text-align: center;
+    font-size: 24px; }
+  .login_all_all input {
+    border: 3px dashed #a5361c;
+    width: 75%;
+    background-image: url(../img/member/hip-square.png);
+    opacity: .8;
+    padding: 3%;
+    display: block;
+    font-size: 18px;
+    margin: 10% auto 0 auto; }
+  .login_all_all input:nth-child(2) {
+    margin-top: 5%; }
+  .login_all_all a {
+    color: black;
+    padding: 1% 2% 1% 1%;
+    text-align: right;
+    width: 18%;
+    display: inline-block;
+    margin-left: 69.5%;
+    font-size: 16px;
+    margin-top: 5%;
+    background-image: url(../img/member/hip-square.png);
+    border: 1px dashed #a5361c; }
+
+.login_login {
+  display: block;
+  margin: 0 auto;
+  margin-top: 8%; }
+
+.login_register {
+  display: block;
+  margin: 3% auto 0% auto; }
+
+.login_close {
+  padding: 1%;
+  border-radius: 50%;
+  background-color: #a5361c;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 6%;
+  cursor: pointer; }
+
+.register {
+  padding: 8% 0; }
+  .register h1 {
+    text-shadow: 3px 3px 3px gray;
+    text-align: center;
+    font-size: 24px; }
+
+.register_item {
+  font-size: 0px;
+  padding-top: 8%; }
+  .register_item label {
+    height: 46px;
+    display: inline-block;
+    font-size: 18px;
+    width: 25%;
+    padding: 3% 1% 3% 5%; }
+  .register_item input {
+    border: 3px dashed #a5361c;
+    width: 70%;
+    background-image: url(../img/member/hip-square.png);
+    padding: 3%;
+    display: inline-block;
+    font-size: 18px; }
