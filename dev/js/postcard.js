@@ -5,6 +5,7 @@ function doFirst() {
     let canvas = document.getElementById('postcardCanvas');
     let context = canvas.getContext('2d');
 
+
     let img = new Image();
     let postBGC_1 = document.getElementById("postBGC_1");
     let postBGC_2 = document.getElementById("postBGC_2");
@@ -24,9 +25,22 @@ function doFirst() {
             context.drawImage(img, 0, 0, canvas.clientWidth, canvas.height); //drawImage(img,x,y,width,height)
         });
     });
+
+    
+
 }
 window.addEventListener('load', doFirst);
 
+
+function doFirst() {
+    let canvas = document.getElementById('postcardCanvas');
+    let context = canvas.getContext('2d');
+    let img = new Image();
+    img.src = './img/postcard/postcardLOGO.png';
+    context.drawImage(img, 0, 0, 100, 100); //drawImage(img,x,y,width,height)
+
+}
+window.addEventListener('load', doFirst);
 
 //背景1
 function PostcardChangeBGI_1() {

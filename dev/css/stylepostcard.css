@@ -177,7 +177,7 @@ blockquote, q {
 
     */
 .card {
-  width: 340px;
+  width: 345px;
   height: 520px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
@@ -1148,7 +1148,7 @@ div.postcardimg4 {
   background-image: url(../img/postcard/just-waves.png);
   border-image-source: url(../img/postcard/postline.svg);
   border-image-width: 1.5em;
-  border-image-repeat: round;
+  border-image-repeat: space;
   border-image-slice: 20;
 }
 
