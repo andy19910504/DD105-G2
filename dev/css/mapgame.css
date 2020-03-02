@@ -61,7 +61,7 @@
 
 .fuda-container .progress-bar .progress {
   width: 22%;
-  border: 2px solid #ee0000;
+  border: 2px solid #c45c5c;
   border-radius: 5px;
 }
 
@@ -73,7 +73,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ee0000;
+  background-color: #c45c5c;
 }
 
 .fuda-container .progress-bar .index:nth-child(3) {
@@ -84,7 +84,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ee0000;
+  background-color: #c45c5c;
 }
 
 .fuda-container .progress-bar .index:nth-child(4) {
@@ -148,7 +148,7 @@
   position: relative;
 }
 
-.select .route-name {
+.select .option .route-name {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -158,12 +158,58 @@
   position: absolute;
 }
 
-.select .label {
+.select .option .label {
   width: 100%;
 }
 
-.select .hide-label {
+.select .option .hide-label {
   visibility: hidden;
+}
+
+.select .switch {
+  top: -20px;
+  width: 100px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid #B3523A;
+  border-radius: 15px;
+  background-color: #fff;
+  position: relative;
+}
+
+.select .switch .button {
+  width: 25px;
+  height: 25px;
+  background-color: #B3523A;
+  border: 2px solid #B3523A;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  left: -2px;
+}
+
+.select .switch .on {
+  left: 74px;
+}
+
+.select .switch .mapMode, .select .switch .gameMode {
+  font-size: 10px;
+}
+
+.select .switch .mapMode {
+  margin-left: 2px;
+  line-height: 1.3;
+  text-align-last: left;
+}
+
+.select .switch .gameMode {
+  margin-right: 10px;
+  line-height: 1.3;
+  text-align: right;
+}
+
+.select .switch .off {
+  display: none;
 }
 
 .game-container {
@@ -202,5 +248,48 @@
   -webkit-transform: translate(-50%, -60%);
           transform: translate(-50%, -60%);
   position: absolute;
+}
+
+.map-container {
+  margin: 0 auto;
+  width: 63%;
+  height: 550px;
+  border: 6px solid #ccc;
+  border-radius: 6px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.hide-container {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .pic-container {
+    width: 90%;
+  }
+  .switch {
+    display: block;
+    margin: 30px 50px 0;
+  }
+  .bubble {
+    position: relative;
+  }
+  .fuda-container {
+    position: relative;
+  }
+  .campus {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .game-container {
+    width: 100%;
+  }
+  .map-container {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=mapgame.css.map */

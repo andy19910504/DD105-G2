@@ -1,0 +1,98 @@
+.header, .fullHeader {
+  z-index: 2;
+}
+
+.title {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.pic-container {
+  margin: 100px auto 200px;
+  width: 1200px;
+  position: relative;
+}
+
+.bubble {
+  width: 150px;
+  top: -30px;
+  left: 30px;
+  position: absolute;
+}
+
+.campus {
+  width: 200px;
+  right: 0;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  position: absolute;
+}
+
+.search-area {
+  margin: 70px auto 0;
+  width: 63%;
+  height: 70px;
+  position: relative;
+}
+
+.search, .btnPink, .btnRed {
+  display: inline-block;
+}
+
+.search {
+  margin: 0 20px;
+  width: 200px;
+  height: 39px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+.btnRed {
+  position: absolute;
+  right: 0;
+}
+
+.map-container {
+  margin: 0 auto;
+  width: 63%;
+  height: 550px;
+  border: 6px solid #ccc;
+  border-radius: 6px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 576px) {
+  .pic-container {
+    width: 90%;
+  }
+  .bubble {
+    position: relative;
+  }
+  .campus {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  .search-area {
+    margin: 0;
+    width: 100%;
+    height: 120px;
+  }
+  .search {
+    margin: 0 10px 0 20px;
+    width: 170px;
+    height: 30px;
+  }
+  .btnRed {
+    display: block;
+    margin: 10px auto;
+  }
+  .map-container {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=custom.css.map */

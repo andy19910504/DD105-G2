@@ -24,13 +24,12 @@
   to {
     transform: rotate(10deg); } }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   .banner_01 .routeTitle {
     width: unset;
     height: unset; }
   .banner_01 .routeTitleMoveBlock {
     width: 375px;
-    height: 100%;
     position: absolute;
     top: 200px; }
   .banner_01 .routeTitleImage1 {
@@ -38,3 +37,186 @@
   .banner_01 .routeTitleImage2 {
     width: 25%;
     left: 70px; } }
+
+.sloganBlock {
+  width: 100%;
+  display: flex;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center; }
+
+@media screen and (max-width: 1023px) {
+  .routeSloganImage {
+    width: 550px; } }
+
+@media screen and (max-width: 575px) {
+  .routeSloganImage {
+    width: 360px; } }
+
+.routeFilterBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.routeFilterBlock .routeFilter {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; }
+
+.routeFilterBlock .routeFilter li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 52px;
+  font-size: 24px;
+  font-weight: bold; }
+
+.showFilter {
+  background-image: url("../img/route/showFilterImage.png"); }
+
+.filterBgImage {
+  width: 100%;
+  max-width: 1200px; }
+
+@media screen and (max-width: 575px) {
+  .routeFilterBlock .routeFilter li {
+    font-size: 18px; } }
+
+.routeContent {
+  margin: 60px 0; }
+
+.routeContent .routeBlockBgImage {
+  background-image: url("../img/route/routeBlockImage.png");
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 60px 0; }
+  @media screen and (max-width: 860px) {
+    .routeContent .routeBlockBgImage {
+      width: 90%; } }
+
+.routeBlockBgImage .routeTilteBlock {
+  width: 100%;
+  text-align: right;
+  padding-right: 60px; }
+  @media screen and (max-width: 860px) {
+    .routeBlockBgImage .routeTilteBlock {
+      margin-bottom: 60px; } }
+
+.routeBlockBgImage .routeTilteBlock img {
+  filter: brightness(0.3); }
+
+.routeBlockBgImage .routeBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.routeBlock .routeBlockPart {
+  display: flex;
+  margin-top: 60px; }
+
+.routeBlock .routeBlockPart:first-child {
+  margin-top: unset; }
+
+.routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock {
+  order: 2; }
+
+.routeAttractionBlock {
+  position: relative; }
+  @media screen and (max-width: 860px) {
+    .routeAttractionBlock {
+      margin-bottom: 60px; } }
+
+.routeAttractionBlock .attractionTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(30px); }
+
+.attractionTitle .landMark {
+  animation: markMove 1.5s alternate infinite; }
+
+@keyframes markMove {
+  from {
+    transform: translateY(0px); }
+  to {
+    transform: translateY(5px); } }
+
+.routeAttractionBlock .attractionImageBlock {
+  background-color: #fff;
+  width: 400px;
+  height: 350px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  @media screen and (max-width: 575px) {
+    .routeAttractionBlock .attractionImageBlock {
+      width: 300px;
+      height: 250px; } }
+
+.attractionImageBlock .attractionImage {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-image: url("../img/route/AttractionBorder.png");
+  background-size: contain;
+  background-repeat: none;
+  overflow: hidden; }
+  @media screen and (max-width: 575px) {
+    .attractionImageBlock .attractionImage {
+      background-size: 100% 100%; } }
+
+.attractionImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; }
+
+.attractionImage a {
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  @media screen and (max-width: 575px) {
+    .attractionImage a {
+      width: 90%;
+      height: 90%; } }
+
+.attractionImage a::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(170, 216, 235, 0.45);
+  transform: rotate(55deg);
+  transform-origin: left top;
+  transition: transform 1s; }
+
+.attractionImage a:hover::after {
+  transform: rotate(0deg); }
+
+.routeAttractionBlock2 {
+  width: 400px;
+  height: 350px;
+  border: 1px solid #ccc; }
+  @media screen and (max-width: 860px) {
+    .routeAttractionBlock2 {
+      display: none; } }

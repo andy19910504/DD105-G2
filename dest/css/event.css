@@ -1,0 +1,248 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-family: "微軟正黑體";
+  vertical-align: baseline; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+* {
+  box-sizing: border-box; }
+
+/*
+     卡片：首頁、路線、心情、揪團，要使用的sample
+    
+     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
+
+    */
+.eventTitle {
+  padding-top: 10%;
+  width: 100%;
+  margin: 0 auto; }
+  .eventTitle img {
+    width: 100%; }
+
+.eventContent {
+  max-width: 1200px;
+  border: 1px solid red;
+  margin: 70px auto; }
+  .eventContent .newEvent {
+    width: 100%;
+    position: relative; }
+    .eventContent .newEvent .newEventTitle {
+      display: inline-block;
+      position: absolute;
+      left: -160px;
+      top: -160px; }
+    .eventContent .newEvent #slideBoard {
+      width: 100%;
+      border: 1px solid black;
+      overflow: hidden; }
+      .eventContent .newEvent #slideBoard ul {
+        position: relative;
+        display: flex; }
+        .eventContent .newEvent #slideBoard ul a {
+          display: inline-block; }
+          .eventContent .newEvent #slideBoard ul a li {
+            display: inline-flex;
+            float: left;
+            width: 1200px; }
+            .eventContent .newEvent #slideBoard ul a li .newEventPic {
+              background-color: #f2fbff;
+              padding: 30px 48px 50px 48px;
+              border: 1px solid #b0b0b0; }
+            .eventContent .newEvent #slideBoard ul a li .newEventText {
+              position: relative;
+              margin: 0 auto; }
+              .eventContent .newEvent #slideBoard ul a li .newEventText p {
+                padding-top: 32%;
+                font-size: 36px;
+                color: #646464;
+                font-family: 微軟正黑體; }
+
+#contentButton {
+  /* border: 1px solid red; */
+  height: 45px;
+  display: flex;
+  justify-content: center; }
+  #contentButton li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #589fb2;
+    margin: 25px 8px;
+    cursor: pointer; }
+  #contentButton li.clickMe {
+    background-color: #589fb2;
+    opacity: 0.6; }
+
+.cutLine {
+  width: 100%;
+  margin: 15px 0 80px 0; }
+  .cutLine img {
+    width: 100%; }
+
+.eventScan {
+  border: 1px solid green; }
+  .eventScan .catalog {
+    width: 100%;
+    position: relative;
+    margin: 60px 0; }
+    .eventScan .catalog:before {
+      content: "";
+      background-image: url(../img/event/event_bluepointl.png);
+      height: 30px;
+      width: 1200px;
+      position: absolute;
+      bottom: -40px; }
+    .eventScan .catalog ul {
+      display: flex;
+      flex-direction: row; }
+      .eventScan .catalog ul li {
+        font-size: 36px;
+        color: #1e1e1e;
+        margin: 10px 0px 0 0;
+        padding: 5px 25px;
+        cursor: pointer; }
+        .eventScan .catalog ul li.color {
+          background-image: url(../img/event/event_mark1.png);
+          height: 45px;
+          width: 200px; }
+        .eventScan .catalog ul li p {
+          font-family: 微軟正黑體; }
+
+.selector select {
+  width: 190px;
+  height: 30px;
+  padding: 5px;
+  color: #646464;
+  font-size: 16px; }
+
+.cardBox {
+  padding: 20px 0; }
+  .cardBox .cardLine {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 25px 0; }
+    .cardBox .cardLine .event {
+      width: 30%;
+      background-image: url(../img/event/event_cardback.png); }
+      .cardBox .cardLine .event.card {
+        width: 340px;
+        height: 510px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4); }
+      .cardBox .cardLine .event .cardPic {
+        margin: 15px auto;
+        text-align: center; }
+      .cardBox .cardLine .event .cardText {
+        width: 310px;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 3px; }
+        .cardBox .cardLine .event .cardText h1 {
+          font-size: 24px;
+          color: #1e1e1e;
+          font-weight: 550; }
+        .cardBox .cardLine .event .cardText p {
+          font-size: 18px;
+          color: #646464;
+          margin: 10px;
+          text-align: left;
+          letter-spacing: 4px; }
+        .cardBox .cardLine .event .cardText span {
+          color: #646464;
+          font-size: 16px;
+          display: inline-block;
+          margin: 5px;
+          cursor: pointer; }
+
+.viewMore {
+  margin: 10px auto;
+  text-align: center; }
+
+.lightbox_holdevent-target {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  top: -100%;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden; }
+  .lightbox_holdevent-target .lightbox_holdevent_info {
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    color: #333;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid #fff;
+    max-height: 0%;
+    max-width: 0%; }
+
+.lightbox_holdevent-target:target {
+  opacity: 1;
+  top: 0;
+  bottom: 0; }
+  .lightbox_holdevent-target:target .content,
+  .lightbox_holdevent-target:target img {
+    max-height: 100%;
+    max-width: 100%; }
+  .lightbox_holdevent-target:target .lightbox-close {
+    top: 5%; }
+
+.lightbox-close {
+  display: block;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  background: #139dd7;
+  color: #fff;
+  position: absolute;
+  top: 10%;
+  right: 5%; }
