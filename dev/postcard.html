@@ -1,57 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/stylepostcard.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/typewriter.js" defer></script>  <!--打字效果-->
+    <script src="./js/postcard.js"></script>
+    <script src="js/typewriter.js" defer></script>
+    <!--打字效果-->
     <title>情繫明信片</title>
 </head>
+
 <body>
-    <header>header</header>
-    <div class="banner">banner</div>
+    <header>
+        @@include('./layout/header.html',{
+        "display1":"",
+        "display2":"",
+        "display3":"",
+        "display4":"show",
+        "display5":""
+        })
+    </header>
+    <div class="banner_04"></div>
+    <!-- breadCrumb // breadCrumb
+    link：依序填入連結位子
+    src：放上圖片的路徑
+    -->
+    @@include('./layout/breadCrumb.html',{
+        "link1":"./google.com.tw",
+        "innerText1":"台北散步",
+        "link2":"./google.com.tw",
+        "innerText2":"情繫明信片",
+        "link3":"./google.com.tw",
+        "innerText3":"",
+        "link4":"./google.com.tw",
+        "innerText4":"",
+        "link5":"./google.com.tw",
+        "innerText5":"",
+        "link6":"./google.com.tw",
+        "innerText6":""
+        })
     <!--1.1明信片中間大區域-->
+
     <section class="postcardcontent">
-    <!--1.2明信片步驟-->
+        <div class="postcardimg1"><img class="postcardimg" src="./img/postcard/postcard1.png"></div>
+        <div class="postcardimg2"><img class="postcardimg" src="./img/postcard/postcard2.png"></div>
+        <div class="postcardimg3"><img class="postcardimg" src="./img/postcard/airplane.png"></div>
+        <div class="postcardimg4"><img class="postcardimg" src="./img/postcard/camera.png"></div>
+        <!--1.2明信片步驟-->
         <div class="postcardStepbox">
-            <span class="postStep ">
-                <div class="postStep_btn arrow1">
-                    <p>STEP.1<br>選擇材質</p>
-                </div>
+            <span class="postStep step1">
+                <p class="stepname">STEP.1<br>選擇材質</p>
             </span>
-            <span class="postStep ">
-                <div class="postStep_btn arrow2">
-                    <p>STEP.2<br>上傳照片</p>
-                </div>
+            <span class="arrow1"></span>
+            <span class="postStep step2">
+                <p class="stepname">STEP.2<br>上傳照片</p>
+                <p class="arrow2"></p>
             </span>
-            <span class="postStep ">
-                <div class="postStep_btn arrow3">
-                    <p>STEP.3<br>增加插圖</p>
-                </div>
+            <span class="arrow1"></span>
+            <span class="postStep step3">
+                <p class="stepname">STEP.3<br>增加插圖</p>
+                <p class="arrow3"></p>
             </span>
-            <span class="postStep ">
-                <div class="postStep_btn arrow4">
-                    <p>STEP.4<br>輸入內文</p>
-                </div>
+            <span class="arrow1"></span>
+            <span class="postStep step4">
+                <p class="stepname">STEP.4<br>輸入內文</p>
+                <p class="arrow4"></p>
             </span>
-            <span class="postStep ">
-                <div class="postStep_btn arrow5">
-                    <p>STEP.5<br>寄給朋友</p>
-                </div>
+            <span class="arrow1"></span>
+            <span class="postStep step5">
+                <p class="stepname">STEP.5<br>寄給朋友</p>
             </span>
         </div>
-    <!--1.3明信片客製畫面-->
+        <!--1.3明信片客製畫面-->
         <div class="postcardMain">
-    <!--2.1明信片左邊預覽畫面-->
+            <!--2.1明信片左邊預覽畫面-->
             <div class="postLeft">
-                
+                <div class="postWhiteBack" id="postWhiteBack">
+                    <canvas id="postcardCanvas"></canvas>
+                    <div class="Oval" id="Oval"><img src="../img/postcard/postcardLOGO.png" alt=""></div>
+                </div>
             </div>
-    <!--2.2明信片右邊編輯畫面-->
-            <div class="postRight"></div>
+            <!--2.2明信片右邊編輯畫面-->
+            <div class="postRight">
+                <!-- ==============(3-1)操作畫面.postRight_1(選明信片材質)============== -->
+                <div class="postRight_1" id="postRight_1">
+                    <div class="postRightDIY">
+                        <h1>選個喜歡的材質吧</h1>
+                        <!-- (1)3個可選用背景 -->
+                        <div class="poschoose">
+                            <div class="postBGC_1 " id="postBGC_1">
+                                <img src="./img/postcard/hip-square.png" alt="postBGC">
+                            </div>
+                            <div>古風格線</div>
+                            <div class="postBGC_2 " id="postBGC_2">
+                                <img src="./img/postcard/squared_metal_@2X.png" alt="postBGC">
+                            </div>
+                            <div>點點紛灰</div>
+                            <div class="postBGC_3 " id="postBGC_3">
+                                <img src="./img/postcard/p0126_m.png" alt="postBGC">
+                            </div>
+                            <div>馬卡粉紅</div>
+                        </div>
+                    </div><!-- .postRightDIY_1結束div -->
+                    <div class="step_btn1">
+                        @@include('./layout/btnRed.html',{
+                        "innerText":"下一步"
+                        })
+                    </div>
+                </div><!-- .postRight_1結束div -->
+                <!-- ==============(3-2)操作畫面.postRight_2(上傳照片)============== -->
+                <div class="postRight_2" id="postRight_2">
+                    <div class="postRightDIY">
+                        <h3>加上一些九份美食</h3>
+                        <div>
+                            <!-- (1)3個可選用食物 -->
+                            <div>
+                                <div class="postDecoFood_1 postDecoFood" id="postDecoFood_1">
+                                    <img src="images/postcard/foodDeco-rect-1.png" alt="postDeco">
+                                </div>
+                                <div class="postDecoFood_2 postDecoFood" id="postDecoFood_2">
+                                    <img src="images/postcard/foodDeco-rect-2.png" alt="postDeco">
+                                </div>
+                                <div class="postDecoFood_3 postDecoFood" id="postDecoFood_3">
+                                    <img src="images/postcard/foodDeco-rect-3.png" alt="postDeco">
+                                </div>
+                            </div>
+                            <div>
+                                <div id="postDecoFoodWord_1">
+                                    <p>芋圓</p>
+                                </div>
+                                <div id="postDecoFoodWord_2">
+                                    <p>草仔粿</p>
+                                </div>
+                                <div id="postDecoFoodWord_3">
+                                    <p>魚丸</p>
+                                </div>
+                            </div>
+                            <!-- (2)教學 -->
+                            <div>
+                                <div class="postcardTeachBox">
+                                    <img src="images/postcard/teachCursors-1move.png" alt="teachPic"
+                                        id="stepTwoTypePic">
+                                    <div class="postcardTeachText">
+                                        <p id="stepTwoType1"></p>
+                                        <p id="stepTwoType2"></p>
+                                        <p id="stepTwoType3"></p>
+                                        <p id="stepTwoType4"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="postcardTeach postcardTeach3" id="postcardTeach3">點擊芋園試試</span>
+                    </div><!-- .postRightDIY結束div -->
+                    <div class="postDIYBtn_Wrap">
+                        <div class="whiteButton postDIYBtn_2_Back postDIYBtn" id="postDIYBtn_2_Back">上一步</div>
+                        <div class="whiteButton postDIYBtn_3_Next postDIYBtn" id="postDIYBtn_3_Next">下一步</div>
+                    </div>
+                </div><!-- .postRight_2結束div -->
+            </div>
         </div>
     </section>
-    <footer>footer</footer>
+    <!-- footer // -->
+    @@include('./layout/footer.html')
+    <div class="image"></div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/goTop.js"></script>
+    <script src="js/fabric.min.js"></script>
 </body>
+
 </html>

@@ -1,19 +1,8 @@
 @import "base/var.scss";
 @import "base/reset.scss";
 
-header.fullHeader nav ul li img{
-    width: auto;
-}
-footer .footerCloud .footerCloud170{
-    width: auto;
-}
-footer .footerCloud .footerCloud122{
-    width: auto;
-}
 
-img {
-    width: 100%;
-}
+
 
 .minheightbig {
     min-height: 656px;
@@ -41,6 +30,9 @@ img {
 }
 
 .member_sun {
+    img{
+        width: 100%;
+    }
     width: 20%;
     // border: 1px solid red;
     position: absolute;
@@ -51,6 +43,9 @@ img {
 }
 
 .member_ballon {
+    img{
+        width: 100%;
+    }
     width: 15%;
     position: absolute;
     left: -175px;
@@ -59,6 +54,9 @@ img {
 }
 
 .member_ballon_two {
+    img{
+        width: 100%;
+    }
     width: 7%;
     position: absolute;
     left: -230px;
@@ -67,15 +65,21 @@ img {
 }
 
 .member_ballon_blue {
-    width: 10%;
+    img{
+        width: 100%;
+    }
+    width: 15%;
     // border: 1px solid red;
     position: absolute;
     right: -100px;
-    top: 80px;
+    top: 0px;
 
 }
 
 .member_light {
+    img{
+        width: 100%;
+    }
     width: 20%;
     // border: 1px solid red;
     position: absolute;
@@ -84,6 +88,9 @@ img {
 }
 
 .member_clound {
+    img{
+        width: 100%;
+    }
     width: 15%;
     // border: 1px solid red;
     position: absolute;
@@ -92,6 +99,9 @@ img {
 }
 
 .member_clound2 {
+    img{
+        width: 100%;
+    }
     width: 8%;
     // border: 1px solid red;
     position: absolute;
@@ -107,6 +117,9 @@ img {
 }
 
 .member_point {
+    img{
+        width: 100%;
+    }
     padding: 1.5% 3% 3% 0%;
     // border: 1px solid brown;
     font-size: 0px;
@@ -139,6 +152,9 @@ img {
 }
 
 .member_info {
+    img{
+        width: 100%;
+    }
     background-image: url(../img/member/hip-square.png);
     width: 100%;
     // border: 1px solid red;
@@ -179,7 +195,7 @@ img {
                 position: absolute;
                 left: -11px;
                 top: 10px;
-                opacity: .2;
+                opacity: 0;
                 width: 120%;
             }
 
@@ -222,7 +238,7 @@ img {
         margin: 0 auto;
         width:228px;
         background-image: url(../img/member/hip-square.png);
-        border: 3px dashed $importantColor;
+        border: 3px dashed transparent;
         padding: 1% 1% 1% 1%;
 
         // min-width: 230px;
@@ -238,7 +254,7 @@ img {
         div:nth-child(2) {
             margin: 0 auto;
             font-size: 0px;
-            // border: 1px solid green;
+            pointer-events:none;
             border: none;
             width: 100%;
             text-align: center;
@@ -322,7 +338,7 @@ img {
 
     div {
         // border-bottom: 1px solid gray;
-        opacity: .5;
+        // opacity: .5;
         font-size: $fzContent;
         padding: 10px;
         margin-bottom: 10px;
@@ -330,7 +346,7 @@ img {
         label {
             // border: 1px solid red;
             margin-left: 5%;
-            margin-right: 10%;
+            margin-right: 5%;
         }
 
         ;
@@ -341,8 +357,9 @@ img {
             height: 30px;
             // border: 1px solid hotpink;
             font-size: $fzContent;
-            border: 3px dashed $importantColor;
+            border: none;
             // opacity: .5;
+            cursor: default;
         }
 
         ;
@@ -355,20 +372,7 @@ img {
     padding: 7% 0 3% 0;
 
     // border: 1px solid red;
-    div {
-        text-align: center;
-        color: white;
-        line-height: 40px;
-        margin: 0 auto;
-        font-size: $fzContent;
-        cursor: pointer;
-        // border: 1px solid red;
-        width: 120px;
-        height: 40px;
-        background-image: url(../img/member/memberbtnPink.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+    text-align: center;
 }
 
 .member_info_line {
