@@ -5,6 +5,7 @@
 .btnRed {       /*主要按鈕*/
     width: 175px;
     height: 60px;
+    border: unset;
     position: relative;
     display: inline-block;
     border-radius: 25px;
@@ -27,6 +28,7 @@
 .btnPink {      /*次要按鈕*/
     width: 120px;
     height: 40px;
+    border: unset;
     position: relative;
     display: inline-block;
     border-radius: 15px;
@@ -47,6 +49,7 @@
 .btnPinkStop {      /*次要按鈕_不能按*/
     width: 120px;
     height: 40px;
+    border: unset;
     position: relative;
     display: inline-block;
     border-radius: 15px;
@@ -81,6 +84,7 @@
 .btnCust {      /*自訂按鈕*/
     width: 105px;
     height: 105px;
+    border: unset;
     font-size: $fzInfo;
     color: $fcContent;
     font-weight: bold;
