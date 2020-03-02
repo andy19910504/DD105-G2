@@ -767,7 +767,8 @@ div.postcardimg4 {
 .stepname {
   font-size: 24px;
   margin-top: 50px;
-  color: #1e1e1e; }
+  color: #1e1e1e;
+  line-height: 30px; }
 
 .postcardMain {
   display: flex;
@@ -780,13 +781,13 @@ div.postcardimg4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   height: 100%;
   margin-right: 15px; }
 
 #postcardCanvas {
   width: 95%;
-  height: 95%;
+  height: 80%;
   border: brown 1px solid; }
 
 .postWhiteBack {
@@ -815,7 +816,7 @@ div.postcardimg4 {
   display: none; }
 
 .postRight {
-  width: 50%;
+  width: 40%;
   height: 100%;
   border: black 1px solid;
   background-image: url(../img/postcard/just-waves.png);
@@ -898,31 +899,31 @@ div.postcardimg4 {
   transform: scale(1, 1); }
 
 /*搭配js做選中效果*/
-.postBGC_1_Selected:hover {
+.postBGC_1_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_1_Selected:hover {
+.postBGC_1_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_1_Selected:hover {
+.postBGC_1_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_2_Selected:hover {
+.postBGC_2_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_2_Selected:hover {
+.postBGC_2_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_2_Selected:hover {
+.postBGC_2_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_3_Selected:hover {
+.postBGC_3_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_3_Selected:hover {
+.postBGC_3_Selected {
   border: solid 5px lightcoral; }
 
-.postBGC_3_Selected:hover {
+.postBGC_3_Selected {
   border: solid 5px lightcoral; }
 
 /*下一步按鍵*/

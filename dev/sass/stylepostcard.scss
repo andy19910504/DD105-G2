@@ -92,11 +92,12 @@ div.postcardimg4 {
     text-align: center;
 }
 
-//暫時文字
+//Step文字
 .stepname {
     font-size: $fzTitle;
     margin-top: 50px;
     color: $fcContent;
+    line-height: 30px;
 }
 
 
@@ -114,14 +115,14 @@ div.postcardimg4 {
     display: flex;
     align-items:center;
     justify-content:center;
-    width: 50%;
+    width: 60%;
     height: 100%;
     margin-right: 15px;
 }
 
 #postcardCanvas {
     width: 95%;
-    height: 95%;
+    height: 80%;
     border: brown 1px solid;
 }
 .postWhiteBack{
@@ -170,7 +171,7 @@ div.postcardimg4 {
 }
 
 .postRight {
-    width: 50%;
+    width: 40%;
     height: 100%;
     border: black 1px solid;
     background-image: url(../img/postcard/just-waves.png);
@@ -225,13 +226,13 @@ div.postcardimg4 {
 
 
 @each $var in _1,_2,_3 {
-.postBGC#{$var}_Selected:hover{
+.postBGC#{$var}_Selected{
     border: solid 5px lightcoral;
 }
-.postBGC#{$var}_Selected:hover{
+.postBGC#{$var}_Selected{
     border: solid 5px lightcoral;
 }
-.postBGC#{$var}_Selected:hover{
+.postBGC#{$var}_Selected{
     border: solid 5px lightcoral;
 }
 }
