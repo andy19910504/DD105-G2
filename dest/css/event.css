@@ -55,10 +55,6 @@ blockquote, q {
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
-@font-face {
-  font-family: "JasonHandwriting3";
-  src: url("../font/JasonHandwriting3-Regular.ttf"); }
-
 .eventTitle {
   padding-top: 10%;
   width: 100%;
@@ -102,7 +98,7 @@ blockquote, q {
                 padding-top: 32%;
                 font-size: 36px;
                 color: #646464;
-                font-family: JasonHandwriting3, 微軟正黑體; }
+                font-family: 微軟正黑體; }
 
 #contentButton {
   /* border: 1px solid red; */
@@ -153,7 +149,7 @@ blockquote, q {
           height: 45px;
           width: 200px; }
         .eventScan .catalog ul li p {
-          font-family: JasonHandwriting3, 微軟正黑體; }
+          font-family: 微軟正黑體; }
 
 .selector select {
   width: 190px;

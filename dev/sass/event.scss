@@ -1,10 +1,7 @@
 @import "./base/var.scss";
 @import "./base/reset.scss";
 @import "./layout/card.scss";
-@font-face {
-    font-family: "JasonHandwriting3";
-    src: url("../font/JasonHandwriting3-Regular.ttf");
-}
+
 
 //   banner文字
 .eventTitle {
@@ -56,7 +53,7 @@
                                 padding-top: 32%;
                                 font-size: 36px;
                                 color: $fcInfo;
-                                font-family: JasonHandwriting3, 微軟正黑體;
+                                font-family: 微軟正黑體;
                             }
                         }
                     }
@@ -126,7 +123,7 @@
                     width: 200px;
                 }
                 p {
-                    font-family: JasonHandwriting3, 微軟正黑體;
+                    font-family: 微軟正黑體;
                 }
             }
         }
