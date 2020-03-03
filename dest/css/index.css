@@ -492,9 +492,9 @@ div.psyTestWrap {
         font-weight: bold;
         transform: rotate(10deg); }
       div.psyTestWrap div.answerBox div.ansOption span.blueTag {
-        background-image: url(../../../img/index/ansTextBlue.png); }
+        background-image: url(../img/index/ansTextBlue.png); }
       div.psyTestWrap div.answerBox div.ansOption span.pinkTag {
-        background-image: url(../../../img/index/ansTextpink.png); }
+        background-image: url(../img/index/ansTextpink.png); }
       @media screen and (max-width: 1023px) {
         div.psyTestWrap div.answerBox div.ansOption span.ansText {
           width: 150px;
@@ -502,7 +502,7 @@ div.psyTestWrap {
           line-height: 40px;
           font-size: 18px; } }
       div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
-        background-image: url(../../../img/index/blueWave.png);
+        background-image: url(../img/index/blueWave.png);
         position: relative;
         padding: 20px;
         text-align: center;
@@ -578,7 +578,7 @@ div.routeWrap {
     div.routeWrap div.routeBox div.routeData {
       box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
       border-radius: 5px;
-      background-image: url(../../../img/index/linedpaper.png);
+      background-image: url(../img/index/linedpaper.png);
       display: inline-block;
       padding: 20px 0px;
       width: 700px;
@@ -943,6 +943,132 @@ div.gameWrap {
       left: unset;
       right: 8%; } }
 
+div.gpsWrap {
+  border: 1px solid blue;
+  width: 100%;
+  margin-top: 60px;
+  position: relative;
+  display: flex;
+  justify-content: center; }
+  div.gpsWrap div.gpsData {
+    width: 650px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    div.gpsWrap div.gpsData img.gpsText {
+      width: 550px;
+      transform: rotate(-7deg); }
+    div.gpsWrap div.gpsData img.gpsQrCode {
+      width: 200px;
+      margin-top: 50px; }
+    div.gpsWrap div.gpsData img.gpsArrowPink {
+      width: 170px;
+      position: absolute;
+      top: 65px;
+      left: 15px;
+      animation: gpsArrowPinkAni .6s infinite alternate; }
+
+@keyframes gpsArrowPinkAni {
+  from {
+    transform: translate(20px, 20px); }
+  to {
+    transform: translate(0px, 0px); } }
+    div.gpsWrap div.gpsData img.gpsArrow {
+      width: 200px;
+      position: absolute;
+      bottom: 170px;
+      right: -40px;
+      transform: rotate(-15deg);
+      animation: gpsArrowAni .6s infinite alternate; }
+
+@keyframes gpsArrowAni {
+  from {
+    transform: translate(-20px, 10px) rotate(-15deg); }
+  to {
+    transform: translate(0px, 0px) rotate(-15deg); } }
+    div.gpsWrap div.gpsData div.gpsBtn {
+      display: none; }
+  @media screen and (max-width: 1199px) {
+    div.gpsWrap div.gpsData {
+      width: 500px;
+      margin-right: 50px; }
+      div.gpsWrap div.gpsData img.gpsText {
+        width: 500px; }
+      div.gpsWrap div.gpsData img.gpsArrowPink {
+        width: 150px;
+        top: 70px;
+        left: -20px; }
+      div.gpsWrap div.gpsData img.gpsArrow {
+        width: 180px; } }
+  @media screen and (max-width: 1025px) {
+    div.gpsWrap div.gpsData {
+      width: 400px;
+      margin-right: 50px; }
+      div.gpsWrap div.gpsData img.gpsText {
+        width: 400px; }
+      div.gpsWrap div.gpsData img.gpsQrCode {
+        display: none; }
+      div.gpsWrap div.gpsData img.gpsArrowPink {
+        width: 100px;
+        top: 80px;
+        left: -10px; }
+      div.gpsWrap div.gpsData img.gpsArrow {
+        display: none; }
+      div.gpsWrap div.gpsData div.gpsBtn {
+        display: block;
+        margin-top: 50px; } }
+  div.gpsWrap img.gpsPhonePic {
+    width: 300px;
+    transform: rotate(8deg);
+    margin-right: 150px; }
+
+@keyframes iPhoneAni {
+  from {
+    transform: rotate(8deg); }
+  to {
+    transform: rotate(5deg); } }
+  @media screen and (max-width: 1025px) {
+    div.gpsWrap img.gpsPhonePic {
+      width: 200px;
+      margin-right: 80px; } }
+
+@media screen and (max-width: 767px) {
+  div.gpsWrap {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center; }
+    div.gpsWrap div.gpsData {
+      width: 100%;
+      margin-right: 0px;
+      margin-top: 30px; }
+      div.gpsWrap div.gpsData img.gpsText {
+        width: 350px; }
+      div.gpsWrap div.gpsData img.gpsQrCode {
+        display: none; }
+      div.gpsWrap div.gpsData img.gpsArrowPink {
+        width: 100px;
+        top: 5px;
+        left: 0px; }
+  @keyframes gpsArrowPinkAni {
+    from {
+      transform: translate(10px, 10px); }
+    to {
+      transform: translate(0px, 0px); } }
+      div.gpsWrap div.gpsData img.gpsArrow {
+        display: none; }
+      div.gpsWrap div.gpsData div.gpsBtn {
+        display: block;
+        margin-top: 30px; }
+    div.gpsWrap img.gpsPhonePic {
+      width: 200px;
+      margin-right: 0px; } }
+
 img.gameSubTitle {
   position: absolute;
   right: -5%;
@@ -967,3 +1093,119 @@ img.gameSubTitle {
 @media screen and (max-width: 767px) {
   img.gameSubTitle {
     right: 5%; } }
+
+img.milkTea {
+  width: 100px;
+  position: absolute;
+  right: -200px;
+  top: 500px;
+  transform: rotate(8deg); }
+
+img.camera {
+  width: 160px;
+  position: absolute;
+  right: -320px;
+  top: 650px;
+  transform: rotate(10deg); }
+
+img.star01 {
+  width: 40px;
+  position: absolute;
+  right: -325px;
+  top: 590px;
+  animation: starAni .8s infinite alternate; }
+
+img.star02 {
+  width: 50px;
+  position: absolute;
+  right: -180px;
+  top: 720px;
+  animation: starAni 1s infinite alternate-reverse; }
+
+@keyframes starAni {
+  from {
+    transform: scale(0.2);
+    opacity: .5; }
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
+img.skyLight01 {
+  width: 120px;
+  position: absolute;
+  left: -250px;
+  top: 1050px;
+  animation: skyLightAni 2s infinite alternate-reverse linear; }
+
+img.skyLight02 {
+  width: 300px;
+  position: absolute;
+  left: -320px;
+  top: 920px;
+  animation: skyLightAni 1s infinite alternate-reverse linear; }
+
+@keyframes skyLightAni {
+  from {
+    transform: translateY(0); }
+  from {
+    transform: translateY(-10px); } }
+
+img.eggBread {
+  width: 130px;
+  position: absolute;
+  right: -180px;
+  top: 1450px;
+  animation: skyLightAni 1.2s infinite alternate linear; }
+
+img.candyFruit {
+  width: 120px;
+  position: absolute;
+  right: -280px;
+  top: 1550px;
+  animation: skyLightAni 1s infinite alternate linear; }
+
+@media screen and (max-width: 1199px) {
+  img.milkTea,
+  img.camera,
+  img.star01,
+  img.star02,
+  img.skyLight01,
+  img.skyLight02,
+  img.eggBread,
+  img.candyFruit {
+    display: none; } }
+
+div.postWrap {
+  border: 1px solid blue;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  div.postWrap ul.stepBar {
+    border: 1px solid green;
+    width: 800px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; }
+    div.postWrap ul.stepBar li.stepBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 132.8px;
+      height: 152.8px;
+      background-image: url(../img/index/stepBoxWhite.png);
+      background-size: cover;
+      background-repeat: no-repeat; }
+      div.postWrap ul.stepBar li.stepBox span {
+        text-align: center;
+        color: #126591;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: 2px; }
+  div.postWrap #showCard {
+    width: 800px; }
+  div.postWrap div.postBtn {
+    margin-top: 20px; }
