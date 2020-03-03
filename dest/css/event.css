@@ -162,11 +162,12 @@ blockquote, q {
 .cardBox {
   padding: 20px 0; }
   .cardBox .cardLine {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     width: 100%;
     margin: 25px 0; }
     .cardBox .cardLine .event {
+      position: relative;
       width: 30%;
       background-image: url(../img/event/event_cardback.png); }
       .cardBox .cardLine .event.card {
@@ -174,8 +175,13 @@ blockquote, q {
         height: 510px;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4); }
+      .cardBox .cardLine .event .reportBtn {
+        font-size: 30px;
+        position: absolute;
+        right: 15px;
+        top: -10px; }
       .cardBox .cardLine .event .cardPic {
-        margin: 15px auto;
+        margin: 25px auto;
         text-align: center; }
       .cardBox .cardLine .event .cardText {
         width: 310px;
@@ -226,13 +232,13 @@ body {
   margin: 10px;
   position: absolute; }
 
-.lightbox_holdevent_info {
+.lightbox_holdevent_info, .lightbox_detailevent_info {
   position: fixed;
   background-color: #d4d3d3;
   background-image: url(../img/event/event_cardback.png);
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  display: block;
-  opacity: 1;
+  display: none;
+  opacity: 0;
   z-index: 51;
   width: 70%;
   height: 75%;
@@ -244,20 +250,20 @@ body {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 15px; }
-  .lightbox_holdevent_info .holdevent_title {
+  .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
     text-align: center;
     color: #1e1e1e;
     font-size: 24px;
     font-weight: 550;
     margin: 30px auto 20px auto; }
-  .lightbox_holdevent_info .holdevent_step {
+  .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
     margin: 0px auto;
     border: 1px solid red;
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center; }
-    .lightbox_holdevent_info .holdevent_step div {
+    .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
       margin: 0 55px;
       width: 110px;
       height: 110px;
@@ -267,9 +273,9 @@ body {
       font-size: 18px;
       border: 1px solid #6a9cb0;
       border-radius: 50%; }
-      .lightbox_holdevent_info .holdevent_step div.yellow {
+      .lightbox_holdevent_info .holdevent_step div.yellow, .lightbox_detailevent_info .holdevent_step div.yellow {
         background-color: #e4c56f; }
-      .lightbox_holdevent_info .holdevent_step div p {
+      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
         margin: 4px 0; }
 
 .holdevent_step1content {
@@ -364,11 +370,120 @@ body {
   .holdevent_step3content .step3Info {
     display: flex;
     margin: 20px 50px;
-    border: 1px solid greenk; }
+    border: 1px solid green; }
     .holdevent_step3content .step3Info .holderCover {
       width: 50%;
-      border: 1px solid purple; }
-      .holdevent_step3content .step3Info .holderCover .test {
-        width: 300px;
-        height: 240px;
-        background-color: #6a9cb0; }
+      border: 1px solid purple;
+      padding-left: 50px; }
+      .holdevent_step3content .step3Info .holderCover .holderCoverPic {
+        width: 420px; }
+        .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
+          border-radius: 5px;
+          width: 100%; }
+      .holdevent_step3content .step3Info .holderCover .holderCoverText {
+        margin: 10px 0;
+        letter-spacing: 1.2px; }
+        .holdevent_step3content .step3Info .holderCover .holderCoverText .title {
+          font-weight: 550;
+          font-size: 20px;
+          margin: 10px 0; }
+    .holdevent_step3content .step3Info .holderCoverInfo {
+      line-height: 2;
+      letter-spacing: 1.2px;
+      padding-left: 100px; }
+      .holdevent_step3content .step3Info .holderCoverInfo table {
+        margin-top: 10px; }
+        .holdevent_step3content .step3Info .holderCoverInfo table tr {
+          height: 50px; }
+          .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
+            width: 130px; }
+
+.detaileventContent {
+  border: 1px solid red;
+  font-size: 18px;
+  color: #1e1e1e;
+  display: flex;
+  padding-top: 50px;
+  letter-spacing: 1.2px;
+  justify-content: center;
+  line-height: 1.75; }
+  .detaileventContent .detaileventPic {
+    width: 50%;
+    border: 1px solid green; }
+    .detaileventContent .detaileventPic .title {
+      border: 1px solid purple;
+      display: flex;
+      position: relative; }
+      .detaileventContent .detaileventPic .title .eventInfotitle {
+        font-size: 24px;
+        font-weight: 550;
+        line-height: 32px;
+        margin-right: 150px; }
+      .detaileventContent .detaileventPic .title .reportBtnB {
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        right: 70px;
+        bottom: 0; }
+    .detaileventContent .detaileventPic .detaileventPicbox {
+      width: 550px;
+      padding-top: 40px; }
+      .detaileventContent .detaileventPic .detaileventPicbox img {
+        width: 100%;
+        border-radius: 5px; }
+  .detaileventContent .detaileventText {
+    padding: 70px 0px 0px 0px;
+    width: 45%;
+    border: 1px solid blue; }
+    .detaileventContent .detaileventText .eventInforow {
+      height: 45px;
+      line-height: 45px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center; }
+      .detaileventContent .detaileventText .eventInforow .eventrowTitle {
+        background-color: lightblue;
+        width: 30%;
+        margin-right: 40px;
+        border-radius: 3px;
+        text-align: center; }
+      .detaileventContent .detaileventText .eventInforow div:nth-child(2) {
+        width: 60%;
+        border: 1px solid red; }
+
+.enroll {
+  padding-top: 5px;
+  text-align: center; }
+
+.lightbox_report_info {
+  position: fixed;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  display: block;
+  opacity: 1;
+  z-index: 51;
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 15px; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    margin: 30px 0;
+    text-align: center; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    padding: 0 15px;
+    margin: 30px auto; }
+    .lightbox_report_info form input {
+      margin: 15px; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-evenly; }
