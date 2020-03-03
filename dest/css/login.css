@@ -84,7 +84,7 @@ blockquote, q {
     margin: 10% auto 0 auto; }
   .login_all_all input:nth-child(2) {
     margin-top: 5%; }
-  .login_all_all a {
+  .login_all_all a:nth-child(3) {
     color: black;
     padding: 1% 2% 1% 1%;
     text-align: right;
@@ -114,17 +114,20 @@ blockquote, q {
   top: 10px;
   width: 6%;
   cursor: pointer; }
+  .login_close img {
+    width: 100%; }
 
 .register {
   padding: 8% 0; }
   .register h1 {
     text-shadow: 3px 3px 3px gray;
     text-align: center;
-    font-size: 24px; }
+    font-size: 24px;
+    margin-bottom: 3%; }
 
 .register_item {
   font-size: 0px;
-  padding-top: 8%; }
+  padding: 4% 0; }
   .register_item label {
     height: 46px;
     display: inline-block;
