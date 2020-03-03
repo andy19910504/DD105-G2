@@ -205,7 +205,6 @@ div.gpsWrap{
         width: 300px;
         transform: rotate(8deg);
         margin-right: 150px;
-        animation: iPhoneAni .2s linear infinite alternate;
     }
     @keyframes iPhoneAni {
         from{transform: rotate(8deg);}
@@ -264,10 +263,7 @@ div.gpsWrap{
 }
 
 
-
-
-
-//----------------------副標泡泡
+//========副標泡泡=========
 img.gameSubTitle{
     position: absolute;
     right: -5%;
@@ -292,5 +288,93 @@ img.gameSubTitle{
 @media screen and (max-width:767px){
     img.gameSubTitle{
         right: 5%;
+    }
+}
+
+//========裝飾小圖=========
+
+//珍奶
+img.milkTea{
+    width: 100px;
+    position: absolute;
+    right: -200px;
+    top: 500px;
+    transform: rotate(8deg);
+}
+//相機
+img.camera{
+    width: 160px;
+    position: absolute;
+    right: -320px;
+    top: 650px;
+    transform: rotate(10deg);
+}
+//小星星
+img.star01{
+    width: 40px;
+    position: absolute;
+    right: -325px;
+    top: 590px;
+    animation: starAni .8s infinite alternate;
+}
+//大星星
+img.star02{
+    width: 50px;
+    position: absolute;
+    right: -180px;
+    top: 720px;
+    animation: starAni 1s infinite alternate-reverse;
+}
+@keyframes starAni{
+    from{transform: scale(.2); opacity: .5;}
+    to{transform: scale(1); opacity: 1;}
+}
+//天燈 (中間2顆)
+img.skyLight01{
+    width: 120px;
+    position: absolute;
+    left: -250px;
+    top: 1050px;
+    animation: skyLightAni 2s infinite alternate-reverse linear;
+}
+//天燈 (外圍2顆
+img.skyLight02{
+    width: 300px;
+    position: absolute;
+    left: -320px;
+    top: 920px;
+    animation: skyLightAni 1s infinite alternate-reverse linear;
+}
+@keyframes skyLightAni{
+    from{transform: translateY(0);}
+    from{transform: translateY(-10px);}
+}
+//雞蛋仔
+img.eggBread{
+    width: 130px;
+    position: absolute;
+    right: -180px;
+    top: 1450px;
+    animation: skyLightAni 1.2s infinite alternate linear;
+}
+//糖葫蘆
+img.candyFruit{
+    width: 120px;
+    position: absolute;
+    right: -280px;
+    top: 1550px;
+    animation: skyLightAni 1s infinite alternate linear;
+}
+
+@media screen and (max-width:1199px){
+    img.milkTea,
+    img.camera,
+    img.star01,
+    img.star02,
+    img.skyLight01,
+    img.skyLight02,
+    img.eggBread,
+    img.candyFruit{
+        display: none;
     }
 }
