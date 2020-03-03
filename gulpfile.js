@@ -78,12 +78,13 @@ gulp.task('minfly_img',function(){
     .pipe(gulp.dest('dest/min_img'));
 })
 
+
 // 和瀏覽器同步
-gulp.task('default', function () { // default 只要打gulp 即可執行
+gulp.task('default', function() { // default 只要打gulp 即可執行
     browserSync.init({
         server: {
             baseDir: "./dest",
-            index: "route.html"
+            index: "index.html"
         }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);

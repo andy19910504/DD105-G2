@@ -1,5 +1,8 @@
 .vscode/settings.json
 
 node_modules
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5a28adb13dd272ace71599357c56073f5e862098
 gulpfile.js

@@ -147,18 +147,25 @@
 .cardBox {
     padding: 20px 0;
     .cardLine {
-        display: inline-flex;
+        display: flex;
         justify-content: space-between;
         width: 100%;
         margin: 25px 0;
         .event {
+            position:relative;
             width: 30%;
             background-image: url(../img/event/event_cardback.png);
             &.card {
                 @include card(510px)
             }
+            .reportBtn{
+                font-size: 30px;
+                position: absolute;
+                right: 15px;
+                top: -10px;
+            }
             .cardPic {
-                margin: 15px auto;
+                margin: 25px auto;
                 text-align: center;
             }
             .cardText {
@@ -261,6 +268,9 @@
 //     z-index: 10000;
 // }
 
+body{
+    position: relative;
+}
 //  最底層black 
 .backDrop{
     background-color: rgba(24, 24, 24, 0.8);
@@ -274,20 +284,28 @@
     width: 100%;
     z-index: 50;
   }
+//  關閉 
+.close{
+    color: $fcInfo;
+    cursor: pointer;
+    right:10px;
+    font-size: 32px;
+    margin: 10px;
+    position: absolute;
+  }
 //   內容
-.lightbox_holdevent_info{
-    
+.lightbox_holdevent_info,.lightbox_detailevent_info{
+    position: fixed;
     background-color: #d4d3d3;
     background-image: url(../img/event/event_cardback.png);
     box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-    display: block;//
-    opacity:1; //
+    display: none;//
+    opacity:0; //
     z-index: 51;
     width: 70%;
-    height:70%;
+    height:75%;
     margin: auto;
-    position: absolute;
-    top: 10%;
+    top: 15%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -300,32 +318,39 @@
         color:$fcContent;
         font-size:$fzTitle;
         font-weight: 550;
-        margin: 30px auto;
+        margin: 30px auto 20px auto;
         
     }
     .holdevent_step{
         margin: 0px auto;
         border: 1px solid red;
         text-align: center;
-        height: 180px;
         display: flex;
         flex-direction: row;
         justify-content: center;
                 div{
-                    height: 100px;
-                    background-repeat: no-repeat;
-                    margin:  0 30px;
-                    width: 100px;
-                    // background-image: url(../img/event/event_step2.png);
+                    margin:  0 55px;
+                    width: 110px;
+                    height:110px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     font-size: $fzContent;
-                    position: relative;
-                    div{
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
+                    //圓形
+                    border: 1px solid #6a9cb0;
+                    border-radius: 50%;
+                    
+                    // 菱形
+                    // background-image: url(../img/postcard/white.png);
+                    // background-size: contain;
+                    // background-position: center;
+                    // background-repeat: no-repeat;
+                    // text-align: center;
+                    &.yellow{
+                        background-color: #e4c56f;
+                    }
+                    p{
+                        margin: 4px 0;
                     }
                 }
 
@@ -333,18 +358,295 @@
         
     }
 }
-// 2-3步驟
-  .holdevent_step2content,.holdevent_step3content{
+
+//第一步驟
+
+.holdevent_step1content{
+    
     display: none;
+    border: 1px solid purple;
+    position: absolute;
+    width: 100%;
+  
+}
+
+.chooseRoute{
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+   
+    .sliderWrap{
+        width: 1100px; 
+        overflow: hidden;
+        .routeBox{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid green;
+        width: 1600px;
+            div{
+                cursor: pointer;
+                background-color: #cce6f0;
+                width: 200px;
+                height: 200px;
+                margin:  0 auto;
+                line-height:200px;
+                font-size: $fzContent;
+                color: $fcInfo;
+            }
+        
+        }
+    
+    }
+    .slideBtn{
+        width: 45px;
+        border: 1px solid #6a9cb0;
+        padding-top: 73px;
+            img{
+                width: 100%;
+            }
+    }
+    
+}
+//選擇路線下方文字
+.routeClick{
+    margin: 0 auto;
+    border: 1px solid #6a9cb0;
+    width: 95%;
+    p{
+        margin: 10px 0 20px 0px;
+        font-size: $fzContent;
+        color: $fcInfo;
+    }
+}
+
+
+//上下一步按鈕
+.stepBtn{
+    display: flex;
+    justify-content: center;
+    div{
+        margin: 0px 60px 5px 60px;
+    }
+}
+// 第2步驟
+
+  .holdevent_step2content{
+    display: none;
+    .step2Info{
+        display: flex;
+        border: 1px solid green;
+        padding: 0 30px;
+        .holderPic{
+            width: 50%;
+            border: 1px solid purple;
+            input{
+                font-size: $fzContent;
+                color: $fcInfo;
+            }
+            div{
+                border-radius: 5px;
+                margin-top: 20px;
+                border: 3px dashed #6a9cb0;
+                width:480px;
+                height:265px;
+            }
+        }
+        .holderPicBox{
+            text-align: center;
+            line-height: 265px;
+            font-size: $fzContent;
+            color: $fcInfo;
+        }
+    }
+    .holderInfo{
+        margin: 10px auto;
+        font-size: $fzContent;
+        color: $fcInfo;
+        div{
+            margin: 10px 0;
+            input{
+                width: 280px;
+                height: 35px;
+            }
+            label{
+                margin-right:10px;
+            }
+        }
+    }
   }
 
-//  關閉 
-  .close{
+
+
+// 第3步驟
+.holdevent_step3content{
+    display: block;
+    font-size: $fzContent;
     color: $fcInfo;
-    cursor: pointer;
-    right:10px;
-    font-size: 32px;
-    margin: 10px;
-    position: absolute;
-  }
-  
+    .step3Info{
+        display: flex;
+        margin: 20px 50px;
+        border: 1px solid green;
+       .holderCover{
+           width: 50%;
+           border: 1px solid purple;
+           padding-left: 50px;
+           .holderCoverPic{
+               width: 420px;
+               img{
+                    border-radius: 5px;
+                    width: 100%;
+               }
+           }
+           .holderCoverText{
+                margin: 10px 0;
+                letter-spacing: 1.2px;
+                .title{
+                    font-weight: 550;
+                    font-size: 20px;
+                    margin: 10px 0;
+                }             
+           }
+       }
+       .holderCoverInfo{
+           line-height: 2;
+           letter-spacing: 1.2px;
+           padding-left: 100px;
+           table{
+               margin-top: 10px;
+                tr{
+                    height: 50px;
+                    td:nth-child(1){
+                        width:130px;
+                    }
+                }
+           }
+       }
+    }
+}
+
+//燈箱-活動詳細介紹
+// .lightbox_detailevent_info{
+//     display: block;
+//     opacity: 1;
+// }
+.detaileventContent{
+    border: 1px solid red;
+    font-size: $fzContent;
+    color: $fcContent;
+    display: flex;
+    padding-top: 50px;
+    letter-spacing: 1.2px;
+    justify-content: center;
+    line-height: 1.75;
+    .detaileventPic{
+        width: 50%;
+        border: 1px solid green;
+        .title{
+            border: 1px solid purple;
+            display:flex;
+            position: relative;
+            .eventInfotitle{
+                font-size: $fzTitle;
+                font-weight: 550;
+                line-height: 32px;
+                margin-right: 150px;
+            }
+            .reportBtnB{
+                font-size: 30px;
+                text-align: center;
+                position: absolute;
+                right: 70px;
+                bottom: 0;
+            }
+        }
+        .detaileventPicbox{
+            width: 550px;
+            padding-top: 40px;
+            img{
+                width:100%;
+                border-radius: 5px;
+            }
+        }
+    }
+    .detaileventText{
+        padding: 70px 0px 0px 0px;
+        width: 45%;
+        border: 1px solid blue;
+        // table{
+        //     border: 1px solid pink;
+        //     tr{
+        //         height: 45px;
+        //         margin-bottom: 10px;
+        //         td:nth-child(1){
+        //             background-color: lightblue;
+        //         }
+        //     }
+        // }
+        .eventInforow{
+            height: 45px;
+            line-height: 45px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            .eventrowTitle{
+                background-color: lightblue;
+                width: 30%;
+                margin-right: 40px;
+                border-radius: 3px;
+                text-align: center;
+            }
+            div:nth-child(2){
+                width: 60%;
+                border: 1px solid red;
+
+            }
+        }
+    }
+}
+
+//我要報名
+.enroll{
+    padding-top: 5px;
+    text-align: center
+}
+
+//檢舉燈箱
+.lightbox_report_info{
+    position: fixed;
+    background-color: #d4d3d3;
+    background-image: url(../img/event/event_cardback.png);
+    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+    display: block;//
+    opacity:1; //
+    z-index: 51;
+    width: 20%;
+    height:40%;
+    margin: auto;
+    top: 15%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 15px;
+    
+    .reportTitle{
+        font-size: $fzTitle;
+        margin: 30px 0;
+        text-align: center;
+    }
+    form{
+        font-size: 20px;
+        padding: 0 15px ;
+        margin: 30px auto;
+        input{
+            margin: 15px;
+        }
+    }
+    .reportSent{
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-evenly;
+    }
+}
