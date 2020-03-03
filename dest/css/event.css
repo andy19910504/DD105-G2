@@ -203,6 +203,9 @@ blockquote, q {
   margin: 10px auto;
   text-align: center; }
 
+body {
+  position: relative; }
+
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);
   display: none;
@@ -215,7 +218,16 @@ blockquote, q {
   width: 100%;
   z-index: 50; }
 
+.close {
+  color: #646464;
+  cursor: pointer;
+  right: 10px;
+  font-size: 32px;
+  margin: 10px;
+  position: absolute; }
+
 .lightbox_holdevent_info {
+  position: fixed;
   background-color: #d4d3d3;
   background-image: url(../img/event/event_cardback.png);
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
@@ -223,10 +235,9 @@ blockquote, q {
   opacity: 1;
   z-index: 51;
   width: 70%;
-  height: 70%;
+  height: 75%;
   margin: auto;
-  position: absolute;
-  top: 10%;
+  top: 15%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -238,37 +249,126 @@ blockquote, q {
     color: #1e1e1e;
     font-size: 24px;
     font-weight: 550;
-    margin: 30px auto; }
+    margin: 30px auto 20px auto; }
   .lightbox_holdevent_info .holdevent_step {
     margin: 0px auto;
     border: 1px solid red;
     text-align: center;
-    height: 180px;
     display: flex;
     flex-direction: row;
     justify-content: center; }
     .lightbox_holdevent_info .holdevent_step div {
-      height: 100px;
-      background-repeat: no-repeat;
-      margin: 0 30px;
-      width: 100px;
+      margin: 0 55px;
+      width: 110px;
+      height: 110px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       font-size: 18px;
-      position: relative; }
-      .lightbox_holdevent_info .holdevent_step div div {
-        position: absolute;
-        top: 0;
-        bottom: 0; }
+      border: 1px solid #6a9cb0;
+      border-radius: 50%; }
+      .lightbox_holdevent_info .holdevent_step div.yellow {
+        background-color: #e4c56f; }
+      .lightbox_holdevent_info .holdevent_step div p {
+        margin: 4px 0; }
 
-.holdevent_step2content, .holdevent_step3content {
+.holdevent_step1content {
+  display: none;
+  border: 1px solid purple;
+  position: absolute;
+  width: 100%; }
+
+.chooseRoute {
+  margin: 30px auto;
+  display: flex;
+  justify-content: center; }
+  .chooseRoute .sliderWrap {
+    width: 1100px;
+    overflow: hidden; }
+    .chooseRoute .sliderWrap .routeBox {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      border: 1px solid green;
+      width: 1600px; }
+      .chooseRoute .sliderWrap .routeBox div {
+        cursor: pointer;
+        background-color: #cce6f0;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        line-height: 200px;
+        font-size: 18px;
+        color: #646464; }
+  .chooseRoute .slideBtn {
+    width: 45px;
+    border: 1px solid #6a9cb0;
+    padding-top: 73px; }
+    .chooseRoute .slideBtn img {
+      width: 100%; }
+
+.routeClick {
+  margin: 0 auto;
+  border: 1px solid #6a9cb0;
+  width: 95%; }
+  .routeClick p {
+    margin: 10px 0 20px 0px;
+    font-size: 18px;
+    color: #646464; }
+
+.stepBtn {
+  display: flex;
+  justify-content: center; }
+  .stepBtn div {
+    margin: 0px 60px 5px 60px; }
+
+.holdevent_step2content {
   display: none; }
+  .holdevent_step2content .step2Info {
+    display: flex;
+    border: 1px solid green;
+    padding: 0 30px; }
+    .holdevent_step2content .step2Info .holderPic {
+      width: 50%;
+      border: 1px solid purple; }
+      .holdevent_step2content .step2Info .holderPic input {
+        font-size: 18px;
+        color: #646464; }
+      .holdevent_step2content .step2Info .holderPic div {
+        border-radius: 5px;
+        margin-top: 20px;
+        border: 3px dashed #6a9cb0;
+        width: 480px;
+        height: 265px; }
+    .holdevent_step2content .step2Info .holderPicBox {
+      text-align: center;
+      line-height: 265px;
+      font-size: 18px;
+      color: #646464; }
+  .holdevent_step2content .holderInfo {
+    margin: 10px auto;
+    font-size: 18px;
+    color: #646464; }
+    .holdevent_step2content .holderInfo div {
+      margin: 10px 0; }
+      .holdevent_step2content .holderInfo div input {
+        width: 280px;
+        height: 35px; }
+      .holdevent_step2content .holderInfo div label {
+        margin-right: 10px; }
 
-.close {
-  color: #646464;
-  cursor: pointer;
-  right: 10px;
-  font-size: 32px;
-  margin: 10px;
-  position: absolute; }
+.holdevent_step3content {
+  display: block;
+  font-size: 18px;
+  color: #646464; }
+  .holdevent_step3content .step3Info {
+    display: flex;
+    margin: 20px 50px;
+    border: 1px solid greenk; }
+    .holdevent_step3content .step3Info .holderCover {
+      width: 50%;
+      border: 1px solid purple; }
+      .holdevent_step3content .step3Info .holderCover .test {
+        width: 300px;
+        height: 240px;
+        background-color: #6a9cb0; }

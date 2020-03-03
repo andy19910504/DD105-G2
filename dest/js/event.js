@@ -12,6 +12,6 @@ $(document).ready(function () {
 
     function closeBox() {
         $(".backDrop,.lightbox_holdevent_info").animate({ "opacity": "0" }, 500);
-        $(".backDrop, .box").css("display", "block");
+        $(".backDrop,.lightbox_holdevent_info").css("display", "none");
     }
 });
