@@ -13,6 +13,7 @@
   text-align: center;
   line-height: 60px;
   background-image: url("../img/element/btnRed.png");
+  background-size: contain;
   -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
   -webkit-transition: -webkit-filter .1s;
@@ -40,6 +41,7 @@
   text-align: center;
   line-height: 40px;
   background-image: url("../img/element/btnPink.png");
+  background-size: contain;
   -webkit-transition: -webkit-filter .1s;
   transition: -webkit-filter .1s;
   transition: filter .1s;
@@ -65,6 +67,7 @@
   text-align: center;
   line-height: 40px;
   background-image: url("../img/element/btnPink.png");
+  background-size: contain;
   -webkit-filter: grayscale(1.1);
           filter: grayscale(1.1);
 }
@@ -73,14 +76,25 @@
   /*回到頂端*/
   width: 50px;
   height: 200px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 40px;
   display: inline-block;
   background-image: url("../img/element/btnGoTop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   -webkit-transition: -webkit-filter .1s;
   transition: -webkit-filter .1s;
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 575px) {
+  #btnGoTop {
+    width: 40px;
+    top: 40px;
+  }
 }
 
 .btnCust {
@@ -92,10 +106,14 @@
   font-weight: bold;
   text-align: center;
   line-height: 130px;
-  position: relative;
+  position: fixed;
+  z-index: 10;
+  right: 15%;
+  bottom: 30%;
   display: inline-block;
   border-radius: 50%;
   background-image: url("../img/element/btnCust.png");
+  background-size: contain;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: -webkit-filter .1s;
@@ -108,5 +126,21 @@
 .btnCust:hover {
   -webkit-filter: brightness(1.05);
           filter: brightness(1.05);
+}
+
+@media screen and (max-width: 1023px) {
+  .btnCust {
+    right: 5%;
+    bottom: 40%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .btnCust {
+    font-size: 13.91304px;
+    line-height: 110px;
+    width: 85px;
+    height: 85px;
+  }
 }
 /*# sourceMappingURL=btn.css.map */

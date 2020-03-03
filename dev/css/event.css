@@ -14,6 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline;
@@ -246,7 +247,7 @@ blockquote, q {
 }
 
 .cardBox .cardLine .event.card {
-  width: 345px;
+  width: 340px;
   height: 510px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);

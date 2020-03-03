@@ -52,14 +52,13 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   .banner_01 .routeTitle {
     width: unset;
     height: unset;
   }
   .banner_01 .routeTitleMoveBlock {
     width: 375px;
-    height: 100%;
     position: absolute;
     top: 200px;
   }
@@ -69,6 +68,319 @@
   .banner_01 .routeTitleImage2 {
     width: 25%;
     left: 70px;
+  }
+}
+
+.sloganBlock {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .routeSloganImage {
+    width: 550px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .routeSloganImage {
+    width: 360px;
+  }
+}
+
+.routeFilterBlock {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.routeFilterBlock .routeFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.routeFilterBlock .routeFilter li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 230px;
+  height: 52px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.showFilter {
+  background-image: url("../img/route/showFilterImage.png");
+}
+
+.filterBgImage {
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 575px) {
+  .routeFilterBlock .routeFilter li {
+    font-size: 18px;
+  }
+}
+
+.routeContent {
+  margin: 60px 0;
+}
+
+.routeContent .routeBlockBgImage {
+  background-image: url("../img/route/routeBlockImage.png");
+  width: 100%;
+  max-width: 1200px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  padding: 60px 0;
+}
+
+@media screen and (max-width: 860px) {
+  .routeContent .routeBlockBgImage {
+    width: 90%;
+  }
+}
+
+.routeBlockBgImage .routeTilteBlock {
+  width: 100%;
+  text-align: right;
+  padding-right: 60px;
+}
+
+@media screen and (max-width: 860px) {
+  .routeBlockBgImage .routeTilteBlock {
+    margin-bottom: 60px;
+  }
+}
+
+.routeBlockBgImage .routeTilteBlock img {
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+}
+
+.routeBlockBgImage .routeBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.routeBlock .routeBlockPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+}
+
+.routeBlock .routeBlockPart:first-child {
+  margin-top: unset;
+}
+
+.routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.routeAttractionBlock {
+  position: relative;
+}
+
+@media screen and (max-width: 860px) {
+  .routeAttractionBlock {
+    margin-bottom: 60px;
+  }
+}
+
+.routeAttractionBlock .attractionTitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(30px);
+          transform: translateY(30px);
+}
+
+.attractionTitle .landMark {
+  -webkit-animation: markMove 1.5s alternate infinite;
+          animation: markMove 1.5s alternate infinite;
+}
+
+@-webkit-keyframes markMove {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+@keyframes markMove {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+}
+
+.routeAttractionBlock .attractionImageBlock {
+  background-color: #fff;
+  width: 400px;
+  height: 350px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  .routeAttractionBlock .attractionImageBlock {
+    width: 300px;
+    height: 250px;
+  }
+}
+
+.attractionImageBlock .attractionImage {
+  width: 90%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-image: url("../img/route/AttractionBorder.png");
+  background-size: contain;
+  background-repeat: none;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 575px) {
+  .attractionImageBlock .attractionImage {
+    background-size: 100% 100%;
+  }
+}
+
+.attractionImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.attractionImage a {
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 575px) {
+  .attractionImage a {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+.attractionImage a::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(170, 216, 235, 0.45);
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.attractionImage a:hover::after {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.routeAttractionBlock2 {
+  width: 400px;
+  height: 350px;
+  border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 860px) {
+  .routeAttractionBlock2 {
+    display: none;
   }
 }
 /*# sourceMappingURL=route.css.map */

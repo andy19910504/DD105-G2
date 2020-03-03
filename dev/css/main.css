@@ -14,6 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline;
@@ -73,6 +74,7 @@ blockquote, q {
   text-align: center;
   line-height: 60px;
   background-image: url("../img/element/btnRed.png");
+  background-size: contain;
   -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
   -webkit-transition: -webkit-filter .1s;
@@ -100,6 +102,7 @@ blockquote, q {
   text-align: center;
   line-height: 40px;
   background-image: url("../img/element/btnPink.png");
+  background-size: contain;
   -webkit-transition: -webkit-filter .1s;
   transition: -webkit-filter .1s;
   transition: filter .1s;
@@ -125,6 +128,7 @@ blockquote, q {
   text-align: center;
   line-height: 40px;
   background-image: url("../img/element/btnPink.png");
+  background-size: contain;
   -webkit-filter: grayscale(1.1);
           filter: grayscale(1.1);
 }
@@ -133,14 +137,25 @@ blockquote, q {
   /*回到頂端*/
   width: 50px;
   height: 200px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 40px;
   display: inline-block;
   background-image: url("../img/element/btnGoTop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   -webkit-transition: -webkit-filter .1s;
   transition: -webkit-filter .1s;
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 575px) {
+  #btnGoTop {
+    width: 40px;
+    top: 40px;
+  }
 }
 
 .btnCust {
@@ -152,10 +167,14 @@ blockquote, q {
   font-weight: bold;
   text-align: center;
   line-height: 130px;
-  position: relative;
+  position: fixed;
+  z-index: 10;
+  right: 15%;
+  bottom: 30%;
   display: inline-block;
   border-radius: 50%;
   background-image: url("../img/element/btnCust.png");
+  background-size: contain;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: -webkit-filter .1s;
@@ -168,6 +187,22 @@ blockquote, q {
 .btnCust:hover {
   -webkit-filter: brightness(1.05);
           filter: brightness(1.05);
+}
+
+@media screen and (max-width: 1023px) {
+  .btnCust {
+    right: 5%;
+    bottom: 40%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .btnCust {
+    font-size: 13.91304px;
+    line-height: 110px;
+    width: 85px;
+    height: 85px;
+  }
 }
 
 /*
@@ -409,6 +444,7 @@ h1.smartPhoneLogo {
   width: 120px;
   display: none;
   position: fixed;
+  z-index: 101;
   top: 10px;
   left: 5px;
 }
@@ -593,7 +629,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_01 {
     background-image: url("../img/banner/banner_01.jpg");
     background-repeat: no-repeat;
@@ -605,7 +641,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_01 {
     background-image: url("../img/banner/banner_01.jpg");
     background-repeat: no-repeat;
@@ -628,7 +664,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_02 {
     background-image: url("../img/banner/banner_02.jpg");
     background-repeat: no-repeat;
@@ -640,7 +676,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_02 {
     background-image: url("../img/banner/banner_02.jpg");
     background-repeat: no-repeat;
@@ -663,7 +699,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_03 {
     background-image: url("../img/banner/banner_03.jpg");
     background-repeat: no-repeat;
@@ -675,7 +711,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_03 {
     background-image: url("../img/banner/banner_03.jpg");
     background-repeat: no-repeat;
@@ -698,7 +734,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_04 {
     background-image: url("../img/banner/banner_04.jpg");
     background-repeat: no-repeat;
@@ -710,7 +746,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_04 {
     background-image: url("../img/banner/banner_04.jpg");
     background-repeat: no-repeat;
@@ -733,7 +769,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_05 {
     background-image: url("../img/banner/banner_05.jpg");
     background-repeat: no-repeat;
@@ -745,7 +781,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_05 {
     background-image: url("../img/banner/banner_05.jpg");
     background-repeat: no-repeat;
@@ -768,7 +804,7 @@ h1.smartPhoneLogo img {
   height: 550px;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 1023px) {
   .banner_06 {
     background-image: url("../img/banner/banner_06.jpg");
     background-repeat: no-repeat;
@@ -780,7 +816,7 @@ h1.smartPhoneLogo img {
   }
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 575px) {
   .banner_06 {
     background-image: url("../img/banner/banner_06.jpg");
     background-repeat: no-repeat;
@@ -844,6 +880,7 @@ footer {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -927,7 +964,7 @@ footer .footerText p {
   font-size: 16px;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   footer .footerText p {
     font-size: 12.8px;
   }

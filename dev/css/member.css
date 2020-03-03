@@ -14,6 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline;
@@ -59,30 +60,6 @@ blockquote, q {
           box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-=======
-header.fullHeader nav ul li img {
-  width: auto;
-}
-
-footer .footerCloud .footerCloud170 {
-  width: auto;
-}
-
-footer .footerCloud .footerCloud122 {
-  width: auto;
-}
-
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
-img {
-  width: 100%;
-}
-
-<<<<<<< HEAD
-.member_content {
-  width: 100%;
-  background-image: url(/dev/images/hip-square.png);
-=======
 .minheightbig {
   min-height: 656px;
 }
@@ -96,15 +73,12 @@ img {
   width: 100%;
   padding-bottom: 100px;
   background-image: url(../img/member/gridme.png);
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 }
 
 .member_all {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
-<<<<<<< HEAD
-=======
   position: relative;
 }
 
@@ -115,11 +89,19 @@ img {
   top: 100px;
 }
 
+.member_sun img {
+  width: 100%;
+}
+
 .member_ballon {
   width: 15%;
   position: absolute;
   left: -175px;
   top: 350px;
+}
+
+.member_ballon img {
+  width: 100%;
 }
 
 .member_ballon_two {
@@ -129,11 +111,19 @@ img {
   top: 500px;
 }
 
+.member_ballon_two img {
+  width: 100%;
+}
+
 .member_ballon_blue {
-  width: 10%;
+  width: 15%;
   position: absolute;
   right: -100px;
-  top: 80px;
+  top: 0px;
+}
+
+.member_ballon_blue img {
+  width: 100%;
 }
 
 .member_light {
@@ -143,6 +133,10 @@ img {
   bottom: -100px;
 }
 
+.member_light img {
+  width: 100%;
+}
+
 .member_clound {
   width: 15%;
   position: absolute;
@@ -150,12 +144,19 @@ img {
   bottom: 60px;
 }
 
+.member_clound img {
+  width: 100%;
+}
+
 .member_clound2 {
   width: 8%;
   position: absolute;
   right: -250px;
   bottom: 95px;
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
+}
+
+.member_clound2 img {
+  width: 100%;
 }
 
 .member_bread {
@@ -170,11 +171,11 @@ img {
   padding-left: 100px;
 }
 
-<<<<<<< HEAD
-.member_left {
-=======
+.member_point img {
+  width: 100%;
+}
+
 .member_point_left {
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
   width: 50px;
   display: inline-block;
   font-size: 16px;
@@ -182,18 +183,6 @@ img {
   margin-right: 1%;
 }
 
-<<<<<<< HEAD
-.member_right {
-  display: inline-block;
-  font-size: 16px;
-  color: #646464;
-  line-height: 32px;
-}
-
-.member_info {
-  width: 100%;
-  border: 1px solid red;
-=======
 .member_point_right {
   line-height: 50px;
   height: 50px;
@@ -205,19 +194,15 @@ img {
 .member_info {
   background-image: url(../img/member/hip-square.png);
   width: 100%;
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
   background-color: white;
   -webkit-box-shadow: 10px 10px 5px gray;
           box-shadow: 10px 10px 5px gray;
 }
 
-<<<<<<< HEAD
-.member_info_nav {
-  border: 1px solid navy;
+.member_info img {
+  width: 100%;
 }
 
-=======
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 .member_info_nav ul {
   font-size: 0px;
 }
@@ -227,18 +212,6 @@ img {
   height: 125px;
   width: 13%;
   text-align: center;
-<<<<<<< HEAD
-  font-size: 16px;
-  color: #1e1e1e;
-  line-height: 125px;
-  margin-right: 2.5%;
-  background-image: url(../images/stamp.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-  margin-top: 100px;
-  font-weight: bolder;
-=======
   font-size: 24px;
   color: #1e1e1e;
   line-height: 125px;
@@ -248,7 +221,6 @@ img {
   background-size: contain;
   cursor: pointer;
   margin-top: 50px;
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
   position: relative;
 }
 
@@ -256,7 +228,7 @@ img {
   position: absolute;
   left: -11px;
   top: 10px;
-  opacity: .2;
+  opacity: 0;
   width: 120%;
 }
 
@@ -269,39 +241,6 @@ img {
 }
 
 .member_info_info {
-<<<<<<< HEAD
-  border: 1px solid red;
-  font-size: 0px;
-}
-
-.member_info_info_left {
-  width: 50%;
-  border: 1px solid red;
-  font-size: 0px;
-}
-
-.member_info_info_left div:nth-child(1) {
-  padding: 10% 25% 0% 25%;
-  font-size: 16px;
-  border: 1px solid green;
-}
-
-.member_info_info_left div:nth-child(1) img {
-  border: 1px solid aquamarine;
-}
-
-.member_info_info_left div:nth-child(2) {
-  font-size: 16px;
-  border: 1px solid green;
-}
-
-.member_info_info_line {
-  font-size: 16px;
-}
-
-.member_info_info_right {
-  font-size: 16px;
-=======
   font-size: 0px;
   position: relative;
   padding: 4.75%;
@@ -322,7 +261,7 @@ img {
   margin: 0 auto;
   width: 228px;
   background-image: url(../img/member/hip-square.png);
-  border: 3px dashed #a5361c;
+  border: 3px dashed transparent;
   padding: 1% 1% 1% 1%;
 }
 
@@ -335,6 +274,7 @@ img {
 .member_info_info_left div div:nth-child(2) {
   margin: 0 auto;
   font-size: 0px;
+  pointer-events: none;
   border: none;
   width: 100%;
   text-align: center;
@@ -403,7 +343,6 @@ img {
 }
 
 .member_info_info_right div {
-  opacity: .5;
   font-size: 18px;
   padding: 10px;
   margin-bottom: 10px;
@@ -411,7 +350,7 @@ img {
 
 .member_info_info_right div label {
   margin-left: 5%;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 .member_info_info_right div input {
@@ -419,25 +358,13 @@ img {
   width: 70%;
   height: 30px;
   font-size: 18px;
-  border: 3px dashed #a5361c;
+  border: none;
+  cursor: default;
 }
 
 .member_info_info_button {
   padding: 7% 0 3% 0;
-}
-
-.member_info_info_button div {
   text-align: center;
-  color: white;
-  line-height: 40px;
-  margin: 0 auto;
-  font-size: 18px;
-  cursor: pointer;
-  width: 120px;
-  height: 40px;
-  background-image: url(../img/member/memberbtnPink.png);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .member_info_line {
@@ -868,6 +795,5 @@ img {
   padding: 3%;
   display: inline-block;
   font-size: 18px;
->>>>>>> 5a092454e147e505f4e0da3f2a69e248546e0287
 }
 /*# sourceMappingURL=member.css.map */
