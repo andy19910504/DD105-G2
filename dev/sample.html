@@ -100,6 +100,16 @@
         <div class="banner_05"></div>
         <div class="banner_06"></div>
 
+        <!-- filter // tab 篩選器
+            innetText:篩選的名稱
+            註：並非每個分頁皆有，需自行在自己的scss中import './modules/'filter.scss';
+         -->
+         @@include('./layout/filter.html',{
+            "innerText1":"",
+            "innerText2":"",
+            "innerText3":""
+        })
+
         <!-- footer // -->
         @@include('./layout/footer.html')
     </div>
