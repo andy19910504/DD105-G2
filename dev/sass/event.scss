@@ -313,15 +313,17 @@
         justify-content: center;
                 div{
                     height: 100px;
-                    background-repeat: no-repeat;
+                   
                     margin:  0 30px;
                     width: 100px;
-                    // background-image: url(../img/event/event_step2.png);
+                    border-radius: 50%;
+                    
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     font-size: $fzContent;
                     position: relative;
+                    border: 1px solid #6a9cb0;
                     div{
                         position: absolute;
                         top: 0;
