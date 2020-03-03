@@ -1,12 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首頁</title>
+    <title>台北散步 | 首頁</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 </head>
 <body>
+    <!-- 導覽列 -->
+    <!-- 1200px上 滿版時，使用的選單 -->
+<header class="fullHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+
+</header>
+<!-- 1200px下時，轉乘使用漢堡選單 -->
+
+<header class="hamburgerHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="#"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="#"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="#"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="#"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+</header>
+<h1 class="smartPhoneLogo">
+    <a href="./index.html">
+        <img src="./img/header/logo272x170.png" alt="">
+    </a>
+</h1>
+<div class="hamburger hamburger--spring">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</div>
+
+    <!-- 第一屏 -->
+    <div class="bannerWrap">
+        <div class="bannerSlider">
+            <img src="./img/index/taipei101-1.jpg" class="slider01">
+            <img src="./img/index/taipei101-2.jpg" class="slider02">
+            <img src="./img/index/taipei101-3.jpg" class="slider03">
+        </div>
+        <div class="bannerBox">
+            <img src="./img/index/bannerBox.png">
+        </div>
+
+        <img src="./img/index/LOGO.svg" class="bannerLogo">
+
+        <div class="bannerLinkBox">
+            <a href="" class="link01"><img src="./img/index/bannerLink01.svg"></a>
+            <a href="" class="link02"><img src="./img/index/bannerLink02.svg"></a>
+            <a href="" class="link03"><img src="./img/index/bannerLink03.svg"></a>
+            <a href="" class="link04"><img src="./img/index/bannerLink04.svg"></a>
+            <a href="" class="link05"><img src="./img/index/bannerLink05.svg"></a>
+            <img src="./img/index/dashLine.gif" class="dashLine">
+        </div>
+    </div>
+    <!-- 第一屏Parallax -->
+    <div id="scene">
+        <img src="./img/index/cloud01.png" data-depth="0.5" class="cloud01">
+        <img src="./img/index/cloud02.png" data-depth="0.4" class="cloud02">
+        <img src="./img/index/cloud03.png" data-depth="0.2" class="cloud03">
+        <img src="./img/index/bird2.png" data-depth="0.3" class="bird01">
+        <img src="./img/index/bird3.png" data-depth="0.5" class="bird02">
+        <img src="./img/index/airplane.png" data-depth="0.2" class="airplane">
+    </div>
+
+    <div class="wrapper">
+        <!-- 散步遊台北 -->
+        <section>
+            <img src="./img/index/title01.png" class="sectionTitle">
+            <!-- 心理測驗 -->
+            <div class="psyTestWrap">
+                <img src="./img/index/psySubTitle.png" class="routeSubTitle">
+                <div id="question">
+                    Q:你比較喜歡哪種風景?
+                </div>
+                <div class="answerBox">
+                    <div class="ansOption">
+                        <span class="ansText blueTag">熱鬧街頭</span>
+                        <div class="ansBubble">
+                            <img src="./img/index/ans01.jpg" class="ansImg">
+                            <img src="./img/index/check.png" class="ansCheck">
+                        </div>
+                    </div>
+                    <div class="ansOption">
+                        <span class="ansText pinkTag">靜謐小巷</span>
+                        <div class="ansBubble">
+                            <img src="./img/index/ans02.jpg" class="ansImg">
+                            <img src="./img/index/check.png" class="ansCheck">
+                        </div>
+                    </div>
+                </div>
+                <div class="testCount">
+                    第<span id="nowCount">1</span>/5題
+                </div>
+            </div>
+            <!-- 散步路線 -->
+            <div class="routeWrap">
+                <img src="./img/index/routeSubTitle.png" class="routeSubTitle -routeTitle">
+                <div class="routeBox">
+                    <div class="routePaper">
+                        <a href="" class="routeLink"><img src="./img/index/route01.png"></a>
+                        <div class="routeData">
+                            <img src="./img/index/routeArrow.png" class="routeArrow01">
+                            <p>
+                                <span>日式舊屋行</span> <br>
+                                青田七六→梁實秋故店→長慶廟→田野草居食屋→紀州庵<br>
+                                日治時期的木造房舍建築低調地在這座城市的巷弄裡呼吸…
+                            </p>
+                        </div>
+                    </div>
+                    <div class="routePaper">
+                        <a href="" class="routeLink"><img src="./img/index/route02.png"></a>
+                        <div class="routeData">
+                            <img src="./img/index/routeArrow.png" class="routeArrow02">
+                            <p>
+                                <span>文青品味旅</span> <br>
+                                登入土星→宅jai風格→有肉→Swell Co. Cafe→讀字書店<br>
+                                咖啡、花草、書本，細細品味台北巷弄間的文藝氣息…
+                            </p>
+                        </div>
+                    </div>
+                    <div class="routePaper">
+                        <a href="" class="routeLink"><img src="./img/index/route03.png"></a>
+                        <div class="routeData">
+                            <img src="./img/index/routeArrow.png" class="routeArrow03">
+                            <p>
+                                <span>職人散步去</span> <br>
+                                小廢墟→岸汐職人聚落→TAIGA 針葉林→文山公民會館→化南新村<br>
+                                走訪台北市的隱藏據點，窺探低調耕耘的職人生活…
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="moreRoute">
+                    <a href="#" class="btnRed">
+    More
+</a>
+                </div>
+                <img src="./img/index/grassLine.png" class="grassLine">
+
+
+            </div>
+            <!-- 裝飾小圖 -->
+            <img src="./img/index/sun.png" class="picSun">
+            <img src="./img/index/kumo01.png" class="picKumo01">
+            <img src="./img/index/kumo02.png" class="picKumo02">
+            <img src="./img/index/pic101.png" class="pic101">
+            <img src="./img/index/kumo02.png" class="picKumo03">
+            <img src="./img/index/kumo02.png" class="picKumo04">
+            <img src="./img/index/airBallon.png" class="airBallon01">
+            <img src="./img/index/airBallon02.png" class="airBallon02">
+            <img src="./img/index/airBallon03.png" class="airBallon03">
+            <img src="./img/index/airBallon04.png" class="airBallon04">
+            <img src="./img/index/airBallon05.png" class="airBallon05">
+            <img src="./img/index/airBallon06.png" class="airBallon06">
+        </section>
+
+        
+        <!-- 攻略地圖趣 -->
+        <section>
+            <img src="./img/index/title02.png" class="sectionTitle">
+             <!-- 小遊戲區塊 -->
+             <div class="gameWrap">
+                 <img src="./img/index/gameSubTitle.png" class="gameSubTitle">
+                 <div class="gameMapWrap">
+                    <img src="./img/index/map.jpg" class="gameMap">
+                    <img src="./img/index/gou.gif" class="gameRole">
+                 </div>
+                 <img src="./img/index/arrowKey.gif"class="arrowKey">
+                 <div class="playBtn">
+                    <a href="#" class="btnRed">
+                        Play
+                    </a>
+                 </div>
+             </div>
+
+            <!-- GPS模式區塊 -->
+            <div class="gpsWrap">
+                <img src="./img/index/GPSgameSubTitle.png" class="gameSubTitle">
+                <div class="gpsData">
+                    <img src="./img/index/GPStext.png" class="gpsText">
+                    <img src="./img/index/qrCode.png" class="gpsQrCode">
+                    <img src="./img/index/gpsArrowPink.png" class="gpsArrowPink">
+                    <img src="./img/index/gpsArrow.png" class="gpsArrow">
+                    <div class="gpsBtn">
+                        <a href="#" class="btnRed">
+    Start
+</a>
+                    </div>
+                </div>
+                <img src="./img/index/iPhoneGPS.png"class="gpsPhonePic">
+
+            </div>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <!-- 裝飾小圖 -->
+            <img src="./img/index/milkTea.png" class="milkTea">
+            <img src="./img/index/camera.png" class="camera">
+            <img src="./img/index/star01.png" class="star01">
+            <img src="./img/index/star02.png" class="star02">
+            <img src="./img/index/skyLight01.png" class="skyLight01">
+            <img src="./img/index/skyLight02.png" class="skyLight02">
+            <img src="./img/index/eggBread.png" class="eggBread">
+            <img src="./img/index/candyFruit.png" class="candyFruit">
+=======
+>>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
+=======
+>>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
+        </section>
+
+        <!-- 慢步寫心情 -->
+        <section>
+            <img src="./img/index/title04.png" class="sectionTitle">
+        </section>
+
+        <!-- 情繫明信片 -->
+        <section>
+            <img src="./img/index/title03.png" class="sectionTitle">
+            <div class="postWrap">
+                <ul class="stepBar">
+                    <li class="stepBox"><span>STEP.1<br>選擇材質</span></li>
+                    <li class="stepBox"><span>STEP.2<br>上傳照片</span></li>
+                    <li class="stepBox"><span>STEP.3<br>增加插圖</span></li>
+                    <li class="stepBox"><span>STEP.4<br>輸入內文</span></li>
+                    <li class="stepBox"><span>STEP.5<br>寄給朋友</span></li>
+                </ul>
+                <img src="./img/index/postCart0.png" id="showCard">
+                <div class="postBtn">
+                    <a href="#" class="btnRed">
+    開始製作
+</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- 揪團一起走 -->
+        <section>
+            <img src="./img/index/title05.png" class="sectionTitle">
+        </section>
+
+    </div>
+    <!-- 散步遊台北 -->
+    
+
+
+
+
+
+    
+    <!-- footer // -->
+    <footer>
+    <a id="btnGoTop"></a>
+    <div class="footerCloud">
+        <img src="./img/footer/footerCloud170.png" class="footerCloud170">
+        <img src="./img/footer/footerCloud122.png" class="footerCloud122">
+    </div>
+    <div class="footerLogo">
+        <img src="./img/footer/logo320x200.png">
+    </div>
+    <div class="footerText">
+        <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
+    </div>
+</footer>
+    <!-- ===== JS ===== -->
+    <script src="./js/common.js"></script>
+    <script src="./js/indexNav.js"></script>
+    <script src="./js/firstScreen.js"></script>
+    <script src="./js/indexPost.js"></script>
     
 </body>
 </html>
+

@@ -14,6 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-weight: inherit;
   font-style: inherit;
   font-size: 100%;
+  color: #1e1e1e;
   text-decoration: none;
   font-family: "微軟正黑體";
   vertical-align: baseline; }
@@ -49,18 +50,6 @@ blockquote, q {
 * {
   box-sizing: border-box; }
 
-header.fullHeader nav ul li img {
-  width: auto; }
-
-footer .footerCloud .footerCloud170 {
-  width: auto; }
-
-footer .footerCloud .footerCloud122 {
-  width: auto; }
-
-img {
-  width: 100%; }
-
 .minheightbig {
   min-height: 656px; }
 
@@ -84,42 +73,56 @@ img {
   position: absolute;
   left: -270px;
   top: 100px; }
+  .member_sun img {
+    width: 100%; }
 
 .member_ballon {
   width: 15%;
   position: absolute;
   left: -175px;
   top: 350px; }
+  .member_ballon img {
+    width: 100%; }
 
 .member_ballon_two {
   width: 7%;
   position: absolute;
   left: -230px;
   top: 500px; }
+  .member_ballon_two img {
+    width: 100%; }
 
 .member_ballon_blue {
-  width: 10%;
+  width: 15%;
   position: absolute;
   right: -100px;
-  top: 80px; }
+  top: 0px; }
+  .member_ballon_blue img {
+    width: 100%; }
 
 .member_light {
   width: 20%;
   position: absolute;
   right: -270px;
   bottom: -100px; }
+  .member_light img {
+    width: 100%; }
 
 .member_clound {
   width: 15%;
   position: absolute;
   right: -200px;
   bottom: 60px; }
+  .member_clound img {
+    width: 100%; }
 
 .member_clound2 {
   width: 8%;
   position: absolute;
   right: -250px;
   bottom: 95px; }
+  .member_clound2 img {
+    width: 100%; }
 
 .member_bread {
   padding: 3% 3% 1.5% 0%;
@@ -130,6 +133,8 @@ img {
   padding: 1.5% 3% 3% 0%;
   font-size: 0px;
   padding-left: 100px; }
+  .member_point img {
+    width: 100%; }
 
 .member_point_left {
   width: 50px;
@@ -150,6 +155,8 @@ img {
   width: 100%;
   background-color: white;
   box-shadow: 10px 10px 5px gray; }
+  .member_info img {
+    width: 100%; }
 
 .member_info_nav ul {
   font-size: 0px; }
@@ -172,7 +179,7 @@ img {
       position: absolute;
       left: -11px;
       top: 10px;
-      opacity: .2;
+      opacity: 0;
       width: 120%; }
   .member_info_nav ul li:nth-child(1) {
     margin-left: 4.75%; }
@@ -196,7 +203,7 @@ img {
     margin: 0 auto;
     width: 228px;
     background-image: url(../img/member/hip-square.png);
-    border: 3px dashed #a5361c;
+    border: 3px dashed transparent;
     padding: 1% 1% 1% 1%; }
     .member_info_info_left div div:nth-child(1) {
       width: 100%;
@@ -205,6 +212,7 @@ img {
     .member_info_info_left div div:nth-child(2) {
       margin: 0 auto;
       font-size: 0px;
+      pointer-events: none;
       border: none;
       width: 100%;
       text-align: center; }
@@ -255,34 +263,23 @@ img {
       top: 8px;
       cursor: pointer; }
   .member_info_info_right div {
-    opacity: .5;
     font-size: 18px;
     padding: 10px;
     margin-bottom: 10px; }
     .member_info_info_right div label {
       margin-left: 5%;
-      margin-right: 10%; }
+      margin-right: 5%; }
     .member_info_info_right div input {
       text-align: center;
       width: 70%;
       height: 30px;
       font-size: 18px;
-      border: 3px dashed #a5361c; }
+      border: none;
+      cursor: default; }
 
 .member_info_info_button {
-  padding: 7% 0 3% 0; }
-  .member_info_info_button div {
-    text-align: center;
-    color: white;
-    line-height: 40px;
-    margin: 0 auto;
-    font-size: 18px;
-    cursor: pointer;
-    width: 120px;
-    height: 40px;
-    background-image: url(../img/member/memberbtnPink.png);
-    background-repeat: no-repeat;
-    background-size: cover; }
+  padding: 7% 0 3% 0;
+  text-align: center; }
 
 .member_info_line {
   padding: 4.75%; }

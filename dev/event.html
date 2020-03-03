@@ -169,8 +169,7 @@
                 </a>
             </li>
         </ul>
-        <!-- 我要揪團按鈕 // btnCust link：連結的網址 innerText：按鈕名稱 -->
-        <a href="#notice" class="btnCust">我要揪團</a>
+
         <!-- 內容 -->
         <div class="eventContent">
             <!-- 最新揪團 -->
@@ -253,10 +252,10 @@
                 <div class="selector">
                     <form>
                         <select name="eventSort">
-                                <option value="按截止日期排列">按截止日期排列</option>
-                                <option value="按發起時間排列">按發起時間排列</option>
-                                <!-- 　      <option value=""></option> -->
-                            </select>
+                            <option value="按截止日期排列">按截止日期排列</option>
+                            <option value="按發起時間排列">按發起時間排列</option>
+                            <!-- 　      <option value=""></option> -->
+                        </select>
                     </form>
                 </div>
                 <div class="cardBox">
@@ -490,41 +489,51 @@
         </div>
 
     </div>
+    <!-- 我要揪團按鈕 // btnCust link：連結的網址 innerText：按鈕名稱 -->
+    <a href="#" class="btnCust lightbox">我要揪團</a>
     <!-- 燈箱們 -->
     <!-- 燈箱/發起揪團 -->
-    <div class="lightbox_holdevent-target" id="notice">
-        <!-- 關掉 -->
-        <a class="lightbox-close" href="#">X</a>
-        <div class="lightbox_holdevent_info">
-            <!-- x按鈕 -->
-            <div class="lightbox_closebtn"></div>
+    <!-- 最底層black -->
+    <div class="backDrop">
+    </div>
+    <!-- 內容 -->
+    <div class="lightbox_holdevent_info">
+        <!-- 關閉 -->
+        <div class="close">✘</div>
+        <!-- 題目 -->
+        <div class="holdevent_title">
             <h2>我要揪團</h2>
-            <!-- 步驟圈圈 -->
-            <div class="holdevent_step">
-                <ul>
-                    <li>
-                        <p>STEP 1</p>
-                        <p>選擇揪團路線</p>
-                    </li>
-                    <li>
-                        <p>STEP 2</p>
-                        <p>上傳照片+填寫資料</p>
-                    </li>
-                    <li>
-                        <p>STEP 3</p>
-                        <p>確定揪團資訊</p>
-                    </li>
-                </ul>
+        </div>
+        <!-- 步驟圈圈 -->
+        <div class="holdevent_step">
+            <div>
+                <div>
+                    <img src="./img/event/event_step2.png" alt="">
+                </div>
+                <p>STEP 1</p>
+                <p>選擇揪團路線</p>
             </div>
-            <!-- 第一步驟內容 -->
+
+            <div>
+                <p>STEP 2</p>
+                <p>上傳照片+填寫資料</p>
+            </div>
+            <div>
+                <p>STEP 3</p>
+                <p>確定揪團資訊</p>
+            </div>
+        </div>
+
+        <form action="">
+            <!-- 第一步 -->
             <div class="holdevent_step1content">
                 <div class="chooseRoute">
                     <span>
-                                <img src="./img/event/event_rightbtn.png" alt="">
-                            </span>
+                        <img src="./img/event/event_rightbtn.png" alt="">
+                    </span>
                     <span>
-                                <img src="./img/event/event_leftbtn.png" alt="">
-                            </span>
+                        <img src="./img/event/event_leftbtn.png" alt="">
+                    </span> -->
                     <div class="routeBox">
                         <div class="route1">
                             <p>官方路線1</p>
@@ -546,64 +555,62 @@
                         </div>
                     </div>
                 </div>
-                <!-- 下一步 -->
-                <div class="nextStep">下一步</div>
+                <!-- 上下一步 -->
+                <div class="1_backStep">上一步</div>
+                <div class="1_nextStep">下一步</div>
             </div>
             <!-- 第二步驟內容 -->
             <div class="holdevent_step2content">
-                <form>
-                    <div class="holderPic">
-                        <label class="label1" for="">
-                                    <br>
-                                    <input type="file">
-                                    未選擇任何圖片
-                                </label>
-                        <div class="holderPicBox">
-                            <p>揪團封面照片</p>
-                        </div>
+                <div class="holderPic">
+                    <label class="label1" for="">
+                        <br>
+                        <input type="file">
+                        未選擇任何圖片
+                    </label>
+                    <div class="holderPicBox">
+                        <p>揪團封面照片</p>
                     </div>
-                    <label class="label2" for="">
-                                <br>
-                                活動名稱:
-                                <input type="text" name="actTitle" placeholder="活動名稱">
-                                活動日期:
-                                <input type="date" name="act_begin" placeholder="活動日期">
-                                集合時間:
-                                <input type="date" name="act_end" placeholder="集合時間">
-                                集合地點:
-                                <input type="text" name="actLoc" placeholder="集合地點">
-                                活動介紹:
-                                <input type="text" name="actIntro" placeholder="活動介紹">
-                            </label>
-                    <div class="backStep">上一步</div>
-                    <div class="nextStep">下一步</div>
-                </form>
+                </div>
+                <label class="label2" for="">
+                    <br>
+                    活動名稱:
+                    <input type="text" name="actTitle" placeholder="活動名稱">
+                    活動日期:
+                    <input type="date" name="act_begin" placeholder="活動日期">
+                    集合時間:
+                    <input type="date" name="act_end" placeholder="集合時間">
+                    集合地點:
+                    <input type="text" name="actLoc" placeholder="集合地點">
+                    活動介紹:
+                    <input type="text" name="actIntro" placeholder="活動介紹">
+                </label>
+                <div class="2_backStep">上一步</div>
+                <div class="2_nextStep">下一步</div>
             </div>
             <!-- 第三步驟內容 -->
             <div class="holdevent_step3content">
-                <form>
-                    <div class="holderCover">
-                        <div class="holderCoverPic">
-                            <img src="" alt="">
-                        </div>
-                        <div class="holderCoverText">
-                            <p>官方路線2</p>
-                            <p>景點:台北101 -> 台北101 -> 台北101</p>
-                        </div>
+                <div class="holderCover">
+                    <div class="holderCoverPic">
+                        <img src="" alt="">
                     </div>
-                    <ul>
-                        <li>活動名稱:</li>
-                        <li>活動日期:</li>
-                        <li>集合時間:</li>
-                        <li>集合地點:</li>
-                        <li>活動介紹:</li>
-                    </ul>
-                    <div class="backStep">上一步</div>
-                    <div class="nextStep">提交</div>
-                </form>
+                    <div class="holderCoverText">
+                        <p>官方路線2</p>
+                        <p>景點:台北101 -> 台北101 -> 台北101</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>活動名稱:</li>
+                    <li>活動日期:</li>
+                    <li>集合時間:</li>
+                    <li>集合地點:</li>
+                    <li>活動介紹:</li>
+                </ul>
+                <div class="3_backStep">上一步</div>
+                <div class="3_nextStep">提交</div>
             </div>
-        </div>
+        </form>
     </div>
+
     <!-- 燈箱/揪團詳情 -->
     <div class="lightbox_detailevent">
         <div class="lightbox_detailevent_info">
@@ -663,6 +670,7 @@
     </div>
     <script src="./js/jquery-3.4.1.min.js "></script>
     <script src="./js/goTop.js "></script>
+    <script src="./js/event.js"></script>
 </body>
 
 </html>
