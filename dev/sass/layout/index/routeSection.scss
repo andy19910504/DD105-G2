@@ -40,10 +40,10 @@ div.psyTestWrap{
                 transform: rotate(10deg);
             }
             span.blueTag{
-                background-image: url(../../../img/index/ansTextBlue.png);
+                background-image: url(../img/index/ansTextBlue.png);
             }
             span.pinkTag{
-                background-image: url(../../../img/index/ansTextpink.png);
+                background-image: url(../img/index/ansTextpink.png);
             }
             @media screen and (max-width:1023px){
                 span.ansText{
@@ -56,7 +56,7 @@ div.psyTestWrap{
 
 
             div.ansBubble{
-                background-image: url(../../../img/index/blueWave.png);
+                background-image: url(../img/index/blueWave.png);
                 position: relative;
                 padding: 20px;
                 text-align: center;
@@ -159,7 +159,7 @@ div.routeWrap{
             div.routeData{
                 box-shadow: 5px 5px 10px 0px rgba($color: #000000, $alpha: .13);
                 border-radius: 5px;
-                background-image: url(../../../img/index/linedpaper.png);
+                background-image: url(../img/index/linedpaper.png);
                 display: inline-block;
                 padding: 20px 0px;
                 width: 700px;

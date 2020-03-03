@@ -55,6 +55,7 @@ blockquote, q {
   /*主要按鈕*/
   width: 175px;
   height: 60px;
+  border: unset;
   position: relative;
   display: inline-block;
   border-radius: 25px;
@@ -75,6 +76,7 @@ blockquote, q {
   /*次要按鈕*/
   width: 120px;
   height: 40px;
+  border: unset;
   position: relative;
   display: inline-block;
   border-radius: 15px;
@@ -94,6 +96,7 @@ blockquote, q {
   /*次要按鈕_不能按*/
   width: 120px;
   height: 40px;
+  border: unset;
   position: relative;
   display: inline-block;
   border-radius: 15px;
@@ -128,6 +131,7 @@ blockquote, q {
   /*自訂按鈕*/
   width: 105px;
   height: 105px;
+  border: unset;
   font-size: 16px;
   color: #1e1e1e;
   font-weight: bold;
@@ -609,7 +613,8 @@ h1.smartPhoneLogo img {
   max-width: 1200px;
   display: flex;
   padding-left: 20px;
-  margin: 20px auto; }
+  margin: 20px auto;
+  margin-bottom: 100px; }
 
 .breadCrumb li {
   display: inline-block;
@@ -635,6 +640,7 @@ h1.smartPhoneLogo img {
 footer {
   width: 100%;
   height: 275px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

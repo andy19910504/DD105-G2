@@ -492,9 +492,9 @@ div.psyTestWrap {
         font-weight: bold;
         transform: rotate(10deg); }
       div.psyTestWrap div.answerBox div.ansOption span.blueTag {
-        background-image: url(../../../img/index/ansTextBlue.png); }
+        background-image: url(../img/index/ansTextBlue.png); }
       div.psyTestWrap div.answerBox div.ansOption span.pinkTag {
-        background-image: url(../../../img/index/ansTextpink.png); }
+        background-image: url(../img/index/ansTextpink.png); }
       @media screen and (max-width: 1023px) {
         div.psyTestWrap div.answerBox div.ansOption span.ansText {
           width: 150px;
@@ -502,7 +502,7 @@ div.psyTestWrap {
           line-height: 40px;
           font-size: 18px; } }
       div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
-        background-image: url(../../../img/index/blueWave.png);
+        background-image: url(../img/index/blueWave.png);
         position: relative;
         padding: 20px;
         text-align: center;
@@ -578,7 +578,7 @@ div.routeWrap {
     div.routeWrap div.routeBox div.routeData {
       box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
       border-radius: 5px;
-      background-image: url(../../../img/index/linedpaper.png);
+      background-image: url(../img/index/linedpaper.png);
       display: inline-block;
       padding: 20px 0px;
       width: 700px;
@@ -1023,8 +1023,7 @@ div.gpsWrap {
   div.gpsWrap img.gpsPhonePic {
     width: 300px;
     transform: rotate(8deg);
-    margin-right: 150px;
-    animation: iPhoneAni .2s linear infinite alternate; }
+    margin-right: 150px; }
 
 @keyframes iPhoneAni {
   from {
@@ -1094,3 +1093,119 @@ img.gameSubTitle {
 @media screen and (max-width: 767px) {
   img.gameSubTitle {
     right: 5%; } }
+
+img.milkTea {
+  width: 100px;
+  position: absolute;
+  right: -200px;
+  top: 500px;
+  transform: rotate(8deg); }
+
+img.camera {
+  width: 160px;
+  position: absolute;
+  right: -320px;
+  top: 650px;
+  transform: rotate(10deg); }
+
+img.star01 {
+  width: 40px;
+  position: absolute;
+  right: -325px;
+  top: 590px;
+  animation: starAni .8s infinite alternate; }
+
+img.star02 {
+  width: 50px;
+  position: absolute;
+  right: -180px;
+  top: 720px;
+  animation: starAni 1s infinite alternate-reverse; }
+
+@keyframes starAni {
+  from {
+    transform: scale(0.2);
+    opacity: .5; }
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
+img.skyLight01 {
+  width: 120px;
+  position: absolute;
+  left: -250px;
+  top: 1050px;
+  animation: skyLightAni 2s infinite alternate-reverse linear; }
+
+img.skyLight02 {
+  width: 300px;
+  position: absolute;
+  left: -320px;
+  top: 920px;
+  animation: skyLightAni 1s infinite alternate-reverse linear; }
+
+@keyframes skyLightAni {
+  from {
+    transform: translateY(0); }
+  from {
+    transform: translateY(-10px); } }
+
+img.eggBread {
+  width: 130px;
+  position: absolute;
+  right: -180px;
+  top: 1450px;
+  animation: skyLightAni 1.2s infinite alternate linear; }
+
+img.candyFruit {
+  width: 120px;
+  position: absolute;
+  right: -280px;
+  top: 1550px;
+  animation: skyLightAni 1s infinite alternate linear; }
+
+@media screen and (max-width: 1199px) {
+  img.milkTea,
+  img.camera,
+  img.star01,
+  img.star02,
+  img.skyLight01,
+  img.skyLight02,
+  img.eggBread,
+  img.candyFruit {
+    display: none; } }
+
+div.postWrap {
+  border: 1px solid blue;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  div.postWrap ul.stepBar {
+    border: 1px solid green;
+    width: 800px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between; }
+    div.postWrap ul.stepBar li.stepBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 132.8px;
+      height: 152.8px;
+      background-image: url(../img/index/stepBoxWhite.png);
+      background-size: cover;
+      background-repeat: no-repeat; }
+      div.postWrap ul.stepBar li.stepBox span {
+        text-align: center;
+        color: #126591;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: 2px; }
+  div.postWrap #showCard {
+    width: 800px; }
+  div.postWrap div.postBtn {
+    margin-top: 20px; }
