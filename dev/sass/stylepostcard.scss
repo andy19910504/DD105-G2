@@ -1,21 +1,16 @@
-@import "main.scss";
+@import './base/var.scss';
+
 
 body {
     background-image: $bgImage;
 }
 
-/*回到頂端*/
-// .GoTop{
-//     display: flex;
-//     position: fixed;
-//     right: 0px;
-// }
 /*------------小朱-----------------*/
 // 1.1明信片中間大區域
 .postcardcontent {
-    min-width: 1200px;
+    // min-width: 1200px;
     margin: 0px auto;
-    width: 1200px;
+    width: 100%;
     height: 100%;
 }
 
@@ -57,15 +52,29 @@ div.postcardimg4 {
     z-index: -1;
 }
 
+// postcard img RWD
+@media screen and (max-width:1500px) {
+
+    .postcardimg1,
+    .postcardimg2,
+    .postcardimg3,
+    .postcardimg4 {
+        display: none;
+    }
+}
+
 
 //---------------------------------------------
 // 1.2明信片步驟
 .postcardStepbox {
     display: flex;
     margin: 20px auto;
-    min-width: 1200px;
-    width: 1200px;
+    max-width: 1200px;
     height: 150px;
+
+    @media screen and(max-width:$medium) {
+        width: 100%;
+    }
 }
 
 @each $var in 1,
@@ -80,16 +89,32 @@ div.postcardimg4 {
         background-position: center;
         background-repeat: no-repeat;
         text-align: center;
+
     }
 }
 
+    .step_yellow {
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        background-image: url(../img/postcard/yellow.png);
+    }
+
+
+
+
+
 .arrow1 {
     background-image: url(../img/postcard/arrow.png);
-    width: 500px;
+    width: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+
+
 }
 
 //Step文字
@@ -98,34 +123,77 @@ div.postcardimg4 {
     margin-top: 50px;
     color: $fcContent;
     line-height: 30px;
+
+    @media screen and (max-width:1000px) {
+        font-size: 100%;
+        line-height: 25px;
+    }
+
+    @media screen and (max-width:800px) {
+        margin-top: 55px;
+        line-height: 20px;
+        font-size: 12px;
+    }
 }
 
 
 //-------------------------------------------
-// 1.3明信片客製畫面
+/*1.3明信片客製大畫面*/
 .postcardMain {
     display: flex;
     margin: 0px auto;
     max-width: 1200px;
     height: 800px;
+    border: solid 1px red;
+
+    @media screen and (max-width:1200px) {
+        flex-wrap: wrap;
+        height: 100%;
+    }
 }
 
-/*預覽畫面*/
+/* 2.1明信片左邊預覽畫面*/
 .postLeft {
     display: flex;
     position: relative;
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: 75%;
     height: 100%;
     margin-right: 15px;
+
+    @media screen and (max-width:1200px) {
+        width: 100%;
+        height: 100%;
+    }
+
 }
+
+
+/*2.2明信片右邊編輯畫面*/
+
+.postRight {
+    width: 25%;
+    height: 100%;
+    border: black 1px solid;
+    background-image: url(../img/postcard/just-waves.png);
+    border-image-source: url(../img/postcard/postline.svg);
+    border-image-width: 1rem;
+    border-image-repeat: round;
+    border-image-slice: 30 30% 45;
+
+    @media screen and (max-width:1200px) {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
 /*畫布畫面*/
 #postcardCanvas {
     width: 95%;
-    height: 85%;
-    // background-color: yellowgreen;
-    border: brown 1px solid;
+    height: 95%;
+    border: solid 1px red;
 }
 
 
@@ -134,34 +202,69 @@ div.postcardimg4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 700px;
-    height: 600px;
+    width: 1060px;
+    height: 675px;
     box-sizing: border-box;
     background-color: #fff;
     box-shadow: 2px 2px 15px 2px #0e0e0e;
+    background-image: url(../img/postcard/hip-square.png);
+
+    @media screen and (max-width:1200px) {
+        width: 795px;
+        height: 596px;
+    }
+
+    @media screen and (max-width:800px) {
+        width: 480px;
+        height: 360px;
+    }
 }
+
 /*橢圓*/
+// background-size: 80%;
+// background-position: center;
+// background-repeat: no-repeat;
+// background-image: url(../img/postcard/postcardLOGO.png);
 .Oval {
     display: flex;
-    text-align: center;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     background-color: #fff;
-    // background-image: url(../img/postcard/postcardLOGO.png);
-    position: absolute;
-    width: 220px;
+    width: 30%;
     height: 150px;
     border-radius: 200px 200px 0 0;
-    bottom: 85px;
-    // background-size: 80%;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    transform: scaleY(0.8);
+    position: absolute;
+    bottom: 32px;
+    transform: scaleY(0.6);
+    border: solid 1px red;
+    background-image: url(../img/postcard/hip-square.png);
+
+    @media screen and (max-width:1200px) {
+        width: 240px;
+        position: absolute;
+        bottom: -30px;
+        border: solid 1px red;
+    }
+
+    @media screen and (max-width:800px) {
+        width: 30%;
+        height: 100px;
+        position: absolute;
+        bottom: -20px;
+    }
 }
+
 /*橢圓裡面LOGO*/
-.Oval img{
-width: 85%;
-height: 70%;
+.Oval img {
+    // border: solid 1px red;
+    width: 80%;
+    height: 70%;
+
+    @media screen and (max-width:800px) {
+        width: 90%;
+        height: 70%;
+    }
+
 }
 
 
@@ -169,68 +272,63 @@ height: 70%;
 /*2-2-2(二).操作畫面.postRight設定*/
 /*===============================================================*/
 /*2-2-2(二).操作畫面.postRight切換步驟css + postcard.js*/
-// .postRight_1 {
-//     display: none;
-// }
-
-.postRight_2 {
-    display: none
-}
-
-.postRight_3 {
-    display: none
-}
-
-.postRight_4 {
-    display: none
-}
-
-.postRight_5 {
-    display: none
-}
-
-.postRight {
-    width: 40%;
-    height: 100%;
-    border: black 1px solid;
-    background-image: url(../img/postcard/just-waves.png);
-    border-image-source: url(../img/postcard/postline.svg);
-    border-image-width: 1rem;
-    border-image-repeat: round;
-    border-image-slice: 30 30% 45;
-}
 
 
+/*步驟1畫面*/
 
-.postRightDIY h1 {
+.post_text {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
     font-size: $fzTitle;
     color: $importantColor;
+    background-color: lightyellow;
 }
 
-.poschoose {
+.BGCchoose {
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 600px;
     margin-bottom: 30px;
 
+
+    @media screen and (max-width:1200px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        position: relative;
+        width: 100%;
+        height: 300px;
+    }
+
+    @media screen and (max-width:600px) {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow-y: scroll;
+    }
 }
+
 
 @each $var in _1,
 _2,
 _3 {
     .postBGC#{$var} {
         margin: 0 auto;
-        height: 180px;
-        width: 400px;
+        height: 200px;
+        width: 250px;
         transition: all 0.5s;
         position: relative;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         overflow: hidden;
-        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7))
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
     }
 
     .postBGC#{$var} img {
@@ -239,10 +337,18 @@ _3 {
         transform: scale(0.8, 0.8);
         transition: all 0.3s ease-out;
     }
+  
+
+
+
 
     .postBGC#{$var} img:hover {
         transform: scale(1, 1);
     }
+
+}
+.postBGC_1_foucs {
+    border: solid 5px lightcoral;
 }
 
 /*搭配js做選中效果*/
@@ -251,23 +357,175 @@ _3 {
 @each $var in _1,
 _2,
 _3 {
-    .postBGC#{$var}_Selected img{
-            width: 100%;
-            height: 100%;
-            transform: scale(0.8, 0.8);
-            transition: all 0.3s ease-out;
-            border: solid 5px lightcoral;
+    .postBGC#{$var}_Selected img {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.8, 0.8);
+        transition: all 0.3s ease-out;
+        border: solid 5px lightcoral;
+    }
+}
+
+/*步驟1下一步按鍵*/
+.step_btnbox1 {
+    display: flex;
+    justify-content: center;
+    
+
+    @media screen and (max-width:1200px) {
+        margin-bottom: 30px;
     }
 
+    @media screen and (max-width:800px) {
+        margin-bottom: 40px;
+    }
+}
+
+#step_btn,
+#step_btn1,
+#step_btn2,
+#step_btn3,
+#step_btn4,
+#step_btn5,
+#step_btn6,
+#step_btn7,
+#step_btn8,
+#step_btn9 {
+    margin: 10px;
+}
+
+
+/*步驟2畫面--------------------------------------------------2*/
+
+.photochoose {
+    text-align: center;
+    margin-bottom: 30px;
+    overflow-y: scroll;
+    width: 100%;
+    height: 600px;
+
+    @media screen and (max-width:1200px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        border: solid red 1px;
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    @media screen and (max-width:800px) {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        border: solid red 1px;
+        width: 100%;
+        height: 400px;
+        overflow-y: scroll;
+    }
+}
+
+
+
+/*
+ scrollbar
+ */
+.BGCchoose::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.BGCchoose::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.BGCchoose::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
 }
 
 
 
 
+.photochoose::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
 
-/*下一步按鍵*/
-.step_btn1 {
-    // position: relative;
-    // bottom: -100px;
-    text-align: center;
+.photochoose::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.photochoose::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+@each $var in _1,
+_2,
+_3,
+_4 {
+
+    .postphoto#{$var} {
+        margin: 0 auto;
+        height: 180px;
+        width: 250px;
+        transition: all 0.5s;
+        position: relative;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+    }
+
+    .postphoto#{$var} img {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.8, 0.8);
+        transition: all 0.3s ease-out;
+    }
+
+    .postphoto#{$var} img:hover {
+        transform: scale(1, 1);
+    }
+}
+
+/*搭配js做選中效果*/
+@each $var in _1,
+_2,
+_3,
+_4 {
+    .postphoto#{$var}_Selected img {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.8, 0.8);
+        transition: all 0.3s ease-out;
+        border: solid 5px lightcoral;
+    }
+
+}
+
+.step_btnbox2 {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (max-width:1200px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:800px) {
+        margin-bottom: 40px;
+    }
+}
+
+.step_btn2,
+.step_btn3 {
+    margin: 10px;
 }

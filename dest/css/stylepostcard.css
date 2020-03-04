@@ -1,713 +1,11 @@
 @charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  color: #1e1e1e;
-  text-decoration: none;
-  font-family: "微軟正黑體";
-  vertical-align: baseline; }
-
-/* remember to define focus styles! */
-:focus {
-  outline: 0; }
-
-body {
-  line-height: 1;
-  color: black;
-  background: white; }
-
-ol, ul {
-  list-style: none; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: ""; }
-
-blockquote, q {
-  quotes: "" ""; }
-
-* {
-  box-sizing: border-box; }
-
-/* btnClass */
-.btnRed {
-  /*主要按鈕*/
-  width: 175px;
-  height: 60px;
-  border: unset;
-  position: relative;
-  display: inline-block;
-  border-radius: 25px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  line-height: 60px;
-  background-image: url("../img/element/btnRed.png");
-  background-size: contain;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-  transition: filter .1s;
-  cursor: pointer; }
-  .btnRed:hover {
-    filter: brightness(1.09); }
-
-.btnPink {
-  /*次要按鈕*/
-  width: 120px;
-  height: 40px;
-  border: unset;
-  position: relative;
-  display: inline-block;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-  background-image: url("../img/element/btnPink.png");
-  background-size: contain;
-  transition: filter .1s;
-  cursor: pointer; }
-  .btnPink:hover {
-    filter: brightness(1.05); }
-
-.btnPinkStop {
-  /*次要按鈕_不能按*/
-  width: 120px;
-  height: 40px;
-  border: unset;
-  position: relative;
-  display: inline-block;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  line-height: 40px;
-  background-image: url("../img/element/btnPink.png");
-  background-size: contain;
-  filter: grayscale(1.1); }
-
-#btnGoTop {
-  /*回到頂端*/
-  width: 50px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  right: 40px;
-  display: inline-block;
-  background-image: url("../img/element/btnGoTop.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: filter .1s;
-  cursor: pointer; }
-  @media screen and (max-width: 575px) {
-    #btnGoTop {
-      width: 40px;
-      top: 40px; } }
-
-.btnCust {
-  /*自訂按鈕*/
-  width: 105px;
-  height: 105px;
-  border: unset;
-  font-size: 16px;
-  color: #1e1e1e;
-  font-weight: bold;
-  text-align: center;
-  line-height: 130px;
-  position: fixed;
-  z-index: 10;
-  right: 15%;
-  bottom: 30%;
-  display: inline-block;
-  border-radius: 50%;
-  background-image: url("../img/element/btnCust.png");
-  background-size: contain;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  transition: filter .1s;
-  cursor: pointer; }
-  .btnCust:hover {
-    filter: brightness(1.05); }
-  @media screen and (max-width: 1023px) {
-    .btnCust {
-      right: 5%;
-      bottom: 40%; } }
-  @media screen and (max-width: 575px) {
-    .btnCust {
-      font-size: 13.91304px;
-      line-height: 110px;
-      width: 85px;
-      height: 85px; } }
-
-/*
-     卡片：首頁、路線、心情、揪團，要使用的sample
-    
-     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
-
-    */
-.card {
-  width: 340px;
-  height: 520px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4); }
-
-header.fullHeader {
-  width: 100%;
-  height: 170px;
-  display: flex;
-  position: fixed;
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../img/header/headerBgImage.png");
-  background-repeat: no-repeat; }
-
-header.fullHeader h1 {
-  display: block;
-  width: 270px;
-  height: 170px;
-  transform: translate(-300px, 35px); }
-
-header.fullHeader h1 img {
-  width: 100%;
-  height: 100%;
-  vertical-align: center; }
-
-header.fullHeader nav {
-  transform: translateY(-20px); }
-
-header.fullHeader nav ul {
-  display: flex; }
-
-header.fullHeader nav ul li {
-  width: 135px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin-right: 30px; }
-
-header.fullHeader nav ul li:last-child {
-  margin-right: unset; }
-
-header.fullHeader nav ul li img {
-  vertical-align: center; }
-
-header.fullHeader nav ul li a {
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  color: #1e1e1e;
-  font-weight: bold;
-  text-decoration: none;
-  position: relative; }
-
-header.fullHeader nav ul li a .navIcon {
-  margin-right: 5px; }
-
-header.fullHeader nav ul li a:hover .navIcon {
-  animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate; }
-
-@keyframes shake {
-  from {
-    transform: translateY(0px); }
-  to {
-    transform: translateY(-10px); } }
-
-header.fullHeader nav ul li a .navHover {
-  width: 0px;
-  position: absolute;
-  left: 23px;
-  z-index: -1;
-  filter: brightness(1.09);
-  opacity: 0;
-  transition: all .5s; }
-
-header.fullHeader nav ul li a:hover .navHover {
-  opacity: 1;
-  width: 120px; }
-
-header.fullHeader nav ul li a .navHover.show {
-  opacity: 1;
-  width: 120px; }
-
-header.fullHeader .memberIcon {
-  display: flex;
-  transform: translate(300px, -30px); }
-
-header.fullHeader .memberIcon div {
-  margin-right: 15px; }
-
-header.fullHeader .memberIcon div:last-child {
-  margin-right: 0px; }
-
-header.hamburgerHeader {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  z-index: 100;
-  transform: translateY(-100%);
-  transition: transform 1s; }
-
-header.hamburgerHeader.showHeader {
-  transform: translateY(0%); }
-
-header.hamburgerHeader nav ul li {
-  width: 180px;
-  height: 45px;
-  display: flex;
-  position: relative;
-  justify-content: flex-end;
-  margin-top: 20px; }
-
-header.hamburgerHeader nav ul li a {
-  font-size: 24px;
-  color: #1e1e1e;
-  font-weight: bold;
-  text-align: right;
-  padding-left: 10px; }
-
-header.hamburgerHeader li a .navIcon {
-  transform: translateX(-10px); }
-
-header.hamburgerHeader .memberIcon {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px; }
-
-header.hamburgerHeader .memberIcon div {
-  margin-right: 15px; }
-
-header.hamburgerHeader .memberIcon div:last-child {
-  margin-right: 0px; }
-
-h1.smartPhoneLogo {
-  width: 120px;
-  display: none;
-  position: fixed;
-  z-index: 101;
-  top: 10px;
-  left: 5px; }
-
-h1.smartPhoneLogo img {
-  width: 100%; }
-
-.hamburger {
-  padding: 15px 15px;
-  display: none;
-  cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
-  transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  overflow: visible; }
-
-.hamburger:hover {
-  opacity: 0.7; }
-
-.hamburger.is-active:hover {
-  opacity: 0.7; }
-
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  background-color: #a5361c; }
-
-.hamburger-box {
-  width: 40px;
-  height: 24px;
-  display: inline-block;
-  position: relative; }
-
-.hamburger-inner {
-  display: block;
-  top: 50%;
-  margin-top: -2px; }
-
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-  width: 40px;
-  height: 4px;
-  background-color: #a5361c;
-  border-radius: 4px;
-  position: absolute;
-  transition-property: transform;
-  transition-duration: 0.15s;
-  transition-timing-function: ease; }
-
-.hamburger-inner::before, .hamburger-inner::after {
-  content: "";
-  display: block; }
-
-.hamburger-inner::before {
-  top: -10px; }
-
-.hamburger-inner::after {
-  bottom: -10px; }
-
-.hamburger--spring .hamburger-inner {
-  top: 2px;
-  transition: background-color 0s 0.13s linear; }
-
-.hamburger--spring .hamburger-inner::before {
-  top: 10px;
-  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-
-.hamburger--spring .hamburger-inner::after {
-  top: 20px;
-  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-
-.hamburger--spring.is-active .hamburger-inner {
-  transition-delay: 0.22s;
-  background-color: transparent !important; }
-
-.hamburger--spring.is-active .hamburger-inner::before {
-  top: 0;
-  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: translate3d(0, 10px, 0) rotate(45deg); }
-
-.hamburger--spring.is-active .hamburger-inner::after {
-  top: 0;
-  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform: translate3d(0, 10px, 0) rotate(-45deg); }
-
-@media all and (max-width: 1805px) {
-  header.fullHeader h1 {
-    display: block;
-    width: 200px;
-    height: unset;
-    transform: translate(-20px, 0px); }
-  header.fullHeader nav {
-    transform: translateY(-10px); }
-  header.fullHeader .memberIcon {
-    display: flex;
-    transform: translate(0px, -50px); } }
-
-@media all and (max-width: 1199px) {
-  header.fullHeader {
-    display: none; }
-  header.hamburgerHeader {
-    display: flex; }
-  h1.smartPhoneLogo {
-    display: block; }
-  .hamburger {
-    display: inline-block;
-    position: fixed;
-    right: 5px;
-    z-index: 101; } }
-
-.banner_01 {
-  background-image: url("../img/banner/banner_01.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_01 {
-    background-image: url("../img/banner/banner_01.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_01 {
-    background-image: url("../img/banner/banner_01.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-.banner_02 {
-  background-image: url("../img/banner/banner_02.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_02 {
-    background-image: url("../img/banner/banner_02.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_02 {
-    background-image: url("../img/banner/banner_02.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-.banner_03 {
-  background-image: url("../img/banner/banner_03.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_03 {
-    background-image: url("../img/banner/banner_03.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_03 {
-    background-image: url("../img/banner/banner_03.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-.banner_04 {
-  background-image: url("../img/banner/banner_04.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_04 {
-    background-image: url("../img/banner/banner_04.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_04 {
-    background-image: url("../img/banner/banner_04.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-.banner_05 {
-  background-image: url("../img/banner/banner_05.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_05 {
-    background-image: url("../img/banner/banner_05.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_05 {
-    background-image: url("../img/banner/banner_05.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-.banner_06 {
-  background-image: url("../img/banner/banner_06.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center bottom;
-  width: 100%;
-  height: 550px; }
-
-@media all and (max-width: 1023px) {
-  .banner_06 {
-    background-image: url("../img/banner/banner_06.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center bottom;
-    width: 100%;
-    height: 300px; } }
-
-@media all and (max-width: 575px) {
-  .banner_06 {
-    background-image: url("../img/banner/banner_06.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: unset;
-    background-position: center bottom;
-    width: 100%;
-    height: unset;
-    padding-top: 100%; } }
-
-/* 麵包屑 */
-.breadCrumb {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  padding-left: 20px;
-  margin: 20px auto;
-  margin-bottom: 100px; }
-
-.breadCrumb li {
-  display: inline-block;
-  list-style-type: none; }
-
-.breadCrumb li::after {
-  content: '｜'; }
-
-.breadCrumb li a {
-  color: #1e1e1e; }
-
-.breadCrumb li a:hover {
-  color: #a5361c;
-  font-weight: bold; }
-
-.breadCrumb li:last-child::after {
-  content: ''; }
-
-.breadCrumb li:last-child a {
-  font-weight: bold;
-  color: #a5361c; }
-
-footer {
-  width: 100%;
-  height: 275px;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  align-items: center;
-  background-image: url("../img/footer/footerBgImage.png");
-  background-repeat: no-repeat;
-  background-size: cover; }
-
-footer .footerCloud {
-  align-self: flex-start;
-  margin-left: 80px; }
-
-footer .footerCloud .footerCloud170 {
-  transform: translateY(-10px);
-  animation: cloudMove1 2s cubic-bezier(0.14, 0.47, 0.82, 0.46) alternate infinite; }
-
-footer .footerCloud .footerCloud122 {
-  animation: cloudMove2 1.5s linear alternate infinite; }
-
-@keyframes cloudMove1 {
-  from {
-    transform: translateY(-10px); }
-  to {
-    transform: translateY(20px); } }
-
-@keyframes cloudMove2 {
-  from {
-    transform: translateY(0px); }
-  to {
-    transform: translateY(15px); } }
-
-footer .footerLogo {
-  margin-bottom: 20px; }
-
-footer .footerLogo img {
-  width: 100%; }
-
-footer .footerText p {
-  margin-bottom: 10px;
-  font-size: 16px; }
-
-@media screen and (max-width: 575px) {
-  footer .footerText p {
-    font-size: 12.8px; }
-  footer .footerLogo {
-    width: 200px; }
-  footer .footerCloud {
-    margin-left: 10px; }
-  footer .footerCloud .footerCloud170 {
-    width: 100px; }
-  footer .footerCloud .footerCloud122 {
-    width: 80px; } }
-
-.wrapper {
-  background-image: url("../img/element/bgImage.png");
-  position: relative; }
-
 body {
   background-image: url("../img/element/bgImage.png"); }
 
-/*回到頂端*/
 /*------------小朱-----------------*/
 .postcardcontent {
-  min-width: 1200px;
   margin: 0px auto;
-  width: 1200px;
+  width: 100%;
   height: 100%; }
 
 .postcardimg {
@@ -743,12 +41,21 @@ div.postcardimg4 {
   left: 0px;
   z-index: -1; }
 
+@media screen and (max-width: 1500px) {
+  .postcardimg1,
+  .postcardimg2,
+  .postcardimg3,
+  .postcardimg4 {
+    display: none; } }
+
 .postcardStepbox {
   display: flex;
   margin: 20px auto;
-  min-width: 1200px;
-  width: 1200px;
+  max-width: 1200px;
   height: 150px; }
+  @media screen and (max-width: 1023px) {
+    .postcardStepbox {
+      width: 100%; } }
 
 .step1 {
   width: 100%;
@@ -790,9 +97,17 @@ div.postcardimg4 {
   background-repeat: no-repeat;
   text-align: center; }
 
+.step_yellow {
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-image: url(../img/postcard/yellow.png); }
+
 .arrow1 {
   background-image: url(../img/postcard/arrow.png);
-  width: 500px;
+  width: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -803,76 +118,45 @@ div.postcardimg4 {
   margin-top: 50px;
   color: #1e1e1e;
   line-height: 30px; }
+  @media screen and (max-width: 1000px) {
+    .stepname {
+      font-size: 100%;
+      line-height: 25px; } }
+  @media screen and (max-width: 800px) {
+    .stepname {
+      margin-top: 55px;
+      line-height: 20px;
+      font-size: 12px; } }
 
+/*1.3明信片客製大畫面*/
 .postcardMain {
   display: flex;
   margin: 0px auto;
   max-width: 1200px;
-  height: 800px; }
+  height: 800px;
+  border: solid 1px red; }
+  @media screen and (max-width: 1200px) {
+    .postcardMain {
+      flex-wrap: wrap;
+      height: 100%; } }
 
-/*預覽畫面*/
+/* 2.1明信片左邊預覽畫面*/
 .postLeft {
   display: flex;
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 75%;
   height: 100%;
   margin-right: 15px; }
+  @media screen and (max-width: 1200px) {
+    .postLeft {
+      width: 100%;
+      height: 100%; } }
 
-/*畫布畫面*/
-#postcardCanvas {
-  width: 95%;
-  height: 85%;
-  border: brown 1px solid; }
-
-/*明信片外框畫面*/
-.postWhiteBack {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  height: 600px;
-  box-sizing: border-box;
-  background-color: #fff;
-  box-shadow: 2px 2px 15px 2px #0e0e0e; }
-
-/*橢圓*/
-.Oval {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  position: absolute;
-  width: 220px;
-  height: 150px;
-  border-radius: 200px 200px 0 0;
-  bottom: 85px;
-  transform: scaleY(0.8); }
-
-/*橢圓裡面LOGO*/
-.Oval img {
-  width: 85%;
-  height: 70%; }
-
-/*2-2-2(二).操作畫面.postRight設定*/
-/*===============================================================*/
-/*2-2-2(二).操作畫面.postRight切換步驟css + postcard.js*/
-.postRight_2 {
-  display: none; }
-
-.postRight_3 {
-  display: none; }
-
-.postRight_4 {
-  display: none; }
-
-.postRight_5 {
-  display: none; }
-
+/*2.2明信片右邊編輯畫面*/
 .postRight {
-  width: 40%;
+  width: 25%;
   height: 100%;
   border: black 1px solid;
   background-image: url(../img/postcard/just-waves.png);
@@ -880,30 +164,121 @@ div.postcardimg4 {
   border-image-width: 1rem;
   border-image-repeat: round;
   border-image-slice: 30 30% 45; }
+  @media screen and (max-width: 1200px) {
+    .postRight {
+      width: 100%;
+      height: 100%; } }
 
-.postRightDIY h1 {
+/*畫布畫面*/
+#postcardCanvas {
+  width: 95%;
+  height: 95%;
+  border: solid 1px red; }
+
+/*明信片外框畫面*/
+.postWhiteBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1060px;
+  height: 675px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 2px 2px 15px 2px #0e0e0e;
+  background-image: url(../img/postcard/hip-square.png); }
+  @media screen and (max-width: 1200px) {
+    .postWhiteBack {
+      width: 795px;
+      height: 596px; } }
+  @media screen and (max-width: 800px) {
+    .postWhiteBack {
+      width: 480px;
+      height: 360px; } }
+
+/*橢圓*/
+.Oval {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #fff;
+  width: 30%;
+  height: 150px;
+  border-radius: 200px 200px 0 0;
+  position: absolute;
+  bottom: 32px;
+  transform: scaleY(0.6);
+  border: solid 1px red;
+  background-image: url(../img/postcard/hip-square.png); }
+  @media screen and (max-width: 1200px) {
+    .Oval {
+      width: 240px;
+      position: absolute;
+      bottom: -30px;
+      border: solid 1px red; } }
+  @media screen and (max-width: 800px) {
+    .Oval {
+      width: 30%;
+      height: 100px;
+      position: absolute;
+      bottom: -20px; } }
+
+/*橢圓裡面LOGO*/
+.Oval img {
+  width: 80%;
+  height: 70%; }
+  @media screen and (max-width: 800px) {
+    .Oval img {
+      width: 90%;
+      height: 70%; } }
+
+/*2-2-2(二).操作畫面.postRight設定*/
+/*===============================================================*/
+/*2-2-2(二).操作畫面.postRight切換步驟css + postcard.js*/
+/*步驟1畫面*/
+.post_text {
   text-align: center;
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 24px;
-  color: #a5361c; }
+  color: #a5361c;
+  background-color: lightyellow; }
 
-.poschoose {
+.BGCchoose {
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 600px;
   margin-bottom: 30px; }
+  @media screen and (max-width: 1200px) {
+    .BGCchoose {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      position: relative;
+      width: 100%;
+      height: 300px; } }
+  @media screen and (max-width: 600px) {
+    .BGCchoose {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow-y: scroll; } }
 
 .postBGC_1 {
   margin: 0 auto;
-  height: 180px;
-  width: 400px;
+  height: 200px;
+  width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_1 img {
   width: 100%;
@@ -916,14 +291,17 @@ div.postcardimg4 {
 
 .postBGC_2 {
   margin: 0 auto;
-  height: 180px;
-  width: 400px;
+  height: 200px;
+  width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_2 img {
   width: 100%;
@@ -936,14 +314,17 @@ div.postcardimg4 {
 
 .postBGC_3 {
   margin: 0 auto;
-  height: 180px;
-  width: 400px;
+  height: 200px;
+  width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_3 img {
   width: 100%;
@@ -953,6 +334,9 @@ div.postcardimg4 {
 
 .postBGC_3 img:hover {
   transform: scale(1, 1); }
+
+.postBGC_1_foucs {
+  border: solid 5px lightcoral; }
 
 /*搭配js做選中效果*/
 .postBGC_1_Selected img {
@@ -976,6 +360,203 @@ div.postcardimg4 {
   transition: all 0.3s ease-out;
   border: solid 5px lightcoral; }
 
-/*下一步按鍵*/
-.step_btn1 {
-  text-align: center; }
+/*步驟1下一步按鍵*/
+.step_btnbox1 {
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 1200px) {
+    .step_btnbox1 {
+      margin-bottom: 30px; } }
+  @media screen and (max-width: 800px) {
+    .step_btnbox1 {
+      margin-bottom: 40px; } }
+
+#step_btn,
+#step_btn1,
+#step_btn2,
+#step_btn3,
+#step_btn4,
+#step_btn5,
+#step_btn6,
+#step_btn7,
+#step_btn8,
+#step_btn9 {
+  margin: 10px; }
+
+/*步驟2畫面--------------------------------------------------2*/
+.photochoose {
+  text-align: center;
+  margin-bottom: 30px;
+  overflow-y: scroll;
+  width: 100%;
+  height: 600px; }
+  @media screen and (max-width: 1200px) {
+    .photochoose {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      border: solid red 1px;
+      width: 100%;
+      height: 300px;
+      overflow-y: scroll; } }
+  @media screen and (max-width: 800px) {
+    .photochoose {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      border: solid red 1px;
+      width: 100%;
+      height: 400px;
+      overflow-y: scroll; } }
+
+/*
+ scrollbar
+ */
+.BGCchoose::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5; }
+
+.BGCchoose::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+.BGCchoose::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #555; }
+
+.photochoose::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5; }
+
+.photochoose::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+.photochoose::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #555; }
+
+.postphoto_1 {
+  margin: 0 auto;
+  height: 180px;
+  width: 250px;
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+
+.postphoto_1 img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out; }
+
+.postphoto_1 img:hover {
+  transform: scale(1, 1); }
+
+.postphoto_2 {
+  margin: 0 auto;
+  height: 180px;
+  width: 250px;
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+
+.postphoto_2 img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out; }
+
+.postphoto_2 img:hover {
+  transform: scale(1, 1); }
+
+.postphoto_3 {
+  margin: 0 auto;
+  height: 180px;
+  width: 250px;
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+
+.postphoto_3 img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out; }
+
+.postphoto_3 img:hover {
+  transform: scale(1, 1); }
+
+.postphoto_4 {
+  margin: 0 auto;
+  height: 180px;
+  width: 250px;
+  transition: all 0.5s;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+
+.postphoto_4 img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out; }
+
+.postphoto_4 img:hover {
+  transform: scale(1, 1); }
+
+/*搭配js做選中效果*/
+.postphoto_1_Selected img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out;
+  border: solid 5px lightcoral; }
+
+.postphoto_2_Selected img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out;
+  border: solid 5px lightcoral; }
+
+.postphoto_3_Selected img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out;
+  border: solid 5px lightcoral; }
+
+.postphoto_4_Selected img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+  transition: all 0.3s ease-out;
+  border: solid 5px lightcoral; }
+
+.step_btnbox2 {
+  display: flex;
+  justify-content: center; }
+  @media screen and (max-width: 1200px) {
+    .step_btnbox2 {
+      margin-bottom: 30px; } }
+  @media screen and (max-width: 800px) {
+    .step_btnbox2 {
+      margin-bottom: 40px; } }
+
+.step_btn2,
+.step_btn3 {
+  margin: 10px; }

@@ -124,3 +124,76 @@ img.postSubTitle{
         width: 170px;
     }
 }  
+
+//--------------裝飾小圖--------------
+//左邊兩張
+img.postCartPic01{
+    width: 250px;
+    position: absolute;
+    top: 480px;
+    left: -110px;
+    transform: rotate(15deg);
+}
+img.postCartPic02{
+    width: 250px;
+    position: absolute;
+    top: 630px;
+    left: -120px;
+    transform: rotate(-10deg);
+}
+//右邊三張
+img.postCartPic03{
+    width: 250px;
+    position: absolute;
+    top: 400px;
+    right: -110px;
+    transform: rotate(-15deg);
+
+}
+img.postCartPic04{
+    width: 250px;
+    position: absolute;
+    top: 560px;
+    right: -115px;
+    transform: rotate(5deg);
+
+}
+img.postCartPic05{
+    width: 250px;
+    position: absolute;
+    top: 720px;
+    right: -100px;
+    transform: rotate(-5deg);
+}
+
+@media screen and (max-width:1199px){
+    img.postCartPic01{
+        width: 170px;
+        left: -50px;
+    }
+    img.postCartPic02{
+        width: 170px;
+        left: -50px;
+    }
+    img.postCartPic03{
+        width: 170px;
+        right: -50px;
+    }
+    img.postCartPic04{
+        width: 170px;
+        right: -50px;
+    }
+    img.postCartPic05{
+        width: 170px;
+        right: -50px;
+    }
+}
+@media screen and (max-width:1023px){
+    img.postCartPic01,
+    img.postCartPic02,
+    img.postCartPic03,
+    img.postCartPic04,
+    img.postCartPic05{
+        display: none;
+    }
+}
