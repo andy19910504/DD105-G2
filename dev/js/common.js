@@ -21,3 +21,6 @@ $(function(){
   });
   
 });
+
+// 引入 filter
+import ('./filter.js');

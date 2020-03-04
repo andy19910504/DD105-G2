@@ -4,22 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>samplePage</title>
-    <!-- 每一頁分頁，都需要遷入這隻main.css -->
+    <title>台北散步｜慢步寫心情</title>
+    <!-- 每一頁分頁，都需要遷入這兩隻css -->
     <link rel="stylesheet" href="./css/main.css">
-
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/mood.css">
 </head>
-<style>
-
-</style>
 
 <body>
     <div class="wrapper">
-        <!-- header
-    在你的分頁的display:"加上show"
-    -->
-
-        <!-- 1200px上 滿版時，使用的選單 -->
+    <!-- header-->
+    <!-- 1200px上 滿版時，使用的選單 -->
 <header class="fullHeader">
     <h1>
         <a href="./index.html">
@@ -28,41 +23,55 @@
     </h1>
     <nav>
         <ul>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+            <li>
+                <a href="#">
+                    <img src="./img/header/navHover.png" class="navHover ">
+                    <img src="./img/header/navIcon1.png" class="navIcon"> 散步遊台北
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/header/navHover.png" class="navHover ">
+                    <img src="./img/header/navIcon2.png" class="navIcon"> 攻略地圖趣
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/header/navHover.png" class="navHover show">
+                    <img src="./img/header/navIcon3.png" class="navIcon"> 慢步寫心情
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/header/navHover.png" class="navHover ">
+                    <img src="./img/header/navIcon4.png" class="navIcon"> 情繫明信片
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./img/header/navHover.png" class="navHover">
+                    <img src="./img/header/navIcon5.png" class="navIcon"> 揪團散步去
+                </a>
+            </li>
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
-    </div>
-
-</header>
-<!-- 1200px下時，轉乘使用漢堡選單 -->
-
-<header class="hamburgerHeader">
-    <h1>
-        <a href="./index.html">
-            <img src="./img/header/logo272x170.png" alt="">
-        </a>
-    </h1>
-    <nav>
-        <ul>
-            <li><a href="#"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
-            <li><a href="#"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
-            <li><a href="#"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
-            <li><a href="#"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
-            <li><a href="#"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
-        </ul>
-    </nav>
-    <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href=""><img src="./img/header/navMember.png"></a></div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+        <div class="navCart">
+            <a href="">
+                <img src="./img/header/navCart.png">
+            </a>
+        </div>
+        <div class="navMember">
+            <a href="">
+                <img src="./img/header/navMember.png">
+            </a>
+        </div>
+        <div class="navPoint">
+            <a href="">
+                <img src="./img/header/navPoint.png">
+                <div id="point">666</div>
+            </a>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -75,8 +84,6 @@
       <div class="hamburger-inner"></div>
     </div>
 </div>
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- 回到頂端的連結 -->
         <a name="GoTop"></a>
 
@@ -87,33 +94,27 @@
     More
 </a>
 
-        <!-- 次要要按鈕 // btnPink
+    <!-- 次要要按鈕 // btnPink
     link：連結的網址
     innerText：按鈕名稱 -->
         <a href="./google.com.tw" class="btnPink">
     More
 </a>
 
-        <!-- 次要按鈕_不能按 // btnPinkStop
-
+    <!-- 次要按鈕_不能按 // btnPinkStop
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPinkStop">
-    More
-</a>
+        <a href="./google.com.tw" class="btnPinkStop">More</a>
 
         <!-- 回到頂端 // btnGoTop -->
 
         <!-- 還需要遷入jQuery -->
 <a id="btnGoTop"></a>
 
-        <!-- 自訂按鈕 // btnCust
-
+    <!-- 自訂按鈕 // btnCust
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnCust">
-    自訂
-</a>
+        <a href="./google.com.tw" class="btnCust">寫心情</a>
 
         <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
@@ -138,23 +139,155 @@
         <div class="banner_04"></div>
         <div class="banner_05"></div>
         <div class="banner_06"></div>
-
-        <!-- footer // -->
-        <footer>
-    <div class="footerCloud">
-        <img src="./img/footer/footerCloud170.png" class="footerCloud170">
-        <img src="./img/footer/footerCloud122.png" class="footerCloud122">
+        <!-- routeFilterBlock -->
+        @@include('./layout/filter.html',{
+            "innerText1":"日式舊屋行",
+            "innerText2":"文青品味旅",
+            "innerText3":"職人散步去",
+            "innerText4":"其他"
+            })
+        <section>
+            <img src="./img/index/title04.png" class="sectionTitle">
+            <div class="moodWrap">
+                <img src="./img/index/moodSubTitle.png" class="moodSubTitle">
+                <div class="moodCardsWrap">
+                    <div class="moodCard">
+                        <div class="cardInfoBar">
+                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                            <div class="infoTextWrap">
+                                <span class="moodClass">#職人散步去</span>
+                                <span class="moodMemId">IU2020</span>
+                            </div>
+                            <div class="dotWrap">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="moodPicWrap">
+                            <img src="./img/index/moodPic01.jpg" class="moodPic">
+                        </div>
+                        <div class="heartBar">
+                            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
+                            <span>1025</span>
+                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
+                            <span>52</span>
+                        </div>
+                        <div class="cardText">
+                            <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                            <span>more</span>
+                        </div>
+                    </div>
+                    <div class="moodCard">
+                        <div class="cardInfoBar">
+                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                            <div class="infoTextWrap">
+                                <span class="moodClass">#日式舊屋行</span>
+                                <span class="moodMemId">Jaysqer</span>
+                            </div>
+                            <div class="dotWrap">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="moodPicWrap">
+                            <img src="./img/index/moodPic02.jpg" class="moodPic">
+                        </div>
+                        <div class="heartBar">
+                            <img src="./img/index/moodLikeIconGray.png"class="moodIcon">
+                            <span>999</span>
+                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
+                            <span>108</span>
+                        </div>
+                        <div class="cardText">
+                            <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                            <span>more</span>
+                        </div>
+                    </div>
+                    <div class="moodCard">
+                        <div class="cardInfoBar">
+                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                            <div class="infoTextWrap">
+                                <span class="moodClass">#文青品味旅</span>
+                                <span class="moodMemId">love00242</span>
+                            </div>
+                            <div class="dotWrap">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="moodPicWrap">
+                            <img src="./img/index/moodPic03.jpg" class="moodPic">
+                        </div>
+                        <div class="heartBar">
+                            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
+                            <span>168</span>
+                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
+                            <span>655</span>
+                        </div>
+                        <div class="cardText">
+                            <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                            <span>more</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="moodBtn">
+                    <a href="#" class="btnRed">More</a>
+                </div>
+            </div>
+        </section>
+     <!-- 燈箱/文章檢舉 -->
+     <div class="lightbox_report">
+        <div class="lightbox_report_info">
+            <!-- x按鈕 -->
+            <!-- <div class="close">✘</div> -->
+            <div class="reportTitle">
+                <h2>協助我們了解情況?</h2>
+            </div>
+            <form>
+                <input type="radio" name="reason" value="垃圾信"> 垃圾信
+                <br>
+                <input type="radio" name="reason" value="與主題無關"> 與主題無關
+                <br>
+                <input type="radio" name="reason" value="不合適的內容"> 不合適的內容
+                <br>
+                <input type="radio" name="reason" value="其他"> 其他
+                <br>
+                <div class="reportSent">
+                    <div class="enter">
+                        <a href="#" class="btnPink">確定</a>
+                    </div>
+                    <div class="cancel">
+                        <a href="#" class="btnPink">取消</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="footerLogo">
-        <img src="./img/footer/logo320x200.png">
+    <!-- 回到頂端的連結 -->
+    <a name="GoTop "></a>
+    <!-- 回到頂端 // btnGoTop -->
+    <!-- 還需要遷入jQuery -->
+    <a id="btnGoTop "></a>
+    <!-- footer // -->
+    <footer>
+        <div class="footerCloud">
+            <img src="./img/footer/footerCloud170.png" class="footerCloud170">
+            <img src="./img/footer/footerCloud122.png" class="footerCloud122">
+        </div>
+        <div class="footerLogo">
+            <img src="./img/footer/logo320x200.png">
+        </div>
+        <div class="footerText">
+            <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
+        </div>
+    </footer>
     </div>
-    <div class="footerText">
-        <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
-    </div>
-</footer>
-    </div>
-
-    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/jquery-3.4.1.min.js "></script>
+    <script src="./js/goTop.js "></script>
+    <script src="./js/mood.js"></script>
     <script src="./js/common.js"></script>
 </body>
 
