@@ -40,12 +40,38 @@ div.postcardimg3 {
   z-index: -1;
 }
 
+<<<<<<< HEAD
 div.postcardimg4 {
   position: absolute;
   width: 20%;
   top: 500px;
   left: 0px;
   z-index: -1;
+=======
+/* btnClass */
+.btnRed {
+  /*主要按鈕*/
+  width: 175px;
+  height: 60px;
+  border: unset;
+  position: relative;
+  display: inline-block;
+  border-radius: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  background-image: url("../img/element/btnRed.png");
+  background-size: contain;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 }
 
 @media screen and (max-width: 1500px) {
@@ -57,6 +83,7 @@ div.postcardimg4 {
   }
 }
 
+<<<<<<< HEAD
 .postcardStepbox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,6 +91,28 @@ div.postcardimg4 {
   margin: 20px auto;
   max-width: 1200px;
   height: 150px;
+=======
+.btnPink {
+  /*次要按鈕*/
+  width: 120px;
+  height: 40px;
+  border: unset;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background-image: url("../img/element/btnPink.png");
+  background-size: contain;
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 }
 
 @media screen and (max-width: 1023px) {
@@ -72,12 +121,55 @@ div.postcardimg4 {
   }
 }
 
+<<<<<<< HEAD
 .step1 {
   width: 100%;
   background-image: url(../img/postcard/white.png);
+=======
+.btnPinkStop {
+  /*次要按鈕_不能按*/
+  width: 120px;
+  height: 40px;
+  border: unset;
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  background-image: url("../img/element/btnPink.png");
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+<<<<<<< HEAD
+=======
+  background-size: contain;
+  -webkit-transition: -webkit-filter .1s;
+  transition: -webkit-filter .1s;
+  transition: filter .1s;
+  transition: filter .1s, -webkit-filter .1s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 575px) {
+  #btnGoTop {
+    width: 40px;
+    top: 40px;
+  }
+}
+
+.btnCust {
+  /*自訂按鈕*/
+  width: 105px;
+  height: 105px;
+  border: unset;
+  font-size: 16px;
+  color: #1e1e1e;
+  font-weight: bold;
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
   text-align: center;
 }
 

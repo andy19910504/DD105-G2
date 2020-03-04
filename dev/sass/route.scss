@@ -1,5 +1,10 @@
 @import './base/var.scss';
 
+@import './modules/filter.scss';
+
+@import './modules/moodConcat.scss';
+
+@import './modules/eventConcat.scss';
 
 // 
 .wrapper{
@@ -52,20 +57,40 @@
 //routeSloganBlock
 .sloganBlock{
     width: 100%;
+    max-width: 1200px;
+    margin: auto;
     position: relative;
     display: flex;
     margin-bottom: 60px;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .sloganBlock .routeShineAnimation{
     width: 300px;
     height: 150px;
     position: absolute;
     top: 0;
-    right: 560px;
+    right: 120px;
     overflow: hidden;
     opacity: .85;
+    @media screen and (max-width:$medium){
+        right: 60px;
+    }
+    @media screen and (max-width:860px){
+        right: 20px;
+    }
+    @media screen and (max-width:767px){
+        width: 200px;
+    }
+    @media screen and (max-width:$small){
+        top:-45px;
+    }
+    @media screen and (max-width:375px){
+        width: 300px;
+        top:-80px;
+        transform: translate(66px,-18px);
+    }
 }
 // cloud
 .routeShineAnimation .cloud{
@@ -102,12 +127,18 @@
           z-index: 2;
         font-size:18px;
         animation: sunShineLeft 5s alternate infinite;
+        @media screen and (max-width:$small){
+            font-size:12px ;
+        }
       }
       &.right{
           left: 65%;
           z-index: 1;
         font-size:12px;
         animation: sunShineRight 5s alternate infinite;
+        @media screen and (max-width:$small){
+            font-size:8px ;
+        }
       }
     }
     @keyframes sunShineLeft{
@@ -131,6 +162,9 @@
     border-radius: 50%;
     box-shadow: 0 0 0 0.375em #f29341;
     animation: spin 18s infinite linear;
+    @media screen and (max-width:$small) {
+        font-size: 18px;        
+    }
 }
 @keyframes spin{
     from{transform: rotate(0deg);}
@@ -162,10 +196,16 @@
         background: #f29341;
         border-radius: 0.25em;
         box-shadow: 0 5.375em #f29341;
+            @media screen and (max-width:$small){
+                font-size: 18px;
+            }
     }
     &::before{
         transform: rotate(120deg);
     }
+    @media screen and (max-width:$small){
+        font-size: 18px;
+}
 }
 // routeSloganBlock RWD
 @media screen and (max-width:$medium){
@@ -177,46 +217,6 @@
     .routeSloganImage{
         width: 360px;
     }
-}
-
-// routeFilterBlock
-.routeFilterBlock{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-.routeFilterBlock .routeFilter{
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    // border: 1px solid red;
-}
-.routeFilterBlock .routeFilter li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 230px;
-    height: 52px;
-    font-size: $fzTitle;
-    font-weight: bold;
-    // border: 1px solid red;
-}
-.showFilter{
-    background-image: url("../img/route/showFilterImage.png");
-}
-.filterBgImage{
-    width: 100%;
-    max-width: 1200px;
-}
-// routeFilterBlock RWD
-@media screen and (max-width:$small){
-    .routeFilterBlock .routeFilter li{
-        font-size: $fzContent;
-    }
-
 }
 
 // routeContent
@@ -231,6 +231,7 @@
     box-shadow: 0 2px 10px rgba(0,0,0,.1);;
     margin: auto;
     padding: 60px 0;
+    position: relative;
 @media screen and(max-width:860px) {
     width: 90%;    
 }
@@ -320,7 +321,7 @@
     height: 100%;
     border-radius: 50%;    
 }
-.attractionImage a{
+.attractionImage .attractionMask{
     width: 95%;
     height: 95%;
     border-radius: 50%;
@@ -329,13 +330,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     @media screen and(max-width:$small) {
         width: 90%;
         height: 90%;
     }
 
 }
-.attractionImage a::after{
+.attractionImage .attractionMask::after{
     content: "";
     position: absolute;
     top: -20px;
@@ -347,7 +349,7 @@
     transform-origin: left top;
     transition: transform 1s;
 }
-.attractionImage a:hover::after{
+.attractionImage .attractionMask:hover::after{
     transform: rotate(0deg);
 }
 
@@ -365,7 +367,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.3);
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -375,16 +377,49 @@
     bottom: 0;
     left: 0;
 }
+.attractionBgImage .arrowLeft,
+.attractionBgImage .arrowRight{
+    width: 80px;
+    cursor: pointer;
+}
+.arrowLeft{
+    margin-right: 10px;
+    filter: grayscale(1);
+    animation:"";
+}
+.arrowRight{
+    margin-left: 10px;
+    animation: moveRight .5s alternate infinite;
+}
+@keyframes moveLeft{
+    from{transform: translateX(0px);}
+    to{transform: translateX(-5px);}
+}
+@keyframes moveRight{
+    from{transform: translateX(0px);}
+    to{transform: translateX(5px);}
+}
+
 .attractionBgImage .attractionMask{
     width: 1000px;
     height: 600px;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
+}
+.attractionMask .cancelLightBox{
+    width: 30px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    z-index: 3;
+    cursor: pointer;
 }
 .attractionMask .attractionAll{
     width:2000px;
     height: 600px;
     display: flex;
+    transition:transform 1s linear;
 }
 .attractionAll .attractionInfoBlock{
     width: 1000px;
@@ -408,23 +443,46 @@
     background-color: #fff;
 }
 
-
 //otherLinkBlock
 .otherLinkBlock{
     width: 100%;
     max-width: 1200px;
     margin: 120px auto;
 }
-.otherLinkBlock .otherLink{}
 .otherLink .otherLinkTitle{
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
     font-size: $fzTitle;
     font-weight: bold;
     display: flex;
     justify-content: center;
     margin-bottom:60px;
+    @media screen and (max-width:767px){
+        flex-direction: column;
+        align-items: center; 
+        margin-bottom: 20px;  
+        :first-child{
+            display: none;
+        }
+     
+    }
 }
-.otherLink .otherLinkTitle p{
+.otherLinkTitle .routeOtherTitleImage{
+    width: 300px;
+    height: 30px;
+    background-image: url(../img/route/routeOtherTitleBlock.png);
+    @media screen and (max-width:860px) {
+        width: 240px;
+    }
+    @media screen and (max-width:767px){
+        width: 100%;
+        max-width:400px;
+        margin-top: 20px;
+    }
+
+}
+.otherLinkTitle p{
     margin: 0 40px;
 }
-.otherLink .otherLinkContent{}
 
