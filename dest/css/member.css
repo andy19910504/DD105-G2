@@ -180,32 +180,38 @@ blockquote, q {
   .member_info img {
     width: 100%; }
 
-.member_info_nav ul {
+.member_info_nav > ul {
   font-size: 0px;
   text-align: center; }
-  .member_info_nav ul li {
-    display: inline-block;
-    height: 125px;
-    width: 155px;
-    font-size: 24px;
-    color: #1e1e1e;
-    line-height: 125px;
-    margin-left: 1.25%;
-    margin-right: 1.25%;
-    background-image: url(../img/member/memberstamp2.png);
-    background-size: cover;
-    cursor: pointer;
-    margin-top: 50px;
-    position: relative; }
-    .member_info_nav ul li img {
-      position: absolute;
-      left: -9px;
-      top: 4px;
-      opacity: 0;
-      width: 120%; }
+
+.member_info_nav > ul li {
+  display: inline-block;
+  height: 125px;
+  width: 155px;
+  font-size: 24px;
+  color: #1e1e1e;
+  line-height: 125px;
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+  background-image: url(../img/member/memberstamp2.png);
+  background-size: cover;
+  cursor: pointer;
+  margin-top: 50px;
+  position: relative; }
+
+.member_info_nav > ul li:hover {
+  transform: scale(1.2) !important;
+  transition: 0.8s linear; }
+
+.member_info_nav > ul li img {
+  position: absolute;
+  left: -9px;
+  top: 4px;
+  opacity: 0;
+  width: 120%; }
 
 @media screen and (max-width: 1200px) {
-  .member_info_nav ul li {
+  .member_info_nav > ul li {
     height: 100px;
     width: 125px;
     line-height: 100px;
@@ -214,7 +220,7 @@ blockquote, q {
     width: 90%; } }
 
 @media screen and (max-width: 1023px) {
-  .member_info_nav ul li {
+  .member_info_nav > ul li {
     height: 80px;
     width: 100px;
     line-height: 80px;
@@ -223,7 +229,7 @@ blockquote, q {
     width: 100%; } }
 
 @media screen and (max-width: 767px) {
-  .member_info_nav ul li {
+  .member_info_nav > ul li {
     height: 65px;
     width: 80px;
     line-height: 65px;
@@ -231,18 +237,18 @@ blockquote, q {
     margin-right: 1%; } }
 
 @media screen and (max-width: 575px) {
-  .member_info_nav ul {
+  .member_info_nav > ul {
     padding: 0 2%; }
-    .member_info_nav ul li {
-      margin-left: 3.5%;
-      margin-right: 3.5%;
-      margin-top: 25px;
-      height: 80px;
-      width: 100px;
-      line-height: 80px; } }
+  .member_info_nav > ul li {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-top: 25px;
+    height: 80px;
+    width: 100px;
+    line-height: 80px; } }
 
 @media screen and (max-width: 414px) {
-  .member_info_nav ul li {
+  .member_info_nav > ul li {
     margin-left: 2%;
     margin-right: 2%; } }
 
@@ -388,6 +394,9 @@ blockquote, q {
   font-size: 0px;
   border-radius: 15px; }
 
+.member_info_line_all_all:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+
 .member_info_line_all_left {
   width: 50%;
   padding-left: 10%;
@@ -442,11 +451,11 @@ blockquote, q {
       padding: 1% 1% 2% 1%;
       display: inline-block;
       width: 30%;
-      font-size: 16px;
-      border-radius: 15px; }
+      font-size: 16px; }
       .member_info_share div div img {
         margin-top: 5%; }
       .member_info_share div div div {
+        overflow: hidden;
         border: unset;
         margin-left: 0;
         margin-right: 0;
@@ -466,6 +475,15 @@ blockquote, q {
         text-align: center; }
         .member_info_share div div div:nth-child(3) a:nth-child(2) {
           margin-left: 2%; }
+    .member_info_share div div:hover img {
+      transform: scale(1.1);
+      transition: all 0.8s linear; }
+
+.member_info_share > div > div {
+  border-radius: 15px; }
+
+.member_info_share > div > div:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
 
 @media screen and (max-width: 1200px) {
   .member_info_share div div {
@@ -494,49 +512,22 @@ blockquote, q {
 
 .member_info_order {
   padding: 4.75%; }
-  .member_info_order div:nth-child(1) {
-    padding: 4.75%;
-    background-image: url(../img/member/memphis-colorful.png); }
-    .member_info_order div:nth-child(1) div:nth-child(1) {
-      border: 3px dashed #a5361c;
-      padding: 0 3% 3% 3%;
-      background-image: url(../img/member/hip-square.png);
-      border-radius: 15px; }
-      .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(1) {
-        padding-top: 5%;
-        padding-bottom: 5%;
-        font-size: 0px;
-        border: unset; }
-      .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) {
-        font-size: 0px; }
-        .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
-          vertical-align: top;
-          font-size: 0px;
-          padding: 0;
-          margin-left: 1.5%;
-          margin-right: 1.5%;
-          display: inline-block;
-          width: 30%;
-          padding-top: 0;
-          padding-bottom: 0;
-          border: 1px dashed #a5361c;
-          margin-bottom: 2%;
-          padding: 1%;
-          background-image: url(../img/member/memphis-colorful.png);
-          border-radius: unset; }
-          .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div p {
-            width: auto;
-            padding: 5% 0;
-            text-align: center;
-            display: block;
-            margin: 0;
-            font-size: 18px; }
-            .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div p span {
-              margin-top: 10px;
-              display: block; }
+
+.member_info_order > div {
+  padding: 4.75%;
+  background-image: url(../img/member/memphis-colorful.png); }
+
+.member_info_order > div > div {
+  border: 3px dashed #a5361c;
+  padding: 0 3% 3% 3%;
+  background-image: url(../img/member/hip-square.png);
+  border-radius: 15px; }
 
 .member_info_order_up {
-  padding: 0px; }
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-size: 0px;
+  border: unset; }
   .member_info_order_up p {
     text-align: center;
     display: inline-block;
@@ -546,23 +537,61 @@ blockquote, q {
       margin-left: 1%;
       font-weight: bolder; }
 
+.member_info_order_bottom {
+  font-size: 0px; }
+
+.member_info_order_bottom > div {
+  vertical-align: top;
+  font-size: 0px;
+  padding: 0;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  display: inline-block;
+  width: 30%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 1px dashed #a5361c;
+  margin-bottom: 2%;
+  padding: 2%;
+  background-image: url(../img/member/memphis-colorful.png); }
+
+.member_info_order_bottom > div:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+
+.member_info_order_bottom > div:hover img {
+  transform: scale(1.1);
+  transition: all 0.8s; }
+
+.member_info_order_bottom > div > div {
+  overflow: hidden; }
+  .member_info_order_bottom > div > div p {
+    width: auto;
+    padding: 5% 0;
+    text-align: center;
+    display: block;
+    margin: 0;
+    font-size: 18px; }
+    .member_info_order_bottom > div > div p span {
+      margin-top: 10px;
+      display: block; }
+
 @media screen and (max-width: 1200px) {
   .member_info_order_up p {
     width: 50%;
     padding-bottom: 20px; }
-  .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+  .member_info_order_bottom > div {
     margin-left: 1.5%;
     margin-right: 1.5%;
     width: 47%; } }
 
 @media screen and (max-width: 767px) {
-  .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+  .member_info_order_bottom > div {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%; } }
 
 @media screen and (max-width: 575px) {
-  .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+  .member_info_order_bottom > div {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%; }
@@ -592,15 +621,26 @@ blockquote, q {
     margin-bottom: 3%;
     background-image: url(../img/member/memphis-colorful.png); }
 
+.member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
+  transform: scale(1.1);
+  transition: all 0.8s; }
+
+.member_info_open_all_all:hover .member_info_open_all_left > div {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+
 .member_info_open_all_left {
   display: inline-block;
   width: 37.5%;
   font-size: 18px;
   padding: 0% 1.5% 2% 0%; }
-  .member_info_open_all_left div {
-    background-image: url(../img/member/memphis-colorful.png);
-    padding: 5%;
-    margin: 0 auto; }
+
+.member_info_open_all_left > div {
+  background-image: url(../img/member/memphis-colorful.png);
+  padding: 5%;
+  margin: 0 auto; }
+
+.member_info_open_all_left > div > div {
+  overflow: hidden; }
 
 .member_info_open_all_right {
   display: inline-block;
@@ -665,15 +705,33 @@ blockquote, q {
     margin-bottom: 3%;
     background-image: url(../img/member/memphis-colorful.png); }
 
+.member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
+  transform: scale(1.1);
+  transition: all 0.8s; }
+
+.member_info_open_all_all:hover .member_info_open_all_left > div {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+
+.member_info_join_all_all:hover .member_info_join_all_left > div > div > img {
+  transform: scale(1.1);
+  transition: all 0.8s; }
+
+.member_info_join_all_all:hover .member_info_join_all_left > div {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+
+.member_info_join_all_left > div {
+  background-image: url(../img/member/memphis-colorful.png);
+  padding: 5%;
+  margin: 0 auto; }
+
+.member_info_join_all_left > div > div {
+  overflow: hidden; }
+
 .member_info_join_all_left {
   display: inline-block;
   width: 37.5%;
   font-size: 18px;
   padding: 0% 1.5% 2% 0%; }
-  .member_info_join_all_left div {
-    background-image: url(../img/member/memphis-colorful.png);
-    padding: 5%;
-    margin: 0 auto; }
 
 .member_info_join_all_right {
   display: inline-block;

@@ -67,7 +67,7 @@
     width: 50px;
     height: 200px;
     position: absolute;
-    top:0;
+    top:-200px;
     right: 40px;
     display: inline-block;
     background-image: url("../img/element/btnGoTop.png");
@@ -75,6 +75,10 @@
     background-size: contain;
     transition: filter .1s;
     cursor: pointer;
+    @media screen and (max-width:$medium) {
+        width: 45px;
+        right:10px
+    }
     @media screen and (max-width:$small) {
         width: 40px;
         top:40px
