@@ -218,6 +218,47 @@ img.eventSubTitle {
     top: -130px;
     width: 170px; } }
 
+img.baoPic {
+  width: 130px;
+  position: absolute;
+  top: 100px;
+  right: -210px;
+  animation: bagAni 2s infinite alternate linear; }
+
+img.taroPic {
+  width: 150px;
+  position: absolute;
+  top: 250px;
+  right: -320px;
+  animation: bagAni 2s infinite alternate-reverse linear; }
+
+img.backagePic {
+  width: 160px;
+  position: absolute;
+  top: 500px;
+  left: -280px;
+  animation: bagAni 2s infinite alternate linear; }
+
+img.potPic {
+  width: 160px;
+  position: absolute;
+  top: 660px;
+  left: -200px;
+  animation: bagAni 2s infinite alternate-reverse linear; }
+
+@keyframes bagAni {
+  form {
+    transform: rotate(-7deg); }
+  to {
+    transform: rotate(7deg); } }
+
+@media screen and (max-width: 1199px) {
+  img.baoPic,
+  img.taroPic,
+  img.backagePic,
+  img.potPic {
+    display: none; } }
+
 .eventTitle {
   padding-top: 10%;
   width: 100%;
