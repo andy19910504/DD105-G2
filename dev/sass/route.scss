@@ -1,5 +1,10 @@
 @import './base/var.scss';
+
 @import './modules/filter.scss';
+
+@import './modules/moodConcat.scss';
+
+@import './modules/eventConcat.scss';
 
 // 
 .wrapper{
@@ -52,20 +57,40 @@
 //routeSloganBlock
 .sloganBlock{
     width: 100%;
+    max-width: 1200px;
+    margin: auto;
     position: relative;
     display: flex;
     margin-bottom: 60px;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .sloganBlock .routeShineAnimation{
     width: 300px;
     height: 150px;
     position: absolute;
     top: 0;
-    right: 560px;
+    right: 120px;
     overflow: hidden;
     opacity: .85;
+    @media screen and (max-width:$medium){
+        right: 60px;
+    }
+    @media screen and (max-width:860px){
+        right: 20px;
+    }
+    @media screen and (max-width:767px){
+        width: 200px;
+    }
+    @media screen and (max-width:$small){
+        top:-45px;
+    }
+    @media screen and (max-width:375px){
+        width: 300px;
+        top:-80px;
+        transform: translate(66px,-18px);
+    }
 }
 // cloud
 .routeShineAnimation .cloud{
@@ -102,12 +127,18 @@
           z-index: 2;
         font-size:18px;
         animation: sunShineLeft 5s alternate infinite;
+        @media screen and (max-width:$small){
+            font-size:12px ;
+        }
       }
       &.right{
           left: 65%;
           z-index: 1;
         font-size:12px;
         animation: sunShineRight 5s alternate infinite;
+        @media screen and (max-width:$small){
+            font-size:8px ;
+        }
       }
     }
     @keyframes sunShineLeft{
@@ -131,6 +162,9 @@
     border-radius: 50%;
     box-shadow: 0 0 0 0.375em #f29341;
     animation: spin 18s infinite linear;
+    @media screen and (max-width:$small) {
+        font-size: 18px;        
+    }
 }
 @keyframes spin{
     from{transform: rotate(0deg);}
@@ -162,10 +196,16 @@
         background: #f29341;
         border-radius: 0.25em;
         box-shadow: 0 5.375em #f29341;
+            @media screen and (max-width:$small){
+                font-size: 18px;
+            }
     }
     &::before{
         transform: rotate(120deg);
     }
+    @media screen and (max-width:$small){
+        font-size: 18px;
+}
 }
 // routeSloganBlock RWD
 @media screen and (max-width:$medium){
@@ -410,13 +450,39 @@
     margin: 120px auto;
 }
 .otherLink .otherLinkTitle{
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
     font-size: $fzTitle;
     font-weight: bold;
     display: flex;
     justify-content: center;
     margin-bottom:60px;
+    @media screen and (max-width:767px){
+        flex-direction: column;
+        align-items: center; 
+        margin-bottom: 20px;  
+        :first-child{
+            display: none;
+        }
+     
+    }
 }
-.otherLink .otherLinkTitle p{
+.otherLinkTitle .routeOtherTitleImage{
+    width: 300px;
+    height: 30px;
+    background-image: url(../img/route/routeOtherTitleBlock.png);
+    @media screen and (max-width:860px) {
+        width: 240px;
+    }
+    @media screen and (max-width:767px){
+        width: 100%;
+        max-width:400px;
+        margin-top: 20px;
+    }
+
+}
+.otherLinkTitle p{
     margin: 0 40px;
 }
 
