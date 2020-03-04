@@ -1,9 +1,15 @@
 @import "./base/var.scss";
 @import "./base/reset.scss";
 @import './layout/card.scss';
-
-
-div.moodWrap{
+img.sectionTitle{
+    width: 40%;
+}
+@media screen and (max-width:575px){
+    img.sectionTitle{
+        width: 65%;
+    }
+}
+.moodWrap{
     width: 100%;
     margin-top: 30px;
     position: relative;
@@ -11,16 +17,16 @@ div.moodWrap{
     flex-direction: column;
     align-items: center;
     
-    div.moodBtn{
+    .moodBtn{
         margin-top: 20px;
     }
-    div.moodCardsWrap{
+    .moodCardsWrap{
         width: 100%;
         display: flex;
         justify-content: space-around;
     }
     @media screen and (max-width:767px){
-        div.moodCardsWrap{
+        .moodCardsWrap{
             flex-direction: column;
             align-items: center;
         }
@@ -28,7 +34,7 @@ div.moodWrap{
     }
 
     //-----------------------卡片---------------------------
-    div.moodCard{
+    .moodCard{
         @include card(unset);
         background-image: url(../img/index/moodCardsBg.png);
         border: 1px solid #c9bb88;
@@ -38,7 +44,7 @@ div.moodWrap{
         justify-content: start;
 
         //卡片上方資訊bar
-        div.cardInfoBar{
+        .cardInfoBar{
             width: 300px;
             margin-top: 5px;
             display: flex;
@@ -46,7 +52,7 @@ div.moodWrap{
             align-items: center;
 
             //會員大頭貼
-            div.moodMemberPhoto{
+            .moodMemberPhoto{
                 width: 50px;
                 height: 50px;
                 border-radius: 100%;
@@ -60,7 +66,7 @@ div.moodWrap{
                 }
             }
             //分類、會員帳號
-            div.infoTextWrap{
+            .infoTextWrap{
                 width: 210px;
                 padding-left: 10px;
                 letter-spacing: 1px;
@@ -79,7 +85,7 @@ div.moodWrap{
                 }
             }
             //右上點點按鈕
-            div.dotWrap{
+            .dotWrap{
                 width: 40px;
                 height: 40px;
                 align-self: flex-end;
@@ -100,7 +106,7 @@ div.moodWrap{
 
 
         //圖片容器
-        div.moodPicWrap {
+        .moodPicWrap {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -115,7 +121,7 @@ div.moodWrap{
         }
 
         //愛心、留言icon bar
-        div.heartBar{
+        .heartBar{
             width: 300px;
             display: flex;
             justify-content: flex-start;
@@ -132,7 +138,7 @@ div.moodWrap{
         }
 
         //文字容器
-        div.cardText {
+        .cardText {
             width: 300px;
             margin: 0 auto;
             text-align: center;
@@ -160,38 +166,38 @@ div.moodWrap{
         }
     }
     @media screen and (max-width:1199px){
-        div.moodCard{
+        .moodCard{
             width: 300px;
             //資訊bar
-            div.cardInfoBar{
+            .cardInfoBar{
                 width: 270px;
-                div.infoTextWrap{
+                .infoTextWrap{
                     width: 180px;
                 }
             }
             //圖片容器
-            div.moodPicWrap {
+            .moodPicWrap {
                 width: 270px;
                 height: 270px;
             }
             //愛心留言bar
-            div.heartBar{
+            .heartBar{
                 width: 270px;
             }
 
             //文字容器
-            div.cardText {
+            .cardText {
                 width: 270px;
             }
         }
     }
     @media screen and (max-width:1023px){
-        div.moodCard{
+        .moodCard{
             width: 230px;
             //資訊bar
-            div.cardInfoBar{
+            .cardInfoBar{
                 width: 200px;
-                div.infoTextWrap{
+                .infoTextWrap{
                     width: 110px;
                     span.moodClass{
                         font-size: 16px;
@@ -199,16 +205,16 @@ div.moodWrap{
                 }
                 }
             //圖片容器
-            div.moodPicWrap {
+            .moodPicWrap {
                 width: 200px;
                 height: 200px;
             }
             //愛心留言bar
-            div.heartBar{
+            .heartBar{
                 width: 200px;
             }
             //文字容器
-            div.cardText {
+            .cardText {
                 width: 200px;
 
                 h1{
@@ -222,28 +228,28 @@ div.moodWrap{
         }
     }
     @media screen and (max-width:767px){
-        div.moodCard{
+        .moodCard{
             width: 300px;
             margin: 7px 0px;
             //資訊bar
-            div.cardInfoBar{
+            .cardInfoBar{
                 width: 270px;
-                div.infoTextWrap{
+                .infoTextWrap{
                     width: 180px;
                 }
             }
             //圖片容器
-            div.moodPicWrap {
+            .moodPicWrap {
                 width: 270px;
                 height: 270px;
             }
             //愛心留言bar
-            div.heartBar{
+            .heartBar{
                 width: 270px;
             }
 
             //文字容器
-            div.cardText {
+            .cardText {
                 width: 270px;
             }
         }
@@ -251,11 +257,10 @@ div.moodWrap{
 }
 
 @media screen and (max-width:767px){
-    div.moodWrap{
+    .moodWrap{
         margin-top: 130px;
     }
 }
-
 
 //小標題泡泡
 img.moodSubTitle{

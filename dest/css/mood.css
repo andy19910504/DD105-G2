@@ -56,24 +56,31 @@ blockquote, q {
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
-div.moodWrap {
+img.sectionTitle {
+  width: 40%; }
+
+@media screen and (max-width: 575px) {
+  img.sectionTitle {
+    width: 65%; } }
+
+.moodWrap {
   width: 100%;
   margin-top: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center; }
-  div.moodWrap div.moodBtn {
+  .moodWrap .moodBtn {
     margin-top: 20px; }
-  div.moodWrap div.moodCardsWrap {
+  .moodWrap .moodCardsWrap {
     width: 100%;
     display: flex;
     justify-content: space-around; }
   @media screen and (max-width: 767px) {
-    div.moodWrap div.moodCardsWrap {
+    .moodWrap .moodCardsWrap {
       flex-direction: column;
       align-items: center; } }
-  div.moodWrap div.moodCard {
+  .moodWrap .moodCard {
     width: 340px;
     height: unset;
     border-radius: 10px;
@@ -84,13 +91,13 @@ div.moodWrap {
     flex-direction: column;
     align-items: center;
     justify-content: start; }
-    div.moodWrap div.moodCard div.cardInfoBar {
+    .moodWrap .moodCard .cardInfoBar {
       width: 300px;
       margin-top: 5px;
       display: flex;
       justify-content: center;
       align-items: center; }
-      div.moodWrap div.moodCard div.cardInfoBar div.moodMemberPhoto {
+      .moodWrap .moodCard .cardInfoBar .moodMemberPhoto {
         width: 50px;
         height: 50px;
         border-radius: 100%;
@@ -98,25 +105,25 @@ div.moodWrap {
         display: flex;
         justify-content: center;
         align-items: center; }
-        div.moodWrap div.moodCard div.cardInfoBar div.moodMemberPhoto img {
+        .moodWrap .moodCard .cardInfoBar .moodMemberPhoto img {
           height: 100%;
           vertical-align: middle; }
-      div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+      .moodWrap .moodCard .cardInfoBar .infoTextWrap {
         width: 210px;
         padding-left: 10px;
         letter-spacing: 1px;
         display: flex;
         flex-direction: column; }
-        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
+        .moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodClass {
           color: #1e1e1e;
           line-height: 1.5;
           font-size: 18px;
           font-weight: bold; }
-        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodMemId {
+        .moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodMemId {
           color: #646464;
           line-height: 1.5;
           font-size: 16px; }
-      div.moodWrap div.moodCard div.cardInfoBar div.dotWrap {
+      .moodWrap .moodCard .cardInfoBar .dotWrap {
         width: 40px;
         height: 40px;
         align-self: flex-end;
@@ -125,12 +132,12 @@ div.moodWrap {
         align-items: center;
         align-self: center;
         cursor: pointer; }
-        div.moodWrap div.moodCard div.cardInfoBar div.dotWrap span.dot {
+        .moodWrap .moodCard .cardInfoBar .dotWrap span.dot {
           width: 6px;
           height: 6px;
           border-radius: 100%;
           background-color: #646464; }
-    div.moodWrap div.moodCard div.moodPicWrap {
+    .moodWrap .moodCard .moodPicWrap {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -138,22 +145,22 @@ div.moodWrap {
       height: 300px;
       margin: 5px auto;
       overflow: hidden; }
-      div.moodWrap div.moodCard div.moodPicWrap img.moodPic {
+      .moodWrap .moodCard .moodPicWrap img.moodPic {
         height: 100%;
         vertical-align: middle; }
-    div.moodWrap div.moodCard div.heartBar {
+    .moodWrap .moodCard .heartBar {
       width: 300px;
       display: flex;
       justify-content: flex-start;
       align-items: center; }
-      div.moodWrap div.moodCard div.heartBar img.moodIcon {
+      .moodWrap .moodCard .heartBar img.moodIcon {
         width: 35px;
         cursor: pointer; }
-      div.moodWrap div.moodCard div.heartBar span {
+      .moodWrap .moodCard .heartBar span {
         color: #646464;
         font-size: 16px;
         margin: 0px 10px 0px 5px; }
-    div.moodWrap div.moodCard div.cardText {
+    .moodWrap .moodCard .cardText {
       width: 300px;
       margin: 0 auto;
       text-align: center;
@@ -162,71 +169,71 @@ div.moodWrap {
       display: flex;
       flex-direction: column;
       align-items: center; }
-      div.moodWrap div.moodCard div.cardText p {
+      .moodWrap .moodCard .cardText p {
         font-size: 18px;
         color: #646464;
         text-align: left; }
-      div.moodWrap div.moodCard div.cardText span {
+      .moodWrap .moodCard .cardText span {
         color: #646464;
         font-size: 16px;
         display: inline-block;
         margin: 5px 0px 20px 0px;
         cursor: pointer; }
-        div.moodWrap div.moodCard div.cardText span:hover {
+        .moodWrap .moodCard .cardText span:hover {
           color: #A5361C; }
   @media screen and (max-width: 1199px) {
-    div.moodWrap div.moodCard {
+    .moodWrap .moodCard {
       width: 300px; }
-      div.moodWrap div.moodCard div.cardInfoBar {
+      .moodWrap .moodCard .cardInfoBar {
         width: 270px; }
-        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+        .moodWrap .moodCard .cardInfoBar .infoTextWrap {
           width: 180px; }
-      div.moodWrap div.moodCard div.moodPicWrap {
+      .moodWrap .moodCard .moodPicWrap {
         width: 270px;
         height: 270px; }
-      div.moodWrap div.moodCard div.heartBar {
+      .moodWrap .moodCard .heartBar {
         width: 270px; }
-      div.moodWrap div.moodCard div.cardText {
+      .moodWrap .moodCard .cardText {
         width: 270px; } }
   @media screen and (max-width: 1023px) {
-    div.moodWrap div.moodCard {
+    .moodWrap .moodCard {
       width: 230px; }
-      div.moodWrap div.moodCard div.cardInfoBar {
+      .moodWrap .moodCard .cardInfoBar {
         width: 200px; }
-        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+        .moodWrap .moodCard .cardInfoBar .infoTextWrap {
           width: 110px; }
-          div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
+          .moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodClass {
             font-size: 16px; }
-      div.moodWrap div.moodCard div.moodPicWrap {
+      .moodWrap .moodCard .moodPicWrap {
         width: 200px;
         height: 200px; }
-      div.moodWrap div.moodCard div.heartBar {
+      .moodWrap .moodCard .heartBar {
         width: 200px; }
-      div.moodWrap div.moodCard div.cardText {
+      .moodWrap .moodCard .cardText {
         width: 200px; }
-        div.moodWrap div.moodCard div.cardText h1 {
+        .moodWrap .moodCard .cardText h1 {
           font-size: 20px; }
-        div.moodWrap div.moodCard div.cardText p {
+        .moodWrap .moodCard .cardText p {
           font-size: 16px;
           letter-spacing: 0.5px; } }
   @media screen and (max-width: 767px) {
-    div.moodWrap div.moodCard {
+    .moodWrap .moodCard {
       width: 300px;
       margin: 7px 0px; }
-      div.moodWrap div.moodCard div.cardInfoBar {
+      .moodWrap .moodCard .cardInfoBar {
         width: 270px; }
-        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+        .moodWrap .moodCard .cardInfoBar .infoTextWrap {
           width: 180px; }
-      div.moodWrap div.moodCard div.moodPicWrap {
+      .moodWrap .moodCard .moodPicWrap {
         width: 270px;
         height: 270px; }
-      div.moodWrap div.moodCard div.heartBar {
+      .moodWrap .moodCard .heartBar {
         width: 270px; }
-      div.moodWrap div.moodCard div.cardText {
+      .moodWrap .moodCard .cardText {
         width: 270px; } }
 
 @media screen and (max-width: 767px) {
-  div.moodWrap {
+  .moodWrap {
     margin-top: 130px; } }
 
 img.moodSubTitle {

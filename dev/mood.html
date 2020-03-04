@@ -104,9 +104,7 @@
     <!-- 次要按鈕_不能按 // btnPinkStop
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPinkStop">
-    More
-</a>
+        <a href="./google.com.tw" class="btnPinkStop">More</a>
 
         <!-- 回到頂端 // btnGoTop -->
 
@@ -116,9 +114,7 @@
     <!-- 自訂按鈕 // btnCust
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnCust">
-    自訂
-</a>
+        <a href="./google.com.tw" class="btnCust">寫心情</a>
 
         <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
@@ -143,6 +139,13 @@
         <div class="banner_04"></div>
         <div class="banner_05"></div>
         <div class="banner_06"></div>
+        <!-- routeFilterBlock -->
+        @@include('./layout/filter.html',{
+            "innerText1":"日式舊屋行",
+            "innerText2":"文青品味旅",
+            "innerText3":"職人散步去",
+            "innerText4":"其他"
+            })
         <section>
             <img src="./img/index/title04.png" class="sectionTitle">
             <div class="moodWrap">
