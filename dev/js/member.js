@@ -15,6 +15,9 @@ for (let i = 1; i < 7; i++) {
         //下面div會變
         $(`.member_info>div`).css("display", "none");
         $(`.member_info>div:nth-child(${i+1})`).css("display", "block");
+        // //自己變大
+        $(this).parent().css("transform","scale(1.2)");
+        $(".member_info_nav ul li img").not(this).parent().css("transform","scale(1)");
 
     });
 

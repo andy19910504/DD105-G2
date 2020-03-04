@@ -223,21 +223,12 @@
     // box-shadow: 10px 10px 5px gray;
     border-radius: 25px;
 }
-
-.member_info_nav {
-    // margin: 0 auto;
-    // width: 100%;
-    // border: 1px solid navy;
-
-    ul {
-        // border: 1px solid red;
-        // margin: 0 auto;
-        // width: 100%;
-        font-size: 0px;
-        text-align: center;
-
-        li {
-            // box-shadow: $slightShadow;
+.member_info_nav>ul{
+    font-size: 0px;
+    text-align: center; 
+}
+.member_info_nav>ul li{
+    // box-shadow: $slightShadow;
             // border: 1px solid aqua;
             display: inline-block;
             height: 125px;
@@ -257,75 +248,28 @@
             margin-top: 50px;
             // font-weight: bolder;
             position: relative;
-
-
-            img {
-                // border: 1px solid green;
-                position: absolute;
-                left: -9px;
-                top: 4px;
-                opacity: 0;
-                width: 120%;
-            }
-
-        }
-
-        // li:nth-child(odd){
-        //     animation: stampshake1 0.1s infinite linear;
-        //     @keyframes stampshake1 {
-        //         0%{
-        //             left: 10px;
-        //         }
-        //         25%{
-        //             left: -10px;
-        //         }
-        //         50%{
-        //             left: 10px;
-        //         }
-        //         75%{
-        //             left: -10px;
-        //         }
-        //         100%{
-        //             left: 10px;
-        //         }
-
-        //     }
-        // li:nth-child(even){
-        //     animation: stampshake 0.1s infinite linear;
-        //     @keyframes stampshake {
-        //         0%{
-        //             left: -1px;
-        //         }
-        //         25%{
-        //             left: 1px;
-        //         }
-        //         50%{
-        //             left: -1px;
-        //         }
-        //         75%{
-        //             left: 1px;
-        //         }
-        //         100%{
-        //             left: -1px;
-        //         }
-
-        //     }
-        // }
-    }
+}
+.member_info_nav>ul li:hover{
+    // transform: rotate(30deg);
+    // transform-origin: 0% 0%;
+    transform: scale(1.2) !important;
+    transition: 0.8s linear ;
+}
+.member_info_nav>ul li img{
+        // border: 1px solid green;
+        position: absolute;
+        left: -9px;
+        top: 4px;
+        opacity: 0;
+        width: 120%;
 }
 
 @media screen and (max-width:1200px) {
-    .member_info_nav {
-        ul {
-
-            // padding: 0% 22%;
-            li {
+    .member_info_nav>ul li{
                 height: 100px;
                 width: 125px;
                 line-height: 100px;
                 font-size: $fzContent;
-            }
-        }
     }
 
     .member_all {
@@ -335,94 +279,46 @@
 }
 
 @media screen and (max-width:$medium) {
-    .member_info_nav {
-        ul {
-
-            // padding: 0% 20%;
-            li {
-                // background-image:unset;
-                // border: 1px solid red;
-                height: 80px;
-                width: 100px;
-                line-height: 80px;
-                font-size: $fzInfo;
-                // margin-left: 3%;
-                // margin-right: 3%;
-            }
-        }
+    .member_info_nav>ul li{
+        height: 80px;
+        width: 100px;
+        line-height: 80px;
+        font-size: $fzInfo;
     }
-
     .member_all {
         width: 100%;
     }
 }
 
 @media screen and (max-width:767px) {
-    .member_info_nav {
-        ul {
-
-            // padding:0 24%;
-            // li {
-            //     // width: 33%;
-            //     margin-top: 25px;
-            //     // background-image:unset;
-            //     // border: 1px solid blue;
-            //     margin-left: 1%;
-            //     margin-right: 1%;
-            //     height: 65px;
-            //     width: 80px;
-            //     line-height: 65px;
-            // }
-            li {
-                height: 65px;
-                width: 80px;
-                line-height: 65px;
-                margin-left: 1%;
-                margin-right: 1%;
-            }
-        }
+    .member_info_nav>ul li{
+        height: 65px;
+        width: 80px;
+        line-height: 65px;
+        margin-left: 1%;
+        margin-right: 1%;
     }
 }
 
 @media screen and (max-width:$small) {
-    .member_info_nav {
-        ul {
-            padding: 0 2%;
-
-            //         li {
-            //             // background-image: url(../img/member/memberstamp2.png);
-            //             margin-left: 5%;
-            //             margin-right: 5%;
-            //             // margin-top: 10px;
-            //         }
-            li {
-                margin-left: 3.5%;
+    .member_info_nav>ul{
+        padding: 0 2%;
+    }
+    .member_info_nav>ul li{
+        margin-left: 3.5%;
                 margin-right: 3.5%;
                 margin-top: 25px;
                 height: 80px;
                 width: 100px;
                 line-height: 80px;
-            }
-        }
     }
 }
 @media screen and (max-width:414px) {
-    .member_info_nav {
-        ul {
-
-            //         li {
-            //             // background-image: url(../img/member/memberstamp2.png);
-            //             margin-left: 5%;
-            //             margin-right: 5%;
-            //             // margin-top: 10px;
-            //         }
-            li {
-                margin-left: 2%;
-                margin-right: 2%;
-
-            }
-        }
+    .member_info_nav>ul li{
+        margin-left: 2%;
+        margin-right: 2%;
     }
+
 }
 
 .member_info_info {
@@ -672,6 +568,9 @@
     border-radius: 15px;
     // text-align: center;
 }
+.member_info_line_all_all:hover{
+    box-shadow: $heavierShadow;
+}
 
 .member_info_line_all_left {
     width: 50%;
@@ -754,13 +653,15 @@
             display: inline-block;
             width: 30%;
             font-size: 16px;
-            border-radius: 15px;
+            // border-radius: 15px;
 
             img {
                 margin-top: 5%;
+                // border: 1px solid red;
             }
 
             div {
+                overflow: hidden;
                 border: unset;
                 margin-left: 0;
                 margin-right: 0;
@@ -799,8 +700,24 @@
                 }
             }
         }
+        div:hover{
+            img{
+                transform: scale(1.1);
+                transition: all 0.8s linear;
+            }
+        }
     }
 }
+.member_info_share>div>div{
+   border-radius: 15px; 
+}
+.member_info_share>div>div:hover{
+    box-shadow:$heavierShadow ;
+}
+// .member_info_share>div>div:hover.member_info_share>div>div>div>img{
+//     transform: scale(1.1);
+//     transition: all 0.8s;
+// }
 
 @media screen and (max-width:1200px) {
     .member_info_share div div {
@@ -850,77 +767,30 @@
         margin-left: 2%;
     }
 }
-
-.member_info_order {
+.member_info_order{
     padding: 4.75%;
 
     // border: 1px solid red;
-    div:nth-child(1) {
-        padding: 4.75%;
-        background-image: url(../img/member/memphis-colorful.png);
-        // border: 1px solid blue;
-
-        div:nth-child(1) {
-            border: 3px dashed $importantColor;
-            padding: 0 3% 3% 3%;
-            background-image: url(../img/member/hip-square.png);
-            // border: 1px solid green;
-            border-radius: 15px;
-            ;
-
-            div:nth-child(1) {
-                padding-top: 5%;
-                padding-bottom: 5%;
-                font-size: 0px;
-                border: unset;
-                // background-image: url(../img/member/memphis-colorful.png);
-                // border: 1px solid red;
-            }
-
-            div:nth-child(2) {
-                font-size: 0px;
-                // border: 1px solid pink;
-
-                div {
-                    vertical-align: top;
-                    font-size: 0px;
-                    padding: 0;
-                    margin-left: 1.5%;
-                    margin-right: 1.5%;
-                    display: inline-block;
-                    width: 30%;
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    border: 1px dashed $importantColor;
-                    margin-bottom: 2%;
-                    padding: 1%;
-                    background-image: url(../img/member/memphis-colorful.png);
-                    border-radius: unset;
-
-                    p {
-                        width: auto;
-                        padding: 5% 0;
-                        text-align: center;
-                        display: block;
-                        // border: 1px solid red;
-                        margin: 0;
-                        font-size: $fzContent;
-
-                        span {
-                            // border: 1px solid red;
-                            margin-top: 10px;
-                            display: block;
-                        }
-                    }
-                }
-
-            }
-        }
-    }
 }
-
+.member_info_order>div{
+    padding: 4.75%;
+    background-image: url(../img/member/memphis-colorful.png);
+    // border: 1px solid blue;
+}
+.member_info_order>div>div{
+    border: 3px dashed $importantColor;
+    padding: 0 3% 3% 3%;
+    background-image: url(../img/member/hip-square.png);
+    // border: 1px solid green;
+    border-radius: 15px;
+}
 .member_info_order_up {
-    padding: 0px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-size: 0px;
+    border: unset;
+    // background-image: url(../img/member/memphis-colorful.png);
+    // border: 1px solid red;
 
     p {
         text-align: center;
@@ -937,6 +807,56 @@
         }
     }
 }
+.member_info_order_bottom{
+    font-size: 0px;
+}
+.member_info_order_bottom>div{
+    vertical-align: top;
+    font-size: 0px;
+    padding: 0;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    display: inline-block;
+    width: 30%;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px dashed $importantColor;
+    margin-bottom: 2%;
+    padding: 2%;
+    background-image: url(../img/member/memphis-colorful.png);
+}
+.member_info_order_bottom>div:hover{
+    box-shadow: $heavierShadow;
+}
+.member_info_order_bottom>div:hover{
+    img{
+        transform: scale(1.1);
+        transition: all 0.8s;
+    }
+    
+
+}
+.member_info_order_bottom>div>div{
+    // border: 1px solid red;
+    overflow: hidden;
+    p {
+        width: auto;
+        padding: 5% 0;
+        text-align: center;
+        display: block;
+        // border: 1px solid red;
+        margin: 0;
+        font-size: $fzContent;
+
+        span {
+            // border: 1px solid red;
+            margin-top: 10px;
+            display: block;
+        }
+    }
+
+}
+
 
 @media screen and (max-width:1200px) {
     .member_info_order_up {
@@ -946,15 +866,17 @@
         }
     }
 
-    .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+    .member_info_order_bottom>div{
+        // border: 1px solid red;
         margin-left: 1.5%;
         margin-right: 1.5%;
         width: 47%;
+        // border: 10px solid red;
     }
 }
 
 @media screen and (max-width:767px) {
-    .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+    .member_info_order_bottom>div{
         width: 70%;
         margin-left: 15%;
         margin-right: 15%;
@@ -962,7 +884,7 @@
 }
 
 @media screen and (max-width:$small) {
-    .member_info_order div:nth-child(1) div:nth-child(1) div:nth-child(2) div {
+    .member_info_order_bottom>div{
         // border: 1px solid red;
         width: 90%;
         margin-left: 5%;
@@ -1007,6 +929,17 @@
         background-image: url(../img/member/memphis-colorful.png);
     }
 }
+.member_info_open_all_all:hover{
+    .member_info_open_all_left>div>div>img{
+              transform: scale(1.1);
+        transition: all 0.8s;
+    }
+    .member_info_open_all_left>div{
+        box-shadow: $heavierShadow;
+
+    }
+}
+
 
 .member_info_open_all_left {
     display: inline-block;
@@ -1016,16 +949,18 @@
     font-size: $fzContent;
     padding: 0% 1.5% 2% 0%;
 
-    div {
-        background-image: url(../img/member/memphis-colorful.png);
-        padding: 5%;
-        // border: 1px solid greenyellow;
-        // max-width: 310px;
-        margin: 0 auto;
-
-    }
-
 }
+.member_info_open_all_left>div{
+    background-image: url(../img/member/memphis-colorful.png);
+    padding: 5%;
+    // border: 1px solid greenyellow;
+    // max-width: 310px;
+    margin: 0 auto;
+}
+.member_info_open_all_left>div>div{
+    overflow: hidden;
+}
+
 
 .member_info_open_all_right {
 
@@ -1137,7 +1072,35 @@
         background-image: url(../img/member/memphis-colorful.png);
     }
 }
+.member_info_open_all_all:hover{
+    .member_info_open_all_left>div>div>img{
+              transform: scale(1.1);
+        transition: all 0.8s;
+    }
+    .member_info_open_all_left>div{
+        box-shadow: $heavierShadow;
 
+    }
+}
+.member_info_join_all_all:hover{
+    .member_info_join_all_left>div>div>img{
+        transform: scale(1.1);
+  transition: all 0.8s;
+}
+    .member_info_join_all_left>div{
+        box-shadow: $heavierShadow;
+}
+}
+.member_info_join_all_left>div{
+    background-image: url(../img/member/memphis-colorful.png);
+    padding: 5%;
+    // border: 1px solid greenyellow;
+    // max-width: 310px;
+    margin: 0 auto;
+}
+.member_info_join_all_left>div>div{
+    overflow: hidden;
+}
 .member_info_join_all_left {
     display: inline-block;
     width: 37.5%;
@@ -1145,15 +1108,6 @@
     // height: 100px;
     font-size: $fzContent;
     padding: 0% 1.5% 2% 0%;
-
-    div {
-        background-image: url(../img/member/memphis-colorful.png);
-        padding: 5%;
-        // border: 1px solid greenyellow;
-        // max-width: 310px;
-        margin: 0 auto;
-
-    }
 
 }
 
