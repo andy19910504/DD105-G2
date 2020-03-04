@@ -56,6 +56,168 @@ blockquote, q {
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
+/*
+     卡片：首頁、路線、心情、揪團，要使用的sample
+    
+     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
+
+    */
+div.eventWrap {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  div.eventWrap div.eventBtn {
+    margin-top: 20px; }
+  div.eventWrap div.eventCardsWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+  @media screen and (max-width: 767px) {
+    div.eventWrap div.eventCardsWrap {
+      flex-direction: column;
+      align-items: center; } }
+  div.eventWrap div.eventCard {
+    width: 340px;
+    height: unset;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+    background-image: url(../img/index/eventCardBg.png);
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; }
+    div.eventWrap div.eventCard div.dotWrap {
+      width: 40px;
+      height: 40px;
+      margin: 5px 18px 0px 0px;
+      align-self: flex-end;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      cursor: pointer; }
+      div.eventWrap div.eventCard div.dotWrap span.dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #646464; }
+    div.eventWrap div.eventCard div.eventPicWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin: 5px auto;
+      overflow: hidden; }
+      div.eventWrap div.eventCard div.eventPicWrap img.eventPic {
+        height: 100%;
+        vertical-align: middle; }
+    div.eventWrap div.eventCard div.cardText {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      div.eventWrap div.eventCard div.cardText h1 {
+        width: 100%;
+        font-size: 24px;
+        color: #1e1e1e;
+        font-weight: 550;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px; }
+      div.eventWrap div.eventCard div.cardText p {
+        font-size: 18px;
+        color: #646464;
+        text-align: left; }
+      div.eventWrap div.eventCard div.cardText span {
+        color: #646464;
+        font-size: 16px;
+        display: inline-block;
+        margin: 5px 0px 20px 0px;
+        cursor: pointer; }
+        div.eventWrap div.eventCard div.cardText span:hover {
+          color: #A5361C; }
+  @media screen and (max-width: 1199px) {
+    div.eventWrap div.eventCard {
+      width: 300px; }
+      div.eventWrap div.eventCard div.dotWrap {
+        margin: 5px 18px 0px 0px; }
+      div.eventWrap div.eventCard div.eventPicWrap {
+        width: 270px;
+        height: 270px; }
+      div.eventWrap div.eventCard div.cardText {
+        width: 270px; } }
+  @media screen and (max-width: 1023px) {
+    div.eventWrap div.eventCard {
+      width: 230px; }
+      div.eventWrap div.eventCard div.dotWrap {
+        margin: 0px 15px 0px 0px; }
+      div.eventWrap div.eventCard div.eventPicWrap {
+        width: 200px;
+        height: 200px; }
+      div.eventWrap div.eventCard div.cardText {
+        width: 200px; }
+        div.eventWrap div.eventCard div.cardText h1 {
+          font-size: 20px; }
+        div.eventWrap div.eventCard div.cardText p {
+          font-size: 16px;
+          letter-spacing: 1px; } }
+  @media screen and (max-width: 767px) {
+    div.eventWrap div.eventCard {
+      width: 300px;
+      margin: 7px 0px; }
+      div.eventWrap div.eventCard div.dotWrap {
+        margin: 5px 18px 0px 0px; }
+      div.eventWrap div.eventCard div.eventPicWrap {
+        width: 270px;
+        height: 270px; }
+      div.eventWrap div.eventCard div.cardText {
+        width: 270px;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 1.5; }
+        div.eventWrap div.eventCard div.cardText h1 {
+          font-size: 24px; }
+        div.eventWrap div.eventCard div.cardText p {
+          font-size: 18px; } }
+
+@media screen and (max-width: 767px) {
+  div.eventWrap {
+    margin-top: 130px; } }
+
+img.eventSubTitle {
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  top: -150px;
+  animation: subtitleAni .8s infinite alternate; }
+
+@keyframes subtitleAni {
+  from {
+    transform: translateY(20px); }
+  to {
+    transform: translateY(0px); } }
+
+@media screen and (max-width: 1365px) {
+  img.eventSubTitle {
+    left: 0%; } }
+
+@media screen and (max-width: 1199px) {
+  img.eventSubTitle {
+    top: -150px; } }
+
+@media screen and (max-width: 1023px) {
+  img.eventSubTitle {
+    top: -130px;
+    width: 170px; } }
+
 .eventTitle {
   padding-top: 10%;
   width: 100%;
@@ -66,56 +228,65 @@ blockquote, q {
 .eventContent {
   max-width: 1200px;
   border: 1px solid red;
-  margin: 70px auto; }
+  margin: 0px auto; }
   .eventContent .newEvent {
     width: 100%;
     position: relative; }
     .eventContent .newEvent .newEventTitle {
+      z-index: 10;
       display: inline-block;
       position: absolute;
-      left: -160px;
-      top: -160px; }
+      left: -185px;
+      top: -75px;
+      animation: subtitleAni .8s infinite alternate; }
     .eventContent .newEvent #slideBoard {
       width: 100%;
       border: 1px solid black;
-      overflow: hidden; }
-      .eventContent .newEvent #slideBoard ul {
+      overflow: hidden;
+      letter-spacing: 1.5px;
+      line-height: 1.75; }
+      .eventContent .newEvent #slideBoard #content {
         position: relative;
-        display: flex; }
-        .eventContent .newEvent #slideBoard ul a {
-          display: inline-block; }
-          .eventContent .newEvent #slideBoard ul a li {
-            display: inline-flex;
-            float: left;
-            width: 1200px; }
-            .eventContent .newEvent #slideBoard ul a li .newEventPic {
-              background-color: #f2fbff;
-              padding: 30px 48px 50px 48px;
-              border: 1px solid #b0b0b0; }
-            .eventContent .newEvent #slideBoard ul a li .newEventText {
-              position: relative;
-              margin: 0 auto; }
-              .eventContent .newEvent #slideBoard ul a li .newEventText p {
-                padding-top: 32%;
-                font-size: 36px;
-                color: #646464;
-                font-family: 微軟正黑體; }
+        display: inline-flex; }
+        .eventContent .newEvent #slideBoard #content .newSlider {
+          display: flex;
+          float: left;
+          justify-content: center;
+          width: 1200px;
+          border: 1px solid green;
+          justify-content: start;
+          cursor: pointer; }
+          .eventContent .newEvent #slideBoard #content .newSlider .newEventPic {
+            background-color: #f2fbff;
+            padding: 30px 48px 50px 48px;
+            border: 1px solid purple; }
+            .eventContent .newEvent #slideBoard #content .newSlider .newEventPic a {
+              display: inline-block; }
+          .eventContent .newEvent #slideBoard #content .newSlider .newEventText {
+            position: relative;
+            margin: 170px auto;
+            border: 1px solid purple;
+            vertical-align: middle; }
+            .eventContent .newEvent #slideBoard #content .newSlider .newEventText p {
+              border: 1px solid pink;
+              font-size: 24px;
+              color: #646464; }
 
 #contentButton {
   /* border: 1px solid red; */
   height: 45px;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  text-align: center; }
   #contentButton li {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #589fb2;
+    background-color: #91c4d3;
     margin: 25px 8px;
     cursor: pointer; }
   #contentButton li.clickMe {
-    background-color: #589fb2;
-    opacity: 0.6; }
+    background-color: #589fb2; }
 
 .cutLine {
   width: 100%;
@@ -155,61 +326,18 @@ blockquote, q {
 .selector select {
   width: 190px;
   height: 30px;
-  padding: 5px;
+  margin: 10px 0;
   color: #646464;
   font-size: 16px; }
 
-.cardBox {
-  padding: 20px 0; }
-  .cardBox .cardLine {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 25px 0; }
-    .cardBox .cardLine .event {
-      position: relative;
-      width: 30%;
-      background-image: url(../img/event/event_cardback.png); }
-      .cardBox .cardLine .event.card {
-        width: 340px;
-        height: 510px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4); }
-      .cardBox .cardLine .event .reportBtn {
-        font-size: 30px;
-        position: absolute;
-        right: 15px;
-        top: -10px; }
-      .cardBox .cardLine .event .cardPic {
-        margin: 25px auto;
-        text-align: center; }
-      .cardBox .cardLine .event .cardText {
-        width: 310px;
-        margin: 0 auto;
-        text-align: center;
-        letter-spacing: 3px; }
-        .cardBox .cardLine .event .cardText h1 {
-          font-size: 24px;
-          color: #1e1e1e;
-          font-weight: 550; }
-        .cardBox .cardLine .event .cardText p {
-          font-size: 18px;
-          color: #646464;
-          margin: 10px;
-          text-align: left;
-          letter-spacing: 4px; }
-        .cardBox .cardLine .event .cardText span {
-          color: #646464;
-          font-size: 16px;
-          display: inline-block;
-          margin: 5px;
-          cursor: pointer; }
+.cardBox2 {
+  display: none; }
 
 .viewMore {
-  margin: 10px auto;
+  margin: 35px auto 0 auto;
   text-align: center; }
 
-body {
+.wrapper {
   position: relative; }
 
 .backDrop {
@@ -217,12 +345,14 @@ body {
   display: none;
   filter: alpha(opacity=0);
   height: 100%;
-  left: 0px;
-  opacity: .0;
-  position: absolute;
-  top: 0px;
   width: 100%;
-  z-index: 50; }
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  position: fixed; }
 
 .close {
   color: #646464;
@@ -233,20 +363,14 @@ body {
   position: absolute; }
 
 .lightbox_holdevent_info, .lightbox_detailevent_info {
-  position: fixed;
+  position: relative;
   background-color: #d4d3d3;
   background-image: url(../img/event/event_cardback.png);
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  display: none;
-  opacity: 0;
-  z-index: 51;
-  width: 70%;
-  height: 75%;
-  margin: auto;
+  display: block;
+  width: 800px;
+  height: 750px;
   top: 15%;
-  left: 0;
-  right: 0;
-  bottom: 0;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 15px; }
@@ -263,36 +387,23 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center; }
-<<<<<<< HEAD
-    .lightbox_holdevent_info .holdevent_step div {
-      height: 100px;
-      margin: 0 30px;
-      width: 100px;
-      border-radius: 50%;
-=======
     .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
       margin: 0 55px;
       width: 110px;
       height: 110px;
->>>>>>> a5084ba97f45e4938091d7f105ca11a5c0e8a920
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-radius: 50%;
       font-size: 18px;
-<<<<<<< HEAD
       position: relative;
       border: 1px solid #6a9cb0; }
-      .lightbox_holdevent_info .holdevent_step div div {
-=======
-      border: 1px solid #6a9cb0;
-      border-radius: 50%; }
-      .lightbox_holdevent_info .holdevent_step div.yellow, .lightbox_detailevent_info .holdevent_step div.yellow {
-        background-color: #e4c56f; }
-      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
-        margin: 4px 0; }
+
+.color {
+  background-color: #FFD66A; }
 
 .holdevent_step1content {
-  display: none;
+  display: block;
   border: 1px solid purple;
   position: absolute;
   width: 100%; }
@@ -377,7 +488,7 @@ body {
         margin-right: 10px; }
 
 .holdevent_step3content {
-  display: block;
+  display: none;
   font-size: 18px;
   color: #646464; }
   .holdevent_step3content .step3Info {
@@ -435,7 +546,6 @@ body {
       .detaileventContent .detaileventPic .title .reportBtnB {
         font-size: 30px;
         text-align: center;
->>>>>>> a5084ba97f45e4938091d7f105ca11a5c0e8a920
         position: absolute;
         right: 70px;
         bottom: 0; }
@@ -474,9 +584,6 @@ body {
   background-color: #d4d3d3;
   background-image: url(../img/event/event_cardback.png);
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  display: block;
-  opacity: 1;
-  z-index: 51;
   width: 20%;
   height: 40%;
   margin: auto;
