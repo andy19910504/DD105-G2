@@ -73,7 +73,10 @@
 
 .sloganBlock {
   width: 100%;
+<<<<<<< HEAD
+=======
   position: relative;
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,6 +89,8 @@
           align-items: center;
 }
 
+<<<<<<< HEAD
+=======
 .sloganBlock .routeShineAnimation {
   width: 300px;
   height: 150px;
@@ -263,6 +268,7 @@
           transform: rotate(120deg);
 }
 
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 @media screen and (max-width: 1023px) {
   .routeSloganImage {
     width: 550px;
@@ -561,6 +567,8 @@
     display: none;
   }
 }
+<<<<<<< HEAD
+=======
 
 .otherLinkBlock {
   width: 100%;
@@ -583,4 +591,5 @@
 .otherLink .otherLinkTitle p {
   margin: 0 40px;
 }
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 /*# sourceMappingURL=route.css.map */
