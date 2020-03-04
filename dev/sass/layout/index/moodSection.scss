@@ -285,3 +285,39 @@ img.moodSubTitle{
         width: 170px;
     }
 }  
+
+//------------------裝飾小圖-------------------
+img.photoPic{
+    width: 120px;
+    position: absolute;
+    top: 500px;
+    left: -200px;
+    animation: skyLightAni 2s infinite alternate linear;
+}
+img.heartPic{
+    width: 150px;
+    position: absolute;
+    top: 650px;
+    left: -280px;
+    transform: rotate(-8deg);
+    animation: skyLightAni 3s infinite alternate linear;
+}
+img.airplanePic{
+    width: 180px;
+    position: absolute;
+    top: 900px;
+    right: -280px;
+    animation: airplaneAni 2.5s infinite alternate linear;
+}
+@keyframes airplaneAni{
+    from{transform: translate(0,0);}
+    to{transform: translate(-15px,-15px);}
+}
+
+@media screen and (max-width:1199px){
+    img.photoPic,
+    img.heartPic,
+    img.airplanePic{
+        display: none;
+    }
+}
