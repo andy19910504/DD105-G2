@@ -332,7 +332,7 @@ img.skyLight01{
     width: 120px;
     position: absolute;
     left: -250px;
-    top: 1050px;
+    top: 850px;
     animation: skyLightAni 2s infinite alternate-reverse linear;
 }
 //天燈 (外圍2顆
@@ -340,7 +340,7 @@ img.skyLight02{
     width: 300px;
     position: absolute;
     left: -320px;
-    top: 920px;
+    top: 720px;
     animation: skyLightAni 1s infinite alternate-reverse linear;
 }
 @keyframes skyLightAni{

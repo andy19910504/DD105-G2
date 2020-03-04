@@ -201,6 +201,8 @@ div.gameWrap div.playBtn {
   }
 }
 
+<<<<<<< HEAD
+=======
 div.gpsWrap {
   border: 1px solid blue;
   width: 100%;
@@ -460,6 +462,7 @@ div.gpsWrap img.gpsPhonePic {
   }
 }
 
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 img.gameSubTitle {
   position: absolute;
   right: -5%;
