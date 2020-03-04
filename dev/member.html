@@ -14,12 +14,12 @@
 
 <body>
     <div class="wrapper">
-                <!-- header -->
+        <!-- header -->
         @@include('./layout/header.html',{
-            
+
         })
         <div class="banner_06">
-            <img src="./img/member/membertitle.png" alt="" class="title">
+            <!-- <img src="./img/member/membertitle.png" alt="" class="title"> -->
         </div>
         <div class="member_content">
             <div class="member_all">
@@ -51,20 +51,20 @@
                     <span>我的資料</span>
                 </div> -->
                 <!-- breadCrumb -->
-        @@include('./layout/breadCrumb.html',{
-            "link1":"./google.com.tw",
-            "innerText1":"台北散步",
-            "link2":"./google.com.tw",
-            "innerText2":"會員中心",
-            "link3":"./google.com.tw",
-            "innerText3":"會員資料",
-            "link4":"./google.com.tw",
-            "innerText4":"",
-            "link5":"./google.com.tw",
-            "innerText5":"",
-            "link6":"./google.com.tw",
-            "innerText6":""
-            })
+                @@include('./layout/breadCrumb.html',{
+                "link1":"./google.com.tw",
+                "innerText1":"台北散步",
+                "link2":"./google.com.tw",
+                "innerText2":"會員中心",
+                "link3":"./google.com.tw",
+                "innerText3":"會員資料",
+                "link4":"./google.com.tw",
+                "innerText4":"",
+                "link5":"./google.com.tw",
+                "innerText5":"",
+                "link6":"./google.com.tw",
+                "innerText6":""
+                })
                 <div class="member_point">
                     <div class="member_point_left">
                         <img src="./img/member/membergold.png" alt="">
@@ -79,7 +79,7 @@
                 <div class="member_info">
                     <nav class="member_info_nav">
                         <ul>
-                            <li>會員資料
+                            <li style="color:#a5361c ">會員資料
                                 <img src="./img/member/memberstamp.png" style="opacity: .2;" alt="">
                             </li>
                             <li>路線紀錄
@@ -99,78 +99,78 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="member_info_info">
+                    <div class="member_info_info"  >
                         <div class="member_info_info_all">
-                            <div class="member_info_info_left">
-                                <div>
+                            <form action="">
+                                <div class="member_info_info_left">
                                     <div>
-                                        <img src="./img/member/memberphoto.jpg" alt="">
+                                        <div>
+                                            <img src="./img/member/memberphoto.jpg" alt="">
+                                        </div>
+                                        <div>
+                                            <label for="photo_up">上傳大頭照
+                                                <img src="./img/member/membercamera.png" alt="">
+                                            </label>
+                                            <input style="display: none;" type="file" name="" id="photo_up">
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="member_info_info_line"></div>
+                                <div class="member_info_info_right">
+                                    <div>
+                                        <span>我的資料</span>
+                                        <img src="./img/member/memberchange.png" alt="">
+
                                     </div>
                                     <div>
-                                        <label for="photo_up">上傳大頭照
-                                            <img src="./img/member/membercamera.png" alt="">
-                                        </label>
-                                        <input style="display: none;" type="file" name="" id="photo_up">
+                                        <label for="">帳號 :</label>
+                                        <input type="text" readonly>
+                                    </div>
+                                    <div>
+                                        <label for="">密碼 :</label>
+                                        <input type="text" readonly>
+                                    </div>
+                                    <div>
+                                        <label for="">暱稱 :</label>
+                                        <input type="text" readonly>
+                                    </div>
+                                    <div>
+                                        <label for="">手機 :</label>
+                                        <input type="text" readonly>
+                                    </div>
+                                    <div>
+                                        <label for="">信箱 :</label>
+                                        <input type="text" readonly>
                                     </div>
                                 </div>
-
-
-
-                            </div>
-                            <div class="member_info_info_line"></div>
-                            <div class="member_info_info_right">
-                                <div>
-                                    <span>我的資料</span>
-                                    <img src="./img/member/memberchange.png" alt="">
-
+                                <div class="member_info_info_button ">
+                                    <a class="btnPinkStop">
+                                        修改
+                                    </a>
+                                <!-- <input type="submit" class="btnPinkStop" value="修改確認"> -->
                                 </div>
-                                <div>
-                                    <label for="">帳號 :</label>
-                                    <input type="text" readonly>
-                                </div>
-                                <div>
-                                    <label for="">密碼 :</label>
-                                    <input type="text" readonly>
-                                </div>
-                                <div>
-                                    <label for="">暱稱 :</label>
-                                    <input type="text"readonly>
-                                </div>
-                                <div>
-                                    <label for="">手機 :</label>
-                                    <input type="text" readonly>
-                                </div>
-                                <div>
-                                    <label for="">信箱 :</label>
-                                    <input type="text" readonly>
-                                </div>
-                            </div>
-                            <div class="member_info_info_button ">
-                                <div class="btnPinkStop">
-                                    修改確認
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="member_info_line minheightbig " style="display: none;" >
-                        <div class="minheightmiddle">
-                            <div>
+                    <div class="member_info_line minheightbig " style="display: none;">
+                        <div class="member_info_line_all minheightmiddle">
+                            <div class="member_info_line_all_all">
                                 <p>吃貨之行</p>
                                 <div>
+                                    <a class="btnPink" href="#">修改</a>
+                                <!-- <div class="btnPink">
                                     修改
-                                </div>
-                                <div>
+                                </div> -->
+                                <a class="btnPink" href="#">刪除</a>
+                                <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                <!-- <button class="btnPink">
                                     刪除
+                                </button> -->
                                 </div>
-                            </div>
-                            <div>
-                                <p>吃貨之行吃貨之行吃貨之行</p>
-                                <div>
-                                    修改
-                                </div>
-                                <div>
-                                    刪除
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -189,8 +189,15 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <div>修改</div>
-                                    <div>刪除</div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
                             </div>
@@ -206,8 +213,15 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <div>修改</div>
-                                    <div>刪除</div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
                             </div>
@@ -223,8 +237,15 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <div>修改</div>
-                                    <div>刪除</div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
                             </div>
@@ -240,8 +261,15 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <div>修改</div>
-                                    <div>刪除</div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
                             </div>
@@ -251,35 +279,35 @@
                     <div class="member_info_order minheightbig" style="display: none;">
                         <div class="minheightmiddle">
                             <div>
-                                <div>
+                                <div class="member_info_order_up">
                                     <p>訂單編號 :<span>NO.61</span></p>
                                     <p>訂單日期 :<span>2020/02/29</span></p>
                                     <p>訂單金額 :<span>600元</span></p>
                                     <p>訂單狀態 :<span>已出貨</span></p>
                                 </div>
-                                <div>
+                                <div class="member_info_order_bottom">
                                     <div>
                                         <img src="./img/member/membersun.png" alt="">
-                                        <p>寄件地址 :<span>XXXXXXXXX</span></p>
+                                        <p>寄件地址<span>XXXXXXXXX</span></p>
                                     </div>
                                     <div>
                                         <img src="./img/member/membersun.png" alt="">
-                                        <p>寄件地址 :<span>XXXXXXXXX</span></p>
+                                        <p>寄件地址<span>XXXXXXXXX</span></p>
                                     </div>
                                     <div>
                                         <img src="./img/member/membersun.png" alt="">
-                                        <p>寄件地址 :<span>XXXXXXXXX</span></p>
+                                        <p>寄件地址<span>XXXXXXXXX</span></p>
                                     </div>
                                     <div>
                                         <img src="./img/member/membersun.png" alt="">
-                                        <p>寄件地址 :<span>XXXXXXXXXXXXXXXXXXXX</span></p>
+                                        <p>寄件地址<span>XXXXXXXXXXXXXXXXXXXX</span></p>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="member_info_open minheightbig"  style="display: none;">
+                    <div class="member_info_open minheightbig" style="display: none;">
                         <div class="member_info_open_all minheightmiddle">
                             <div class="member_info_open_all_all">
                                 <h1>
@@ -298,12 +326,15 @@
                                     <p>揪團期程 :<span>4小時</span></p>
                                 </div>
                                 <div class="member_info_open_all_bottom">
-                                    <div>
-                                        修改開團
-                                    </div>
-                                    <div>
-                                        刪除開團
-                                    </div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
                             </div>
                             <div class="member_info_open_all_all">
@@ -323,12 +354,15 @@
                                     <p>揪團期程 :<span>4小時</span></p>
                                 </div>
                                 <div class="member_info_open_all_bottom">
-                                    <div>
-                                        修改開團
-                                    </div>
-                                    <div>
-                                        刪除開團
-                                    </div>
+                                    <a class="btnPink" href="#">修改</a>
+                                    <!-- <div class="btnPink">
+                                        修改
+                                    </div> -->
+                                    <a class="btnPink" href="#">刪除</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
 
@@ -354,9 +388,11 @@
                                     <p>揪團期程 :<span>4小時</span></p>
                                 </div>
                                 <div class="member_info_join_all_bottom">
-                                    <div>
-                                        取消參團
-                                    </div>
+                                    <a class="btnPink" href="#">取消參團</a>
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <!-- <button class="btnPink">
+                                        刪除
+                                    </button> -->
                                 </div>
 
 
@@ -366,16 +402,16 @@
                 </div>
             </div>
         </div>
-        
-         <!-- footer // -->
-         @@include('./layout/footer.html')
-         @@include('./layout/login.html')
 
-    
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/common.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="./js/member.js"></script>
+        <!-- footer // -->
+        @@include('./layout/footer.html')
+        @@include('./layout/login.html')
+
+
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/common.js"></script>
+        <script src="./js/login.js"></script>
+        <script src="./js/member.js"></script>
 </body>
 
 </html>

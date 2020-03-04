@@ -78,11 +78,13 @@ gulp.task('minfly_img',function(){
     .pipe(gulp.dest('dest/min_img'));
 })
 
+
 // 和瀏覽器同步
-gulp.task('default', function () { // default 只要打gulp 即可執行
+gulp.task('default', function() { // default 只要打gulp 即可執行
     browserSync.init({
         server: {
             baseDir: "./dest",
+<<<<<<< HEAD
 <<<<<<< HEAD
             index: "event.html"
 =======
@@ -110,6 +112,9 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
 >>>>>>> 283ca863c0e7887150857eab005d7dec0303b098
 >>>>>>> 95823165f6f795a1db5d56a928af652e556b8efc
 >>>>>>> 6b3d51844357d5e53ba4a609894c328b4ba8252a
+=======
+            index: "index.html"
+>>>>>>> a5084ba97f45e4938091d7f105ca11a5c0e8a920
         }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);

@@ -28,11 +28,11 @@
     </h1>
     <nav>
         <ul>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
-            <li><a href="#"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+            <li><a href="./route.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="./mapgame.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="./"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="./postcard.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="./event.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
         </ul>
     </nav>
     <div class="memberIcon">
@@ -139,6 +139,19 @@
         <div class="banner_04"></div>
         <div class="banner_05"></div>
         <div class="banner_06"></div>
+
+        <!-- filter // tab 篩選器
+            innetText:篩選的名稱
+            註：並非每個分頁皆有，需自行在自己的scss中import './modules/'filter.scss';
+         -->
+         <div class="filterBlock">
+    <ul class="filterAll">
+        <li id="filter1" class="filter showFilter"></li>
+        <li id="filter2" class="filter"></li>
+        <li id="filter3" class="filter"></li>
+    </ul>
+    <img src="./img/route/filterBgimage.png" class="filterBgImage">
+</div>
 
         <!-- footer // -->
         <footer>
