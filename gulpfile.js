@@ -84,7 +84,7 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
         server: {
             baseDir: "./dest",
             index: "postcard.html"
-  }
+        }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);
     gulp.watch(web.sass, ['sass']).on('change', reload);

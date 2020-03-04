@@ -97,6 +97,14 @@ div.postcardimg4 {
   background-repeat: no-repeat;
   text-align: center; }
 
+.step_yellow {
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-image: url(../img/postcard/yellow.png); }
+
 .arrow1 {
   background-image: url(../img/postcard/arrow.png);
   width: 100%;
@@ -116,6 +124,7 @@ div.postcardimg4 {
       line-height: 25px; } }
   @media screen and (max-width: 800px) {
     .stepname {
+      margin-top: 55px;
       line-height: 20px;
       font-size: 12px; } }
 
@@ -175,7 +184,8 @@ div.postcardimg4 {
   height: 675px;
   box-sizing: border-box;
   background-color: #fff;
-  box-shadow: 2px 2px 15px 2px #0e0e0e; }
+  box-shadow: 2px 2px 15px 2px #0e0e0e;
+  background-image: url(../img/postcard/hip-square.png); }
   @media screen and (max-width: 1200px) {
     .postWhiteBack {
       width: 795px;
@@ -197,7 +207,8 @@ div.postcardimg4 {
   position: absolute;
   bottom: 32px;
   transform: scaleY(0.6);
-  border: solid 1px red; }
+  border: solid 1px red;
+  background-image: url(../img/postcard/hip-square.png); }
   @media screen and (max-width: 1200px) {
     .Oval {
       width: 240px;
@@ -213,7 +224,7 @@ div.postcardimg4 {
 
 /*橢圓裡面LOGO*/
 .Oval img {
-  width: 90%;
+  width: 80%;
   height: 70%; }
   @media screen and (max-width: 800px) {
     .Oval img {
@@ -223,18 +234,6 @@ div.postcardimg4 {
 /*2-2-2(二).操作畫面.postRight設定*/
 /*===============================================================*/
 /*2-2-2(二).操作畫面.postRight切換步驟css + postcard.js*/
-.postRight_1 {
-  display: none; }
-
-.postRight_3 {
-  display: none; }
-
-.postRight_4 {
-  display: none; }
-
-.postRight_5 {
-  display: none; }
-
 /*步驟1畫面*/
 .post_text {
   text-align: center;
@@ -247,38 +246,39 @@ div.postcardimg4 {
 .BGCchoose {
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 600px;
   margin-bottom: 30px; }
   @media screen and (max-width: 1200px) {
     .BGCchoose {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
       position: relative;
-      margin-bottom: 80px; } }
-
-@media screen and (max-width: 1200px) {
-  .postBGC_name1 {
-    position: absolute;
-    top: 220px;
-    left: 160px; }
-  .postBGC_name2 {
-    position: absolute;
-    top: 220px;
-    left: 560px; }
-  .postBGC_name3 {
-    position: absolute;
-    top: 220px;
-    left: 970px; } }
+      width: 100%;
+      height: 300px; } }
+  @media screen and (max-width: 600px) {
+    .BGCchoose {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow-y: scroll; } }
 
 .postBGC_1 {
   margin: 0 auto;
-  height: 180px;
+  height: 200px;
   width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_1 img {
   width: 100%;
@@ -291,14 +291,17 @@ div.postcardimg4 {
 
 .postBGC_2 {
   margin: 0 auto;
-  height: 180px;
+  height: 200px;
   width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_2 img {
   width: 100%;
@@ -311,14 +314,17 @@ div.postcardimg4 {
 
 .postBGC_3 {
   margin: 0 auto;
-  height: 180px;
+  height: 200px;
   width: 250px;
   transition: all 0.5s;
   position: relative;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   overflow: hidden;
-  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7)); }
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center; }
 
 .postBGC_3 img {
   width: 100%;
@@ -328,6 +334,9 @@ div.postcardimg4 {
 
 .postBGC_3 img:hover {
   transform: scale(1, 1); }
+
+.postBGC_1_foucs {
+  border: solid 5px lightcoral; }
 
 /*搭配js做選中效果*/
 .postBGC_1_Selected img {
@@ -355,6 +364,12 @@ div.postcardimg4 {
 .step_btnbox1 {
   display: flex;
   justify-content: center; }
+  @media screen and (max-width: 1200px) {
+    .step_btnbox1 {
+      margin-bottom: 30px; } }
+  @media screen and (max-width: 800px) {
+    .step_btnbox1 {
+      margin-bottom: 40px; } }
 
 .step_btn,
 .step_btn1 {
@@ -391,6 +406,18 @@ div.postcardimg4 {
 /*
  scrollbar
  */
+.BGCchoose::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #F5F5F5; }
+
+.BGCchoose::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
+
+.BGCchoose::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #555; }
+
 .photochoose::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #F5F5F5; }

@@ -74,7 +74,6 @@ div.postcardimg4 {
 
     @media screen and(max-width:$medium) {
         width: 100%;
-
     }
 }
 
@@ -93,6 +92,19 @@ div.postcardimg4 {
 
     }
 }
+
+    .step_yellow {
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        background-image: url(../img/postcard/yellow.png);
+    }
+
+
+
+
 
 .arrow1 {
     background-image: url(../img/postcard/arrow.png);
@@ -118,6 +130,7 @@ div.postcardimg4 {
     }
 
     @media screen and (max-width:800px) {
+        margin-top: 55px;
         line-height: 20px;
         font-size: 12px;
     }
@@ -194,6 +207,7 @@ div.postcardimg4 {
     box-sizing: border-box;
     background-color: #fff;
     box-shadow: 2px 2px 15px 2px #0e0e0e;
+    background-image: url(../img/postcard/hip-square.png);
 
     @media screen and (max-width:1200px) {
         width: 795px;
@@ -223,6 +237,7 @@ div.postcardimg4 {
     bottom: 32px;
     transform: scaleY(0.6);
     border: solid 1px red;
+    background-image: url(../img/postcard/hip-square.png);
 
     @media screen and (max-width:1200px) {
         width: 240px;
@@ -242,7 +257,7 @@ div.postcardimg4 {
 /*橢圓裡面LOGO*/
 .Oval img {
     // border: solid 1px red;
-    width: 90%;
+    width: 80%;
     height: 70%;
 
     @media screen and (max-width:800px) {
@@ -257,25 +272,6 @@ div.postcardimg4 {
 /*2-2-2(二).操作畫面.postRight設定*/
 /*===============================================================*/
 /*2-2-2(二).操作畫面.postRight切換步驟css + postcard.js*/
-.postRight_1 {
-    display: none;
-}
-
-// .postRight_2 {
-//     display: none
-// }
-
-.postRight_3 {
-    display: none
-}
-
-.postRight_4 {
-    display: none
-}
-
-.postRight_5 {
-    display: none
-}
 
 
 /*步驟1畫面*/
@@ -292,49 +288,47 @@ div.postcardimg4 {
 .BGCchoose {
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 600px;
     margin-bottom: 30px;
+
 
     @media screen and (max-width:1200px) {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
         position: relative;
-        margin-bottom: 80px;
+        width: 100%;
+        height: 300px;
+    }
+
+    @media screen and (max-width:600px) {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow-y: scroll;
     }
 }
 
-@media screen and (max-width:1200px) {
-    .postBGC_name1 {
-        position: absolute;
-        top: 220px;
-        left: 160px;
-    }
-
-    .postBGC_name2 {
-        position: absolute;
-        top: 220px;
-        left: 560px;
-    }
-
-    .postBGC_name3 {
-        position: absolute;
-        top: 220px;
-        left: 970px;
-    }
-}
 
 @each $var in _1,
 _2,
 _3 {
     .postBGC#{$var} {
         margin: 0 auto;
-        height: 180px;
+        height: 200px;
         width: 250px;
         transition: all 0.5s;
         position: relative;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         overflow: hidden;
         filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+        box-sizing: border-box;
+        padding: 20px;
+        text-align: center;
     }
 
     .postBGC#{$var} img {
@@ -343,10 +337,18 @@ _3 {
         transform: scale(0.8, 0.8);
         transition: all 0.3s ease-out;
     }
+  
+
+
+
 
     .postBGC#{$var} img:hover {
         transform: scale(1, 1);
     }
+
+}
+.postBGC_1_foucs {
+    border: solid 5px lightcoral;
 }
 
 /*搭配js做選中效果*/
@@ -368,6 +370,14 @@ _3 {
 .step_btnbox1 {
     display: flex;
     justify-content: center;
+
+    @media screen and (max-width:1200px) {
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:800px) {
+        margin-bottom: 40px;
+    }
 }
 
 .step_btn,
@@ -396,6 +406,7 @@ _3 {
         height: 300px;
         overflow-y: scroll;
     }
+
     @media screen and (max-width:800px) {
         display: flex;
         flex-wrap: wrap;
@@ -412,6 +423,24 @@ _3 {
 /*
  scrollbar
  */
+.BGCchoose::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+.BGCchoose::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.BGCchoose::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+
+
 
 .photochoose::-webkit-scrollbar-track {
     // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -432,7 +461,8 @@ _3 {
 
 @each $var in _1,
 _2,
-_3,_4{
+_3,
+_4 {
 
     .postphoto#{$var} {
         margin: 0 auto;
@@ -445,6 +475,7 @@ _3,_4{
         overflow: hidden;
         filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
     }
+
     .postphoto#{$var} img {
         width: 100%;
         height: 100%;
@@ -460,7 +491,8 @@ _3,_4{
 /*搭配js做選中效果*/
 @each $var in _1,
 _2,
-_3,_4 {
+_3,
+_4 {
     .postphoto#{$var}_Selected img {
         width: 100%;
         height: 100%;
@@ -474,9 +506,11 @@ _3,_4 {
 .step_btnbox2 {
     display: flex;
     justify-content: center;
+
     @media screen and (max-width:1200px) {
         margin-bottom: 30px;
     }
+
     @media screen and (max-width:800px) {
         margin-bottom: 40px;
     }
