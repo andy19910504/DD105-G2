@@ -67,7 +67,7 @@
     width: 50px;
     height: 200px;
     position: absolute;
-    top:0;
+    top:-200px;
     right: 40px;
     display: inline-block;
     background-image: url("../img/element/btnGoTop.png");
@@ -75,6 +75,10 @@
     background-size: contain;
     transition: filter .1s;
     cursor: pointer;
+    @media screen and (max-width:$medium) {
+        width: 45px;
+        right:10px
+    }
     @media screen and (max-width:$small) {
         width: 40px;
         top:40px
@@ -100,6 +104,7 @@
     background-size: contain;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
     transition: filter .1s;
+    animation: flutter .8s cubic-bezier(.04,.49,.94,.44) alternate infinite;
     cursor: pointer;
     &:hover{
         filter: brightness(1.05);
@@ -115,5 +120,9 @@
         height: 85px;
 
     }
+}
+@keyframes flutter{
+    from{transform: translateY(0px);}
+    to{transform: translateY(-5px);}   
 }
 

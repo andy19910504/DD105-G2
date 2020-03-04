@@ -10,6 +10,12 @@
         padding-left: 20px;
         margin: 20px auto;
         margin-bottom: 100px;
+        @media screen and (max-width:$medium) {
+            margin-bottom: 60px;
+        }
+        @media screen and (max-width:$small) {
+            margin-bottom: 40px;
+        }
     }
     .breadCrumb li {
         display: inline-block;
@@ -31,4 +37,6 @@
     .breadCrumb li:last-child a {
         font-weight: bold;
         color:$importantColor;
+        pointer-events:none;  
+        cursor:default 
     }

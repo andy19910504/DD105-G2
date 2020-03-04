@@ -379,7 +379,7 @@ div.eventCard {
     width: unset;
     height: unset; }
   .banner_01 .routeTitleMoveBlock {
-    width: 375px;
+    width: 345px;
     position: absolute;
     top: 200px; }
   .banner_01 .routeTitleImage1 {
@@ -396,8 +396,12 @@ div.eventCard {
   display: flex;
   margin-bottom: 60px;
   justify-content: center;
-  align-items: center;
-  overflow: hidden; }
+  align-items: center; }
+  @media screen and (max-width: 375px) {
+    .sloganBlock {
+      overflow: hidden;
+      padding-top: 60px;
+      margin-bottom: 20px; } }
 
 .sloganBlock .routeShineAnimation {
   width: 300px;
@@ -421,8 +425,9 @@ div.eventCard {
       top: -45px; } }
   @media screen and (max-width: 375px) {
     .sloganBlock .routeShineAnimation {
-      width: 300px;
-      top: -80px;
+      width: 200px;
+      top: 0;
+      overflow: hidden;
       transform: translate(66px, -18px); } }
 
 .routeShineAnimation .cloud {
@@ -699,6 +704,14 @@ div.eventCard {
 .attractionBgImage .arrowRight {
   width: 80px;
   cursor: pointer; }
+  @media screen and (max-width: 820px) {
+    .attractionBgImage .arrowLeft,
+    .attractionBgImage .arrowRight {
+      width: 60px; } }
+  @media screen and (max-width: 575px) {
+    .attractionBgImage .arrowLeft,
+    .attractionBgImage .arrowRight {
+      width: 40px; } }
 
 .arrowLeft {
   margin-right: 10px;
@@ -723,10 +736,24 @@ div.eventCard {
 
 .attractionBgImage .attractionMask {
   width: 1000px;
-  height: 600px;
   position: relative;
   border-radius: 10px;
   overflow: hidden; }
+  @media screen and (max-width: 1240px) {
+    .attractionBgImage .attractionMask {
+      width: 800px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionBgImage .attractionMask {
+      width: 600px; } }
+  @media screen and (max-width: 820px) {
+    .attractionBgImage .attractionMask {
+      width: 450px; } }
+  @media screen and (max-width: 575px) {
+    .attractionBgImage .attractionMask {
+      width: 300px; } }
+  @media screen and (max-width: 375px) {
+    .attractionBgImage .attractionMask {
+      width: 280px; } }
 
 .attractionMask .cancelLightBox {
   width: 30px;
@@ -734,17 +761,51 @@ div.eventCard {
   right: 2%;
   top: 2%;
   z-index: 3;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: transform .8s ease-in-out;
+  opacity: .8; }
+  .attractionMask .cancelLightBox:hover {
+    transform: rotate(90deg); }
 
 .attractionMask .attractionAll {
   width: 2000px;
-  height: 600px;
   display: flex;
   transition: transform 1s linear; }
+  @media screen and (max-width: 1240px) {
+    .attractionMask .attractionAll {
+      width: 1600px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionMask .attractionAll {
+      width: 1200px; } }
+  @media screen and (max-width: 820px) {
+    .attractionMask .attractionAll {
+      width: 900px; } }
+  @media screen and (max-width: 575px) {
+    .attractionMask .attractionAll {
+      width: 600px; } }
+  @media screen and (max-width: 375px) {
+    .attractionMask .attractionAll {
+      width: 560px; } }
 
 .attractionAll .attractionInfoBlock {
   width: 1000px;
   display: flex; }
+  @media screen and (max-width: 1240px) {
+    .attractionAll .attractionInfoBlock {
+      width: 800px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionAll .attractionInfoBlock {
+      width: 600px;
+      flex-direction: column; } }
+  @media screen and (max-width: 820px) {
+    .attractionAll .attractionInfoBlock {
+      width: 450px; } }
+  @media screen and (max-width: 575px) {
+    .attractionAll .attractionInfoBlock {
+      width: 300px; } }
+  @media screen and (max-width: 375px) {
+    .attractionAll .attractionInfoBlock {
+      width: 280px; } }
 
 .attractionInfoBlock .attractionInfoImage {
   width: 600px;
@@ -753,14 +814,52 @@ div.eventCard {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #000; }
+  background-color: #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
+  @media screen and (max-width: 1240px) {
+    .attractionInfoBlock .attractionInfoImage {
+      width: 60%; } }
+  @media screen and (max-width: 1023px) {
+    .attractionInfoBlock .attractionInfoImage {
+      width: unset;
+      height: unset;
+      padding-top: 60px; } }
+  @media screen and (max-width: 820px) {
+    .attractionInfoBlock .attractionInfoImage {
+      padding-top: 50px; } }
   .attractionInfoBlock .attractionInfoImage img {
     width: 100%;
     vertical-align: middle; }
 
 .attractionInfoBlock .attractionInfoText {
-  width: 400px;
-  background-color: #fff; }
+  width: 40%;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/route/hoffman.png); }
+  .attractionInfoBlock .attractionInfoText h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0; }
+  .attractionInfoBlock .attractionInfoText p {
+    width: 80%;
+    margin: 0 10%;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 1.5px; }
+  @media screen and (max-width: 1023px) {
+    .attractionInfoBlock .attractionInfoText {
+      width: unset; } }
+  @media screen and (max-width: 575px) {
+    .attractionInfoBlock .attractionInfoText {
+      height: 300px;
+      overflow: scroll;
+      justify-content: unset; } }
+  @media screen and (max-width: 375px) {
+    .attractionInfoBlock .attractionInfoText {
+      height: 260px; } }
 
 .otherLinkBlock {
   width: 100%;
