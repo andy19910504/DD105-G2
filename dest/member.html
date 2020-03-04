@@ -28,7 +28,15 @@
             <li><a href="./mapgame.html"><img src="./img/header/navHover.png" class="navHover @@display2"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
             <li><a href="./"><img src="./img/header/navHover.png" class="navHover @@display3"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
             <li><a href="./postcard.html"><img src="./img/header/navHover.png" class="navHover @@display4"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+<<<<<<< HEAD
+            <li><a href="./event.html"><img src="./img/header/navHover.png" class="navHover @@display5"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+=======
             <li><a href="./event.html"><img src="./img/header/navHover.png" class="navHover @@display5"><img src="./img/header/navIcon5.png" class="navIcon">揪團散步去</a></li>
+<<<<<<< HEAD
+=======
+>>>>>>> 390abd1e8b68780f76ab83ebb20107f0de5436e4
+>>>>>>> e390d6c6553614aa74d614b46b0bc1a5dbacde6f
+>>>>>>> 8cf52b40d79ed707fde4e379fad6095a978f7080
         </ul>
     </nav>
     <div class="memberIcon">
@@ -195,8 +203,8 @@
                                     </div>
                                 </div>
                                 <div class="member_info_info_button ">
-                                    <a class="btnPinkStop">
-                                        修改
+                                    <a class="btnPink" style="visibility: hidden;">
+                                        修改確認
                                     </a>
                                 <!-- <input type="submit" class="btnPinkStop" value="修改確認"> -->
                                 </div>
@@ -206,8 +214,8 @@
                     <div class="member_info_line minheightbig " style="display: none;">
                         <div class="member_info_line_all minheightmiddle">
                             <div class="member_info_line_all_all">
-                                <p>吃貨之行</p>
-                                <div>
+                                <p class="member_info_line_all_left">吃貨之行</p>
+                                <div  class="member_info_line_all_right">
                                     <a class="btnPink" href="#">修改</a>
                                 <!-- <div class="btnPink">
                                     修改
@@ -217,6 +225,35 @@
                                 <!-- <button class="btnPink">
                                     刪除
                                 </button> -->
+                                </div>
+                                <div class="member_info_line_all_bottom">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                </div>
+                                
+                            </div>
+                            <div class="member_info_line_all_all">
+                                <p class="member_info_line_all_left">吃貨之行</p>
+                                <div  class="member_info_line_all_right">
+                                    <a class="btnPink" href="#">修改</a>
+                                <!-- <div class="btnPink">
+                                    修改
+                                </div> -->
+                                <a class="btnPink" href="#">刪除</a>
+                                <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                <!-- <button class="btnPink">
+                                    刪除
+                                </button> -->
+                                </div>
+                                <div class="member_info_line_all_bottom">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
+                                    <img src="./img/member/memberdarkness.png" alt="">
                                 </div>
                                 
                             </div>
@@ -350,6 +387,10 @@
                                         <img src="./img/member/membersun.png" alt="">
                                         <p>寄件地址<span>XXXXXXXXXXXXXXXXXXXX</span></p>
                                     </div>
+                                    <div>
+                                        <img src="./img/member/membersun.png" alt="">
+                                        <p>寄件地址<span>XXXXXXXXXXXXXXXXXXXX</span></p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -465,19 +506,19 @@
         <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
     </div>
 </footer>
-        <div class="login" style="display: none;" >
+        <div class="login" style="display: none;">
     <div class="login_all">
-        <div class="login_all_all" >
+        <div class="login_all_all">
             <h1>會員登入</h1>
             <form action="">
-                <input type="text" placeholder="帳號">
-                <input type="text" placeholder="密碼">
+                <input type="text" placeholder="請輸入帳號">
+                <input type="text" placeholder="請輸入密碼">
+                <div class="findpsw">找回密碼</div>
+                <div class="login_bottom">
+                    <a href="#" class="login_login btnPink">登入</a>
+                    <div class="login_register btnPink">註冊</div>
+                </div>
             </form>
-            <a href="#">忘記密碼</a>
-            <div>
-                <a  href="#" class="login_login btnPink">登入</a>
-                <div class="login_register btnPink">註冊</div>
-            </div>
             <div class="login_close">
                 <img src="./img/login/XX.png" alt="">
             </div>
@@ -499,17 +540,32 @@
                 </div>
                 <div class="register_item">
                     <label for="">密碼 :</label>
-                    <input type="text" placeholder="請輸入至少數字&英文字各一">
+                    <input type="text" placeholder="請輸入至少數英字各一">
                 </div>
                 <div class="register_item">
                     <label for="">確認密碼 :</label>
                     <input type="text" placeholder="請輸入上述相同密碼">
                 </div>
-                
+                <div class="register_bottom">
+                    <a class="login_register btnPink" href="#">註冊</a>
+                    <div class="register_back btnPink">返回</div>
+                </div>
             </form>
-            <div>
-                <a class="login_register btnPink" href="#">註冊</a>
+
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
             </div>
+        </div>
+        <div class="forgetpsw" style="display: none;">
+            <h1>找回密碼</h1>
+            <form action="">
+                <input type="text" placeholder="請輸入當時註冊帳號">
+                <input type="text" placeholder="請輸入當時註冊信箱">
+                <div class="forgetpsw_bottom">
+                    <a href="#" class="login_login btnPink">發送認證信</a>
+                    <div class="forgetpsw_back btnPink">返回</div>
+                </div>
+            </form>
             <div class="login_close">
                 <img src="./img/login/XX.png" alt="">
             </div>

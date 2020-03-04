@@ -370,6 +370,7 @@ _3 {
 .step_btnbox1 {
     display: flex;
     justify-content: center;
+    
 
     @media screen and (max-width:1200px) {
         margin-bottom: 30px;
@@ -380,8 +381,16 @@ _3 {
     }
 }
 
-.step_btn,
-.step_btn1 {
+#step_btn,
+#step_btn1,
+#step_btn2,
+#step_btn3,
+#step_btn4,
+#step_btn5,
+#step_btn6,
+#step_btn7,
+#step_btn8,
+#step_btn9 {
     margin: 10px;
 }
 
