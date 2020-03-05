@@ -144,7 +144,7 @@ div.postcardimg4 {
     margin: 0px auto;
     max-width: 1200px;
     height: 800px;
-    border: solid 1px red;
+    // border: solid 1px red;
 
     @media screen and (max-width:1200px) {
         flex-wrap: wrap;
@@ -193,7 +193,7 @@ div.postcardimg4 {
 #postcardCanvas {
     width: 95%;
     height: 95%;
-    border: solid 1px red;
+    // border: solid 1px red;
 }
 
 
@@ -206,7 +206,7 @@ div.postcardimg4 {
     height: 675px;
     box-sizing: border-box;
     background-color: #fff;
-    box-shadow: 2px 2px 15px 2px #0e0e0e;
+    box-shadow: $mediumShadow;
     background-image: url(../img/postcard/hip-square.png);
 
     @media screen and (max-width:1200px) {
@@ -236,14 +236,14 @@ div.postcardimg4 {
     position: absolute;
     bottom: 32px;
     transform: scaleY(0.6);
-    border: solid 1px red;
+    // border: solid 1px red;
     background-image: url(../img/postcard/hip-square.png);
 
     @media screen and (max-width:1200px) {
         width: 240px;
         position: absolute;
         bottom: -30px;
-        border: solid 1px red;
+        // border: solid 1px red;
     }
 
     @media screen and (max-width:800px) {
@@ -325,7 +325,7 @@ _3 {
         margin-top: 10px;
         margin-bottom: 10px;
         overflow: hidden;
-        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
         box-sizing: border-box;
         padding: 20px;
         text-align: center;
@@ -410,7 +410,7 @@ _3 {
         align-items: center;
         flex-wrap: wrap;
         position: relative;
-        border: solid red 1px;
+        // border: solid red 1px;
         width: 100%;
         height: 300px;
         overflow-y: scroll;
@@ -420,7 +420,7 @@ _3 {
         display: flex;
         flex-wrap: wrap;
         position: relative;
-        border: solid red 1px;
+        // border: solid red 1px;
         width: 100%;
         height: 400px;
         overflow-y: scroll;
@@ -482,7 +482,7 @@ _4 {
         margin-top: 5px;
         margin-bottom: 5px;
         overflow: hidden;
-        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
     }
 
     .postphoto#{$var} img {

@@ -654,6 +654,27 @@ h1.smartPhoneLogo img {
     .banner_06 img.dottedLine {
       display: none; } }
 
+.routeTitle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+
+.routeTitleMoveBlock {
+  position: relative; }
+
+@media screen and (max-width: 575px) {
+  .routeTitle {
+    width: unset;
+    height: unset; }
+  .routeTitleMoveBlock {
+    width: 345px;
+    position: absolute;
+    top: 200px; }
+    .routeTitleMoveBlock img {
+      width: 100%; } }
+
 /* 麵包屑 */
 .breadCrumb {
   width: 100%;
