@@ -24,3 +24,6 @@ $(function(){
 
 // 引入 filter
 import ('./filter.js');
+
+// 引入 chatBot
+import ('./chatBot.js');

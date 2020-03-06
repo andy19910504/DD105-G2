@@ -69,3 +69,9 @@ section{
 
 //---聊天機器人
 @import './layout/chatBot.scss';
+
+
+// --- 遷入明信片有燈箱版
+@import './modules/moodConcat.scss';
+// --- 遷入揪團有燈箱版
+@import './modules/eventConcat.scss';

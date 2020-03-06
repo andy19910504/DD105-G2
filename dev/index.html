@@ -221,7 +221,7 @@
             <img src="./img/index/title04.png" class="sectionTitle">
             <div class="moodWrap">
                 <img src="./img/index/moodSubTitle.png" class="moodSubTitle">
-                <div class="moodCardsWrap">
+                <!-- <div class="moodCardsWrap">
                     <div class="moodCard">
                         <div class="cardInfoBar">
                             <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
@@ -314,7 +314,8 @@
                     
                     
 
-                </div>
+                </div> -->
+                @@include('./layout/moodConcat.html')
                 <div class="moodBtn">
                     @@include('./layout/btnRed.html',{
                         "link":"mood.html",
@@ -362,7 +363,7 @@
             <img src="./img/index/title05.png" class="sectionTitle">
             <div class="eventWrap">
                 <img src="./img/index/eventSubTitle.png" class="eventSubTitle">
-                <div class="eventCardsWrap">
+                <!-- <div class="eventCardsWrap">
                     <div class="eventCard">
                         <div class="dotWrap">
                             <span class="dot"></span>
@@ -421,7 +422,8 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
+                @@include('./layout/eventConcat.html')
                 <div class="eventBtn">
                     @@include('./layout/btnRed.html',{
                         "link":"event.html",
@@ -447,8 +449,6 @@
     <!-- footer // -->
     @@include('./layout/footer.html')
 
-    <!-- 聊天機器人 -->
-    @@include('./layout/chatBot.html')
 
 
     <!-- ===== JS ===== -->
@@ -456,7 +456,7 @@
     <script src="./js/indexNav.js"></script>
     <script src="./js/firstScreen.js"></script>
     <script src="./js/indexPost.js"></script>
-    <script src="./js/chatBot.js"></script>
+    <script src="./js/eventConcat.js"></script>
     
 </body>
 </html>
