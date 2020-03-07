@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>samplePage</title>
-    <!-- 每一頁分頁，都需要遷入這隻main.css -->
+    <!-- title的格式，請依以下打上去 -->
+    <title>台北散步｜sample</title>
+    <!-- 每一頁分頁，都需要遷入這隻main.css
+        
+    請將原本有說要遷的reset.css拿掉 -->
     <link rel="stylesheet" href="./css/main.css">
 
 </head>
@@ -133,7 +135,18 @@
         <!-- banner // 各自的banner，直接套class
             順序，以導覽列（不含頁首）的順序依序
         -->
-        <div class="banner_01"></div>
+        <div class="banner_01">
+            <!-- 各分頁的bannerTitle格式，可以複製貼上再改中間的標題圖片 -->
+            <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
+            <div class="pageBannerTitle">
+                <div class="bannerTitleMoveBlock">
+                    <!-- 這裡的圖片改成自己分頁的圖片，在想想要怎麼動，不一定要一樣，也可以直接參考 -->
+                    <img src="./img/route/routeTitle1.png" class="routeTitleImage1">
+                    <img src="./img/route/routeTitle2.png" class="routeTitleImage2">
+                </div>
+            </div>
+            <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
+        </div>
         <div class="banner_02"></div>
         <div class="banner_03"></div>
         <div class="banner_04"></div>
@@ -141,7 +154,8 @@
         <div class="banner_06"></div>
 
         <!-- filter // tab 篩選器
-            innetText:篩選的名稱
+            innetText:篩選的名稱，
+            由於不確定個分頁的篩選功能會如何，在此只放上css樣式的格式，可以直接用class套用，不一定要include
             註：並非每個分頁皆有，需自行在自己的scss中import './modules/'filter.scss';
          -->
          <div class="filterBlock">
@@ -193,7 +207,6 @@
     </div>
 </footer>
     </div>
-
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/common.js"></script>
 </body>
