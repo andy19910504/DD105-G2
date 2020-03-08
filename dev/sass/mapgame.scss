@@ -1,4 +1,4 @@
-.header, .fullHeader {
+.fullHeader {
     z-index: 2;
 }
 .title {
@@ -6,6 +6,26 @@
     margin: 0 auto;
     margin-top: 195px;
 }
+// manual-modal
+.manual-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0, 0.7);
+    z-index: 3;
+}
+.scroll-lock {
+    overflow: hidden;
+}
+.header-backward {
+    z-index: 0;
+}
+.hide-manual-modal {
+    display: none;
+}
+// content
 .pic-container {
     margin: 100px auto 200px;
     width: 1200px;

@@ -1,4 +1,28 @@
 $(document).ready(function(){
+    if (localStorage.getItem("hasCodeRunBefore") === null) {
+        // show manual-modal
+        window.scrollTo(0, 556);
+        $('header.fullHeader').addClass('header-backward');
+        $('.manual-modal').css({
+            top: '556px'
+        });
+        $('body').addClass('scroll-lock');
+        window.scrollTo(0, 556);
+        
+        localStorage.setItem("hasCodeRunBefore", true);
+    } 
+    // else {
+    //     $('.fullHeader').removeClass('header-backward');
+    //     $('.manual-modal').addClass('hide-manual-modal');
+    //     $('body').removeClass('scroll-lock');
+    // }
+    // remove manual-modal
+    $('.manual-modal').click(function(){
+        $('.fullHeader').removeClass('header-backward');
+        $('.manual-modal').addClass('hide-manual-modal');
+        $('body').removeClass('scroll-lock');
+    });
+
     //route tab
     $('.option').click(function(e){
         $('.option .label').addClass('hide-label');
