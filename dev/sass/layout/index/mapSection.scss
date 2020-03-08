@@ -65,7 +65,7 @@ div.gameWrap{
 
 @media screen and (max-width:767px){
     div.gameWrap{
-        margin-top: 120px;
+        margin-top: 20px;
 
         div.gameMapWrap{
             border: 3px solid #ccc;
@@ -219,7 +219,7 @@ div.gpsWrap{
 @media screen and (max-width:767px){
     div.gpsWrap{
         width: 100%;
-        margin-top: 100px;
+        margin-top: 50px;
         display: flex;
         flex-direction: column-reverse;
         justify-content: center;
@@ -285,7 +285,7 @@ img.gameSubTitle{
 }
 @media screen and (max-width:767px){
     img.gameSubTitle{
-        right: 5%;
+        display: none;
     }
 }
 

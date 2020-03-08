@@ -48,7 +48,25 @@ section{
 }
 @media screen and (max-width:767px){
     section{
-        margin: 20px auto;
+        margin: 30px auto 70px auto;
+    }
+}
+
+
+//手機板副標題
+div.sectionSubTitleMobile{
+    margin: 20px 0px;
+    padding: 10px;
+    letter-spacing: 3px;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #116491;
+    color: #fff;
+}
+@media screen and (min-width:768px){
+    div.sectionSubTitleMobile{
+        display: none;
     }
 }
 
@@ -67,11 +85,10 @@ section{
 //-----揪團一起走
 @import './layout/index/eventSection.scss';
 
-//---聊天機器人
-@import './layout/chatBot.scss';
 
 
-// --- 遷入明信片有燈箱版
-@import './modules/moodConcat.scss';
-// --- 遷入揪團有燈箱版
-@import './modules/eventConcat.scss';
+
+// // --- 遷入心情有燈箱版
+// @import './modules/moodConcat.scss';
+// // --- 遷入揪團有燈箱版
+// @import './modules/eventConcat.scss';

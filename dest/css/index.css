@@ -457,7 +457,21 @@ section {
 
 @media screen and (max-width: 767px) {
   section {
-    margin: 20px auto; } }
+    margin: 30px auto 70px auto; } }
+
+div.sectionSubTitleMobile {
+  margin: 20px 0px;
+  padding: 10px;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  background-color: #116491;
+  color: #fff; }
+
+@media screen and (min-width: 768px) {
+  div.sectionSubTitleMobile {
+    display: none; } }
 
 div.psyTestWrap {
   width: 100%;
@@ -469,6 +483,20 @@ div.psyTestWrap {
   letter-spacing: 1.5px;
   font-size: 24px;
   color: #1e1e1e; }
+  div.psyTestWrap #question {
+    width: 60%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #156692;
+    background-image: url(../img/index/questionBg.png);
+    background-size: cover; }
+    div.psyTestWrap #question span {
+      display: inline-block;
+      color: #A5361C;
+      font-size: 46px;
+      font-weight: bold;
+      transform: rotate(-10deg); }
   div.psyTestWrap div.answerBox {
     width: 100%;
     display: inline-flex;
@@ -539,7 +567,7 @@ div.psyTestWrap {
     div.psyTestWrap div.answerBox {
       margin-top: 20px; }
       div.psyTestWrap div.answerBox div.ansOption {
-        width: 48%; }
+        width: 45%; }
         div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
           padding: 0px; }
           div.psyTestWrap div.answerBox div.ansOption div.ansBubble img.ansImg {
@@ -549,11 +577,17 @@ div.psyTestWrap {
 
 @media screen and (max-width: 767px) {
   div.psyTestWrap {
-    margin-top: 150px; } }
+    margin-top: 20px; }
+    div.psyTestWrap #question {
+      width: 95%;
+      font-size: 24px; }
+      div.psyTestWrap #question span {
+        font-size: 30px;
+        transform: rotate(-10deg); } }
 
 div.routeWrap {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 200px;
   position: relative;
   letter-spacing: 1.5px;
   font-size: 24px;
@@ -625,7 +659,7 @@ div.routeWrap {
 
 @media screen and (max-width: 767px) {
   div.routeWrap {
-    margin-top: 160px; } }
+    margin-top: 50px; } }
 
 @media screen and (max-width: 1024px) {
   div.routeBox {
@@ -706,6 +740,10 @@ img.routeSubTitle {
 @media screen and (max-width: 1023px) {
   img.routeSubTitle {
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.routeSubTitle {
+    display: none; } }
 
 @media screen and (max-width: 1024px) {
   img.-routeTitle {
@@ -908,7 +946,7 @@ div.gameWrap {
 
 @media screen and (max-width: 767px) {
   div.gameWrap {
-    margin-top: 120px; }
+    margin-top: 20px; }
     div.gameWrap div.gameMapWrap {
       border: 3px solid #ccc;
       border-radius: 5px;
@@ -1036,7 +1074,7 @@ div.gpsWrap {
 @media screen and (max-width: 767px) {
   div.gpsWrap {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -1090,7 +1128,7 @@ img.gameSubTitle {
 
 @media screen and (max-width: 767px) {
   img.gameSubTitle {
-    right: 5%; } }
+    display: none; } }
 
 img.milkTea {
   width: 100px;
@@ -1335,7 +1373,7 @@ div.moodWrap {
   @media screen and (max-width: 767px) {
     div.moodWrap div.moodCard {
       width: 300px;
-      margin: 7px 0px; }
+      margin: 15px 0px; }
       div.moodWrap div.moodCard div.cardInfoBar {
         width: 270px; }
         div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
@@ -1350,7 +1388,7 @@ div.moodWrap {
 
 @media screen and (max-width: 767px) {
   div.moodWrap {
-    margin-top: 130px; } }
+    margin-top: 20px; } }
 
 img.moodSubTitle {
   display: inline-block;
@@ -1378,6 +1416,10 @@ img.moodSubTitle {
   img.moodSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.moodSubTitle {
+    display: none; } }
 
 img.photoPic {
   width: 120px;
@@ -1466,7 +1508,7 @@ div.postWrap {
 @media screen and (max-width: 767px) {
   div.postWrap {
     width: 100%;
-    margin-top: 110px; }
+    margin-top: 20px; }
     div.postWrap ul.stepBar {
       width: 95%;
       margin-bottom: 10px; }
@@ -1506,6 +1548,10 @@ img.postSubTitle {
   img.postSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.postSubTitle {
+    display: none; } }
 
 img.postCartPic01 {
   width: 250px;
@@ -1682,7 +1728,7 @@ div.eventWrap {
   @media screen and (max-width: 767px) {
     div.eventWrap div.eventCard {
       width: 300px;
-      margin: 7px 0px; }
+      margin: 15px 0px; }
       div.eventWrap div.eventCard div.dotWrap {
         margin: 5px 18px 0px 0px; }
       div.eventWrap div.eventCard div.eventPicWrap {
@@ -1701,7 +1747,7 @@ div.eventWrap {
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin-top: 130px; } }
+    margin-top: 20px; } }
 
 img.eventSubTitle {
   display: inline-block;
@@ -1728,6 +1774,10 @@ img.eventSubTitle {
   img.eventSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.eventSubTitle {
+    display: none; } }
 
 img.baoPic {
   width: 130px;
@@ -1769,711 +1819,3 @@ img.potPic {
   img.backagePic,
   img.potPic {
     display: none; } }
-
-div.chatBot {
-  z-index: 100;
-  width: 311.1px;
-  height: 529.55px;
-  background-image: url(../img/index/chatBoxBg.png);
-  background-size: contain;
-  background-position: bottom;
-  position: fixed;
-  bottom: -550px;
-  right: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  transition: all 1s; }
-  div.chatBot div.openBtn {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: -180px;
-    left: 140px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: all .5s; }
-    div.chatBot div.openBtn:hover {
-      filter: brightness(1.5); }
-    div.chatBot div.openBtn img {
-      display: inline-block;
-      width: 100%; }
-  div.chatBot div.-closeBtn {
-    transform: rotate(180deg); }
-  div.chatBot img.bird {
-    width: 300px;
-    position: absolute;
-    right: -80px;
-    top: -210px; }
-  div.chatBot img.birdChat {
-    width: 150px;
-    position: absolute;
-    left: 0px;
-    top: -150px; }
-  div.chatBot div.chatContent {
-    width: 250px;
-    height: 300px;
-    margin-top: 50px;
-    margin-right: 5px; }
-  div.chatBot div.keywordBar {
-    height: 60px;
-    width: 250px;
-    margin-top: 5px;
-    margin-right: 5px;
-    white-space: nowrap;
-    overflow: scroll;
-    overflow-x: auto;
-    overflow-y: hidden; }
-    div.chatBot div.keywordBar span {
-      display: inline-block;
-      border-radius: 3px;
-      background-color: #A5361C;
-      font-size: 24px;
-      color: #fff;
-      margin-right: 5px;
-      padding: 5px;
-      cursor: pointer; }
-  div.chatBot ::-webkit-scrollbar {
-    border-radius: 10px;
-    border: 2px solid #646464;
-    background-color: #646464; }
-  div.chatBot ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    border: 2px solid #646464;
-    background-color: #646464; }
-  div.chatBot ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    border: 2px solid #646464;
-    background-color: #A5361C; }
-  div.chatBot div.inputBar {
-    height: 45px;
-    width: 250px;
-    margin-top: 5px;
-    margin-right: 5px;
-    display: flex;
-    justify-content: space-between; }
-    div.chatBot div.inputBar input.botInput {
-      width: 200px;
-      height: 100%; }
-    div.chatBot div.inputBar div.botInputBtn {
-      display: inline-block;
-      width: 45px;
-      height: 45px;
-      cursor: pointer;
-      text-align: center;
-      border-radius: 5px;
-      background-color: #136592;
-      line-height: 45px;
-      color: #fff; }
-
-div.-chatBotOpen {
-  bottom: 10px; }
-
-@media screen and (max-width: 767px) {
-  div.chatBot {
-    display: none; } }
-
-/*
-     卡片：首頁、路線、心情、揪團，要使用的sample
-    
-     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
-
-    */
-div.moodCardsWrap {
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: space-around; }
-
-@media screen and (max-width: 767px) {
-  div.moodCardsWrap {
-    flex-direction: column;
-    align-items: center; } }
-
-div.moodCard {
-  width: 340px;
-  height: unset;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
-  background-image: url(../img/index/moodCardsBg.png);
-  border: 1px solid #c9bb88;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start; }
-  div.moodCard div.cardInfoBar {
-    width: 300px;
-    margin-top: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    div.moodCard div.cardInfoBar div.moodMemberPhoto {
-      width: 50px;
-      height: 50px;
-      border-radius: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      div.moodCard div.cardInfoBar div.moodMemberPhoto img {
-        height: 100%;
-        vertical-align: middle; }
-    div.moodCard div.cardInfoBar div.infoTextWrap {
-      width: 210px;
-      padding-left: 10px;
-      letter-spacing: 1px;
-      display: flex;
-      flex-direction: column; }
-      div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
-        color: #1e1e1e;
-        line-height: 1.5;
-        font-size: 18px;
-        font-weight: bold; }
-      div.moodCard div.cardInfoBar div.infoTextWrap span.moodMemId {
-        color: #646464;
-        line-height: 1.5;
-        font-size: 16px; }
-    div.moodCard div.cardInfoBar div.dotWrap {
-      width: 40px;
-      height: 40px;
-      align-self: flex-end;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      align-self: center;
-      cursor: pointer; }
-      div.moodCard div.cardInfoBar div.dotWrap span.dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        background-color: #646464; }
-  div.moodCard div.moodPicWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    margin: 5px auto;
-    overflow: hidden; }
-    div.moodCard div.moodPicWrap img.moodPic {
-      height: 100%;
-      vertical-align: middle; }
-  div.moodCard div.heartBar {
-    width: 300px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 5px; }
-    div.moodCard div.heartBar img.moodIcon {
-      width: 35px;
-      cursor: pointer; }
-    div.moodCard div.heartBar span {
-      color: #646464;
-      font-size: 16px;
-      margin: 0px 10px 0px 5px; }
-  div.moodCard div.cardText {
-    width: 300px;
-    height: 140px;
-    margin: 0 auto;
-    text-align: center;
-    letter-spacing: 1.5px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; }
-    div.moodCard div.cardText p {
-      font-size: 18px;
-      color: #646464;
-      text-align: left;
-      overflow: hidden; }
-    div.moodCard div.cardText span {
-      color: #646464;
-      font-size: 16px;
-      display: inline-block;
-      margin: 5px 0px 20px 0px;
-      cursor: pointer; }
-      div.moodCard div.cardText span:hover {
-        color: #A5361C; }
-
-@media screen and (max-width: 1199px) {
-  div.moodCard {
-    width: 300px; }
-    div.moodCard div.cardInfoBar {
-      width: 270px; }
-      div.moodCard div.cardInfoBar div.infoTextWrap {
-        width: 180px; }
-    div.moodCard div.moodPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.moodCard div.heartBar {
-      width: 270px; }
-    div.moodCard div.cardText {
-      width: 270px; } }
-
-@media screen and (max-width: 1023px) {
-  div.moodCard {
-    width: 230px; }
-    div.moodCard div.cardInfoBar {
-      width: 200px; }
-      div.moodCard div.cardInfoBar div.infoTextWrap {
-        width: 110px; }
-        div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
-          font-size: 16px; }
-    div.moodCard div.moodPicWrap {
-      width: 200px;
-      height: 200px; }
-    div.moodCard div.heartBar {
-      width: 200px; }
-    div.moodCard div.cardText {
-      width: 200px; }
-      div.moodCard div.cardText h1 {
-        font-size: 20px; }
-      div.moodCard div.cardText p {
-        font-size: 16px;
-        letter-spacing: 0.5px; } }
-
-@media screen and (max-width: 767px) {
-  div.moodCard {
-    width: 300px;
-    margin: 7px 0px; }
-    div.moodCard div.cardInfoBar {
-      width: 270px; }
-      div.moodCard div.cardInfoBar div.infoTextWrap {
-        width: 180px; }
-    div.moodCard div.moodPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.moodCard div.heartBar {
-      width: 270px; }
-    div.moodCard div.cardText {
-      width: 270px; } }
-
-@media screen and (max-width: 767px) {
-  div.moodWrap {
-    margin-top: 130px; } }
-
-/*
-     卡片：首頁、路線、心情、揪團，要使用的sample
-    
-     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
-
-    */
-div.eventCardsWrap {
-  width: 100%;
-  display: flex;
-  justify-content: space-around; }
-
-@media screen and (max-width: 767px) {
-  div.eventCardsWrap {
-    flex-direction: column;
-    align-items: center; } }
-
-div.eventCard {
-  width: 340px;
-  height: unset;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
-  background-image: url(../img/index/eventCardBg.png);
-  border: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start; }
-  div.eventCard div.dotWrap {
-    width: 40px;
-    height: 40px;
-    margin: 5px 18px 0px 0px;
-    align-self: flex-end;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    cursor: pointer; }
-    div.eventCard div.dotWrap span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 100%;
-      background-color: #646464; }
-  div.eventCard div.eventPicWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    margin: 5px auto;
-    overflow: hidden; }
-    div.eventCard div.eventPicWrap img.eventPic {
-      height: 100%;
-      vertical-align: middle; }
-  div.eventCard div.cardText {
-    width: 300px;
-    height: 150px;
-    margin: 0 auto;
-    text-align: center;
-    letter-spacing: 2px;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between; }
-    div.eventCard div.cardText h1 {
-      width: 100%;
-      font-size: 24px;
-      color: #1e1e1e;
-      font-weight: 550;
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 10px; }
-    div.eventCard div.cardText p {
-      font-size: 18px;
-      color: #646464;
-      text-align: left;
-      overflow: hidden; }
-    div.eventCard div.cardText span {
-      color: #646464;
-      font-size: 16px;
-      display: inline-block;
-      margin: 5px 0px 20px 0px;
-      cursor: pointer; }
-      div.eventCard div.cardText span:hover {
-        color: #A5361C; }
-
-@media screen and (max-width: 1199px) {
-  div.eventCard {
-    width: 300px; }
-    div.eventCard div.dotWrap {
-      margin: 5px 18px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.eventCard div.cardText {
-      width: 270px; } }
-
-@media screen and (max-width: 1023px) {
-  div.eventCard {
-    width: 230px; }
-    div.eventCard div.dotWrap {
-      margin: 0px 15px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 200px;
-      height: 200px; }
-    div.eventCard div.cardText {
-      width: 200px; }
-      div.eventCard div.cardText h1 {
-        font-size: 20px; }
-      div.eventCard div.cardText p {
-        font-size: 16px;
-        letter-spacing: 1px; } }
-
-@media screen and (max-width: 767px) {
-  div.eventCard {
-    width: 300px;
-    margin: 7px 0px; }
-    div.eventCard div.dotWrap {
-      margin: 5px 18px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.eventCard div.cardText {
-      width: 270px;
-      margin: 0 auto;
-      text-align: center;
-      letter-spacing: 2px;
-      line-height: 1.5; }
-      div.eventCard div.cardText h1 {
-        font-size: 24px; }
-      div.eventCard div.cardText p {
-        font-size: 18px; } }
-
-@media screen and (max-width: 767px) {
-  div.eventWrap {
-    margin-top: 130px; } }
-
-.backDrop {
-  background-color: rgba(24, 24, 24, 0.8);
-  display: none;
-  filter: alpha(opacity=0);
-  height: 100%;
-  width: 100%;
-  z-index: 200;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  justify-content: center;
-  align-items: center;
-  position: fixed; }
-
-.close {
-  color: #646464;
-  cursor: pointer;
-  right: 10px;
-  font-size: 32px;
-  margin: 10px;
-  position: absolute; }
-
-.lightbox_holdevent_info, .lightbox_detailevent_info {
-  position: relative;
-  background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  display: flex;
-  flex-direction: column;
-  width: 1200px;
-  height: 750px;
-  border-radius: 15px;
-  align-items: center; }
-  .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
-    text-align: center;
-    color: #1e1e1e;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 40px auto 20px auto; }
-  .lightbox_holdevent_info form, .lightbox_detailevent_info form {
-    height: 536px; }
-    .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
-      height: 536px; }
-  .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
-    margin: 10px auto;
-    text-align: center;
-    display: flex;
-    justify-content: center; }
-    .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
-      margin: 0 55px;
-      width: 110px;
-      height: 110px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 18px;
-      border: 1px solid #6a9cb0; }
-      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
-        margin-bottom: 10px; }
-
-.color {
-  background-color: #FFD66A; }
-
-.holdevent_step1content {
-  height: 536px;
-  display: block; }
-
-.chooseRoute {
-  margin: 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .chooseRoute .sliderWrap {
-    width: 1100px;
-    overflow: hidden; }
-    .chooseRoute .sliderWrap .routeBox {
-      text-align: center;
-      display: flex;
-      flex-direction: row;
-      width: 1600px; }
-      .chooseRoute .sliderWrap .routeBox div {
-        cursor: pointer;
-        background-color: #cce6f0;
-        border-radius: 3px;
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        line-height: 200px;
-        font-size: 18px;
-        color: #646464; }
-  .chooseRoute .slideBtn {
-    margin: 0 10px;
-    cursor: pointer; }
-    .chooseRoute .slideBtn img {
-      width: 100%; }
-
-.routeClick {
-  margin: 60px auto;
-  padding: 0px 95px;
-  width: 100%; }
-  .routeClick p {
-    margin: 20px 0 20px 0px;
-    font-size: 18px;
-    color: #646464; }
-
-.stepBtn {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50px; }
-  .stepBtn div {
-    margin: 0px 80px; }
-
-.holdevent_step2content {
-  display: none;
-  height: 536px;
-  width: 100%; }
-  .holdevent_step2content .step2Info {
-    width: 100%;
-    display: flex;
-    padding: 10px 40px; }
-    .holdevent_step2content .step2Info .holderPic {
-      width: 50%; }
-      .holdevent_step2content .step2Info .holderPic input {
-        font-size: 18px;
-        color: #646464; }
-      .holdevent_step2content .step2Info .holderPic div {
-        border-radius: 5px;
-        margin-top: 20px;
-        border: 3px dashed #6a9cb0;
-        width: 480px;
-        height: 265px; }
-    .holdevent_step2content .step2Info .holderPicBox {
-      text-align: center;
-      line-height: 265px;
-      font-size: 18px;
-      color: #646464; }
-  .holdevent_step2content .holderInfo {
-    width: 50%;
-    font-size: 18px;
-    align-items: center;
-    color: #646464;
-    padding: 0px 70px; }
-    .holdevent_step2content .holderInfo div {
-      margin: 15px 0; }
-      .holdevent_step2content .holderInfo div input {
-        width: 220px;
-        height: 35px; }
-      .holdevent_step2content .holderInfo div label {
-        margin-right: 10px; }
-
-.holdevent_step3content {
-  display: none;
-  font-size: 18px;
-  color: #646464;
-  height: 536px;
-  width: 100%; }
-  .holdevent_step3content .step3Info {
-    display: flex;
-    padding: 10px 40px; }
-    .holdevent_step3content .step3Info .holderCover {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      padding: 15px 60px; }
-      .holdevent_step3content .step3Info .holderCover .holderCoverPic {
-        margin-top: 10px; }
-        .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
-          border-radius: 5px;
-          width: 100%; }
-      .holdevent_step3content .step3Info .holderCover .holderCoverText {
-        margin: 20px 0;
-        letter-spacing: 1.2px; }
-        .holdevent_step3content .step3Info .holderCover .holderCoverText .title {
-          font-weight: 550;
-          font-size: 20px;
-          margin: 15px 0; }
-    .holdevent_step3content .step3Info .holderCoverInfo {
-      line-height: 2;
-      letter-spacing: 1.2px;
-      padding: 45px 85px;
-      width: 50%; }
-      .holdevent_step3content .step3Info .holderCoverInfo table tr {
-        height: 60px; }
-        .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
-          width: 110px; }
-
-.detaileventContent {
-  width: 100%;
-  font-size: 18px;
-  color: #1e1e1e;
-  display: flex;
-  padding-top: 100px;
-  letter-spacing: 1.2px;
-  justify-content: center;
-  line-height: 1.75; }
-  .detaileventContent .detaileventPic {
-    width: 50%;
-    padding: 10px 10px 10px 25px; }
-    .detaileventContent .detaileventPic .title {
-      display: flex;
-      position: relative; }
-      .detaileventContent .detaileventPic .title .eventInfotitle {
-        font-size: 24px;
-        font-weight: 550;
-        margin-right: 150px; }
-      .detaileventContent .detaileventPic .title .dotWrap {
-        right: 25px;
-        width: 40px;
-        height: 40px;
-        align-self: flex-end;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        align-self: center;
-        cursor: pointer;
-        position: absolute; }
-      .detaileventContent .detaileventPic .title .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        background-color: #646464; }
-    .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 550px;
-      padding-top: 20px; }
-      .detaileventContent .detaileventPic .detaileventPicbox img {
-        width: 100%;
-        border-radius: 5px; }
-  .detaileventContent .detaileventText {
-    padding: 70px 0px 0px 20px;
-    width: 45%; }
-    .detaileventContent .detaileventText .eventInforow {
-      height: 45px;
-      line-height: 45px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: center; }
-      .detaileventContent .detaileventText .eventInforow .eventrowTitle {
-        background-color: lightblue;
-        width: 30%;
-        margin-right: 40px;
-        border-radius: 3px;
-        text-align: center; }
-      .detaileventContent .detaileventText .eventInforow div:nth-child(2) {
-        width: 60%; }
-
-.enroll {
-  position: absolute;
-  bottom: 58px; }
-
-.lightbox_report_info {
-  position: fixed;
-  background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  width: 20%;
-  height: 40%;
-  margin: auto;
-  top: 15%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 15px; }
-  .lightbox_report_info .reportTitle {
-    font-size: 24px;
-    margin: 30px 0;
-    text-align: center; }
-  .lightbox_report_info form {
-    font-size: 20px;
-    padding: 0 25px;
-    margin: 35px auto; }
-    .lightbox_report_info form input {
-      margin: 15px; }
-  .lightbox_report_info .reportSent {
-    display: flex;
-    justify-content: center;
-    left: 0;
-    right: 0;
-    bottom: 35px;
-    position: absolute; }
-    .lightbox_report_info .reportSent div {
-      margin: 0px 13px; }
