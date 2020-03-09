@@ -78,23 +78,35 @@
         "link2":"./mood.html",
         "innerText2":"慢步寫心情",
         "link3":"javascript: void(0)",
-        "innerText3":"",
+        "innerText3":"慢",
         "link4":"javascript: void(0)",
-        "innerText4":"",
+        "innerText4":"慢",
         "link5":"javascript: void(0)",
-        "innerText5":"",
+        "innerText5":"慢",
         "link6":"javascript: void(0)",
-        "innerText6":""
+        "innerText6":"慢"
         })
 
         <div class="moodContent">
             <!-- routeFilterBlock -->
             @@include('./layout/filter.html',{
-            "innerText1":"日式舊屋行",
-            "innerText2":"文青品味旅",
-            "innerText3":"職人散步去",
-            "innerText4":"其他"
+            "innerText1":"全部心情",
+            "innerText2":"日式舊屋行",
+            "innerText3":"文青品味旅",
+            "innerText4":"職人散步去",
+            "innerText5":"其他心情"
             })
+            <!-- 下拉選單 -->
+            <div class="selector">
+                <form>
+                    <select name="switchingBtn">
+                        <option value="發表時間較新">發表時間較新</option>
+                        <option value="發表時間較舊">發表時間較舊</option>
+                        <option value="依愛心數較高">依愛心數較高</option>
+                        <option value="依愛心數較少">依愛心數較少</option>
+                    </select>
+                </form>
+            </div>
             <section>
                 <div class="moodWrap">
                     <!-- 一條 -->

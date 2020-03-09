@@ -3,7 +3,12 @@
 @import "./layout/card.scss";
 @import "./layout/index/moodsection.scss";
 
-
+.selector select {
+    width: 190px;
+    height: 30px;
+    margin: 10px 0;
+    color: #646464;
+    font-size: 16px;}
 .moodContent{
     width: 1200px;
     margin: 0 auto;
@@ -215,10 +220,7 @@
             //文字容器
             .cardText {
                 width: 200px;
-
-                h1{
-                    font-size: 20px;
-                }
+                h1{font-size: 20px;}
                 p{
                     font-size: 16px;
                     letter-spacing: 0.5px;
@@ -243,22 +245,16 @@
                 height: 270px;
             }
             //愛心留言bar
-            .heartBar{
-                width: 270px;
-            }
+            .heartBar{width: 270px;}
 
             //文字容器
-            .cardText {
-                width: 270px;
-            }
+            .cardText {width: 270px;}
         }
     }
 }
 
 @media screen and (max-width:767px){
-    .moodWrap{
-        margin-top: 130px;
-    }
+    .moodWrap{margin-top: 130px;}
 }
 
 //小標題泡泡
