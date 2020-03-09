@@ -2,6 +2,13 @@ $(document).ready(function(){
     //搜尋
     var search = '台北';
     var source = `http://maps.google.com?output=embed&q=${search}`;
+    $('.search').keypress(function(e){
+        if(e.keyCode == 13){
+            search = $('.search').val();
+            source = `http://maps.google.com?output=embed&q=${search}`;
+            $('#map').attr('src', source);
+        }
+    });
     $('.btnPink').click(function(e){
         e.preventDefault();
         search = $('.search').val();
@@ -12,9 +19,10 @@ $(document).ready(function(){
     //確認地點
     $('.btnRed').click(function(e){
         e.preventDefault();
+       
         // //make a Google map
         // let area = document.getElementById('map');
-        // let position = new google.maps.LatLng(24.9670387, 121.19086329999999);
+        // let position = new google.maps.LatLng(25.1365905,121.5049551);
         // let options = {
         //     zoom: 16,
         //     center: position,
