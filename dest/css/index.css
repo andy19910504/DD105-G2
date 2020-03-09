@@ -457,7 +457,21 @@ section {
 
 @media screen and (max-width: 767px) {
   section {
-    margin: 20px auto; } }
+    margin: 30px auto 70px auto; } }
+
+div.sectionSubTitleMobile {
+  margin: 20px 0px;
+  padding: 10px;
+  letter-spacing: 3px;
+  border-radius: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  background-color: #116491;
+  color: #fff; }
+
+@media screen and (min-width: 768px) {
+  div.sectionSubTitleMobile {
+    display: none; } }
 
 div.psyTestWrap {
   width: 100%;
@@ -469,6 +483,20 @@ div.psyTestWrap {
   letter-spacing: 1.5px;
   font-size: 24px;
   color: #1e1e1e; }
+  div.psyTestWrap #question {
+    width: 60%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #156692;
+    background-image: url(../img/index/questionBg.png);
+    background-size: cover; }
+    div.psyTestWrap #question span {
+      display: inline-block;
+      color: #A5361C;
+      font-size: 46px;
+      font-weight: bold;
+      transform: rotate(-10deg); }
   div.psyTestWrap div.answerBox {
     width: 100%;
     display: inline-flex;
@@ -539,7 +567,7 @@ div.psyTestWrap {
     div.psyTestWrap div.answerBox {
       margin-top: 20px; }
       div.psyTestWrap div.answerBox div.ansOption {
-        width: 48%; }
+        width: 45%; }
         div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
           padding: 0px; }
           div.psyTestWrap div.answerBox div.ansOption div.ansBubble img.ansImg {
@@ -549,11 +577,17 @@ div.psyTestWrap {
 
 @media screen and (max-width: 767px) {
   div.psyTestWrap {
-    margin-top: 150px; } }
+    margin-top: 20px; }
+    div.psyTestWrap #question {
+      width: 95%;
+      font-size: 24px; }
+      div.psyTestWrap #question span {
+        font-size: 30px;
+        transform: rotate(-10deg); } }
 
 div.routeWrap {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 200px;
   position: relative;
   letter-spacing: 1.5px;
   font-size: 24px;
@@ -625,7 +659,7 @@ div.routeWrap {
 
 @media screen and (max-width: 767px) {
   div.routeWrap {
-    margin-top: 160px; } }
+    margin-top: 50px; } }
 
 @media screen and (max-width: 1024px) {
   div.routeBox {
@@ -706,6 +740,10 @@ img.routeSubTitle {
 @media screen and (max-width: 1023px) {
   img.routeSubTitle {
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.routeSubTitle {
+    display: none; } }
 
 @media screen and (max-width: 1024px) {
   img.-routeTitle {
@@ -908,7 +946,7 @@ div.gameWrap {
 
 @media screen and (max-width: 767px) {
   div.gameWrap {
-    margin-top: 120px; }
+    margin-top: 20px; }
     div.gameWrap div.gameMapWrap {
       border: 3px solid #ccc;
       border-radius: 5px;
@@ -1036,7 +1074,7 @@ div.gpsWrap {
 @media screen and (max-width: 767px) {
   div.gpsWrap {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -1090,7 +1128,7 @@ img.gameSubTitle {
 
 @media screen and (max-width: 767px) {
   img.gameSubTitle {
-    right: 5%; } }
+    display: none; } }
 
 img.milkTea {
   width: 100px;
@@ -1335,7 +1373,7 @@ div.moodWrap {
   @media screen and (max-width: 767px) {
     div.moodWrap div.moodCard {
       width: 300px;
-      margin: 7px 0px; }
+      margin: 15px 0px; }
       div.moodWrap div.moodCard div.cardInfoBar {
         width: 270px; }
         div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
@@ -1350,7 +1388,7 @@ div.moodWrap {
 
 @media screen and (max-width: 767px) {
   div.moodWrap {
-    margin-top: 130px; } }
+    margin-top: 20px; } }
 
 img.moodSubTitle {
   display: inline-block;
@@ -1378,6 +1416,10 @@ img.moodSubTitle {
   img.moodSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.moodSubTitle {
+    display: none; } }
 
 img.photoPic {
   width: 120px;
@@ -1466,7 +1508,7 @@ div.postWrap {
 @media screen and (max-width: 767px) {
   div.postWrap {
     width: 100%;
-    margin-top: 110px; }
+    margin-top: 20px; }
     div.postWrap ul.stepBar {
       width: 95%;
       margin-bottom: 10px; }
@@ -1506,6 +1548,10 @@ img.postSubTitle {
   img.postSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.postSubTitle {
+    display: none; } }
 
 img.postCartPic01 {
   width: 250px;
@@ -1682,7 +1728,7 @@ div.eventWrap {
   @media screen and (max-width: 767px) {
     div.eventWrap div.eventCard {
       width: 300px;
-      margin: 7px 0px; }
+      margin: 15px 0px; }
       div.eventWrap div.eventCard div.dotWrap {
         margin: 5px 18px 0px 0px; }
       div.eventWrap div.eventCard div.eventPicWrap {
@@ -1701,7 +1747,7 @@ div.eventWrap {
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin-top: 130px; } }
+    margin-top: 20px; } }
 
 img.eventSubTitle {
   display: inline-block;
@@ -1728,6 +1774,10 @@ img.eventSubTitle {
   img.eventSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.eventSubTitle {
+    display: none; } }
 
 img.baoPic {
   width: 130px;

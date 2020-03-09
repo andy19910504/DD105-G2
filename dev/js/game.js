@@ -1,21 +1,20 @@
 $(document).ready(function(){
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
+    if (window.innerWidth >= 576 && localStorage.getItem("hasCodeRunBefore") === null) {
         // show manual-modal
-        window.scrollTo(0, 556);
         $('header.fullHeader').addClass('header-backward');
+        window.scrollTo(0, 556);
         $('.manual-modal').css({
             top: '556px'
         });
         $('body').addClass('scroll-lock');
-        window.scrollTo(0, 556);
         
         localStorage.setItem("hasCodeRunBefore", true);
     } 
-    // else {
-    //     $('.fullHeader').removeClass('header-backward');
-    //     $('.manual-modal').addClass('hide-manual-modal');
-    //     $('body').removeClass('scroll-lock');
-    // }
+    else {
+        $('.fullHeader').removeClass('header-backward');
+        $('.manual-modal').addClass('hide-manual-modal');
+        $('body').removeClass('scroll-lock');
+    }
     // remove manual-modal
     $('.manual-modal').click(function(){
         $('.fullHeader').removeClass('header-backward');
@@ -35,13 +34,82 @@ $(document).ready(function(){
             $('.map').replaceWith('<img src="./img/mapgame/map2.jpg" alt="" class="map">');
         }
     });
-    //小遊戲、地圖切換開關
-    $('.switch .button').click(function(){
+    //載入時預設的模式，手機時載入估狗地圖，桌機時載入小遊戲。
+    if(window.innerWidth <= 576){
         $('.button').toggleClass('on');
         $('.gameMode').toggleClass('off');
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        if(!($('.map-container').hasClass('hide-container'))){
+            //get current location
+            navigator.geolocation.getCurrentPosition(succCallback,errorCallback,{
+                enableHighAccuracy: false,
+                timeout: 200000,
+                maximumAge: 0,
+            });
+            function succCallback(e){
+                let lati = e.coords.latitude;
+                let longi = e.coords.longitude;
+                let accuracy = e.coords.accuracy;
+
+                if(accuracy > 100000){
+                    console.log("超過偵測範圍!");
+                }else{
+                    console.log(`緯度: ${lati}<br>經度: ${longi}<br>準確度: ${accuracy} 公尺`);
+                }
+
+                //make a Google map
+                let area = document.getElementById('map');
+                let position = new google.maps.LatLng(lati, longi);
+                let options = {
+                    zoom: 16,
+                    center: position,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                };
+
+                let map = new google.maps.Map(area,options);
+                let marker = new google.maps.Marker({
+                    position,
+                    map,
+                    // icon: 'http://www.oxxostudio.tw/img/articles/201801/google-maps-3-marker-icon.png',
+                    title: '我在這裡',
+                    // label: 'ㄎㄎ',
+                    position: position,
+                    map: map,
+                    animation: google.maps.Animation.DROP,
+                    animation: google.maps.Animation.BOUNCE
+                });
+            }
+            function errorCallback(e){
+                alert(`錯誤碼: ${e.code}\n錯誤訊息: ${e.message}`);
+            }
+        }
+    }
+    //小遊戲、地圖切換開關。手機版第一次切換至小遊戲時顯示說明
+    $('.switch').click(function(){
+        $('.button').toggleClass('on');
+        $('.gameMode').toggleClass('off');
+        $('.mapMode').toggleClass('off');
+        $('.game-container').toggleClass('hide-container');
+        $('.map-container').toggleClass('hide-container');
+        if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
+            // show manual-modal
+            $('header.fullHeader').addClass('header-backward');
+            window.scrollTo(0, 800);
+            $('.manual-modal').removeClass('hide-manual-modal');
+            $('.manual-modal').css({
+                top: '800px'
+            });
+            $('body').addClass('scroll-lock');
+            
+            localStorage.setItem("hasSwitchedToGameBefore", true);
+        } 
+        else {
+            $('.fullHeader').removeClass('header-backward');
+            $('.manual-modal').addClass('hide-manual-modal');
+            $('body').removeClass('scroll-lock');
+        }
     });
     //Start button
     $('.btnRed').click(function(e){
@@ -74,7 +142,7 @@ $(document).ready(function(){
         });
     });
     //Google map
-    $('.button').on('click', function(){
+    $('.switch').on('click', function(){
         if(!($('.map-container').hasClass('hide-container'))){
             //get current location
             navigator.geolocation.getCurrentPosition(succCallback,errorCallback,{

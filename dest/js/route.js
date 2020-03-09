@@ -31,7 +31,7 @@ window.addEventListener("load", function () {
             left[j].style.animation = "unset";
         });
         right[j].addEventListener("click", function () {
-            attractionSlider[j].style.transform = "translateX(-1000px)";
+            attractionSlider[j].style.transform = "translateX(-50%)";
             left[j].style.filter = "unset";
             left[j].style.animation = " moveLeft .5s alternate infinite";
             right[j].style.filter = "grayscale(1)";

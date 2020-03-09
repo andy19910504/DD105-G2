@@ -41,7 +41,6 @@
 div.moodCardsWrap {
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 100px;
   display: flex;
   justify-content: space-around; }
 
@@ -348,18 +347,295 @@ div.eventCard {
   div.eventWrap {
     margin-top: 130px; } }
 
-.wrapper {
-  background-image: url("../img/element/bgImage.png"); }
-
-.banner_01 .routeTitle {
-  width: 100%;
+.backDrop {
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  filter: alpha(opacity=0);
   height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; }
+
+.close {
+  color: #646464;
+  cursor: pointer;
+  right: 10px;
+  font-size: 32px;
+  margin: 10px;
+  position: absolute; }
+
+.lightbox_holdevent_info, .lightbox_detailevent_info {
+  position: relative;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 750px;
+  border-radius: 15px;
+  align-items: center; }
+  .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
+    text-align: center;
+    color: #1e1e1e;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px auto 20px auto; }
+  .lightbox_holdevent_info form, .lightbox_detailevent_info form {
+    height: 536px; }
+    .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
+      height: 536px; }
+  .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center; }
+    .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
+      margin: 0 55px;
+      width: 110px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
+      border: 1px solid #6a9cb0; }
+      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
+        margin-bottom: 10px; }
+
+.color {
+  background-color: #FFD66A; }
+
+.holdevent_step1content {
+  height: 536px;
+  display: block; }
+
+.chooseRoute {
+  margin: 30px auto;
   display: flex;
   justify-content: center;
-  align-items: flex-end; }
+  align-items: center; }
+  .chooseRoute .sliderWrap {
+    width: 1100px;
+    overflow: hidden; }
+    .chooseRoute .sliderWrap .routeBox {
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      width: 1600px; }
+      .chooseRoute .sliderWrap .routeBox div {
+        cursor: pointer;
+        background-color: #cce6f0;
+        border-radius: 3px;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        line-height: 200px;
+        font-size: 18px;
+        color: #646464; }
+  .chooseRoute .slideBtn {
+    margin: 0 10px;
+    cursor: pointer; }
+    .chooseRoute .slideBtn img {
+      width: 100%; }
 
-.banner_01 .routeTitleMoveBlock {
-  position: relative; }
+.routeClick {
+  margin: 60px auto;
+  padding: 0px 95px;
+  width: 100%; }
+  .routeClick p {
+    margin: 20px 0 20px 0px;
+    font-size: 18px;
+    color: #646464; }
+
+.stepBtn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px; }
+  .stepBtn div {
+    margin: 0px 80px; }
+
+.holdevent_step2content {
+  display: none;
+  height: 536px;
+  width: 100%; }
+  .holdevent_step2content .step2Info {
+    width: 100%;
+    display: flex;
+    padding: 10px 40px; }
+    .holdevent_step2content .step2Info .holderPic {
+      width: 50%; }
+      .holdevent_step2content .step2Info .holderPic input {
+        font-size: 18px;
+        color: #646464; }
+      .holdevent_step2content .step2Info .holderPic div {
+        border-radius: 5px;
+        margin-top: 20px;
+        border: 3px dashed #6a9cb0;
+        width: 480px;
+        height: 265px; }
+    .holdevent_step2content .step2Info .holderPicBox {
+      text-align: center;
+      line-height: 265px;
+      font-size: 18px;
+      color: #646464; }
+  .holdevent_step2content .holderInfo {
+    width: 50%;
+    font-size: 18px;
+    align-items: center;
+    color: #646464;
+    padding: 0px 70px; }
+    .holdevent_step2content .holderInfo div {
+      margin: 15px 0; }
+      .holdevent_step2content .holderInfo div input {
+        width: 220px;
+        height: 35px; }
+      .holdevent_step2content .holderInfo div label {
+        margin-right: 10px; }
+
+.holdevent_step3content {
+  display: none;
+  font-size: 18px;
+  color: #646464;
+  height: 536px;
+  width: 100%; }
+  .holdevent_step3content .step3Info {
+    display: flex;
+    padding: 10px 40px; }
+    .holdevent_step3content .step3Info .holderCover {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 60px; }
+      .holdevent_step3content .step3Info .holderCover .holderCoverPic {
+        margin-top: 10px; }
+        .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
+          border-radius: 5px;
+          width: 100%; }
+      .holdevent_step3content .step3Info .holderCover .holderCoverText {
+        margin: 20px 0;
+        letter-spacing: 1.2px; }
+        .holdevent_step3content .step3Info .holderCover .holderCoverText .title {
+          font-weight: 550;
+          font-size: 20px;
+          margin: 15px 0; }
+    .holdevent_step3content .step3Info .holderCoverInfo {
+      line-height: 2;
+      letter-spacing: 1.2px;
+      padding: 45px 85px;
+      width: 50%; }
+      .holdevent_step3content .step3Info .holderCoverInfo table tr {
+        height: 60px; }
+        .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
+          width: 110px; }
+
+.detaileventContent {
+  width: 100%;
+  font-size: 18px;
+  color: #1e1e1e;
+  display: flex;
+  padding-top: 100px;
+  letter-spacing: 1.2px;
+  justify-content: center;
+  line-height: 1.75; }
+  .detaileventContent .detaileventPic {
+    width: 50%;
+    padding: 10px 10px 10px 25px; }
+    .detaileventContent .detaileventPic .title {
+      display: flex;
+      position: relative; }
+      .detaileventContent .detaileventPic .title .eventInfotitle {
+        font-size: 24px;
+        font-weight: 550;
+        margin-right: 150px; }
+      .detaileventContent .detaileventPic .title .dotWrap {
+        right: 25px;
+        width: 40px;
+        height: 40px;
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-self: center;
+        cursor: pointer;
+        position: absolute; }
+      .detaileventContent .detaileventPic .title .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 100%;
+        background-color: #646464; }
+    .detaileventContent .detaileventPic .detaileventPicbox {
+      width: 550px;
+      padding-top: 20px; }
+      .detaileventContent .detaileventPic .detaileventPicbox img {
+        width: 100%;
+        border-radius: 5px; }
+  .detaileventContent .detaileventText {
+    padding: 70px 0px 0px 20px;
+    width: 45%; }
+    .detaileventContent .detaileventText .eventInforow {
+      height: 45px;
+      line-height: 45px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center; }
+      .detaileventContent .detaileventText .eventInforow .eventrowTitle {
+        background-color: lightblue;
+        width: 30%;
+        margin-right: 40px;
+        border-radius: 3px;
+        text-align: center; }
+      .detaileventContent .detaileventText .eventInforow div:nth-child(2) {
+        width: 60%; }
+
+.enroll {
+  position: absolute;
+  bottom: 58px; }
+
+.lightbox_report_info {
+  position: fixed;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    margin: 30px 0;
+    text-align: center; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    padding: 0 25px;
+    margin: 35px auto; }
+    .lightbox_report_info form input {
+      margin: 15px; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    position: absolute; }
+    .lightbox_report_info .reportSent div {
+      margin: 0px 13px; }
+
+.wrapper {
+  background-image: url("../img/element/bgImage.png"); }
 
 .banner_01 .routeTitleImage2 {
   position: absolute;
@@ -375,13 +651,6 @@ div.eventCard {
     transform: rotate(10deg); } }
 
 @media screen and (max-width: 575px) {
-  .banner_01 .routeTitle {
-    width: unset;
-    height: unset; }
-  .banner_01 .routeTitleMoveBlock {
-    width: 375px;
-    position: absolute;
-    top: 200px; }
   .banner_01 .routeTitleImage1 {
     width: 100%; }
   .banner_01 .routeTitleImage2 {
@@ -396,8 +665,12 @@ div.eventCard {
   display: flex;
   margin-bottom: 60px;
   justify-content: center;
-  align-items: center;
-  overflow: hidden; }
+  align-items: center; }
+  @media screen and (max-width: 375px) {
+    .sloganBlock {
+      overflow: hidden;
+      padding-top: 60px;
+      margin-bottom: 20px; } }
 
 .sloganBlock .routeShineAnimation {
   width: 300px;
@@ -421,8 +694,9 @@ div.eventCard {
       top: -45px; } }
   @media screen and (max-width: 375px) {
     .sloganBlock .routeShineAnimation {
-      width: 300px;
-      top: -80px;
+      width: 200px;
+      top: 0;
+      overflow: hidden;
       transform: translate(66px, -18px); } }
 
 .routeShineAnimation .cloud {
@@ -676,10 +950,31 @@ div.eventCard {
 .routeAttractionBlock2 {
   width: 400px;
   height: 350px;
-  border: 1px solid #ccc; }
+  display: flex;
+  align-items: flex-end; }
+  .routeAttractionBlock2 img {
+    width: 80%;
+    position: relative;
+    animation: moveLine 1.5s alternate infinite; }
+  .routeAttractionBlock2 .dashLine1 {
+    transform: rotate(15deg); }
+  .routeAttractionBlock2 .dashLine2 {
+    transform: rotate(275deg); }
+  .routeAttractionBlock2 .dashLine3 {
+    transform: rotate(10deg); }
+  .routeAttractionBlock2 .dashLine4 {
+    transform: rotate(-80deg); }
+  .routeAttractionBlock2 .dashLine5 {
+    transform: rotate(5deg); }
   @media screen and (max-width: 860px) {
     .routeAttractionBlock2 {
       display: none; } }
+
+@keyframes moveLine {
+  from {
+    top: 0; }
+  to {
+    top: 15px; } }
 
 .attractionBgImage {
   width: 100%;
@@ -693,12 +988,21 @@ div.eventCard {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  cursor: auto; }
 
 .attractionBgImage .arrowLeft,
 .attractionBgImage .arrowRight {
   width: 80px;
   cursor: pointer; }
+  @media screen and (max-width: 820px) {
+    .attractionBgImage .arrowLeft,
+    .attractionBgImage .arrowRight {
+      width: 60px; } }
+  @media screen and (max-width: 575px) {
+    .attractionBgImage .arrowLeft,
+    .attractionBgImage .arrowRight {
+      width: 40px; } }
 
 .arrowLeft {
   margin-right: 10px;
@@ -723,10 +1027,24 @@ div.eventCard {
 
 .attractionBgImage .attractionMask {
   width: 1000px;
-  height: 600px;
   position: relative;
   border-radius: 10px;
   overflow: hidden; }
+  @media screen and (max-width: 1240px) {
+    .attractionBgImage .attractionMask {
+      width: 800px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionBgImage .attractionMask {
+      width: 600px; } }
+  @media screen and (max-width: 820px) {
+    .attractionBgImage .attractionMask {
+      width: 450px; } }
+  @media screen and (max-width: 575px) {
+    .attractionBgImage .attractionMask {
+      width: 300px; } }
+  @media screen and (max-width: 375px) {
+    .attractionBgImage .attractionMask {
+      width: 280px; } }
 
 .attractionMask .cancelLightBox {
   width: 30px;
@@ -734,17 +1052,51 @@ div.eventCard {
   right: 2%;
   top: 2%;
   z-index: 3;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: transform .8s ease-in-out;
+  opacity: .8; }
+  .attractionMask .cancelLightBox:hover {
+    transform: rotate(90deg); }
 
 .attractionMask .attractionAll {
   width: 2000px;
-  height: 600px;
   display: flex;
   transition: transform 1s linear; }
+  @media screen and (max-width: 1240px) {
+    .attractionMask .attractionAll {
+      width: 1600px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionMask .attractionAll {
+      width: 1200px; } }
+  @media screen and (max-width: 820px) {
+    .attractionMask .attractionAll {
+      width: 900px; } }
+  @media screen and (max-width: 575px) {
+    .attractionMask .attractionAll {
+      width: 600px; } }
+  @media screen and (max-width: 375px) {
+    .attractionMask .attractionAll {
+      width: 560px; } }
 
 .attractionAll .attractionInfoBlock {
   width: 1000px;
   display: flex; }
+  @media screen and (max-width: 1240px) {
+    .attractionAll .attractionInfoBlock {
+      width: 800px; } }
+  @media screen and (max-width: 1023px) {
+    .attractionAll .attractionInfoBlock {
+      width: 600px;
+      flex-direction: column; } }
+  @media screen and (max-width: 820px) {
+    .attractionAll .attractionInfoBlock {
+      width: 450px; } }
+  @media screen and (max-width: 575px) {
+    .attractionAll .attractionInfoBlock {
+      width: 300px; } }
+  @media screen and (max-width: 375px) {
+    .attractionAll .attractionInfoBlock {
+      width: 280px; } }
 
 .attractionInfoBlock .attractionInfoImage {
   width: 600px;
@@ -753,14 +1105,52 @@ div.eventCard {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #000; }
+  background-color: #ddd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
+  @media screen and (max-width: 1240px) {
+    .attractionInfoBlock .attractionInfoImage {
+      width: 60%; } }
+  @media screen and (max-width: 1023px) {
+    .attractionInfoBlock .attractionInfoImage {
+      width: unset;
+      height: unset;
+      padding-top: 60px; } }
+  @media screen and (max-width: 820px) {
+    .attractionInfoBlock .attractionInfoImage {
+      padding-top: 50px; } }
   .attractionInfoBlock .attractionInfoImage img {
     width: 100%;
     vertical-align: middle; }
 
 .attractionInfoBlock .attractionInfoText {
-  width: 400px;
-  background-color: #fff; }
+  width: 40%;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/route/hoffman.png); }
+  .attractionInfoBlock .attractionInfoText h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0; }
+  .attractionInfoBlock .attractionInfoText p {
+    width: 80%;
+    margin: 0 10%;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 1.5px; }
+  @media screen and (max-width: 1023px) {
+    .attractionInfoBlock .attractionInfoText {
+      width: unset; } }
+  @media screen and (max-width: 575px) {
+    .attractionInfoBlock .attractionInfoText {
+      height: 300px;
+      overflow: scroll;
+      justify-content: unset; } }
+  @media screen and (max-width: 375px) {
+    .attractionInfoBlock .attractionInfoText {
+      height: 260px; } }
 
 .otherLinkBlock {
   width: 100%;

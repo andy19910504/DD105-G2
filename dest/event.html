@@ -13,142 +13,274 @@
 
 <body>
     <div class="wrapper">
-        <!-- header-->
-        <!-- 1200px上 滿版時，使用的選單 -->
-        <header class="fullHeader">
-            <h1>
-                <a href="./index.html">
-                    <img src="./img/header/logo272x170.png" alt="">
-                </a>
-            </h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navHover.png" class="navHover ">
-                            <img src="./img/header/navIcon1.png" class="navIcon"> 散步遊台北
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navHover.png" class="navHover ">
-                            <img src="./img/header/navIcon2.png" class="navIcon"> 攻略地圖趣
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navHover.png" class="navHover ">
-                            <img src="./img/header/navIcon3.png" class="navIcon"> 慢步寫心情
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navHover.png" class="navHover ">
-                            <img src="./img/header/navIcon4.png" class="navIcon"> 情繫明信片
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navHover.png" class="navHover show">
-                            <img src="./img/header/navIcon5.png" class="navIcon"> 揪團散步去
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="memberIcon">
-                <div class="navCart">
-                    <a href="">
-                        <img src="./img/header/navCart.png">
-                    </a>
+        <!-- 我要揪團燈箱 -->
+        <div class="backDrop">
+            <div class="lightbox_holdevent_info">
+                <!-- 關閉 -->
+                <div class="close">✘</div>
+                <!-- 題目 -->
+                <div class="holdevent_title">
+                    <h2>我要揪團</h2>
                 </div>
-                <div class="navMember">
-                    <a href="">
-                        <img src="./img/header/navMember.png">
-                    </a>
-                </div>
-                <div class="navPoint">
-                    <a href="">
-                        <img src="./img/header/navPoint.png">
-                        <div id="point">666</div>
-                    </a>
-                </div>
-            </div>
-        </header>
-        <!-- 1200px下時，轉乘使用漢堡選單 -->
-        <header class="hamburgerHeader">
-            <h1>
-                <a href="./index.html">
-                    <img src="./img/header/logo272x170.png" alt="">
-                </a>
-            </h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navIcon1.png" class="navIcon"> 散步遊台北
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navIcon2.png" class="navIcon"> 攻略地圖趣
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navIcon3.png" class="navIcon"> 慢步寫心情
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navIcon4.png" class="navIcon"> 情繫明信片
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/header/navIcon5.png" class="navIcon"> 揪團散步去
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="memberIcon">
-                <div class="navCart">
-                    <a href="">
-                        <img src="./img/header/navCart.png">
-                    </a>
-                </div>
-                <div class="navMember">
-                    <a href="">
-                        <img src="./img/header/navMember.png">
-                    </a>
-                </div>
-                <div class="navPoint">
-                    <a href="">
-                        <img src="./img/header/navPoint.png">
-                        <div id="point">666</div>
-                    </a>
-                </div>
-            </div>
-        </header>
-        <h1 class="smartPhoneLogo">
-            <a href="./index.html">
-                <img src="./img/header/logo272x170.png" alt="">
-            </a>
-        </h1>
-        <div class="hamburger hamburger--spring">
-            <div class="hamburger-box">
-                <div class="hamburger-inner"></div>
-            </div>
-        </div>
-        <!-- banner-->
-        <div class="banner_05">
-            <div class="eventTitle">
-                <!-- banner文字 -->
-                <img src="./img/event/event_banner.png" alt="">
-            </div>
-        </div>
-        <!-- breadCrumb // breadCrumb link：依序填入連結位子 src：放上圖片的路徑-->
-        
+                <!-- 步驟圈圈 -->
+                <div class="holdevent_step ">
+                    <div class="step1 color">
+                        <p>STEP1.</p>
+                        <p>選擇路線</p>
+                    </div>
 
+                    <div class="step2">
+                        <p>STEP2.</p>
+                        <p>上傳照片+填寫資料</p>
+                    </div>
+                    <div class="step3">
+                        <p>STEP3.</p>
+                        <p>確定揪團資訊</p>
+                    </div>
+                </div>
+
+                <form action="">
+                    <div class="stepALL">
+                        <!-- 第一步 -->
+                        <div class="holdevent_step1content">
+                            <div class="chooseRoute">
+                                <div class="slideBtn">
+                                    <img src="./img/event/event_leftbtn2.png" alt="">
+                                </div>
+                                <div class="sliderWrap">
+                                    <div class="routeBox">
+
+                                        <div class="route1">
+                                            <p>官方路線1</p>
+                                        </div>
+                                        <div class="route2">
+                                            <p>官方路線2</p>
+                                        </div>
+                                        <div class="route3">
+                                            <p>官方路線3</p>
+                                        </div>
+                                        <div class="route4">
+                                            <p>自訂路線1</p>
+                                        </div>
+                                        <div class="route5">
+                                            <p>自訂路線2</p>
+                                        </div>
+                                        <div class="addroute">
+                                            <p>自訂路線+</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="slideBtn">
+                                    <img src="./img/event/event_rightbtn2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="routeClick">
+                                <p>選擇路線 : 官方路線2</p>
+                                <p>景點 : 台北101 -> 台北101 -> 台北101</p>
+                            </div>
+                            <!-- 上下一步 -->
+                            <div class="stepBtn">
+                                <div class="1_backStep">
+                                    <a href="#" class="btnPinkStop">上一步</a>
+                                </div>
+                                <div class="1_nextStep">
+                                    <a href="#" class="btnPink">下一步</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- 第二步驟內容 -->
+                        <div class="holdevent_step2content">
+                            <div class="step2Info">
+                                <div class="holderPic">
+                                    <label class="label1" for="">
+                                        <br>
+                                        <input type="file">
+                                    </label>
+                                    <div class="holderPicBox">
+                                        <p>揪團封面照片</p>
+                                    </div>
+                                </div>
+                                <div class="holderInfo">
+                                    <div>
+                                        <label class="label2" for="">揪團名稱 :</label>
+                                        <input type="text" name="actTitle" placeholder="">
+                                    </div>
+                                    <div>
+                                        <label class="label2" for="">活動日期 :</label>
+                                        <input type="text" name="actTitle" placeholder="">
+                                    </div>
+                                    <div>
+                                        <label class="label2" for="">集合時間 :</label>
+                                        <input type="text" name="actTitle" placeholder="">
+                                    </div>
+                                    <div>
+                                        <label class="label2" for="">集合地點 :</label>
+                                        <input type="text" name="actTitle" placeholder="">
+                                    </div>
+                                    <div>
+                                        <div><label class="label2" for="">活動介紹 :</label></div>
+                                        <textarea name="" id="" style="width:380px;height:100px;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 按鈕 -->
+                            <div class="stepBtn">
+                                <div class="2_backStep">
+                                    <a href="#" class="btnPink">上一步</a>
+                                </div>
+                                <div class="2_nextStep">
+                                    <a href="#" class="btnPink">下一步</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- 第三步驟內容 -->
+                        <div class="holdevent_step3content">
+                            <div class="step3Info">
+                                <div class="holderCover">
+                                    <div class="holderCoverPic">
+                                        <img src="./img/event/event_museum.jpg" alt="">
+                                    </div>
+                                    <div class="holderCoverText">
+                                        <p class="title">官方路線2</p>
+                                        <p>景點 : 台北101 -> 台北101 -> 台北101</p>
+                                    </div>
+                                </div>
+                                <div class="holderCoverInfo">
+                                    <form action="">
+                                        <table>
+                                            <tr>
+                                                <td>揪團名稱:</td>
+                                                <td>故宮好好玩</td>
+                                            </tr>
+                                            <tr>
+                                                <td>活動日期:</td>
+                                                <td>2020-03-01(日)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>集合時間:</td>
+                                                <td>早上 8:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>集合地點:</td>
+                                                <td>信義麥當勞</td>
+                                            </tr>
+                                            <tr>
+                                                <td>活動介紹:</td>
+                                                <td>故宮好好玩~~~~~~</td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+
+
+                            </div>
+                            <div class="stepBtn">
+                                <div class="3_backStep">
+                                    <a href="#" class="btnPink">上一步</a>
+                                </div>
+                                <div class="3_nextStep">
+                                    <a href="#" class="btnPink">提交</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- header
+    在你的分頁的display:"加上show"
+    -->
+
+        <!-- 1200px上 滿版時，使用的選單 -->
+<header class="fullHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="route.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="mapgame.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="mood.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="postcard.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="event.html"><img src="./img/header/navHover.png" class="navHover show"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href="member.html"><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href="member.html"><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href="member.html"><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+
+</header>
+<!-- 1200px下時，轉乘使用漢堡選單 -->
+
+<header class="hamburgerHeader">
+    <h1>
+        <a href="./index.html">
+            <img src="./img/header/logo272x170.png" alt="">
+        </a>
+    </h1>
+    <nav>
+        <ul>
+            <li><a href="./route.html"><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="./mapgame.html"><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="./mood.html"><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="./postcard.html"><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="./event.html"><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+        </ul>
+    </nav>
+    <div class="memberIcon">
+        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a href="./member.html"><img src="./img/header/navMember.png"></a></div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+    </div>
+</header>
+<h1 class="smartPhoneLogo">
+    <a href="./index.html">
+        <img src="./img/header/logo272x170.png" alt="">
+    </a>
+</h1>
+<div class="hamburger hamburger--spring">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</div>
+
+
+        <a name="GoTop"></a>
+        <!-- banner -->
+        <div class="banner_05">
+            <!-- <div class="eventTitle">
+                <img src="./img/event/event_banner.png" alt="">
+            </div> -->
+            <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
+            <div class="routeTitle">
+                <div class="routeTitleMoveBlock">
+                    <img src="./img/banner/bannerTitle5.png" alt="" srcset="">
+                </div>
+            </div>
+            <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
+
+        </div>
+        <!-- 我要揪團按鈕 // btnCust link：連結的網址 innerText：按鈕名稱 -->
+        <div class="btnCust lightbox">我要揪團</div>
+        <!-- breadCrumb -->
+        <ul class="breadCrumb">
+    <li><a href="./google.com.tw">台北散步</a></li>
+    <li><a href="./google.com.tw">揪團散步去</a></li>
+    <li><a href="./google.com.tw">揪團散步去</a></li>
+    <li><a href="./google.com.tw">揪團散步去</a></li>
+    <li><a href="./google.com.tw">揪團散步去</a></li>
+    <li><a href="./google.com.tw">揪團散步去 </a></li>
+</ul>
         <!-- 內容 -->
         <div class="eventContent">
             <!-- 最新揪團 -->
@@ -158,52 +290,52 @@
                 </div>
                 <div id="slideBoard">
                     <ul id="content">
-                        <a href="">
-                            <li>
-                                <div class="newEventPic">
+                        <div class="newSlider">
+                            <div class="newEventPic ">
+                                <a href="">
                                     <img src="./img/event/event_slider1.png" class="image">
-                                </div>
-                                <div class="newEventText">
-                                    <p>
-                                        一同走訪日治時期的台北城市，
-                                        <br> 居家幾乎都是木造房舍...
-                                    </p>
-                                </div>
-                            </li>
-                        </a>
-                        <a href="">
-                            <li>
-                                <div class="newEventPic">
+                                </a>
+                            </div>
+                            <div class="newEventText">
+                                <p> 一同走訪日治時期的台北城市，</p>
+                                <p>居家幾乎都是木造房舍...</p>
+                            </div>
+                        </div>
+
+                        <div class="newSlider">
+                            <div class="newEventPic">
+                                <a href="">
                                     <img src="./img/event/event_slider2.png" class="image">
-                                </div>
-                                <div class="newEventText">
-                                    <p>
-                                        細細品味充滿文青感的台北城市，
-                                        <br> 拜訪當特色咖啡廳...
-                                    </p>
-                                </div>
-                            </li>
-                        </a>
-                        <a href="">
-                            <li>
-                                <div class="newEventPic">
+                                </a>
+                            </div>
+                            <div class="newEventText">
+                                <p>細細品味充滿文青感的台北城市，</p>
+                                <p>拜訪當特色咖啡廳...</p>
+                            </div>
+                        </div>
+                        <div class="newSlider">
+                            <div class="newEventPic">
+                                <a href="">
                                     <img src="./img/event/event_slider3.png" class="image">
-                                </div>
-                                <div class="newEventText">
-                                    <p>
-                                        跟我們從小廢墟一路前進到化南新村，
-                                        <br> 認識不一樣的台北...
-                                    </p>
-                                </div>
-                            </li>
-                        </a>
+                                </a>
+                            </div>
+
+                            <div class="newEventText">
+                                <p>
+                                    跟我們從小廢墟一路前進到化南新村，
+                                </p>
+                                <p>認識不一樣的台北...</p>
+                            </div>
+                        </div>
+
                     </ul>
                     <ul id="contentButton">
-                        <li class="clickMe"></li>
+                        <!-- <li class="clickMe"></li>
                         <li></li>
-                        <li></li>
+                        <li></li> -->
                     </ul>
                 </div>
+                <img src="./img/event/event_loudspeaker.png" class="loudspeaker">
             </section>
             <!-- 分隔線 -->
             <section class="cutLine">
@@ -211,22 +343,19 @@
             </section>
             <!-- 活動瀏覽 -->
             <section class="eventScan">
+                <img src="./img/event/event_airb.png" class="airb">
+                <img src="./img/event/event_firework.png" class="firework">
+                <img src="./img/event/event_skylight.png" class="skylight">
                 <!-- 分類bar -->
-                <div class="catalogBar">
-                    <div class="catalog">
-                        <ul>
-                            <li class="color">
-                                <p>全部揪團</p>
-                            </li>
-                            <li>
-                                <p>官方路線揪團</p>
-                            </li>
-                            <li>
-                                <p>自訂路線揪團</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- routeFilterBlock -->
+                <div class="filterBlock">
+    <ul class="filterAll">
+        <li id="filter1" class="filter showFilter">全部揪團</li>
+        <li id="filter2" class="filter">官方路線揪團</li>
+        <li id="filter3" class="filter">自訂路線揪團</li>
+    </ul>
+    <img src="./img/route/filterBgimage.png" class="filterBgImage">
+</div>
                 <!-- 下拉選單 -->
                 <div class="selector">
                     <form>
@@ -238,561 +367,509 @@
                     </form>
                 </div>
                 <div class="cardBox">
-                    <div class="cardLine">
-                        <div class="event card lightEvent">
-                            <div class="reportBtn">...</div>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card1.png" alt="">
+                    <div class="eventWrap">
+                        <!-- 一條 -->
+                        <div class="eventCardsWrap">
+                            <!-- 一張卡片 -->
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>職人散步GoGo團</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
-                            <div class="cardText">
-                                <h1>職人散步GoGo團</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>信義一日遊</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card2.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>信義一日遊</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card3.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>一起去陽明山踏青吧</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cardLine">
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card1.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>職人散步GoGo團</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card2.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>信義一日遊</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card3.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>一起去陽明山踏青吧</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>一起去陽明山散步吧</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="cardLine">
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card1.png" alt="">
+                    <!-- 一條 -->
+                    <div class="eventWrap">
+                        <div class="eventCardsWrap">
+                            <!-- 一張卡片 -->
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>職人散步GoGo團</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
-                            <div class="cardText">
-                                <h1>職人散步GoGo團</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>信義一日遊</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card2.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>信義一日遊</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card3.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>一起去陽明山踏青吧</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- viewMore次要按鈕 // btnPink link：連結的網址 innerText：按鈕名稱 -->
-                    <div class="viewMore">
-                        <a href="./google.com.tw" class="btnPink">View More</a>
-                    </div>
-                    <!-- 隱藏卡片 -->
-                    <!-- <div class="cardLine4">
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card1.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>職人散步GoGo團</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card2.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>信義一日遊</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card3.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>一起去陽明山踏青吧</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>一起去陽明山散步吧</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="cardLine5">
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card1.png" alt="">
+                    <!-- 一條 -->
+                    <div class="eventWrap">
+                        <div class="eventCardsWrap">
+                            <!-- 一張卡片 -->
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>職人散步GoGo團</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
-                            <div class="cardText">
-                                <h1>職人散步GoGo團</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>信義一日遊</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>一起去陽明山散步吧</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card2.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>信義一日遊</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                        <div class="event card">
-                            <span>...</span>
-                            <div class="cardPic">
-                                <img src="./img/event/event_card3.png" alt="">
-                            </div>
-                            <div class="cardText">
-                                <h1>一起去陽明山踏青吧</h1>
-                                <hr>
-                                <p>活動日期:2020-03-01(日)</p>
-                                <p>報名截止:2020-02-28(五)</p>
-                                <p>集合地點:信義新光三越</p>
-                                <span>more</span>
-                            </div>
-                        </div>
-                    </div> -->
+                    </div>
                 </div>
+
+                <!-- 隱藏卡片 -->
+
+                <div class="cardBox2 ">
+                    <div class="eventWrap">
+                        <!-- 一條 -->
+                        <div class="eventCardsWrap">
+                            <!-- 一張卡片 -->
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>職人散步GoGo團</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>信義一日遊</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>一起去陽明山散步吧</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一條 -->
+                    <div class="eventWrap">
+                        <div class="eventCardsWrap">
+                            <!-- 一張卡片 -->
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>職人散步GoGo團</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>信義一日遊</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                            <div class="eventCard lightEvent">
+                                <div class="dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                                <div class="eventPicWrap">
+                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
+                                </div>
+                                <div class="cardText">
+                                    <h1>一起去陽明山散步吧</h1>
+                                    <p>
+                                        活動日期:2020-03-01(日) <br>
+                                        報名截止:2020-02-28(五) <br>
+                                        集合地點:信義新光三越
+                                    </p>
+                                    <span class="lightDetail">more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- viewMore次要按鈕 // btnPink link：連結的網址 innerText：按鈕名稱 -->
+                <div class="viewMore">
+                    <div class="btnPink">View More</div>
+
+                </div>
+
             </section>
-        </div>
 
-    </div>
-    <!-- 我要揪團按鈕 // btnCust link：連結的網址 innerText：按鈕名稱 -->
-    <a href="#" class="btnCust lightbox">我要揪團</a>
-    <!-- 燈箱們 -->
-    <!-- 燈箱/發起揪團 -->
-    <!-- 最底層black -->
-    <div class="backDrop">
-    </div>
-    <!-- 內容 -->
-    <div class="lightbox_holdevent_info">
-        <!-- 關閉 -->
-        <div class="close">✘</div>
-        <!-- 題目 -->
-        <div class="holdevent_title">
-            <h2>我要揪團</h2>
-        </div>
-        <!-- 步驟圈圈 -->
-        <div class="holdevent_step">
-            <div class="yellow">
-                <p>STEP 1. </p>
-                <p>選擇揪團路線</p>
-            </div>
-
-            <div>
-                <p>STEP 2.</p>
-                <p>上傳照片</p>
-                <p>填寫揪團資料</p>
-            </div>
-            <div>
-                <p>STEP 3.</p>
-                <p>確定揪團資訊</p>
-            </div>
-        </div>
-
-        <form action="">
-            <!-- 第一步 -->
-            <div class="holdevent_step1content">
-                <div class="chooseRoute">
-                    <div class="slideBtn">
-                        <img src="./img/event/event_leftbtn2.png" alt="">
-                    </div>
-                    <div class="sliderWrap">
-                        <div class="routeBox">
-
-                            <div class="route1">
-                                <p>官方路線1</p>
+            <!-- 燈箱/揪團詳情 -->
+            <div class="backDrop">
+                <div class="lightbox_detailevent">
+                    <div class="lightbox_detailevent_info">
+                        <div class="close">✘</div>
+                        <div class="detaileventContent">
+                            <div class="detaileventPic">
+                                <div class="title">
+                                    <div class="eventInfotitle">故宮好好玩</div>
+                                    <div class=" dotWrap lightReport ">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="detaileventPicbox">
+                                    <img src="./img/event/event_museum.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="route2">
-                                <p>官方路線2</p>
-                            </div>
-                            <div class="route3">
-                                <p>官方路線3</p>
-                            </div>
-                            <div class="route4">
-                                <p>自訂路線1</p>
-                            </div>
-                            <div class="route5">
-                                <p>自訂路線2</p>
-                            </div>
-                            <div class="addroute">
-                                <p>自訂路線+</p>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="slideBtn">
-                        <img src="./img/event/event_rightbtn2.png" alt="">
-                    </div>
-
-
-                </div>
-                <div class="routeClick">
-                    <p>選擇路線: 官方路線2</p>
-                    <p>景點: 台北101 -> 台北101 -> 台北101</p>
-                </div>
-                <!-- 上下一步 -->
-                <div class="stepBtn">
-                    <div class="1_backStep">
-                        <a href="#" class="btnPinkStop">上一步</a>
-                    </div>
-                    <div class="1_nextStep">
-                        <a href="#" class="btnPink">下一步</a>
-                    </div>
-
-                </div>
-
-            </div>
-            <!-- 第二步驟內容 -->
-            <div class="holdevent_step2content">
-                <div class="step2Info">
-                    <div class="holderPic">
-                        <label class="label1" for="">
-                            <br>
-                            <input type="file">
-                        </label>
-                        <div class="holderPicBox">
-                            <p>揪團封面照片</p>
-                        </div>
-                    </div>
-                    <div class="holderInfo">
-                        <div>
-                            <label class="label2" for="">揪團名稱:</label>
-                            <input type="text" name="actTitle" placeholder="">
-                        </div>
-                        <div>
-                            <label class="label2" for="">活動日期:</label>
-                            <input type="text" name="actTitle" placeholder="">
-                        </div>
-                        <div>
-                            <label class="label2" for="">集合時間:</label>
-                        </div>
-                        <div>
-                            <label class="label2" for="">集合地點:</label>
-                            <input type="text" name="actTitle" placeholder="">
-                        </div>
-                        <div>
-                            <div><label class="label2" for="">活動介紹:</label></div>
-                            <textarea name="" id="" style="width:390px;height:100px;"></textarea>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <!-- 按鈕 -->
-                <div class="stepBtn">
-                    <div class="2_backStep">
-                        <a href="#" class="btnPink">上一步</a>
-                    </div>
-                    <div class="2_nextStep">
-                        <a href="#" class="btnPink">下一步</a>
-                    </div>
-
-                </div>
-            </div>
-            <!-- 第三步驟內容 -->
-            <div class="holdevent_step3content">
-                <div class="step3Info">
-                    <div class="holderCover">
-                        <div class="holderCoverPic">
-                            <img src="./img/event/event_museum.jpg" alt="">
-                        </div>
-                        <div class="holderCoverText">
-                            <p class="title">官方路線2</p>
-                            <p>景點:台北101 -> 台北101 -> 台北101</p>
-                        </div>
-                    </div>
-                    <div class="holderCoverInfo">
-                        <form action="">
-                            <table>
+                            <div class="detaileventText">
+                                <form action="">
+                                    <!-- <table>
                                 <tr>
-                                    <td>揪團名稱:</td>
-                                    <td>故宮好好玩</td>
-                                </tr>
-                                <tr>
-                                    <td>活動日期:</td>
+                                    <td>活動日期</td>
                                     <td>2020-03-01(日)</td>
                                 </tr>
                                 <tr>
-                                    <td>集合時間:</td>
+                                    <td>報名截止日</td>
+                                    <td>2020-02-28(五)</td>
+                                </tr>
+                                <tr>
+                                    <td>集合時間</td>
                                     <td>早上 8:30</td>
                                 </tr>
                                 <tr>
-                                    <td>集合地點:</td>
-                                    <td>信義麥當勞</td>
+                                    <td>集合地點</td>
+                                    <td>信義新光三越</td>
                                 </tr>
                                 <tr>
-                                    <td>活動介紹:</td>
-                                    <td>故宮好好玩~~~~~~</td>
+                                    <td>活動介紹</td>
+                                    <td>故宮好好玩</td>
                                 </tr>
-                            </table>
-                        </form>
-                    </div>
+                                <tr>
+                                    <td>路線</td>
+                                    <td>官方路線二<br>景點:台北101 -> 台北101 -> 台北101</td>
+                                </tr>
+                            </table> -->
 
-
-                </div>
-                <div class="stepBtn">
-                    <div class="3_backStep">
-                        <a href="#" class="btnPink">上一步</a>
-                    </div>
-                    <div class="3_nextStep">
-                        <a href="#" class="btnPink">提交</a>
-                    </div>
-
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- 燈箱/揪團詳情 -->
-    <div class="lightbox_detailevent">
-        <div class="lightbox_detailevent_info">
-            <div class="close">✘</div>
-            <div class="detaileventContent">
-                <div class="detaileventPic">
-                    <div class="title">
-                        <div class="eventInfotitle">故宮好好玩</div>
-                        <div class="reportBtnB">...</div>
-                    </div>
-                    <div class="detaileventPicbox">
-                        <img src="./img/event/event_museum.jpg" alt="">
-                    </div>
-                </div>
-                <div class="detaileventText">
-                    <form action="">
-                        <!-- <table>
-                            <tr>
-                                <td>活動日期</td>
-                                <td>2020-03-01(日)</td>
-                            </tr>
-                            <tr>
-                                <td>報名截止日</td>
-                                <td>2020-02-28(五)</td>
-                            </tr>
-                            <tr>
-                                <td>集合時間</td>
-                                <td>早上 8:30</td>
-                            </tr>
-                            <tr>
-                                <td>集合地點</td>
-                                <td>信義新光三越</td>
-                            </tr>
-                            <tr>
-                                <td>活動介紹</td>
-                                <td>故宮好好玩</td>
-                            </tr>
-                            <tr>
-                                <td>路線</td>
-                                <td>官方路線二<br>景點:台北101 -> 台北101 -> 台北101</td>
-                            </tr>
-                        </table> -->
-
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">活動日期</div>
-                            <div>2020-03-01(日)</div>
-                        </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">報名截止日</div>
-                            <div>2020-02-28(五)</div>
-                        </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">集合時間</div>
-                            <div>早上 8:30</div>
-                        </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">集合地點</div>
-                            <div>信義新光三越</div>
-                        </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">活動介紹</div>
-                            <div>故宮好好玩</div>
-                        </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">路線</div>
-                            <div>
-                                官方路線二
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">活動日期</div>
+                                        <div>2020-03-01(日)</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">報名截止日</div>
+                                        <div>2020-02-28(五)</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">集合時間</div>
+                                        <div>早上 8:30</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">集合地點</div>
+                                        <div>信義新光三越</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">活動介紹</div>
+                                        <div>故宮好好玩</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">路線</div>
+                                        <div>
+                                            官方路線二
+                                        </div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">景點</div>
+                                        <div>
+                                            台北101 -> 台北101 -> 台北101
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div class="eventInforow">
-                            <div class="eventrowTitle">景點</div>
-                            <div>
-                                台北101 -> 台北101 -> 台北101
-                            </div>
-                        </div>
-
-
-
-                    </form>
-                </div>
-            </div>
-            <div class="enroll">
-                <a href="#" class="btnRed">
+                        <div class="enroll">
+                            <a href="#" class="btnRed">
     我要報名
 </a>
-            </div>
-        </div>
-    </div>
-    <!-- 燈箱/揪團檢舉 -->
-    <div class="lightbox_report">
-        <div class="lightbox_report_info">
-            <!-- x按鈕 -->
-            <!-- <div class="close">✘</div> -->
-            <div class="reportTitle">
-                <h2>協助我們了解情況?</h2>
-            </div>
-            <form>
-                <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
-                <br>
-                <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
-                <br>
-                <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
-                <br>
-                <div class="reportSent">
-                    <div class="enter">
-                        <a href="#" class="btnPink">確定</a>
+                        </div>
                     </div>
-                    <div class="cancel">
-                        <a href="#" class="btnPink">取消</a>
-                    </div>
-
                 </div>
-            </form>
+            </div>
+            <!-- 燈箱/揪團檢舉 -->
+            <div class="backDrop">
+                <div class="lightbox_report">
+                    <div class="lightbox_report_info">
+
+
+                        <div class="reportTitle">
+                            <h2>協助我們了解情況?</h2>
+                        </div>
+                        <form>
+                            <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
+                            <br>
+                            <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
+                            <br>
+                            <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
+                            <br>
+                            <div class="reportSent">
+                                <div class="enter">
+                                    <a class="btnPink">確定</a>
+                                </div>
+                                <div class="cancel">
+                                    <a class="btnPink">取消</a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+        <!-- 燈箱們 -->
+        <!-- 燈箱/發起揪團 -->
+        <!-- 最底層black -->
+
+        <!-- 內容 -->
+
+        <footer>
+            <!-- chatbot -->
+<div class="chatBot" id="chatBot">
+    <img src="./img/index/botBird.gif" class="bird">
+    <img src="./img/index/birdChat.gif" class="birdChat">
+    <div class="openBtn" id="openBot">
+        <img src="./img/index/chatBotOpen.png"> 
     </div>
-    <!-- 回到頂端的連結 -->
-    <a name="GoTop "></a>
-    <!-- 回到頂端 // btnGoTop -->
-    <!-- 還需要遷入jQuery -->
-    <a id="btnGoTop "></a>
-    <!-- footer-->
-    <footer>
-        <div class="footerCloud ">
-            <img src="./img/footer/footerCloud170.png " class="footerCloud170 ">
-            <img src="./img/footer/footerCloud122.png " class="footerCloud122 ">
-        </div>
-        <div class="footerLogo ">
-            <img src="./img/footer/logo320x200.png ">
-        </div>
-        <div class="footerText ">
-            <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div class="chatContent">
+        <!-- 對話內容區塊 -->
+    </div>
+    <div class="keywordBar">
+        <span>台北散步</span>
+        <span>路線</span>
+        <span>小遊戲</span>
+        <span>GPS</span>
+        <span>心情</span>
+        <span>明信片</span>
+        <span>揪團</span>
+    </div>
+    <div class="inputBar">
+        <input type="text" id="" class="botInput">
+        <div class="botInputBtn">發送</div>
+    </div>
+
+</div>
+<footer>
+    <a id="btnGoTop"></a>
+    <div class="footerCloud">
+        <img src="./img/footer/footerCloud170.png" class="footerCloud170">
+        <img src="./img/footer/footerCloud122.png" class="footerCloud122">
+    </div>
+    <div class="footerLogo">
+        <img src="./img/footer/logo320x200.png">
+    </div>
+    <div class="footerText">
+        <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
+    </div>
+</footer>
+        </footer>
     </div>
     <script src="./js/jquery-3.4.1.min.js "></script>
-    <script src="./js/goTop.js "></script>
+    <script src="./js/common.js"></script>
     <script src="./js/event.js"></script>
 </body>
 
