@@ -52,7 +52,7 @@
     position: absolute;
     left: -270px;
     top: 100px;
-    animation: sunround 13s linear infinite;
+    animation: sunround 26s linear infinite;
 
     @keyframes sunround {
         from {
@@ -221,7 +221,7 @@
     // background-color: white;
     box-shadow: $heavierShadow;
     // box-shadow: 10px 10px 5px gray;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 .member_info_nav>ul{
     font-size: 0px;
@@ -334,7 +334,7 @@
 .member_info_info_all {
     // border: 1px solid green;
     // padding: 4.75%;
-    background-image: url(../img/member/memphis-colorful.png);
+    background-image: url(../img/member/dot-grid.png);
 }
 
 .member_info_info_left {
@@ -343,7 +343,9 @@
     // border: 1px solid red;
     font-size: 0px;
     padding: 8% 0% 0% 0%;
-
+    label{
+        pointer-events: none;
+        cursor: pointer;
     div {
         margin: 0 auto;
         width: 228px;
@@ -364,10 +366,11 @@
         div:nth-child(2) {
             margin: 0 auto;
             font-size: 0px;
-            pointer-events: none;
+            // pointer-events: none;
             border: unset;
             width: 100%;
             text-align: center;
+            display: none;
 
             label {
                 cursor: pointer;
@@ -383,6 +386,7 @@
         }
 
     }
+}
 
 
 }
@@ -422,7 +426,8 @@
     vertical-align: top;
 
     div {
-        background-image: url(../img/member/hip-square.png);
+        border-bottom: 1px solid $fcInfo;
+        // background-image: url(../img/member/hip-square.png);
 
         // img {
         // background-image: url(../img/member/hip-square.png);
@@ -447,6 +452,7 @@
         }
 
         img {
+            // transform: rotate(10deg);
             width: 30px;
             font-size: 16px;
             // border: 1px solid indianred;
@@ -455,27 +461,27 @@
             right: 0;
             top: 8px;
             cursor: pointer;
-            animation: jump 5s infinite linear;
+            animation: jump 1s infinite linear;
 
             @keyframes jump {
                 0% {
-                    transform: scale(1);
+                    transform: rotate(-10deg);
                 }
 
                 25% {
-                    transform: scale(1.5);
+                    transform: rotate(0deg);
                 }
 
                 50% {
-                    transform: scale(1);
+                    transform: rotate(10deg);
                 }
 
                 75% {
-                    transform: scale(1.5);
+                    transform: rotate(0deg);
                 }
 
                 100% {
-                    transform: scale(1);
+                    transform: rotate(-10deg);
                 }
 
             }
@@ -511,6 +517,9 @@
         }
 
         ;
+        input:focus{
+        border: 3px dashed $importantColor;
+        }
 
     }
 
@@ -565,7 +574,7 @@
     // width: 100%;
     border: 3px dashed $importantColor;
     font-size: 0px;
-    border-radius: 15px;
+    border-radius: 5px;
     // text-align: center;
 }
 .member_info_line_all_all:hover{
@@ -709,7 +718,7 @@
     }
 }
 .member_info_share>div>div{
-   border-radius: 15px; 
+   border-radius: 5px; 
 }
 .member_info_share>div>div:hover{
     box-shadow:$heavierShadow ;
@@ -782,7 +791,10 @@
     padding: 0 3% 3% 3%;
     background-image: url(../img/member/hip-square.png);
     // border: 1px solid green;
-    border-radius: 15px;
+    border-radius: 5px;
+}
+.member_info_order>div>div:hover{
+    box-shadow: $heavierShadow;
 }
 .member_info_order_up {
     padding-top: 5%;
@@ -808,7 +820,10 @@
     }
 }
 .member_info_order_bottom{
+    // overflow-y:scroll;
+    // border: 1px solid red;
     font-size: 0px;
+    // height: 300px;
 }
 .member_info_order_bottom>div{
     vertical-align: top;
@@ -918,7 +933,7 @@
     border: 3px dashed $importantColor;
     background-image: url(../img/member/hip-square.png);
     font-size: 0px;
-    border-radius: 15px;
+    border-radius: 5px;
 
     h1 {
         // border: 1px solid red;
@@ -930,12 +945,13 @@
     }
 }
 .member_info_open_all_all:hover{
+    box-shadow: $heavierShadow;
     .member_info_open_all_left>div>div>img{
               transform: scale(1.1);
         transition: all 0.8s;
     }
     .member_info_open_all_left>div{
-        box-shadow: $heavierShadow;
+        box-shadow: $slightShadow;
 
     }
 }
@@ -1061,7 +1077,7 @@
     border: 3px dashed $importantColor;
     background-image: url(../img/member/hip-square.png);
     font-size: 0px;
-    border-radius: 15px;
+    border-radius: 5px;
 
     h1 {
         // border: 1px solid red;
@@ -1073,22 +1089,24 @@
     }
 }
 .member_info_open_all_all:hover{
+    box-shadow: $heavierShadow;
     .member_info_open_all_left>div>div>img{
               transform: scale(1.1);
         transition: all 0.8s;
     }
     .member_info_open_all_left>div{
-        box-shadow: $heavierShadow;
+        box-shadow: $slightShadow;
 
     }
 }
 .member_info_join_all_all:hover{
+    box-shadow: $heavierShadow;
     .member_info_join_all_left>div>div>img{
         transform: scale(1.1);
   transition: all 0.8s;
 }
     .member_info_join_all_left>div{
-        box-shadow: $heavierShadow;
+        box-shadow: $slightShadow;
 }
 }
 .member_info_join_all_left>div{

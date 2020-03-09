@@ -79,7 +79,7 @@ blockquote, q {
   position: absolute;
   left: -270px;
   top: 100px;
-  animation: sunround 13s linear infinite; }
+  animation: sunround 26s linear infinite; }
   .member_sun img {
     width: 100%; }
 
@@ -176,7 +176,7 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   width: 100%;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
-  border-radius: 25px; }
+  border-radius: 15px; }
   .member_info img {
     width: 100%; }
 
@@ -258,36 +258,39 @@ blockquote, q {
   padding: 4.75%; }
 
 .member_info_info_all {
-  background-image: url(../img/member/memphis-colorful.png); }
+  background-image: url(../img/member/dot-grid.png); }
 
 .member_info_info_left {
   display: inline-block;
   width: 50%;
   font-size: 0px;
   padding: 8% 0% 0% 0%; }
-  .member_info_info_left div {
-    margin: 0 auto;
-    width: 228px;
-    background-image: url(../img/member/hip-square.png);
-    border: 3px dashed transparent;
-    padding: 1% 1% 1% 1%; }
-    .member_info_info_left div div:nth-child(1) {
-      width: 100%;
-      font-size: 16px;
-      border: unset; }
-    .member_info_info_left div div:nth-child(2) {
+  .member_info_info_left label {
+    pointer-events: none;
+    cursor: pointer; }
+    .member_info_info_left label div {
       margin: 0 auto;
-      font-size: 0px;
-      pointer-events: none;
-      border: unset;
-      width: 100%;
-      text-align: center; }
-      .member_info_info_left div div:nth-child(2) label {
-        cursor: pointer;
-        font-size: 16px; }
-        .member_info_info_left div div:nth-child(2) label img {
-          width: 27px;
-          vertical-align: text-bottom; }
+      width: 228px;
+      background-image: url(../img/member/hip-square.png);
+      border: 3px dashed transparent;
+      padding: 1% 1% 1% 1%; }
+      .member_info_info_left label div div:nth-child(1) {
+        width: 100%;
+        font-size: 16px;
+        border: unset; }
+      .member_info_info_left label div div:nth-child(2) {
+        margin: 0 auto;
+        font-size: 0px;
+        border: unset;
+        width: 100%;
+        text-align: center;
+        display: none; }
+        .member_info_info_left label div div:nth-child(2) label {
+          cursor: pointer;
+          font-size: 16px; }
+          .member_info_info_left label div div:nth-child(2) label img {
+            width: 27px;
+            vertical-align: text-bottom; }
 
 .member_info_info_line {
   position: absolute;
@@ -315,7 +318,7 @@ blockquote, q {
   width: 50%;
   vertical-align: top; }
   .member_info_info_right div {
-    background-image: url(../img/member/hip-square.png); }
+    border-bottom: 1px solid #646464; }
   .member_info_info_right div:nth-child(1) {
     font-size: 0px;
     text-align: center;
@@ -334,19 +337,19 @@ blockquote, q {
       right: 0;
       top: 8px;
       cursor: pointer;
-      animation: jump 5s infinite linear; }
+      animation: jump 1s infinite linear; }
 
 @keyframes jump {
   0% {
-    transform: scale(1); }
+    transform: rotate(-10deg); }
   25% {
-    transform: scale(1.5); }
+    transform: rotate(0deg); }
   50% {
-    transform: scale(1); }
+    transform: rotate(10deg); }
   75% {
-    transform: scale(1.5); }
+    transform: rotate(0deg); }
   100% {
-    transform: scale(1); } }
+    transform: rotate(-10deg); } }
   .member_info_info_right div {
     font-size: 18px;
     padding: 10px;
@@ -361,6 +364,8 @@ blockquote, q {
       font-size: 18px;
       border: unset;
       cursor: default; }
+    .member_info_info_right div input:focus {
+      border: 3px dashed #a5361c; }
 
 .member_info_info_button {
   padding: 7% 0 3% 0;
@@ -392,7 +397,7 @@ blockquote, q {
   min-height: auto;
   border: 3px dashed #a5361c;
   font-size: 0px;
-  border-radius: 15px; }
+  border-radius: 5px; }
 
 .member_info_line_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
@@ -480,7 +485,7 @@ blockquote, q {
       transition: all 0.8s linear; }
 
 .member_info_share > div > div {
-  border-radius: 15px; }
+  border-radius: 5px; }
 
 .member_info_share > div > div:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
@@ -521,7 +526,10 @@ blockquote, q {
   border: 3px dashed #a5361c;
   padding: 0 3% 3% 3%;
   background-image: url(../img/member/hip-square.png);
-  border-radius: 15px; }
+  border-radius: 5px; }
+
+.member_info_order > div > div:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
 
 .member_info_order_up {
   padding-top: 5%;
@@ -613,7 +621,7 @@ blockquote, q {
   border: 3px dashed #a5361c;
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
-  border-radius: 15px; }
+  border-radius: 5px; }
   .member_info_open_all_all h1 {
     font-size: 24px;
     text-align: center;
@@ -621,12 +629,13 @@ blockquote, q {
     margin-bottom: 3%;
     background-image: url(../img/member/memphis-colorful.png); }
 
-.member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
-  transform: scale(1.1);
-  transition: all 0.8s; }
-
-.member_info_open_all_all:hover .member_info_open_all_left > div {
+.member_info_open_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+  .member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
+    transform: scale(1.1);
+    transition: all 0.8s; }
+  .member_info_open_all_all:hover .member_info_open_all_left > div {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
 
 .member_info_open_all_left {
   display: inline-block;
@@ -697,7 +706,7 @@ blockquote, q {
   border: 3px dashed #a5361c;
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
-  border-radius: 15px; }
+  border-radius: 5px; }
   .member_info_join_all_all h1 {
     font-size: 24px;
     text-align: center;
@@ -705,19 +714,21 @@ blockquote, q {
     margin-bottom: 3%;
     background-image: url(../img/member/memphis-colorful.png); }
 
-.member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
-  transform: scale(1.1);
-  transition: all 0.8s; }
-
-.member_info_open_all_all:hover .member_info_open_all_left > div {
+.member_info_open_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+  .member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
+    transform: scale(1.1);
+    transition: all 0.8s; }
+  .member_info_open_all_all:hover .member_info_open_all_left > div {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
 
-.member_info_join_all_all:hover .member_info_join_all_left > div > div > img {
-  transform: scale(1.1);
-  transition: all 0.8s; }
-
-.member_info_join_all_all:hover .member_info_join_all_left > div {
+.member_info_join_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+  .member_info_join_all_all:hover .member_info_join_all_left > div > div > img {
+    transform: scale(1.1);
+    transition: all 0.8s; }
+  .member_info_join_all_all:hover .member_info_join_all_left > div {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
 
 .member_info_join_all_left > div {
   background-image: url(../img/member/memphis-colorful.png);

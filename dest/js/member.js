@@ -35,11 +35,21 @@ $(".member_info_info_right>div>img").click(function(){
 
     //右邊資料欄位變可輸入
     $(".member_info_info_right div input").removeAttr("readonly");
-    $(".member_info_info_right div input").css("border","3px dashed #a5361c");
+    // $(".member_info_info_right div input").focus("border","3px dashed $importantColor");
+    // $(".member_info_info_right div input:nth-child(0)").focus();
+    //focus在第一個
+    $(".member_info_info_right>div:nth-child(2) input").focus();
+    // $(".member_info_info_right div input").css("border","1px solid #646464");
+    // $(".member_info_info_right div input:focus").css("border","10px solid #646464");
     // alert($(".member_info_info_right div input").attr("readonly"))
-    //左邊照相機可按
-    $(".member_info_info_left div div:nth-child(2) label").css("pointer-events","auto");
-    $(".member_info_info_left>div").css("border","3px dashed #a5361c");
+    //左邊照相機出現
+    // $(".member_info_info_left div div:nth-child(2) label").css("pointer-events","auto");
+    $(".member_info_info_left div div:nth-child(2)").css("display","inline-block");
+    // $(".member_info_info_left>label>div").css("border","1px solid #646464");
+    $(".member_info_info_left>label").css("pointer-events","auto");
+    $(".member_info_info_left>label>div").click(function(){
+        $(this).css("border","3px dashed #a5361c");
+    })
 })
     
 
