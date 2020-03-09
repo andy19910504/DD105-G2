@@ -1,9 +1,9 @@
 @import "./base/var.scss";
 @import "./base/reset.scss";
-@import './layout/card.scss';
-img.sectionTitle{
-    width: 40%;
-}
+@import "./layout/card.scss";
+@import "./layout/index/moodsection.scss";
+
+
 @media screen and (max-width:575px){
     img.sectionTitle{
         width: 65%;
