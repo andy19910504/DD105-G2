@@ -1,16 +1,15 @@
 @import "./base/var.scss";
 @import "./base/reset.scss";
-@import './layout/card.scss';
-img.sectionTitle{
-    width: 40%;
-}
-@media screen and (max-width:575px){
-    img.sectionTitle{
-        width: 65%;
-    }
+@import "./layout/card.scss";
+@import "./layout/index/moodsection.scss";
+
+
+.moodContent{
+    width: 1200px;
+    margin: 0 auto;
 }
 .moodWrap{
-    width: 100%;
+   
     margin-top: 30px;
     position: relative;
     display: flex;
@@ -21,7 +20,7 @@ img.sectionTitle{
         margin-top: 20px;
     }
     .moodCardsWrap{
-        width: 100%;
+        width: 100px;
         display: flex;
         justify-content: space-around;
     }
