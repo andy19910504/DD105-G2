@@ -12,20 +12,20 @@
 
 <body>
     <div class="wrapper">
-    <!-- header
+        <!-- header
     在你的分頁的display:"加上show"
     -->
-    @@include('./layout/header.html',{
+        @@include('./layout/header.html',{
         "display1":"",
         "display2":"",
         "display3":"show",
         "display4":"",
         "display5":""
         })
-    <!-- 發表心情燈箱 -->
-    <!-- 回到頂端的連結 -->
-    <a name="GoTop"></a>
-    <!-- banner // 各自的banner，直接套class
+        <!-- 發表心情燈箱 -->
+        <!-- 回到頂端的連結 -->
+        <a name="GoTop"></a>
+        <!-- banner // 各自的banner，直接套class
             順序，以導覽列（不含頁首）的順序依序
         -->
         <div class="banner_03">
@@ -38,41 +38,41 @@
             </div>
             <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
         </div>
-    <!-- 主要按鈕 // btnRed
+        <!-- 主要按鈕 // btnRed
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnRed">
-    More
-</a>
+        <a href="javascript: void(0)" class="btnRed">
+            More
+        </a>
 
-    <!-- 次要要按鈕 // btnPink
+        <!-- 次要要按鈕 // btnPink
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPink">
-    More
-</a>
+        <a href="javascript: void(0)" class="btnPink">
+            More
+        </a>
 
-    <!-- 次要按鈕_不能按 // btnPinkStop
+        <!-- 次要按鈕_不能按 // btnPinkStop
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPinkStop">More</a>
+        <a href="javascript: void(0)" class="btnPinkStop">More</a>
 
         <!-- 回到頂端 // btnGoTop -->
 
         <!-- 還需要遷入jQuery -->
-<a id="btnGoTop"></a>
+        <a id="btnGoTop"></a>
 
-    <!-- 自訂按鈕 // btnCust
+        <!-- 自訂按鈕 // btnCust
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnCust">寫心情</a>
+        <a href="javascript: void(0)" class="btnCust">寫心情</a>
 
-    <!-- breadCrumb // breadCrumb
+        <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
     innerText：為你的麵包屑層級的名稱
     註：在最後產出dest的HTML那裏要將多出的部分刪除（刪除後不能執行gulp不然會覆蓋）
     -->
-    @@include('./layout/breadCrumb.html',{
+        @@include('./layout/breadCrumb.html',{
         "link1":"./index.html",
         "innerText1":"台北散步",
         "link2":"./mood.html",
@@ -86,146 +86,494 @@
         "link6":"javascript: void(0)",
         "innerText6":""
         })
-        <!-- routeFilterBlock -->
-        @@include('./layout/filter.html',{
+
+        <div class="moodContent">
+            <!-- routeFilterBlock -->
+            @@include('./layout/filter.html',{
             "innerText1":"日式舊屋行",
             "innerText2":"文青品味旅",
             "innerText3":"職人散步去",
             "innerText4":"其他"
             })
-        <section>
-            <div class="moodWrap">
-                <div class="moodCardsWrap">
-                    <div class="moodCard">
-                        <div class="cardInfoBar">
-                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
-                            <div class="infoTextWrap">
-                                <span class="moodClass">#職人散步去</span>
-                                <span class="moodMemId">IU2020</span>
+            <section>
+                <div class="moodWrap">
+                    <!-- 一條 -->
+                    <div class="moodCardsWrap">
+                        <!-- 一張卡片 -->
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#職人散步去</span>
+                                    <span class="moodMemId">IU2020</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
                             </div>
-                            <div class="dotWrap">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic01.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>1025</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>52</span>
+                            </div>
+                            <div class="cardText">
+                                <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                                <span>more</span>
                             </div>
                         </div>
-                        <div class="moodPicWrap">
-                            <img src="./img/index/moodPic01.jpg" class="moodPic">
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#日式舊屋行</span>
+                                    <span class="moodMemId">Jaysqer</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic02.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIconGray.png" class="moodIcon">
+                                <span>999</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>108</span>
+                            </div>
+                            <div class="cardText">
+                                <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                                <span>more</span>
+                            </div>
                         </div>
-                        <div class="heartBar">
-                            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
-                            <span>1025</span>
-                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-                            <span>52</span>
-                        </div>
-                        <div class="cardText">
-                            <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
-                            <span>more</span>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#文青品味旅</span>
+                                    <span class="moodMemId">love00242</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic03.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>168</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>655</span>
+                            </div>
+                            <div class="cardText">
+                                <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                                <span>more</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="moodCard">
-                        <div class="cardInfoBar">
-                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
-                            <div class="infoTextWrap">
-                                <span class="moodClass">#日式舊屋行</span>
-                                <span class="moodMemId">Jaysqer</span>
+                    <!-- 一條 -->
+                    <div class="moodCardsWrap">
+                        <!-- 一張卡片 -->
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#職人散步去</span>
+                                    <span class="moodMemId">IU2020</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
                             </div>
-                            <div class="dotWrap">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic01.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>1025</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>52</span>
+                            </div>
+                            <div class="cardText">
+                                <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                                <span>more</span>
                             </div>
                         </div>
-                        <div class="moodPicWrap">
-                            <img src="./img/index/moodPic02.jpg" class="moodPic">
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#日式舊屋行</span>
+                                    <span class="moodMemId">Jaysqer</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic02.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIconGray.png" class="moodIcon">
+                                <span>999</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>108</span>
+                            </div>
+                            <div class="cardText">
+                                <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                                <span>more</span>
+                            </div>
                         </div>
-                        <div class="heartBar">
-                            <img src="./img/index/moodLikeIconGray.png"class="moodIcon">
-                            <span>999</span>
-                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-                            <span>108</span>
-                        </div>
-                        <div class="cardText">
-                            <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
-                            <span>more</span>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#文青品味旅</span>
+                                    <span class="moodMemId">love00242</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic03.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>168</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>655</span>
+                            </div>
+                            <div class="cardText">
+                                <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                                <span>more</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="moodCard">
-                        <div class="cardInfoBar">
-                            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
-                            <div class="infoTextWrap">
-                                <span class="moodClass">#文青品味旅</span>
-                                <span class="moodMemId">love00242</span>
+                    <!-- 隱藏卡片 -->
+                    <!-- 一條 -->
+                    <div class="moodCardsWrap">
+                        <!-- 一張卡片 -->
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#職人散步去</span>
+                                    <span class="moodMemId">IU2020</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
                             </div>
-                            <div class="dotWrap">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic01.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>1025</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>52</span>
+                            </div>
+                            <div class="cardText">
+                                <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                                <span>more</span>
                             </div>
                         </div>
-                        <div class="moodPicWrap">
-                            <img src="./img/index/moodPic03.jpg" class="moodPic">
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#日式舊屋行</span>
+                                    <span class="moodMemId">Jaysqer</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic02.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIconGray.png" class="moodIcon">
+                                <span>999</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>108</span>
+                            </div>
+                            <div class="cardText">
+                                <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                                <span>more</span>
+                            </div>
                         </div>
-                        <div class="heartBar">
-                            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
-                            <span>168</span>
-                            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-                            <span>655</span>
-                        </div>
-                        <div class="cardText">
-                            <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
-                            <span>more</span>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#文青品味旅</span>
+                                    <span class="moodMemId">love00242</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic03.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>168</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>655</span>
+                            </div>
+                            <div class="cardText">
+                                <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                                <span>more</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- 次要要按鈕 // btnPink
+                    <!-- 一條 -->
+                    <div class="moodCardsWrap">
+                        <!-- 一張卡片 -->
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#職人散步去</span>
+                                    <span class="moodMemId">IU2020</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic01.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>1025</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>52</span>
+                            </div>
+                            <div class="cardText">
+                                <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#日式舊屋行</span>
+                                    <span class="moodMemId">Jaysqer</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic02.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIconGray.png" class="moodIcon">
+                                <span>999</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>108</span>
+                            </div>
+                            <div class="cardText">
+                                <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#文青品味旅</span>
+                                    <span class="moodMemId">love00242</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic03.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>168</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>655</span>
+                            </div>
+                            <div class="cardText">
+                                <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 一條 -->
+                    <div class="moodCardsWrap">
+                        <!-- 一張卡片 -->
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#職人散步去</span>
+                                    <span class="moodMemId">IU2020</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic01.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>1025</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>52</span>
+                            </div>
+                            <div class="cardText">
+                                <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#日式舊屋行</span>
+                                    <span class="moodMemId">Jaysqer</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic02.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIconGray.png" class="moodIcon">
+                                <span>999</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>108</span>
+                            </div>
+                            <div class="cardText">
+                                <p>循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋...</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                        <div class="moodCard">
+                            <div class="cardInfoBar">
+                                <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
+                                <div class="infoTextWrap">
+                                    <span class="moodClass">#文青品味旅</span>
+                                    <span class="moodMemId">love00242</span>
+                                </div>
+                                <div class="dotWrap">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="moodPicWrap">
+                                <img src="./img/index/moodPic03.jpg" class="moodPic">
+                            </div>
+                            <div class="heartBar">
+                                <img src="./img/index/moodLikeIcon.png" class="moodIcon">
+                                <span>168</span>
+                                <img src="./img/index/moodChatIcon.png" class="moodIcon">
+                                <span>655</span>
+                            </div>
+                            <div class="cardText">
+                                <p>跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~</p>
+                                <span>more</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 次要要按鈕 // btnPink
             link：連結的網址
             innerText：按鈕名稱 -->
-            @@include('./layout/btnPink.html',{
-            "link":"./google.com.tw",
-            "innerText":"More"
-            })
-            </div>
-        </section>
-     <!-- 燈箱/文章檢舉 -->
-     <div class="backDrop">
-        <div class="lightbox_report">
-            <div class="lightbox_report_info">
-                <!-- x按鈕 -->
-                <!-- <div class="close">✘</div> -->
-                <div class="reportTitle">
-                    <h2>協助我們了解情況?</h2>
+                    @@include('./layout/btnPink.html',{
+                    "link":"javascript: void(0)",
+                    "innerText":"More"
+                    })
                 </div>
-                <form>
-                    <input type="radio" name="reason" value="垃圾信"> 垃圾信
-                    <br>
-                    <input type="radio" name="reason" value="與主題無關"> 與主題無關
-                    <br>
-                    <input type="radio" name="reason" value="不合適的內容"> 不合適的內容
-                    <br>
-                    <input type="radio" name="reason" value="其他"> 其他
-                    <br>
-                    <div class="reportSent">
-                        <div class="enter">
-                            <a href="#" class="btnPink">確定</a>
-                        </div>
-                        <div class="cancel">
-                            <a href="#" class="btnPink">取消</a>
-                        </div>
+            </section>
+
+        </div>
+        <!-- 燈箱/文章檢舉 -->
+        <div class="backDrop">
+            <div class="lightbox_report">
+                <div class="lightbox_report_info">
+                    <!-- x按鈕 -->
+                    <!-- <div class="close">✘</div> -->
+                    <div class="reportTitle">
+                        <h2>協助我們了解情況?</h2>
                     </div>
-                </form>
+                    <form>
+                        <input type="radio" name="reason" value="垃圾信"> 垃圾信
+                        <br>
+                        <input type="radio" name="reason" value="與主題無關"> 與主題無關
+                        <br>
+                        <input type="radio" name="reason" value="不合適的內容"> 不合適的內容
+                        <br>
+                        <input type="radio" name="reason" value="其他"> 其他
+                        <br>
+                        <div class="reportSent">
+                            <div class="enter">
+                                <a href="javascript: void(0)" class="btnPink">確定</a>
+                            </div>
+                            <div class="cancel">
+                                <a href="javascript: void(0)" class="btnPink">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- 回到頂端的連結 -->
-    <a name="GoTop "></a>
-    <!-- 回到頂端 // btnGoTop -->
-    <a id="btnGoTop "></a>
-    <!-- footer // -->
-    @@include('./layout/footer.html')
+        <!-- 回到頂端的連結 -->
+        <a name="GoTop "></a>
+        <!-- 回到頂端 // btnGoTop -->
+        <a id="btnGoTop "></a>
+        <!-- footer // -->
+        @@include('./layout/footer.html')
     </div>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/mood.js"></script>
 </body>
+
 </html>

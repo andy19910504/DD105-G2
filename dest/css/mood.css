@@ -300,12 +300,11 @@ img.airplanePic {
   img.airplanePic {
     display: none; } }
 
-@media screen and (max-width: 575px) {
-  img.sectionTitle {
-    width: 65%; } }
+.moodContent {
+  width: 1200px;
+  margin: 0 auto; }
 
 .moodWrap {
-  width: 100%;
   margin-top: 30px;
   position: relative;
   display: flex;
@@ -314,7 +313,7 @@ img.airplanePic {
   .moodWrap .moodBtn {
     margin-top: 20px; }
   .moodWrap .moodCardsWrap {
-    width: 100%;
+    width: 100px;
     display: flex;
     justify-content: space-around; }
   @media screen and (max-width: 767px) {
