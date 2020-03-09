@@ -68,12 +68,13 @@
   position: absolute; }
 
 .fuda-container {
-  bottom: 0;
+  left: 140px;
+  bottom: -50px;
   position: absolute;
   z-index: 1; }
   .fuda-container table {
-    top: 106px;
-    left: 109px;
+    top: 90px;
+    left: 14px;
     position: absolute; }
   .fuda-container tr {
     line-height: 2;
@@ -144,11 +145,11 @@
     margin-top: 10px;
     color: #fff; }
   .fuda-container .fuda {
-    width: 350px; }
+    width: 150px; }
 
 .campus {
   width: 200px;
-  right: 0;
+  right: 40px;
   transform: rotate(30deg);
   position: absolute; }
 
@@ -336,6 +337,7 @@
   .fuda-container {
     display: none; }
   .campus {
+    right: 20px;
     transform: rotate(0deg); }
   .game-container {
     width: 100%; }
@@ -360,7 +362,7 @@
       color: #eee; }
     .manual-modal .start {
       position: absolute;
-      top: 64%;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, 0);
       color: #eee; }
