@@ -164,6 +164,7 @@
                 text-align: left;
             }
             span {
+                // text-align: right;
                 color: $fcInfo;
                 font-size: $fzInfo;
                 display: inline-block;
@@ -295,9 +296,14 @@
     }
 }
 // 隱藏卡片區 
-.hide{
+.cardBox2{
     display: none;
 }
+// viewMore cardBox
+// .btnPink {
+//     margin: 35px auto 0 auto;
+//     text-align: center;
+// }
 //燈箱們---------------發起揪團燈箱
 
 //  最底層black 
