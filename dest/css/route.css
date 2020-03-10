@@ -635,7 +635,7 @@ div.eventCard {
       margin: 0px 13px; }
 
 .wrapper {
-  background-image: url("../img/element/bgImage.png"); }
+  background-image: url("../img/element/bgGrid.png"); }
 
 .banner_01 .routeTitleImage2 {
   position: absolute;
@@ -826,11 +826,28 @@ div.eventCard {
   max-width: 1200px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
-  padding: 60px 0;
+  padding: 80px 0;
   position: relative; }
   @media screen and (max-width: 860px) {
     .routeContent .routeBlockBgImage {
       width: 90%; } }
+
+.tape {
+  position: absolute; }
+  .tape.tape1 {
+    top: -80px;
+    left: 5px;
+    transform: rotate(45deg); }
+  .tape.tape2 {
+    top: 600px;
+    right: -40px; }
+  .tape.tape3 {
+    bottom: 80px;
+    left: -40px; }
+  .tape.tape4 {
+    bottom: -80px;
+    right: 0px;
+    transform: rotate(45deg); }
 
 .routeBlockBgImage .routeTilteBlock {
   width: 100%;
@@ -850,7 +867,7 @@ div.eventCard {
 
 .routeBlock .routeBlockPart {
   display: flex;
-  margin-top: 60px; }
+  margin-top: 100px; }
 
 .routeBlock .routeBlockPart:first-child {
   margin-top: unset; }
@@ -890,7 +907,8 @@ div.eventCard {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  z-index: 5; }
   @media screen and (max-width: 575px) {
     .routeAttractionBlock .attractionImageBlock {
       width: 300px;
@@ -950,31 +968,75 @@ div.eventCard {
 .routeAttractionBlock2 {
   width: 400px;
   height: 350px;
+  position: relative;
+  border: 1px solid #ccc;
   display: flex;
   align-items: flex-end; }
-  .routeAttractionBlock2 img {
-    width: 80%;
-    position: relative;
-    animation: moveLine 1.5s alternate infinite; }
-  .routeAttractionBlock2 .dashLine1 {
-    transform: rotate(15deg); }
-  .routeAttractionBlock2 .dashLine2 {
-    transform: rotate(275deg); }
-  .routeAttractionBlock2 .dashLine3 {
-    transform: rotate(10deg); }
-  .routeAttractionBlock2 .dashLine4 {
-    transform: rotate(-80deg); }
-  .routeAttractionBlock2 .dashLine5 {
-    transform: rotate(5deg); }
   @media screen and (max-width: 860px) {
     .routeAttractionBlock2 {
       display: none; } }
 
-@keyframes moveLine {
-  from {
-    top: 0; }
-  to {
-    top: 15px; } }
+.dec {
+  position: absolute; }
+
+.routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2 {
+  transform: translate(20px, 60px); }
+  .routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2 .tree {
+    width: 280px;
+    bottom: 0;
+    right: 0; }
+  .routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2 .tree2 {
+    width: 100px;
+    top: 60px;
+    left: 160px; }
+  .routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2 .grass {
+    width: 180px;
+    top: 85px;
+    left: -25px; }
+
+.routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 {
+  transform: translate(10px, 80px); }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree4 {
+    width: 60px;
+    top: -70px;
+    right: 115px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree5 {
+    width: 80px;
+    top: -90px;
+    right: 160px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree6 {
+    width: 60px;
+    top: -70px;
+    right: 75px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .grass2 {
+    width: 200px;
+    top: 0;
+    right: 0; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree7 {
+    width: 100px;
+    top: 0px;
+    left: 60px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree8 {
+    width: 120px;
+    top: 40px;
+    left: 105px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree9 {
+    width: 200px;
+    bottom: 40px;
+    right: -10px; }
+  .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2 .tree10 {
+    width: 100px;
+    top: -70px;
+    left: -10px; }
+
+.routeBlock .routeBlockPart:nth-child(3) .routeAttractionBlock2 {
+  transform: translate(50px, 60px); }
+
+.routeBlock .routeBlockPart:nth-child(4) .routeAttractionBlock2 {
+  transform: translate(-20px, 100px); }
+
+.routeBlock .routeBlockPart:nth-child(5) .routeAttractionBlock2 {
+  transform: translate(10px, 80px); }
 
 .attractionBgImage {
   width: 100%;
@@ -1156,6 +1218,9 @@ div.eventCard {
   width: 100%;
   max-width: 1200px;
   margin: 120px auto; }
+
+.otherLink {
+  margin-bottom: 180px; }
 
 .otherLink .otherLinkTitle {
   width: 100%;

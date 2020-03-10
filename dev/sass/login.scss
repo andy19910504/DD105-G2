@@ -17,7 +17,7 @@
 
 }
 .login_all{
-    border-radius: 25px;
+    border-radius: 15px;
     // padding-bottom: 2%;
     position: relative;
     // opacity: 1;
@@ -45,22 +45,28 @@
         // width: 75%;
         // // display: inline-block;
         // background-image: url(../img/member/hip-square.png);
-        text-shadow: 3px 3px 3px gray;
+        // text-shadow: 3px 3px 3px gray;
         // padding: 0% 7% 0 7%;
         text-align: center;
         // border: 1px solid aqua;
         font-size: $fzTitle;
     }
     input{
-        border: 3px dashed $importantColor;
+        border-top:1px solid transparent;
+        border-left:1px solid transparent;
+        border-right:1px solid transparent;
+        border-bottom: 1px solid $fcInfo;
         width: 75%;
-        background-image: url(../img/member/hip-square.png);
+        // background-image: url(../img/member/hip-square.png);
         opacity: .8;
         padding: 3%;
         // border: 1px solid khaki;
         display: block;
         font-size: $fzContent;
         margin: 10% auto 0 auto;
+    }
+    input:focus{
+        border: 1px dashed $importantColor;
     }
     input:nth-child(2){
         margin-top: 5%;
@@ -159,7 +165,7 @@
         // width: 75%;
         // // display: inline-block;
         // background-image: url(../img/member/hip-square.png);
-        text-shadow: 3px 3px 3px gray;
+        // text-shadow: 3px 3px 3px gray;
         // padding-top: 10%;
         text-align: center;
         // border: 1px solid aqua;
@@ -199,15 +205,22 @@
     input{
         // display: inline-block;
         // margin-left: 3%;
-        border: 3px dashed $importantColor;
+        border-top:1px solid transparent;
+        border-left:1px solid transparent;
+        border-right:1px solid transparent;
+        border-bottom: 1px solid $fcInfo;
+        // border: 3px dashed $importantColor;
         width: 70%;
-        background-image: url(../img/member/hip-square.png);
+        // background-image: url(../img/member/hip-square.png);
         // opacity: .8;
         padding: 3%;
         // border: 1px solid khaki;
         display: inline-block;
         font-size: $fzContent;
         // margin-top: 5%;
+    }
+    input:focus{
+        border: 1px dashed $importantColor;
     }
 }
 .register_bottom{
@@ -260,15 +273,21 @@
         margin-bottom: 3%;
     }
     input{
-        border: 3px dashed $importantColor;
+        border-top:1px solid transparent;
+        border-left:1px solid transparent;
+        border-right:1px solid transparent;
+        border-bottom: 1px solid $fcInfo;
         width: 75%;
-        background-image: url(../img/member/hip-square.png);
+        // background-image: url(../img/member/hip-square.png);
         opacity: .8;
         padding: 3%;
         // border: 1px solid khaki;
         display: block;
         font-size: $fzContent;
         margin: 10% auto 0 auto;
+    }
+    input:focus{
+        border: 1px dashed $importantColor;
     }
     input:nth-child(2){
         margin-top: 5%;
@@ -277,7 +296,7 @@
 .forgetpsw_bottom{
     // border: 1px solid red;
     text-align: center;
-    margin-top:8%; // 21%
+    margin-top:18.5%; // 8%
 }
 // .login_login{
 //     // display: inline-block;

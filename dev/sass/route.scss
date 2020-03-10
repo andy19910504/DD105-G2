@@ -8,8 +8,10 @@
 
 // 
 .wrapper{
-    background-image: $bgImage;
+    // background-image: $bgImage;
+    background-image: $bgGrid;
 }
+
 
 // banner 
 
@@ -217,12 +219,35 @@
     max-width: 1200px;
     box-shadow: 0 2px 10px rgba(0,0,0,.1);;
     margin: auto;
-    padding: 60px 0;
+    padding: 80px 0;
     position: relative;
 @media screen and(max-width:860px) {
     width: 90%;    
 }
 }
+// decorationBlock
+.tape{
+    position: absolute;
+    &.tape1{
+        top:-80px;
+        left: 5px;
+        transform: rotate(45deg);
+    }
+    &.tape2{
+        top:600px;
+        right: -40px;
+    }
+    &.tape3{
+        bottom:80px;
+        left: -40px;
+    }
+    &.tape4{
+        bottom:-80px;
+        right: 0px;
+        transform: rotate(45deg);
+    }
+}
+
 .routeBlockBgImage .routeTilteBlock{
     width: 100%;
     text-align: right;
@@ -244,7 +269,7 @@
 }
 .routeBlock .routeBlockPart{
     display: flex;
-    margin-top: 60px;
+    margin-top: 100px;
 }.routeBlock .routeBlockPart:first-child{
     margin-top: unset;
 }
@@ -284,6 +309,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: 5;
     @media screen and(max-width:$small) {
         width: 300px;
         height: 250px;
@@ -346,28 +372,89 @@
 .routeAttractionBlock2{
     width: 400px;
     height: 350px;
-    // border: 1px solid #ccc;
+    position: relative;
+    border: 1px solid #ccc;
     display: flex;
     align-items: flex-end;
-
-    img{
-        width: 80%;
-        position: relative;
-        animation: moveLine 1.5s alternate infinite;
-    }
-    .dashLine1{transform: rotate(15deg);}
-    .dashLine2{transform: rotate(275deg);}
-    .dashLine3{transform: rotate(10deg);}
-    .dashLine4{transform: rotate(-80deg);}
-    .dashLine5{transform: rotate(5deg);}
 
     @media screen and (max-width:860px){
         display: none;
     }
+    
 }
-@keyframes moveLine{
-    from{top:0;}
-    to{top:15px;}
+// routeAttractionBlock2 SVG and decoration block
+.dec{
+    position: absolute;
+}
+.routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2{
+    transform: translate(20px,60px);
+    .tree{
+        width: 280px;
+        bottom: 0;
+        right: 0;
+    }
+    .tree2{
+        width: 100px;
+        top: 60px;
+        left: 160px;
+    }
+    .grass{
+        width: 180px;
+        top: 85px;
+        left: -25px;
+    }
+}
+.routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2{
+    transform: translate(10px,80px);
+    .tree4{
+        width: 60px;
+        top: -70px;
+        right:115px;
+    }
+    .tree5{
+        width: 80px;
+        top: -90px;
+        right:160px;
+    }
+    .tree6{
+        width: 60px;
+        top: -70px;
+        right:75px;
+    }
+    .grass2{
+        width: 200px;
+        top: 0;
+        right: 0;
+    }
+    .tree7{
+        width: 100px;
+        top: 0px;
+        left:60px;
+    }
+    .tree8{
+        width: 120px;
+        top: 40px;
+        left:105px;
+    }
+    .tree9{
+        width: 200px;
+        bottom: 40px;
+        right:-10px;
+    }
+    .tree10{
+        width: 100px;
+        top: -70px;
+        left:-10px;
+    }
+}
+.routeBlock .routeBlockPart:nth-child(3) .routeAttractionBlock2{
+    transform: translate(50px,60px);
+}
+.routeBlock .routeBlockPart:nth-child(4) .routeAttractionBlock2{
+    transform: translate(-20px,100px);
+}
+.routeBlock .routeBlockPart:nth-child(5) .routeAttractionBlock2{
+    transform: translate(10px,80px);
 }
 
 // attractionsLightBox 
@@ -555,6 +642,9 @@
     width: 100%;
     max-width: 1200px;
     margin: 120px auto;
+}
+.otherLink{
+    margin-bottom: 180px;
 }
 .otherLink .otherLinkTitle{
     width: 100%;
