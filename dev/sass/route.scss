@@ -269,7 +269,7 @@
 }
 .routeBlock .routeBlockPart{
     display: flex;
-    margin-top: 100px;
+    margin-top: 120px;
 }.routeBlock .routeBlockPart:first-child{
     margin-top: unset;
 }
@@ -373,7 +373,7 @@
     width: 400px;
     height: 350px;
     position: relative;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     display: flex;
     align-items: flex-end;
 
@@ -449,12 +449,115 @@
 }
 .routeBlock .routeBlockPart:nth-child(3) .routeAttractionBlock2{
     transform: translate(50px,60px);
+    .temp{
+        width: 100px;
+        filter: grayscale(.5) blur(.5px);
+        top: -60px;
+        right:160px;
+    }
+    .flower{
+        width: 100px;
+        top: -5px;
+        right:60px;
+    }
+    .flower2{
+        width: 80px;
+        top: 0px;
+        left:80px;
+    }
+    .grass3{
+        width:200px;
+        top:60px;
+        left: 0;
+    }
+    .house{
+        width: 300px;
+        bottom: 20px;
+        right: 0;
+        filter: grayscale(.2);
+    }
+    .plant{
+        width: 100px;
+        bottom: 0;
+        left: 85px;
+    }
+    .plant2{
+        width: 60px;
+        bottom: 10px;
+        right:100px;
+    }
 }
 .routeBlock .routeBlockPart:nth-child(4) .routeAttractionBlock2{
     transform: translate(-20px,100px);
+    .storeBlock{
+        // border: 1px solid #ccc;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        overflow: hidden;
+        left: 20px;
+        .store{
+            width: 320px;
+            bottom: 0px;
+            left: -80px;
+        }
+    }
+    .tree11{
+        width: 100px;
+        bottom:90px;
+        left: 140px;
+    }
+    .flower3{
+        width: 200px;
+        bottom:20px;
+        right:0px;    
+    }
+    .plant3{
+        width: 45px;
+        bottom: 40px;
+        left:60px;
+    }
+    .grass5{
+        width: 200px;
+        top: -25px;
+        right: 20px;
+        transform: rotate(-5deg);
+    }
 }
+
 .routeBlock .routeBlockPart:nth-child(5) .routeAttractionBlock2{
     transform: translate(10px,80px);
+    .house2{
+        width: 130px;
+        top: -115px;
+        right: 120px;
+        filter: blur(.5px);
+    }
+    .grass6{
+        width: 200px;
+        bottom:120px;
+        right: 0;
+    }
+    .tree12{
+        width: 100px;
+        bottom: 60px;
+        left: 0px;
+    }
+    .tree13{
+        width: 100px;
+        bottom: 40px;
+        right: 0;
+    }
+    .tree14{
+        width: 100px;
+        top: -80px;
+        right: 0;
+    }
+    .tree15{
+        width: 60px;
+        top: -40px;
+        left: 10px;
+    }
 }
 
 // attractionsLightBox 

@@ -185,6 +185,8 @@ blockquote, q {
   text-align: center; }
 
 .member_info_nav > ul li {
+  transform-origin: 0% 0%;
+  transition: 0.8s linear;
   display: inline-block;
   height: 125px;
   width: 155px;
@@ -200,8 +202,7 @@ blockquote, q {
   position: relative; }
 
 .member_info_nav > ul li:hover {
-  transform: scale(1.2) !important;
-  transition: 0.8s linear; }
+  transform: rotate(15deg); }
 
 .member_info_nav > ul li img {
   position: absolute;
@@ -382,7 +383,8 @@ blockquote, q {
       height: 30px;
       font-size: 18px;
       border: unset;
-      cursor: default; }
+      cursor: default;
+      pointer-events: none; }
     .member_info_info_right div input:focus {
       border: 3px dashed #a5361c; }
 
@@ -576,8 +578,7 @@ blockquote, q {
     transition: all 0.8s; }
 
 .member_info_order_bottom_front:hover img {
-  transform: scale(1.1);
-  transition: all 0.8s; }
+  transform: scale(1.1); }
 
 .member_info_order_bottom_contrary {
   margin-left: 1%;
@@ -591,8 +592,7 @@ blockquote, q {
     transition: all 0.8s; }
 
 .member_info_order_bottom_contrary:hover img {
-  transform: scale(1.1);
-  transition: all 0.8s; }
+  transform: scale(1.1); }
 
 .member_info_order_bottom_word {
   border-bottom: 1px solid #646464;
@@ -640,51 +640,99 @@ blockquote, q {
 
 .member_info_open_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
-  .member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
+  .member_info_open_all_all:hover .member_info_open_all_left > label > div > div > img {
     transform: scale(1.1);
     transition: all 0.8s; }
-  .member_info_open_all_all:hover .member_info_open_all_left > div {
+  .member_info_open_all_all:hover .member_info_open_all_left > label > div {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
 
 .member_info_open_all_left {
+  text-align: center;
   display: inline-block;
-  width: 37.5%;
-  font-size: 18px;
-  padding: 0% 1.5% 2% 0%; }
+  width: 40%;
+  font-size: 18px; }
+  .member_info_open_all_left img {
+    transition: all 0.8s; }
 
-.member_info_open_all_left > div {
+.member_info_open_all_left > label {
+  pointer-events: none;
+  cursor: pointer; }
+
+.member_info_open_all_left > label > div {
   background-image: url(../img/member/memphis-colorful.png);
   padding: 2%;
   margin: 0 auto; }
 
-.member_info_open_all_left > div > div {
+.member_info_open_all_left > label > div > div {
   overflow: hidden; }
+
+.member_info_open_all_left > label > div > div:nth-child(2) {
+  margin-top: 5px; }
+
+.member_info_open_all_left > label > div > div:nth-child(2) img {
+  width: 27px;
+  vertical-align: text-bottom; }
 
 .member_info_open_all_right {
   display: inline-block;
-  width: 62.5%;
+  width: 60%;
   font-size: 18px;
   vertical-align: top;
-  padding-left: 1.5%; }
-  .member_info_open_all_right p {
-    border-bottom: 1px solid #646464;
-    margin-bottom: 3%;
-    padding: 3% 3% 3% 10%; }
-  .member_info_open_all_right span {
-    margin-left: 1%; }
+  padding-left: 2%; }
+
+.member_info_open_all_right > div:nth-child(9) label {
+  vertical-align: top; }
+
+.member_info_open_all_right > div:nth-child(9) textarea {
+  text-indent: 36px;
+  border: unset;
+  text-decoration: underline;
+  background-image: url(../img/member/hip-square.png);
+  padding: 1% 0;
+  font-size: 18px;
+  display: inline-block;
+  width: 80%;
+  padding-left: 2%;
+  resize: none; }
+
+.member_info_open_all_right > div {
+  border-bottom: 1px solid #646464;
+  padding: 10px;
+  font-size: 0px;
+  margin-bottom: 10px; }
+  .member_info_open_all_right > div label {
+    margin-left: 5%;
+    font-size: 18px;
+    display: inline-block;
+    width: 20%; }
+  .member_info_open_all_right > div input {
+    text-indent: 36px;
+    font-size: 18px;
+    display: inline-block;
+    width: 75%;
+    border: unset;
+    background-image: url(../img/member/hip-square.png);
+    height: 30px;
+    pointer-events: none; }
+  .member_info_open_all_right > div textarea {
+    pointer-events: none; }
+  .member_info_open_all_right > div input:focus {
+    border: 3px dashed #a5361c; }
+  .member_info_open_all_right > div textarea:focus {
+    border: 3px dashed #a5361c; }
 
 .member_info_open_all_bottom {
   padding: 2% 0;
   font-size: 0px;
   text-align: center; }
-  .member_info_open_all_bottom a:nth-child(2) {
+  .member_info_open_all_bottom a:nth-child(3) {
     margin-left: 10%; }
 
 @media screen and (max-width: 1200px) {
   .member_info_open_all_left {
     padding: 1.5% 1.5% 1% 0%; } }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .member_info_open_all_left {
     width: 50%;
     margin: 0 25%;
@@ -694,12 +742,26 @@ blockquote, q {
     width: 100%;
     padding-left: 0px; } }
 
+@media screen and (max-width: 767px) {
+  .member_info_open_all_right > div label {
+    width: 100%;
+    margin-top: 20px; }
+  .member_info_open_all_right > div input {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    text-indent: unset; }
+  .member_info_open_all_right > div:nth-child(9) textarea {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%; } }
+
 @media screen and (max-width: 575px) {
   .member_info_open_all_all h1 {
     font-size: 18px; }
   .member_info_open_all_right {
     font-size: 16px; }
-  .member_info_open_all_bottom a:nth-child(2) {
+  .member_info_open_all_bottom a:nth-child(3) {
     margin-left: 5%; } }
 
 .member_info_join {
@@ -726,14 +788,6 @@ blockquote, q {
 .member_info_open_all_left > div > div > img {
   transition: all 0.8s; }
 
-.member_info_open_all_all:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
-  .member_info_open_all_all:hover .member_info_open_all_left > div > div > img {
-    transform: scale(1.1);
-    transition: all 0.8s; }
-  .member_info_open_all_all:hover .member_info_open_all_left > div {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
-
 .member_info_join_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
   .member_info_join_all_all:hover .member_info_join_all_left > div > div > img {
@@ -752,22 +806,49 @@ blockquote, q {
 
 .member_info_join_all_left {
   display: inline-block;
-  width: 37.5%;
-  font-size: 18px;
-  padding: 0% 1.5% 2% 0%; }
+  width: 40%;
+  font-size: 18px; }
 
 .member_info_join_all_right {
   display: inline-block;
-  width: 62.5%;
+  width: 60%;
   font-size: 18px;
   vertical-align: top;
-  padding-left: 1.5%; }
-  .member_info_join_all_right p {
-    border-bottom: 1px solid #646464;
-    margin-bottom: 3%;
-    padding: 3% 3% 3% 10%; }
-  .member_info_join_all_right span {
-    margin-left: 1%; }
+  padding-left: 2%; }
+
+.member_info_join_all_right > div:nth-child(9) label {
+  vertical-align: top; }
+
+.member_info_join_all_right > div:nth-child(9) textarea {
+  text-indent: 36px;
+  border: unset;
+  text-decoration: underline;
+  background-image: url(../img/member/hip-square.png);
+  padding: 1% 0;
+  font-size: 18px;
+  display: inline-block;
+  width: 80%;
+  padding-left: 2%;
+  resize: none; }
+
+.member_info_join_all_right > div {
+  border-bottom: 1px solid #646464;
+  padding: 10px;
+  font-size: 0px;
+  margin-bottom: 10px; }
+  .member_info_join_all_right > div label {
+    margin-left: 5%;
+    font-size: 18px;
+    display: inline-block;
+    width: 20%; }
+  .member_info_join_all_right > div input {
+    text-indent: 36px;
+    font-size: 18px;
+    display: inline-block;
+    width: 75%;
+    border: unset;
+    background-image: url(../img/member/hip-square.png);
+    height: 30px; }
 
 .member_info_join_all_left > div > div > img {
   transition: all 0.8s; }
@@ -781,7 +862,7 @@ blockquote, q {
   .member_info_join_all_left {
     padding: 1.5% 1.5% 1% 0%; } }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .member_info_join_all_left {
     width: 50%;
     margin: 0 25%;
@@ -790,6 +871,20 @@ blockquote, q {
   .member_info_join_all_right {
     width: 100%;
     padding-left: 0px; } }
+
+@media screen and (max-width: 767px) {
+  .member_info_join_all_right > div label {
+    width: 100%;
+    margin-top: 20px; }
+  .member_info_join_all_right > div input {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    text-indent: unset; }
+  .member_info_join_all_right > div:nth-child(9) textarea {
+    margin-top: 10px;
+    text-align: left;
+    width: 100%; } }
 
 @media screen and (max-width: 575px) {
   .member_info_join_all_all h1 {
