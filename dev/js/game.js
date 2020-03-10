@@ -111,6 +111,38 @@ $(document).ready(function(){
             $('body').removeClass('scroll-lock');
         }
     });
+    //full-screen-btn
+    $('.full-screen-btn').click(function(){
+        window.scrollTo(0, 784);
+        $(this).toggleClass('hide-full-screen-btn');
+        $('.game-container').css({
+            width: '100vw',
+            height: '100vh',
+            // transform: 'translate(-8.5%, 0)',
+            'z-index': '111'
+        });
+        $('.fuda-container').css({
+            bottom: '15px',
+            'z-index': '111'
+        });
+        $('body').toggleClass('scroll-lock');
+        $('.normal-screen-btn').toggleClass('hide-full-screen-btn');
+        window.scrollTo(2200, 784);
+    });
+    $('.normal-screen-btn').click(function(){
+        $(this).toggleClass('hide-full-screen-btn');
+        $('.game-container').css({
+            width: '63%',
+            height: '550px',
+            'z-index': '0'
+        });
+        $('.fuda-container').css({
+            bottom: '15px',
+            'z-index': '1'
+        });
+        $('body').toggleClass('scroll-lock');
+        $('.full-screen-btn').toggleClass('hide-full-screen-btn');
+    });
     //Start button
     $('.btnRed').click(function(e){
         e.preventDefault();
@@ -121,24 +153,71 @@ $(document).ready(function(){
         $(document).keypress(function(e) {
             return true;
         });
-        //控制方向
+        //控制人物方向
         $(window).on('keydown',function(e){
             e.preventDefault();
-            if(e.keyCode == 37){
+            //控制不能走出地圖邊界
+            if(e.keyCode == 37 && parseInt($('.game-map-container').css('left')) <= 1401){
                 $('.walking').css('transform','scaleX(-1)');
-                var left = parseInt($('.map').css('left'));
-                $('.map').css('left',left+10);
-            } else if(e.keyCode == 39){
+                var left = parseInt($('.game-map-container').css('left'));
+                $('.game-map-container').css('left',left+10);
+            } else if(e.keyCode == 39 && parseInt($('.game-map-container').css('left')) >= -837){
                 $('.walking').css('transform','scaleX(1)');
-                var left = parseInt($('.map').css('left'));
-                $('.map').css('left',left-10);
-            } else if(e.keyCode == 38){
-                var top = parseInt($('.map').css('top'));
-                $('.map').css('top',top+10);
-            } else if(e.keyCode == 40){
-                var top = parseInt($('.map').css('top'));
-                $('.map').css('top',top-10);
+                var left = parseInt($('.game-map-container').css('left'));
+                $('.game-map-container').css('left',left-10);
+            } else if(e.keyCode == 38 && parseInt($('.game-map-container').css('top')) <= 1239){
+                var top = parseInt($('.game-map-container').css('top'));
+                $('.game-map-container').css('top',top+10);
+            } else if(e.keyCode == 40 && parseInt($('.game-map-container').css('top')) >= 109){
+                var top = parseInt($('.game-map-container').css('top'));
+                $('.game-map-container').css('top',top-10);
             }
+            console.log(`Top: ${parseInt($('.game-map-container').css('top'))}, Left: ${parseInt($('.game-map-container').css('left'))}`);
+            //spot1 trigger
+            if(parseInt($('.game-map-container').css('top')) >= 679 && parseInt($('.game-map-container').css('top')) <= 859 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
+                $('.spot1').css({
+                    filter: 'brightness(2.8)'
+                });
+                setTimeout(function(){
+                    if(parseInt($('.game-map-container').css('top')) >= 679 && parseInt($('.game-map-container').css('top')) <= 859 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
+                        $('.game-modal').removeClass('hide-game-modal');
+                    }
+                }, 3000);
+            } else {
+                $('.spot1').css({
+                    filter: 'brightness(1)'
+                });
+            }
+        });
+        $('.opt1, .opt2, .opt3').click(function(){
+            if($(this).hasClass('opt3')){
+                $('.test').text('恭喜答對！！！');
+                $(this).css({
+                    'background-color': '#D3E9F0',
+                    border: '1px solid #D3E9F0',
+                    'border-radius': '5px'
+                });
+                $('.close-modal').click(function(){
+                    $('.game-modal').addClass('hide-game-modal');
+                });
+                $('.check-box').eq(1).find('img').removeClass('hide-check');
+            } else {
+                $('.test').text('你答錯了！！！！正確答案如下！！');
+                $(this).css({
+                    'background-color': '#A9381D',
+                    border: '1px solid #A9381D',
+                    'border-radius': '5px'
+                });
+                $('.opt3').css({
+                    'background-color': '#D3E9F0',
+                    border: '1px solid #D3E9F0',
+                    'border-radius': '5px'
+                });
+                $('.close-modal').click(function(){
+                    $('.game-modal').addClass('hide-game-modal');
+                });
+            }
+            $('.opt1, .opt2, .opt3').addClass('click-disabled');
         });
     });
     //Google map
