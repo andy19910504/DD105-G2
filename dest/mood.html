@@ -86,40 +86,11 @@
             </div>
             <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
         </div>
-                <!-- 主要按鈕 // btnRed
+    <!-- 自訂按鈕 // btnCust
     link：連結的網址
     innerText：按鈕名稱 -->
-    <a href="./google.com.tw" class="btnRed">
-    More
-</a>
-
-        <!-- 次要要按鈕 // btnPink
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPink">
-    More
-</a>
-        <input type="submit" class="btnPink">
-        
-        <!-- 次要按鈕_不能按 // btnPinkStop
-
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnPinkStop">
-    More
-</a>
-
-
-        <!-- 回到頂端 // btnGoTop -->
-
-        <a id="btnGoTop"></a>
-
-        <!-- 自訂按鈕 // btnCust
-
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="./google.com.tw" class="btnCust">
-    自訂
+        <a href="javascript: void(0)" class="btnCust">
+    寫心情
 </a>
 
         <!-- breadCrumb // breadCrumb
@@ -137,7 +108,11 @@
 </ul>
 
         <div class="moodContent">
-            <!-- routeFilterBlock -->
+             <!-- filter // tab 篩選器
+            innetText:篩選的名稱，
+            由於不確定個分頁的篩選功能會如何，在此只放上css樣式的格式，可以直接用class套用，不一定要include
+            註：並非每個分頁皆有，需自行在自己的scss中import './modules/filter.scss';
+         -->
             <div class="filterBlock">
     <ul class="filterAll">
         <li id="filter1" class="filter showFilter">全部心情</li>
