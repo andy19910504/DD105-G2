@@ -7,6 +7,19 @@
     <title>台北散步｜散步遊台北</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/route.css">
+    <style>
+        #svg,
+        #svg2,
+        #svg3,
+        #svg4,
+        #svg5 {
+            width: 400px;
+            height: 400px;
+        }
+        #svg2{
+            transform: translateY(20px) rotate(-10deg);
+        }
+    </style>
 </head>
 
 <body><a name="GoTop"></a>
@@ -116,6 +129,11 @@
 </div>
         <div class="routeContent">
             <div class="routeBlockBgImage">
+                <!-- decorationsBlock -->
+                <img src="./img/route/tape.png" class="tape tape1">
+                <img src="./img/route/tape.png" class="tape tape2">
+                <img src="./img/route/tape.png" class="tape tape3">
+                <img src="./img/route/tape.png" class="tape tape4">
                 <div class="routeTilteBlock">
                     <img src="./img/route/routeNameImage1.png" alt="" srcset="">
                 </div>
@@ -129,12 +147,41 @@
                             </div>
                             <div class="attractionImageBlock">
                                 <div class="attractionImage">
-                                    <div class="attractionMask"><img src="./img/route/routeAttraction01.png" alt=""
-                                            srcset=""></div>
+                                    <div class="attractionMask"><img src="./img/route/routeAttraction01.png"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="routeAttractionBlock2"><img src="./img/route/dashLine02.png" class="dashLine1"></div>
+                        <div id="trigger1">
+                            <div class="routeAttractionBlock2">
+                                <!-- svgRoad -->
+                                <svg id="svg">
+                                    <defs>
+                                        <style>
+                                            #cls-1 {
+                                                fill: none;
+                                                stroke: #666;
+                                                stroke-linecap: round;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 6px;
+                                                stroke-dasharray: 1000;
+                                                stroke-dashoffset: 1000;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="cls-1"
+                                        d="M6.41,92.06S75.72,48.58,152.29,43.88c2.31-.14,8.28-.1,10.59,0,12.8.49,23.4,3.19,35.83,5.13,107.88,16.86,11,48.09-2.12,52.94,0,0-84,31.06,91.76,19.77S252.76,350,252.76,350"
+                                        transform="translate(5,-25)" />
+                                    <path id="cls-1"
+                                        d="M10.06,94.21C11.91,93.9,85.38,54.12,146.12,53c9.3-.17,30.52,4.38,38.64,6.13,55.43,11.94-33.91,16.79-77.7,48.93-6.18,4.54-11.76,11.19-7.53,17.42,7.07,10.41,16.31,13.15,28.45,16.47,64.36,17.58,141.75,7.69,136,28.41C252.28,212.76,121.89,330,79.7,350"
+                                        transform="translate(0,-10)" />
+                                </svg>
+                                <!-- decorationBlock -->
+                                <img src="./img/route/tree.png" class="dec tree">
+                                <img src="./img/route/tree2.png" class="dec tree2">
+                                <img src="./img/route/grass.png" class="dec grass">
+
+                            </div>
+                        </div>
                     </div>
                     <div class="routeBlockPart">
                         <div class="routeAttractionBlock">
@@ -144,12 +191,43 @@
                             </div>
                             <div class="attractionImageBlock">
                                 <div class="attractionImage">
-                                    <div class="attractionMask"><img src="./img/route/routeAttraction02.png" alt=""
-                                            srcset=""></div>
+                                    <div class="attractionMask"><img src="./img/route/routeAttraction02.png"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="routeAttractionBlock2"><img src="./img/route/dashLine01.png" class="dashLine2"></div>
+                        <div id="trigger2">
+                            <div class="routeAttractionBlock2">
+                                <!-- <img src="./img/route/dashLine01.png" class="dashLine2"> -->
+                                <svg id="svg2">
+                                    <defs>
+                                        <style>
+                                            #cls-2 {
+                                                fill: none;
+                                                stroke: #666;
+                                                stroke-linecap: round;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 6px;
+                                                stroke-dasharray: 1000;
+                                                stroke-dashoffset: 1000;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="cls-2" d="M400,84.24S166.6,6.35,56.48,77.65,67.07,350,67.07,350"
+                                        transform="translate(-5,-10)" />
+                                    <path id="cls-2" d="M400,89.29S145.17,18.35,112.7,103.76,280.7,350,280.7,350"
+                                        transform="translate(-5,0)" />
+                                </svg>
+                                <!-- decorationBlock -->
+                                <img src="./img/route/tree4.png" class="dec tree4">
+                                <img src="./img/route/tree4.png" class="dec tree5">
+                                <img src="./img/route/tree4.png" class="dec tree6">
+                                <img src="./img/route/grass2.png" class="dec grass2">
+                                <img src="./img/route/tree4.png" class="dec tree7">
+                                <img src="./img/route/tree4.png" class="dec tree8">
+                                <img src="./img/route/tree3.png" class="dec tree9">
+                                <img src="./img/route/tree3.png" class="dec tree10">
+                            </div>
+                        </div>
                     </div>
                     <div class="routeBlockPart">
                         <div class="routeAttractionBlock">
@@ -159,12 +237,44 @@
                             </div>
                             <div class="attractionImageBlock">
                                 <div class="attractionImage">
-                                    <div class="attractionMask"><img src="./img/route/routeAttraction03.png" alt=""
-                                            srcset=""></div>
+                                    <div class="attractionMask"><img src="./img/route/routeAttraction03.png"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="routeAttractionBlock2"><img src="./img/route/dashLine01.png" class="dashLine3"></div>
+                        <div id="trigger3">
+                            <div class="routeAttractionBlock2">
+                                <!-- <img src="./img/route/dashLine01.png" class="dashLine3"> -->
+                                <svg id="svg3">
+                                    <defs>
+                                        <style>
+                                            #cls-3 {
+                                                fill: none;
+                                                stroke: #666;
+                                                stroke-linecap: round;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 6px;
+                                                stroke-dasharray: 2000;
+                                                stroke-dashoffset: 2000;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="cls-3" d="M0,121.71s276.29-54,323.94,22.23S200,346.18,200,346.18"
+                                        transform="translate(5,0)" />
+                                    <path id="cls-3"
+                                        d="M0,134.41c6.4-3.65,275.65-24.15,230.76,36C176.27,243.44-.89,328.81,0,320.76"
+                                        transform="translate(5,0)" />
+                                </svg>
+                                <!-- decorationsBlock -->
+                                <img src="./img/route/temp.png" class="dec temp">
+                                <img src="./img/route/flower.png" class="dec flower">
+                                <img src="./img/route/flower.png" class="dec flower2">
+                                <img src="./img/route/grass3.png" class="dec grass3">
+                                <img src="./img/route/house.png" class="dec house">
+                                <img src="./img/route/plant.png" class="dec plant">
+                                <img src="./img/route/plant.png" class="dec plant2">
+
+                            </div>
+                        </div>
                     </div>
                     <div class="routeBlockPart">
                         <div class="routeAttractionBlock">
@@ -174,12 +284,43 @@
                             </div>
                             <div class="attractionImageBlock">
                                 <div class="attractionImage">
-                                    <div class="attractionMask"><img src="./img/route/routeAttraction04.png" alt=""
-                                            srcset=""></div>
+                                    <div class="attractionMask"><img src="./img/route/routeAttraction04.png"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="routeAttractionBlock2"><img src="./img/route/dashLine02.png" class="dashLine4"></div>
+                        <div id="trigger4">
+                            <div class="routeAttractionBlock2">
+                                <!-- <img src="./img/route/dashLine02.png" class="dashLine4"> -->
+                                <svg id="svg4">
+                                    <defs>
+                                        <style>
+                                            #cls-4 {
+                                                fill: none;
+                                                stroke: #666;
+                                                stroke-linecap: round;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 6px;
+                                                stroke-dasharray: 1200;
+                                                stroke-dashoffset: 1200;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="cls-4"
+                                        d="M399.65,77.82S85.43,71.48,174.11,121.28a114.46,114.46,0,0,0,37.47,13C354.3,157.84,200,164.47,200,164.47S93.47,163.06,58.88,184.24s192.71,83.29,185.65,109.41S165.47,350,165.47,350"
+                                        transform="translate(-10,0)" />
+                                    <path id="cls-4"
+                                        d="M399.65,85.06s-272.06-1.3-163.36,24.59,120.47,25.17,123.3,40-93.88,41.64-105.18,43.06-123.53-14.12-102.35,0,223.06,38.11,226.59,63.53S313.71,350,313.71,350"
+                                        transform="translate(-10,10)" />
+                                </svg>
+                                <!-- decorationsBlock -->
+                                <div class="storeBlock"><img src="./img/route/store.png" class="dec store"></div>
+                                <img src="./img/route/tree5.png" class="dec tree11">
+                                <img src="./img/route/flower3.png" class="dec flower3">
+                                <img src="./img/route/plant2.png" class="dec plant3">
+                                <img src="./img/route/grass4.png" class="dec grass5">
+
+                            </div>
+                        </div>
                     </div>
                     <div class="routeBlockPart">
                         <div class="routeAttractionBlock">
@@ -189,12 +330,43 @@
                             </div>
                             <div class="attractionImageBlock">
                                 <div class="attractionImage">
-                                    <div class="attractionMask"><img src="./img/route/routeAttraction05.png" alt=""
-                                            srcset=""></div>
+                                    <div class="attractionMask"><img src="./img/route/routeAttraction05.png"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="routeAttractionBlock2"><img src="./img/route/dashLine01.png" class="dashLine5"></div>
+                        <div id="trigger5">
+                            <div class="routeAttractionBlock2">
+                                <!-- <img src="./img/route/dashLine01.png" class="dashLine5"> -->
+                                <svg id="svg5">
+                                    <defs>
+                                        <style>
+                                            #cls-5 {
+                                                fill: none;
+                                                stroke: #666;
+                                                stroke-linecap: round;
+                                                stroke-miterlimit: 10;
+                                                stroke-width: 6px;
+                                                stroke-dasharray: 1200;
+                                                stroke-dashoffset: 1200;
+                                            }
+                                        </style>
+                                    </defs>
+                                    <path id="cls-5"
+                                        d="M0,103.53s255.12-39.88,209.08-8.94c-59.57,40-201.73,25.41-200.67,72S127,350,127,350"
+                                        transform="translate(20,-15)" />
+                                    <path id="cls-5"
+                                        d="M0,94.59s295.6-65.94,275.24-5.3c-3.92,11.67-22.93,29.34-39.18,36.36C177.6,150.91,71.65,144.33,86.76,175c19.3,39.16,249.89,175,249.89,175"
+                                        transform="translate(20,-20)" />
+                                </svg>
+                                <!-- decorationsBlock -->
+                                <img src="./img/route/tree2.png" class="dec tree15">
+                                <img src="./img/route/house2.png" class="dec house2">
+                                <img src="./img/route/tree4.png" class="dec tree14">
+                                <img src="./img/route/grass5.png" class="dec grass6">
+                                <img src="./img/route/tree6.png" class="dec tree12">
+                                <img src="./img/route/tree7.png" class="dec tree13">
+                            </div>
+                        </div>
                     </div>
                     <!-- attractionsLightBox -->
                     <div class="attractionBgImage">
@@ -240,7 +412,7 @@
                         </div>
                         <img src="./img/route/arrowRight.png" alt="" class="arrowRight">
                     </div>
-                     <div class="attractionBgImage">
+                    <div class="attractionBgImage">
                         <img src="./img/route/arrowLeft.png" alt="" class="arrowLeft">
                         <div class="attractionMask">
                             <img src="./img/route/cancel.png" alt="" class="cancelLightBox">
@@ -258,7 +430,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -275,7 +447,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -301,7 +473,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -318,7 +490,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -344,7 +516,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -361,7 +533,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -387,7 +559,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -404,7 +576,7 @@
                                             這兩家子的人居住在目前青田七六的木屋內，
                                             偌大的庭院，被教授妹妹拿來養雞、鴨、鵝貼補家用，但因染病而全數死亡；
                                             也在家裡做裁縫等家庭代工，甚至在後院建造了兩層樓磚房。
-                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。  
+                                            那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
                                 </div>
@@ -724,6 +896,68 @@
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script>
+        function pathPrepare($el) {
+            var lineLength = $el[0].getTotalLength() * 1.355;
+            $el.css("stroke-dasharray", lineLength);
+            $el.css("stroke-dashoffset", lineLength);
+        }
+
+        var $roadPath1 = $("path#cls-1");
+        var $roadPath2 = $("path#cls-2");
+        var $roadPath3 = $("path#cls-3");
+        var $roadPath4 = $("path#cls-4");
+        var $roadPath5 = $("path#cls-5");
+
+
+        // prepare SVG
+        pathPrepare($roadPath1);
+        pathPrepare($roadPath2);
+        pathPrepare($roadPath3);
+        pathPrepare($roadPath4);
+        pathPrepare($roadPath5);
+
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build tween
+        var tween1 = new TimelineMax()
+            .add(TweenMax.to($roadPath1, 1, { strokeDashoffset: 0, ease: Linear.easeNone }));
+        var tween2 = new TimelineMax()
+            .add(TweenMax.to($roadPath2, 1, { strokeDashoffset: 0, ease: Linear.easeNone }));
+        var tween3 = new TimelineMax()
+            .add(TweenMax.to($roadPath3, 1, { strokeDashoffset: 0, ease: Linear.easeNone }));
+        var tween4 = new TimelineMax()
+            .add(TweenMax.to($roadPath4, 1, { strokeDashoffset: 0, ease: Linear.easeNone }));
+        var tween5 = new TimelineMax()
+            .add(TweenMax.to($roadPath5, 1, { strokeDashoffset: 0, ease: Linear.easeNone }));
+
+        // build scene
+        var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 50, tweenChanges: true, offset: 0 })
+            .setTween(tween1)
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+        var scene2 = new ScrollMagic.Scene({ triggerElement: "#trigger2", duration: 50, tweenChanges: true, offset: 0 })
+            .setTween(tween2)
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+        var scene3 = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 50, tweenChanges: true, offset: 0 })
+            .setTween(tween3)
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+        var scene4 = new ScrollMagic.Scene({ triggerElement: "#trigger4", duration: 50, tweenChanges: true, offset: 0 })
+            .setTween(tween4)
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+        var scene5 = new ScrollMagic.Scene({ triggerElement: "#trigger5", duration: 50, tweenChanges: true, offset: 0 })
+            .setTween(tween5)
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
+    </script>
 </body>
 
 </html>

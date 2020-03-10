@@ -300,6 +300,17 @@ img.airplanePic {
   img.airplanePic {
     display: none; } }
 
+.selector select {
+  width: 190px;
+  height: 30px;
+  margin: 10px 0;
+  color: #646464;
+  font-size: 16px; }
+
+.wrapper {
+  width: 100%;
+  overflow: hidden; }
+
 .moodContent {
   width: 1200px;
   margin: 0 auto; }
@@ -313,6 +324,7 @@ img.airplanePic {
   .moodWrap .moodBtn {
     margin-top: 20px; }
   .moodWrap .moodCardsWrap {
+    margin-bottom: 30px;
     width: 100px;
     display: flex;
     justify-content: space-around; }
@@ -476,19 +488,6 @@ img.airplanePic {
   .moodWrap {
     margin-top: 130px; } }
 
-img.moodSubTitle {
-  display: inline-block;
-  position: absolute;
-  left: -5%;
-  top: -150px;
-  animation: subtitleAni .8s infinite alternate; }
-
-@keyframes subtitleAni {
-  from {
-    transform: translateY(20px); }
-  to {
-    transform: translateY(0px); } }
-
 @media screen and (max-width: 1365px) {
   img.moodSubTitle {
     top: -180px;
@@ -502,3 +501,62 @@ img.moodSubTitle {
   img.moodSubTitle {
     top: -130px;
     width: 170px; } }
+
+.cardBox2 {
+  display: none; }
+
+.backDrop {
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  filter: alpha(opacity=0);
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; }
+
+.close {
+  color: #646464;
+  cursor: pointer;
+  right: 10px;
+  font-size: 32px;
+  margin: 10px;
+  position: absolute; }
+
+.lightbox_report_info {
+  position: fixed;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    margin: 30px 0;
+    text-align: center; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    padding: 0 25px;
+    margin: 35px auto; }
+    .lightbox_report_info form input {
+      margin: 15px; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    position: absolute; }
+    .lightbox_report_info .reportSent div {
+      margin: 0px 13px; }
