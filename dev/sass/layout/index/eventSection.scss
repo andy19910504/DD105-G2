@@ -150,7 +150,7 @@ div.eventWrap{
     @media screen and (max-width:767px){
         div.eventCard{
             width: 300px;
-            margin: 7px 0px;
+            margin: 15px 0px;
     
             //右上點點按鈕
             div.dotWrap{
@@ -181,7 +181,7 @@ div.eventWrap{
 
 @media screen and (max-width:767px){
     div.eventWrap{
-        margin-top: 130px;
+        margin-top: 20px;
     }
 }
 
@@ -214,6 +214,11 @@ img.eventSubTitle{
     img.eventSubTitle{
         top: -130px;
         width: 170px;
+    }
+}  
+@media screen and (max-width:767px){
+    img.eventSubTitle{
+        display: none;
     }
 }  
 

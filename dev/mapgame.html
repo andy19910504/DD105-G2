@@ -58,10 +58,11 @@
                     <img src="./img/mapgame/label.png" alt="" class="label hide-label">
                 </div>
                 <div class="switch">
-                    <div class="mapMode off">GPS地圖模式</div>
+                    <div class="mapMode off">GPS地圖</div>
                     <div class="button"></div>
-                    <div class="gameMode">小遊戲模式</div>
+                    <div class="gameMode">小遊戲</div>
                 </div>
+                <img src="./img/mapgame/filterBgImage.png" alt="" class="hr">
             </div>
             <div class="game-container">
                 <img src="./img/mapgame/map.jpg" alt="" class="map">
@@ -112,12 +113,34 @@
                 </table>
                 <img src="./img/mapgame/fuda.png" alt="" class="fuda">
             </div>
+            <!-- 手機版進度條 -->
+            <div class="progress-container-mobile">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                </div>
+                <div class="indicator">闖關進度：20％</div>
+            </div>
             <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
 
         <!-- footer // -->
         @@include('./layout/footer.html')
         <div class="image"></div>
+    </div>
+
+    <!-- manual-modal -->
+    <div class="manual-modal">
+        <div class="switch-button">小遊戲、地圖切換開關</div>
+        <div class="select-route">選擇路線</div>
+        <div class="start">按下按鈕開始闖關！</div>
+        <div class="direction-control">使用方向鍵控制人物走向</div>
+        <div class="status-info">闖關進度一覽表</div>
+        <img src="./img/mapgame/arrowKeys.png" alt="" class="arrow">
     </div>
 
     <script src="./js/jquery-3.4.1.min.js"></script>

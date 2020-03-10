@@ -56,15 +56,262 @@ blockquote, q {
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
-img.sectionTitle {
-  width: 40%; }
+/*
+     卡片：首頁、路線、心情、揪團，要使用的sample
+    
+     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
-@media screen and (max-width: 575px) {
-  img.sectionTitle {
-    width: 65%; } }
+    */
+div.moodWrap {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  div.moodWrap div.moodBtn {
+    margin-top: 20px; }
+  div.moodWrap div.moodCardsWrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+  @media screen and (max-width: 767px) {
+    div.moodWrap div.moodCardsWrap {
+      flex-direction: column;
+      align-items: center; } }
+  div.moodWrap div.moodCard {
+    width: 340px;
+    height: unset;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+    background-image: url(../img/index/moodCardsBg.png);
+    border: 1px solid #c9bb88;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start; }
+    div.moodWrap div.moodCard div.cardInfoBar {
+      width: 300px;
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      div.moodWrap div.moodCard div.cardInfoBar div.moodMemberPhoto {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        div.moodWrap div.moodCard div.cardInfoBar div.moodMemberPhoto img {
+          height: 100%;
+          vertical-align: middle; }
+      div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+        width: 210px;
+        padding-left: 10px;
+        letter-spacing: 1px;
+        display: flex;
+        flex-direction: column; }
+        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
+          color: #1e1e1e;
+          line-height: 1.5;
+          font-size: 18px;
+          font-weight: bold; }
+        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodMemId {
+          color: #646464;
+          line-height: 1.5;
+          font-size: 16px; }
+      div.moodWrap div.moodCard div.cardInfoBar div.dotWrap {
+        width: 40px;
+        height: 40px;
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        align-self: center;
+        cursor: pointer; }
+        div.moodWrap div.moodCard div.cardInfoBar div.dotWrap span.dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background-color: #646464; }
+    div.moodWrap div.moodCard div.moodPicWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      margin: 5px auto;
+      overflow: hidden; }
+      div.moodWrap div.moodCard div.moodPicWrap img.moodPic {
+        height: 100%;
+        vertical-align: middle; }
+    div.moodWrap div.moodCard div.heartBar {
+      width: 300px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      div.moodWrap div.moodCard div.heartBar img.moodIcon {
+        width: 35px;
+        cursor: pointer; }
+      div.moodWrap div.moodCard div.heartBar span {
+        color: #646464;
+        font-size: 16px;
+        margin: 0px 10px 0px 5px; }
+    div.moodWrap div.moodCard div.cardText {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: 1.5px;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      div.moodWrap div.moodCard div.cardText p {
+        font-size: 18px;
+        color: #646464;
+        text-align: left; }
+      div.moodWrap div.moodCard div.cardText span {
+        color: #646464;
+        font-size: 16px;
+        display: inline-block;
+        margin: 5px 0px 20px 0px;
+        cursor: pointer; }
+        div.moodWrap div.moodCard div.cardText span:hover {
+          color: #A5361C; }
+  @media screen and (max-width: 1199px) {
+    div.moodWrap div.moodCard {
+      width: 300px; }
+      div.moodWrap div.moodCard div.cardInfoBar {
+        width: 270px; }
+        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+          width: 180px; }
+      div.moodWrap div.moodCard div.moodPicWrap {
+        width: 270px;
+        height: 270px; }
+      div.moodWrap div.moodCard div.heartBar {
+        width: 270px; }
+      div.moodWrap div.moodCard div.cardText {
+        width: 270px; } }
+  @media screen and (max-width: 1023px) {
+    div.moodWrap div.moodCard {
+      width: 230px; }
+      div.moodWrap div.moodCard div.cardInfoBar {
+        width: 200px; }
+        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+          width: 110px; }
+          div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap span.moodClass {
+            font-size: 16px; }
+      div.moodWrap div.moodCard div.moodPicWrap {
+        width: 200px;
+        height: 200px; }
+      div.moodWrap div.moodCard div.heartBar {
+        width: 200px; }
+      div.moodWrap div.moodCard div.cardText {
+        width: 200px; }
+        div.moodWrap div.moodCard div.cardText h1 {
+          font-size: 20px; }
+        div.moodWrap div.moodCard div.cardText p {
+          font-size: 16px;
+          letter-spacing: 0.5px; } }
+  @media screen and (max-width: 767px) {
+    div.moodWrap div.moodCard {
+      width: 300px;
+      margin: 15px 0px; }
+      div.moodWrap div.moodCard div.cardInfoBar {
+        width: 270px; }
+        div.moodWrap div.moodCard div.cardInfoBar div.infoTextWrap {
+          width: 180px; }
+      div.moodWrap div.moodCard div.moodPicWrap {
+        width: 270px;
+        height: 270px; }
+      div.moodWrap div.moodCard div.heartBar {
+        width: 270px; }
+      div.moodWrap div.moodCard div.cardText {
+        width: 270px; } }
+
+@media screen and (max-width: 767px) {
+  div.moodWrap {
+    margin-top: 20px; } }
+
+img.moodSubTitle {
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  top: -150px;
+  animation: subtitleAni .8s infinite alternate; }
+
+@keyframes subtitleAni {
+  from {
+    transform: translateY(20px); }
+  to {
+    transform: translateY(0px); } }
+
+@media screen and (max-width: 1365px) {
+  img.moodSubTitle {
+    top: -180px;
+    left: 0%; } }
+
+@media screen and (max-width: 1199px) {
+  img.moodSubTitle {
+    top: -170px; } }
+
+@media screen and (max-width: 1023px) {
+  img.moodSubTitle {
+    top: -130px;
+    width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.moodSubTitle {
+    display: none; } }
+
+img.photoPic {
+  width: 120px;
+  position: absolute;
+  top: 500px;
+  left: -200px;
+  animation: skyLightAni 2s infinite alternate linear; }
+
+img.heartPic {
+  width: 150px;
+  position: absolute;
+  top: 650px;
+  left: -280px;
+  transform: rotate(-8deg);
+  animation: skyLightAni 3s infinite alternate linear; }
+
+img.airplanePic {
+  width: 180px;
+  position: absolute;
+  top: 900px;
+  right: -280px;
+  animation: airplaneAni 2.5s infinite alternate linear; }
+
+@keyframes airplaneAni {
+  from {
+    transform: translate(0, 0); }
+  to {
+    transform: translate(-15px, -15px); } }
+
+@media screen and (max-width: 1199px) {
+  img.photoPic,
+  img.heartPic,
+  img.airplanePic {
+    display: none; } }
+
+.selector select {
+  width: 190px;
+  height: 30px;
+  margin: 10px 0;
+  color: #646464;
+  font-size: 16px; }
+
+.moodContent {
+  width: 1200px;
+  margin: 0 auto; }
 
 .moodWrap {
-  width: 100%;
   margin-top: 30px;
   position: relative;
   display: flex;
@@ -73,7 +320,8 @@ img.sectionTitle {
   .moodWrap .moodBtn {
     margin-top: 20px; }
   .moodWrap .moodCardsWrap {
-    width: 100%;
+    margin-bottom: 30px;
+    width: 100px;
     display: flex;
     justify-content: space-around; }
   @media screen and (max-width: 767px) {
