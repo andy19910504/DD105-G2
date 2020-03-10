@@ -262,29 +262,20 @@ img.potPic {
         font-weight: bolder;
         background-color: #116491;
         color: #fff; }
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 1365px) {
         .eventContent .newEventBlock .newEventTitle div.sectionSubTitleMobile {
           display: none; } }
     @media screen and (max-width: 1365px) {
-      .eventContent .newEventBlock .newEventTitle {
-        top: -3%;
-        left: -4%; } }
-    @media screen and (max-width: 1140px) {
-      .eventContent .newEventBlock .newEventTitle {
-        width: 170px; } }
-    @media screen and (max-width: 1140px) {
-      .eventContent .newEventBlock .newEventTitle {
-        width: 170px; } }
-    @media screen and (max-width: 768px) {
-      .eventContent .newEventBlock .newEventTitle {
-        top: 0;
-        right: 0;
-        left: 0;
-        align-items: center;
-        width: 100%; } }
-    @media screen and (max-width: 768px) {
       .eventContent .newEventBlock .newEventSubTitle {
         display: none; } }
+    @media screen and (max-width: 1365px) {
+      .eventContent .newEventBlock .newEventTitle {
+        top: -40px;
+        right: 0;
+        left: 0;
+        margin: 0px auto;
+        align-items: center;
+        width: 100%; } }
     .eventContent .newEventBlock #slideBoard {
       width: 100%;
       overflow: hidden;
@@ -297,8 +288,7 @@ img.potPic {
           position: relative;
           display: flex;
           justify-content: center;
-          overflow: hidden;
-          border: 1px solid green; }
+          overflow: hidden; }
           .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic {
             background-color: #f2fbff;
             padding: 40px 45px 65px 45px;
@@ -312,7 +302,7 @@ img.potPic {
               margin: 35px auto; } }
           @media screen and (max-width: 767px) {
             .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic {
-              margin: 60px auto; } }
+              margin: 60px auto 30px auto; } }
           .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
             margin: 170px auto; }
             .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText p {
@@ -320,19 +310,29 @@ img.potPic {
               color: #646464; }
           @media screen and (max-width: 1030px) {
             .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
-              margin: 85px auto; } }
+              margin: 55px auto; } }
           @media screen and (max-width: 768px) {
             .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
-              margin: 35px auto; } }
+              margin: 0px auto; }
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText p {
+              font-size: 18px; } }
+        @media screen and (max-width: 1365px) {
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox {
+            margin: 55px auto; } }
         @media screen and (max-width: 1030px) {
           .eventContent .newEventBlock #slideBoard #content .newSliderBox {
             flex-direction: column;
-            margin: 20px auto;
+            margin: 40px auto;
             text-align: center;
             align-self: center; } }
         @media screen and (max-width: 768px) {
           .eventContent .newEventBlock #slideBoard #content .newSliderBox {
-            margin: 50px auto; } }
+            margin: 0px auto;
+            top: 0; } }
+
+@media screen and (max-width: 768px) {
+  .eventContent {
+    padding-top: 50px; } }
 
 #contentButton {
   /* border: 1px solid red; */
@@ -349,6 +349,10 @@ img.potPic {
     cursor: pointer; }
   #contentButton li.clickMe {
     background-color: #589fb2; }
+
+@media screen and (max-width: 1030px) {
+  #contentButton {
+    display: none; } }
 
 .loudspeaker {
   position: absolute;
@@ -374,13 +378,7 @@ img.potPic {
   55% {
     transform: rotate(18deg); } }
 
-@media screen and (max-width: 1030px) {
-  .camera {
-    top: 505px;
-    width: 120px;
-    left: 610px; } }
-
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1365px) {
   .camera {
     display: none; } }
 
@@ -410,6 +408,10 @@ img.potPic {
 .cutLine {
   width: 100%;
   margin: 15px 0 80px 0; }
+
+@media screen and (max-width: 768px) {
+  .cutLine {
+    margin: 80px auto; } }
 
 .eventScanBlock {
   position: relative; }
@@ -493,6 +495,17 @@ img.potPic {
     transform: translateY(0); }
   0% {
     transform: translateY(-10px); } }
+  @media screen and (max-width: 1500px) {
+    .eventScanBlock .airb1, .eventScanBlock .airb2, .eventScanBlock .airb3, .eventScanBlock .firework1, .eventScanBlock .firework2, .eventScanBlock .firework3, .eventScanBlock .skyLight1, .eventScanBlock .skyLight2 {
+      display: none; } }
+
+.selector {
+  display: flex; }
+
+@media screen and (max-width: 768px) {
+  .selector {
+    display: flex;
+    justify-content: flex-end; } }
 
 .selector select {
   width: 190px;
@@ -501,9 +514,21 @@ img.potPic {
   color: #646464;
   font-size: 16px; }
 
+@media screen and (max-width: 768px) {
+  .selector select {
+    width: 140px;
+    margin: 20px 0; } }
+
 .cardTop {
   display: flex;
   justify-content: center; }
+
+.eventWrap {
+  margin: 40px 0; }
+
+@media screen and (max-width: 767px) {
+  div.eventWrap {
+    margin: 0px auto; } }
 
 .starMark {
   display: flex;
@@ -515,6 +540,24 @@ img.potPic {
   font-size: 18px;
   color: #646464; }
 
+@media screen and (max-width: 1199px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 250px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 1023px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 190px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 767px) {
+  .starMark {
+    padding: 5px 0 0px 10px;
+    width: 250px;
+    font-size: 16px; } }
+
 .cardBox2 {
   display: none; }
 
@@ -525,7 +568,6 @@ img.potPic {
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);
   display: none;
-  filter: alpha(opacity=0);
   height: 100%;
   width: 100%;
   z-index: 200;
@@ -547,9 +589,10 @@ img.potPic {
 
 .lightbox_holdevent_info, .lightbox_detailevent_info {
   position: relative;
-  background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  border-radius: 6px;
+  padding: 0 1% 1.5%;
+  background-image: url(../img/event/greenBg2.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
   width: 1200px;
@@ -561,7 +604,10 @@ img.potPic {
     color: #1e1e1e;
     font-size: 24px;
     font-weight: bold;
-    margin: 40px auto 20px auto; }
+    margin: 40px auto 20px auto;
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 140px; }
   .lightbox_holdevent_info form, .lightbox_detailevent_info form {
     height: 536px; }
     .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
@@ -573,19 +619,26 @@ img.potPic {
     justify-content: center; }
     .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
       margin: 0 55px;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       display: flex;
       flex-direction: column;
+      text-align: center;
       justify-content: center;
-      border-radius: 50%;
+      background-size: contain;
+      background-position: center;
+      background-image: url(../img/event/event_step3.png);
       font-size: 18px;
-      border: 1px solid #6a9cb0; }
+      overflow: hidden; }
       .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
+        margin-bottom: 5px; }
+      .lightbox_holdevent_info .holdevent_step div .stepBox, .lightbox_detailevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
+    .lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
+      background-image: url(../img/event/event_stepOn.png); }
 
 .color {
-  background-color: #FFD66A; }
+  background-image: url(../img/event/event_stepOn.png); }
 
 .holdevent_step1content {
   height: 536px;

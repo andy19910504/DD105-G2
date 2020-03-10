@@ -12,7 +12,8 @@ $(document).ready(function () {
     // 上下一步
     // ----1------
     $(".1_nextStep").on("click", function () {
-        $(".step1").removeClass('color');
+        // $(".step1").removeClass('color');
+        $(".step1").css("background-image","url(../img/event/event_step3.png)");
         $(".holdevent_step1content").css("display", "none");
         $(".holdevent_step2content").css("display", "block");
         $(".step2").addClass('color');
@@ -172,6 +173,7 @@ window.addEventListener("load", function () {
     let eventReports = document.querySelectorAll(".dotWrap");
     let eventReportclose = document.querySelectorAll(".cancel");
     // 發起揪團
+    
     for (let i = 0; i < holdevent.length; i++) {
 
         holdevent[i].addEventListener("click", function () {
