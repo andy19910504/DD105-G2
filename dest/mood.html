@@ -12,6 +12,10 @@
 
 <body>
     <div class="wrapper">
+        <!-- 發布心情燈箱 -->
+        <div class="backDrop">
+
+        </div>
         <!-- header
     在你的分頁的display:"加上show"
     -->
@@ -138,6 +142,8 @@
         <li id="filter1" class="filter showFilter">全部心情</li>
         <li id="filter2" class="filter">日式舊屋行</li>
         <li id="filter3" class="filter">文青品味旅</li>
+        <li id="filter4" class="filter">職人散步去</li>
+        <li id="filter5" class="filter">其他心情</li>
     </ul>
     <img src="./img/route/filterBgimage.png" class="filterBgImage">
 </div>
@@ -584,42 +590,42 @@
             link：連結的網址
             innerText：按鈕名稱 -->
                     <a href="javascript: void(0)" class="btnPink">
-    More
+    View More
 </a>
                 </div>
             </section>
-
-        </div>
-        <!-- 燈箱/文章檢舉 -->
-        <div class="backDrop">
-            <div class="lightbox_report">
-                <div class="lightbox_report_info">
-                    <!-- x按鈕 -->
-                    <!-- <div class="close">✘</div> -->
-                    <div class="reportTitle">
-                        <h2>協助我們了解情況?</h2>
-                    </div>
-                    <form>
-                        <input type="radio" name="reason" value="垃圾信"> 垃圾信
-                        <br>
-                        <input type="radio" name="reason" value="與主題無關"> 與主題無關
-                        <br>
-                        <input type="radio" name="reason" value="不合適的內容"> 不合適的內容
-                        <br>
-                        <input type="radio" name="reason" value="其他"> 其他
-                        <br>
-                        <div class="reportSent">
-                            <div class="enter">
-                                <a href="javascript: void(0)" class="btnPink">確定</a>
-                            </div>
-                            <div class="cancel">
-                                <a href="javascript: void(0)" class="btnPink">取消</a>
-                            </div>
+            <div class="backDrop">
+                <div class="lightbox_report">
+                    <div class="lightbox_report_info">
+                        <!-- x按鈕 -->
+                        <!-- <div class="close">✘</div> -->
+                        <div class="reportTitle">
+                            <h2>協助我們了解情況?</h2>
                         </div>
-                    </form>
+                        <form>
+                            <input type="radio" name="reason" value="垃圾信"> 垃圾信
+                            <br>
+                            <input type="radio" name="reason" value="與主題無關"> 與主題無關
+                            <br>
+                            <input type="radio" name="reason" value="不合適的內容"> 不合適的內容
+                            <br>
+                            <input type="radio" name="reason" value="其他"> 其他
+                            <br>
+                            <div class="reportSent">
+                                <div class="enter">
+                                    <a href="javascript: void(0)" class="btnPink">確定</a>
+                                </div>
+                                <div class="cancel">
+                                    <a href="javascript: void(0)" class="btnPink">取消</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- 燈箱/文章檢舉 -->
+        
         <!-- 回到頂端的連結 -->
         <a name="GoTop "></a>
         <!-- 回到頂端 // btnGoTop -->
