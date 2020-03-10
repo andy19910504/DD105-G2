@@ -320,6 +320,7 @@ img.airplanePic {
   .moodWrap .moodBtn {
     margin-top: 20px; }
   .moodWrap .moodCardsWrap {
+    margin-bottom: 30px;
     width: 100px;
     display: flex;
     justify-content: space-around; }
