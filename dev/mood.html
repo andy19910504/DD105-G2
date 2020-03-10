@@ -24,8 +24,6 @@
         "display4":"",
         "display5":""
         })
-        <!-- 發表心情燈箱 -->
-        <!-- 回到頂端的連結 -->
         <!-- banner // 各自的banner，直接套class
             順序，以導覽列（不含頁首）的順序依序-->
         <div class="banner_03">
@@ -38,34 +36,13 @@
             </div>
             <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
         </div>
-        <!-- 主要按鈕 // btnRed
+    <!-- 自訂按鈕 // btnCust
     link：連結的網址
     innerText：按鈕名稱 -->
-        <a href="javascript: void(0)" class="btnRed">
-            More
-        </a>
-
-        <!-- 次要要按鈕 // btnPink
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="javascript: void(0)" class="btnPink">
-            More
-        </a>
-
-        <!-- 次要按鈕_不能按 // btnPinkStop
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="javascript: void(0)" class="btnPinkStop">More</a>
-
-        <!-- 回到頂端 // btnGoTop -->
-
-        <!-- 還需要遷入jQuery -->
-        <a id="btnGoTop"></a>
-
-        <!-- 自訂按鈕 // btnCust
-    link：連結的網址
-    innerText：按鈕名稱 -->
-        <a href="javascript: void(0)" class="btnCust">寫心情</a>
+        @@include('./layout/btnCust.html',{
+        "link":"javascript: void(0)",
+        "innerText":"寫心情"
+        })
 
         <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
@@ -88,7 +65,11 @@
         })
 
         <div class="moodContent">
-            <!-- routeFilterBlock -->
+             <!-- filter // tab 篩選器
+            innetText:篩選的名稱，
+            由於不確定個分頁的篩選功能會如何，在此只放上css樣式的格式，可以直接用class套用，不一定要include
+            註：並非每個分頁皆有，需自行在自己的scss中import './modules/filter.scss';
+         -->
             @@include('./layout/filterForMood.html',{
             "innerText1":"全部心情",
             "innerText2":"日式舊屋行",
