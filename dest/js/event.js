@@ -105,10 +105,10 @@ $(document).ready(function () {
 
         divWidth = $('#slideBoard').width(); // div的寬度
 
-        imgCount = $('.newSlider').length;
+        imgCount = $('.newSliderBox').length;
         $('#content').width(divWidth * imgCount); // ul的寬度
 
-        $('.newSlider').width(divWidth); // li的寬度
+        $('.newSliderBox').width(divWidth); // li的寬度
     }
 
 
