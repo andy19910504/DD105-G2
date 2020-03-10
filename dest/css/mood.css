@@ -510,3 +510,36 @@ img.moodSubTitle {
   img.moodSubTitle {
     top: -130px;
     width: 170px; } }
+
+.lightbox_report_info {
+  position: fixed;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    margin: 30px 0;
+    text-align: center; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    padding: 0 25px;
+    margin: 35px auto; }
+    .lightbox_report_info form input {
+      margin: 15px; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    position: absolute; }
+    .lightbox_report_info .reportSent div {
+      margin: 0px 13px; }
