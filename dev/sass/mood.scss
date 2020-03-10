@@ -1,16 +1,20 @@
 @import "./base/var.scss";
 @import "./base/reset.scss";
-@import './layout/card.scss';
-img.sectionTitle{
-    width: 40%;
-}
-@media screen and (max-width:575px){
-    img.sectionTitle{
-        width: 65%;
-    }
+@import "./layout/card.scss";
+@import "./layout/index/moodsection.scss";
+
+.selector select {
+    width: 190px;
+    height: 30px;
+    margin: 10px 0;
+    color: #646464;
+    font-size: 16px;}
+.moodContent{
+    width: 1200px;
+    margin: 0 auto;
 }
 .moodWrap{
-    width: 100%;
+   
     margin-top: 30px;
     position: relative;
     display: flex;
@@ -21,7 +25,7 @@ img.sectionTitle{
         margin-top: 20px;
     }
     .moodCardsWrap{
-        width: 100%;
+        width: 100px;
         display: flex;
         justify-content: space-around;
     }
@@ -216,10 +220,7 @@ img.sectionTitle{
             //文字容器
             .cardText {
                 width: 200px;
-
-                h1{
-                    font-size: 20px;
-                }
+                h1{font-size: 20px;}
                 p{
                     font-size: 16px;
                     letter-spacing: 0.5px;
@@ -244,22 +245,16 @@ img.sectionTitle{
                 height: 270px;
             }
             //愛心留言bar
-            .heartBar{
-                width: 270px;
-            }
+            .heartBar{width: 270px;}
 
             //文字容器
-            .cardText {
-                width: 270px;
-            }
+            .cardText {width: 270px;}
         }
     }
 }
 
 @media screen and (max-width:767px){
-    .moodWrap{
-        margin-top: 130px;
-    }
+    .moodWrap{margin-top: 130px;}
 }
 
 //小標題泡泡

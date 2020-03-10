@@ -221,7 +221,7 @@ div.moodWrap{
     @media screen and (max-width:767px){
         div.moodCard{
             width: 300px;
-            margin: 7px 0px;
+            margin: 15px 0px;
             //資訊bar
             div.cardInfoBar{
                 width: 270px;
@@ -249,7 +249,7 @@ div.moodWrap{
 
 @media screen and (max-width:767px){
     div.moodWrap{
-        margin-top: 130px;
+        margin-top: 20px;
     }
 }
 
@@ -283,6 +283,11 @@ img.moodSubTitle{
     img.moodSubTitle{
         top: -130px;
         width: 170px;
+    }
+}  
+@media screen and (max-width:767px){
+    img.moodSubTitle{
+        display: none;
     }
 }  
 
