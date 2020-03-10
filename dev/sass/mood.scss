@@ -2,19 +2,26 @@
 @import "./base/reset.scss";
 @import "./layout/card.scss";
 @import "./layout/index/moodsection.scss";
-
+//愛心數、時間排列
 .selector select {
     width: 190px;
     height: 30px;
     margin: 10px 0;
-    color: #646464;
-    font-size: 16px;}
+    color: $fcInfo;
+    font-size: $fzInfo;
+}
+//body下第一層
+.wrapper{
+    width: 100%;
+    overflow: hidden;
+}
+//內容
 .moodContent{
     width: 1200px;
     margin: 0 auto;
 }
+//包住所有心情卡片
 .moodWrap{
-   
     margin-top: 30px;
     position: relative;
     display: flex;
@@ -108,8 +115,6 @@
                 }
             }
         }
-
-
         //圖片容器
         .moodPicWrap {
             display: flex;
@@ -259,18 +264,18 @@
 }
 
 //小標題泡泡
-img.moodSubTitle{
-    display: inline-block;
-    position: absolute;
-    left: -5%;
-    top: -150px;
-    animation: subtitleAni .8s infinite alternate;
-}
+// img.moodSubTitle{
+//     display: inline-block;
+//     position: absolute;
+//     left: -5%;
+//     top: -150px;
+//     animation: subtitleAni .8s infinite alternate;
+// }
 
-@keyframes subtitleAni{
-    from{transform: translateY(20px);}
-    to{transform: translateY(0px);}
-}
+// @keyframes subtitleAni{
+//     from{transform: translateY(20px);}
+//     to{transform: translateY(0px);}
+// }
 
 @media screen and (max-width:1365px){
     img.moodSubTitle{
@@ -289,6 +294,37 @@ img.moodSubTitle{
         width: 170px;
     }
 }
+// 隱藏卡片區 
+.hide{
+    display: none;
+}
+//燈箱們---------------發起揪團燈箱
+
+//  最底層black 
+.backDrop{
+    background-color: rgba(24, 24, 24, 0.8);
+    display: none;
+    filter: alpha(opacity=0);
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    top: 0px;   
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+  }
+//  關閉 
+.close{
+    color: $fcInfo;
+    cursor: pointer;
+    right:10px;
+    font-size: 32px;
+    margin: 10px;
+    position: absolute;
+  }
 //檢舉燈箱
 .lightbox_report_info{
     position: fixed;
