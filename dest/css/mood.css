@@ -1,70 +1,19 @@
-@charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  color: #1e1e1e;
-  text-decoration: none;
-  font-family: "微軟正黑體";
-  vertical-align: baseline; }
+.selector select {
+  width: 190px;
+  height: 30px;
+  margin: 10px 0;
+  color: #646464;
+  font-size: 16px; }
 
-/* remember to define focus styles! */
-:focus {
-  outline: 0; }
+.wrapper {
+  width: 100%;
+  overflow: hidden; }
 
-body {
-  line-height: 1;
-  color: black;
-  background: white; }
-
-ol, ul {
-  list-style: none; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: ""; }
-
-blockquote, q {
-  quotes: "" ""; }
-
-* {
-  box-sizing: border-box; }
-
-/*
-     卡片：首頁、路線、心情、揪團，要使用的sample
-    
-     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
-
-    */
-img.sectionTitle {
-  width: 40%; }
-
-@media screen and (max-width: 575px) {
-  img.sectionTitle {
-    width: 65%; } }
+.moodContent {
+  width: 1200px;
+  margin: 0 auto; }
 
 .moodWrap {
-  width: 100%;
   margin-top: 30px;
   position: relative;
   display: flex;
@@ -73,7 +22,8 @@ img.sectionTitle {
   .moodWrap .moodBtn {
     margin-top: 20px; }
   .moodWrap .moodCardsWrap {
-    width: 100%;
+    margin-bottom: 30px;
+    width: 100px;
     display: flex;
     justify-content: space-around; }
   @media screen and (max-width: 767px) {
@@ -236,19 +186,6 @@ img.sectionTitle {
   .moodWrap {
     margin-top: 130px; } }
 
-img.moodSubTitle {
-  display: inline-block;
-  position: absolute;
-  left: -5%;
-  top: -150px;
-  animation: subtitleAni .8s infinite alternate; }
-
-@keyframes subtitleAni {
-  from {
-    transform: translateY(20px); }
-  to {
-    transform: translateY(0px); } }
-
 @media screen and (max-width: 1365px) {
   img.moodSubTitle {
     top: -180px;
@@ -262,3 +199,66 @@ img.moodSubTitle {
   img.moodSubTitle {
     top: -130px;
     width: 170px; } }
+
+.cardBox2 {
+  display: none; }
+
+.btnPink {
+  margin: 35px auto 0 auto;
+  text-align: center; }
+
+.backDrop {
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  filter: alpha(opacity=0);
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; }
+
+.close {
+  color: #646464;
+  cursor: pointer;
+  right: 10px;
+  font-size: 32px;
+  margin: 10px;
+  position: absolute; }
+
+.lightbox_report_info {
+  position: fixed;
+  background-color: #d4d3d3;
+  background-image: url(../img/event/event_cardback.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  width: 20%;
+  height: 40%;
+  margin: auto;
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    margin: 30px 0;
+    text-align: center; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    padding: 0 25px;
+    margin: 35px auto; }
+    .lightbox_report_info form input {
+      margin: 15px; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    position: absolute; }
+    .lightbox_report_info .reportSent div {
+      margin: 0px 13px; }
