@@ -1039,6 +1039,7 @@
 }
 
 .member_info_open_all_all {
+    // text-align: center;
     padding: 4.75%;
     margin-bottom: 2.375%;
     border: 1px solid $fcInfo;
@@ -1046,14 +1047,36 @@
     font-size: 0px;
     border-radius: 5px;
 
-    h1 {
-        // border: 1px solid red;
-        font-size: $fzTitle;
+    // h1 {
+    //     // border: 1px solid red;
+    //     font-size: $fzTitle;
+    //     text-align: center;
+    //     padding: 3% 0;
+    //     margin-bottom: 3%;
+    //     // background-image: url(../img/member/memphis-colorful.png);
+    // }
+}
+.member_info_open_all_all>form>input{
+    width: 80%;
+    font-family: $fontFamily;
+    pointer-events: none;
+    // height: 30px;
+    // padding: 0 5%;
+    margin: 0 auto;
+    // border: 1px solid red;
+    // width: 100%;
+         font-size: $fzTitle;
         text-align: center;
-        padding: 3% 0;
+        padding: 1% 0%;
         margin-bottom: 3%;
-        // background-image: url(../img/member/memphis-colorful.png);
-    }
+        display: block;
+        background-color: unset;
+        // background-image: url(../img/member/hip-square.png);
+        border: unset;
+        // border: 1px solid red;
+}
+.member_info_open_all_all>form>input:focus{
+    border: 3px dashed $importantColor;
 }
 
 .member_info_open_all_all:hover {
@@ -1061,7 +1084,7 @@
 
     .member_info_open_all_left>label>div>div>img {
         transform: scale(1.1);
-        transition: all 0.8s;
+        // transition: all 0.8s;
     }
 
     .member_info_open_all_left>label>div {
@@ -1145,7 +1168,7 @@
         font-size: $fzContent;
         display: inline-block;
         // border: 1px solid green;
-        width: 80%;
+        width: 75%;
         padding-left: 2%;
         resize:none;
     }
@@ -1174,7 +1197,7 @@
         // padding-left: 2%;
         border:unset;
         // border-bottom: 1px solid $fcInfo;
-        background-image: url(../img/member/hip-square.png);
+        background-color: unset;
         height: 30px;
         pointer-events: none;
     }
@@ -1262,7 +1285,7 @@
 }
 }
 @media screen and (max-width:$small) {
-    .member_info_open_all_all h1 {
+    .member_info_open_all_all>form>input {
         font-size: $fzContent;
     }
 
@@ -1299,14 +1322,32 @@
     border-radius: 5px;
     // border: 1px solid red;
 
-    h1 {
-        // border: 1px solid red;
-        font-size: $fzTitle;
+    // h1 {
+    //     // border: 1px solid red;
+    //     font-size: $fzTitle;
+    //     text-align: center;
+    //     padding: 3% 0;
+    //     margin-bottom: 3%;
+    //     // background-image: url(../img/member/memphis-colorful.png);
+    // }
+}
+.member_info_join_all_all>input{
+    width: 80%;
+    font-family: $fontFamily;
+    pointer-events: none;
+    // height: 30px;
+    // padding: 0 5%;
+    margin: 0 auto;
+    // border: 1px solid red;
+    // width: 100%;
+         font-size: $fzTitle;
         text-align: center;
-        padding: 3% 0;
+        padding: 1% 0%;
         margin-bottom: 3%;
-        // background-image: url(../img/member/memphis-colorful.png);
-    }
+        display: block;
+        background-color: unset;
+        // background-image: url(../img/member/hip-square.png);
+        border: unset;
 }
 
 .member_info_open_all_left>div>div>img {
@@ -1387,7 +1428,7 @@
         font-size: $fzContent;
         display: inline-block;
         // border: 1px solid green;
-        width: 80%;
+        width: 75%;
         padding-left: 2%;
         resize:none;
     }
