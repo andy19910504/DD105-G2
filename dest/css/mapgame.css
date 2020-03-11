@@ -68,8 +68,8 @@
   position: absolute; }
 
 .fuda-container {
+  top: 390px;
   left: 140px;
-  bottom: -50px;
   position: absolute;
   z-index: 1; }
   .fuda-container table {
@@ -82,9 +82,10 @@
   .fuda-container .spot {
     width: 100px; }
   .fuda-container .check {
-    width: 20px; }
-  .fuda-container .hide-check {
+    width: 20px;
     display: none; }
+  .fuda-container .show-check {
+    display: block; }
   .fuda-container .progress-bar {
     position: relative;
     margin-top: 15px;
@@ -93,7 +94,7 @@
     border: 1px solid #fff;
     border-radius: 5px; }
     .fuda-container .progress-bar .progress {
-      width: 22%;
+      width: 0%;
       border: 2px solid #c45c5c;
       border-radius: 5px; }
     .fuda-container .progress-bar .index:nth-child(2) {
@@ -113,7 +114,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #c45c5c; }
+      background-color: #fff; }
     .fuda-container .progress-bar .index:nth-child(4) {
       position: absolute;
       top: -4px;
@@ -223,11 +224,11 @@
     transform: translate(-47%, -74%);
     position: absolute; }
     .game-container .game-map-container .map {
-      width: 3000px; }
+      width: 4500px; }
     .game-container .game-map-container .spot1 {
       position: absolute;
-      top: 38%;
-      left: 49%;
+      top: 40%;
+      left: 48.5%;
       width: 250px;
       height: 250px;
       border: 10px solid #ccc;
@@ -319,9 +320,10 @@
     border: 1px solid #ccc;
     border-radius: 5px; }
     .progress-container-mobile .progress-bar .progress {
-      width: 22%;
+      width: 0%;
       border: 2px solid #c45c5c;
-      border-radius: 5px; }
+      border-radius: 5px;
+      transition: all 1s; }
     .progress-container-mobile .progress-bar .index:nth-child(2) {
       position: absolute;
       top: -4px;
@@ -330,7 +332,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #c45c5c; }
+      background-color: #ccc;
+      transition: all 1s; }
     .progress-container-mobile .progress-bar .index:nth-child(3) {
       position: absolute;
       top: -4px;
@@ -339,7 +342,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #c45c5c; }
+      background-color: #ccc;
+      transition: all 1s; }
     .progress-container-mobile .progress-bar .index:nth-child(4) {
       position: absolute;
       top: -4px;
@@ -348,7 +352,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #ccc; }
+      background-color: #ccc;
+      transition: all 1s; }
     .progress-container-mobile .progress-bar .index:nth-child(5) {
       position: absolute;
       top: -4px;
@@ -357,7 +362,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #ccc; }
+      background-color: #ccc;
+      transition: all 1s; }
     .progress-container-mobile .progress-bar .index:nth-child(6) {
       position: absolute;
       top: -4px;
@@ -366,7 +372,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background-color: #ccc; }
+      background-color: #ccc;
+      transition: all 1s; }
   .progress-container-mobile .indicator {
     margin-top: 20px;
     color: #444; }
