@@ -239,9 +239,9 @@ header.fullHeader nav ul li a .navIcon {
   margin-right: 5px; }
 
 header.fullHeader nav ul li a:hover .navIcon {
-  animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate; }
+  animation: navShake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate; }
 
-@keyframes shake {
+@keyframes navShake {
   from {
     transform: translateY(0px); }
   to {

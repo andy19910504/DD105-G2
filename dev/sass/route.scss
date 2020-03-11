@@ -407,6 +407,42 @@
     }
     
 }
+// SVG block
+#svg,#svg2,#svg3,#svg4,#svg5 {
+    width: 400px;
+    height: 400px;
+}
+#svg2{
+    transform: translateY(20px) rotate(-10deg);
+}
+// SVG pathStyle
+#cls-1,#cls-2,#cls-3,#cls-4,#cls-5{
+    fill: none;
+    stroke: #666;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+#cls-1 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+#cls-2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+#cls-3 {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+#cls-4 {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
+#cls-5 {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
 // routeAttractionBlock2 SVG and decoration block
 .dec{
     position: absolute;
