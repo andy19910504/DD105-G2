@@ -9,15 +9,13 @@
     <!-- 每一頁分頁，都需要遷入這兩隻css -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/event.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"  />
-    
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/swiper.min.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <!-- //header
-            在你的分頁的display:"加上show"-->
+        <!-- header -->
         @@include('./layout/header.html',{
         "display1":"",
         "display2":"",
@@ -525,32 +523,48 @@
                                     <div class="slideBtn">
                                         <img src="./img/event/event_leftbtn2.png" alt="">
                                     </div>
-                                    <div class="sliderWrap">
-                                        <div class="routeBox">
-                                            <div class="route1">
-                                                <p>官方路線1</p>
+                                    <!-- 選擇路線框 -->
+                                    <div class="sliderWrap swiper-container">
+                                        <div class="routeAllBox swiper-wrapper">
+                                            <div class="routeBox swiper-slide">
+                                                <div class="routeBoxBottom ">
+                                                    <p>官方路線1</p>
+                                                </div>
                                             </div>
-                                            <div class="route2">
-                                                <p>官方路線2</p>
+                                            <div class="routeBox swiper-slide">
+                                                <div class="routeBoxBottom">
+                                                    <p>官方路線2</p>
+                                                </div>
                                             </div>
-                                            <div class="route3">
-                                                <p>官方路線3</p>
+                                            <div class="routeBox swiper-slide">
+                                                <div class="routeBoxBottom">
+                                                    <p>官方路線3</p>
+                                                </div>
                                             </div>
-                                            <div class="route4">
-                                                <p>自訂路線1</p>
+                                            <div class="routeBox swiper-slide">
+                                                <div class="routeBoxBottom">
+                                                    <p>自訂路線1</p>
+                                                </div>
                                             </div>
-                                            <div class="route5">
-                                                <p>自訂路線2</p>
+                                            <div class="routeBox swiper-slide">
+                                                <div class="routeBoxBottom">
+                                                    <p>自訂路線2</p>
+                                                </div>
                                             </div>
-                                            <div class="addroute">
-                                                <p>自訂路線+</p>
+                                            <div class="addroute swiper-slide" >
+                                                <p>自訂路線</p>
+                                                <p>+</p>
                                             </div>
+
                                         </div>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
                                     </div>
                                     <div class="slideBtn">
                                         <img src="./img/event/event_rightbtn2.png" alt="">
                                     </div>
                                 </div>
+                                <!-- 顯示選到的路線+景點 -->
                                 <div class="routeClick">
                                     <p>選擇路線 : 官方路線2</p>
                                     <p>景點 : 台北101 -> 台北101 -> 台北101</p>
@@ -762,10 +776,33 @@
     <script src="./js/common.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script>
         new WOW().init();
     </script>
-    
+    <!-- Initialize Swiper -->
+     <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      direction: getDirection(),
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        resize: function () {
+          swiper.changeDirection(getDirection());
+        }
+      }
+    });
+
+    function getDirection() {
+      var windowWidth = window.innerWidth;
+      var direction = window.innerWidth <= 600 ? 'vertical' : 'horizontal';
+
+      return direction;
+    }
+  </script>
 </body>
 
 </html>

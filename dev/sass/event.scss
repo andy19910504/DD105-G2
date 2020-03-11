@@ -422,10 +422,6 @@
     
 }
 
-.cardTop{
-    display: flex;
-    justify-content: center;
-}
 //三張卡片
 .eventWrap{
     margin: 40px 0;
@@ -434,6 +430,11 @@
     div.eventWrap{
         margin: 0px auto;
     }
+}
+//有星星卡片的上排
+.cardTop{
+    display: flex;
+    justify-content: center;
 }
 //卡片星星標記
 .starMark{
@@ -445,7 +446,6 @@
     padding-left: 3px;
     font-size: 18px;
     color: #646464;
-    
 }
 @media screen and (max-width:1199px){
     .starMark{
@@ -529,14 +529,10 @@
         color:$fcContent;
         font-size: 24px;
         font-weight: bold;
-        margin: 40px auto 20px auto;
-        //border: 1px solid red;
+        margin: 30px auto 15px auto;
         padding: 10px 20px;
-        //background-color: #D8F6AE;
-        border-radius: 10px;
-        width: 140px;
-       
-        
+        letter-spacing: 1.875px;
+        width: 200px;
     }
     form{
         height: 536px;
@@ -589,6 +585,11 @@
     display: block;
    
 }
+.swiper-container {
+    /* 設定幻燈片寬度跟高度 */
+    width: 200px;
+    height: 250px;
+}
 .chooseRoute{
     margin: 30px auto;
     display: flex;
@@ -597,24 +598,54 @@
     .sliderWrap{
         width: 1100px; 
         overflow: hidden;
-        .routeBox{
+        .routeAllBox{
         text-align: center;
         display: flex;
         flex-direction: row;
         // border: 1px solid green;
         width: 1600px;
-            div{
-                cursor: pointer;
-                background-color: #cce6f0;
-                border-radius: 3px;
-                width: 200px;
-                height: 200px;
-                margin:  0 auto;
-                line-height: 200px;
-                font-size: $fzContent;
-                color: $fcInfo;
+            .routeBox{
+                
+                .routeBoxBottom{
+                    background-color:rgb(158, 207, 120);
+                    align-self: flex-end;
+                    width: 200px;
+                    height: 50px;
+                    border-radius: 0 0 10px 10px;
+                    p{
+                    color: rgb(255, 255, 255);
+                    line-height: 50px;
+                    letter-spacing: 2px;
+                    }
+                }
+                
             }
-        
+            .routeBox{
+                cursor: pointer;
+                border-radius: 10px;
+                display: flex;
+                width: 200px;
+                height: 250px;
+                margin:  0 auto;
+                font-size: $fzContent;
+                background-position: unset;
+                background-size: contain;
+                background-repeat: no-repeat;
+                
+            }
+            .routeBox:nth-child(1){
+                background-image: url(../img/event/event_route1_2.jpg);
+            }
+            .routeBox:nth-child(2){
+                background-image: url(../img/event/event_route2_2.jpg);
+            }
+            .routeBox:nth-child(3){
+                background-image: url(../img/event/event_route3.jpg);
+            }
+            .routeBox:nth-child(4),.routeBox:nth-child(5){
+                background-image: url(../img/event/event_cusRout.jpg);
+            }
+            
         }
     
     }

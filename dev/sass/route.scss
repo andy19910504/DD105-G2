@@ -221,30 +221,52 @@
     margin: auto;
     padding: 80px 0;
     position: relative;
-@media screen and(max-width:860px) {
-    width: 90%;    
+    @media screen and(max-width:991px) {
+        overflow: hidden;
+    }
+    @media screen and(max-width:860px) {
+        width: 90%;    
 }
 }
 // decorationBlock
 .tape{
     position: absolute;
+    @media screen and(max-width:991px) {
+        display: none;
+    }
     &.tape1{
         top:-80px;
         left: 5px;
         transform: rotate(45deg);
+        @media screen and(max-width:1388px) {
+            top:-130px;
+            left: 95px;
+            transform: rotate(90deg);
+        }
     }
     &.tape2{
         top:600px;
         right: -40px;
+        @media screen and(max-width:1388px) {
+            right: -0px;
+        }
     }
     &.tape3{
         bottom:80px;
         left: -40px;
+        @media screen and(max-width:1388px) {
+            left: -5px;
+        }
     }
     &.tape4{
         bottom:-80px;
         right: 0px;
         transform: rotate(45deg);
+        @media screen and(max-width:1388px) {
+            bottom:-140px;
+            right: 110px;
+            transform: rotate(90deg);
+        }
     }
 }
 
@@ -270,6 +292,9 @@
 .routeBlock .routeBlockPart{
     display: flex;
     margin-top: 120px;
+    @media screen and (max-width:860px){
+        margin-top: 20px;
+    }
 }.routeBlock .routeBlockPart:first-child{
     margin-top: unset;
 }
@@ -382,44 +407,99 @@
     }
     
 }
+// SVG block
+#svg,#svg2,#svg3,#svg4,#svg5 {
+    width: 400px;
+    height: 400px;
+}
+#svg2{
+    transform: translateY(20px) rotate(-10deg);
+}
+// SVG pathStyle
+#cls-1,#cls-2,#cls-3,#cls-4,#cls-5{
+    fill: none;
+    stroke: #666;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+#cls-1 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+#cls-2 {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+#cls-3 {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+}
+#cls-4 {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
+#cls-5 {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
 // routeAttractionBlock2 SVG and decoration block
 .dec{
     position: absolute;
 }
+// addAnimation
+.disPlay{
+    opacity: 1 !important; 
+}
 .routeBlock .routeBlockPart:nth-child(1) .routeAttractionBlock2{
     transform: translate(20px,60px);
-    .tree{
+    .groupA{
+        opacity: 0;
+    }
+    .tree1{
         width: 280px;
         bottom: 0;
         right: 0;
+        opacity: 0;
+        transition:opacity .5s .3s;
     }
+
     .tree2{
         width: 100px;
         top: 60px;
         left: 160px;
+        opacity: 0;
+        transition:opacity .5s;
     }
     .grass{
         width: 180px;
         top: 85px;
         left: -25px;
     }
+
 }
 .routeBlock .routeBlockPart:nth-child(2) .routeAttractionBlock2{
     transform: translate(10px,80px);
+    .groupB{
+        opacity: 0;
+    }
     .tree4{
         width: 60px;
         top: -70px;
-        right:115px;
+        right:75px;
+        transition:opacity .5s .1s;
     }
     .tree5{
+        width: 60px;
+        top: -70px;
+        right:115px;
+        transition:opacity .5s .2s;
+    }
+    .tree6{
         width: 80px;
         top: -90px;
         right:160px;
-    }
-    .tree6{
-        width: 60px;
-        top: -70px;
-        right:75px;
+        transition:opacity .5s .3s;
     }
     .grass2{
         width: 200px;
@@ -428,42 +508,54 @@
     }
     .tree7{
         width: 100px;
-        top: 0px;
-        left:60px;
+        top: -70px;
+        left:-10px;
+        transition:opacity .5s .5s;
     }
     .tree8{
+        width: 100px;
+        top: 0px;
+        left:60px;
+        transition:opacity .5s .6s;
+    }
+    .tree9{
         width: 120px;
         top: 40px;
         left:105px;
+        transition:opacity .5s .7s;
     }
-    .tree9{
+    .tree10{
         width: 200px;
         bottom: 40px;
         right:-10px;
+        transition:opacity .5s .8s;
     }
-    .tree10{
-        width: 100px;
-        top: -70px;
-        left:-10px;
-    }
+
 }
 .routeBlock .routeBlockPart:nth-child(3) .routeAttractionBlock2{
     transform: translate(50px,60px);
+    .groupC{
+        opacity: 0;
+    }
     .temp{
         width: 100px;
         filter: grayscale(.5) blur(.5px);
         top: -60px;
         right:160px;
+        transition:opacity .5s .3s;
     }
     .flower{
         width: 100px;
         top: -5px;
         right:60px;
+        transition:opacity .5s;
     }
     .flower2{
         width: 80px;
         top: 0px;
         left:80px;
+        transition:opacity .5s;
+
     }
     .grass3{
         width:200px;
@@ -475,20 +567,26 @@
         bottom: 20px;
         right: 0;
         filter: grayscale(.2);
+        transition:opacity .5s .6s;
     }
     .plant{
         width: 100px;
         bottom: 0;
         left: 85px;
+        transition:opacity .5s .8s;
     }
     .plant2{
         width: 60px;
         bottom: 10px;
         right:100px;
+        transition:opacity .5s 1s;
     }
 }
 .routeBlock .routeBlockPart:nth-child(4) .routeAttractionBlock2{
     transform: translate(-20px,100px);
+    .groupD{
+        opacity: 0;
+    }
     .storeBlock{
         // border: 1px solid #ccc;
         width: 300px;
@@ -500,12 +598,14 @@
             width: 320px;
             bottom: 0px;
             left: -80px;
+            transition:opacity .5s .5s;
         }
     }
     .tree11{
         width: 100px;
         bottom:90px;
         left: 140px;
+        transition:opacity .5s .8s;
     }
     .flower3{
         width: 200px;
@@ -516,6 +616,7 @@
         width: 45px;
         bottom: 40px;
         left:60px;
+        transition:opacity .5s 1s;
     }
     .grass5{
         width: 200px;
@@ -527,37 +628,47 @@
 
 .routeBlock .routeBlockPart:nth-child(5) .routeAttractionBlock2{
     transform: translate(10px,80px);
+    .groupE{
+        opacity: 0;
+    }
     .house2{
-        width: 130px;
-        top: -115px;
+        width: 150px;
+        top: -130px;
         right: 120px;
+        transform: rotate(-2deg);
         filter: blur(.5px);
+        transition:opacity .5s .2s;
     }
     .grass6{
         width: 200px;
         bottom:120px;
         right: 0;
     }
-    .tree12{
-        width: 100px;
-        bottom: 60px;
-        left: 0px;
-    }
-    .tree13{
-        width: 100px;
-        bottom: 40px;
-        right: 0;
-    }
     .tree14{
-        width: 100px;
-        top: -80px;
-        right: 0;
-    }
-    .tree15{
         width: 60px;
         top: -40px;
         left: 10px;
     }
+    .tree15{
+        width: 100px;
+        top: -80px;
+        right: 0;
+        transition:opacity .5s .5s;
+    }
+    .tree16{
+        width: 100px;
+        bottom: 60px;
+        left: 20px;
+        transition:opacity .5s .7s;
+    }
+    .tree17{
+        width: 150px;
+        bottom: 40px;
+        right: 0;
+        transition:opacity .5s .9s;
+    }
+
+
 }
 
 // attractionsLightBox 
