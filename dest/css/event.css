@@ -519,16 +519,16 @@ img.potPic {
     width: 140px;
     margin: 20px 0; } }
 
-.cardTop {
-  display: flex;
-  justify-content: center; }
-
 .eventWrap {
   margin: 40px 0; }
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
     margin: 0px auto; } }
+
+.cardTop {
+  display: flex;
+  justify-content: center; }
 
 .starMark {
   display: flex;
@@ -604,10 +604,10 @@ img.potPic {
     color: #1e1e1e;
     font-size: 24px;
     font-weight: bold;
-    margin: 40px auto 20px auto;
+    margin: 30px auto 15px auto;
     padding: 10px 20px;
-    border-radius: 10px;
-    width: 140px; }
+    letter-spacing: 1.875px;
+    width: 200px; }
   .lightbox_holdevent_info form, .lightbox_detailevent_info form {
     height: 536px; }
     .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
@@ -644,6 +644,11 @@ img.potPic {
   height: 536px;
   display: block; }
 
+.swiper-container {
+  /* 設定幻燈片寬度跟高度 */
+  width: 200px;
+  height: 250px; }
+
 .chooseRoute {
   margin: 30px auto;
   display: flex;
@@ -652,21 +657,40 @@ img.potPic {
   .chooseRoute .sliderWrap {
     width: 1100px;
     overflow: hidden; }
-    .chooseRoute .sliderWrap .routeBox {
+    .chooseRoute .sliderWrap .routeAllBox {
       text-align: center;
       display: flex;
       flex-direction: row;
       width: 1600px; }
-      .chooseRoute .sliderWrap .routeBox div {
-        cursor: pointer;
-        background-color: #cce6f0;
-        border-radius: 3px;
+      .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
+        background-color: #9ecf78;
+        align-self: flex-end;
         width: 200px;
-        height: 200px;
+        height: 50px;
+        border-radius: 0 0 10px 10px; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom p {
+          color: white;
+          line-height: 50px;
+          letter-spacing: 2px; }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox {
+        cursor: pointer;
+        border-radius: 10px;
+        display: flex;
+        width: 200px;
+        height: 250px;
         margin: 0 auto;
-        line-height: 200px;
         font-size: 18px;
-        color: #646464; }
+        background-position: unset;
+        background-size: contain;
+        background-repeat: no-repeat; }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(1) {
+        background-image: url(../img/event/event_route1_2.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(2) {
+        background-image: url(../img/event/event_route2_2.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(3) {
+        background-image: url(../img/event/event_route3.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
+        background-image: url(../img/event/event_cusRout.jpg); }
   .chooseRoute .slideBtn {
     margin: 0 10px;
     cursor: pointer; }
