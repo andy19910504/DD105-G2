@@ -1,8 +1,7 @@
 
 //按右上跳登入
-$(".navMember").click(function (e) {
+$("#sign").click(function (e) {
     e.preventDefault();
-
     $(".login").attr("style", "display:block")
 });
 
