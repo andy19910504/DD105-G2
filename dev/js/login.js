@@ -1,6 +1,6 @@
 
 //按右上跳登入
-$("#sign").click(function (e) {
+$(".sign").click(function (e) {
     e.preventDefault();
     $(".login").attr("style", "display:block")
 });

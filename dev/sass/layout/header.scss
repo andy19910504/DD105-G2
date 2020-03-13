@@ -109,7 +109,7 @@ header.hamburgerHeader{
     transition: transform 1s;    
 }
 header.hamburgerHeader.showHeader{
-    transform: translateY(0%);;
+    transform: translateY(0%);
 }
 header.hamburgerHeader nav ul li{
     width: 180px;
@@ -133,6 +133,7 @@ header.hamburgerHeader .memberIcon{
     display: flex;
     justify-content: center;
     margin-top: 80px;
+    cursor: pointer;
 }
 header.hamburgerHeader .memberIcon div{
     margin-right: 15px;
