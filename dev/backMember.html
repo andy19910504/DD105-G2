@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>台北散步 | 後台</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/back.css">
+    <style>
+        table {
+            margin: 0 auto;
+            /* border: 3px solid red; */
+            margin-bottom: 20px;
+        }
+
+        tr:nth-child(1) {
+            background-color: #a5361c;
+            color: white;
+            border-bottom: unset;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #646464;
+            width: 3000px;
+            text-align: center;
+        }
+        td img{
+            width: 100%;
+        
+        }
+
+        .new_mana_acc {
+            /* background-color: white;
+            z-index: 999;
+            position: absolute;
+            right: 50px;
+            top:50px; */
+            padding: 20px;
+            /* width: 20%; */
+            border: 3px solid #a5361c;
+            /* display: inline-block;
+            margin: 0 auto; */
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .new_mana_acc input {
+            margin-left: 2%;
+            margin-right: 2%;
+            /* margin: 0 auto; */
+            /* border: 1px solid red; */
+            /* display: block; */
+            /* margin-bottom: 10px; */
+        }
+
+        .new_mana_acc button {
+            margin-left: 2%;
+            /* margin: 0 auto; */
+            /* border: 1px solid red; */
+            /* display: block; */
+        }
+
+        @media screen and (max-width:1200px) {
+            .new_mana_acc input {
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include("./layout/backHeader.html",{
+        "nowPage0": "nowPage",
+        "nowPage1": "",
+        "nowPage2": "",
+        "nowPage3": "",
+        "nowPage4": "",
+        "nowPage5": "",
+        "nowPage6": "",
+        "nowPage7": "",
+        "nowPage8": "",
+        "nowPage9": ""
+        })
+        <main class="col-md-10">
+            <h2>管理員管理</h2>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>編號</td>
+                        <td>帳號</td>
+                        <td>權限</td>
+                        <td>狀態</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <form action="">
+                            <td>0</td>
+                            <td>AA</td>
+                            <td>XXX</td>
+                            <td><button>停權</button></td>
+                            <td><button>刪除</button></td>
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="">
+                            <td>1</td>
+                            <td>AA</td>
+                            <td>XXX</td>
+                            <td><button>停權</button></td>
+                            <td><button>刪除</button></td>
+                        </form>
+                    </tr>
+                </table>
+                <div class="new_mana_acc">
+                    <form action="">
+                        <input type="text" placeholder="帳號">
+                        <input type="text" placeholder="密碼">
+                        <input type="text" placeholder="權限">
+                        <button>新增管理員帳號</button>
+                    </form>
+                    
+                    
+                </div>
+            </div>
+            <h2>會員管理</h2>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>編號</td>
+                        <td>暱稱</td>
+                        <td>帳號</td>
+                        <td>密碼</td>
+                        <td>信箱</td>
+                        <td>頭貼</td>
+                        <td>手機</td>
+                        <td>點數</td>
+                        <td>狀態</td>
+                    </tr>
+                    <tr>
+                        <form action="">
+                            <td>0</td>
+                            <td>QQ</td>
+                            <td>DD105</td>
+                            <td>DD105</td>
+                            <td>DD105@yahoo.com.tw</td>
+                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
+                            <td>09123456789</td>
+                            <td>350</td>
+                            <td><button>停權</button></td>
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="">
+                            <td>1</td>
+                            <td>XX</td>
+                            <td>DD105</td>
+                            <td>DD105</td>
+                            <td>DD105@yahoo.com.tw</td>
+                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
+                            <td>09123456789</td>
+                            <td>350</td>
+                            <td><button>停權</button></td>
+                        </form>
+                    </tr>
+                    <tr>
+                        <form action="">
+                            <td>1</td>
+                            <td>XX</td>
+                            <td>DD105</td>
+                            <td>DD105</td>
+                            <td>DD105@yahoo.com.tw</td>
+                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
+                            <td>09123456789</td>
+                            <td>350</td>
+                            <td><button>停權</button></td>
+                        </form>
+                    </tr>
+                </table>
+            </div>
+        </main>
+    </div>
+
+
+
+
+
+
+    <!-- ------------ js ------------ -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/backNav.js"></script>
+    <script>
+        //load事件
+        //依資料狀態
+    </script>
+</body>
+
+</html>
