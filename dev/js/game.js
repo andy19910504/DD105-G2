@@ -269,47 +269,120 @@ $(document).ready(function(){
     //Google map
     $('.switch').on('click', function(){
         if(!($('.map-container').hasClass('hide-container'))){
-            //get current location
-            navigator.geolocation.getCurrentPosition(succCallback,errorCallback,{
-                enableHighAccuracy: false,
-                timeout: 200000,
-                maximumAge: 0,
-            });
-            function succCallback(e){
-                let lati = e.coords.latitude;
-                let longi = e.coords.longitude;
-                let accuracy = e.coords.accuracy;
+            // //get current location
+            // navigator.geolocation.getCurrentPosition(succCallback,errorCallback,{
+            //     enableHighAccuracy: false,
+            //     timeout: 200000,
+            //     maximumAge: 0,
+            // });
+            // function succCallback(e){
+            //     let lati = e.coords.latitude;
+            //     let longi = e.coords.longitude;
+            //     let accuracy = e.coords.accuracy;
 
-                if(accuracy > 100000){
-                    console.log("超過偵測範圍!");
-                }else{
-                    console.log(`緯度: ${lati}<br>經度: ${longi}<br>準確度: ${accuracy} 公尺`);
+            //     if(accuracy > 100000){
+            //         console.log("超過偵測範圍!");
+            //     }else{
+            //         console.log(`緯度: ${lati}<br>經度: ${longi}<br>準確度: ${accuracy} 公尺`);
+            //     }
+
+            //     //make a Google map
+            //     let area = document.getElementById('map');
+            //     let position = new google.maps.LatLng(lati, longi);
+            //     let options = {
+            //         zoom: 16,
+            //         center: position,
+            //         mapTypeId: google.maps.MapTypeId.ROADMAP,
+            //     };
+
+            //     let map = new google.maps.Map(area,options);
+            //     let marker = new google.maps.Marker({
+            //         position,
+            //         map,
+            //         // icon: 'http://www.oxxostudio.tw/img/articles/201801/google-maps-3-marker-icon.png',
+            //         title: '我在這裡',
+            //         // label: 'ㄎㄎ',
+            //         position: position,
+            //         map: map,
+            //         animation: google.maps.Animation.DROP,
+            //         animation: google.maps.Animation.BOUNCE
+            //     });
+            // }
+            // function errorCallback(e){
+            //     alert(`錯誤碼: ${e.code}\n錯誤訊息: ${e.message}`);
+            // }
+
+            //Get current position with google api
+            var geolocation = 'https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCxHAzDuEADlkr21Aqm0ng4BqfQ3LfmD6c';
+            (function() {
+                var start;
+                xhr = new XMLHttpRequest();
+                xhr.open('POST', geolocation);
+                xhr.onload = function () {
+                    var response = JSON.parse(this.responseText);
+                    //make a google map
+                    start = response.location;
+                    var mapOptions = {
+                    zoom: 12,
+                    center: start,
+                    }
+                    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+                    //將地標和路線指示清空
+                    markers = [];
+                    infowindows = [];
+                    directions(start, {lat: 25.0213759, lng: 121.5183262}, [
+                    {location: {lat: 25.0280558, lng: 121.5303483}, stopover: true},
+                    {location: {lat: 25.0238285, lng: 121.52569}, stopover: true},
+                    {location: {lat: 25.0250419, lng: 121.519615}, stopover: true},
+                    {location: {lat: 25.0248451, lng: 121.5194386}, stopover: true}
+                    ]);
                 }
+                xhr.send();
 
-                //make a Google map
-                let area = document.getElementById('map');
-                let position = new google.maps.LatLng(lati, longi);
-                let options = {
-                    zoom: 16,
-                    center: position,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                };
+                
+            })();
 
-                let map = new google.maps.Map(area,options);
-                let marker = new google.maps.Marker({
-                    position,
-                    map,
-                    // icon: 'http://www.oxxostudio.tw/img/articles/201801/google-maps-3-marker-icon.png',
-                    title: '我在這裡',
-                    // label: 'ㄎㄎ',
-                    position: position,
-                    map: map,
-                    animation: google.maps.Animation.DROP,
-                    animation: google.maps.Animation.BOUNCE
+            //規劃路線
+            var markers = [];
+            var infowindows = [];
+            function directions(origin, dest, waypts){
+                let directionService = new google.maps.DirectionsService(),
+                    directionDisplay = new google.maps.DirectionsRenderer(),
+                    request = {
+                        origin: origin,
+                        destination: dest,
+                        waypoints: waypts,
+                        optimizeWaypoints: true,
+                        travelMode: 'WALKING'
+                    }
+                directionDisplay.setMap(map);
+                directionService.route(request, (result, status) => {
+                    if(status == 'OK'){
+                        // 回傳路線上每個步驟的細節
+                        var steps = result.routes[0].legs[0].steps;
+                        steps.forEach((e, i) => {
+                            // 加入地圖標記
+                            markers[i] = new google.maps.Marker({
+                            position: { lat: e.start_location.lat(), lng: e.start_location.lng() },
+                            map: map,
+                            label: { text: i + '', color: "#fff" }
+                            });
+                            // 加入資訊視窗
+                            infowindows[i] = new google.maps.InfoWindow({
+                            content: e.instructions
+                            });
+                            // 加入地圖標記點擊事件
+                            markers[i].addListener('click', function () {
+                            if(infowindows[i].anchor){
+                                infowindows[i].close();
+                            }else{
+                                infowindows[i].open(map, markers[i]);
+                            }
+                            });
+                        });
+                        directionDisplay.setDirections(result);
+                    }
                 });
-            }
-            function errorCallback(e){
-                alert(`錯誤碼: ${e.code}\n錯誤訊息: ${e.message}`);
             }
         }
     });

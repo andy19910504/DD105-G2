@@ -90,14 +90,15 @@
             <div class="search-area">
                 <input type="text" class="search">
                 <a href="#" class="btnPink">
-    搜尋
+    加入景點
 </a>
                 <a href="#" class="btnRed">
-    確定地點
+    清除地點
 </a>
+                <input type="button" class="btnRed confirm" value="規劃路線">
             </div>
             <div class="map-container">
-                <iframe src="" frameborder="0" id="map"></iframe>
+                <div id="map"></div>
             </div>
             <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
@@ -144,7 +145,7 @@
     </div>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxHAzDuEADlkr21Aqm0ng4BqfQ3LfmD6c"></script>
     <script src="./js/common.js"></script>
     <script src="./js/custom.js"></script>
 </body>
