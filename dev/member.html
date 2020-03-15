@@ -338,8 +338,8 @@
                                     </button> -->
                                 </div>
                             </div>
-                           
-                           
+
+
 
                         </div>
                     </div>
@@ -369,7 +369,7 @@
                                             <p>寄件地址 :<span>XXXXXXXXX</span></p>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
 
@@ -378,163 +378,170 @@
                     <div class="member_info_open minheightbig" style="display: none;">
                         <div class="member_info_open_all minheightmiddle">
                             <div class="member_info_open_all_all">
-                                <h1>
+                                <form action="">
+                                    <!-- <h1>
                                     今天心情好所以想出門走走
-                                </h1>
-                                <div class="member_info_open_all_left">
-                                    <label for="event_pho">
-                                    <div>
+                                </h1> -->
+                                    <input type="text" value="今天心情好所以想出門走走" readonly>
+                                    <div class="member_info_open_all_left">
+                                        <label for="event_pho">
+                                            <div>
+                                                <div>
+                                                    <img src="./img/member/event_card3.png" alt="">
+                                                </div>
+                                                <div style="display: none;">
+                                                    <label for="event_pho">上傳照片
+                                                        <img src="./img/member/membercamera.png" alt="">
+                                                    </label>
+                                                    <input type="file" id="event_pho" style="display: none;">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="member_info_open_all_right">
                                         <div>
-                                            <img src="./img/member/event_card3.png" alt="">
+                                            <label for="join_member">參與會員 :</label>
+                                            <input type="text" value="XXX XXX XXX" id="join_member" readonly>
                                         </div>
-                                        <div style="display: none;">
-                                            <label for="event_pho">上傳照片
-                                                <img src="./img/member/membercamera.png" alt="">
-                                            </label>
-                                            <input type="file" id="event_pho" style="display: none;">
+                                        <div>
+                                            <label for="event_day">活動日期 :</label>
+                                            <input type="date" id="event_day" readonly>
                                         </div>
-                                    </div>
-                                    </label>
-                                </div>
-                                <div class="member_info_open_all_right">
-                                    <div>
-                                        <label for="join_member">參與會員 :</label>
-                                        <input type="text" value="XXX XXX XXX" id="join_member" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_day">活動日期 :</label>
-                                        <input type="date" id="event_day"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_dday">報名截止日 :</label>
-                                        <input type="date" id="event_dday"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="togethertime">集合時間 :</label>
-                                        <input type="text" id="togethertime"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="togetherposition">集合地點 :</label>
-                                        <input type="text" id="togetherposition"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="lines">路線 :</label>
-                                        <input type="text" id="lines"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="viewpoints">景點 :</label>
-                                        <input type="text" id="viewpoints"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="people">人數 :</label>
-                                        <input type="text" id="people"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_introduce">活動介紹 :</label>
-                                        <textarea name="" id="" cols="30" rows="5" id="event_introduce"  readonly></textarea>
-                                    </div>
-                                    <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
+                                        <div>
+                                            <label for="event_dday">報名截止日 :</label>
+                                            <input type="date" id="event_dday" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="togethertime">集合時間 :</label>
+                                            <input type="text" id="togethertime" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="togetherposition">集合地點 :</label>
+                                            <input type="text" id="togetherposition" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="lines">路線 :</label>
+                                            <input type="text" id="lines" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="viewpoints">景點 :</label>
+                                            <input type="text" id="viewpoints" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="people">人數 :</label>
+                                            <input type="text" id="people" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="event_introduce">活動介紹 :</label>
+                                            <textarea name="" id="" cols="30" rows="5" id="event_introduce"
+                                                readonly></textarea>
+                                        </div>
+                                        <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
                                     <p>活動日期 :<span>2020/02/29</span></p>
                                     <p>集合時間 :<span>12:00</span></p>
                                     <p>集合地點 :<span>XXXXXX</span></p>
                                     <p>揪團期程 :<span>4小時</span></p> -->
-                                </div>
-                                <div class="member_info_open_all_bottom">
-                                    <div class="btnPink">修改</div>
-                                    <a class="btnPink" href="#" style="display: none;">確認</a>
-                                    <!-- <div class="btnPink">
+                                    </div>
+                                    <div class="member_info_open_all_bottom">
+                                        <div class="btnPink">修改</div>
+                                        <a class="btnPink" href="#" style="display: none;">確認</a>
+                                        <!-- <div class="btnPink">
                                         修改
                                     </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
+                                        <a class="btnPink" href="#">刪除</a>
+                                        <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                        <!-- <button class="btnPink">
                                         刪除
                                     </button> -->
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                             <div class="member_info_open_all_all">
-                                <h1>
+                                <form action="">
+                                    <!-- <h1>
                                     今天心情好所以想出門走走
-                                </h1>
-                                <div class="member_info_open_all_left">
-                                    <label for="event_pho">
-                                    <div>
+                                </h1> -->
+                                    <input type="text" value="今天心情好所以想出門走走" readonly>
+                                    <div class="member_info_open_all_left">
+                                        <label for="event_pho">
+                                            <div>
+                                                <div>
+                                                    <img src="./img/member/event_card3.png" alt="">
+                                                </div>
+                                                <div style="display: none;">
+                                                    <label for="event_pho">上傳照片
+                                                        <img src="./img/member/membercamera.png" alt="">
+                                                    </label>
+                                                    <input type="file" id="event_pho" style="display: none;">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="member_info_open_all_right">
                                         <div>
-                                            <img src="./img/member/event_card3.png" alt="">
+                                            <label for="join_member">參與會員 :</label>
+                                            <input type="text" value="XXX XXX XXX" id="join_member" readonly>
                                         </div>
-                                        <div style="display: none;">
-                                            <label for="event_pho">上傳照片
-                                                <img src="./img/member/membercamera.png" alt="">
-                                            </label>
-                                            <input type="file" id="event_pho" style="display: none;">
+                                        <div>
+                                            <label for="event_day">活動日期 :</label>
+                                            <input type="date" id="event_day" readonly>
                                         </div>
-                                    </div>
-                                    </label>
-                                </div>
-                                <div class="member_info_open_all_right">
-                                    <div>
-                                        <label for="join_member">參與會員 :</label>
-                                        <input type="text" value="XXX XXX XXX" id="join_member" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_day">活動日期 :</label>
-                                        <input type="date" id="event_day"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_dday">報名截止日 :</label>
-                                        <input type="date" id="event_dday"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="togethertime">集合時間 :</label>
-                                        <input type="text" id="togethertime"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="togetherposition">集合地點 :</label>
-                                        <input type="text" id="togetherposition"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="lines">路線 :</label>
-                                        <input type="text" id="lines"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="viewpoints">景點 :</label>
-                                        <input type="text" id="viewpoints"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="people">人數 :</label>
-                                        <input type="text" id="people"  readonly>
-                                    </div>
-                                    <div>
-                                        <label for="event_introduce">活動介紹 :</label>
-                                        <textarea name="" id="" cols="30" rows="5" id="event_introduce"  readonly></textarea>
-                                    </div>
-                                    <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
+                                        <div>
+                                            <label for="event_dday">報名截止日 :</label>
+                                            <input type="date" id="event_dday" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="togethertime">集合時間 :</label>
+                                            <input type="text" id="togethertime" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="togetherposition">集合地點 :</label>
+                                            <input type="text" id="togetherposition" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="lines">路線 :</label>
+                                            <input type="text" id="lines" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="viewpoints">景點 :</label>
+                                            <input type="text" id="viewpoints" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="people">人數 :</label>
+                                            <input type="text" id="people" readonly>
+                                        </div>
+                                        <div>
+                                            <label for="event_introduce">活動介紹 :</label>
+                                            <textarea name="" id="" cols="30" rows="5" id="event_introduce"
+                                                readonly></textarea>
+                                        </div>
+                                        <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
                                     <p>活動日期 :<span>2020/02/29</span></p>
                                     <p>集合時間 :<span>12:00</span></p>
                                     <p>集合地點 :<span>XXXXXX</span></p>
                                     <p>揪團期程 :<span>4小時</span></p> -->
-                                </div>
-                                <div class="member_info_open_all_bottom">
-                                    <div class="btnPink">修改</div>
-                                    <a class="btnPink" href="#" style="display: none;">確認</a>
-                                    <!-- <div class="btnPink">
+                                    </div>
+                                    <div class="member_info_open_all_bottom">
+                                        <div class="btnPink">修改</div>
+                                        <a class="btnPink" href="#" style="display: none;">確認</a>
+                                        <!-- <div class="btnPink">
                                         修改
                                     </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
+                                        <a class="btnPink" href="#">刪除</a>
+                                        <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                        <!-- <button class="btnPink">
                                         刪除
                                     </button> -->
-                                </div>
+                                    </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                     <div class="member_info_join minheightbig" style="display: none;">
                         <div class="member_info_join_all minheightmiddle">
                             <div class="member_info_join_all_all">
-                                <h1>
-                                    今天心情好所以想出門走走
-                                </h1>
+                                <input type="text" value="今天心情好所以想出門走走" readonly>
                                 <div class="member_info_join_all_left">
                                     <div>
                                         <div>
@@ -549,35 +556,36 @@
                                     </div>
                                     <div>
                                         <label for="event_day">活動日期 :</label>
-                                        <input type="date" id="event_day"  readonly>
+                                        <input type="date" id="event_day" readonly>
                                     </div>
                                     <div>
                                         <label for="event_dday">報名截止日 :</label>
-                                        <input type="date" id="event_dday"  readonly>
+                                        <input type="date" id="event_dday" readonly>
                                     </div>
                                     <div>
                                         <label for="togethertime">集合時間 :</label>
-                                        <input type="text" id="togethertime"  readonly>
+                                        <input type="text" id="togethertime" readonly>
                                     </div>
                                     <div>
                                         <label for="togetherposition">集合地點 :</label>
-                                        <input type="text" id="togetherposition"  readonly>
+                                        <input type="text" id="togetherposition" readonly>
                                     </div>
                                     <div>
                                         <label for="lines">路線 :</label>
-                                        <input type="text" id="lines"  readonly>
+                                        <input type="text" id="lines" readonly>
                                     </div>
                                     <div>
                                         <label for="viewpoints">景點 :</label>
-                                        <input type="text" id="viewpoints"  readonly>
+                                        <input type="text" id="viewpoints" readonly>
                                     </div>
                                     <div>
                                         <label for="people">人數 :</label>
-                                        <input type="text" id="people"  readonly>
+                                        <input type="text" id="people" readonly>
                                     </div>
                                     <div>
                                         <label for="event_introduce">活動介紹 :</label>
-                                        <textarea name="" id="" cols="30" rows="5" id="event_introduce"  readonly></textarea>
+                                        <textarea name="" id="" cols="30" rows="5" id="event_introduce"
+                                            readonly></textarea>
                                     </div>
                                     <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
                                     <p>活動日期 :<span>2020/02/29</span></p>

@@ -113,31 +113,36 @@ $(document).ready(function(){
     });
     //full-screen-btn
     $('.full-screen-btn').click(function(){
-        window.scrollTo(0, 784);
         $(this).toggleClass('hide-full-screen-btn');
         $('.game-container').css({
             width: '100vw',
             height: '100vh',
-            // transform: 'translate(-8.5%, 0)',
+            position: 'fixed',
+            top: '0',
+            left: '0',
             'z-index': '111'
         });
         $('.fuda-container').css({
-            bottom: '15px',
+            position: 'fixed',
+            top: '30px',
+            left: '100px',
             'z-index': '111'
         });
         $('body').toggleClass('scroll-lock');
         $('.normal-screen-btn').toggleClass('hide-full-screen-btn');
-        window.scrollTo(2200, 784);
     });
     $('.normal-screen-btn').click(function(){
         $(this).toggleClass('hide-full-screen-btn');
         $('.game-container').css({
             width: '63%',
             height: '550px',
+            position: 'relative',
             'z-index': '0'
         });
         $('.fuda-container').css({
-            bottom: '15px',
+            position: 'absolute',
+            top: '390px',
+            left: '140px',
             'z-index': '1'
         });
         $('body').toggleClass('scroll-lock');
@@ -157,39 +162,58 @@ $(document).ready(function(){
         $(window).on('keydown',function(e){
             e.preventDefault();
             //控制不能走出地圖邊界
-            if(e.keyCode == 37 && parseInt($('.game-map-container').css('left')) <= 1401){
+            if(e.keyCode == 37 && parseInt($('.game-map-container').css('left')) <= 1348){
                 $('.walking').css('transform','scaleX(-1)');
                 var left = parseInt($('.game-map-container').css('left'));
                 $('.game-map-container').css('left',left+10);
-            } else if(e.keyCode == 39 && parseInt($('.game-map-container').css('left')) >= -837){
+            } else if(e.keyCode == 39 && parseInt($('.game-map-container').css('left')) >= -464){
                 $('.walking').css('transform','scaleX(1)');
                 var left = parseInt($('.game-map-container').css('left'));
                 $('.game-map-container').css('left',left-10);
-            } else if(e.keyCode == 38 && parseInt($('.game-map-container').css('top')) <= 1239){
+            } else if(e.keyCode == 38 && parseInt($('.game-map-container').css('top')) <= 2425){
                 var top = parseInt($('.game-map-container').css('top'));
                 $('.game-map-container').css('top',top+10);
-            } else if(e.keyCode == 40 && parseInt($('.game-map-container').css('top')) >= 109){
+            } else if(e.keyCode == 40 && parseInt($('.game-map-container').css('top')) >= 535){
                 var top = parseInt($('.game-map-container').css('top'));
                 $('.game-map-container').css('top',top-10);
             }
             console.log(`Top: ${parseInt($('.game-map-container').css('top'))}, Left: ${parseInt($('.game-map-container').css('left'))}`);
-            //spot1 trigger
-            if(parseInt($('.game-map-container').css('top')) >= 679 && parseInt($('.game-map-container').css('top')) <= 859 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
-                $('.spot1').css({
-                    filter: 'brightness(2.8)'
-                });
-                setTimeout(function(){
-                    if(parseInt($('.game-map-container').css('top')) >= 679 && parseInt($('.game-map-container').css('top')) <= 859 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+            //手機版和全螢幕的關卡觸發判別
+            if(!($('.full-screen-btn').hasClass('hide-full-screen-btn'))){
+                //spot1 trigger
+                if(parseInt($('.game-map-container').css('top')) >= 1179 && parseInt($('.game-map-container').css('top')) <= 1359 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
+                    $('.spot1').css({
+                        filter: 'brightness(2.8)'
+                    });
+                    setTimeout(function(){
+                        if(parseInt($('.game-map-container').css('top')) >= 1179 && parseInt($('.game-map-container').css('top')) <= 1359 && parseInt($('.game-map-container').css('left')) >= 82 && parseInt($('.game-map-container').css('left')) <= 272){
+                            $('.game-modal').removeClass('hide-game-modal');
+                        }
+                    }, 3000);
+                } else {
+                    $('.spot1').css({
+                        filter: 'brightness(1)'
+                    });
+                }
             } else {
-                $('.spot1').css({
-                    filter: 'brightness(1)'
-                });
+                //spot1 trigger
+                if(parseInt($('.game-map-container').css('top')) >= 1516 && parseInt($('.game-map-container').css('top')) <= 1666 && parseInt($('.game-map-container').css('left')) >= 544 && parseInt($('.game-map-container').css('left')) <= 734){
+                    $('.spot1').css({
+                        filter: 'brightness(2.8)'
+                    });
+                    setTimeout(function(){
+                        if(parseInt($('.game-map-container').css('top')) >= 1516 && parseInt($('.game-map-container').css('top')) <= 1666 && parseInt($('.game-map-container').css('left')) >= 544 && parseInt($('.game-map-container').css('left')) <= 734){
+                            $('.game-modal').removeClass('hide-game-modal');
+                        }
+                    }, 3000);
+                } else {
+                    $('.spot1').css({
+                        filter: 'brightness(1)'
+                    });
+                }
             }
         });
-        $('.opt1, .opt2, .opt3').click(function(){
+        $('.test-area-spot1 .opt1, .test-area-spot1 .opt2, .test-area-spot1 .opt3').click(function(){
             if($(this).hasClass('opt3')){
                 $('.test').text('恭喜答對！！！');
                 $(this).css({
@@ -200,15 +224,15 @@ $(document).ready(function(){
                 $('.close-modal').click(function(){
                     $('.game-modal').addClass('hide-game-modal');
                 });
-                $('.check-box').eq(1).find('img').removeClass('hide-check');
+                $('.check-box').eq(1).find('img').addClass('show-check');
             } else {
-                $('.test').text('你答錯了！！！！正確答案如下！！');
+                $('.test-area-spot1 .test').text('你答錯了！！！！正確答案如下！！');
                 $(this).css({
                     'background-color': '#A9381D',
                     border: '1px solid #A9381D',
                     'border-radius': '5px'
                 });
-                $('.opt3').css({
+                $('.test-area-spot1 .opt3').css({
                     'background-color': '#D3E9F0',
                     border: '1px solid #D3E9F0',
                     'border-radius': '5px'
@@ -217,8 +241,30 @@ $(document).ready(function(){
                     $('.game-modal').addClass('hide-game-modal');
                 });
             }
-            $('.opt1, .opt2, .opt3').addClass('click-disabled');
+            $('.test-area-spot1 .opt1, .test-area-spot1 .opt2, .test-area-spot1 .opt3').addClass('click-disabled');
+            updateProgress();
         });
+        //progress bar update
+        
+        
+        function updateProgress(){
+            //check checks
+            var checks = 0;
+            for(var i=0;i<5;i++){
+                if($('.check-box').eq(i).find('img').hasClass('show-check')){
+                    checks = checks +1;
+                }
+            }
+            //paint progress-bar
+            $('.progress').css({
+                width: `${(checks-1)*20}%`
+            });
+            for(var j=0;j<=checks;j++){
+                $('.index').eq(j-1).css({
+                    'background-color': '#c45c5c'
+                });
+            }
+        }
     });
     //Google map
     $('.switch').on('click', function(){

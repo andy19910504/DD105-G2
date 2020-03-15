@@ -1,3 +1,11 @@
+@import './base/var.scss';
+@mixin card($height,) {
+    width: 340px;
+    height: $height;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+}
+
 //愛心數、時間排列
 .selector select {
     width: 190px;
