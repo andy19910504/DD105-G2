@@ -95,7 +95,6 @@ $("#login_register").click(function(){
     //密碼規則
     //至少一數字一英文
     let psw_check =/(?=.*[a-z])(?=.*[0-9])/i;
-    // let psw_check =/^[a-zA-Z0-9]*$/;
     if(psw_check.test(document.getElementById("register_psw").value)){
     }else{
         alert("密碼至少英數字各一");
