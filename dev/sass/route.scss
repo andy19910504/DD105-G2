@@ -548,14 +548,26 @@
         width: 100px;
         top: -5px;
         right:60px;
-        transition:opacity .5s;
+        z-index: 2;
     }
     .flower2{
         width: 80px;
         top: 0px;
         left:80px;
-        transition:opacity .5s;
-
+        z-index: 2;
+    }
+    .tree19{
+        width: 80px;
+        top: -40px;
+        left: 50px;
+        transition:opacity .5s .1s;
+    }
+    .tree20{
+        width: 120px;
+        top: 0;
+        right: -10px;
+        z-index: 3;
+        transition:opacity .5s .5s;
     }
     .grass3{
         width:200px;
@@ -570,7 +582,7 @@
         transition:opacity .5s .6s;
     }
     .plant{
-        width: 100px;
+        width: 65px;
         bottom: 0;
         left: 85px;
         transition:opacity .5s .8s;
@@ -607,10 +619,11 @@
         left: 140px;
         transition:opacity .5s .8s;
     }
-    .flower3{
-        width: 200px;
-        bottom:20px;
-        right:0px;    
+    .tree18{
+        width: 180px;
+        bottom:40px;
+        right:-10px;
+        filter: blur(.3px);
     }
     .plant3{
         width: 45px;

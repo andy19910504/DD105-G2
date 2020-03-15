@@ -632,17 +632,27 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
   border-radius: 5px; }
-  .member_info_open_all_all h1 {
-    font-size: 24px;
-    text-align: center;
-    padding: 3% 0;
-    margin-bottom: 3%; }
+
+.member_info_open_all_all > form > input {
+  width: 80%;
+  font-family: "微軟正黑體";
+  pointer-events: none;
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
+  padding: 1% 0%;
+  margin-bottom: 3%;
+  display: block;
+  background-color: unset;
+  border: unset; }
+
+.member_info_open_all_all > form > input:focus {
+  border: 3px dashed #a5361c; }
 
 .member_info_open_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
   .member_info_open_all_all:hover .member_info_open_all_left > label > div > div > img {
-    transform: scale(1.1);
-    transition: all 0.8s; }
+    transform: scale(1.1); }
   .member_info_open_all_all:hover .member_info_open_all_left > label > div {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); }
 
@@ -691,7 +701,7 @@ blockquote, q {
   padding: 1% 0;
   font-size: 18px;
   display: inline-block;
-  width: 80%;
+  width: 75%;
   padding-left: 2%;
   resize: none; }
 
@@ -711,7 +721,7 @@ blockquote, q {
     display: inline-block;
     width: 75%;
     border: unset;
-    background-image: url(../img/member/hip-square.png);
+    background-color: unset;
     height: 30px;
     pointer-events: none; }
   .member_info_open_all_right > div textarea {
@@ -757,7 +767,7 @@ blockquote, q {
     width: 100%; } }
 
 @media screen and (max-width: 575px) {
-  .member_info_open_all_all h1 {
+  .member_info_open_all_all > form > input {
     font-size: 18px; }
   .member_info_open_all_right {
     font-size: 16px; }
@@ -779,11 +789,19 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
   border-radius: 5px; }
-  .member_info_join_all_all h1 {
-    font-size: 24px;
-    text-align: center;
-    padding: 3% 0;
-    margin-bottom: 3%; }
+
+.member_info_join_all_all > input {
+  width: 80%;
+  font-family: "微軟正黑體";
+  pointer-events: none;
+  margin: 0 auto;
+  font-size: 24px;
+  text-align: center;
+  padding: 1% 0%;
+  margin-bottom: 3%;
+  display: block;
+  background-color: unset;
+  border: unset; }
 
 .member_info_open_all_left > div > div > img {
   transition: all 0.8s; }
@@ -827,7 +845,7 @@ blockquote, q {
   padding: 1% 0;
   font-size: 18px;
   display: inline-block;
-  width: 80%;
+  width: 75%;
   padding-left: 2%;
   resize: none; }
 

@@ -424,12 +424,19 @@
 
 //三張卡片
 .eventWrap{
-    margin: 40px 0;
+    margin: 55px 0;
 }
 @media screen and (max-width:767px){
     div.eventWrap{
         margin: 0px auto;
     }
+}
+.eventCard{
+    transition: 1s;
+  
+}
+.eventCard:hover{
+    transform: translateY(-10px);
 }
 //有星星卡片的上排
 .cardTop{
@@ -471,6 +478,7 @@
     }
       
 }
+
 // 隱藏卡片區 
 .cardBox2{
     display: none;
@@ -558,8 +566,6 @@
                     background-position: center;
                     background-image: url(../img/event/event_step3.png);
                     font-size: $fzContent;
-                    overflow: hidden;
-                    //border: 1px solid #6a9cb0;
                     
                     p{
                         margin-bottom: 5px;
@@ -573,7 +579,9 @@
                         background-image: url(../img/event/event_stepOn.png);
                 }
     }
+
 }
+
 // 步驟圈圈color
 .color{
     background-image: url(../img/event/event_stepOn.png);
@@ -585,26 +593,41 @@
     display: block;
    
 }
-.swiper-container {
-    /* 設定幻燈片寬度跟高度 */
-    width: 200px;
-    height: 250px;
-}
 .chooseRoute{
     margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     .sliderWrap{
-        width: 1100px; 
+        width: 1040px; 
+        position: relative;
         overflow: hidden;
+        height: 250px;
+        //border: 1px solid red;
         .routeAllBox{
         text-align: center;
         display: flex;
         flex-direction: row;
-        // border: 1px solid green;
+        //border: 1px solid green;
         width: 1600px;
+        top: 0px;
+        left: 0px;
+        transition: left 1s;
+        position: absolute;
             .routeBox{
+                cursor: pointer;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 200px;
+                height: 250px;
+                margin:0px 30px;
+                font-size: $fzContent;
+                background-position: unset;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: 0.5s;
                 
                 .routeBoxBottom{
                     background-color:rgb(158, 207, 120);
@@ -613,25 +636,37 @@
                     height: 50px;
                     border-radius: 0 0 10px 10px;
                     p{
-                    color: rgb(255, 255, 255);
+                    color: white;
+                    box-shadow: $mediumShadow;    
                     line-height: 50px;
-                    letter-spacing: 2px;
+                    letter-spacing: 2.2px;
                     }
+                }
+                .addroute{
+                    width: 125px;
+                    height: 125px;
+                    border: unset;
+                    font-size: 18px;
+                    color: #1e1e1e;
+                    font-weight: bold;
+                    text-align: center;
+                    line-height: 160px;
+                    
+                    
+                    display: inline-block;
+                    border-radius: 50%;
+                    background-image: url(../img/element/btnCust.png);
+                    background-size: contain;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                    transition: filter .1s;
+                    cursor: pointer;
                 }
                 
             }
-            .routeBox{
-                cursor: pointer;
-                border-radius: 10px;
-                display: flex;
-                width: 200px;
-                height: 250px;
-                margin:  0 auto;
-                font-size: $fzContent;
-                background-position: unset;
-                background-size: contain;
-                background-repeat: no-repeat;
-                
+           
+            .routeBox:hover{
+                opacity: 0.75; 
+               
             }
             .routeBox:nth-child(1){
                 background-image: url(../img/event/event_route1_2.jpg);
@@ -651,10 +686,25 @@
     }
     .slideBtn{
         margin: 0 10px;
-        cursor: pointer;
-            img{
-                width: 100%;
-            }
+        text-align: center;
+        input{
+            
+            cursor: pointer; 
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: rgb(152, 207, 110);
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            line-height: 40px;
+            color:white;
+           
+        }
+    }
+    #btnLeft[disabled],#btnRight[disabled]{
+        opacity: 0.6;
+        text-align: center;
     }
     
 }
@@ -665,8 +715,9 @@
     // border: 1px solid #6a9cb0;
     width: 100%;
     p{
-        margin: 20px 0 20px 0px;
-        font-size: $fzContent;
+        margin: 0px 0 20px 0px;
+        font-size: 20px;
+        letter-spacing: 2px;
         color: $fcInfo;
     }
 }
@@ -685,7 +736,7 @@
     }
 }
 // 第2步驟block
-  .holdevent_step2content{
+.holdevent_step2content{
     display: none;
     height: 536px;
     width: 100%;
@@ -700,42 +751,77 @@
             input{
                 font-size: $fzContent;
                 color: $fcInfo;
+                letter-spacing: 1.2px;
+                padding-left: 5px;
+                cursor: pointer;
+                outline-style: none;
+
             }
             div{ //圖框
                 border-radius: 5px;
                 margin-top: 20px;
-                border: 3px dashed #6a9cb0;
+                background-color: #f5eec2;
+                border: 1px dashed #5b8f60;
                 width:480px;
                 height:265px;
             }
+            .holderPicBox{
+                text-align: center;
+                line-height: 265px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                color: $fcInfo;
+            }
         }
-        .holderPicBox{
-            
-            text-align: center;
-            line-height: 265px;
-            font-size: $fzContent;
-            color: $fcInfo;
-        }
-    }
-    .holderInfo{
+        .holderInfo{
         //border: 1px solid purple;
-        width: 50%;
+        max-width: 50%;
         font-size: $fzContent;
         align-items: center;
         color: $fcInfo;
         padding: 0px 70px;
-        div{
-            margin: 15px 0;
-            input{
-                width: 220px;
-                height: 35px;
-            }
-            label{
-                margin-right:10px;
+            div{
+                margin: 15px 0;
+                input{
+                    width: 220px;
+                    height: 35px;
+                    color: $fcInfo;
+                    font-size: $fzContent;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    -webkit-transition: .3s;
+                    transition: .3s;
+                    padding: 3px 0px;
+                    border: 1px solid #90b494;
+                }
+                
+                label{
+                    margin-right:10px;
+                }
+                select{
+                    border-radius: 5px;
+                    transition: .3s;
+                    height: 35px;
+                    background-color: #fff;
+                    border: 1px solid #90b494;
+                    color: $fcInfo;
+                    font-size: $fzContent;
+                    padding: 5px 0px;
+                }
+                textarea{
+                    font-size: $fzContent;
+                    border-radius: 5px;
+                    resize : none;
+                    color: $fcInfo;
+                    padding: 3px 0px;
+                    background-color: #fff;
+                    border: 1px solid #90b494;
+                    
+                }
             }
         }
-    }
-  }
+    }   
+}
 // 第3步驟block
 .holdevent_step3content{
     display: none;//
@@ -753,14 +839,14 @@
            flex-direction: column;
            padding: 15px 60px;
            .holderCoverPic{
-               margin-top: 10px;
+               
                img{
                     border-radius: 5px;
                     width: 100%;
                }
            }
            .holderCoverText{
-                margin: 20px 0;
+                margin: 10px 0;
                 letter-spacing: 1.2px;
                 .title{
                     font-weight: 550;
@@ -773,16 +859,15 @@
        .holderCoverInfo{
             line-height: 2;
             letter-spacing: 1.2px;
-            padding:45px 85px;
+            padding:12px 75px;
             width: 50%;
-           
             table{
                
                
                 tr{
-                    height: 60px;
+                    height: 50px;
                     td:nth-child(1){
-                        width:110px;
+                        width:145px;
                     }
                 }
            }
@@ -797,21 +882,21 @@
     font-size: $fzContent;
     color: $fcContent;
     display: flex;
-    padding-top: 100px;
+    padding-top: 85px;
     letter-spacing: 1.2px;
     justify-content: center;
     line-height: 1.75;
+    
     .detaileventPic{
-        width: 50%;
         padding: 10px 10px 10px 25px;
+        margin: 0px 30px 0px 0px;
         .title{
             display:flex;
             position: relative;
             .eventInfotitle{
                 font-size: $fzTitle;
                 font-weight: 550;
-                
-                margin-right: 150px;
+              
             }
             .dotWrap{
                 right: 25px;
@@ -833,21 +918,28 @@
             }
         }
         .detaileventPicbox{
-            width: 550px;
+            width: 500px;
+            margin: 15px 0;
             padding-top: 20px;
             img{
                 width:100%;
                 border-radius: 5px;
             }
         }
+        .detaileventRoute{
+            margin: 0px 0 20px 0px;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: $fcInfo;
+        }
     }
     .detaileventText{
-        padding: 70px 0px 0px 20px;
+        padding: 95px 0px 0px 55px;
         width: 45%;
         .eventInforow{
             height: 45px;
             line-height: 45px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             .eventrowTitle{
@@ -875,8 +967,8 @@
 .lightbox_report_info{
     position: fixed;
     background-color: #d4d3d3;
-    background-image: url(../img/event/event_cardback.png);
-    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+    background-image: url(../img/event/greenBg2.png);
+    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
     width: 20%;
     height:40%;
     margin: auto;
@@ -890,11 +982,14 @@
         font-size: $fzTitle;
         margin: 30px 0;
         text-align: center;
+        color: $fcInfo;
+        font-size: bold;
     }
     form{
         font-size: 20px;
-        padding: 0 25px ;
+        padding: 0 35px ;
         margin: 35px auto;
+        color: $fcInfo;
         input{
             margin: 15px;
         }
