@@ -47,6 +47,10 @@
 }
 .btnRed {
     position: absolute;
+    right: 200px;
+}
+.confirm {
+    position: absolute;
     right: 0;
 }
 .map-container {
@@ -85,7 +89,15 @@
     .btnRed {
         position: absolute;
         top: 625px;
-        left: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: block;
+        margin: 10px auto;
+    }
+    .confirm {
+        position: absolute;
+        top: 700px;
+        left: 50%;
         display: block;
         margin: 10px auto;
     }
