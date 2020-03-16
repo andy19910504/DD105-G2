@@ -8,7 +8,7 @@ function loginInfoBack() {
 
         member = JSON.parse(xhr.responseText);
         console.log(member);
-        xhr.open("get", "../php/loginInfoForBack.php", true);
+        xhr.open("get", "./php/loginInfoForBack.php", true);
         xhr.send(null);
 
     };
@@ -31,14 +31,14 @@ window.addEventListener("load", function () {
                 } else {
                     member = JSON.parse(xhr.responseText);
                     console.log(member);
-                    location.href = "../backSample.html";
+                    location.href = "./backSample.html";
                 }
             } else {
                 alert(xhr.status);
             }
 
         }
-        xhr.open("Post", "../loginForBack.php", true);
+        xhr.open("Post", "./php/loginForBack.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(data_info);
 
