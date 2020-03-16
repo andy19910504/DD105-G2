@@ -1,92 +1,92 @@
 function $id(id) {
     return document.getElementById(id);
 }
-
+let member;
 function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
 
-        if (member.memAcc) {
-            // 將會員ICON更換成會員的大頭貼
-            $id("memPhoto").src = member.memPhoto;
-            // 顯示會員有的點數量
-            $(".point").innerText=member.memPoint;
+        if (member.memId) {
             // 登入 換成 登出
-            $(".sign").innerText = "登出";
+            $(".sign").text("登出");
         }
     }
-    xhr.open("get", "getLoginInfo.php", true);
+    xhr.open("get", "./php/getLoginInfo.php", true);
     xhr.send(null);
 }; //
 
 window.addEventListener("load", function () {
-    // 檢查是否為登入狀態
+    // // 檢查是否為登入狀態
     getLoginInfo();
 
-    // 按右上 #sign，當是登入...；當是登出時...
+    // 按右上 .sign，當是登入...；當是登出時...
     $(".sign").click(function (e) {
         //檢查是登入或是登出狀態
         //如果是登入，就顯示燈箱
-        //如果是登出，將登入者資料清除，並且將 #sign 登出改成登入
-
-        if ($('.sign').innerHTML == "登入") {
-            e.preventDefault();
+        //如果是登出，將登入者資料清除，並且將 .sign 登出改成登入
+        e.preventDefault();
+        if (this.innerHTML == "登入") {
             $(".login").attr("style", "display:block");
         } else { // 登出
             // 至 server端，登出 session
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status == 200) {  //自server正確的登出
-                    // 將會員大頭貼換成會員ICON
-                    $id("memPhoto").src = "./img/header/navMember.png";
-                    // 點數顯示
-                    $(".point").innerText="";
-                    $('.sign').innerHTML = '登入';
+                    $('.sign').text("登入");
                 } else {
                     alert(xhr.status);
                 }
             }
-            xhr.open("get", "logout.php", true);
+            xhr.open("get", "./php/logout.php", true);
             xhr.send(null);
+
         }
     });
 
     // 在燈箱按登入
     // step1 判斷登入者帳號、密碼是否填寫正確
     // step2 至server端取得登入者的資訊
-    $("#login_login").click(function () {
+    $("#login_login").click(function (e) {
         //
-        let memId = $id("login_acc").value;
-        let memPsw = $id("login_psw").value;
+        e.preventDefault();
+        let login_acc = $id("login_acc").value;
+        let login_psw = $id("login_psw").value;
         // 登入資訊
-        let data_info = `member_account=${memId}&member_password=${memPsw}`;
-        if (memId.length == 0) {
+        // let data_info = `member_account=${login_acc}&member_password=${login_psw}`;
+        let data_info = `memId=${login_acc}&memPsw=${login_psw}`;
+        console.log(data_info);
+        if (login_acc.length == 0) {
             alert("請填寫正確的帳號");
             this.focus();
             return
         }
-        if (memPsw.length == 0) {
+        if (login_psw.length == 0) {
             alert("請填寫正確的密碼");
             this.focus();
             return
         }
-        
+
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
-                member = JSON.parse(xhr.responseText);
-                // 將會員ICON更換成會員的大頭貼
-                $id("memPhoto").src = member.memPhoto;
-                // 顯示會員有的點數量
-                $(".point").innerText=member.memPoint;
-                $(".sign").innerText = "登出";
+
+                if (xhr.responseText.indexOf("error") != -1) {
+                    alert("請填寫正確的帳號或密碼哦！");
+                    // 直接清除錯誤的登入資訊
+                    xhr.open("get", "./php/logout.php", true);
+                    xhr.send(null);
+                } else {
+                    member = JSON.parse(xhr.responseText);
+                    console.log(member);
+                    $(".sign").text("登出");
+                }
             } else {
                 alert(xhr.status);
             }
 
         }
-        xhr.open("Post", "LoginForm.php", true);
+        xhr.open("Post", "./php/loginForFront.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(data_info);
 

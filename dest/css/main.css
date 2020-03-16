@@ -271,9 +271,12 @@ header.fullHeader .memberIcon {
 header.fullHeader .memberIcon div {
   margin-right: 15px;
   cursor: pointer; }
+  header.fullHeader .memberIcon div a {
+    display: inline-block; }
 
 header.fullHeader .memberIcon div:last-child {
-  margin-right: 0px; }
+  margin-right: 0px;
+  cursor: unset; }
 
 header.hamburgerHeader {
   width: 100%;
