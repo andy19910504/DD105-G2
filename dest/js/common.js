@@ -1,3 +1,12 @@
+// 引入 login
+import ('./loginForFront.js');
+
+// 引入 filter
+import ('./filter.js');
+
+// 引入 chatBot
+import ('./chatBot.js');
+
 // goTop
 $(function () {
     $("#btnGoTop").click(function (e) {
@@ -22,11 +31,4 @@ $(function(){
   
 });
 
-// 引入 filter
-import ('./filter.js');
 
-// 引入 chatBot
-import ('./chatBot.js');
-
-// 引入 login
-import ('./loginForFront.js');

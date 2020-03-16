@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 // if( isset($_SESSION["member_account"])){ // 已登入
 // 	$member = [
 //         "memNum"=>$_SESSION["member_number"],
