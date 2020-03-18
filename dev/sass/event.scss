@@ -525,13 +525,16 @@
     border-radius: 6px;
     padding: 0 1% 1.5%;
     background-image: url(../img/event/greenBg2.png);
+    background-size: cover;
     box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
     display: flex;//
     flex-direction: column;
-    width:1200px;
+    width:100%;
+    max-width: 1200px;
     height:750px;
     border-radius: 15px;
     align-items: center;
+    overflow: hidden;
     .holdevent_title{
         text-align: center;
         color:$fcContent;
@@ -542,11 +545,13 @@
         letter-spacing: 1.875px;
         width: 200px;
     }
+    .stepALL{
+        height: 536px;
+        width: 100%;
+    }
     form{
         height: 536px;
-        .stepALL{
-            height: 536px;
-        }
+        
     }
     .holdevent_step{
         margin: 10px auto;
@@ -581,6 +586,12 @@
     }
 
 }
+@media screen and (max-width:1200px){
+    .lightbox_holdevent_info{
+      width: 90%;
+    }
+      
+}
 
 // 步驟圈圈color
 .color{
@@ -599,17 +610,18 @@
     justify-content: center;
     align-items: center;
     .sliderWrap{
-        width: 1040px; 
+        width: 100%;
         position: relative;
         overflow: hidden;
         height: 250px;
+        
         //border: 1px solid red;
         .routeAllBox{
         text-align: center;
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         //border: 1px solid green;
-        width: 1600px;
         top: 0px;
         left: 0px;
         transition: left 1s;
@@ -619,7 +631,7 @@
                 border-radius: 10px;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-around;;
                 width: 200px;
                 height: 250px;
                 margin:0px 30px;
@@ -635,11 +647,12 @@
                     width: 200px;
                     height: 50px;
                     border-radius: 0 0 10px 10px;
+                    box-shadow: $mediumShadow;
                     p{
                     color: white;
-                    box-shadow: $mediumShadow;    
                     line-height: 50px;
                     letter-spacing: 2.2px;
+                   
                     }
                 }
                 .addroute{
@@ -680,10 +693,27 @@
             .routeBox:nth-child(4),.routeBox:nth-child(5){
                 background-image: url(../img/event/event_cusRout.jpg);
             }
+            @media screen and (max-width:1200px){
+                .routeBox{
+                    width:200px;
+
+                }
+                  
+            }
             
         }
     
     }
+   
+    @media screen and (max-width:1200px){
+        .sliderWrap{
+            width:80%;
+
+        }
+          
+    }
+    
+  
     .slideBtn{
         margin: 0 10px;
         text-align: center;
@@ -708,6 +738,7 @@
     }
     
 }
+
 //選擇路線下方文字
 .routeClick{
     margin: 60px auto;
@@ -721,7 +752,12 @@
         color: $fcInfo;
     }
 }
-
+@media screen and (max-width:1200px){
+    .chooseRoute{
+        width:90%;
+    }
+      
+}
 
 //上下一步按鈕
 .stepBtn{
