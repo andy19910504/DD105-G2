@@ -68,7 +68,7 @@ div.postWrap{
 @media screen and (max-width:767px){
     div.postWrap{
         width: 100%;
-        margin-top: 110px;
+        margin-top: 20px;
     
         ul.stepBar{
             width: 95%;
@@ -124,6 +124,12 @@ img.postSubTitle{
         width: 170px;
     }
 }  
+@media screen and (max-width:767px){
+    img.postSubTitle{
+        display: none;
+    }
+}  
+
 
 //--------------裝飾小圖--------------
 //左邊兩張

@@ -58,18 +58,33 @@
                     <img src="./img/mapgame/label.png" alt="" class="label hide-label">
                 </div>
                 <div class="switch">
-                    <div class="mapMode off">GPS地圖模式</div>
+                    <div class="mapMode off">GPS地圖</div>
                     <div class="button"></div>
-                    <div class="gameMode">小遊戲模式</div>
+                    <div class="gameMode">小遊戲</div>
                 </div>
+                <img src="./img/mapgame/filterBgImage.png" alt="" class="hr">
             </div>
             <div class="game-container">
-                <img src="./img/mapgame/map.jpg" alt="" class="map">
+                <div class="game-map-container">
+                    <img src="./img/mapgame/big-map.jpg" alt="" class="map">
+                    <img src="./img/mapgame/spot/route1/梁實秋故居.jpg" alt="" class="spot1">
+                </div>
                 @@include('./layout/btnRed.html',{
                     "link":"#",
                     "innerText":"start"
                 })
                 <img src="./img/mapgame/gou.gif" alt="" class="walking">
+                <div class="game-modal hide-game-modal">
+                    <div class="test-area-spot1 test-area">
+                        <div class="close-modal">Close</div>
+                        <div class="test">Q: 章魚是魚嗎？</div>
+                        <div class="opt1">1. 是</div>
+                        <div class="opt2">2. 不是</div>
+                        <div class="opt3">3. 介於是和不是之間</div>
+                    </div>
+                </div>
+                <div class="full-screen-btn">#</div>
+                <div class="normal-screen-btn hide-full-screen-btn">#</div>
             </div>
             <div class="map-container hide-container">
                 <div id="map"></div>
@@ -78,23 +93,23 @@
                 <table>
                     <tr>
                         <td class="spot">青田六七</td>
-                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
+                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check show-check"></td>
                     </tr>
                     <tr>
                         <td class="spot">梁實秋故居</td>
-                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check hide-check"></td>
+                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
                         <td class="spot">長慶廟</td>
-                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check hide-check"></td>
+                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
                         <td class="spot">野草居食堂</td>
-                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check hide-check"></td>
+                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
                         <td class="spot">紀州庵</td>
-                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check hide-check"></td>
+                        <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr class="progress-container-row">
                         <td class="progress-container" colspan="2">
@@ -112,6 +127,18 @@
                 </table>
                 <img src="./img/mapgame/fuda.png" alt="" class="fuda">
             </div>
+            <!-- 手機版進度條 -->
+            <div class="progress-container-mobile">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                    <div class="index"></div>
+                </div>
+                <div class="indicator">闖關進度：20％</div>
+            </div>
             <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
 
@@ -120,8 +147,18 @@
         <div class="image"></div>
     </div>
 
+    <!-- manual-modal -->
+    <div class="manual-modal">
+        <div class="switch-button">小遊戲、地圖切換開關</div>
+        <div class="select-route">選擇路線</div>
+        <div class="start">按下按鈕開始闖關！</div>
+        <div class="direction-control">使用方向鍵控制人物走向</div>
+        <div class="status-info">闖關進度一覽表</div>
+        <img src="./img/mapgame/arrowKeys.png" alt="" class="arrow">
+    </div>
+
     <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxHAzDuEADlkr21Aqm0ng4BqfQ3LfmD6c"></script>
     <script src="./js/common.js"></script>
     <script src="./js/game.js"></script>
 </body>

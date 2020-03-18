@@ -1,55 +1,4 @@
 @charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  color: #1e1e1e;
-  text-decoration: none;
-  font-family: "微軟正黑體";
-  vertical-align: baseline; }
-
-/* remember to define focus styles! */
-:focus {
-  outline: 0; }
-
-body {
-  line-height: 1;
-  color: black;
-  background: white; }
-
-ol, ul {
-  list-style: none; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0; }
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: ""; }
-
-blockquote, q {
-  quotes: "" ""; }
-
-* {
-  box-sizing: border-box; }
-
 /*
      卡片：首頁、路線、心情、揪團，要使用的sample
     
@@ -171,7 +120,7 @@ div.eventWrap {
   @media screen and (max-width: 767px) {
     div.eventWrap div.eventCard {
       width: 300px;
-      margin: 7px 0px; }
+      margin: 15px 0px; }
       div.eventWrap div.eventCard div.dotWrap {
         margin: 5px 18px 0px 0px; }
       div.eventWrap div.eventCard div.eventPicWrap {
@@ -190,7 +139,7 @@ div.eventWrap {
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin-top: 130px; } }
+    margin-top: 20px; } }
 
 img.eventSubTitle {
   display: inline-block;
@@ -217,6 +166,10 @@ img.eventSubTitle {
   img.eventSubTitle {
     top: -130px;
     width: 170px; } }
+
+@media screen and (max-width: 767px) {
+  img.eventSubTitle {
+    display: none; } }
 
 img.baoPic {
   width: 130px;
@@ -259,59 +212,127 @@ img.potPic {
   img.potPic {
     display: none; } }
 
-.eventTitle {
-  padding-top: 10%;
+.wrapper {
   width: 100%;
-  margin: 0 auto; }
-  .eventTitle img {
+  overflow: hidden; }
+
+.titleFirst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-15deg);
+  animation: rotateMove 2s cubic-bezier(0.15, 0.76, 0.98, 0.4) alternate infinite; }
+
+@keyframes rotateMove {
+  from {
+    transform: rotate(-10deg); }
+  to {
+    transform: rotate(10deg); } }
+
+@media screen and (max-width: 575px) {
+  .titleLast {
     width: 100%; }
+  img.titleFirst {
+    width: 25%;
+    left: 15px; } }
 
 .eventContent {
+  width: 100%;
   max-width: 1200px;
   margin: 0px auto; }
-  .eventContent .newEvent {
+  .eventContent .newEventBlock {
     width: 100%;
     position: relative; }
-    .eventContent .newEvent .loudspeaker {
-      width: 110px;
-      position: absolute;
-      right: 120px;
-      bottom: 70px;
-      transform: rotateY(180deg); }
-    .eventContent .newEvent .newEventTitle {
+    .eventContent .newEventBlock .newEventTitle {
+      width: 100%;
       z-index: 10;
-      display: inline-block;
+      display: flex;
       position: absolute;
+      align-items: center;
       left: -185px;
-      top: -75px;
-      animation: subtitleAni .8s infinite alternate; }
-    .eventContent .newEvent #slideBoard {
+      top: -75px; }
+      .eventContent .newEventBlock .newEventTitle .newEventSubTitle {
+        animation: subtitleAni .8s infinite alternate; }
+      .eventContent .newEventBlock .newEventTitle .sectionSubTitleMobile {
+        margin: 20px auto;
+        padding: 10px;
+        letter-spacing: 3px;
+        border-radius: 20px;
+        font-size: 30px;
+        font-weight: bolder;
+        background-color: #116491;
+        color: #fff; }
+      @media screen and (min-width: 1365px) {
+        .eventContent .newEventBlock .newEventTitle div.sectionSubTitleMobile {
+          display: none; } }
+    @media screen and (max-width: 1365px) {
+      .eventContent .newEventBlock .newEventSubTitle {
+        display: none; } }
+    @media screen and (max-width: 1365px) {
+      .eventContent .newEventBlock .newEventTitle {
+        top: -40px;
+        right: 0;
+        left: 0;
+        margin: 0px auto;
+        align-items: center;
+        width: 100%; } }
+    .eventContent .newEventBlock #slideBoard {
       width: 100%;
       overflow: hidden;
       letter-spacing: 1.5px;
       line-height: 1.75; }
-      .eventContent .newEvent #slideBoard #content {
+      .eventContent .newEventBlock #slideBoard #content {
         position: relative;
         display: inline-flex; }
-        .eventContent .newEvent #slideBoard #content .newSlider {
+        .eventContent .newEventBlock #slideBoard #content .newSliderBox {
+          position: relative;
           display: flex;
-          float: left;
           justify-content: center;
-          width: 1200px;
-          justify-content: start;
-          cursor: pointer; }
-          .eventContent .newEvent #slideBoard #content .newSlider .newEventPic {
+          overflow: hidden; }
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic {
             background-color: #f2fbff;
-            padding: 30px 48px 50px 48px; }
-            .eventContent .newEvent #slideBoard #content .newSlider .newEventPic a {
-              display: inline-block; }
-          .eventContent .newEvent #slideBoard #content .newSlider .newEventText {
-            position: relative;
-            margin: 170px auto;
-            vertical-align: middle; }
-            .eventContent .newEvent #slideBoard #content .newSlider .newEventText p {
+            padding: 40px 45px 65px 45px;
+            border-radius: 2px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic img {
+              width: 100%; }
+          @media screen and (max-width: 1030px) {
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic {
+              padding: 40px 45px 65px 45px;
+              margin: 35px auto; } }
+          @media screen and (max-width: 767px) {
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventPic {
+              margin: 60px auto 30px auto; } }
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
+            margin: 170px auto; }
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText p {
               font-size: 24px;
               color: #646464; }
+          @media screen and (max-width: 1030px) {
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
+              margin: 55px auto; } }
+          @media screen and (max-width: 768px) {
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText {
+              margin: 0px auto; }
+            .eventContent .newEventBlock #slideBoard #content .newSliderBox .newEventText p {
+              font-size: 18px; } }
+        @media screen and (max-width: 1365px) {
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox {
+            margin: 55px auto; } }
+        @media screen and (max-width: 1030px) {
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox {
+            flex-direction: column;
+            margin: 40px auto;
+            text-align: center;
+            align-self: center; } }
+        @media screen and (max-width: 768px) {
+          .eventContent .newEventBlock #slideBoard #content .newSliderBox {
+            margin: 0px auto;
+            top: 0; } }
+
+@media screen and (max-width: 768px) {
+  .eventContent {
+    padding-top: 50px; } }
 
 #contentButton {
   /* border: 1px solid red; */
@@ -329,55 +350,162 @@ img.potPic {
   #contentButton li.clickMe {
     background-color: #589fb2; }
 
+@media screen and (max-width: 1030px) {
+  #contentButton {
+    display: none; } }
+
+.loudspeaker {
+  position: absolute;
+  right: 95px;
+  bottom: 70px;
+  z-index: 5; }
+
+@media screen and (max-width: 1030px) {
+  .loudspeaker {
+    display: none; } }
+
+.camera {
+  position: absolute;
+  top: -25px;
+  left: 525px;
+  width: 150px;
+  z-index: 15;
+  animation: turnRight 2s infinite alternate linear; }
+
+@keyframes turnRight {
+  0% {
+    transform: rotate(20deg); }
+  55% {
+    transform: rotate(18deg); } }
+
+@media screen and (max-width: 1365px) {
+  .camera {
+    display: none; } }
+
+.flashlight {
+  position: absolute;
+  width: 595px;
+  height: 446px;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all ease 0.2s;
+  opacity: 0;
+  animation: flashlight 5s linear infinite; }
+
+@keyframes flashlight {
+  56% {
+    opacity: 1; }
+  55%, 65% {
+    opacity: 0; } }
+
+@media screen and (max-width: 1030px) {
+  .flashlight {
+    width: 100%;
+    flex-direction: column;
+    margin: 0px auto; } }
+
 .cutLine {
   width: 100%;
   margin: 15px 0 80px 0; }
-  .cutLine img {
-    width: 100%; }
 
-.eventScan {
+@media screen and (max-width: 768px) {
+  .cutLine {
+    margin: 80px auto; } }
+
+.eventScanBlock {
   position: relative; }
-  .eventScan .airb {
-    width: 180px;
+  .eventScanBlock .airb1 {
+    width: 80px;
     position: absolute;
     top: 200px;
-    left: -220px; }
-  .eventScan .firework {
-    width: 180px;
+    left: -240px;
+    animation: airb1 6s infinite alternate; }
+
+@keyframes airb1 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, 55px); } }
+  .eventScanBlock .airb2 {
+    width: 100px;
     position: absolute;
-    top: 650px;
-    right: -175px; }
-  .eventScan .skylight {
-    width: 180px;
+    top: 380px;
+    left: -235px;
+    animation: airb1 5.5s infinite alternate; }
+  .eventScanBlock .airb3 {
+    width: 115px;
+    position: absolute;
+    top: 270px;
+    left: -145px;
+    animation: airb3 4s infinite alternate; }
+
+@keyframes airb3 {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, 35px); } }
+  .eventScanBlock .firework1 {
+    width: 100px;
+    position: absolute;
+    top: 720px;
+    right: -90px;
+    animation: fireworks 4s infinite; }
+
+@keyframes fireworks {
+  0% {
+    transform: scale(0); }
+  80% {
+    transform: scale(1); }
+  80% {
+    opacity: 0.75; }
+  85% {
+    opacity: 0.6; }
+  90% {
+    opacity: 0.3; }
+  100% {
+    opacity: 0; } }
+  .eventScanBlock .firework2 {
+    width: 110px;
+    position: absolute;
+    top: 665px;
+    right: -175px;
+    animation: fireworks 6s infinite; }
+  .eventScanBlock .firework3 {
+    width: 95px;
+    position: absolute;
+    top: 715px;
+    right: -255px;
+    animation: fireworks 7s infinite; }
+  .eventScanBlock .skyLight1 {
     position: absolute;
     top: 1210px;
-    left: -220px; }
-  .eventScan .catalog {
-    width: 100%;
-    position: relative;
-    margin: 60px 0; }
-    .eventScan .catalog:before {
-      content: "";
-      background-image: url(../img/event/event_bluepointl.png);
-      height: 30px;
-      width: 1200px;
-      position: absolute;
-      bottom: -40px; }
-    .eventScan .catalog ul {
-      display: flex;
-      flex-direction: row; }
-      .eventScan .catalog ul li {
-        font-size: 36px;
-        color: #1e1e1e;
-        margin: 10px 0px 0 0;
-        padding: 5px 25px;
-        cursor: pointer; }
-        .eventScan .catalog ul li.color {
-          background-image: url(../img/event/event_mark1.png);
-          height: 45px;
-          width: 200px; }
-        .eventScan .catalog ul li p {
-          font-family: 微軟正黑體; }
+    left: -235px;
+    width: 120px;
+    animation: skyLightAni 2s infinite alternate-reverse linear; }
+  .eventScanBlock .skyLight2 {
+    width: 65px;
+    position: absolute;
+    left: -145px;
+    top: 1420px;
+    animation: skyLightAni 1s infinite alternate-reverse linear; }
+
+@keyframes skyLightAni {
+  0% {
+    transform: translateY(0); }
+  0% {
+    transform: translateY(-10px); } }
+  @media screen and (max-width: 1500px) {
+    .eventScanBlock .airb1, .eventScanBlock .airb2, .eventScanBlock .airb3, .eventScanBlock .firework1, .eventScanBlock .firework2, .eventScanBlock .firework3, .eventScanBlock .skyLight1, .eventScanBlock .skyLight2 {
+      display: none; } }
+
+.selector {
+  display: flex; }
+
+@media screen and (max-width: 768px) {
+  .selector {
+    display: flex;
+    justify-content: flex-end; } }
 
 .selector select {
   width: 190px;
@@ -386,6 +514,56 @@ img.potPic {
   color: #646464;
   font-size: 16px; }
 
+@media screen and (max-width: 768px) {
+  .selector select {
+    width: 140px;
+    margin: 20px 0; } }
+
+.eventWrap {
+  margin: 55px 0; }
+
+@media screen and (max-width: 767px) {
+  div.eventWrap {
+    margin: 0px auto; } }
+
+.eventCard {
+  transition: 1s; }
+
+.eventCard:hover {
+  transform: translateY(-10px); }
+
+.cardTop {
+  display: flex;
+  justify-content: center; }
+
+.starMark {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  width: 270px;
+  padding-top: 6px;
+  padding-left: 3px;
+  font-size: 18px;
+  color: #646464; }
+
+@media screen and (max-width: 1199px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 250px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 1023px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 190px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 767px) {
+  .starMark {
+    padding: 5px 0 0px 10px;
+    width: 250px;
+    font-size: 16px; } }
+
 .cardBox2 {
   display: none; }
 
@@ -393,13 +571,9 @@ img.potPic {
   margin: 35px auto 0 auto;
   text-align: center; }
 
-.wrapper {
-  position: relative; }
-
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);
   display: none;
-  filter: alpha(opacity=0);
   height: 100%;
   width: 100%;
   z-index: 200;
@@ -421,9 +595,10 @@ img.potPic {
 
 .lightbox_holdevent_info, .lightbox_detailevent_info {
   position: relative;
-  background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  border-radius: 6px;
+  padding: 0 1% 1.5%;
+  background-image: url(../img/event/greenBg2.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
   width: 1200px;
@@ -435,7 +610,10 @@ img.potPic {
     color: #1e1e1e;
     font-size: 24px;
     font-weight: bold;
-    margin: 40px auto 20px auto; }
+    margin: 30px auto 15px auto;
+    padding: 10px 20px;
+    letter-spacing: 1.875px;
+    width: 200px; }
   .lightbox_holdevent_info form, .lightbox_detailevent_info form {
     height: 536px; }
     .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
@@ -447,19 +625,25 @@ img.potPic {
     justify-content: center; }
     .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
       margin: 0 55px;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       display: flex;
       flex-direction: column;
+      text-align: center;
       justify-content: center;
-      border-radius: 50%;
-      font-size: 18px;
-      border: 1px solid #6a9cb0; }
+      background-size: contain;
+      background-position: center;
+      background-image: url(../img/event/event_step3.png);
+      font-size: 18px; }
       .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
+        margin-bottom: 5px; }
+      .lightbox_holdevent_info .holdevent_step div .stepBox, .lightbox_detailevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
+    .lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
+      background-image: url(../img/event/event_stepOn.png); }
 
 .color {
-  background-color: #FFD66A; }
+  background-image: url(../img/event/event_stepOn.png); }
 
 .holdevent_step1content {
   height: 536px;
@@ -471,36 +655,96 @@ img.potPic {
   justify-content: center;
   align-items: center; }
   .chooseRoute .sliderWrap {
-    width: 1100px;
-    overflow: hidden; }
-    .chooseRoute .sliderWrap .routeBox {
+    width: 1040px;
+    position: relative;
+    overflow: hidden;
+    height: 250px; }
+    .chooseRoute .sliderWrap .routeAllBox {
       text-align: center;
       display: flex;
       flex-direction: row;
-      width: 1600px; }
-      .chooseRoute .sliderWrap .routeBox div {
+      width: 1600px;
+      top: 0px;
+      left: 0px;
+      transition: left 1s;
+      position: absolute; }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox {
         cursor: pointer;
-        background-color: #cce6f0;
-        border-radius: 3px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        line-height: 200px;
+        height: 250px;
+        margin: 0px 30px;
         font-size: 18px;
-        color: #646464; }
+        background-position: unset;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: 0.5s; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
+          background-color: #9ecf78;
+          align-self: flex-end;
+          width: 200px;
+          height: 50px;
+          border-radius: 0 0 10px 10px; }
+          .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom p {
+            color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            line-height: 50px;
+            letter-spacing: 2.2px; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .addroute {
+          width: 125px;
+          height: 125px;
+          border: unset;
+          font-size: 18px;
+          color: #1e1e1e;
+          font-weight: bold;
+          text-align: center;
+          line-height: 160px;
+          display: inline-block;
+          border-radius: 50%;
+          background-image: url(../img/element/btnCust.png);
+          background-size: contain;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          transition: filter .1s;
+          cursor: pointer; }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:hover {
+        opacity: 0.75; }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(1) {
+        background-image: url(../img/event/event_route1_2.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(2) {
+        background-image: url(../img/event/event_route2_2.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(3) {
+        background-image: url(../img/event/event_route3.jpg); }
+      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
+        background-image: url(../img/event/event_cusRout.jpg); }
   .chooseRoute .slideBtn {
     margin: 0 10px;
-    cursor: pointer; }
-    .chooseRoute .slideBtn img {
-      width: 100%; }
+    text-align: center; }
+    .chooseRoute .slideBtn input {
+      cursor: pointer;
+      font-size: 24px;
+      outline: none;
+      border: none;
+      background-color: #98cf6e;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      line-height: 40px;
+      color: white; }
+  .chooseRoute #btnLeft[disabled], .chooseRoute #btnRight[disabled] {
+    opacity: 0.6;
+    text-align: center; }
 
 .routeClick {
   margin: 60px auto;
   padding: 0px 95px;
   width: 100%; }
   .routeClick p {
-    margin: 20px 0 20px 0px;
-    font-size: 18px;
+    margin: 0px 0 20px 0px;
+    font-size: 20px;
+    letter-spacing: 2px;
     color: #646464; }
 
 .stepBtn {
@@ -525,31 +769,62 @@ img.potPic {
       width: 50%; }
       .holdevent_step2content .step2Info .holderPic input {
         font-size: 18px;
-        color: #646464; }
+        color: #646464;
+        letter-spacing: 1.2px;
+        padding-left: 5px;
+        cursor: pointer;
+        outline-style: none; }
       .holdevent_step2content .step2Info .holderPic div {
         border-radius: 5px;
         margin-top: 20px;
-        border: 3px dashed #6a9cb0;
+        background-color: #f5eec2;
+        border: 1px dashed #5b8f60;
         width: 480px;
         height: 265px; }
-    .holdevent_step2content .step2Info .holderPicBox {
-      text-align: center;
-      line-height: 265px;
+      .holdevent_step2content .step2Info .holderPic .holderPicBox {
+        text-align: center;
+        line-height: 265px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #646464; }
+    .holdevent_step2content .step2Info .holderInfo {
+      max-width: 50%;
       font-size: 18px;
-      color: #646464; }
-  .holdevent_step2content .holderInfo {
-    width: 50%;
-    font-size: 18px;
-    align-items: center;
-    color: #646464;
-    padding: 0px 70px; }
-    .holdevent_step2content .holderInfo div {
-      margin: 15px 0; }
-      .holdevent_step2content .holderInfo div input {
-        width: 220px;
-        height: 35px; }
-      .holdevent_step2content .holderInfo div label {
-        margin-right: 10px; }
+      align-items: center;
+      color: #646464;
+      padding: 0px 70px; }
+      .holdevent_step2content .step2Info .holderInfo div {
+        margin: 15px 0; }
+        .holdevent_step2content .step2Info .holderInfo div input {
+          width: 220px;
+          height: 35px;
+          color: #646464;
+          font-size: 18px;
+          background-color: #fff;
+          border-radius: 5px;
+          -webkit-transition: .3s;
+          transition: .3s;
+          padding: 3px 0px;
+          border: 1px solid #90b494; }
+        .holdevent_step2content .step2Info .holderInfo div label {
+          margin-right: 10px; }
+        .holdevent_step2content .step2Info .holderInfo div select {
+          border-radius: 5px;
+          transition: .3s;
+          height: 35px;
+          background-color: #fff;
+          border: 1px solid #90b494;
+          color: #646464;
+          font-size: 18px;
+          padding: 5px 0px; }
+        .holdevent_step2content .step2Info .holderInfo div textarea {
+          font-size: 18px;
+          border-radius: 5px;
+          resize: none;
+          color: #646464;
+          padding: 3px 0px;
+          background-color: #fff;
+          border: 1px solid #90b494; }
 
 .holdevent_step3content {
   display: none;
@@ -565,13 +840,11 @@ img.potPic {
       display: flex;
       flex-direction: column;
       padding: 15px 60px; }
-      .holdevent_step3content .step3Info .holderCover .holderCoverPic {
-        margin-top: 10px; }
-        .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
-          border-radius: 5px;
-          width: 100%; }
+      .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
+        border-radius: 5px;
+        width: 100%; }
       .holdevent_step3content .step3Info .holderCover .holderCoverText {
-        margin: 20px 0;
+        margin: 10px 0;
         letter-spacing: 1.2px; }
         .holdevent_step3content .step3Info .holderCover .holderCoverText .title {
           font-weight: 550;
@@ -580,32 +853,31 @@ img.potPic {
     .holdevent_step3content .step3Info .holderCoverInfo {
       line-height: 2;
       letter-spacing: 1.2px;
-      padding: 45px 85px;
+      padding: 12px 75px;
       width: 50%; }
       .holdevent_step3content .step3Info .holderCoverInfo table tr {
-        height: 60px; }
+        height: 50px; }
         .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
-          width: 110px; }
+          width: 145px; }
 
 .detaileventContent {
   width: 100%;
   font-size: 18px;
   color: #1e1e1e;
   display: flex;
-  padding-top: 100px;
+  padding-top: 85px;
   letter-spacing: 1.2px;
   justify-content: center;
   line-height: 1.75; }
   .detaileventContent .detaileventPic {
-    width: 50%;
-    padding: 10px 10px 10px 25px; }
+    padding: 10px 10px 10px 25px;
+    margin: 0px 30px 0px 0px; }
     .detaileventContent .detaileventPic .title {
       display: flex;
       position: relative; }
       .detaileventContent .detaileventPic .title .eventInfotitle {
         font-size: 24px;
-        font-weight: 550;
-        margin-right: 150px; }
+        font-weight: 550; }
       .detaileventContent .detaileventPic .title .dotWrap {
         right: 25px;
         width: 40px;
@@ -623,18 +895,24 @@ img.potPic {
         border-radius: 100%;
         background-color: #646464; }
     .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 550px;
+      width: 500px;
+      margin: 15px 0;
       padding-top: 20px; }
       .detaileventContent .detaileventPic .detaileventPicbox img {
         width: 100%;
         border-radius: 5px; }
+    .detaileventContent .detaileventPic .detaileventRoute {
+      margin: 0px 0 20px 0px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: #646464; }
   .detaileventContent .detaileventText {
-    padding: 70px 0px 0px 20px;
+    padding: 95px 0px 0px 55px;
     width: 45%; }
     .detaileventContent .detaileventText .eventInforow {
       height: 45px;
       line-height: 45px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: flex;
       justify-content: center; }
       .detaileventContent .detaileventText .eventInforow .eventrowTitle {
@@ -653,8 +931,8 @@ img.potPic {
 .lightbox_report_info {
   position: fixed;
   background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  background-image: url(../img/event/greenBg2.png);
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   width: 20%;
   height: 40%;
   margin: auto;
@@ -666,11 +944,14 @@ img.potPic {
   .lightbox_report_info .reportTitle {
     font-size: 24px;
     margin: 30px 0;
-    text-align: center; }
+    text-align: center;
+    color: #646464;
+    font-size: bold; }
   .lightbox_report_info form {
     font-size: 20px;
-    padding: 0 25px;
-    margin: 35px auto; }
+    padding: 0 35px;
+    margin: 35px auto;
+    color: #646464; }
     .lightbox_report_info form input {
       margin: 15px; }
   .lightbox_report_info .reportSent {

@@ -13,6 +13,23 @@ div.psyTestWrap{
     font-size: $fzTitle;
     color: $fcContent;
 
+    #question{
+        width: 60%;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        color: #156692;
+        background-image: url(../img/index/questionBg.png);
+        background-size: cover;
+        span{
+            display: inline-block;
+            color: #A5361C;
+            font-size: 46px;
+            font-weight: bold;
+            transform: rotate(-10deg);
+        }
+    }
+
     div.answerBox{
         // border: 1px solid green;
         width: 100%;
@@ -100,7 +117,7 @@ div.psyTestWrap{
             margin-top: 20px;
 
             div.ansOption{
-                width: 48%;
+                width: 45%;
                 div.ansBubble{
                     padding: 0px;
                     img.ansImg{
@@ -113,20 +130,28 @@ div.psyTestWrap{
             }    
         }
     }
-    
 }
 
 @media screen and (max-width:767px){
     div.psyTestWrap{
-        margin-top: 150px;
-    }
+        margin-top: 20px;
+
+        #question{
+            width: 95%;
+            font-size: 24px;
+            span{
+                font-size: 30px;
+                transform: rotate(-10deg);
+            }
+        }
+    }   
 }
 
 //-----散步路線------
 div.routeWrap{
     // border: 1px solid blue;
     width: 100%;
-    margin-top: 130px;
+    margin-top: 200px;
     position: relative;
     letter-spacing: 1.5px;
     font-size: $fzTitle;
@@ -224,7 +249,7 @@ div.routeWrap{
 
 @media screen and (max-width:767px){
     div.routeWrap{
-        margin-top: 160px
+        margin-top: 50px
     }
 }
 
@@ -335,6 +360,12 @@ img.routeSubTitle{
         width: 170px;
     }
 }
+@media screen and (max-width:767px){
+    img.routeSubTitle{
+        display: none;
+    }
+}
+
 
     //--調整路線的提示泡泡--//
 @media screen and (max-width:1024px){

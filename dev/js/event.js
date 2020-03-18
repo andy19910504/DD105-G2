@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //發起揪團
+
 
 
     // $(".lightbox").on("click", function () {
@@ -12,7 +12,8 @@ $(document).ready(function () {
     // 上下一步
     // ----1------
     $(".1_nextStep").on("click", function () {
-        $(".step1").removeClass('color');
+        // $(".step1").removeClass('color');
+        $(".step1").css("background-image", "url(../img/event/event_step3.png)");
         $(".holdevent_step1content").css("display", "none");
         $(".holdevent_step2content").css("display", "block");
         $(".step2").addClass('color');
@@ -40,7 +41,7 @@ $(document).ready(function () {
     });
 
     $(".3_nextStep").on("click", function () {
-      
+
         closeBox();
     });
 
@@ -87,10 +88,11 @@ $(document).ready(function () {
     //     closeBox();
     // });
 
+ 
 
-    // -----------------------------------------------//
 
-    // new event輪播
+    //--------------------new event輪播------------------------//
+
     //調整視窗-抓寬度
     $(window).resize(function () {
         getWidth();
@@ -105,10 +107,10 @@ $(document).ready(function () {
 
         divWidth = $('#slideBoard').width(); // div的寬度
 
-        imgCount = $('.newSlider').length;
+        imgCount = $('.newSliderBox').length;
         $('#content').width(divWidth * imgCount); // ul的寬度
 
-        $('.newSlider').width(divWidth); // li的寬度
+        $('.newSliderBox').width(divWidth); // li的寬度
     }
 
 
@@ -149,18 +151,19 @@ $(document).ready(function () {
 
     autoPlay();
 
-    // -----------------------------------------------//
-    //view more
+    //---------------view more 隱藏卡片------------------//
 
     $(".viewMore").on("click", function () {
-        // $(".cardBox2").css("display", "block");
         $('.cardBox2').slideDown(1500);
-      
-        
+
     });
 
 });
- 
+
+//--------------------燈箱出來------------------------//
+function $id(id) {
+    return document.getElementById(id);
+}
 
 window.addEventListener("load", function () {
     let holdevent = document.querySelectorAll(".lightbox")
@@ -172,11 +175,12 @@ window.addEventListener("load", function () {
     let eventReports = document.querySelectorAll(".dotWrap");
     let eventReportclose = document.querySelectorAll(".cancel");
     // 發起揪團
+
     for (let i = 0; i < holdevent.length; i++) {
 
         holdevent[i].addEventListener("click", function () {
             lightBoxs[i].style.display = "flex";
-           
+
         });
         closes[i].addEventListener("click", function () {
             lightBoxs[i].style.display = "none";
@@ -191,7 +195,7 @@ window.addEventListener("load", function () {
 
         eventDetails[i].addEventListener("click", function () {
             lightBoxs[1].style.display = "flex";
-            
+
         });
         closes[1].addEventListener("click", function () {
             lightBoxs[1].style.display = "none";
@@ -203,11 +207,48 @@ window.addEventListener("load", function () {
 
         eventReports[i].addEventListener("click", function () {
             lightBoxs[2].style.display = "flex";
-            
+
         });
         eventReportclose[0].addEventListener("click", function () {
             lightBoxs[2].style.display = "none";
         });
     }
 
+});
+
+//-----------------燈箱步驟一選路線slider-----------------//
+
+window.addEventListener("load", function () {
+    let curIndex = 0; //先將最左第一張圖標為0號 (依序標記)
+    let routeAllBox = document.querySelector(".routeAllBox"); //滿足css selector-(叫.wrap)的第一個元素
+
+    //-------------btnRight.onclick
+    $id("btnRight").onclick = function () {
+        curIndex++;
+        routeAllBox.style.left = -260 * curIndex + "px"; //要加單位
+        $id("btnLeft").disabled = false // 變可以按
+        if (curIndex == "2") {
+            $id("btnRight").disabled = true; //最左邊圖變5號圖時 btnRight要變不能按 
+        }
+    }
+    //-------------btnLeft.onclick
+    $id("btnLeft").onclick = function () {
+        curIndex--;
+        routeAllBox.style.left = -260 * curIndex + "px"; //要加單位
+        $id("btnRight").disabled = false // 變可以按
+        if (curIndex == "0") {
+            $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
+        }
+    }
+    let routeChose = document.querySelectorAll(".routeChose");
+});
+
+//-----------------燈箱步驟一選路線下面show出路線名稱+景點-----------------//
+$(document).ready(function () {
+   $('.routeChose').click(function () {
+        let name = $(this).text();
+        $('.routeClick').text('');
+        $(`<p>選擇路線:${name}</p>`).appendTo('.routeClick');
+        //還沒有抓景點...
+    })
 });

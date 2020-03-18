@@ -79,8 +79,11 @@
             <!-- 心理測驗 -->
             <div class="psyTestWrap">
                 <img src="./img/index/psySubTitle.png" class="routeSubTitle">
+                <div class="sectionSubTitleMobile">
+                    心理測驗
+                </div>
                 <div id="question">
-                    Q:你比較喜歡哪種風景?
+                    <span>Q:</span>你比較喜歡下列哪種風景?
                 </div>
                 <div class="answerBox">
                     <div class="ansOption">
@@ -104,6 +107,9 @@
             </div>
             <!-- 散步路線 -->
             <div class="routeWrap">
+                <div class="sectionSubTitleMobile">
+                    選擇路線
+                </div>
                 <img src="./img/index/routeSubTitle.png" class="routeSubTitle -routeTitle">
                 <div class="routeBox">
                     <div class="routePaper">
@@ -173,6 +179,9 @@
              <!-- 小遊戲區塊 -->
              <div class="gameWrap">
                  <img src="./img/index/gameSubTitle.png" class="gameSubTitle">
+                 <div class="sectionSubTitleMobile">
+                    小遊戲模式
+                </div>
                  <div class="gameMapWrap">
                     <img src="./img/index/map.jpg" class="gameMap">
                     <img src="./img/index/gou.gif" class="gameRole">
@@ -188,6 +197,7 @@
             <!-- GPS模式區塊 -->
             <div class="gpsWrap">
                 <img src="./img/index/GPSgameSubTitle.png" class="gameSubTitle">
+                
                 <div class="gpsData">
                     <img src="./img/index/GPStext.png" class="gpsText">
                     <img src="./img/index/qrCode.png" class="gpsQrCode">
@@ -201,7 +211,9 @@
                     </div>
                 </div>
                 <img src="./img/index/iPhoneGPS.png"class="gpsPhonePic">
-
+                <div class="sectionSubTitleMobile">
+                    GPS定位模式
+                </div>
             </div>
 
             <!-- 裝飾小圖 -->
@@ -221,7 +233,7 @@
             <img src="./img/index/title04.png" class="sectionTitle">
             <div class="moodWrap">
                 <img src="./img/index/moodSubTitle.png" class="moodSubTitle">
-                <!-- <div class="moodCardsWrap">
+                <div class="moodCardsWrap">
                     <div class="moodCard">
                         <div class="cardInfoBar">
                             <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
@@ -311,11 +323,9 @@
                             <span>more</span>
                         </div>
                     </div>
-                    
-                    
 
-                </div> -->
-                @@include('./layout/moodConcat.html')
+                </div>
+                <!-- @@include('./layout/moodConcat.html') -->
                 <div class="moodBtn">
                     @@include('./layout/btnRed.html',{
                         "link":"mood.html",
@@ -363,7 +373,7 @@
             <img src="./img/index/title05.png" class="sectionTitle">
             <div class="eventWrap">
                 <img src="./img/index/eventSubTitle.png" class="eventSubTitle">
-                <!-- <div class="eventCardsWrap">
+                <div class="eventCardsWrap">
                     <div class="eventCard">
                         <div class="dotWrap">
                             <span class="dot"></span>
@@ -421,9 +431,8 @@
                             <span>more</span>
                         </div>
                     </div>
-
-                </div> -->
-                @@include('./layout/eventConcat.html')
+                </div>
+                <!-- @@include('./layout/eventConcat.html') -->
                 <div class="eventBtn">
                     @@include('./layout/btnRed.html',{
                         "link":"event.html",
@@ -457,7 +466,6 @@
     <script src="./js/firstScreen.js"></script>
     <script src="./js/indexPost.js"></script>
     <script src="./js/eventConcat.js"></script>
-    
 </body>
 </html>
 

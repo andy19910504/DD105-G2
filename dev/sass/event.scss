@@ -1,89 +1,180 @@
 @import "./base/var.scss";
-@import "./base/reset.scss";
 @import "./layout/card.scss";
 @import "./layout/index/eventSection.scss";
 
-
-//   banner文字
-.eventTitle {
-    padding-top: 10%;
+.wrapper{
     width: 100%;
-    margin: 0 auto;
-    img {
+    overflow: hidden;
+}
+// banner文字-------
+
+.titleFirst{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-15deg);
+    animation: rotateMove 2s cubic-bezier(.15,.76,.98,.4) alternate infinite;
+}
+@keyframes rotateMove{
+    from{transform: rotate(-10deg);}
+    to{transform: rotate(10deg);}
+}
+@media screen and (max-width:$small){
+    .titleLast{
         width: 100%;
     }
+    img.titleFirst{
+        width: 25%;
+        left: 15px;
+    }
 }
-
-//內容
+//內容-------
 .eventContent {
+    width: 100%;
     max-width: 1200px;
     //border: 1px solid red;
     margin: 0px auto;
-    .newEvent {
+    // 最新揪團區-------
+    .newEventBlock {
         width: 100%;
-        // border: 1px solid green;
         position: relative;
-        .loudspeaker{
-            width: 110px;
-            position: absolute;
-            right: 120px;
-            bottom: 70px;
-            transform: rotateY(180deg);;
-            
-        }
+        //title
         .newEventTitle {
+            width: 100%;
             z-index: 10;
-            display: inline-block;
+            display: flex;
             position: absolute;
+            align-items: center;
             left: -185px;
             top: -75px;
-            animation: subtitleAni .8s infinite alternate;
+            .newEventSubTitle{
+                animation: subtitleAni .8s infinite alternate;
+            }
+            //手機板副標題
+            .sectionSubTitleMobile{
+                margin: 20px auto;
+                padding: 10px;
+                letter-spacing: 3px;
+                border-radius: 20px;
+                font-size: 30px;
+                font-weight: bolder;
+                background-color: #116491;
+                color: #fff;
+            }
+            @media screen and (min-width:1365px){
+                div.sectionSubTitleMobile{
+                    display: none;
+                }
+            }
         }
+        //藍色泡泡
+        @media screen and (max-width: 1365px){
+            .newEventSubTitle {
+                display: none;
+            }
+        }
+        @media screen and (max-width:1365px){
+            .newEventTitle{
+                top: -40px;
+                right:0;
+                left: 0;
+                margin: 0px auto;
+                align-items: center;
+                width:100%;
+            }
+        }
+      
+        
+        // 輪播圖
         #slideBoard {
            width: 100%;
-            //border: 1px solid black;
             overflow: hidden;
             letter-spacing: 1.5px;
             line-height: 1.75;
             #content {
                 position: relative;
                 display: inline-flex;
-               
-                    .newSlider {
+                    .newSliderBox {
+                        position: relative;
                         display: flex;
-                        float: left;
                         justify-content: center;
-                        width: 1200px;
+                        overflow: hidden;
                         //border: 1px solid green;
-                        justify-content: start;
-                        cursor: pointer;
                         .newEventPic {
                             background-color: #f2fbff;
-                            padding: 30px 48px 50px 48px;
-                            //border: 1px solid purple;
-                            a{
-                                display: inline-block;
+                            padding: 40px 45px 65px 45px;
+                            border-radius: 2px;
+                            
+                            box-shadow: $mediumShadow;
+                            img{
+                                width: 100%;
                             }
                         }
-                        .newEventText {
-                            position: relative;
-                            margin: 170px auto;
-                            
-                            vertical-align: middle;
-                            p {
-                               
-                                font-size: $fzTitle;
-                                color: $fcInfo;
+                        @media screen and (max-width: 1030px){
+                            .newEventPic{
+                                padding: 40px 45px 65px 45px;
+                                margin: 35px auto;
                                 
                             }
                         }
+                        @media screen and (max-width:767px){
+                            .newEventPic{
+                                margin: 60px auto 30px auto;
+                            }
+                        }
+                        .newEventText {
+                            margin: 170px auto;
+                            p {
+                                font-size: $fzTitle;
+                                color: $fcInfo;
+                            }
+                        }
+                        @media screen and (max-width: 1030px){
+                            .newEventText{
+                                margin: 55px auto;
+                            }
+                        }
+                        @media screen and (max-width: 768px){
+                            .newEventText{
+                                margin: 0px auto;
+                            }
+                            .newEventText p{
+                                font-size: $fzContent;
+                            }
+                        }
                     }
+                    @media screen and (max-width: 1365px){
+                        .newSliderBox{
+                            margin: 55px auto;
+                            
+                        }
+                    }
+                    @media screen and (max-width: 1030px){
+                        .newSliderBox{
+                            flex-direction: column;
+                            margin: 40px auto;
+                            text-align: center;
+                            align-self: center;
+                        }
+                    }
+                    @media screen and (max-width: 768px){
+                        .newSliderBox{
+                            margin: 0px auto;
+                            top: 0;
+                        }
+                    }
+
                 
             }
         }
+        
     }
 }
-
+@media screen and (max-width: 768px){
+    .eventContent{
+        padding-top:50px ;
+    }
+}
 // 輪播按鈕...
 #contentButton {
     /* border: 1px solid red; */
@@ -104,91 +195,293 @@
         
     }
 }
+@media screen and (max-width: 1030px){
+    #contentButton{
+        display: none;
+    }
+}
+// 小插圖-大聲公
+.loudspeaker{
+    position: absolute;
+    right: 95px;
+    bottom: 70px;
+    z-index: 5;
+}
+@media screen and (max-width: 1030px){
+    .loudspeaker{
+        display: none;
+    }
+}
 
-// 分隔線-剪刀
+// 小插圖-照相機
+.camera{
+    position: absolute;
+    top: -25px;
+    left:525px;
+    width:150px;
+    z-index: 15;
+    animation: turnRight 2s infinite alternate linear;
+}
+@keyframes turnRight {
+    0% {
+        transform:rotate(20deg);
+    }
+    55% {
+        transform:rotate(18deg);
+    }
+}
+@media screen and (max-width: 1365px){
+    .camera{
+        display: none;
+    }
+}
+
+//閃光特效
+.flashlight {
+    position: absolute;
+    width: 595px;
+    height: 446px;
+    top: 0;
+    left: 0;
+	background:rgba(white, 0.6);
+	transition:all ease 0.2s;
+	opacity:0;
+    animation: flashlight 5s linear infinite;
+}
+@keyframes flashlight {
+    56% {
+        opacity:1;
+    }
+    55%, 65% {
+        opacity:0;
+    }
+}
+@media screen and (max-width: 1030px){
+    .flashlight{
+        width: 100%;
+        flex-direction: column;
+        margin: 0px auto;
+        
+    }
+}
+// 分隔線-剪刀-----
 .cutLine {
     width: 100%;
     margin: 15px 0 80px 0;
-    img {
-        width: 100%;
+}
+@media screen and (max-width: 768px){
+    .cutLine{
+        margin: 80px auto;
+       
     }
 }
 
-// 活動瀏覽
-.eventScan {
+
+// 活動瀏覽區-----
+.eventScanBlock {
     //border: 1px solid green;
     position: relative;
-    .airb{
-        width: 180px;
+    //小插圖-熱氣球
+    .airb1{
+        width: 80px;
         position: absolute;
         top: 200px;
-        left: -220px;
+        left: -240px;
+        animation: airb1 6s infinite alternate;
     }
-    .firework{
-        width: 180px;
+    @keyframes airb1 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(0, 55px);
+        }
+    }
+    .airb2{
+        width: 100px;
         position: absolute;
-        top: 650px;
-        right: -175px;
-        
+        top: 380px;
+        left: -235px;
+        animation: airb1 5.5s infinite alternate;
     }
-    .skylight{
-        width: 180px;
+    .airb3{
+        width: 115px;
+        position: absolute;
+        top: 270px;
+        left: -145px;
+        animation: airb3 4s infinite alternate;
+    }
+    @keyframes airb3 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(0, 35px);
+        }
+    }
+    //小插圖-煙火
+    .firework1{
+        width: 100px;
+        position: absolute;
+        top: 720px;
+        right: -90px;
+        animation: fireworks 4s infinite ;
+    }
+    @keyframes fireworks {
+        0%{
+            transform: scale(0);
+        }
+        80%{
+            transform: scale(1);
+        }
+        80%{
+            opacity: 0.75;
+        }
+        85%{
+            opacity: 0.6;
+        }
+        90%{
+            opacity: 0.3;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    .firework2{
+        width: 110px;
+        position: absolute;
+        top: 665px;
+        right: -175px;
+        animation: fireworks 6s infinite ;
+    }
+    .firework3{
+        width: 95px;
+        position: absolute;
+        top: 715px;
+        right: -255px;
+        animation: fireworks 7s infinite ;
+    }
+    //小插圖-天燈
+    .skyLight1{
         position: absolute;
         top: 1210px;
-        left: -220px;
+        left: -235px;
+        width: 120px;
+        animation: skyLightAni 2s infinite alternate-reverse linear;
     }
-    //分類bar
-    .catalog {
-        width: 100%;
-        position: relative;
-        margin: 60px 0;
-        &:before {
-            content: "";
-            background-image: url(../img/event/event_bluepointl.png);
-            height: 30px;
-            width: 1200px;
-            position: absolute;
-            bottom: -40px;
+    .skyLight2 {
+        width: 65px;
+        position: absolute;
+        left: -145px;
+        top: 1420px;
+        animation: skyLightAni 1s infinite alternate-reverse linear;
+    }
+    @keyframes skyLightAni {
+        0% {
+            transform: translateY(0);
         }
-        ul {
-            display: flex;
-            flex-direction: row;
-            li {
-                font-size: 36px;
-                color: $fcContent;
-                margin: 10px 0px 0 0;
-                padding: 5px 25px;
-                cursor: pointer;
-                &.color {
-                    background-image: url(../img/event/event_mark1.png);
-                    height: 45px;
-                    width: 200px;
-                }
-                p {
-                    font-family: 微軟正黑體;
-                }
-            }
+        0% {
+            transform: translateY(-10px);
         }
     }
+    // 插圖們消失
+    @media screen and (max-width: 1500px){
+        .airb1,.airb2,.airb3,.firework1,.firework2,.firework3,.skyLight1,.skyLight2{
+           display: none;
+        }
+        
+    }
+    
 }
-
 //下拉選單
-@mixin select {
+.selector{
+    display: flex;
+    
+}
+@media screen and (max-width: 768px){
+    .selector{
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+    
+}
+.selector select {
     width: 190px;
     height: 30px;
     margin: 10px 0;
     color: $fcInfo;
     font-size: $fzInfo;
+    
+}
+@media screen and (max-width: 768px){
+    .selector select{
+        width: 140px;
+        margin: 20px 0;
+    }
+    
 }
 
-.selector select {
-    @include select;
+//三張卡片
+.eventWrap{
+    margin: 55px 0;
 }
-// 卡片 
+@media screen and (max-width:767px){
+    div.eventWrap{
+        margin: 0px auto;
+    }
+}
+.eventCard{
+    transition: 1s;
+  
+}
+.eventCard:hover{
+    transform: translateY(-10px);
+}
+//有星星卡片的上排
+.cardTop{
+    display: flex;
+    justify-content: center;
+}
+//卡片星星標記
+.starMark{
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    width: 270px;
+    padding-top: 6px;
+    padding-left: 3px;
+    font-size: 18px;
+    color: #646464;
+}
+@media screen and (max-width:1199px){
+    .starMark{
+        padding: 5px 0 0px 15px;
+        width: 250px;
+        font-size: 16px;
+    }
+      
+}
+@media screen and (max-width:1023px){
+    .starMark{
+        padding: 5px 0 0px 15px;
+        width: 190px;
+        font-size: 16px;
+    }
+      
+}
+@media screen and (max-width:767px){
+    .starMark{
+        padding: 5px 0 0px 10px;
+        width: 250px;
+        font-size: 16px;
+    }
+      
+}
 
+// 隱藏卡片區 
 .cardBox2{
     display: none;
-    
 }
 // viewMore cardBox
 .viewMore {
@@ -196,16 +489,13 @@
     text-align: center;
 }
 
+//燈箱們---------------發起揪團燈箱
 
-//燈箱---------------發起揪團燈箱
-.wrapper{
-    position: relative;
-}
 //  最底層black 
 .backDrop{
     background-color: rgba(24, 24, 24, 0.8);
     display: none;
-    filter: alpha(opacity=0);
+    // filter: alpha(opacity=0);
     height: 100%;
     width: 100%;
     z-index: 200;
@@ -230,9 +520,12 @@
 //   內容
 .lightbox_holdevent_info,.lightbox_detailevent_info{
     position: relative;
-    background-color: #d4d3d3;
-    background-image: url(../img/event/event_cardback.png);
-    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+    //background-color: #ffedcf;
+    // border: 5px solid #fff;
+    border-radius: 6px;
+    padding: 0 1% 1.5%;
+    background-image: url(../img/event/greenBg2.png);
+    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
     display: flex;//
     flex-direction: column;
     width:1200px;
@@ -244,8 +537,10 @@
         color:$fcContent;
         font-size: 24px;
         font-weight: bold;
-        margin: 40px auto 20px auto;
-        
+        margin: 30px auto 15px auto;
+        padding: 10px 20px;
+        letter-spacing: 1.875px;
+        width: 200px;
     }
     form{
         height: 536px;
@@ -261,68 +556,155 @@
         justify-content: center;
                 div{
                     margin:  0 55px;
-                    width: 110px;
-                    height:110px;
+                    width: 120px;
+                    height:120px;
                     display: flex;
                     flex-direction: column;
+                    text-align: center;
                     justify-content: center;
-                    border-radius: 50%;
+                    background-size: contain;
+                    background-position: center;
+                    background-image: url(../img/event/event_step3.png);
                     font-size: $fzContent;
-                    border: 1px solid #6a9cb0;
+                    
                     p{
+                        margin-bottom: 5px;
+                    }
+                    .stepBox{
                         margin-bottom: 10px;
                     }
+                    
                 }
-                
+                .step1{
+                        background-image: url(../img/event/event_stepOn.png);
+                }
     }
-}
-.color{
-    background-color: #FFD66A;
-}
-//第一步驟
 
+}
+
+// 步驟圈圈color
+.color{
+    background-image: url(../img/event/event_stepOn.png);
+}
+//第一步驟block
 .holdevent_step1content{
     //border: 1px solid purple;
-   
     height: 536px;
     display: block;
+   
 }
-
 .chooseRoute{
     margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     .sliderWrap{
-        width: 1100px; 
+        width: 1040px; 
+        position: relative;
         overflow: hidden;
-        .routeBox{
+        height: 250px;
+        //border: 1px solid red;
+        .routeAllBox{
         text-align: center;
         display: flex;
         flex-direction: row;
-        // border: 1px solid green;
+        //border: 1px solid green;
         width: 1600px;
-            div{
+        top: 0px;
+        left: 0px;
+        transition: left 1s;
+        position: absolute;
+            .routeBox{
                 cursor: pointer;
-                background-color: #cce6f0;
-                border-radius: 3px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 200px;
-                height: 200px;
-                margin:  0 auto;
-                line-height: 200px;
+                height: 250px;
+                margin:0px 30px;
                 font-size: $fzContent;
-                color: $fcInfo;
+                background-position: unset;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transition: 0.5s;
+                
+                .routeBoxBottom{
+                    background-color:rgb(158, 207, 120);
+                    align-self: flex-end;
+                    width: 200px;
+                    height: 50px;
+                    border-radius: 0 0 10px 10px;
+                    p{
+                    color: white;
+                    box-shadow: $mediumShadow;    
+                    line-height: 50px;
+                    letter-spacing: 2.2px;
+                    }
+                }
+                .addroute{
+                    width: 125px;
+                    height: 125px;
+                    border: unset;
+                    font-size: 18px;
+                    color: #1e1e1e;
+                    font-weight: bold;
+                    text-align: center;
+                    line-height: 160px;
+                    
+                    
+                    display: inline-block;
+                    border-radius: 50%;
+                    background-image: url(../img/element/btnCust.png);
+                    background-size: contain;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                    transition: filter .1s;
+                    cursor: pointer;
+                }
+                
             }
-        
+           
+            .routeBox:hover{
+                opacity: 0.75; 
+               
+            }
+            .routeBox:nth-child(1){
+                background-image: url(../img/event/event_route1_2.jpg);
+            }
+            .routeBox:nth-child(2){
+                background-image: url(../img/event/event_route2_2.jpg);
+            }
+            .routeBox:nth-child(3){
+                background-image: url(../img/event/event_route3.jpg);
+            }
+            .routeBox:nth-child(4),.routeBox:nth-child(5){
+                background-image: url(../img/event/event_cusRout.jpg);
+            }
+            
         }
     
     }
     .slideBtn{
         margin: 0 10px;
-        cursor: pointer;
-            img{
-                width: 100%;
-            }
+        text-align: center;
+        input{
+            
+            cursor: pointer; 
+            font-size: 24px;
+            outline: none;
+            border: none;
+            background-color: rgb(152, 207, 110);
+            width: 40px;
+            height: 40px;
+            border-radius:50%;
+            line-height: 40px;
+            color:white;
+           
+        }
+    }
+    #btnLeft[disabled],#btnRight[disabled]{
+        opacity: 0.6;
+        text-align: center;
     }
     
 }
@@ -333,8 +715,9 @@
     // border: 1px solid #6a9cb0;
     width: 100%;
     p{
-        margin: 20px 0 20px 0px;
-        font-size: $fzContent;
+        margin: 0px 0 20px 0px;
+        font-size: 20px;
+        letter-spacing: 2px;
         color: $fcInfo;
     }
 }
@@ -352,13 +735,11 @@
         margin: 0px 80px;
     }
 }
-// 第2步驟
-
-  .holdevent_step2content{
+// 第2步驟block
+.holdevent_step2content{
     display: none;
     height: 536px;
     width: 100%;
-  
     .step2Info{
         width: 100%;
         display: flex;
@@ -370,54 +751,84 @@
             input{
                 font-size: $fzContent;
                 color: $fcInfo;
+                letter-spacing: 1.2px;
+                padding-left: 5px;
+                cursor: pointer;
+                outline-style: none;
+
             }
             div{ //圖框
                 border-radius: 5px;
                 margin-top: 20px;
-                border: 3px dashed #6a9cb0;
+                background-color: #f5eec2;
+                border: 1px dashed #5b8f60;
                 width:480px;
                 height:265px;
             }
+            .holderPicBox{
+                text-align: center;
+                line-height: 265px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                color: $fcInfo;
+            }
         }
-        .holderPicBox{
-            
-            text-align: center;
-            line-height: 265px;
-            font-size: $fzContent;
-            color: $fcInfo;
-        }
-    }
-    .holderInfo{
+        .holderInfo{
         //border: 1px solid purple;
-        width: 50%;
+        max-width: 50%;
         font-size: $fzContent;
         align-items: center;
         color: $fcInfo;
         padding: 0px 70px;
-        div{
-            margin: 15px 0;
-            input{
-                width: 220px;
-                height: 35px;
-            }
-            label{
-                margin-right:10px;
+            div{
+                margin: 15px 0;
+                input{
+                    width: 220px;
+                    height: 35px;
+                    color: $fcInfo;
+                    font-size: $fzContent;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    -webkit-transition: .3s;
+                    transition: .3s;
+                    padding: 3px 0px;
+                    border: 1px solid #90b494;
+                }
+                
+                label{
+                    margin-right:10px;
+                }
+                select{
+                    border-radius: 5px;
+                    transition: .3s;
+                    height: 35px;
+                    background-color: #fff;
+                    border: 1px solid #90b494;
+                    color: $fcInfo;
+                    font-size: $fzContent;
+                    padding: 5px 0px;
+                }
+                textarea{
+                    font-size: $fzContent;
+                    border-radius: 5px;
+                    resize : none;
+                    color: $fcInfo;
+                    padding: 3px 0px;
+                    background-color: #fff;
+                    border: 1px solid #90b494;
+                    
+                }
             }
         }
-    }
-  }
-
-
-
-// 第3步驟
+    }   
+}
+// 第3步驟block
 .holdevent_step3content{
     display: none;//
     font-size: $fzContent;
     color: $fcInfo;
     height: 536px;
     width: 100%;
-   
-    
     .step3Info{
         display: flex;
         padding: 10px 40px;
@@ -428,14 +839,14 @@
            flex-direction: column;
            padding: 15px 60px;
            .holderCoverPic{
-               margin-top: 10px;
+               
                img{
                     border-radius: 5px;
                     width: 100%;
                }
            }
            .holderCoverText{
-                margin: 20px 0;
+                margin: 10px 0;
                 letter-spacing: 1.2px;
                 .title{
                     font-weight: 550;
@@ -446,19 +857,17 @@
        }
        //右邊
        .holderCoverInfo{
-            
             line-height: 2;
             letter-spacing: 1.2px;
-            padding:45px 85px;
+            padding:12px 75px;
             width: 50%;
-           
             table{
                
                
                 tr{
-                    height: 60px;
+                    height: 50px;
                     td:nth-child(1){
-                        width:110px;
+                        width:145px;
                     }
                 }
            }
@@ -467,28 +876,27 @@
 }
 
 //燈箱-活動詳細介紹
-
 .detaileventContent{
     //border: 1px solid red;
     width:100% ;
     font-size: $fzContent;
     color: $fcContent;
     display: flex;
-    padding-top: 100px;
+    padding-top: 85px;
     letter-spacing: 1.2px;
     justify-content: center;
     line-height: 1.75;
+    
     .detaileventPic{
-        width: 50%;
         padding: 10px 10px 10px 25px;
+        margin: 0px 30px 0px 0px;
         .title{
             display:flex;
             position: relative;
             .eventInfotitle{
                 font-size: $fzTitle;
                 font-weight: 550;
-                
-                margin-right: 150px;
+              
             }
             .dotWrap{
                 right: 25px;
@@ -510,32 +918,28 @@
             }
         }
         .detaileventPicbox{
-            width: 550px;
+            width: 500px;
+            margin: 15px 0;
             padding-top: 20px;
             img{
                 width:100%;
                 border-radius: 5px;
             }
         }
+        .detaileventRoute{
+            margin: 0px 0 20px 0px;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: $fcInfo;
+        }
     }
     .detaileventText{
-        padding: 70px 0px 0px 20px;
+        padding: 95px 0px 0px 55px;
         width: 45%;
-      
-        // table{
-        //     border: 1px solid pink;
-        //     tr{
-        //         height: 45px;
-        //         margin-bottom: 10px;
-        //         td:nth-child(1){
-        //             background-color: lightblue;
-        //         }
-        //     }
-        // }
         .eventInforow{
             height: 45px;
             line-height: 45px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             .eventrowTitle{
@@ -563,8 +967,8 @@
 .lightbox_report_info{
     position: fixed;
     background-color: #d4d3d3;
-    background-image: url(../img/event/event_cardback.png);
-    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+    background-image: url(../img/event/greenBg2.png);
+    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
     width: 20%;
     height:40%;
     margin: auto;
@@ -578,11 +982,14 @@
         font-size: $fzTitle;
         margin: 30px 0;
         text-align: center;
+        color: $fcInfo;
+        font-size: bold;
     }
     form{
         font-size: 20px;
-        padding: 0 25px ;
+        padding: 0 35px ;
         margin: 35px auto;
+        color: $fcInfo;
         input{
             margin: 15px;
         }

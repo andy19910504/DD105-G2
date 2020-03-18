@@ -42,19 +42,27 @@
     </h1>
     <nav>
         <ul>
-            <li><a href="route.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
-            <li><a href="mapgame.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
-            <li><a href="mood.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
-            <li><a href="postcard.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
-            <li><a href="event.html"><img src="./img/header/navHover.png" class="navHover "><img src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
+            <li><a href="route.html"><img src="./img/header/navHover.png" class="navHover "><img
+                        src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
+            <li><a href="mapgame.html"><img src="./img/header/navHover.png" class="navHover "><img
+                        src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
+            <li><a href="mood.html"><img src="./img/header/navHover.png" class="navHover "><img
+                        src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
+            <li><a href="postcard.html"><img src="./img/header/navHover.png" class="navHover "><img
+                        src="./img/header/navIcon4.png" class="navIcon">情繫明信片</a></li>
+            <li><a href="event.html"><img src="./img/header/navHover.png" class="navHover "><img
+                        src="./img/header/navIcon5.png" class="navIcon">揪團一起走</a></li>
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href="member.html"><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href="member.html"><img src="./img/header/navMember.png"></a></div>
-        <div class="navPoint"><a href="member.html"><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
+        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+            <div class="sign">登入</div>
+        </div>
+        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
+            <div class="point">&nbsp;</div>
+        </div>
     </div>
-
 </header>
 <!-- 1200px下時，轉乘使用漢堡選單 -->
 
@@ -75,8 +83,12 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href="./member.html"><img src="./img/header/navMember.png"></a></div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png"><div id="point">666</div></a></div>
+        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+            <div class="sign">登入</div>
+        </div>
+        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
+                <div class="point">666</div>
+            </a></div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -86,10 +98,76 @@
 </h1>
 <div class="hamburger hamburger--spring">
     <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
+        <div class="hamburger-inner"></div>
     </div>
 </div>
 
+<!-- loginBlock -->
+<div class="login" id="loginBlock">
+    <div class="login_all">
+        <div class="login_all_all">
+            <p>會員登入</p>
+            <form action="" id="member_login">
+                <input type="text" placeholder="請輸入帳號" id="login_acc">
+                <input type="text" placeholder="請輸入密碼" id="login_psw">
+                <div class="findpsw">忘記密碼</div>
+                <div class="login_bottom">
+                    <div class="login_login btnPink" id="login_login">登入</div>
+                    <div class="login_register btnPink">註冊</div>
+                </div>
+            </form>
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
+            </div>
+        </div>
+        <div class="forgetpsw">
+            <p>找回密碼</p>
+            <form action="" id="member_findpsw">
+                <input type="text" placeholder="請輸入註冊帳號" id="find_acc">
+                <input type="text" placeholder="請輸入註冊信箱" id="find_email">
+                <div class="forgetpsw_bottom">
+                    <div class="login_login btnPink" id="login_forgetpsw">發送認證信</div>
+                    <div class="forgetpsw_back btnPink">返回</div>
+                </div>
+            </form>
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
+            </div>
+        </div>
+        <div class="register">
+            <form action="" id="member_register">
+                <div class="register_item">
+                    <label for="">帳號：</label>
+                    <input type="text" id="register_acc">
+                </div>
+                <div class="register_item">
+                    <label for="">暱稱：</label>
+                    <input type="text" id="register_nam">
+                </div>
+                <div class="register_item">
+                    <label for="">信箱：</label>
+                    <input type="text" id="register_email">
+                </div>
+                <div class="register_item">
+                    <label for="">密碼：</label>
+                    <input type="text" placeholder="請輸入英數字(至少6位數)" id="register_psw">
+                </div>
+                <div class="register_item">
+                    <label for="">確認密碼：</label>
+                    <input type="text" placeholder="請輸入上述相同密碼" id="register_psw_dou">
+                </div>
+                <div class="register_bottom">
+                    <div class="login_register btnPink" id="login_register">註冊</div>
+                    <div class="register_back btnPink">返回</div>
+                </div>
+            </form>
+
+            <div class="login_close">
+                <img src="./img/login/XX.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
     <!-- 第一屏 -->
     <div class="bannerWrap">
         <div class="bannerSlider">
@@ -129,8 +207,11 @@
             <!-- 心理測驗 -->
             <div class="psyTestWrap">
                 <img src="./img/index/psySubTitle.png" class="routeSubTitle">
+                <div class="sectionSubTitleMobile">
+                    心理測驗
+                </div>
                 <div id="question">
-                    Q:你比較喜歡哪種風景?
+                    <span>Q:</span>你比較喜歡下列哪種風景?
                 </div>
                 <div class="answerBox">
                     <div class="ansOption">
@@ -154,6 +235,9 @@
             </div>
             <!-- 散步路線 -->
             <div class="routeWrap">
+                <div class="sectionSubTitleMobile">
+                    選擇路線
+                </div>
                 <img src="./img/index/routeSubTitle.png" class="routeSubTitle -routeTitle">
                 <div class="routeBox">
                     <div class="routePaper">
@@ -222,6 +306,9 @@
              <!-- 小遊戲區塊 -->
              <div class="gameWrap">
                  <img src="./img/index/gameSubTitle.png" class="gameSubTitle">
+                 <div class="sectionSubTitleMobile">
+                    小遊戲模式
+                </div>
                  <div class="gameMapWrap">
                     <img src="./img/index/map.jpg" class="gameMap">
                     <img src="./img/index/gou.gif" class="gameRole">
@@ -237,6 +324,7 @@
             <!-- GPS模式區塊 -->
             <div class="gpsWrap">
                 <img src="./img/index/GPSgameSubTitle.png" class="gameSubTitle">
+                
                 <div class="gpsData">
                     <img src="./img/index/GPStext.png" class="gpsText">
                     <img src="./img/index/qrCode.png" class="gpsQrCode">
@@ -249,7 +337,9 @@
                     </div>
                 </div>
                 <img src="./img/index/iPhoneGPS.png"class="gpsPhonePic">
-
+                <div class="sectionSubTitleMobile">
+                    GPS定位模式
+                </div>
             </div>
 
             <!-- 裝飾小圖 -->
@@ -269,7 +359,7 @@
             <img src="./img/index/title04.png" class="sectionTitle">
             <div class="moodWrap">
                 <img src="./img/index/moodSubTitle.png" class="moodSubTitle">
-                <!-- <div class="moodCardsWrap">
+                <div class="moodCardsWrap">
                     <div class="moodCard">
                         <div class="cardInfoBar">
                             <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
@@ -359,101 +449,9 @@
                             <span>more</span>
                         </div>
                     </div>
-                    
-                    
 
-                </div> -->
-                <div class="moodCardsWrap">
-    <div class="moodCard">
-        <div class="cardInfoBar">
-            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
-            <div class="infoTextWrap">
-                <span class="moodClass">#職人散步去</span>
-                <span class="moodMemId">IU2020</span>
-            </div>
-            <div class="dotWrap">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-        <div class="moodPicWrap">
-            <img src="./img/index/moodPic01.jpg" class="moodPic">
-        </div>
-        <div class="heartBar">
-            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
-            <span>1025</span>
-            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-            <span>52</span>
-        </div>
-        <div class="cardText">
-            <p>
-                把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像
-            </p>
-            <span>more</span>
-        </div>
-    </div>
-    <div class="moodCard">
-        <div class="cardInfoBar">
-            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto02.png"></div>
-            <div class="infoTextWrap">
-                <span class="moodClass">#日式舊屋行</span>
-                <span class="moodMemId">Jaysqer</span>
-            </div>
-            <div class="dotWrap">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-        <div class="moodPicWrap">
-            <img src="./img/index/moodPic02.jpg" class="moodPic">
-        </div>
-        <div class="heartBar">
-            <img src="./img/index/moodLikeIconGray.png"class="moodIcon">
-            <span>999</span>
-            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-            <span>108</span>
-        </div>
-        <div class="cardText">
-            <p>
-                循著路幅稍窄，缺少寬闊步行空間的同安街，一路往水源快速道路方向走去，在街尾可見一座天橋
-
-            </p>
-            <span>more</span>
-        </div>
-    </div>
-
-    <div class="moodCard">
-        <div class="cardInfoBar">
-            <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto03.png"></div>
-            <div class="infoTextWrap">
-                <span class="moodClass">#文青品味旅</span>
-                <span class="moodMemId">love00242</span>
-            </div>
-            <div class="dotWrap">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-        <div class="moodPicWrap">
-            <img src="./img/index/moodPic03.jpg" class="moodPic">
-        </div>
-        <div class="heartBar">
-            <img src="./img/index/moodLikeIcon.png"class="moodIcon">
-            <span>168</span>
-            <img src="./img/index/moodChatIcon.png"class="moodIcon">
-            <span>655</span>
-        </div>
-        <div class="cardText">
-            <p>
-                跟著台北散步~ 發現讀字書店，很棒很舒適的空間，尤其是廁所也太有風格啦~~
-            </p>
-            <span>more</span>
-        </div>
-    </div>
-</div>
+                </div>
+                
                 <div class="moodBtn">
                     <a href="mood.html" class="btnRed">
     More
@@ -499,7 +497,7 @@
             <img src="./img/index/title05.png" class="sectionTitle">
             <div class="eventWrap">
                 <img src="./img/index/eventSubTitle.png" class="eventSubTitle">
-                <!-- <div class="eventCardsWrap">
+                <div class="eventCardsWrap">
                     <div class="eventCard">
                         <div class="dotWrap">
                             <span class="dot"></span>
@@ -557,160 +555,8 @@
                             <span>more</span>
                         </div>
                     </div>
-
-                </div> -->
-                <div class="eventCardsWrap">
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic01.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>職人散步GoGo團</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
-        </div>
-    </div>
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic02.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>信義一日遊</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
-        </div>
-    </div>
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic03.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>一起去陽明山散步吧</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
-        </div>
-    </div>
-</div>
-            <!-- 燈箱/揪團詳情 -->
-            <div class="backDrop">
-                <div class="lightbox_detailevent">
-                    <div class="lightbox_detailevent_info">
-                        <div class="close">✘</div>
-                        <div class="detaileventContent">
-                            <div class="detaileventPic">
-                                <div class="title">
-                                    <div class="eventInfotitle">故宮好好玩</div>
-                                    <div class=" dotWrap lightReport ">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="detaileventPicbox">
-                                    <img src="./img/event/event_museum.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detaileventText">
-                                <form action="">
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動日期</div>
-                                        <div>2020-03-01(日)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">報名截止日</div>
-                                        <div>2020-02-28(五)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合時間</div>
-                                        <div>早上 8:30</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合地點</div>
-                                        <div>信義新光三越</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動介紹</div>
-                                        <div>故宮好好玩</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">路線</div>
-                                        <div>
-                                            官方路線二
-                                        </div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">景點</div>
-                                        <div>
-                                            台北101 -> 台北101 -> 台北101
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="enroll">
-                            <a href="#" class="btnRed">
-    我要報名
-</a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <!-- 燈箱/揪團檢舉 -->
-            <div class="backDrop">
-                <div class="lightbox_report">
-                    <div class="lightbox_report_info">
-
-
-                        <div class="reportTitle">
-                            <h2>協助我們了解情況?</h2>
-                        </div>
-                        <form>
-                            <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
-                            <br>
-                            <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
-                            <br>
-                            <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
-                            <br>
-                            <div class="reportSent">
-                                <div class="enter">
-                                    <a class="btnPink">確定</a>
-                                </div>
-                                <div class="cancel">
-                                    <a class="btnPink">取消</a>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                
                 <div class="eventBtn">
                     <a href="event.html" class="btnRed">
     More
@@ -780,7 +626,6 @@
     <script src="./js/firstScreen.js"></script>
     <script src="./js/indexPost.js"></script>
     <script src="./js/eventConcat.js"></script>
-    
 </body>
 </html>
 

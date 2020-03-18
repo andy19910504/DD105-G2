@@ -1,6 +1,7 @@
 // 所有 CSS 設定，匯集為 main.css
 
-
+// --- varCss ---
+@import "base/var.scss";
 // --- resetCss --
 @import "base/reset.scss";
 
@@ -33,7 +34,8 @@
 // --- chatBot ---
 @import "layout/chatBot.scss";
 
-
+// --- loginBlock ---
+@import "./login.scss";
 
 // --- sample test css ---
 .wrapper{
