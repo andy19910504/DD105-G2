@@ -1,150 +1,104 @@
 @charset "UTF-8";
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  color: #1e1e1e;
-  text-decoration: none;
-  font-family: "微軟正黑體";
-  vertical-align: baseline;
-}
-
-/* remember to define focus styles! */
-:focus {
-  outline: 0;
-}
-
-body {
-  line-height: 1;
-  color: black;
-  background: white;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-}
-
-blockquote, q {
-  quotes: "" "";
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 .login {
   z-index: 999;
   position: fixed;
   left: 0;
+  right: 0;
   top: 0;
+  display: none;
+  bottom: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-}
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .login_all {
-  border-radius: 25px;
+  border-radius: 6px;
   position: relative;
-  background-image: url(../img/member/photography.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 500px;
-  margin: 10% auto 0% auto;
-}
+  background-color: #fff;
+  width: 450px;
+  margin: 10% auto 0% auto; }
 
 .login_all_all {
   height: 426px;
-  padding: 8% 0;
-}
-
-.login_all_all h1 {
-  text-shadow: 3px 3px 3px gray;
-  text-align: center;
-  font-size: 24px;
-}
-
-.login_all_all input {
-  border: 3px dashed #a5361c;
-  width: 75%;
-  background-image: url(../img/member/hip-square.png);
-  opacity: .8;
-  padding: 3%;
-  display: block;
-  font-size: 18px;
-  margin: 10% auto 0 auto;
-}
-
-.login_all_all input:nth-child(2) {
-  margin-top: 5%;
-}
+  padding: 8% 0; }
+  .login_all_all p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #a5361c; }
+  .login_all_all input {
+    border: unset;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 75%;
+    padding: 3%;
+    display: block;
+    font-size: 18px;
+    margin: 10% auto 0 auto; }
+  .login_all_all input:nth-child(2) {
+    margin-top: 5%; }
+  .login_all_all input::placeholder {
+    font-family: "微軟正黑體"; }
 
 .findpsw {
-  color: black;
   padding: 1% 2% 1% 1%;
   text-align: right;
   width: 18%;
   display: inline-block;
   margin-left: 69.5%;
   font-size: 16px;
+  color: #646464;
   margin-top: 5%;
-  background-image: url(../img/member/hip-square.png);
-  border: 1px dashed #a5361c;
-  cursor: pointer;
-}
+  cursor: pointer; }
+
+.forgetpsw {
+  height: 426px;
+  padding: 8% 0;
+  display: none; }
+  .forgetpsw p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #a5361c;
+    margin-bottom: 6%; }
+  .forgetpsw input {
+    border: unset;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 75%;
+    padding: 3%;
+    display: block;
+    font-size: 18px;
+    margin: 10% auto 0 auto; }
+  .forgetpsw input:nth-child(2) {
+    margin-top: 5%; }
+  .forgetpsw input::placeholder {
+    font-family: "微軟正黑體"; }
+
+.forgetpsw_bottom {
+  text-align: center;
+  margin-top: 18.5%; }
+
+@media screen and (max-width: 575px) {
+  .forgetpsw {
+    height: 400px; } }
 
 @media screen and (max-width: 575px) {
   .login_all {
-    width: 300px;
-  }
+    width: 350px; }
   .login_all_all a:nth-child(3) {
     width: 26%;
-    margin-left: 61.5%;
-  }
+    margin-left: 61.5%; }
   .login_all_all {
-    height: 310px;
-  }
+    height: 400px; }
   .findpsw {
     width: 26%;
-    margin-left: 61.5%;
-  }
-}
+    margin-left: 61.5%; } }
 
 .login_bottom {
   text-align: center;
-  margin-top: 8%;
-}
+  margin-top: 8%; }
 
 .login_register {
-  margin-left: 3%;
-}
+  margin-left: 3%; }
 
 .login_close {
   padding: 1%;
@@ -154,106 +108,49 @@ blockquote, q {
   right: 10px;
   top: 10px;
   width: 6%;
-  cursor: pointer;
-}
+  cursor: pointer; }
+  .login_close img {
+    width: 100%; }
 
-.login_close img {
-  width: 100%;
-}
+.btnBack {
+  margin-left: 3%; }
 
 .register {
   padding: 8% 0;
-}
-
-.register h1 {
-  text-shadow: 3px 3px 3px gray;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 3%;
-}
-
-.register_item {
-  font-size: 0px;
-  padding: 2.5% 0;
-}
+  display: none; }
+  .register p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #a5361c;
+    margin-bottom: 6%; }
 
 .register_item label {
-  text-align: left;
+  text-align: right;
   height: 46px;
   display: inline-block;
   font-size: 18px;
-  width: 25%;
-  padding: 3% 1% 3% 4%;
-}
+  width: 25%; }
 
 .register_item input {
-  border: 3px dashed #a5361c;
-  width: 70%;
-  background-image: url(../img/member/hip-square.png);
-  padding: 3%;
+  border: unset;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  width: 60%;
+  padding: 3% 0;
   display: inline-block;
-  font-size: 18px;
-}
+  font-size: 18px; }
+
+.register_item input::placeholder {
+  font-family: "微軟正黑體"; }
 
 .register_bottom {
   text-align: center;
-  margin-top: 8%;
-}
-
-.register_back {
-  margin-left: 3%;
-}
+  margin-top: 8%; }
 
 @media screen and (max-width: 575px) {
   .register_item label {
     width: 30%;
-    font-size: 16px;
-  }
+    font-size: 16px; }
   .register_item input {
-    width: 65%;
-    font-size: 16px;
-  }
-}
-
-.forgetpsw {
-  height: 426px;
-  padding: 8% 0;
-}
-
-.forgetpsw h1 {
-  text-shadow: 3px 3px 3px gray;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 3%;
-}
-
-.forgetpsw input {
-  border: 3px dashed #a5361c;
-  width: 75%;
-  background-image: url(../img/member/hip-square.png);
-  opacity: .8;
-  padding: 3%;
-  display: block;
-  font-size: 18px;
-  margin: 10% auto 0 auto;
-}
-
-.forgetpsw input:nth-child(2) {
-  margin-top: 5%;
-}
-
-.forgetpsw_bottom {
-  text-align: center;
-  margin-top: 8%;
-}
-
-.forgetpsw_back {
-  margin-left: 3%;
-}
-
-@media screen and (max-width: 575px) {
-  .forgetpsw {
-    height: 310px;
-  }
-}
-/*# sourceMappingURL=login.css.map */
+    width: 55%;
+    font-size: 16px; } }
