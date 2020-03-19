@@ -83,7 +83,11 @@ gulp.task('default', function() { // default 只要打gulp 即可執行
     browserSync.init({
         server: {
             baseDir: "./dest",
-            index: "customRoute.html"
+<<<<<<< HEAD
+            index: "backRobot.html"
+=======
+            index: "postcard.html"
+>>>>>>> origin/master
         }
     });
     gulp.watch(web.html, ['fileinclude']).on('change', reload);
