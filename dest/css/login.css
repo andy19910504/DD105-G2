@@ -77,9 +77,6 @@
   text-align: center;
   margin-top: 18.5%; }
 
-.forgetpsw_back {
-  margin-left: 3%; }
-
 @media screen and (max-width: 575px) {
   .forgetpsw {
     height: 400px; } }
@@ -115,6 +112,9 @@
   .login_close img {
     width: 100%; }
 
+.btnBack {
+  margin-left: 3%; }
+
 .register {
   padding: 8% 0;
   display: none; }
@@ -146,9 +146,6 @@
 .register_bottom {
   text-align: center;
   margin-top: 8%; }
-
-.register_back {
-  margin-left: 3%; }
 
 @media screen and (max-width: 575px) {
   .register_item label {

@@ -24,3 +24,4 @@ if( isset($_SESSION["memId"])){//已登入
 }else{
 	echo "{}";
 }
+?>
