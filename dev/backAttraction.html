@@ -59,43 +59,18 @@
 
 <body>
     <div class="wrapper">
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <img src="./img/index/LOGO.svg" width="100" class="d-inline-block align-top">
-                </a>
-                <div>
-                    <span id="managerId"></span>
-                    <button type="button" class="btn btn-outline-secondary btn-sm" id="btnLogout">登出</button>
-                </div>
-            </nav>
-        </header>
-
-        <nav class="col-md-2  d-md-block bg-light sideNav">
-            <div class="sidebarContent">
-                <ul class="nav flex-column">
-                    <li class="navItem"><a href="" class="">帳號管理</a></li>
-                    <li class="navItem"><a href="" class="">心理測驗管理</a></li>
-                    <li class="navItem"><a href="./backRoute.html" class="">路線管理</a></li>
-                    <li class="navItem"><a href="./backAttraction.html" class="nowPage">景點管理</a></li>
-                    <li class="navItem"><a href="" class="">地圖攻略管理</a></li>
-                    <li class="navItem"><a href="" class="">心情檢舉管理</a></li>
-                    <li class="navItem"><a href="" class="">揪團檢舉管理</a></li>
-                    <li class="navItem"><a href="" class="">客製化管理</a></li>
-                    <li class="navItem"><a href="" class="">訂單管理</a></li>
-                    <li class="navItem"><a href="" class="">機器人管理</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <div id="sideNavBtn">
-            <svg class="bi bi-chevron-right arrow" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg%22%3E">
-                <path fill-rule="evenodd"
-                    d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
-                    clip-rule="evenodd"></path>
-            </svg>
-        </div>
+        @@include("./layout/backHeader.html",{
+        "nowPage0": "",
+        "nowPage1": "",
+        "nowPage2": "",
+        "nowPage3": "nowPage",
+        "nowPage4": "",
+        "nowPage5": "",
+        "nowPage6": "",
+        "nowPage7": "",
+        "nowPage8": "",
+        "nowPage9": ""
+        })
         <main class="col-md-10">
             <h2>景點管理</h2>
             <div class="content">
@@ -142,6 +117,17 @@
                         </div>
                     </div>
                 </div>
+                <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
+                    <input type="text" class="attrNumber" name="editNumber" id="editNumber">
+                    <input type="text" name="editName" id="editName">
+                    <input type="text" name="editAddress" id="editAddress">
+                    <textarea name="editInfo1" id="editInfo1"></textarea>
+                    <textarea name="editInfo2" id="editInfo2"></textarea>
+                    <input type="text" name="editLongitude" id="editLongitude">
+                    <input type="text" name="editLatitude" id="editLatitude">
+                </form>
+                <!-- <input type="text" name="editStatus" id="editStatus"> -->
+
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -194,7 +180,9 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
-    <script src="./js/backAttraction.js"></script>
+    <script src="./js/backAttractionGet.js"></script>
+    <script src="./js/backAttractionEdit.js"></script>
+    <script src="./js/backAttractionDrop.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);

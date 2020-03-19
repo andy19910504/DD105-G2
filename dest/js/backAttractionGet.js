@@ -7,24 +7,24 @@ function getAttractionInfo(info) {
     for (i = 0; i < attrInfo.length; i++) {
         attrRow += `
         <tr>
-            <th scope="row">${attrInfo[i].attraction_number}</th>
+            <th scope="row"><div>${attrInfo[i].attraction_number}</div></th>
             <td>
-                <div>${attrInfo[i].attraction_name}</div>
+                <div><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="${attrInfo[i].attraction_name}"></div>
             </td>
             <td>
-                <div>${attrInfo[i].attraction_address}</div>
+                <div><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="${attrInfo[i].attraction_address}"></div>
             </td>
             <td>
-                <div><textarea cols="40" rows="5">${attrInfo[i].attraction_information1}</textarea></div>
-                <div><textarea cols="40" rows="5">${attrInfo[i].attraction_information2}</textarea></div>
+                <div><textarea class="form-control">${attrInfo[i].attraction_information1}</textarea></div>
+                <div><textarea class="form-control">${attrInfo[i].attraction_information2}</textarea></div>
             </td>
             <td>
                 <div>${attrInfo[i].attraction_photo1}</div>
                 <div>${attrInfo[i].attraction_photo2}</div>
             </td>
             <td>
-                <div>${attrInfo[i].attraction_latitude}</div>
-                <div>${attrInfo[i].attraction_longitude}</div>
+                <div>經度 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="${attrInfo[i].attraction_longitude}"></div>
+                <div>緯度 <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="${attrInfo[i].attraction_latitude}"></div>
             </td>
             <td>
                 <div class="custom-control custom-switch">
@@ -32,7 +32,10 @@ function getAttractionInfo(info) {
                     <label class="custom-control-label" for="customSwitch${i}">上架</label>
                 </div>
             </td>
-            <td><button type="button" class="btn btn-light btn-sm btnDel">刪除</button></td>
+            <td>
+            <button type="button" class="btn btn-light btn-sm btnSave">儲存</button>
+            <button type="button" class="btn btn-light btn-sm btnDel">刪除</button>
+            </td>
         </tr>
         `;
         attrTable.innerHTML = attrRow;
