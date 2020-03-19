@@ -20,7 +20,18 @@
         "display5":""
         })
     </header>
-    <div class="banner_04"></div>
+     <!-- banner // 各自的banner，直接套class
+            順序，以導覽列（不含頁首）的順序依序-->
+            <div class="banner_04">
+                <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
+                <div class="pageBannerTitle">
+                    <div class="bannerTitleMoveBlock">
+                        <!-- 這裡的圖片改成自己分頁的圖片，在想想要怎麼動，不一定要一樣，也可以直接參考 -->
+                        <img src="./img/banner/bannerTitle4.png" class="">
+                    </div>
+                </div>
+                <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
+            </div>
     <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
     src：放上圖片的路徑
@@ -77,7 +88,7 @@
             <!--2.1明信片左邊預覽畫面-->
             <div class="postLeft">
                 <div class="postWhiteBack" id="postWhiteBack">
-                    <canvas id="postcardCanvas"></canvas>
+                    <canvas class="postcardCanvas" id="postcardCanvas"></canvas>
                     <!-- <canvas id="postcardCanvas2"></canvas> -->
                 </div>
             </div>

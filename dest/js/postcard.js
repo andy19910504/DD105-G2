@@ -98,21 +98,50 @@ function doFirst() {
 
 
     $(document).ready(function () {
+        var getPixelRatio = function (context) {
+            var backingStore = context.backingStorePixelRatio ||
+                context.webkitBackingStorePixelRatio ||
+                context.mozBackingStorePixelRatio ||
+                context.msBackingStorePixelRatio ||
+                context.oBackingStorePixelRatio ||
+                context.backingStorePixelRatio || 1;
+            return (window.devicePixelRatio || 1) / backingStore;
+        };      
         let canvas = document.getElementById('postcardCanvas');
         let context = canvas.getContext('2d');
-        // let context2 = canvas.getContext('2d');
+        var ratio = getPixelRatio(context);
 
-        let cw = window.innerWidth - 800;
-        let ch = cw * (3 / 4);
-        canvas.width = cw;
-        canvas.height = ch;
+        canvas.width = canvas.width * ratio;	
+        canvas.height = canvas.height * ratio;
+        context.scale(ratio, ratio);
+
+
+        if (window.innerWidth <= 576) { //RWD
+            canvas.style.width = canvas.width="380";	
+        canvas.style.height = canvas.height="240";
+        }else if (window.innerWidth < 1200) {
+            canvas.style.width = canvas.width="720";	
+            canvas.style.height = canvas.height="450";
+        } else{
+            canvas.style.width = canvas.width="960";	
+            canvas.style.height = canvas.height="570";	
+        }
+
+
+
+
+
+
+
+
+
         let img = new Image();
         img.src = './img/postcard/postcardBGI_1.png';
         let img2 = new Image();
         img2.src = './img/postcard/postcardBGI_2.png';
         let img3 = new Image();
         img3.src = './img/postcard/postcardBGI_3.png';
-        
+
 
 
         let postBGC_1 = document.getElementById("postBGC_1");
@@ -130,46 +159,85 @@ function doFirst() {
         let icon_2 = document.getElementById("icon_2");
         let icon_3 = document.getElementById("icon_3");
         let icon_4 = document.getElementById("icon_4");
-        // context2.globalCompositeOperation = 'destination-over';
-        // context.globalCompositeOperation = 'copy';
-        
-        
+        let postBGC = 0;
+
 
         $(postBGC_1).click(function () {
-            
             context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 1;
         });
         $(postBGC_2).click(function () {
-            
             context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 2;
         });
         $(postBGC_3).click(function () {
-            
             context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 3;
         });
 
 
         $(postphoto_1).click(function () {
-            let bgi = new Image();
-            bgi.src = './img/postcard/taipei101-1.jpg';
-            context.drawImage(bgi, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            if (postBGC == 1) {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
         });
         $(postphoto_2).click(function () {
-            let bgi2 = new Image();
-            bgi2.src = './img/postcard/taipei101-2.jpg';
-            context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            if (postBGC == 1) {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
         });
         $(postphoto_3).click(function () {
-            let bgi3 = new Image();
-            bgi3.src = './img/postcard/taipei101-3.jpg';
-            context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            if (postBGC == 1) {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
         });
-        $(postphoto_4).click(function () {
-            let bgi4 = new Image();
-            bgi4.src = './img/postcard/event_slider3.png';
-            context.drawImage(bgi4, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-            
-        });
+        // $(postphoto_4).click(function () {
+        //     let bgi4 = new Image();
+        //     bgi4.src = './img/postcard/event_slider3.png';
+        //     context.drawImage(bgi4, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+        //     context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+
+
+        // });
 
 
 
@@ -201,17 +269,13 @@ function doFirst() {
             img.src = './img/postcard/postIcon06.png';
             context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
         });
+        resizeCanvas()
     });
-    resizeCanvas();
+
 
     function resizeCanvas() {
         canvas.width = previewArea.clientWidth; //第一個canvas的寬 = 父層div的寬
         canvas.height = previewArea.clientHeight; //第一個canvas的高 = 父層div的高
-        imgRatio = 1000 / 1000; //圖片寬高比例
-        imgWidth = previewArea.clientWidth * 0.7; //圖片寬度參數
-        imgHeight = imgWidth * imgRatio; //圖片高度參數
-        // imgOffsetX = (canvas.width - imgWidth) / 2; //圖片X位移量
-        // imgOffsetY = (canvas.height - imgHeight) / 2; //圖片Y位移量
         if (window.innerWidth <= 414) { //RWD
             imgWidth = previewArea.clientWidth * 1;
             imgHeight = imgWidth * imgRatio;
