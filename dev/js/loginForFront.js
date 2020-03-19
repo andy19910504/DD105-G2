@@ -1,7 +1,10 @@
+// login、logout 事件
 function $id(id) {
     return document.getElementById(id);
 }
+
 let member;
+// 判斷各頁面是否再登入狀態
 function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -18,7 +21,7 @@ function getLoginInfo() {
 window.addEventListener("load", function () {
     // // 檢查是否為登入狀態
     getLoginInfo();
-
+    // 登入事件
     // 按右上 .sign，當是登入...；當是登出時...
     $(".sign").click(function (e) {
         //檢查是登入或是登出狀態
@@ -42,7 +45,6 @@ window.addEventListener("load", function () {
 
         }
     });
-
     // 在燈箱按登入
     // step1 判斷登入者帳號、密碼是否填寫正確
     // step2 至server端取得登入者的資訊
@@ -65,7 +67,6 @@ window.addEventListener("load", function () {
             this.focus();
             return
         }
-
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
@@ -94,6 +95,93 @@ window.addEventListener("load", function () {
         $id('login_acc').value = '';
         $id('login_psw').value = '';
     });
+
+    // 註冊事件
+    // 登入頁的註冊按鈕
+    $(".login_register").click(function () {
+        $(".login_all_all").css("display", "none");
+        $(".register").attr("style", "display:block");
+    })
+    //判斷註冊欄位的規則
+    $("#login_register").click(function () {
+        if ($id("register_acc").value.length == 0) {
+            alert("帳號不能為空");
+            $id("register_acc").focus();
+            return
+        }
+        if ($id("register_email").value.length == 0) {
+            alert("信箱不能為空");
+            $id("register_email").focus();
+            return
+        }
+        if ($id("register_psw").value.length == 0) {
+            alert("密碼不能為空");
+            $id("register_psw").focus();
+            return
+        }
+        if ($id("register_psw_dou").value.length == 0) {
+            alert("確認密碼不能為空");
+            $id("register_psw_dou").focus();
+            return
+        }
+        //信箱規則，至少@ .
+        let email_check = /(?=.*[@])(?=.*[.])/;
+        if (email_check.test($id("register_email").value)) {
+        } else {
+            alert("信箱格式錯誤");
+            $id("register_email").focus();
+            return
+        }
+        //密碼規則，至少一位數字、一位英文
+        let psw_check = /(?=.*[a-z])(?=.*[0-9])/i;
+        if (psw_check.test($id("register_psw").value)) {
+        } else {
+            alert("密碼至少英數字各一");
+            $id("register_psw").focus();
+            return
+        }
+
+        //密碼和確認密碼一樣否
+        if ($id("register_psw").value != $id("register_psw_dou").value) {
+            alert("兩組密碼不一致");
+            return
+        }
+    })
+    
+    //找回密碼事件
+    // 登入頁的找回密碼按鈕
+    $(".findpsw").click(function () {
+        $(".login_all_all").css("display", "none");
+        $(".forgetpsw").attr("style", "display:block");
+    })
+    //判斷找回密碼欄位空值否
+    $("#login_forgetpsw").click(function () {
+        if ($id("find_acc").value.length == 0) {
+            alert("帳號不能為空");
+            $id("find_acc").focus();
+            return
+        }
+        if ($id("find_email").value.length == 0) {
+            alert("信箱不能為空");
+            $id("find_email").focus();
+            return
+        }
+        //信箱規則，至少@ .
+        let email_check = /(?=.*[@])(?=.*[.])/;
+        if (email_check.test($id("find_email").value)) {
+        } else {
+            alert("信箱格式錯誤");
+            $id("find_email").focus();
+            return
+        }
+    })
+
+    // 按返回按鈕，回到登入頁
+    $(".btnBack").click(function () {
+        $(".forgetpsw").attr("style", "display:none");
+        $(".register").attr("style", "display:none");
+        $(".login_all_all").css("display", "block");
+    })
 
     // 按右上close 關掉燈箱
     $(".login_close").click(function () {
