@@ -88,10 +88,7 @@
     text-align: center;
     margin-top:18.5%; // 8%
 }
-.forgetpsw_back{
-    margin-left: 3%;
 
-}
 @media screen and (max-width:$small) {
     .forgetpsw{
         height: 400px; 
@@ -114,7 +111,6 @@
     }
 
 }
-
 .login_bottom{
     text-align: center;
     margin-top: 8%;
@@ -136,7 +132,10 @@
         width: 100%;
     }
 }
-
+// 返回按鈕
+.btnBack{
+    margin-left: 3%;
+}
 .register{
     padding:8% 0;
     display: none;
@@ -171,10 +170,6 @@
 .register_bottom{
     text-align: center;
     margin-top: 8%;
-}
-.register_back{
-    margin-left: 3%;
-
 }
 @media screen and (max-width:$small) {
     .register_item label{

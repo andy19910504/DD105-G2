@@ -88,7 +88,7 @@
             <p>會員登入</p>
             <form action="" id="member_login">
                 <input type="text" placeholder="請輸入帳號" id="login_acc">
-                <input type="text" placeholder="請輸入密碼" id="login_psw">
+                <input type="password" placeholder="請輸入密碼" id="login_psw">
                 <div class="findpsw">忘記密碼</div>
                 <div class="login_bottom">
                     <div class="login_login btnPink" id="login_login">登入</div>
@@ -106,7 +106,7 @@
                 <input type="text" placeholder="請輸入註冊信箱" id="find_email">
                 <div class="forgetpsw_bottom">
                     <div class="login_login btnPink" id="login_forgetpsw">發送認證信</div>
-                    <div class="forgetpsw_back btnPink">返回</div>
+                    <div class="btnBack btnPink">返回</div>
                 </div>
             </form>
             <div class="login_close">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="register_bottom">
                     <div class="login_register btnPink" id="login_register">註冊</div>
-                    <div class="register_back btnPink">返回</div>
+                    <div class="btnBack btnPink">返回</div>
                 </div>
             </form>
 
@@ -148,15 +148,18 @@
     </div>
 </div>
     </header>
-    <div class="banner_04">
-        <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
-        <div class="routeTitle">
-            <div class="routeTitleMoveBlock">
-                <img src="./img/banner/bannerTitle4.png" alt="" srcset="">
+     <!-- banner // 各自的banner，直接套class
+            順序，以導覽列（不含頁首）的順序依序-->
+            <div class="banner_04">
+                <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
+                <div class="pageBannerTitle">
+                    <div class="bannerTitleMoveBlock">
+                        <!-- 這裡的圖片改成自己分頁的圖片，在想想要怎麼動，不一定要一樣，也可以直接參考 -->
+                        <img src="./img/banner/bannerTitle4.png" class="">
+                    </div>
+                </div>
+                <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
             </div>
-        </div>
-        <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
-    </div>
     <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
     src：放上圖片的路徑
@@ -203,11 +206,12 @@
         </div>
         <!--1.3明信片客製畫面-->
         <div class="postcardMain">
+            <!-- <canvas id="postcardCanvas2"></canvas> -->
             <!--2.1明信片左邊預覽畫面-->
             <div class="postLeft">
                 <div class="postWhiteBack" id="postWhiteBack">
-                    <canvas id="postcardCanvas"></canvas>
-                    <div class="Oval" id="Oval"><img src="../img/postcard/postcardLOGO.png" alt=""></div>
+                    <canvas class="postcardCanvas" id="postcardCanvas"></canvas>
+                    <!-- <canvas id="postcardCanvas2"></canvas> -->
                 </div>
             </div>
             <!--2.2明信片右邊編輯畫面-->
@@ -215,30 +219,32 @@
                 <!-- ==============(3-1)操作畫面.postRight_1(選明信片材質)============== -->
                 <div class="postRight_1" id="postRight_1">
                     <div class="postRightDIY">
-                        <h1 class="post_text">選個喜歡的材質吧</h1>
+                        <h1 class="post_text">選個喜歡的材質吧!</h1>
                         <!-- (1)3個可選用背景 -->
                         <div class="BGCchoose">
                             <div class="postBGC_1 " id="postBGC_1">
                                 古風格線
                                 <!-- <div class="postBGC_name1">古風格線</div> -->
-                                <img class="postBGC_1_foucs" id="postBGC_1_foucs" src="./img/postcard/hip-square.png" alt="postBGC1">
+                                <img class="postBGC_1_foucs" id="postBGC_1_foucs" src="./img/postcard/hip-square.png"
+                                    alt="postBGC1">
                             </div>
                             <div class="postBGC_2 " id="postBGC_2">
                                 點點紛灰
                                 <!-- <div class="postBGC_name2">點點紛灰</div> -->
-                                <img src="./img/postcard/squared_metal_@2X.png" alt="postBGC2">
+                                <img src="./img/postcard/wormz.png" alt="postBGC2">
                             </div>
                             <div class="postBGC_3 " id="postBGC_3">
                                 馬卡粉紅
                                 <!-- <div class="postBGC_name3">馬卡粉紅</div> -->
                                 <img src="./img/postcard/p0126_m.png" alt="postBGC3">
                             </div>
+
+                        </div>
+                        <div class="step_btnbox1">
+                            <button class="btnPinkStop" id="step_btn">上一步</button>
+                            <button class="btnPink" id="step_btn1">下一步</button>
                         </div>
                     </div><!-- .postRightDIY_1結束div -->
-                    <div class="step_btnbox1">
-                        <button class="btnPinkStop" id="step_btn">上一步</button>
-                        <button class="btnPink" id="step_btn1">下一步</button>
-                    </div>
                 </div><!-- .postRight_1結束div -->
                 <!-- ==============(3-2)操作畫面.postRight_2(上傳照片)============== -->
                 <div class="postRight_2" id="postRight_2">
@@ -260,39 +266,97 @@
                                     <img src="./img/postcard/event_slider3.png" alt="photo4">
                                 </div>
                             </div>
-                        </div>
-                    </div><!-- .postRightDIY結束div -->
-                    <div class="step_btnbox2">
-                        <button class="btnPink" id="step_btn2">上一步</button>
-                        <button class="btnPink" id="step_btn3">下一步</button>
-                    </div>
-                </div><!-- .postRight_2結束div -->
-                <div class="postRight_2" id="postRight_2">
-                    <div class="postRightDIY">
-                        <h1 class="post_text">選個封面照片吧!</h1>
-                        <div>
-                            <!-- (1) 上傳照片-->
-                            <div class="photochoose">
-                                <div class="postphoto_1" id="postphoto_1">
-                                    <img src="./img/postcard/taipei101-1.jpg" alt="photo1">
-                                </div>
-                                <div class="postphoto_2" id="postphoto_2">
-                                    <img src="./img/postcard/taipei101-2.jpg" alt="photo2">
-                                </div>
-                                <div class="postphoto_3" id="postphoto_3">
-                                    <img src="./img/postcard/taipei101-3.jpg" alt="photo3">
-                                </div>
-                                <div class="postphoto_4" id="postphoto_4">
-                                    <img src="./img/postcard/event_slider3.png" alt="photo4">
-                                </div>
+                            <div class="step_btnbox2">
+                                <button class="btnPink" id="step_btn2">上一步</button>
+                                <button class="btnPink" id="step_btn3">下一步</button>
                             </div>
                         </div>
                     </div><!-- .postRightDIY結束div -->
-                    <div class="step_btnbox2">
-                        <button class="btnPink" id="step_btn2">上一步</button>
-                        <button class="btnPink" id="step_btn3">下一步</button>
-                    </div>
+
                 </div><!-- .postRight_2結束div -->
+                <!-- ==============(3-3)操作畫面.postRight_3(插圖)============== -->
+                <div class="postRight_3" id="postRight_3">
+                    <div class="postRightDIY">
+                        <h1 class="post_text">放些可愛插圖裝飾一下!</h1>
+                        <div>
+                            <!-- (1) 上傳照片-->
+                            <div class="iconchoose">
+                                <div class="icon_1" id="icon_1">
+                                    <img src="./img/postcard/postIcon01.png" alt="icon1">
+                                </div>
+                                <div class="icon_2" id="icon_2">
+                                    <img src="./img/postcard/postIcon02.png" alt="icon2">
+                                </div>
+                                <div class="icon_3" id="icon_3">
+                                    <img src="./img/postcard/postIcon03.png" alt="icon3">
+                                </div>
+                                <div class="icon_4" id="icon_4">
+                                    <img src="./img/postcard/postIcon06.png" alt="icon4">
+                                </div>
+                            </div>
+                            <div class="step_btnbox3">
+                                <button class="btnPink" id="step_btn4">上一步</button>
+                                <button class="btnPink" id="step_btn5">下一步</button>
+                            </div>
+                        </div>
+                    </div><!-- .postRightDIY結束div -->
+                </div><!-- .postRight_3結束div -->
+                <!-- ==============(3-4)操作畫面.postRight_4(寫文字)============== -->
+                <div class="postRight_4" id="postRight_4">
+                    <div class="postRightDIY4">
+                        <h1 class="post_text">寫些話傳達你的心意!</h1>
+                        <div>
+                            <form method="GET" id="formtext">
+                                <textarea id="postcardText" rows="18" cols="30" placeholder="請在這裡輸入文字"></textarea>
+                            </form>
+                            <h1 class="post_text2">選擇文字顏色</h1>
+                            <div class="postcardTextColorBox">
+                                <span class="postcardTextColor postcardTextColor1 postcardTextColorSelected"
+                                    id="postcardTextColor1">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor2" id="postcardTextColor2">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor3" id="postcardTextColor3">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor4" id="postcardTextColor4">
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="leafButton">
+                                <button class="btnPink leafButton" id="newTextBtn">生成文字</button>
+                            </div>
+                            <div class="step_btnbox4">
+                                <button class="btnPink" id="step_btn6">上一步</button>
+                                <button class="btnPink" id="step_btn7">下一步</button>
+                            </div>
+                        </div>
+                    </div><!-- .postRightDIY結束div -->
+                </div><!-- .postRight_4結束div -->
+                <div class="postRight_5" id="postRight_5">
+                    <div class="postRightDIY">
+                        <h1 class="post_text">填上目的地就完成囉!</h1>
+                        <div>
+                            <form method="GET" id="form1">
+                                <label for="Name">姓名</label>
+                                <input type="text" id="Name">
+                                <br>
+                                <label for="address">地 址： </label>
+                            </form>
+                            <!-- <button type="button" name="button" id="111" onclick="convert()">下載圖片</button> -->
+                            <a href="#" type="button" download="test.png"
+                                onclick="this.href=document.getElementById('postcardCanvas').toDataURL()">下載</a>
+                            <!-- <a href="#" type="button" download="test.png"
+                                onclick="this.href=document.getElementById('postcardCanvas2').toDataURL()">下載</a> -->
+                            <div class="step_btnbox5">
+                                <button class="btnPink" id="step_btn8">上一步</button>
+                                <button class="btnPink" id="step_btn9">完成</button>
+                            </div>
+                        </div>
+                    </div><!-- .postRightDIY結束div -->
+                </div><!-- .postRight_5結束div -->
 
             </div>
         </div>
@@ -341,6 +405,7 @@
     <script src="./js/common.js"></script>
     <!-- <script src="js/fabric.min.js"></script> -->
     <script src="./js/postcard.js"></script>
+    <!-- <script type="text/javascript" src="./js/html2canvas.js"></script> -->
     <!-- <script src="js/typewriter.js" defer></script> -->
 </body>
 

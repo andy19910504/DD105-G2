@@ -598,13 +598,16 @@ img.potPic {
   border-radius: 6px;
   padding: 0 1% 1.5%;
   background-image: url(../img/event/greenBg2.png);
+  background-size: cover;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 750px;
   border-radius: 15px;
-  align-items: center; }
+  align-items: center;
+  overflow: hidden; }
   .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
     text-align: center;
     color: #1e1e1e;
@@ -614,10 +617,11 @@ img.potPic {
     padding: 10px 20px;
     letter-spacing: 1.875px;
     width: 200px; }
+  .lightbox_holdevent_info .stepALL, .lightbox_detailevent_info .stepALL {
+    height: 536px;
+    width: 100%; }
   .lightbox_holdevent_info form, .lightbox_detailevent_info form {
     height: 536px; }
-    .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
-      height: 536px; }
   .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
     margin: 10px auto;
     text-align: center;
@@ -642,6 +646,10 @@ img.potPic {
     .lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
       background-image: url(../img/event/event_stepOn.png); }
 
+@media screen and (max-width: 1200px) {
+  .lightbox_holdevent_info {
+    width: 90%; } }
+
 .color {
   background-image: url(../img/event/event_stepOn.png); }
 
@@ -655,7 +663,7 @@ img.potPic {
   justify-content: center;
   align-items: center; }
   .chooseRoute .sliderWrap {
-    width: 1040px;
+    width: 100%;
     position: relative;
     overflow: hidden;
     height: 250px; }
@@ -663,7 +671,7 @@ img.potPic {
       text-align: center;
       display: flex;
       flex-direction: row;
-      width: 1600px;
+      justify-content: space-around;
       top: 0px;
       left: 0px;
       transition: left 1s;
@@ -673,7 +681,7 @@ img.potPic {
         border-radius: 10px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         width: 200px;
         height: 250px;
         margin: 0px 30px;
@@ -687,10 +695,10 @@ img.potPic {
           align-self: flex-end;
           width: 200px;
           height: 50px;
-          border-radius: 0 0 10px 10px; }
+          border-radius: 0 0 10px 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); }
           .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom p {
             color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
             line-height: 50px;
             letter-spacing: 2.2px; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .addroute {
@@ -719,6 +727,12 @@ img.potPic {
         background-image: url(../img/event/event_route3.jpg); }
       .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
         background-image: url(../img/event/event_cusRout.jpg); }
+      @media screen and (max-width: 1200px) {
+        .chooseRoute .sliderWrap .routeAllBox .routeBox {
+          width: 200px; } }
+  @media screen and (max-width: 1200px) {
+    .chooseRoute .sliderWrap {
+      width: 80%; } }
   .chooseRoute .slideBtn {
     margin: 0 10px;
     text-align: center; }
@@ -746,6 +760,10 @@ img.potPic {
     font-size: 20px;
     letter-spacing: 2px;
     color: #646464; }
+
+@media screen and (max-width: 1200px) {
+  .chooseRoute {
+    width: 90%; } }
 
 .stepBtn {
   display: flex;

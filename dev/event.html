@@ -523,7 +523,7 @@
                                     <!-- 左邊按鈕 -->
                                     <div class="slideBtn">
                                         <input type="button" id="btnLeft" value="<" disabled>
-                                    </div>
+                                    </div>                                        
                                     <!-- 選擇路線框 -->
                                     <div class="sliderWrap">
                                         <div class="routeAllBox">
@@ -552,6 +552,25 @@
                                                     <p class="routeName">自訂路線2</p>
                                                 </div>
                                             </div>
+
+                                            <!-- <div class="routeBox routeChose">
+                                                <div class="routeBoxBottom">
+                                                    <p class="routeName">自訂路線3</p>
+                                                </div>
+                                            </div> -->
+
+                                            <!-- <div class="routeBox routeChose">
+                                                <div class="routeBoxBottom">
+                                                    <p class="routeName">自訂路線4</p>
+                                                </div>
+                                            </div> -->
+
+                                            <!-- <div class="routeBox routeChose">
+                                                <div class="routeBoxBottom">
+                                                    <p class="routeName">自訂路線5</p>
+                                                </div>
+                                            </div> -->
+
                                             <div class="routeBox">
                                                 <div class="addroute">
                                                     <a href="#">
@@ -848,29 +867,6 @@
     <script src="./js/swiper.min.js"></script>
     <script>
         new WOW().init();
-    </script>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            direction: getDirection(),
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            on: {
-                resize: function () {
-                    swiper.changeDirection(getDirection());
-                }
-            }
-        });
-
-        function getDirection() {
-            var windowWidth = window.innerWidth;
-            var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-
-            return direction;
-        }
     </script>
 </body>
 

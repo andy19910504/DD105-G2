@@ -88,7 +88,7 @@ $(document).ready(function () {
     //     closeBox();
     // });
 
- 
+
 
 
     //--------------------new event輪播------------------------//
@@ -218,37 +218,100 @@ window.addEventListener("load", function () {
 
 //-----------------燈箱步驟一選路線slider-----------------//
 
-window.addEventListener("load", function () {
-    let curIndex = 0; //先將最左第一張圖標為0號 (依序標記)
-    let routeAllBox = document.querySelector(".routeAllBox"); //滿足css selector-(叫.wrap)的第一個元素
+// window.addEventListener("load", function () {
+//     let curIndex = 0; //先將最左第一張圖標為0號 (依序標記)
+//     let routeAllBox = document.querySelector(".routeAllBox"); 
+//     let routeBox = document.querySelectorAll(".routeBox"); 
+//     //-------------btnRight.onclick
+//     $id("btnRight").onclick = function () {
+//         curIndex++;
+//         routeAllBox.style.left = -50 * curIndex + "%"; //要加單位
+//         $id("btnLeft").disabled = false // 變可以按
+//         if (curIndex == (routeBox.length-4)) {
+//             $id("btnRight").disabled = true; //最左邊圖變5號圖時 btnRight要變不能按 
+//         }
+//     }
+//     //-------------btnLeft.onclick
+//     $id("btnLeft").onclick = function () {
+//         curIndex--;
+//         routeAllBox.style.left = -25 * curIndex + "%"; //要加單位
+//         $id("btnRight").disabled = false // 變可以按
+//         if (curIndex == "0") {
+//             $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
+//         }
+//     }
+//     let routeChose = document.querySelectorAll(".routeChose");
 
-    //-------------btnRight.onclick
-    $id("btnRight").onclick = function () {
-        curIndex++;
-        routeAllBox.style.left = -260 * curIndex + "px"; //要加單位
-        $id("btnLeft").disabled = false // 變可以按
-        if (curIndex == "2") {
-            $id("btnRight").disabled = true; //最左邊圖變5號圖時 btnRight要變不能按 
-        }
-    }
-    //-------------btnLeft.onclick
-    $id("btnLeft").onclick = function () {
-        curIndex--;
-        routeAllBox.style.left = -260 * curIndex + "px"; //要加單位
-        $id("btnRight").disabled = false // 變可以按
-        if (curIndex == "0") {
-            $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
-        }
-    }
-    let routeChose = document.querySelectorAll(".routeChose");
-});
-
+// });
 //-----------------燈箱步驟一選路線下面show出路線名稱+景點-----------------//
 $(document).ready(function () {
-   $('.routeChose').click(function () {
+    $('.routeChose').click(function () {
         let name = $(this).text();
         $('.routeClick').text('');
         $(`<p>選擇路線:${name}</p>`).appendTo('.routeClick');
         //還沒有抓景點...
     })
+
+
+    //調整視窗-抓寬度
+    $(window).resize(function () {
+        getRouteWidth();
+        $('.sliderWrap').css({
+            left: routeBoxWidth * curIndex * -1,
+            //調整後size圖片位置不會跑掉
+        });
+    });
+    getRouteWidth();
+
+    function getRouteWidth() {
+
+        routeBoxWidth = $('.routeBox').width(); // div的寬度
+        imgRouteCount = $('.routeBox').length;
+        $('.sliderWrap').width(routeBoxWidth * imgRouteCount); // ul的寬度
+
+        // $('.newSliderBox').width(divWidth); // li的寬度
+    }
+
+
+    // for (let i = 0; i < imgCount; i++) {
+    //     $('#contentButton').append('<li></li>');
+    // }
+    // $('#contentButton li:nth-child(1)').addClass('clickMe'); //第一個圈圈先變色
+
+    curIndex = 0;
+    $('.btnLeft').click(function () {
+        curIndex++;
+        $('.sliderWrap').animate({
+
+            left: routeBoxWidth * curIndex * 1,
+
+        });
+    });
+
+    $('.btnRight').click(function () {
+        $('.sliderWrap').animate({
+            left: routeBoxWidth * curIndex * -1,
+        });
+
+    });
+    // $id("btnLeft").onclick = function () {
+    //         curIndex--;
+    //         routeAllBox.style.left = -25 * curIndex + "%"; //要加單位
+    //         $id("btnRight").disabled = false // 變可以按
+    //         if (curIndex == "0") {
+    //             $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
+    //         }
+    //     }
+
+    //手動輪播
+    // $('#contentButton li').click(function () {
+    //     //alert($(this).index());
+    //     index = $(this).index();
+    //     $('#content').animate({
+    //         left: divWidth * index * -1,
+    //     });
+    //     $(this).addClass('clickMe');
+    //     $('#contentButton li').not(this).removeClass('clickMe');
+
+    // });
 });

@@ -1,4 +1,6 @@
-@import './base/var.scss';
+@import "./base/var.scss";
+@import "./layout/card.scss";
+@import "./layout/index/moodSection.scss";
 @mixin card($height,) {
     width: 340px;
     height: $height;
