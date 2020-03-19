@@ -27,9 +27,10 @@
             width: 3000px;
             text-align: center;
         }
-        td img{
+
+        td img {
             width: 100%;
-        
+
         }
 
         .new_mana_acc {
@@ -75,24 +76,50 @@
 
 <body>
     <div class="wrapper">
-        @@include("./layout/backHeader.html",{
-        "nowPage0": "nowPage",
-        "nowPage1": "",
-        "nowPage2": "",
-        "nowPage3": "",
-        "nowPage4": "",
-        "nowPage5": "",
-        "nowPage6": "",
-        "nowPage7": "",
-        "nowPage8": "",
-        "nowPage9": ""
-        })
+        <header>
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/index/LOGO.svg" width="100" class="d-inline-block align-top">
+                </a>
+                <div>
+                    <span id="managerId">撈取管理者ID</span>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" id="btnLogout">登出</button>
+                </div>
+            </nav>
+        </header>
+
+        <nav class="col-md-2  d-md-block bg-light sideNav">
+            <div class="sidebarContent">
+                <ul class="nav flex-column">
+                    <li class="navItem"><a href="" class="nowPage">帳號管理</a></li>
+                    <li class="navItem"><a href="" class="">心理測驗管理</a></li>
+                    <li class="navItem"><a href="./backRoute.html" class="">路線管理</a></li>
+                    <li class="navItem"><a href="./backAttraction.html" class="">景點管理</a></li>
+                    <li class="navItem"><a href="" class="">地圖攻略管理</a></li>
+                    <li class="navItem"><a href="" class="">心情檢舉管理</a></li>
+                    <li class="navItem"><a href="" class="">揪團檢舉管理</a></li>
+                    <li class="navItem"><a href="" class="">客製化管理</a></li>
+                    <li class="navItem"><a href="" class="">訂單管理</a></li>
+                    <li class="navItem"><a href="" class="">機器人管理</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="sideNavBtn">
+            <svg class="bi bi-chevron-right arrow" width="1em" height="1em" viewBox="0 0 20 20" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg%22%3E">
+                <path fill-rule="evenodd"
+                    d="M6.646 3.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L12.293 10 6.646 4.354a.5.5 0 010-.708z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
         <main class="col-md-10">
             <h2>管理員管理</h2>
             <div class="content">
-                <table>
+                <table id="manager">
                     <tr>
                         <td>編號</td>
+                        <td>暱稱</td>
                         <td>帳號</td>
                         <td>權限</td>
                         <td>狀態</td>
@@ -101,37 +128,39 @@
                     <tr>
                         <form action="">
                             <td>0</td>
+                            <td>sara</td>
                             <td>AA</td>
                             <td>XXX</td>
                             <td><button>停權</button></td>
                             <td><button>刪除</button></td>
                         </form>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <form action="">
                             <td>1</td>
+                            <td>sara2</td>
                             <td>AA</td>
                             <td>XXX</td>
                             <td><button>停權</button></td>
                             <td><button>刪除</button></td>
                         </form>
-                    </tr>
+                    </tr> -->
                 </table>
                 <div class="new_mana_acc">
-                    <form action="">
-                        <input type="text" placeholder="帳號">
-                        <input type="text" placeholder="密碼">
-                        <input type="text" placeholder="權限">
+                    <form action="./php/member/newma.php" method="POST">
+                        <input type="text" placeholder="暱稱" name="name">
+                        <input type="text" placeholder="帳號" name="account">
+                        <input type="text" placeholder="密碼" name="password">
                         <button>新增管理員帳號</button>
                     </form>
-                    
-                    
+
+
                 </div>
             </div>
             <h2>會員管理</h2>
             <div class="content">
-                <table>
-                    <tr>
+                <table id="memberall">
+                    <!-- <tr>
                         <td>編號</td>
                         <td>暱稱</td>
                         <td>帳號</td>
@@ -141,8 +170,8 @@
                         <td>手機</td>
                         <td>點數</td>
                         <td>狀態</td>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <form action="">
                             <td>0</td>
                             <td>QQ</td>
@@ -154,8 +183,8 @@
                             <td>350</td>
                             <td><button>停權</button></td>
                         </form>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <form action="">
                             <td>1</td>
                             <td>XX</td>
@@ -167,8 +196,8 @@
                             <td>350</td>
                             <td><button>停權</button></td>
                         </form>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    <!-- <tr>
                         <form action="">
                             <td>1</td>
                             <td>XX</td>
@@ -180,7 +209,7 @@
                             <td>350</td>
                             <td><button>停權</button></td>
                         </form>
-                    </tr>
+                    </tr> -->
                 </table>
             </div>
         </main>
@@ -196,9 +225,97 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
+    <script src="./js/backmember.js"></script>
     <script>
-        //load事件
-        //依資料狀態
+
+        let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                
+                
+            }
+            xhr.open("get", "./php/member/backmember.php", true);
+            xhr.send(null);
+    </script>
+    <script>
+        //////////////////////////load建立管理員&&會員
+        let staff;
+        window.addEventListener("load", function () {
+            // console.log(location.search.split("?")[1]);
+            // if(location.search.split("?")[1]=="aaa"){
+            //     alert("新增成功!");
+            // }
+          
+            // getmanager();
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                staff = JSON.parse(xhr.responseText);
+                console.log(staff);
+                let manager = document.getElementById("manager");
+                let staffRow = `<tr>
+                        <td>編號</td>
+                        <td>暱稱</td>
+                        <td>帳號</td>
+                        <td>密碼</td>
+                        <td>狀態</td>
+                        <td></td>
+                    </tr>`;
+                for (i = 0; i < staff.length; i++) {
+                    staffRow += `
+                <tr>
+                        <form action="">
+                            <td>${staff[i].staff_number}</td>
+                            <td>${staff[i].staff_name}</td>
+                            <td>${staff[i].staff_account}</td>
+                            <td>${staff[i].staff_password}</td>
+                            <td><button>停權</button></td>
+                            <td><button>刪除</button></td>
+                        </form>
+                </tr>
+                `;
+                    manager.innerHTML = staffRow;
+                }
+            }
+            xhr.open("get", "./php/member/backmember.php", true);
+            xhr.send(null);
+
+            ///////會員資料
+            let xhr1 = new XMLHttpRequest();
+            xhr1.onload = function () {
+                memberall = JSON.parse(xhr1.responseText);
+                console.log(memberall);
+                let members = document.getElementById("memberall");
+                let memberRow = `<tr>
+                        <td>編號</td>
+                        <td>暱稱</td>
+                        <td>帳號</td>
+                        <td>密碼</td>
+                        <td>信箱</td>
+                        <td>頭貼</td>
+                        <td>點數</td>
+                        <td>狀態</td>
+                    </tr>`;
+                for (j = 0; j < memberall.length; j++) {
+                    memberRow += `
+                    <tr>
+                        <form action="">
+                            <td>${memberall[j].member_number}</td>
+                            <td>${memberall[j].member_name}</td>
+                            <td>${memberall[j].member_account}</td>
+                            <td>${memberall[j].member_password}</td>
+                            <td>${memberall[j].member_email}</td>
+                            <td><img src="${memberall[j].member_photo}" alt=""></td>
+                            <td>${memberall[j].member_point}</td>
+                            <td><button>停權</button></td>
+                        </form>
+                    </tr>
+                `;
+                    members.innerHTML = memberRow;
+                }
+            }
+            xhr1.open("get", "./php/member/memberall.php", true);
+            xhr1.send(null);
+        })
+        
     </script>
 </body>
 
