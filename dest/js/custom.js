@@ -2,6 +2,7 @@ $(document).ready(function(){
     var geocoder;
     var map;
     var markers = [];
+    var spots = [];
     var infowindows = [];
     var styles = [];
     var daytime = [];
@@ -85,6 +86,7 @@ $(document).ready(function(){
           stylers: [{color: '#17263c'}]
         }
       ];
+
     //   //daytime/night switch
     //   $('#map').click(function(){
     //       if(styles === daytime){
@@ -104,13 +106,15 @@ $(document).ready(function(){
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
   
     //加入景點
-    $('.btnPink').click(function(e){
+    $('.addSpot').click(function(e){
         e.preventDefault();
         codeAddress();
     });
 
+    
+
     //規劃路線
-    $('.confirm').click(function(e){
+    $('.plan').click(function(e){
         e.preventDefault();
         var waypts = [];
         for(var i=1; i<=markers.length-2; i++){
@@ -122,7 +126,25 @@ $(document).ready(function(){
         directions(markers[0], markers[markers.length-1], waypts);
     });
 
-    
+    //儲存路線
+    $('.confirm').click(function(e){
+      console.log(spots);
+      var spotsString = JSON.stringify(spots);
+      console.log(spotsString);
+      //AJAX
+      var xhr = new XMLHttpRequest();
+      //POST
+      xhr.open("POST", ".php", true);
+      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+      xhr.send(spotsString);
+      xhr.onload=function (){
+          if( xhr.status == 200 ){
+            
+          }else{
+            alert(xhr.status+'請聯繫客服人員，謝謝！');
+          }
+      }
+    });
 
     const directions = (origin, dest, waypts) => {
         let directionService = new google.maps.DirectionsService(),
@@ -175,8 +197,13 @@ $(document).ready(function(){
                 position: results[0].geometry.location,
                 animation: google.maps.Animation.DROP
             });
+            //暫存景點
+            for(var i=0;i<=markers.length-1;i++){
+              spots[i] = markers[i];
+            }
+            console.log(spots);
             //清除地點
-            $('.btnRed').click(function(e){
+            $('.removeSpot').click(function(e){
                 e.preventDefault();
                 marker.setMap(null);
                 markers = [];
