@@ -105,6 +105,19 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     // });
     browserSync.init;
     connectPHP.server(options);
+=======
+gulp.task('default', function() { // default 只要打gulp 即可執行
+    browserSync.init({
+        server: {
+            baseDir: "./dest",
+<<<<<<< HEAD
+            index: "backRobot.html"
+=======
+            index: "postcard.html"
+>>>>>>> origin/master
+        }
+    });
+>>>>>>> 350afb87a38ff247608926d3742aa5dcb9909a74
     gulp.watch(web.html, ['fileinclude']).on('change', reload);
     gulp.watch(web.sass, ['sass']).on('change', reload);
     gulp.watch(web.js, ['concatjs']).on('change', reload);

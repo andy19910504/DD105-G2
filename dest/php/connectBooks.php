@@ -1,9 +1,12 @@
 <?php
 $dsn = "mysql:host=localhost;port=3306;dbname=dd105g2;charset=utf8";
+<<<<<<< HEAD
+=======
 // $user = "dd105g2";
 // $password = "dd105g2";
+>>>>>>> origin/master
 $user = "root";
-$password = "9527";
+$password = "0000";
 $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 $pdo = new PDO($dsn, $user, $password, $options);
 ?>
