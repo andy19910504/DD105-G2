@@ -271,9 +271,12 @@ header.fullHeader .memberIcon {
 header.fullHeader .memberIcon div {
   margin-right: 15px;
   cursor: pointer; }
+  header.fullHeader .memberIcon div a {
+    display: inline-block; }
 
 header.fullHeader .memberIcon div:last-child {
-  margin-right: 0px; }
+  margin-right: 0px;
+  cursor: unset; }
 
 header.hamburgerHeader {
   width: 100%;
@@ -989,9 +992,6 @@ div.-chatBotOpen {
   text-align: center;
   margin-top: 18.5%; }
 
-.forgetpsw_back {
-  margin-left: 3%; }
-
 @media screen and (max-width: 575px) {
   .forgetpsw {
     height: 400px; } }
@@ -1027,6 +1027,9 @@ div.-chatBotOpen {
   .login_close img {
     width: 100%; }
 
+.btnBack {
+  margin-left: 3%; }
+
 .register {
   padding: 8% 0;
   display: none; }
@@ -1058,9 +1061,6 @@ div.-chatBotOpen {
 .register_bottom {
   text-align: center;
   margin-top: 8%; }
-
-.register_back {
-  margin-left: 3%; }
 
 @media screen and (max-width: 575px) {
   .register_item label {

@@ -1,0 +1,443 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-family: "微軟正黑體";
+  vertical-align: baseline;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+blockquote, q {
+  quotes: "" "";
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+     卡片：首頁、路線、心情、揪團，要使用的sample
+    
+     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
+
+    */
+img.sectionTitle {
+  width: 40%;
+}
+
+@media screen and (max-width: 575px) {
+  img.sectionTitle {
+    width: 65%;
+  }
+}
+
+.moodWrap {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moodWrap .moodBtn {
+  margin-top: 20px;
+}
+
+.moodWrap .moodCardsWrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 767px) {
+  .moodWrap .moodCardsWrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.moodWrap .moodCard {
+  width: 340px;
+  height: unset;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+          box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+  background-image: url(../img/index/moodCardsBg.png);
+  border: 1px solid #c9bb88;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.moodWrap .moodCard .cardInfoBar {
+  width: 300px;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moodWrap .moodCard .cardInfoBar .moodMemberPhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moodWrap .moodCard .cardInfoBar .moodMemberPhoto img {
+  height: 100%;
+  vertical-align: middle;
+}
+
+.moodWrap .moodCard .cardInfoBar .infoTextWrap {
+  width: 210px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodClass {
+  color: #1e1e1e;
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodMemId {
+  color: #646464;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.moodWrap .moodCard .cardInfoBar .dotWrap {
+  width: 40px;
+  height: 40px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  cursor: pointer;
+}
+
+.moodWrap .moodCard .cardInfoBar .dotWrap span.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #646464;
+}
+
+.moodWrap .moodCard .moodPicWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 5px auto;
+  overflow: hidden;
+}
+
+.moodWrap .moodCard .moodPicWrap img.moodPic {
+  height: 100%;
+  vertical-align: middle;
+}
+
+.moodWrap .moodCard .heartBar {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moodWrap .moodCard .heartBar img.moodIcon {
+  width: 35px;
+  cursor: pointer;
+}
+
+.moodWrap .moodCard .heartBar span {
+  color: #646464;
+  font-size: 16px;
+  margin: 0px 10px 0px 5px;
+}
+
+.moodWrap .moodCard .cardText {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.moodWrap .moodCard .cardText p {
+  font-size: 18px;
+  color: #646464;
+  text-align: left;
+}
+
+.moodWrap .moodCard .cardText span {
+  color: #646464;
+  font-size: 16px;
+  display: inline-block;
+  margin: 5px 0px 20px 0px;
+  cursor: pointer;
+}
+
+.moodWrap .moodCard .cardText span:hover {
+  color: #A5361C;
+}
+
+@media screen and (max-width: 1199px) {
+  .moodWrap .moodCard {
+    width: 300px;
+  }
+  .moodWrap .moodCard .cardInfoBar {
+    width: 270px;
+  }
+  .moodWrap .moodCard .cardInfoBar .infoTextWrap {
+    width: 180px;
+  }
+  .moodWrap .moodCard .moodPicWrap {
+    width: 270px;
+    height: 270px;
+  }
+  .moodWrap .moodCard .heartBar {
+    width: 270px;
+  }
+  .moodWrap .moodCard .cardText {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .moodWrap .moodCard {
+    width: 230px;
+  }
+  .moodWrap .moodCard .cardInfoBar {
+    width: 200px;
+  }
+  .moodWrap .moodCard .cardInfoBar .infoTextWrap {
+    width: 110px;
+  }
+  .moodWrap .moodCard .cardInfoBar .infoTextWrap span.moodClass {
+    font-size: 16px;
+  }
+  .moodWrap .moodCard .moodPicWrap {
+    width: 200px;
+    height: 200px;
+  }
+  .moodWrap .moodCard .heartBar {
+    width: 200px;
+  }
+  .moodWrap .moodCard .cardText {
+    width: 200px;
+  }
+  .moodWrap .moodCard .cardText h1 {
+    font-size: 20px;
+  }
+  .moodWrap .moodCard .cardText p {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .moodWrap .moodCard {
+    width: 300px;
+    margin: 7px 0px;
+  }
+  .moodWrap .moodCard .cardInfoBar {
+    width: 270px;
+  }
+  .moodWrap .moodCard .cardInfoBar .infoTextWrap {
+    width: 180px;
+  }
+  .moodWrap .moodCard .moodPicWrap {
+    width: 270px;
+    height: 270px;
+  }
+  .moodWrap .moodCard .heartBar {
+    width: 270px;
+  }
+  .moodWrap .moodCard .cardText {
+    width: 270px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .moodWrap {
+    margin-top: 130px;
+  }
+}
+
+img.moodSubTitle {
+  display: inline-block;
+  position: absolute;
+  left: -5%;
+  top: -150px;
+  -webkit-animation: subtitleAni .8s infinite alternate;
+          animation: subtitleAni .8s infinite alternate;
+}
+
+@-webkit-keyframes subtitleAni {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes subtitleAni {
+  from {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 1365px) {
+  img.moodSubTitle {
+    top: -180px;
+    left: 0%;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  img.moodSubTitle {
+    top: -170px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  img.moodSubTitle {
+    top: -130px;
+    width: 170px;
+  }
+}
+/*# sourceMappingURL=mood.css.map */

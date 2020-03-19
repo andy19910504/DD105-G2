@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/back.css">
 </head>
+
 <body>
     <div class="wrapper">
         <header>
@@ -17,7 +19,7 @@
         </a>
         <div>
             <span id="managerId">撈取管理者ID</span>
-            <button type="button" class="btn btn-outline-secondary btn-sm">登出</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" id="btnLogout">登出</button>
         </div>
     </nav>
 </header>
@@ -27,8 +29,8 @@
        <ul class="nav flex-column">
            <li class="navItem"><a href="" class="nowPage">帳號管理</a></li>
            <li class="navItem"><a href="" class="">心理測驗管理</a></li>
-           <li class="navItem"><a href="" class="">路線管理</a></li>
-           <li class="navItem"><a href="" class="">景點管理</a></li>
+           <li class="navItem"><a href="./backRoute.html" class="">路線管理</a></li>
+           <li class="navItem"><a href="./backAttraction.html" class="">景點管理</a></li>
            <li class="navItem"><a href="" class="">地圖攻略管理</a></li>
            <li class="navItem"><a href="" class="">心情檢舉管理</a></li>
            <li class="navItem"><a href="" class="">揪團檢舉管理</a></li>
@@ -52,7 +54,7 @@
             
         </main>
     </div>
-    
+
 
 
 
@@ -63,5 +65,32 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
+    <script>
+        function $id(id) {
+            return document.getElementById(id);
+        }
+
+        let member;
+        window.addEventListener("load", function () {
+            // 抓取session的資料填入頁面中
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                member = JSON.parse(xhr.responseText);
+                console.log(member);
+                $id("managerId").innerHTML = member.memName;
+            }
+            xhr.open("get", "./php/loginInfoForBack.php", true);
+            xhr.send(null);
+            // 註冊登出按鈕，回到後台登陸頁面
+            $id("btnLogout").onclick = function () {
+                let xhr = new XMLHttpRequest();
+
+                xhr.open("get", "./php/logout.php", true);
+                xhr.send(null);
+                location.href = "./backLogin.html";
+            };
+        }, false);
+    </script>
 </body>
+
 </html>

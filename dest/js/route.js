@@ -80,23 +80,23 @@ var tween5 = new TimelineMax()
 // build scene
 var scene1 = new ScrollMagic.Scene({ triggerElement: "#trigger1", duration: 50, tweenChanges: true, offset: 0 })
     .setTween(tween1)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 var scene2 = new ScrollMagic.Scene({ triggerElement: "#trigger2", duration: 50, tweenChanges: true, offset: 0 })
     .setTween(tween2)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 var scene3 = new ScrollMagic.Scene({ triggerElement: "#trigger3", duration: 50, tweenChanges: true, offset: 0 })
     .setTween(tween3)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 var scene4 = new ScrollMagic.Scene({ triggerElement: "#trigger4", duration: 50, tweenChanges: true, offset: 0 })
     .setTween(tween4)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 var scene5 = new ScrollMagic.Scene({ triggerElement: "#trigger5", duration: 50, tweenChanges: true, offset: 0 })
     .setTween(tween5)
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 
 
@@ -104,25 +104,25 @@ var scene5 = new ScrollMagic.Scene({ triggerElement: "#trigger5", duration: 50, 
 // build scene
 var scene = new ScrollMagic.Scene({triggerElement: "#trigger1",offset:130})
     .setClassToggle(".groupA", "disPlay")
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);   
 //
 var scene = new ScrollMagic.Scene({triggerElement: "#trigger2",offset:130})
     .setClassToggle(".groupB", "disPlay")
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 //
 var scene = new ScrollMagic.Scene({triggerElement: "#trigger3",offset:130})
     .setClassToggle(".groupC", "disPlay")
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 //
 var scene = new ScrollMagic.Scene({triggerElement: "#trigger4",offset:130})
     .setClassToggle(".groupD", "disPlay")
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
 //
 var scene = new ScrollMagic.Scene({triggerElement: "#trigger5",offset:130})
     .setClassToggle(".groupE", "disPlay")
-    .addIndicators()
+    // .addIndicators()
     .addTo(controller);
