@@ -1,1 +1,39 @@
-@charset "UTF-8";.breadCrumb li{width:170px;height:30px;display:inline-block;list-style-type:none;margin-right:45px}.breadCrumb li:last-child{margin-right:unset}
+@charset "UTF-8";
+/* 麵包屑 */
+.breadCrumb {
+  width: 100%;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 20px;
+  margin: 20px auto;
+}
+
+.breadCrumb li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.breadCrumb li::after {
+  content: '｜';
+}
+
+.breadCrumb li a {
+  color: #1e1e1e;
+}
+
+.breadCrumb li a:hover {
+  color: #a5361c;
+  font-weight: bold;
+}
+
+.breadCrumb li:last-child::after {
+  content: '';
+}
+
+.breadCrumb li:last-child a {
+  font-weight: bold;
+  color: #a5361c;
+}
+/*# sourceMappingURL=breadCrumb.css.map */

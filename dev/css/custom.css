@@ -1,97 +1,98 @@
 .header, .fullHeader {
-  z-index: 2; }
+  z-index: 2;
+}
 
-.banner-title {
+.title {
   width: 100%;
   margin: 0 auto;
-  margin-top: 150px; }
+  margin-top: 150px;
+}
 
 .pic-container {
   margin: 100px auto 200px;
   width: 1200px;
-  position: relative; }
+  position: relative;
+}
 
 .bubble {
   width: 150px;
   top: -30px;
   left: 30px;
-  position: absolute; }
-
-.title {
-  display: none;
-  margin: 100px auto 50px;
-  text-align: center;
-  font-size: 24px; }
+  position: absolute;
+}
 
 .campus {
   width: 200px;
   right: 0;
-  transform: rotate(30deg);
-  position: absolute; }
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  position: absolute;
+}
 
 .search-area {
   margin: 70px auto 0;
   width: 63%;
   height: 70px;
-  position: relative; }
+  position: relative;
+}
 
 .search, .btnPink, .btnRed {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .search {
   margin: 0 20px;
   width: 200px;
   height: 39px;
   border: 2px solid #ccc;
-  border-radius: 5px; }
+  border-radius: 5px;
+}
 
 .btnRed {
   position: absolute;
-  right: 200px; }
-
-.confirm {
-  position: absolute;
-  right: 0; }
+  right: 0;
+}
 
 .map-container {
   margin: 0 auto;
   width: 63%;
   height: 550px;
   border: 6px solid #ccc;
-  border-radius: 6px; }
+  border-radius: 6px;
+}
 
 #map {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 @media (max-width: 576px) {
   .pic-container {
-    width: 90%; }
+    width: 90%;
+  }
   .bubble {
-    display: none; }
-  .title {
-    display: block; }
+    position: relative;
+  }
   .campus {
-    display: none; }
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
   .search-area {
     margin: 0;
-    width: 100%; }
+    width: 100%;
+    height: 120px;
+  }
   .search {
     margin: 0 10px 0 20px;
     width: 170px;
-    height: 30px; }
+    height: 30px;
+  }
   .btnRed {
-    position: absolute;
-    top: 625px;
-    left: 50%;
-    transform: translate(-50%, 0);
     display: block;
-    margin: 10px auto; }
-  .confirm {
-    position: absolute;
-    top: 700px;
-    left: 50%;
-    display: block;
-    margin: 10px auto; }
+    margin: 10px auto;
+  }
   .map-container {
-    width: 100%; } }
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=custom.css.map */

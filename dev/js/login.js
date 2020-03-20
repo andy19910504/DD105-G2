@@ -134,4 +134,3 @@ $("#login_forgetpsw").click(function () {
     document.getElementById("member_findpsw").submit();
 
 })
-
