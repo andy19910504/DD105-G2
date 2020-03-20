@@ -112,97 +112,22 @@
         <main class="col-md-10">
             <h2>管理員管理</h2>
             <div class="content">
-                <table>
-                    <tr>
-                        <td>編號</td>
-                        <td>帳號</td>
-                        <td>權限</td>
-                        <td>狀態</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>0</td>
-                            <td>AA</td>
-                            <td>XXX</td>
-                            <td><button>停權</button></td>
-                            <td><button>刪除</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>AA</td>
-                            <td>XXX</td>
-                            <td><button>停權</button></td>
-                            <td><button>刪除</button></td>
-                        </form>
-                    </tr>
-                </table>
                 <div class="new_mana_acc">
-                    <form action="">
-                        <input type="text" placeholder="帳號">
-                        <input type="text" placeholder="密碼">
-                        <input type="text" placeholder="權限">
+                    <form action="./php/member/newma.php" method="POST">
+                        <input type="text" placeholder="暱稱" name="name">
+                        <input type="text" placeholder="帳號" name="account">
+                        <input type="text" placeholder="密碼" name="password">
                         <button>新增管理員帳號</button>
-                    </form>
-                    
-                    
+                    </form>   
                 </div>
+                <table id="manager">
+                   
+                </table>
+                
             </div>
             <h2>會員管理</h2>
             <div class="content">
-                <table>
-                    <tr>
-                        <td>編號</td>
-                        <td>暱稱</td>
-                        <td>帳號</td>
-                        <td>密碼</td>
-                        <td>信箱</td>
-                        <td>頭貼</td>
-                        <td>手機</td>
-                        <td>點數</td>
-                        <td>狀態</td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>0</td>
-                            <td>QQ</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>XX</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>XX</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
+                <table id="memberall">
                 </table>
             </div>
         </main>
@@ -219,8 +144,88 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
     <script>
-        //load事件
-        //依資料狀態
+
+    </script>
+    <script>
+        //////////////////////////load建立管理員&&會員
+        let staff;
+        window.addEventListener("load", function () {
+            // console.log(location.search.split("?")[1]);
+            // if(location.search.split("?")[1]=="aaa"){
+            //     alert("新增成功!");
+            // }
+          
+            // getmanager();
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                staff = JSON.parse(xhr.responseText);
+                console.log(staff);
+                let manager = document.getElementById("manager");
+                let staffRow = `<tr>
+                        <td>編號</td>
+                        <td>暱稱</td>
+                        <td>帳號</td>
+                        <td>密碼</td>
+                        <td>狀態</td>
+                        <td></td>
+                    </tr>`;
+                for (i = 0; i < staff.length; i++) {
+                    staffRow += `
+                <tr>
+                        <form action="">
+                            <td>${staff[i].staff_number}</td>
+                            <td>${staff[i].staff_name}</td>
+                            <td>${staff[i].staff_account}</td>
+                            <td>${staff[i].staff_password}</td>
+                            <td><button>停權</button></td>
+                            <td><button>刪除</button></td>
+                        </form>
+                </tr>
+                `;
+                    manager.innerHTML = staffRow;
+                }
+            }
+            xhr.open("get", "./php/member/backmember.php", true);
+            xhr.send(null);
+
+            ///////會員資料
+            let xhr1 = new XMLHttpRequest();
+            xhr1.onload = function () {
+                memberall = JSON.parse(xhr1.responseText);
+                console.log(memberall);
+                let members = document.getElementById("memberall");
+                let memberRow = `<tr>
+                        <td>編號</td>
+                        <td>暱稱</td>
+                        <td>帳號</td>
+                        <td>密碼</td>
+                        <td>信箱</td>
+                        <td>頭貼</td>
+                        <td>點數</td>
+                        <td>狀態</td>
+                    </tr>`;
+                for (j = 0; j < memberall.length; j++) {
+                    memberRow += `
+                    <tr>
+                        <form action="">
+                            <td>${memberall[j].member_number}</td>
+                            <td>${memberall[j].member_name}</td>
+                            <td>${memberall[j].member_account}</td>
+                            <td>${memberall[j].member_password}</td>
+                            <td>${memberall[j].member_email}</td>
+                            <td><img src="${memberall[j].member_photo}" alt=""></td>
+                            <td>${memberall[j].member_point}</td>
+                            <td><button>停權</button></td>
+                        </form>
+                    </tr>
+                `;
+                    members.innerHTML = memberRow;
+                }
+            }
+            xhr1.open("get", "./php/member/memberall.php", true);
+            xhr1.send(null);
+        })
+        
     </script>
 </body>
 

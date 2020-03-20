@@ -120,6 +120,11 @@ window.addEventListener("load", function () {
             $id("register_psw").focus();
             return
         }
+        if ($id("register_psw").value.length < 6) {
+            alert("密碼至少6位數");
+            $id("register_psw").focus();
+            return
+        }
         if ($id("register_psw_dou").value.length == 0) {
             alert("確認密碼不能為空");
             $id("register_psw_dou").focus();
@@ -147,6 +152,8 @@ window.addEventListener("load", function () {
             alert("兩組密碼不一致");
             return
         }
+        //檢查完 去註冊
+        document.getElementById("member_register").submit();
     })
     
     //找回密碼事件
