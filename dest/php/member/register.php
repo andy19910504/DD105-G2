@@ -10,7 +10,7 @@ try {
     $newma = $pdo->prepare($sql);
     $newma->bindvalue(":name",$nam);
     $newma->bindvalue(":account",$acc);
-    $newma->bindvalue(":password",$email);
+    $newma->bindvalue(":email",$email);
     $newma->bindvalue(":password",$psw);
     $newma->execute();
     if($newma->rowCount()==1){ 
