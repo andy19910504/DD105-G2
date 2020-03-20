@@ -1,10 +1,10 @@
 <?php
 try{
     require_once("./connectBooks.php");
-    $sql ="select * from `member` where memId = :memId and memPsw = :memPsw";
+    $sql =" select * from `member` where member_account = :memId and member_password = :memPsw; ";
     $member = $pdo->prepare($sql);
-    $member->bindValue(":memId", $_POST["memId"]);
-    $member->bindValue(":memPsw", $_POST["memPsw"]);
+    $member->bindValue(":memId", $_POST["login_acc"]);
+    $member->bindValue(":memPsw", $_POST["login_psw"]);
     $member->execute();
 
     if($member->rowCount()==0){
@@ -14,15 +14,22 @@ try{
         $memRow = $member->fetch(PDO::FETCH_ASSOC);
 
         session_start();
-        $_SESSION["memNo"] = $memRow["no"];
-        $_SESSION["memId"] = $memRow["memId"];
-        $_SESSION["memPsw"] = $memRow["memPsw"];
-        $_SESSION["memName"] = $memRow["memName"];
+        $_SESSION["member_number"] = $memRow["member_number"];
+        $_SESSION["member_account"] = $memRow["member_account"];
+        $_SESSION["member_password"] = $memRow["member_password"];
+        $_SESSION["member_name"] = $memRow["member_name"];
+        $_SESSION["member_email"]= $memRow["member_email"];
+        $_SESSION["member_photo"]= $memRow["member_photo"];
+        $_SESSION["member_point"]= $memRow["member_point"];
 
-        $member =["memNo"=>$_SESSION["memNo"],
-                  "memId"=>$_SESSION["memId"],
-                  "memPsw"=>$_SESSION["memPsw"],
-                  "memName"=>$_SESSION["memName"]];
+        $member = [
+            "memNum"=>$_SESSION["member_number"],
+            "memAcc"=>$_SESSION["member_account"],
+            "memPsw"=>$_SESSION["member_password"],
+            "memName"=>$_SESSION["member_name"],
+            "memEmail"=>$_SESSION["member_email"],
+            "memPhoto"=>$_SESSION["member_photo"],
+            "memPoint"=>$_SESSION["member_point"]];
     
         echo json_encode($member);
     }

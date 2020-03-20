@@ -9,7 +9,7 @@ function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
-        if (member.memId) {
+        if (member.memAcc) {
             // 登入 換成 登出
             $(".sign").text("登出");
         }
@@ -54,8 +54,8 @@ window.addEventListener("load", function () {
         let login_acc = $id("login_acc").value;
         let login_psw = $id("login_psw").value;
         // 登入資訊
-        // let data_info = `member_account=${login_acc}&member_password=${login_psw}`;
-        let data_info = `memId=${login_acc}&memPsw=${login_psw}`;
+        let data_info = `memberAccount=${login_acc}&memberPassword=${login_psw}`;
+        // let data_info = `memAcc=${login_acc}&memPsw=${login_psw}`;
         console.log(data_info);
         if (login_acc.length == 0) {
             alert("請填寫正確的帳號");
@@ -74,6 +74,7 @@ window.addEventListener("load", function () {
                 if (xhr.responseText.indexOf("error") != -1) {
                     alert("請填寫正確的帳號或密碼哦！");
                     // 直接清除錯誤的登入資訊
+
                     xhr.open("get", "./php/logout.php", true);
                     xhr.send(null);
                 } else {
@@ -87,7 +88,7 @@ window.addEventListener("load", function () {
 
         }
         xhr.open("Post", "./php/loginForFront.php", true);
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(data_info);
 
         // 將登入表單上的資料清空，並隱藏起來
