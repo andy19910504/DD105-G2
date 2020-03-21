@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/back.css">
     <style>
+        /* #manager>tbody>tr {
+            border: 10px solid red;
+        } */
+
         table {
             margin: 0 auto;
             /* border: 3px solid red; */
@@ -27,9 +31,10 @@
             width: 3000px;
             text-align: center;
         }
-        td img{
+
+        td img {
             width: 100%;
-        
+
         }
 
         .new_mana_acc {
@@ -91,17 +96,32 @@
             <h2>管理員管理</h2>
             <div class="content">
                 <div class="new_mana_acc">
-                    <form action="./php/member/newma.php" method="POST">
-                        <input type="text" placeholder="暱稱" name="name">
-                        <input type="text" placeholder="帳號" name="account">
-                        <input type="text" placeholder="密碼" name="password">
-                        <button>新增管理員帳號</button>
-                    </form>   
+                    <!-- <form action="./php/member/newma.php" method="POST"> -->
+                    <input type="text" placeholder="暱稱" name="name" id="newma_nam">
+                    <input type="text" placeholder="帳號" name="account" id="newma_acc">
+                    <input type="text" placeholder="密碼" name="password" id="newma_psw">
+                    <button id="newma">新增管理員帳號</button>
+                    <!-- </form>    -->
                 </div>
                 <table id="manager">
-                   
+                    <tr>
+                        <td>number1</td>
+                        <td>name</td>
+                        <td>account</td>
+                        <td>password</td>
+                        <td><button>停權</button></td>
+                        <td><button class="newma_del">刪除</button></td>
+                    </tr>
+                    <tr>
+                        <td>number2</td>
+                        <td>name</td>
+                        <td>account</td>
+                        <td>password</td>
+                        <td><button>停權</button></td>
+                        <td><button class="newma_del">刪除</button></td>
+                    </tr>
                 </table>
-                
+
             </div>
             <h2>會員管理</h2>
             <div class="content">
@@ -121,90 +141,8 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
-    <script>
+    <script src="./js/backmember.js"></script>
 
-    </script>
-    <script>
-        //////////////////////////load建立管理員&&會員
-        let staff;
-        window.addEventListener("load", function () {
-            // console.log(location.search.split("?")[1]);
-            // if(location.search.split("?")[1]=="aaa"){
-            //     alert("新增成功!");
-            // }
-          
-            // getmanager();
-            let xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-                staff = JSON.parse(xhr.responseText);
-                console.log(staff);
-                let manager = document.getElementById("manager");
-                let staffRow = `<tr>
-                        <td>編號</td>
-                        <td>暱稱</td>
-                        <td>帳號</td>
-                        <td>密碼</td>
-                        <td>狀態</td>
-                        <td></td>
-                    </tr>`;
-                for (i = 0; i < staff.length; i++) {
-                    staffRow += `
-                <tr>
-                        <form action="">
-                            <td>${staff[i].staff_number}</td>
-                            <td>${staff[i].staff_name}</td>
-                            <td>${staff[i].staff_account}</td>
-                            <td>${staff[i].staff_password}</td>
-                            <td><button>停權</button></td>
-                            <td><button>刪除</button></td>
-                        </form>
-                </tr>
-                `;
-                    manager.innerHTML = staffRow;
-                }
-            }
-            xhr.open("get", "./php/member/backmember.php", true);
-            xhr.send(null);
-
-            ///////會員資料
-            let xhr1 = new XMLHttpRequest();
-            xhr1.onload = function () {
-                memberall = JSON.parse(xhr1.responseText);
-                console.log(memberall);
-                let members = document.getElementById("memberall");
-                let memberRow = `<tr>
-                        <td>編號</td>
-                        <td>暱稱</td>
-                        <td>帳號</td>
-                        <td>密碼</td>
-                        <td>信箱</td>
-                        <td>頭貼</td>
-                        <td>點數</td>
-                        <td>狀態</td>
-                    </tr>`;
-                for (j = 0; j < memberall.length; j++) {
-                    memberRow += `
-                    <tr>
-                        <form action="">
-                            <td>${memberall[j].member_number}</td>
-                            <td>${memberall[j].member_name}</td>
-                            <td>${memberall[j].member_account}</td>
-                            <td>${memberall[j].member_password}</td>
-                            <td>${memberall[j].member_email}</td>
-                            <td><img src="${memberall[j].member_photo}" alt=""></td>
-                            <td>${memberall[j].member_point}</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
-                `;
-                    members.innerHTML = memberRow;
-                }
-            }
-            xhr1.open("get", "./php/member/memberall.php", true);
-            xhr1.send(null);
-        })
-        
-    </script>
 </body>
 
 </html>

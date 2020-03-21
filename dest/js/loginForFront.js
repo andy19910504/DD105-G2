@@ -152,7 +152,33 @@ window.addEventListener("load", function () {
             return
         }
         //檢查完 去註冊
-        document.getElementById("member_register").submit();
+        // document.getElementById("member_register").submit();
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+             //modify here
+             alert(xhr.responseText);
+            //  location.reload();
+            //清空註冊頁之值&&關掉登入燈箱
+            $id('register_acc').value = '';
+            $id('register_nam').value = '';
+            $id('register_email').value = '';
+            $id('register_psw').value = '';
+            $id('register_psw_dou').value = '';
+            $(".register").css("display","none");
+            $(".login_all_all").css("display","block");
+            $("#loginBlock").css("display","none");
+            }else{
+               alert( xhr.status );
+            }
+       }
+       var url = "./php/member/register.php?register_acc=" + document.getElementById("register_acc").value
+       + "&register_nam=" + document.getElementById("register_nam").value
+       + "&register_email=" + document.getElementById("register_email").value
+       + "&register_psw=" + document.getElementById("register_psw").value;
+       console.log(url);
+       xhr.open("Get", url, true);
+       xhr.send( null );
     })
     
     //找回密碼事件
