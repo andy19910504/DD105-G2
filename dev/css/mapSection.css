@@ -1,4 +1,5 @@
 div.gameWrap {
+  border: 1px solid blue;
   width: 100%;
   margin-top: 30px;
   position: relative;
@@ -200,7 +201,10 @@ div.gameWrap div.playBtn {
   }
 }
 
+<<<<<<< HEAD
+=======
 div.gpsWrap {
+  border: 1px solid blue;
   width: 100%;
   margin-top: 60px;
   position: relative;
@@ -358,6 +362,8 @@ div.gpsWrap img.gpsPhonePic {
   -webkit-transform: rotate(8deg);
           transform: rotate(8deg);
   margin-right: 150px;
+  -webkit-animation: iPhoneAni .2s linear infinite alternate;
+          animation: iPhoneAni .2s linear infinite alternate;
 }
 
 @-webkit-keyframes iPhoneAni {
@@ -456,6 +462,7 @@ div.gpsWrap img.gpsPhonePic {
   }
 }
 
+>>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 img.gameSubTitle {
   position: absolute;
   right: -5%;
@@ -502,136 +509,6 @@ img.gameSubTitle {
 @media screen and (max-width: 767px) {
   img.gameSubTitle {
     right: 5%;
-  }
-}
-
-img.milkTea {
-  width: 100px;
-  position: absolute;
-  right: -200px;
-  top: 500px;
-  -webkit-transform: rotate(8deg);
-          transform: rotate(8deg);
-}
-
-img.camera {
-  width: 160px;
-  position: absolute;
-  right: -320px;
-  top: 650px;
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg);
-}
-
-img.star01 {
-  width: 40px;
-  position: absolute;
-  right: -325px;
-  top: 590px;
-  -webkit-animation: starAni .8s infinite alternate;
-          animation: starAni .8s infinite alternate;
-}
-
-img.star02 {
-  width: 50px;
-  position: absolute;
-  right: -180px;
-  top: 720px;
-  animation: starAni 1s infinite alternate-reverse;
-}
-
-@-webkit-keyframes starAni {
-  from {
-    -webkit-transform: scale(0.2);
-            transform: scale(0.2);
-    opacity: .5;
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes starAni {
-  from {
-    -webkit-transform: scale(0.2);
-            transform: scale(0.2);
-    opacity: .5;
-  }
-  to {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
-
-img.skyLight01 {
-  width: 120px;
-  position: absolute;
-  left: -250px;
-  top: 850px;
-  animation: skyLightAni 2s infinite alternate-reverse linear;
-}
-
-img.skyLight02 {
-  width: 300px;
-  position: absolute;
-  left: -320px;
-  top: 720px;
-  animation: skyLightAni 1s infinite alternate-reverse linear;
-}
-
-@-webkit-keyframes skyLightAni {
-  from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-}
-
-@keyframes skyLightAni {
-  from {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  from {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
-  }
-}
-
-img.eggBread {
-  width: 130px;
-  position: absolute;
-  right: -180px;
-  top: 1450px;
-  -webkit-animation: skyLightAni 1.2s infinite alternate linear;
-          animation: skyLightAni 1.2s infinite alternate linear;
-}
-
-img.candyFruit {
-  width: 120px;
-  position: absolute;
-  right: -280px;
-  top: 1550px;
-  -webkit-animation: skyLightAni 1s infinite alternate linear;
-          animation: skyLightAni 1s infinite alternate linear;
-}
-
-@media screen and (max-width: 1199px) {
-  img.milkTea,
-  img.camera,
-  img.star01,
-  img.star02,
-  img.skyLight01,
-  img.skyLight02,
-  img.eggBread,
-  img.candyFruit {
-    display: none;
   }
 }
 /*# sourceMappingURL=mapSection.css.map */

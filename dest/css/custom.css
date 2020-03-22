@@ -39,11 +39,19 @@
   display: inline-block; }
 
 .search {
-  margin: 0;
-  width: 144px;
-  height: 30px;
+  margin: 0 20px;
+  width: 200px;
+  height: 39px;
   border: 2px solid #ccc;
   border-radius: 5px; }
+
+.btnRed {
+  position: absolute;
+  right: 200px; }
+
+.confirm {
+  position: absolute;
+  right: 0; }
 
 .map-container {
   margin: 0 auto;
@@ -67,28 +75,22 @@
     display: none; }
   .search-area {
     margin: 0;
-    width: 100%;
-    height: 85px; }
+    width: 100%; }
   .search {
     margin: 0 10px 0 20px;
     width: 170px;
     height: 30px; }
-  .removeSpot {
+  .btnRed {
     position: absolute;
-    top: 42px;
-    right: 12px; }
-  .plan {
-    position: absolute;
-    top: 640px;
+    top: 625px;
     left: 50%;
     transform: translate(-50%, 0);
     display: block;
     margin: 10px auto; }
   .confirm {
     position: absolute;
-    top: 710px;
+    top: 700px;
     left: 50%;
-    transform: translate(-50%, 0);
     display: block;
     margin: 10px auto; }
   .map-container {
