@@ -5,213 +5,6 @@
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
-/*
-     卡片：首頁、路線、心情、揪團，要使用的sample
-    
-     先用include card(設定height) 在做其他設定，我會再增加卡片的間距
-
-    */
-div.eventWrap {
-  width: 100%;
-  margin-top: 30px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  div.eventWrap div.eventBtn {
-    margin-top: 20px; }
-  div.eventWrap div.eventCardsWrap {
-    width: 100%;
-    display: flex;
-    justify-content: space-around; }
-  @media screen and (max-width: 767px) {
-    div.eventWrap div.eventCardsWrap {
-      flex-direction: column;
-      align-items: center; } }
-  div.eventWrap div.eventCard {
-    width: 340px;
-    height: unset;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
-    background-image: url(../img/index/eventCardBg.png);
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start; }
-    div.eventWrap div.eventCard div.dotWrap {
-      width: 40px;
-      height: 40px;
-      margin: 5px 18px 0px 0px;
-      align-self: flex-end;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      cursor: pointer; }
-      div.eventWrap div.eventCard div.dotWrap span.dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        background-color: #646464; }
-    div.eventWrap div.eventCard div.eventPicWrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 300px;
-      height: 300px;
-      margin: 5px auto;
-      overflow: hidden; }
-      div.eventWrap div.eventCard div.eventPicWrap img.eventPic {
-        height: 100%;
-        vertical-align: middle; }
-    div.eventWrap div.eventCard div.cardText {
-      width: 300px;
-      margin: 0 auto;
-      text-align: center;
-      letter-spacing: 2px;
-      line-height: 1.5;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      div.eventWrap div.eventCard div.cardText h1 {
-        width: 100%;
-        font-size: 24px;
-        color: #1e1e1e;
-        font-weight: 550;
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 10px; }
-      div.eventWrap div.eventCard div.cardText p {
-        font-size: 18px;
-        color: #646464;
-        text-align: left; }
-      div.eventWrap div.eventCard div.cardText span {
-        color: #646464;
-        font-size: 16px;
-        display: inline-block;
-        margin: 5px 0px 20px 0px;
-        cursor: pointer; }
-        div.eventWrap div.eventCard div.cardText span:hover {
-          color: #A5361C; }
-  @media screen and (max-width: 1199px) {
-    div.eventWrap div.eventCard {
-      width: 300px; }
-      div.eventWrap div.eventCard div.dotWrap {
-        margin: 5px 18px 0px 0px; }
-      div.eventWrap div.eventCard div.eventPicWrap {
-        width: 270px;
-        height: 270px; }
-      div.eventWrap div.eventCard div.cardText {
-        width: 270px; } }
-  @media screen and (max-width: 1023px) {
-    div.eventWrap div.eventCard {
-      width: 230px; }
-      div.eventWrap div.eventCard div.dotWrap {
-        margin: 0px 15px 0px 0px; }
-      div.eventWrap div.eventCard div.eventPicWrap {
-        width: 200px;
-        height: 200px; }
-      div.eventWrap div.eventCard div.cardText {
-        width: 200px; }
-        div.eventWrap div.eventCard div.cardText h1 {
-          font-size: 20px; }
-        div.eventWrap div.eventCard div.cardText p {
-          font-size: 16px;
-          letter-spacing: 1px; } }
-  @media screen and (max-width: 767px) {
-    div.eventWrap div.eventCard {
-      width: 300px;
-      margin: 15px 0px; }
-      div.eventWrap div.eventCard div.dotWrap {
-        margin: 5px 18px 0px 0px; }
-      div.eventWrap div.eventCard div.eventPicWrap {
-        width: 270px;
-        height: 270px; }
-      div.eventWrap div.eventCard div.cardText {
-        width: 270px;
-        margin: 0 auto;
-        text-align: center;
-        letter-spacing: 2px;
-        line-height: 1.5; }
-        div.eventWrap div.eventCard div.cardText h1 {
-          font-size: 24px; }
-        div.eventWrap div.eventCard div.cardText p {
-          font-size: 18px; } }
-
-@media screen and (max-width: 767px) {
-  div.eventWrap {
-    margin-top: 20px; } }
-
-img.eventSubTitle {
-  display: inline-block;
-  position: absolute;
-  left: -5%;
-  top: -150px;
-  animation: subtitleAni .8s infinite alternate; }
-
-@keyframes subtitleAni {
-  from {
-    transform: translateY(20px); }
-  to {
-    transform: translateY(0px); } }
-
-@media screen and (max-width: 1365px) {
-  img.eventSubTitle {
-    left: 0%; } }
-
-@media screen and (max-width: 1199px) {
-  img.eventSubTitle {
-    top: -150px; } }
-
-@media screen and (max-width: 1023px) {
-  img.eventSubTitle {
-    top: -130px;
-    width: 170px; } }
-
-@media screen and (max-width: 767px) {
-  img.eventSubTitle {
-    display: none; } }
-
-img.baoPic {
-  width: 130px;
-  position: absolute;
-  top: 100px;
-  right: -210px;
-  animation: bagAni 2s infinite alternate linear; }
-
-img.taroPic {
-  width: 150px;
-  position: absolute;
-  top: 250px;
-  right: -320px;
-  animation: bagAni 2s infinite alternate-reverse linear; }
-
-img.backagePic {
-  width: 160px;
-  position: absolute;
-  top: 500px;
-  left: -280px;
-  animation: bagAni 2s infinite alternate linear; }
-
-img.potPic {
-  width: 160px;
-  position: absolute;
-  top: 660px;
-  left: -200px;
-  animation: bagAni 2s infinite alternate-reverse linear; }
-
-@keyframes bagAni {
-  form {
-    transform: rotate(-7deg); }
-  to {
-    transform: rotate(7deg); } }
-
-@media screen and (max-width: 1199px) {
-  img.baoPic,
-  img.taroPic,
-  img.backagePic,
-  img.potPic {
-    display: none; } }
-
 .wrapper {
   width: 100%;
   overflow: hidden; }
@@ -519,22 +312,88 @@ img.potPic {
     width: 140px;
     margin: 20px 0; } }
 
-.eventWrap {
-  margin: 55px 0; }
+div.cardBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
+
+div.eventCard {
+  width: 340px;
+  height: unset;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
+  background-image: url(../img/event/event_cardback.png);
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  transition: 1s;
+  margin: 25px 30px; }
+  div.eventCard div.dotWrap {
+    width: 40px;
+    height: 40px;
+    margin: 5px 18px 0px 0px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer; }
+    div.eventCard div.dotWrap span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: #646464; }
+  div.eventCard div.eventPicWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin: 5px auto;
+    overflow: hidden; }
+    div.eventCard div.eventPicWrap img.eventPic {
+      height: 100%;
+      vertical-align: middle; }
+  div.eventCard div.cardText {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    div.eventCard div.cardText h1 {
+      width: 100%;
+      font-size: 24px;
+      color: #1e1e1e;
+      font-weight: 550;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px; }
+    div.eventCard div.cardText p {
+      font-size: 18px;
+      color: #646464;
+      text-align: left; }
+    div.eventCard div.cardText span {
+      color: #646464;
+      font-size: 16px;
+      display: inline-block;
+      margin: 5px 0px 20px 0px;
+      cursor: pointer; }
+      div.eventCard div.cardText span:hover {
+        color: #A5361C; }
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
     margin: 0px auto; } }
 
-.eventCard {
-  transition: 1s; }
-
 .eventCard:hover {
   transform: translateY(-10px); }
 
 .cardTop {
-  display: flex;
-  justify-content: center; }
+  display: flex; }
 
 .starMark {
   display: flex;
@@ -570,6 +429,20 @@ img.potPic {
 .viewMore {
   margin: 35px auto 0 auto;
   text-align: center; }
+
+.eventinfo_back {
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; }
 
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);

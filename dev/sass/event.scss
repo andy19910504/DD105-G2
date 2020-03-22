@@ -1,6 +1,6 @@
 @import "./base/var.scss";
 @import "./layout/card.scss";
-@import "./layout/index/eventSection.scss";
+// @import "./layout/index/eventSection.scss";
 
 .wrapper{
     width: 100%;
@@ -423,17 +423,93 @@
 }
 
 //三張卡片
-.eventWrap{
-    margin: 55px 0;
+div.cardBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+}
+div.eventCard{
+    @include card(unset);
+    background-image: url(../img/event/event_cardback.png);
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    transition: 1s;
+    margin: 25px 30px;
+    //右上點點按鈕
+    div.dotWrap{
+        width: 40px;
+        height: 40px;
+        margin: 5px 18px 0px 0px;
+        align-self: flex-end;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        cursor: pointer;
+        span.dot{
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            background-color: #646464;
+        }
+    }
+    //圖片容器
+    div.eventPicWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        margin:5px auto;
+        overflow: hidden;
+        img.eventPic{
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    //文字容器
+    div.cardText {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            width: 100%;
+            font-size: $fzTitle;
+            color: $fcContent;
+            font-weight: 550;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: $fzContent;
+            color: $fcInfo;
+            text-align: left;
+        }
+        span {
+            color: $fcInfo;
+            font-size: $fzInfo;
+            display: inline-block;
+            margin: 5px 0px 20px 0px;
+            cursor: pointer;
+            &:hover{
+                color: #A5361C;
+            }
+        }
+    }
 }
 @media screen and (max-width:767px){
     div.eventWrap{
         margin: 0px auto;
     }
-}
-.eventCard{
-    transition: 1s;
-  
 }
 .eventCard:hover{
     transform: translateY(-10px);
@@ -441,7 +517,7 @@
 //有星星卡片的上排
 .cardTop{
     display: flex;
-    justify-content: center;
+   
 }
 //卡片星星標記
 .starMark{
@@ -479,6 +555,8 @@
       
 }
 
+
+
 // 隱藏卡片區 
 .cardBox2{
     display: none;
@@ -490,6 +568,23 @@
 }
 
 //燈箱們---------------發起揪團燈箱
+
+//
+.eventinfo_back{
+    background-color: rgba(24, 24, 24, 0.8);
+    display: none;
+    // filter: alpha(opacity=0);
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    top: 0px;   
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
 
 //  最底層black 
 .backDrop{
@@ -506,7 +601,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-  }
+}
 //  關閉 
 .close{
     color: $fcInfo;

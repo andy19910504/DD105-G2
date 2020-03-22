@@ -53,7 +53,7 @@
         <div class="btnCust lightbox">我要揪團</div>
 
         <!-- 主內容 -->
-        <div class="eventContent">
+        <div class="eventContent" id="eventContent">
             <!-- //最新揪團區 -->
             <section class="newEventBlock">
                 <!-- 小插圖們 -->
@@ -144,342 +144,101 @@
                     </form>
                 </div>
                 <!-- 卡片區 -->
-                <div class="cardBox">
-                    <!-- 三張卡片 -->
-                    <div class="eventWrap">
-                        <div class="eventCardsWrap">
-                            <!-- 一張卡片 -->
-                            <div class="eventCard wow zoomIn">
-                                <div class="cardTop">
-                                    <div class="starMark">
-                                        <div><img src="./img/event/event_star.png" alt=""></div>
-                                        <div class="markWord">官方路線</div>
-                                    </div>
-                                    <div class="dotWrap lightReport">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>職人散步GoGo團</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
+                <div class="cardBox" id="cardBox">
+                    <!-- 撈資料新增卡片 -->
+                    <!-- <div class="eventCard wow zoomIn">
+                       <div class="cardTop">
+                            判斷星星
+                            <div class="starMark">
+                                <div><img src="./img/event/event_star.png" alt=""></div>
+                                <div class="markWord">官方路線</div>
                             </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>信義一日遊</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>一起去陽明山散步吧</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
+                            <div class="dotWrap lightReport">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
                             </div>
                         </div>
-                    </div>
-                    <!-- 三張卡片 -->
-                    <div class="eventWrap">
-                        <div class="eventCardsWrap">
-                            <!-- 一張卡片 -->
-                            <div class="eventCard wow zoomIn">
-                                <div class="cardTop">
-                                    <div class="starMark">
-                                        <div><img src="./img/event/event_star.png" alt=""></div>
-                                        <div class="markWord">官方路線</div>
-                                    </div>
-                                    <div class="dotWrap lightReport">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>職人散步GoGo團</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>信義一日遊</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>一起去陽明山散步吧</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
+                        <div class="eventPicWrap">
+                            <img src="./img/event/eventPic3.jpg" class="eventPic">
                         </div>
-                    </div>
-                    <!-- 三張卡片 -->
-                    <div class="eventWrap">
-                        <div class="eventCardsWrap">
-                            <!-- 一張卡片 -->
-                            <div class="eventCard wow zoomIn">
-                                <div class="cardTop">
-                                    <div class="starMark">
-                                        <div><img src="./img/event/event_star.png" alt=""></div>
-                                        <div class="markWord">官方路線</div>
-                                    </div>
-                                    <div class="dotWrap lightReport">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>職人散步GoGo團</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>信義一日遊</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard wow zoomIn">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>一起去陽明山散步吧</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
+                        <div class="cardText">
+                            <h1>一起去陽明山散步吧</h1>
+                            <p>
+                                活動日期:2020-03-01(日) <br>
+                                報名截止:2020-02-28(五) <br>
+                                集合地點:信義新光三越
+                            </p>
+                            <span class="lightDetail" id="lightDetail數字">more</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- 隱藏卡片區 -->
                 <div class="cardBox2 ">
-                    <!-- 三張卡片 -->
-                    <div class="eventWrap">
-                        <div class="eventCardsWrap">
-                            <!-- 一張卡片 -->
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>職人散步GoGo團</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
+                    <!-- 隱藏卡片 -->
+                    <div class="eventCard wow zoomIn">
+                        <div class="cardTop">
+                            <div class="starMark">
+                                <div><img src="./img/event/event_star.png" alt=""></div>
+                                <div class="markWord">官方路線</div>
                             </div>
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>信義一日遊</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>一起去陽明山散步吧</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
+                            <div class="dotWrap lightReport">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
                             </div>
                         </div>
+                        <div class="eventPicWrap">
+                            <img src="./img/event/eventPic1.jpg" class="eventPic">
+                        </div>
+                        <div class="cardText">
+                            <h1>職人散步GoGo團</h1>
+                            <p>
+                                活動日期:2020-03-01(日) <br>
+                                報名截止:2020-02-28(五) <br>
+                                集合地點:信義新光三越
+                            </p>
+                            <span class="lightDetail">more</span>
+                        </div>
                     </div>
-                    <!-- 三張卡片 -->
-                    <div class="eventWrap">
-                        <div class="eventCardsWrap">
-                            <!-- 一張卡片 -->
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic01.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>職人散步GoGo團</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic02.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>信義一日遊</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
-                            <div class="eventCard ">
-                                <div class="dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <div class="eventPicWrap">
-                                    <img src="./img/index/eventPic03.jpg" class="eventPic">
-                                </div>
-                                <div class="cardText">
-                                    <h1>一起去陽明山散步吧</h1>
-                                    <p>
-                                        活動日期:2020-03-01(日) <br>
-                                        報名截止:2020-02-28(五) <br>
-                                        集合地點:信義新光三越
-                                    </p>
-                                    <span class="lightDetail">more</span>
-                                </div>
-                            </div>
+                    <!-- 一張卡片 -->
+                    <div class="eventCard wow zoomIn">
+                        <div class="dotWrap lightReport">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="eventPicWrap">
+                            <img src="./img/event/eventPic2.jpg" class="eventPic">
+                        </div>
+                        <div class="cardText">
+                            <h1>信義一日遊</h1>
+                            <p>
+                                活動日期:2020-03-01(日) <br>
+                                報名截止:2020-02-28(五) <br>
+                                集合地點:信義新光三越
+                            </p>
+                            <span class="lightDetail">more</span>
+                        </div>
+                    </div>
+                    <!-- 一張卡片 -->
+                    <div class="eventCard wow zoomIn">
+                        <div class="dotWrap lightReport">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <div class="eventPicWrap">
+                            <img src="./img/event/eventPic3.jpg" class="eventPic">
+                        </div>
+                        <div class="cardText">
+                            <h1>一起去陽明山散步吧</h1>
+                            <p>
+                                活動日期:2020-03-01(日) <br>
+                                報名截止:2020-02-28(五) <br>
+                                集合地點:信義新光三越
+                            </p>
+                            <span class="lightDetail">more</span>
                         </div>
                     </div>
                 </div>
@@ -489,7 +248,7 @@
                 </div>
             </section>
             <!-- //燈箱們-我要揪團 -->
-            <div class="backDrop">
+            <div class="backDrop" id="eventhold_back">
                 <div class="lightbox_holdevent_info">
                     <!-- 關閉 -->
                     <div class="close">✘</div>
@@ -523,7 +282,7 @@
                                     <!-- 左邊按鈕 -->
                                     <div class="slideBtn">
                                         <input type="button" id="btnLeft" value="<" disabled>
-                                    </div>                                        
+                                    </div>
                                     <!-- 選擇路線框 -->
                                     <div class="sliderWrap">
                                         <div class="routeAllBox">
@@ -769,7 +528,68 @@
                 </div>
             </div>
             <!-- //燈箱們-揪團詳情 -->
-            <div class="backDrop">
+            <div id="eventinfoLight">
+                <!--<div class="eventinfo_back" id="eventinfo_back"> 
+                 <div class="lightbox_detailevent">
+                    <div class="lightbox_detailevent_info">
+                        <div class="close">✘</div>
+                        <div class="detaileventContent">
+                            <div class="detaileventPic">
+                                <div class="title">
+                                    <div class="eventInfotitle">故宮好好玩</div>
+                                    <div class=" dotWrap lightReport ">
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                        <span class="dot"></span>
+                                    </div>
+                                </div>
+                                <div class="detaileventPicbox">
+                                    <img src="./img/event/event_museum.jpg" alt="">
+                                </div>
+                                <div class="detaileventRoute">
+                                    <p>官方路線二</p>
+                                    <p>台北101 -> 台北101 -> 台北101</p>
+                                </div>
+                            </div>
+                            <div class="detaileventText">
+                                <form action="">
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">活動日期</div>
+                                        <div>2020-03-01(日)</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">報名截止日</div>
+                                        <div>2020-02-28(五)</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">集合時間</div>
+                                        <div>8:30</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">集合地點</div>
+                                        <div>信義新光三越</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">報名人數上限</div>
+                                        <div>5位</div>
+                                    </div>
+                                    <div class="eventInforow">
+                                        <div class="eventrowTitle">活動介紹</div>
+                                        <div>故宮好好玩喔~~</div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="enroll">
+                            @@include('./layout/btnRed.html',{
+                            "link":"#",
+                            "innerText":"我要報名"
+                            })
+                        </div>
+                    </div>
+                </div> 
+            </div>-->
+                <!-- <div class="backDrop eventinfo_back" id="eventinfo_back">
                 <div class="lightbox_detailevent">
                     <div class="lightbox_detailevent_info">
                         <div class="close">✘</div>
@@ -828,9 +648,10 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
             </div>
             <!-- //燈箱們-揪團檢舉 -->
-            <div class="backDrop">
+            <div class="backDrop" id="eventreport_back">
                 <div class="lightbox_report">
                     <div class="lightbox_report_info">
                         <div class="reportTitle">
@@ -862,9 +683,11 @@
     </div>
     <script src="./js/jquery-3.4.1.min.js "></script>
     <script src="./js/common.js"></script>
+    <script src="./js/eventCard.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
     <script src="./js/swiper.min.js"></script>
+
     <script>
         new WOW().init();
     </script>

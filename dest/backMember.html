@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/back.css">
     <style>
+        /* #manager>tbody>tr {
+            border: 10px solid red;
+        } */
+
         table {
             margin: 0 auto;
             /* border: 3px solid red; */
@@ -27,9 +31,10 @@
             width: 3000px;
             text-align: center;
         }
-        td img{
+
+        td img {
             width: 100%;
-        
+
         }
 
         .new_mana_acc {
@@ -112,97 +117,37 @@
         <main class="col-md-10">
             <h2>管理員管理</h2>
             <div class="content">
-                <table>
+                <div class="new_mana_acc">
+                    <!-- <form action="./php/member/newma.php" method="POST"> -->
+                    <input type="text" placeholder="暱稱" name="name" id="newma_nam">
+                    <input type="text" placeholder="帳號" name="account" id="newma_acc">
+                    <input type="text" placeholder="密碼" name="password" id="newma_psw">
+                    <button id="newma">新增管理員帳號</button>
+                    <!-- </form>    -->
+                </div>
+                <table id="manager">
                     <tr>
-                        <td>編號</td>
-                        <td>帳號</td>
-                        <td>權限</td>
-                        <td>狀態</td>
-                        <td></td>
+                        <td>number1</td>
+                        <td>name</td>
+                        <td>account</td>
+                        <td>password</td>
+                        <td><button>停權</button></td>
+                        <td><button class="newma_del">刪除</button></td>
                     </tr>
                     <tr>
-                        <form action="">
-                            <td>0</td>
-                            <td>AA</td>
-                            <td>XXX</td>
-                            <td><button>停權</button></td>
-                            <td><button>刪除</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>AA</td>
-                            <td>XXX</td>
-                            <td><button>停權</button></td>
-                            <td><button>刪除</button></td>
-                        </form>
+                        <td>number2</td>
+                        <td>name</td>
+                        <td>account</td>
+                        <td>password</td>
+                        <td><button>停權</button></td>
+                        <td><button class="newma_del">刪除</button></td>
                     </tr>
                 </table>
-                <div class="new_mana_acc">
-                    <form action="">
-                        <input type="text" placeholder="帳號">
-                        <input type="text" placeholder="密碼">
-                        <input type="text" placeholder="權限">
-                        <button>新增管理員帳號</button>
-                    </form>
-                    
-                    
-                </div>
+
             </div>
             <h2>會員管理</h2>
             <div class="content">
-                <table>
-                    <tr>
-                        <td>編號</td>
-                        <td>暱稱</td>
-                        <td>帳號</td>
-                        <td>密碼</td>
-                        <td>信箱</td>
-                        <td>頭貼</td>
-                        <td>手機</td>
-                        <td>點數</td>
-                        <td>狀態</td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>0</td>
-                            <td>QQ</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>XX</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>1</td>
-                            <td>XX</td>
-                            <td>DD105</td>
-                            <td>DD105</td>
-                            <td>DD105@yahoo.com.tw</td>
-                            <td><img src="./img/member/memberphoto.jpg" alt=""></td>
-                            <td>09123456789</td>
-                            <td>350</td>
-                            <td><button>停權</button></td>
-                        </form>
-                    </tr>
+                <table id="memberall">
                 </table>
             </div>
         </main>
@@ -218,10 +163,8 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
-    <script>
-        //load事件
-        //依資料狀態
-    </script>
+    <script src="./js/backmember.js"></script>
+
 </body>
 
 </html>

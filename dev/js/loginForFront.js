@@ -9,7 +9,7 @@ function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
-        if (member.memId) {
+        if (member.memAcc) {
             // 登入 換成 登出
             $(".sign").text("登出");
         }
@@ -54,8 +54,8 @@ window.addEventListener("load", function () {
         let login_acc = $id("login_acc").value;
         let login_psw = $id("login_psw").value;
         // 登入資訊
-        // let data_info = `member_account=${login_acc}&member_password=${login_psw}`;
-        let data_info = `memId=${login_acc}&memPsw=${login_psw}`;
+        let data_info = `memberAccount=${login_acc}&memberPassword=${login_psw}`;
+        // let data_info = `memAcc=${login_acc}&memPsw=${login_psw}`;
         console.log(data_info);
         if (login_acc.length == 0) {
             alert("請填寫正確的帳號");
@@ -74,6 +74,7 @@ window.addEventListener("load", function () {
                 if (xhr.responseText.indexOf("error") != -1) {
                     alert("請填寫正確的帳號或密碼哦！");
                     // 直接清除錯誤的登入資訊
+
                     xhr.open("get", "./php/logout.php", true);
                     xhr.send(null);
                 } else {
@@ -87,7 +88,7 @@ window.addEventListener("load", function () {
 
         }
         xhr.open("Post", "./php/loginForFront.php", true);
-        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(data_info);
 
         // 將登入表單上的資料清空，並隱藏起來
@@ -119,6 +120,11 @@ window.addEventListener("load", function () {
             $id("register_psw").focus();
             return
         }
+        if ($id("register_psw").value.length < 6) {
+            alert("密碼至少6位數");
+            $id("register_psw").focus();
+            return
+        }
         if ($id("register_psw_dou").value.length == 0) {
             alert("確認密碼不能為空");
             $id("register_psw_dou").focus();
@@ -146,6 +152,34 @@ window.addEventListener("load", function () {
             alert("兩組密碼不一致");
             return
         }
+        //檢查完 去註冊
+        // document.getElementById("member_register").submit();
+        let xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+             //modify here
+             alert(xhr.responseText);
+            //  location.reload();
+            //清空註冊頁之值&&關掉登入燈箱
+            $id('register_acc').value = '';
+            $id('register_nam').value = '';
+            $id('register_email').value = '';
+            $id('register_psw').value = '';
+            $id('register_psw_dou').value = '';
+            $(".register").css("display","none");
+            $(".login_all_all").css("display","block");
+            $("#loginBlock").css("display","none");
+            }else{
+               alert( xhr.status );
+            }
+       }
+       var url = "./php/member/register.php?register_acc=" + document.getElementById("register_acc").value
+       + "&register_nam=" + document.getElementById("register_nam").value
+       + "&register_email=" + document.getElementById("register_email").value
+       + "&register_psw=" + document.getElementById("register_psw").value;
+       console.log(url);
+       xhr.open("Get", url, true);
+       xhr.send( null );
     })
     
     //找回密碼事件
