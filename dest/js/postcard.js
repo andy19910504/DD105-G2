@@ -8,12 +8,18 @@ function doFirst() {
         $("#postRight_4").css("display", "none");
         $("#postRight_5").css("display", "none");
         $("#step1").addClass("step_yellow");
+        $("#postcardCanvas").css("display", "block");
+        $("#postcardback").css("display", "none");
+        $(".canvas-container").css("display", "none");
         /*步驟1~步驟2*/
         $("#step_btn1").on("click", function () {
             $("#postRight_1").css("display", "none");
             $("#postRight_2").css("display", "block");
             $("#step2").addClass("step_yellow");
             $("#step1").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "block");
+            // $("#postcardback").css("display", "none");
+            $(".canvas-container").css("display", "none");
         });
         /*步驟2~步驟1*/
         $("#step_btn2").on("click", function () {
@@ -21,6 +27,9 @@ function doFirst() {
             $("#postRight_2").css("display", "none");
             $("#step1").addClass("step_yellow");
             $("#step2").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "block");
+            // $("#postcardback").css("display", "none");
+            $(".canvas-container").css("display", "none");
         });
         /*步驟2~步驟3*/
         $("#step_btn3").on("click", function () {
@@ -28,6 +37,9 @@ function doFirst() {
             $("#postRight_3").css("display", "block");
             $("#step3").addClass("step_yellow");
             $("#step2").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "none");
+            $("#postcardback").css("display", "block");
+            $(".canvas-container").css("display", "block");
         });
         /*步驟3~步驟2*/
         $("#step_btn4").on("click", function () {
@@ -35,6 +47,9 @@ function doFirst() {
             $("#postRight_3").css("display", "none");
             $("#step2").addClass("step_yellow");
             $("#step3").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "block");
+            // $("#postcardback").css("display", "none");
+            $(".canvas-container").css("display", "none");
         });
         /*步驟3~步驟4*/
         $("#step_btn5").on("click", function () {
@@ -42,6 +57,9 @@ function doFirst() {
             $("#postRight_4").css("display", "block");
             $("#step4").addClass("step_yellow");
             $("#step3").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "none");
+            $("#postcardback").css("display", "block");
+            $(".canvas-container").css("display", "block");
         });
         /*步驟4~步驟3*/
         $("#step_btn6").on("click", function () {
@@ -49,6 +67,9 @@ function doFirst() {
             $("#postRight_3").css("display", "block");
             $("#step3").addClass("step_yellow");
             $("#step4").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "none");
+            $("#postcardback").css("display", "block");
+            $(".canvas-container").css("display", "block");
         });
         /*步驟4~步驟5*/
         $("#step_btn7").on("click", function () {
@@ -56,6 +77,9 @@ function doFirst() {
             $("#postRight_5").css("display", "block");
             $("#step5").addClass("step_yellow");
             $("#step4").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "none");
+            $("#postcardback").css("display", "block");
+            $(".canvas-container").css("display", "block");
         });
         /*步驟5~步驟4*/
         $("#step_btn8").on("click", function () {
@@ -63,36 +87,24 @@ function doFirst() {
             $("#postRight_4").css("display", "block");
             $("#step4").addClass("step_yellow");
             $("#step5").removeClass("step_yellow");
+            $("#postcardCanvas").css("display", "none");
+            $("#postcardback").css("display", "block");
+            $(".canvas-container").css("display", "block");
         });
         /*完成*/
         $("#step_btn9").on("click", function () {
-            // $("#postRight_5").css("display", "none");
-            // $("#postRight_4").css("display", "block");
-            // $("#step4").addClass("step_yellow");
-            // $("#step5").removeClass("step_yellow");
+            if ($("#name").val() == "") {
+                alert("你尚未填寫姓名");
+                eval("document.form['name'].focus()");
+            } else if ($("#address").val() == "") {
+                alert("你尚未填寫地址");
+                eval("document.form['address'].focus()");
+            } else {
+                alert('已將商品加入購物車囉!!!');
+                document.form.submit();
+            }
         });
     });
-
-    // // /*第二支程式: 操作畫面步驟一(換背景)
-    // //   (1)換背景 (2)加框框標示*/
-
-    // function doFirst3() {
-    //     let canvas = document.getElementById('postcardCanvas2');
-    //     let context = canvas.getContext('2d');
-    //     let cw = window.innerWidth;
-    //     let ch = window.innerHeight;
-    //     canvas.width = cw;
-    //     canvas.height = ch;
-
-
-
-    //     let pic = new Image();
-    //     pic.src = '../img/postcard/postcardLOGO.png';
-    //     pic.addEventListener('load', function () {
-    //         context.drawImage(pic, 0, 0, canvas.width, canvas.height);
-    //     });
-    // }
-    // window.addEventListener('load', doFirst3);
 
     /*步驟一畫圖 */
 
@@ -106,32 +118,69 @@ function doFirst() {
                 context.oBackingStorePixelRatio ||
                 context.backingStorePixelRatio || 1;
             return (window.devicePixelRatio || 1) / backingStore;
-        };      
+        };
         let canvas = document.getElementById('postcardCanvas');
         let context = canvas.getContext('2d');
         var ratio = getPixelRatio(context);
 
-        canvas.width = canvas.width * ratio;	
+        canvas.width = canvas.width * ratio;
         canvas.height = canvas.height * ratio;
         context.scale(ratio, ratio);
 
 
         if (window.innerWidth <= 576) { //RWD
-            canvas.style.width = canvas.width="380";	
-        canvas.style.height = canvas.height="240";
-        }else if (window.innerWidth < 1200) {
-            canvas.style.width = canvas.width="720";	
-            canvas.style.height = canvas.height="450";
-        } else{
-            canvas.style.width = canvas.width="960";	
-            canvas.style.height = canvas.height="570";	
+            canvas.style.width = canvas.width = "380";
+            canvas.style.height = canvas.height = "240";
+        } else if (window.innerWidth < 1200) {
+            canvas.style.width = canvas.width = "720";
+            canvas.style.height = canvas.height = "450";
+        } else {
+            canvas.style.width = canvas.width = "900";
+            canvas.style.height = canvas.height = "560";
         }
 
 
+        const myFile = document.querySelector('#file')
+        myFile.addEventListener('change', function (e) {
+            const file = e.target.files[0]
+            const reader = new FileReader()
+            const img = document.querySelector('#img')
+            // 轉換成 DataURL
+            reader.readAsDataURL(file)
+            reader.onload = function () {
+                // 將圖片 src 替換為 DataURL
+                img.src = reader.result
+                if (postBGC == 1) {
+                    let postcard = new Image();
+                    let img = new Image();
+                    img.src = reader.result;
+                    postcard.src = './img/postcard/postcardBGI_1.png';
+                    img.onload = function () {
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        context.drawImage(postcard, 0, 0, canvas.width, canvas.height);
+                    }
+                } else if (postBGC == 2) {
+                    let postcard2 = new Image();
+                    let img = new Image();
+                    img.src = reader.result;
+                    postcard2.src = './img/postcard/postcardBGI_2.png';
+                    img.onload = function () {
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        context.drawImage(postcard2, 0, 0, canvas.width, canvas.height);
+                    }
+                } else {
+                    let postcard3 = new Image();
+                    let img = new Image();
+                    img.src = reader.result;
+                    postcard3.src = './img/postcard/postcardBGI_3.png';
+                    img.onload = function () {
+                        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        context.drawImage(postcard3, 0, 0, canvas.width, canvas.height);
+                    }
 
-
-
-
+                }
+            }
+        })
 
 
 
@@ -153,13 +202,9 @@ function doFirst() {
         let postphoto_2 = document.getElementById("postphoto_2");
         let postphoto_3 = document.getElementById("postphoto_3");
         let postphoto_4 = document.getElementById("postphoto_4");
-
-
-        let icon_1 = document.getElementById("icon_1");
-        let icon_2 = document.getElementById("icon_2");
-        let icon_3 = document.getElementById("icon_3");
-        let icon_4 = document.getElementById("icon_4");
         let postBGC = 0;
+
+
 
 
         $(postBGC_1).click(function () {
@@ -230,89 +275,8 @@ function doFirst() {
                 context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
             }
         });
-        // $(postphoto_4).click(function () {
-        //     let bgi4 = new Image();
-        //     bgi4.src = './img/postcard/event_slider3.png';
-        //     context.drawImage(bgi4, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-        //     context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
 
-
-        // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        $(icon_1).click(function () {
-
-            img.src = './img/postcard/postIcon01.png';
-            context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-        });
-        $(icon_2).click(function () {
-            img.src = './img/postcard/postIcon02.png';
-            context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-        });
-        $(icon_3).click(function () {
-            img.src = './img/postcard/postIcon03.png';
-            context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-        });
-        $(icon_4).click(function () {
-            img.src = './img/postcard/postIcon06.png';
-            context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
-        });
-        resizeCanvas()
     });
-
-
-    function resizeCanvas() {
-        canvas.width = previewArea.clientWidth; //第一個canvas的寬 = 父層div的寬
-        canvas.height = previewArea.clientHeight; //第一個canvas的高 = 父層div的高
-        if (window.innerWidth <= 414) { //RWD
-            imgWidth = previewArea.clientWidth * 1;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2;
-            imgOffsetY = -15;
-        } else if (window.innerWidth < 576) {
-            imgWidth = previewArea.clientWidth * 1;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2;
-            imgOffsetY = (canvas.width - imgWidth) / 10;
-        } else if (window.innerWidth < 768) {
-            imgWidth = previewArea.clientWidth * 0.7;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2.2;
-            imgOffsetY = (canvas.width - imgWidth) / 10;
-        } else if (window.innerWidth < 992) {
-            imgWidth = previewArea.clientWidth * 1.1;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2;
-            imgOffsetY = (canvas.height - imgHeight) / 2;
-        } else if (window.innerWidth < 1200) {
-            imgWidth = previewArea.clientWidth * 1;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2;
-            imgOffsetY = (canvas.height - imgHeight) / 2;
-        } else if (window.innerWidth < 1500) {
-            imgWidth = previewArea.clientWidth * 0.9;
-            imgHeight = imgWidth * imgRatio;
-            imgOffsetX = (canvas.width - imgWidth) / 2;
-            imgOffsetY = (canvas.height - imgHeight) / 2;
-        }
-    }
-    window.addEventListener('resize', resizeCanvas);
-
-
-
-
 
 
 
@@ -375,6 +339,7 @@ function doFirst() {
 
     //風景4
     function PhotoChangeBGI_4() {
+
         document.getElementById("postphoto_1").classList.remove("postphoto_1_Selected");
         document.getElementById("postphoto_2").classList.remove("postphoto_2_Selected");
         document.getElementById("postphoto_3").classList.remove("postphoto_3_Selected");
@@ -386,17 +351,128 @@ function doFirst() {
         document.getElementById("postphoto_2").addEventListener("click", PhotoChangeBGI_2);
         document.getElementById("postphoto_3").addEventListener("click", PhotoChangeBGI_3);
         document.getElementById("postphoto_4").addEventListener("click", PhotoChangeBGI_4);
+        document.getElementById("file").addEventListener("click", file);
     });
+
+
+    let canvas2 = document.getElementById('postcardback');
+    let context = canvas2.getContext('2d');
+
+    let postBGC_1 = document.getElementById("postBGC_1");
+    let postBGC_2 = document.getElementById("postBGC_2");
+    let postBGC_3 = document.getElementById("postBGC_3");
+    let img = new Image();
+    img.src = './img/postcard/hip-square.png';
+    let img2 = new Image();
+    img2.src = './img/postcard/wormz.png';
+    let img3 = new Image();
+    img3.src = './img/postcard/p0126_m.png';
+
+
+    function postcardbackBGI_1() {
+        fabric.Image.fromURL('./img/postcard/hip-square.png', (img) => {
+            const oImg = img.set({
+                scaleX: postcardback.width / img.width,
+                scaleY: postcardback.height / img.height,
+            })
+            postcardback.setBackgroundImage(oImg).renderAll()
+        })
+    }
+
+    function postcardbackBGI_2() {
+        fabric.Image.fromURL('./img/postcard/wormz.png', (img) => {
+            const oImg = img.set({
+                scaleX: postcardback.width / img.width,
+                scaleY: postcardback.height / img.height,
+            })
+            postcardback.setBackgroundImage(oImg).renderAll()
+        })
+    }
+
+    function postcardbackBGI_3() {
+        fabric.Image.fromURL('./img/postcard/p0126_m.png', (img) => {
+            const oImg = img.set({
+                scaleX: postcardback.width / img.width,
+                scaleY: postcardback.height / img.height,
+            })
+            postcardback.setBackgroundImage(oImg).renderAll()
+        })
+    }
+    $(document).ready(function () {
+        document.getElementById("postBGC_1").addEventListener("click", postcardbackBGI_1);
+        document.getElementById("postBGC_2").addEventListener("click", postcardbackBGI_2);
+        document.getElementById("postBGC_3").addEventListener("click", postcardbackBGI_3);
+    });
+
+
+
+
+
+
 
     //操作畫面步驟三(選插圖)
     //步驟3_________________________________________________________________________________
+    var postFather = document.getElementById("postWhiteBack");
+    var postcardbackW = postFather.offsetWidth;
+    var postcardbackH = postFather.offsetHeight;
 
+
+    var postcardback = new fabric.Canvas('postcardback', {
+        hoverCursor: 'progress', // 移動時鼠標顯示
+        freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
+    });
+
+    postcardback.setWidth(postcardbackW);
+    postcardback.setHeight(postcardbackH);
+
+    if (window.innerWidth <= 576) { //RWD
+        postcardback.setWidth(postcardbackW); //435
+        postcardback.setHeight(postcardbackH); //276
+    } else if (window.innerWidth < 1200) {
+        postcardback.setWidth(postcardbackW); //720
+        postcardback.setHeight(postcardbackH); //450
+    } else {
+        postcardback.setWidth(postcardbackW); //900
+        postcardback.setHeight(postcardbackH); //560
+    }
+
+    // postcardback.setBackgroundImage('./img/postcard/wormz.png', () => postcardback.renderAll())
+
+
+    // postcardback.isDrawingMode = false
+    // // postcardback.freeDrawingBrush = new fabric.CircleBrush(postcardback)
+    // postcardback.freeDrawingBrush.color = 'rgba(255,0,0, 0.3)'
+    // postcardback.freeDrawingBrush.width = 10
+    // postcardback.freeDrawingBrush = new fabric.SprayBrush( postcardback)
+
+    fabric.Object.prototype.set({
+        transparentCorners: false,
+        borderColor: 'block', // 邊框顏色
+        cornerColor: 'rgb(156, 20, 24)', // 控制點填滿色
+        cornerSize: 10, // 控制點大小
+        cornerStrokeColor: 'block', // 控制點邊框色
+        padding: 10,
+        borderDashArray: [5, 5],
+        cornerStyle: 'circle',
+        borderColor: 'black',
+
+    });
     //ICON1
     function IconChangeBGI_1() {
         document.getElementById("icon_1").classList.add("icon_1_Selected");
         document.getElementById("icon_2").classList.remove("icon_2_Selected");
         document.getElementById("icon_3").classList.remove("icon_3_Selected");
         document.getElementById("icon_4").classList.remove("icon_4_Selected");
+
+        fabric.Image.fromURL('./img/postcard/postIcon01.png', (img) => {
+            img.set({
+                scaleX: postcardback.width / img.width / 4,
+                scaleY: postcardback.height / img.height / 4,
+                hasControls: true, // 是否开启图层的控件
+
+            })
+            postcardback.add(img) // 加進canvas
+        })
     }
     //ICON2
     function IconChangeBGI_2() {
@@ -404,6 +480,14 @@ function doFirst() {
         document.getElementById("icon_2").classList.add("icon_2_Selected");
         document.getElementById("icon_3").classList.remove("icon_3_Selected");
         document.getElementById("icon_4").classList.remove("icon_4_Selected");
+        fabric.Image.fromURL('./img/postcard/postIcon02.png', (img) => {
+            img.set({
+                scaleX: postcardback.width / img.width / 4,
+                scaleY: postcardback.height / img.height / 4,
+                hasControls: true, // 是否开启图层的控件
+            })
+            postcardback.add(img) // 加進canvas
+        })
     }
 
     //ICON3
@@ -412,6 +496,14 @@ function doFirst() {
         document.getElementById("icon_2").classList.remove("icon_2_Selected");
         document.getElementById("icon_3").classList.add("icon_3_Selected");
         document.getElementById("icon_4").classList.remove("icon_4_Selected");
+        fabric.Image.fromURL('./img/postcard/postIcon03.png', (img) => {
+            img.set({
+                scaleX: postcardback.width / img.width / 4,
+                scaleY: postcardback.height / img.height / 4,
+                hasControls: true, // 是否开启图层的控件
+            })
+            postcardback.add(img) // 加進canvas
+        })
     }
 
     //ICON4
@@ -420,7 +512,19 @@ function doFirst() {
         document.getElementById("icon_2").classList.remove("icon_2_Selected");
         document.getElementById("icon_3").classList.remove("icon_3_Selected");
         document.getElementById("icon_4").classList.add("icon_4_Selected");
+        fabric.Image.fromURL('./img/postcard/postIcon06.png', (img) => {
+            img.set({
+                scaleX: postcardback.width / img.width / 4,
+                scaleY: postcardback.height / img.height / 4,
+                hasControls: true, // 是否开启图层的控件
+
+            })
+            postcardback.add(img) // 加進canvas
+        })
     }
+
+
+
 
     $(document).ready(function () {
         document.getElementById("icon_1").addEventListener("click", IconChangeBGI_1);
@@ -428,6 +532,178 @@ function doFirst() {
         document.getElementById("icon_3").addEventListener("click", IconChangeBGI_3);
         document.getElementById("icon_4").addEventListener("click", IconChangeBGI_4);
     });
+
+    postcardback.on('mouse:dblclick', e => {
+        console.log(e)
+        const active = e.target
+        if (active) {
+
+            postcardback.remove(active);
+            postcardback.renderAll();
+        }
+    })
+ 
+
+
+    //操作畫面步驟四(寫文字)
+    //步驟4_________________________________________________________________________________
+    //建立html連結:註冊顏色按鈕
+    /*切換顏色*/
+    function postcardTextColorChoose_1() {
+        postcardTextColor1.classList.add("postcardTextColorSelected");
+        postcardTextColor2.classList.remove("postcardTextColorSelected");
+        postcardTextColor3.classList.remove("postcardTextColorSelected");
+        postcardTextColor4.classList.remove("postcardTextColorSelected");
+    }
+
+    function postcardTextColorChoose_2() {
+        postcardTextColor1.classList.remove("postcardTextColorSelected");
+        postcardTextColor2.classList.add("postcardTextColorSelected");
+        postcardTextColor3.classList.remove("postcardTextColorSelected");
+        postcardTextColor4.classList.remove("postcardTextColorSelected");
+    }
+
+    function postcardTextColorChoose_3() {
+        postcardTextColor1.classList.remove("postcardTextColorSelected");
+        postcardTextColor2.classList.remove("postcardTextColorSelected");
+        postcardTextColor3.classList.add("postcardTextColorSelected");
+        postcardTextColor4.classList.remove("postcardTextColorSelected");
+    }
+
+    function postcardTextColorChoose_4() {
+        postcardTextColor1.classList.remove("postcardTextColorSelected");
+        postcardTextColor2.classList.remove("postcardTextColorSelected");
+        postcardTextColor3.classList.remove("postcardTextColorSelected");
+        postcardTextColor4.classList.add("postcardTextColorSelected");
+    }
+    $(document).ready(function () {
+
+        document.getElementById("newTextBtn").addEventListener("click", newText);
+        document.getElementById("postcardTextColor1").addEventListener("click", postcardTextColorChoose_1);
+        document.getElementById("postcardTextColor2").addEventListener("click", postcardTextColorChoose_2);
+        document.getElementById("postcardTextColor3").addEventListener("click", postcardTextColorChoose_3);
+        document.getElementById("postcardTextColor4").addEventListener("click", postcardTextColorChoose_4);
+    });
+
+
+
+
+
+    var newTextBtn = document.getElementById("newTextBtn");
+
+    function newText() {
+        var postcardColor1 = $("#postcardTextColor1").hasClass("postcardTextColorSelected");
+        var postcardColor2 = $("#postcardTextColor2").hasClass("postcardTextColorSelected");
+        var postcardColor3 = $("#postcardTextColor3").hasClass("postcardTextColorSelected");
+        var postcardColor4 = $("#postcardTextColor4").hasClass("postcardTextColorSelected");
+
+        //建立html連結:抓取文字盒內容(注意抓input值的要寫在函式裡面, 通常打完才會按按鈕抓取文字)
+        var postcardText = document.getElementById("postcardText");
+        var realText = postcardText.value;
+
+
+        // const editText = new fabric.IText('雙擊我編輯', {
+        //     top: 400,
+        //     left: 400
+        //   })
+        //   canvas.add(editText)
+
+
+        //沒辦法帶變數給顏色
+        if (postcardColor1) {
+            const Text_1 = new fabric.Text(realText, {
+                left: 40,
+                top: 120,
+                fill: 'white',
+                fontSize: 40,
+                fontFamily: '微軟正黑體',
+            })
+            postcardback.add(Text_1);
+        } else if (postcardColor2) {
+            const Text_1 = new fabric.Text(realText, {
+                left: 40,
+                top: 120,
+                fill: 'rgb(178, 100, 102)',
+                fontSize: 40,
+                fontFamily: '微軟正黑體',
+            })
+            postcardback.add(Text_1);
+        } else if (postcardColor3) {
+            const Text_1 = new fabric.Text(realText, {
+                left: 40,
+                top: 120,
+                fill: 'rgb(255, 201, 121)',
+                fontSize: 40,
+                fontFamily: '微軟正黑體',
+            })
+            postcardback.add(Text_1);
+        } else if (postcardColor4) {
+            const Text_1 = new fabric.Text(realText, {
+                left: 40,
+                top: 120,
+                fill: 'rgba(0, 0, 0, 0.9)',
+                fontSize: 40,
+                fontFamily: '微軟正黑體',
+            })
+            postcardback.add(Text_1);
+        }
+
+        //清空
+        postcardText.value = "";
+    }
+
+
+    //操作畫面步驟五(寫地址)
+    //步驟5_________________________________________________________________________________
+
+
+    $(document).ready(function () {
+        $('.inputform').focus(function () {
+            $(this).css("border-color", "green")
+        })
+        $('.inputform').blur(function () {
+            $(this).css("border-color", "")
+        })
+        var rule1 = /^.{3,5}$/;
+        $("#name").blur(function () {
+            if (rule1.test($(this).val())) {
+                $('.error1').text('')
+                $(this).css("border-color", "green")
+            } else {
+                $('.error1').text('不符合規則，請輸入3-5個任意文字')
+                $(this).css("border-color", "red")
+            }
+        })
+
+    })
+    $("#address1").twzipcode({
+        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+        css: ["city_form-control", "town_form-control"], // 自訂 "城市"、"地別" class 名稱 
+        countyName: "city", // 自訂城市 select 標籤的 name 值
+        districtName: "town" // 自訂區別 select 標籤的 name 值
+    });
+    
+    // var butSave = document.getElementById("save");
+    // butSave.onclick=function(){
+    //     var svaeHref = document.getElementById("save_href");
+
+
+    //     var tempSrc = postcardCanvas.toDataURL("image/png");
+    //     var tempSrc2 = postcardback.toDataURL("image/png");
+    //     svaeHref.href=['tempSrc,tempSrc2']; 
+       
+    //     var img = document.getElementById("save_img");
+    //     var img2 = document.getElementById("save_img2");
+    //     img.src=tempSrc; 
+    //     img2.src=tempSrc2;  
+    // }
+
+
+
+
+
+
+
 
 }
 window.addEventListener('load', doFirst);

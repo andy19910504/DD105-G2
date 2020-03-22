@@ -81,11 +81,11 @@ header.fullHeader nav ul li a .navIcon {
 }
 
 header.fullHeader nav ul li a:hover .navIcon {
-  -webkit-animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
-          animation: shake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
+  -webkit-animation: navShake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
+          animation: navShake 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite alternate;
 }
 
-@-webkit-keyframes shake {
+@-webkit-keyframes navShake {
   from {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -96,7 +96,7 @@ header.fullHeader nav ul li a:hover .navIcon {
   }
 }
 
-@keyframes shake {
+@keyframes navShake {
   from {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
@@ -139,10 +139,16 @@ header.fullHeader .memberIcon {
 
 header.fullHeader .memberIcon div {
   margin-right: 15px;
+  cursor: pointer;
+}
+
+header.fullHeader .memberIcon div a {
+  display: inline-block;
 }
 
 header.fullHeader .memberIcon div:last-child {
   margin-right: 0px;
+  cursor: unset;
 }
 
 header.hamburgerHeader {
@@ -209,6 +215,7 @@ header.hamburgerHeader .memberIcon {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 80px;
+  cursor: pointer;
 }
 
 header.hamburgerHeader .memberIcon div {

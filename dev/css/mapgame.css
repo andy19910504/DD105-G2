@@ -1,4 +1,4 @@
-.header, .fullHeader {
+.fullHeader {
   z-index: 2;
 }
 
@@ -6,6 +6,73 @@
   width: 100%;
   margin: 0 auto;
   margin-top: 195px;
+}
+
+.manual-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 3;
+  font-size: 30px;
+}
+
+.manual-modal .arrow {
+  position: absolute;
+  top: 60%;
+  right: 25%;
+  width: 200px;
+}
+
+.manual-modal .switch-button {
+  position: absolute;
+  top: 18%;
+  right: 12%;
+  color: #eee;
+}
+
+.manual-modal .select-route {
+  position: absolute;
+  top: 17%;
+  left: 35%;
+  color: #eee;
+}
+
+.manual-modal .start {
+  position: absolute;
+  top: 64%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  color: #eee;
+}
+
+.manual-modal .direction-control {
+  position: absolute;
+  top: 74%;
+  right: 20%;
+  color: #eee;
+}
+
+.manual-modal .status-info {
+  position: absolute;
+  top: 45%;
+  left: 15%;
+  color: #eee;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.header-backward {
+  z-index: 0;
+}
+
+.hide-manual-modal {
+  display: none;
 }
 
 .pic-container {
@@ -22,14 +89,15 @@
 }
 
 .fuda-container {
-  bottom: 0;
+  top: 390px;
+  left: 140px;
   position: absolute;
   z-index: 1;
 }
 
 .fuda-container table {
-  top: 106px;
-  left: 109px;
+  top: 90px;
+  left: 14px;
   position: absolute;
 }
 
@@ -44,10 +112,11 @@
 
 .fuda-container .check {
   width: 20px;
+  display: none;
 }
 
-.fuda-container .hide-check {
-  display: none;
+.fuda-container .show-check {
+  display: block;
 }
 
 .fuda-container .progress-bar {
@@ -60,7 +129,7 @@
 }
 
 .fuda-container .progress-bar .progress {
-  width: 22%;
+  width: 0%;
   border: 2px solid #c45c5c;
   border-radius: 5px;
 }
@@ -84,7 +153,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #c45c5c;
+  background-color: #fff;
 }
 
 .fuda-container .progress-bar .index:nth-child(4) {
@@ -126,12 +195,12 @@
 }
 
 .fuda-container .fuda {
-  width: 350px;
+  width: 150px;
 }
 
 .campus {
   width: 200px;
-  right: 0;
+  right: 40px;
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
   position: absolute;
@@ -149,10 +218,11 @@
 }
 
 .select .option .route-name {
+  width: 100%;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-23%, -50%);
+          transform: translate(-23%, -50%);
   letter-spacing: 4px;
   height: 1.2em;
   position: absolute;
@@ -167,9 +237,9 @@
 }
 
 .select .switch {
-  top: -20px;
+  top: -15px;
   width: 100px;
-  height: 20px;
+  height: 30px;
   display: inline-block;
   border: 2px solid #B3523A;
   border-radius: 15px;
@@ -178,8 +248,8 @@
 }
 
 .select .switch .button {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   background-color: #B3523A;
   border: 2px solid #B3523A;
   border-radius: 50%;
@@ -193,23 +263,29 @@
 }
 
 .select .switch .mapMode, .select .switch .gameMode {
-  font-size: 10px;
+  font-size: 15px;
+  pointer-events: none;
 }
 
 .select .switch .mapMode {
-  margin-left: 2px;
-  line-height: 1.3;
+  margin-left: 9px;
+  line-height: 1.9;
   text-align-last: left;
 }
 
 .select .switch .gameMode {
-  margin-right: 10px;
-  line-height: 1.3;
+  margin-right: 14px;
+  line-height: 1.9;
   text-align: right;
 }
 
 .select .switch .off {
   display: none;
+}
+
+.select .hr {
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .game-container {
@@ -222,13 +298,28 @@
   position: relative;
 }
 
-.game-container .map {
-  width: 3000px;
+.game-container .game-map-container {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-47%, -74%);
           transform: translate(-47%, -74%);
   position: absolute;
+}
+
+.game-container .game-map-container .map {
+  width: 4500px;
+}
+
+.game-container .game-map-container .spot1 {
+  position: absolute;
+  top: 40%;
+  left: 48.5%;
+  width: 250px;
+  height: 250px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  -webkit-transition: all 2s;
+  transition: all 2s;
 }
 
 .game-container .btnRed {
@@ -243,11 +334,93 @@
 
 .game-container .walking {
   width: 170px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -60%);
-          transform: translate(-50%, -60%);
+  top: 38%;
+  left: 39%;
   position: absolute;
+}
+
+.game-container .game-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.game-container .test-area {
+  width: 200px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url(../img/mapgame/graphy_@2X.png);
+  position: relative;
+}
+
+.game-container .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+.game-container .test {
+  padding: 30px;
+}
+
+.game-container .opt1, .game-container .opt2, .game-container .opt3 {
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.game-container .opt1:hover, .game-container .opt2:hover, .game-container .opt3:hover {
+  background-color: #D3E9F0;
+  border: 1px solid #D3E9F0;
+  border-radius: 5px;
+}
+
+.game-container .hide-game-modal {
+  display: none;
+}
+
+.game-container .full-screen-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.game-container .normal-screen-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.click-disabled {
+  pointer-events: none;
+}
+
+.hide-full-screen-btn {
+  display: none;
 }
 
 .map-container {
@@ -267,21 +440,131 @@
   display: none;
 }
 
+.progress-container-mobile {
+  display: none;
+}
+
+.progress-container-mobile .progress-bar {
+  position: relative;
+  margin-top: 22px;
+  width: 100%;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.progress-container-mobile .progress-bar .progress {
+  width: 0%;
+  border: 2px solid #c45c5c;
+  border-radius: 5px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .progress-bar .index:nth-child(2) {
+  position: absolute;
+  top: -4px;
+  left: -1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .progress-bar .index:nth-child(3) {
+  position: absolute;
+  top: -4px;
+  left: 20%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .progress-bar .index:nth-child(4) {
+  position: absolute;
+  top: -4px;
+  left: 43%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .progress-bar .index:nth-child(5) {
+  position: absolute;
+  top: -4px;
+  left: 67%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .progress-bar .index:nth-child(6) {
+  position: absolute;
+  top: -4px;
+  right: -1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.progress-container-mobile .indicator {
+  margin-top: 20px;
+  color: #444;
+}
+
 @media (max-width: 576px) {
   .pic-container {
     width: 90%;
   }
-  .switch {
+  .select {
+    width: 100%;
+  }
+  .select .option {
+    width: 32%;
+  }
+  .select .option .route-name {
+    -webkit-transform: translate(-36%, -50%);
+            transform: translate(-36%, -50%);
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .select .switch {
+    top: 134px;
+    right: 3%;
+    position: absolute;
     display: block;
-    margin: 30px 50px 0;
   }
   .bubble {
+    margin-bottom: 60px;
     position: relative;
+  }
+  .progress-container-mobile {
+    display: block;
   }
   .fuda-container {
-    position: relative;
+    display: none;
   }
   .campus {
+    right: 20px;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
@@ -290,6 +573,50 @@
   }
   .map-container {
     width: 100%;
+  }
+  .manual-modal {
+    font-size: 18px;
+  }
+  .manual-modal .arrow {
+    position: absolute;
+    top: 70%;
+    right: 25%;
+    width: 200px;
+  }
+  .manual-modal .switch-button {
+    position: absolute;
+    top: 14%;
+    right: 2%;
+    color: #eee;
+  }
+  .manual-modal .select-route {
+    position: absolute;
+    top: 18%;
+    left: 24%;
+    color: #eee;
+  }
+  .manual-modal .start {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    color: #eee;
+  }
+  .manual-modal .direction-control {
+    position: absolute;
+    width: 55%;
+    top: 87%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    color: #eee;
+  }
+  .manual-modal .status-info {
+    position: absolute;
+    top: 95%;
+    left: 42%;
+    color: #eee;
   }
 }
 /*# sourceMappingURL=mapgame.css.map */

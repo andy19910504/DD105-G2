@@ -229,7 +229,7 @@ div.postcardimg4 {
   text-align: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .arrow1 {
     display: none;
   }
@@ -248,7 +248,7 @@ div.postcardimg4 {
   line-height: 30px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1025px) {
   .stepname {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -281,7 +281,6 @@ div.postcardimg4 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px red solid;
 }
 
 @media screen and (max-width: 1200px) {
@@ -312,29 +311,33 @@ div.postcardimg4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
+  width: 75%;
   height: 100%;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 1200px) {
   .postLeft {
     width: 100%;
     height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .postLeft {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
 /*2.2明信片右邊編輯畫面*/
 .postRight {
   width: 25%;
-  height: 557px;
+  height: 556px;
   border: black 1px solid;
   background-image: url(../img/postcard/just-waves.png);
   border-image-source: url(../img/postcard/postline.svg);
@@ -346,7 +349,7 @@ div.postcardimg4 {
 @media screen and (max-width: 1200px) {
   .postRight {
     width: 100%;
-    height: 100%;
+    height: 296px;
   }
 }
 
@@ -361,8 +364,8 @@ div.postcardimg4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
-  height: 600px;
+  width: 900px;
+  height: 560px;
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
   background-color: #0e0e0e;
@@ -370,75 +373,50 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .postWhiteBack {
-    width: 650px;
+    width: 720px;
     height: 450px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .postWhiteBack {
-    width: 360px;
-    height: 270px;
+    width: 400px;
+    height: 276px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .postWhiteBack {
+    width: 350px;
+    height: 250px;
   }
 }
 
 /*畫布畫面*/
-#postcardCanvas {
-  width: 100%;
-  height: 100%;
+.postcardCanvas {
   border: solid 1px #0e0e0e;
+  width: 900px;
+  height: 560px;
 }
 
 @media screen and (max-width: 1200px) {
-  #postcardCanvas {
-    position: relative;
+  .postcardCanvas {
+    width: 720px;
+    height: 450px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  #postcardCanvas {
-    position: relative;
+  .postcardCanvas {
+    width: 400px;
+    height: 276px;
   }
 }
 
-/*橢圓*/
-.Oval {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #fff;
-  border-radius: 200px 200px 0 0;
-  position: absolute;
-  bottom: 0px;
-  background-image: url(../img/postcard/hip-square.png);
-  border: solid 1px red;
-}
-
-/*橢圓裡面LOGO*/
-.ovalimg {
-  position: relative;
-  bottom: -10px;
-  width: 80%;
-  padding: 30px;
-}
-
-@media screen and (max-width: 1200px) {
-  .ovalimg {
-    bottom: 0px;
-    padding: 30px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .ovalimg {
-    padding: 10px;
-    width: 100%;
+@media screen and (max-width: 450px) {
+  .postcardCanvas {
+    width: 350px;
+    height: 250px;
   }
 }
 
@@ -626,6 +604,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox1 {
+    margin-top: 10px;
     margin-bottom: 30px;
   }
 }
@@ -1142,6 +1121,42 @@ div.postcardimg4 {
 }
 
 /*步驟4畫面--------------------------------------------------*/
+.textwrite {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post_text1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #a5361c;
+  background-color: lightyellow;
+}
+
+@media screen and (max-width: 1200px) {
+  .post_text1 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .post_text1 {
+    width: 100%;
+  }
+}
+
 .post_text2 {
   text-align: center;
   margin-top: 8px;
@@ -1151,22 +1166,63 @@ div.postcardimg4 {
   background-color: lightyellow;
 }
 
+@media screen and (max-width: 1200px) {
+  .post_text2 {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .post_text2 {
+    width: 100%;
+  }
+}
+
+#postcardText {
+  width: 90%;
+  height: 190px;
+  resize: none;
+}
+
+@media screen and (max-width: 1200px) {
+  #postcardText {
+    width: 90%;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #postcardText {
+    width: 90%;
+    height: 60px;
+  }
+}
+
 .postcardTextColorBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 15px;
-  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.leafButton {
-  height: 100%;
+@media screen and (max-width: 1200px) {
+  .postcardTextColorBox {
+    width: 50%;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .postcardTextColorBox {
+    width: 50%;
+    height: 50px;
+  }
 }
 
 .postcardTextColor {
@@ -1214,6 +1270,10 @@ div.postcardimg4 {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+.leafButton {
+  margin-left: 10px;
+}
+
 .step_btnbox4 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1221,18 +1281,20 @@ div.postcardimg4 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 140px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
   .step_btnbox4 {
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .step_btnbox4 {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 }
 
@@ -1242,14 +1304,40 @@ div.postcardimg4 {
 }
 
 /*步驟5畫面--------------------------------------------------*/
-.forminfo {
-  border: red 1px solid;
+.info {
+  line-height: 30px;
+}
+
+#address1 {
+  outline: none;
+  float: left;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: calc(100% - 10px);
+}
+
+.cityform-control {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.town_form-control {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.inputform {
+  border-radius: 5px;
+  border: 1px solid darkgray;
+  height: 25px;
+  padding-left: 10px;
+  font-family: 微軟正黑體;
+  font-size: 16px;
+  outline: none;
+  margin: 5px 0;
 }
 
 .step_btnbox5 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1258,45 +1346,19 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox5 {
-    margin-bottom: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .step_btnbox5 {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 }
 
 .step_btn8,
 .step_btn9 {
   margin: 10px;
-}
-
-/*test*/
-.test {
-  width: 95%;
-  height: 85%;
-  position: relative;
-  top: -25px;
-  border: solid 1px #0e0e0e;
-}
-
-@media screen and (max-width: 1200px) {
-  .test {
-    position: relative;
-    top: -25px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .test {
-    position: relative;
-    top: -10px;
-  }
-}
-
-.test img {
-  width: 100%;
 }
 /*# sourceMappingURL=stylepostcard.css.map */
