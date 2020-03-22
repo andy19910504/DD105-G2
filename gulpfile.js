@@ -104,11 +104,16 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     // });
     browserSync.init({
         server: {
+<<<<<<< HEAD
+            baseDir: "./dest",
+            index: "route.html"
+=======
             baseDir: './dest',
             proxy: 'localhost:8080', // 網址路徑必須跟php端口一樣
             port:3000,
             watch: true,
             index: "./welcome.html"
+>>>>>>> origin/master
         }
     });
     connectPhp.server(options); // 啟動

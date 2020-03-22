@@ -20,6 +20,19 @@
         "display5":""
         })
     </header>
+<<<<<<< HEAD
+    <!-- banner // 各自的banner，直接套class
+            順序，以導覽列（不含頁首）的順序依序-->
+    <div class="banner_04">
+        <img src="./img/banner/dottedLine1.png" class="dottedLine">
+        <div class="pageBannerTitle">
+            <div class="bannerTitleMoveBlock">
+                <!-- 這裡的圖片改成自己分頁的圖片，在想想要怎麼動，不一定要一樣，也可以直接參考 -->
+                <img src="./img/banner/bannerTitle4.png" class="">
+            </div>
+        </div>
+        <img src="./img/banner/dottedLine2.png" class="dottedLine">
+=======
     <div class="banner_04">
         <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
         <div class="routeTitle">
@@ -28,6 +41,7 @@
             </div>
         </div>
         <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
+>>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
     </div>
     <!-- breadCrumb // breadCrumb
     link：依序填入連結位子
@@ -84,8 +98,13 @@
             <!--2.1明信片左邊預覽畫面-->
             <div class="postLeft">
                 <div class="postWhiteBack" id="postWhiteBack">
+<<<<<<< HEAD
+                    <canvas class="postcardCanvas" id="postcardCanvas"></canvas>
+                    <canvas id="postcardback"></canvas>
+=======
                     <canvas id="postcardCanvas"></canvas>
                     <div class="Oval" id="Oval"><img src="../img/postcard/postcardLOGO.png" alt=""></div>
+>>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
                 </div>
             </div>
             <!--2.2明信片右邊編輯畫面-->
@@ -134,9 +153,12 @@
                                 <div class="postphoto_3" id="postphoto_3">
                                     <img src="./img/postcard/taipei101-3.jpg" alt="photo3">
                                 </div>
-                                <div class="postphoto_4" id="postphoto_4">
-                                    <img src="./img/postcard/event_slider3.png" alt="photo4">
-                                </div>
+                                <label class="postphoto_4" id="postphoto_4">
+                                    <input type="file" id="file">
+                                    <div>
+                                        <img id="img">
+                                    </div>
+                                </label>
                             </div>
                         </div>
                     </div><!-- .postRightDIY結束div -->
@@ -166,13 +188,80 @@
                             </div>
                         </div>
                     </div><!-- .postRightDIY結束div -->
+<<<<<<< HEAD
+                </div><!-- .postRight_3結束div -->
+                <!-- ==============(3-4)操作畫面.postRight_4(寫文字)============== -->
+                <div class="postRight_4" id="postRight_4">
+                    <div class="postRightDIY4">
+                        <h1 class="post_text1">寫些話傳達你的心意!</h1>
+                        <div class="textwrite">
+                            <textarea id="postcardText" placeholder="請在這裡輸入文字"></textarea>
+                            <h1 class="post_text2">選擇文字顏色</h1>
+                            <div class="postcardTextColorBox">
+                                <span class="postcardTextColor postcardTextColor1 postcardTextColorSelected"
+                                    id="postcardTextColor1">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor2" id="postcardTextColor2">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor3" id="postcardTextColor3">
+                                    <span></span>
+                                </span>
+                                <span class="postcardTextColor postcardTextColor4" id="postcardTextColor4">
+                                    <span></span>
+                                </span>
+                                <div class="leafButton">
+                                    <button class="btnPink leafButton" id="newTextBtn">生成文字</button>
+                                </div>
+                            </div>
+                            <div class="step_btnbox4">
+                                <button class="btnPink" id="step_btn6">上一步</button>
+                                <button class="btnPink" id="step_btn7">下一步</button>
+                            </div>
+                        </div>
+                    </div><!-- .postRightDIY結束div -->
+                </div><!-- .postRight_4結束div -->
+                <div class="postRight_5" id="postRight_5">
+                    <div class="postRightDIY5">
+                        <h1 class="post_text">填上目的地就完成囉!</h1>
+                        <div class="info">
+                            <form method="GET" id="form">
+                                <label for='name' id="name1">收件人</label><br>
+                                <input type='text' id='name' class='inputform' placeholder="輸入收件人姓名"><br>
+                                <label for="address">收件地址</label><br>
+                                <div>
+                                    <div id="address1"></div>
+                                    <input type='text' id='address' class='inputform' placeholder="輸入收件地址">
+                                </div>
+                            </form>
+                            <a href="#" class="btnPink" type="button" download="test.png"
+                            onclick="this.href=document.getElementById('postcardCanvas').toDataURL()">正面存圖</a>
+                        <a href="#" class="btnPink" type="button" download="test.png"
+                            onclick="this.href=document.getElementById('postcardback').toDataURL()">背面存圖</a>
+                        </div>
+                        <!-- <button class="btnPink" id="save">save</button>
+                        <br />
+                        <a href="" download="canvas_love.png"  id="save_href">
+                            <img src="" id="save_img" />
+                            <img src="" id="save_img2" />
+                        </a> -->
+                        <div class="step_btnbox5">
+                            <button class="btnPink" id="step_btn8">上一步</button>
+                            <input type="submit" value="完成" class="btnPink" id="step_btn9">
+                        </div>
+                    </div>
+                </div><!-- .postRightDIY結束div -->
+            </div><!-- .postRight_5結束div -->
+=======
                     <div class="step_btnbox2">
                         <button class="btnPink" id="step_btn2">上一步</button>
                         <button class="btnPink" id="step_btn3">下一步</button>
                     </div>
                 </div><!-- .postRight_2結束div -->
+>>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 
-            </div>
+        </div>
         </div>
     </section>
     <!-- footer // -->
@@ -180,8 +269,14 @@
     <div class="image"></div>
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/common.js"></script>
-    <!-- <script src="js/fabric.min.js"></script> -->
+    <script src="./js/fabric.js"></script>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="./js/postcard.js"></script>
+<<<<<<< HEAD
+    <script src="./js/jquery.twzipcode.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+=======
+>>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
     <!-- <script src="js/typewriter.js" defer></script> -->
 </body>
 

@@ -2,7 +2,7 @@
   z-index: 2;
 }
 
-.title {
+.banner-title {
   width: 100%;
   margin: 0 auto;
   margin-top: 150px;
@@ -19,6 +19,13 @@
   top: -30px;
   left: 30px;
   position: absolute;
+}
+
+.title {
+  display: none;
+  margin: 100px auto 50px;
+  text-align: center;
+  font-size: 24px;
 }
 
 .campus {
@@ -50,6 +57,11 @@
 
 .btnRed {
   position: absolute;
+  right: 200px;
+}
+
+.confirm {
+  position: absolute;
   right: 0;
 }
 
@@ -71,16 +83,17 @@
     width: 90%;
   }
   .bubble {
-    position: relative;
+    display: none;
+  }
+  .title {
+    display: block;
   }
   .campus {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    display: none;
   }
   .search-area {
     margin: 0;
     width: 100%;
-    height: 120px;
   }
   .search {
     margin: 0 10px 0 20px;
@@ -88,6 +101,18 @@
     height: 30px;
   }
   .btnRed {
+    position: absolute;
+    top: 625px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    display: block;
+    margin: 10px auto;
+  }
+  .confirm {
+    position: absolute;
+    top: 700px;
+    left: 50%;
     display: block;
     margin: 10px auto;
   }

@@ -86,7 +86,7 @@ div.postWrap div.postBtn {
 @media screen and (max-width: 767px) {
   div.postWrap {
     width: 100%;
-    margin-top: 110px;
+    margin-top: 20px;
   }
   div.postWrap ul.stepBar {
     width: 95%;
@@ -155,6 +155,12 @@ img.postSubTitle {
   img.postSubTitle {
     top: -130px;
     width: 170px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  img.postSubTitle {
+    display: none;
   }
 }
 
