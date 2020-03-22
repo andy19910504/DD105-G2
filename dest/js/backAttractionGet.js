@@ -1,8 +1,10 @@
+function checkbox() {
 
+}
 function getAttractionInfo(info) {
     let attrTable = document.getElementById("attractionTable");
     let attrInfo = JSON.parse(info);
-    console.log(attrInfo);
+    // console.log(attrInfo);
     let attrRow = "";
     for (i = 0; i < attrInfo.length; i++) {
         attrRow += `
@@ -29,7 +31,7 @@ function getAttractionInfo(info) {
             <td>
                 <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input checkMe" id="customSwitch${i}">
-                    <label class="custom-control-label" for="customSwitch${i}">上架</label>
+                    <label class="custom-control-label" for="customSwitch${i}">開放</label>
                 </div>
             </td>
             <td>
@@ -40,25 +42,18 @@ function getAttractionInfo(info) {
         `;
         attrTable.innerHTML = attrRow;
     }
+    checkbox();
+
 }
 
 window.addEventListener("load", function () {
-    let checkBox = document.querySelectorAll(".checkMe");
-    for (i = 0; i < checkBox.length; i++) {
-        if (checkBox[i].checked = "checked") {
-            checkBox[i].value = "1";
-        } else {
-            checkBox[i].value = "0";
-        }
-    };
-console.log(checkBox);   
 
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            alert(xhr.responseText);
+            alert("資料庫中有 " + JSON.parse(xhr.responseText).length + " 筆景點資料。");
             getAttractionInfo(xhr.responseText);
-            console.log(xhr.responseText);
+            // console.log(xhr.responseText);
         } else {
             alert(xhr.status);
         }

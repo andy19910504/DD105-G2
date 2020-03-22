@@ -24,7 +24,7 @@
             outline: none;
         }
 
-        .btnDel {
+        .btnDel,.btnSave {
             border: 1px solid rgba(0, 0, 0, .1);
         }
 
@@ -60,10 +60,10 @@
 <body>
     <div class="wrapper">
         @@include("./layout/backHeader.html",{
-            "nowPage0": "nowPage",
+            "nowPage0": "",
             "nowPage1": "",
             "nowPage2": "",
-            "nowPage3": "",
+            "nowPage3": "nowPage",
             "nowPage4": "",
             "nowPage5": "",
             "nowPage6": "",
@@ -90,29 +90,29 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="">
-                                    <div class="fieldBlock"><label for="routeName">景點名稱</label><input type="text"
-                                            name="routeName" id="routeName"></div>
-                                    <div class="fieldBlock"><label for="routeAddress">景點地址</label><input type="text"
-                                            name="routeAddress" id="routeAddress"></div>
-                                    <div class="fieldBlock"><label for="routeIntroduction1">景點介紹1</label><textarea
-                                            name="routeIntroduction1" id="routeIntroduction1" cols=""
-                                            rows=""></textarea></div>
-                                    <div class="fieldBlock"><label for="routeIntroduction2">景點介紹2</label><textarea
-                                            name="routeIntroduction2" id="routeIntroduction2" cols=""
-                                            rows=""></textarea></div>
-                                    <div class="fieldBlock"><label for="routePhoto1">景點照片1</label><input type="file"
-                                            name="routephoto1" id="routephoto1"></div>
-                                    <div class="fieldBlock"><label for="routePhoto2">景點照片2</label><input type="file"
-                                            name="routephoto2" id="routephoto2"></div>
-                                    <div class="fieldBlock"><label for="routeLongitude">景點經度</label><input type="text"
-                                            name="routeLongitude" id="routeLongitude"></div>
-                                    <div class="fieldBlock"><label for="routeLatitude">景點緯度</label><input type="text"
-                                            name="routeLatitude" id="routeLatitude"></div>
+                                <form action="" id="addForm">
+                                    <div class="fieldBlock"><label for="attrName">景點名稱</label><input type="text"
+                                            name="attrName" id="attrName"></div>
+                                    <div class="fieldBlock"><label for="attrAddress">景點地址</label><input type="text"
+                                            name="attrAddress" id="attrAddress"></div>
+                                    <div class="fieldBlock"><label for="attrInfo1">景點介紹1</label><textarea
+                                            name="attrInfo1" id="attrInfo1"></textarea></div>
+                                    <div class="fieldBlock"><label for="attrInfo2">景點介紹2</label><textarea
+                                            name="attrInfo2" id="attrInfo2"></textarea></div>
+                                    <div class="fieldBlock"><label for="attrPhoto1">景點照片1</label><input type="file"
+                                            name="attrPhoto1" id="attrPhoto1" class="btn btn-sm"></div>
+                                    <div class="fieldBlock"><label for="attrPhoto2">景點照片2</label><input type="file"
+                                            name="attrPhoto2" id="attrPhoto2" class="btn btn-sm"></div>
+                                    <div class="fieldBlock"><label for="attrLongitude">景點經度</label><input type="text"
+                                            name="attrLongitude" id="attrLongitude"></div>
+                                    <div class="fieldBlock"><label for="attrLatitude">景點緯度</label><input type="text"
+                                            name="attrLatitude" id="attrLatitude"></div>
+                                    <div class="fieldBlock"><label for="attrStatus">景點狀態</label><input type="text"
+                                            name="attrStatus" id="attrStatus"></div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-sm">儲存</button>
+                                <button type="button" class="btn btn-secondary btn-sm btnAdd" id="btnAdd">新增</button>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,8 @@
     <script src="./js/backNav.js"></script>
     <script src="./js/backAttractionGet.js"></script>
     <script src="./js/backAttractionEdit.js"></script>
-    <script src="./js/backAttractionDrop.js"></script>
+    <script src="./js/backAttractionDel.js"></script>
+    <script src="./js/backAttractionAdd.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);

@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
         let delNum = $(this).parent().parent().children().first().children().text();
         document.getElementById("editNumber").value = delNum;
         // 放入表單中
-        var delForm = new FormData(document.getElementById("editForm"));
+        var editForm = new FormData(document.getElementById("editForm"));
 
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -17,8 +17,8 @@ window.addEventListener("load", function () {
                 alert(xhr.status);
             }
         }
-        xhr.open("post", "./php/attractionDrop.php", true);
-        xhr.send(delForm); // 傳送表單
+        xhr.open("post", "./php/attractionDel.php", true);
+        xhr.send(editForm); // 傳送表單
         location.reload();
     }
     });
