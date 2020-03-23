@@ -45,11 +45,11 @@ var web = {
 
 //流程
 gulp.task('concatjs', function () {
-    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'));
+    gulp.src(web.js).pipe(gulp.dest('dest/js'));
 });
 
 gulp.task('concatphp', function () {
-    gulp.src('dev/php/*.php').pipe(gulp.dest('dest/php'));
+    gulp.src(web.php).pipe(gulp.dest('dest/php'));
 });
 
 gulp.task('img', function () {
@@ -99,21 +99,14 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     // browserSync.init({
     //     server: {
     //         baseDir: "./dest",
-    //         index: "customRoute.html"
+    //         index: "index.html"
     //     }
     // });
     browserSync.init({
         server: {
-<<<<<<< HEAD
             baseDir: "./dest",
-            index: "route.html"
-=======
-            baseDir: './dest',
-            proxy: 'localhost:8080', // 網址路徑必須跟php端口一樣
-            port:3000,
-            watch: true,
-            index: "./welcome.html"
->>>>>>> origin/master
+            index: "route.html",
+            proxy:"localhost:8080"
         }
     });
     connectPhp.server(options); // 啟動

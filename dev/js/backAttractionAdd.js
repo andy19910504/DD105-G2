@@ -1,11 +1,23 @@
-
+function showPhoto() {
+    let showPhoto = document.getElementsByClassName("showPhoto");
+    let btnShow = document.getElementsByClassName("btnShow");
+    for (let i = 0; i < showPhoto.length; i++) {
+        btnShow[i].onchange = function (e) {
+            let file = e.target.files[i];
+            let reader = new FileReader();
+            reader.onload=function(e){
+                showPhoto[i].src=reader.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+}
 
 
 window.addEventListener("load", function () {
+    showPhoto();
     // 按下新增按鈕，資料會存到資料庫中
     $(document).on('click', '.btnAdd', function editBackAttraction() {
-
-
         // 取得新增表單的值
         let attrName = document.getElementById("attrName").value;
         let attrAddress = document.getElementById("attrAddress").value;
