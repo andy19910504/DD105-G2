@@ -12,6 +12,7 @@ window.addEventListener("load", function () {
     xhr.onload = function () {
         staff = JSON.parse(xhr.responseText);
         console.log(staff);
+        let status = "";
         let manager = document.getElementById("manager");
         let staffRow = `<tr>
                 <td>編號</td>
@@ -21,47 +22,105 @@ window.addEventListener("load", function () {
                 <td>狀態</td>
                 <td></td>
             </tr>`;
-        for (i = 0; i < staff.length; i++) {
+        for (let i = 0; i < staff.length; i++) {
+            //判斷1或0 改中文
+            if (`${staff[i].staff_status}` == 1) {
+                status = "停權"
+            } else {
+                status = "回復"
+            }
             staffRow += `
         <tr>
                     <td>${staff[i].staff_number}</td>
                     <td>${staff[i].staff_name}</td>
                     <td>${staff[i].staff_account}</td>
                     <td>${staff[i].staff_password}</td>
-                    <td><button>停權</button></td>
-                    <td><button>刪除</button></td>
-        </tr>
-        `;
+                    <td style="display:none"><button>${staff[i].staff_status}</button></td>
+                    <td><button class="btn manager_status ">${status}</button></td>
+                    <td><button class="btn btn-danger">刪除</button></td>
+        </tr>`;
             manager.innerHTML = staffRow;
-            // $(".newma_del").eq(1).css("border", "10px solid red");
         }
-        //////////////////////////////刪除管理員
-            function delmenager(num) {
-                // alert(num);
-                let xhr = new XMLHttpRequest();
-                xhr.onload = function () {
-                    if (xhr.status == 200) {
-                        //modify here
-                        alert(xhr.responseText);
-                        location.reload();
-                    } else {
-                        alert(xhr.status);
-                    }
-                }
-                var url = "./php/member/delma.php?number=" + num;
-                console.log(url);
-                xhr.open("Get", url, true);
-                xhr.send(null);
+        //判斷文字 給不同CLASS
+        for (let i = 0; i < 100; i++) {
+            let status = document.getElementsByClassName("manager_status")[i];
+            if ($(status).text() == "停權") {
+                $(status).addClass("btn-outline-warning")
+            } else {
+                $(status).addClass("btn btn-warning")
+            }
+        }
 
+        //////////////////////////////刪除管理員
+        function delmenager(num) {
+            // alert(num);
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    //modify here
+                    alert(xhr.responseText);
+                    location.reload();
+                } else {
+                    alert(xhr.status);
+                }
             }
-            for (let i = 1; i < 100; i++) {
-                $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(6)>button`).click(function () {
-                    // $(this).css("border","10px solid red");
-                    let num = $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(1)`).text();
-                    // alert(num);
-                    delmenager(num);
-                })
+            var url = "./php/member/delma.php?number=" + num;
+            console.log(url);
+            xhr.open("Get", url, true);
+            xhr.send(null);
+
+        }
+        for (let i = 1; i < 100; i++) {
+            $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(7)>button`).click(function () {
+                // $(this).css("border","10px solid red");
+                let num = $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(1)`).text();
+                // alert(num);
+                delmenager(num);
+            })
+        }
+        //////////////////////////////停權管理員
+        // function reloadstatus(){
+        //     if( $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(5)>button`).text()==1){
+        //         $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(5)>button`).text()=停權
+        //     }else{
+        //         $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(5)>button`).text()=覆權
+        //     }
+        // };
+        function updatemenager(num, updatenum) {
+            // alert(num);
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    //modify here
+                    alert(xhr.responseText);
+                    location.reload();
+                } else {
+                    alert(xhr.status);
+                }
             }
+            var url = "./php/member/upma.php?number=" + num
+                + "&updatenum=" + updatenum;
+            console.log(url);
+            xhr.open("Get", url, true);
+            xhr.send(null);
+
+        }
+        for (let i = 1; i < 100; i++) {
+            $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(6)>button`).click(function () {
+                // $(this).css("border","10px solid red");
+                let updatenum = $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(5)>button`).text();
+                let num = $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(1)`).text();
+                // alert(num);
+                // alert(updatenum);
+                if (updatenum == 1) {
+                    updatenum = 0
+                } else {
+                    updatenum = 1
+                };
+                // alert(updatenum);
+                updatemenager(num, updatenum);
+            })
+        }
 
     }
     xhr.open("get", "./php/member/backmember.php", true);
@@ -84,6 +143,12 @@ window.addEventListener("load", function () {
                 <td>狀態</td>
             </tr>`;
         for (j = 0; j < memberall.length; j++) {
+             //判斷1或0 改中文
+             if (`${memberall[j].member_sataus}` == 1) {
+                status = "停權"
+            } else {
+                status = "回復"
+            }
             memberRow += `
             <tr>
                     <td>${memberall[j].member_number}</td>
@@ -93,10 +158,56 @@ window.addEventListener("load", function () {
                     <td>${memberall[j].member_email}</td>
                     <td><img src="${memberall[j].member_photo}" alt=""></td>
                     <td>${memberall[j].member_point}</td>
-                    <td><button>停權</button></td>
+                    <td style="display:none"><button>${memberall[j].member_sataus}</button></td>
+                    <td><button class="btn member_status">${status}</button></td>
             </tr>
         `;
             members.innerHTML = memberRow;
+        }
+          //判斷文字 給不同CLASS
+          for (let i = 0; i < 100; i++) {
+            let status = document.getElementsByClassName("member_status")[i];
+            if ($(status).text() == "停權") {
+                $(status).addClass("btn-outline-warning")
+            } else {
+                $(status).addClass("btn btn-warning")
+            }
+        }
+        //////////////////////////////停權會員
+        function updatemember(num, updatenum) {
+            // alert(num);
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    //modify here
+                    alert(xhr.responseText);
+                    location.reload();
+                } else {
+                    alert(xhr.status);
+                }
+            }
+            var url = "./php/member/upmember.php?number=" + num
+                + "&updatenum=" + updatenum;
+            console.log(url);
+            xhr.open("Get", url, true);
+            xhr.send(null);
+
+        }
+        for (let i = 1; i < 100; i++) {
+            $(`#memberall>tbody>tr:nth-child(${i})>td:nth-child(9)>button`).click(function () {
+                // $(this).css("border","10px solid red");
+                let updatenum = $(`#memberall>tbody>tr:nth-child(${i})>td:nth-child(8)>button`).text();
+                let num = $(`#memberall>tbody>tr:nth-child(${i})>td:nth-child(1)`).text();
+                // alert(num);
+                // alert(updatenum);
+                if (updatenum == 1) {
+                    updatenum = 0
+                } else {
+                    updatenum = 1
+                };
+                // alert(updatenum);
+                updatemember(num, updatenum);
+            })
         }
     }
     xhr1.open("get", "./php/member/memberall.php", true);
