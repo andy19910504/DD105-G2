@@ -43,19 +43,21 @@
             margin-bottom: 0;
             margin-right: 10px;
         }
-
         .fieldBlock {
             display: flex;
             align-items: flex-start;
             margin-bottom: 10px;
         }
-        .fieldBlock .showPhoto{
-            width: 120px;
-        }
-        .fieldBlock:nth-child(5),.fieldBlock:nth-child(6){
+        .fieldBlock .photoBlock{
+            display: flex;
             flex-direction: column;
         }
-
+        .photoBlock .showPhoto{
+            width: 150px;
+        }
+        .photoBlock .btnShow{
+            width: 200px;
+        }
         .fieldBlock label {
             width: 100px;
             margin-right: 10px;
@@ -77,6 +79,7 @@
         .attrPhoto{
             width: 100%;
         }
+
     </style>
 </head>
 
@@ -144,14 +147,16 @@
                                             name="attrInfo1" id="attrInfo1"></textarea></div>
                                     <div class="fieldBlock"><label for="attrInfo2">景點介紹2</label><textarea
                                             name="attrInfo2" id="attrInfo2"></textarea></div>
-                                    <div class="fieldBlock">
+                                <div class="fieldBlock">
+                                    <div class="photoBlock">
                                         <label for="attrPhoto1">景點照片1</label><input type="file" name="attrPhoto1" id="attrPhoto1" class="btn btn-sm btnShow">
                                         <img class="showPhoto">    
                                     </div>
-                                    <div class="fieldBlock">
+                                    <div class="photoBlock">
                                         <label for="attrPhoto2">景點照片2</label><input type="file" name="attrPhoto2" id="attrPhoto2" class="btn btn-sm btnShow">
                                         <img class="showPhoto">
                                     </div>
+                                </div>
                                     <div class="fieldBlock"><label for="attrLongitude">景點經度</label><input type="text"
                                             name="attrLongitude" id="attrLongitude"></div>
                                     <div class="fieldBlock"><label for="attrLatitude">景點緯度</label><input type="text"
