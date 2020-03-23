@@ -38,8 +38,8 @@ var web = {
     var options = {
         base: './dest', // 檔案位置
         debug: true, 
-        bin: 'C:/php/php.exe', // php執行檔的路徑
-        ini: 'C:/php/php.ini', // php的ini檔的路徑
+        bin: 'C:/php-7.4.3-Win32-vc15-x64/php.exe', // php執行檔的路徑
+        ini: 'C:/php-7.4.3-Win32-vc15-x64/php.ini', // php的ini檔的路徑
         port: 8080,  // 自行定義端口
     };
 
@@ -49,7 +49,11 @@ gulp.task('concatjs', function () {
 });
 
 gulp.task('concatphp', function () {
+<<<<<<< HEAD
     gulp.src(web.php).pipe(gulp.dest('dest/php'));
+=======
+    gulp.src('dev/php/member/*.php').pipe(gulp.dest('dest/php/member'));
+>>>>>>> 51304f8a126f689265f7f6343c20366e7799a629
 });
 
 gulp.task('img', function () {
@@ -104,9 +108,17 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     // });
     browserSync.init({
         server: {
+<<<<<<< HEAD
             baseDir: "./dest",
             index: "route.html",
             proxy:"localhost:8080"
+=======
+            baseDir: './dest',
+            proxy: 'localhost:8080', // 網址路徑必須跟php端口一樣
+            port:3000,
+            watch: true,
+            index: "./welcome.html"
+>>>>>>> 51304f8a126f689265f7f6343c20366e7799a629
         }
     });
     connectPhp.server(options); // 啟動
