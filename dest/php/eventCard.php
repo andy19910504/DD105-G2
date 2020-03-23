@@ -1,6 +1,6 @@
 <?php
 try{
-    require_once("./connectBooks.php");
+    require_once("connectBooks.php");
     $sql ="select *from event e join routes r on e.route_number=r.route_number order by e.enroll_start_date desc";
    
     $event = $pdo->query($sql);

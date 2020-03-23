@@ -49,6 +49,7 @@ function eventCard(event) {
     cardBox.innerHTML = html;
 }
 
+// 確定是否有撈到資料
 function check() {
     let xhr = new XMLHttpRequest();
 
