@@ -141,7 +141,7 @@ blockquote, q {
   width: 50px;
   height: 200px;
   position: absolute;
-  top: 0;
+  top: -200px;
   right: 40px;
   display: inline-block;
   background-image: url("../img/element/btnGoTop.png");
@@ -152,6 +152,13 @@ blockquote, q {
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  #btnGoTop {
+    width: 45px;
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -185,6 +192,8 @@ blockquote, q {
   transition: -webkit-filter .1s;
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
+  -webkit-animation: flutter 0.8s cubic-bezier(0.04, 0.49, 0.94, 0.44) alternate infinite;
+          animation: flutter 0.8s cubic-bezier(0.04, 0.49, 0.94, 0.44) alternate infinite;
   cursor: pointer;
 }
 
@@ -206,6 +215,28 @@ blockquote, q {
     line-height: 110px;
     width: 85px;
     height: 85px;
+  }
+}
+
+@-webkit-keyframes flutter {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes flutter {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
   }
 }
 
@@ -638,6 +669,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -662,6 +703,9 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_01 img.dottedLine {
+    display: none;
   }
 }
 
@@ -673,6 +717,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -697,6 +751,9 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_02 img.dottedLine {
+    display: none;
   }
 }
 
@@ -708,6 +765,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -732,6 +799,9 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_03 img.dottedLine {
+    display: none;
   }
 }
 
@@ -743,6 +813,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -767,6 +847,9 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_04 img.dottedLine {
+    display: none;
   }
 }
 
@@ -778,6 +861,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -802,6 +895,9 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_05 img.dottedLine {
+    display: none;
   }
 }
 
@@ -813,6 +909,16 @@ h1.smartPhoneLogo img {
   background-position: center bottom;
   width: 100%;
   height: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  overflow: hidden;
 }
 
 @media all and (max-width: 1023px) {
@@ -837,6 +943,42 @@ h1.smartPhoneLogo img {
     width: 100%;
     height: unset;
     padding-top: 100%;
+  }
+  .banner_06 img.dottedLine {
+    display: none;
+  }
+}
+
+.pageBannerTitle {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.bannerTitleMoveBlock {
+  position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  .pageBannerTitle {
+    width: unset;
+    height: unset;
+  }
+  .bannerTitleMoveBlock {
+    width: 345px;
+    position: absolute;
+    top: 200px;
+  }
+  .bannerTitleMoveBlock img {
+    width: 100%;
   }
 }
 
@@ -849,6 +991,19 @@ h1.smartPhoneLogo img {
   display: flex;
   padding-left: 20px;
   margin: 20px auto;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1023px) {
+  .breadCrumb {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .breadCrumb {
+    margin-bottom: 40px;
+  }
 }
 
 .breadCrumb li {
@@ -876,11 +1031,14 @@ h1.smartPhoneLogo img {
 .breadCrumb li:last-child a {
   font-weight: bold;
   color: #a5361c;
+  pointer-events: none;
+  cursor: default;
 }
 
 footer {
   width: 100%;
   height: 275px;
+  margin-top: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -993,7 +1151,6 @@ footer .footerText p {
   }
 }
 
-<<<<<<< HEAD
 .filterBlock {
   width: 100%;
   display: -webkit-box;
@@ -1124,15 +1281,57 @@ div.chatBot img.birdChat {
   top: -150px;
 }
 
-div.chatBot div.chatContent {
+div.chatBot #chatContent {
   width: 250px;
-  height: 300px;
+  height: 315px;
   margin-top: 50px;
   margin-right: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+div.chatBot #chatContent div.chatBox {
+  vertical-align: bottom;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.chatBot #chatContent div.chatBox div.userSay {
+  border-radius: 5px;
+  background-color: #c4db94;
+  padding: 5px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  display: inline-block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 5px 3px 5px 20px;
+}
+
+div.chatBot #chatContent div.chatBox div.botSay {
+  border-radius: 5px;
+  background-color: #e7e7e7;
+  padding: 5px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  display: inline-block;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin: 5px 20px 5px 0px;
 }
 
 div.chatBot div.keywordBar {
-  height: 60px;
+  height: 50px;
   width: 250px;
   margin-top: 5px;
   margin-right: 5px;
@@ -1142,11 +1341,11 @@ div.chatBot div.keywordBar {
   overflow-y: hidden;
 }
 
-div.chatBot div.keywordBar span {
+div.chatBot div.keywordBar span.keywordSpan {
   display: inline-block;
   border-radius: 3px;
   background-color: #A5361C;
-  font-size: 24px;
+  font-size: 18px;
   color: #fff;
   margin-right: 5px;
   padding: 5px;
@@ -1155,20 +1354,15 @@ div.chatBot div.keywordBar span {
 
 div.chatBot ::-webkit-scrollbar {
   border-radius: 10px;
-  border: 2px solid #646464;
-  background-color: #646464;
 }
 
 div.chatBot ::-webkit-scrollbar-track {
   border-radius: 10px;
-  border: 2px solid #646464;
-  background-color: #646464;
 }
 
 div.chatBot ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  border: 2px solid #646464;
-  background-color: #A5361C;
+  background-color: #136592;
 }
 
 div.chatBot div.inputBar {
@@ -1184,12 +1378,15 @@ div.chatBot div.inputBar {
           justify-content: space-between;
 }
 
-div.chatBot div.inputBar input.botInput {
+div.chatBot div.inputBar #botInput {
   width: 200px;
   height: 100%;
+  font-size: 18px;
+  color: #1e1e1e;
+  font-family: "微軟正黑體";
 }
 
-div.chatBot div.inputBar div.botInputBtn {
+div.chatBot div.inputBar #botInputBtn {
   display: inline-block;
   width: 45px;
   height: 45px;
@@ -1207,7 +1404,28 @@ div.-chatBotOpen {
 
 @media screen and (max-width: 767px) {
   div.chatBot {
+    z-index: 50;
+    bottom: -530px;
+  }
+  div.chatBot div.openBtn {
+    width: 60px;
+    height: 60px;
+    top: -60px;
+    left: 260px;
+  }
+  div.chatBot div.openBtn img {
     display: none;
+  }
+  div.chatBot img.bird {
+    width: 120px;
+    right: -40px;
+    top: -80px;
+  }
+  div.chatBot img.birdChat {
+    display: none;
+  }
+  div.-chatBotOpen {
+    bottom: -50px;
   }
 }
 
@@ -1448,8 +1666,6 @@ div.-chatBotOpen {
   }
 }
 
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 .wrapper {
   background-image: url("../img/element/bgImage.png");
   position: relative;
