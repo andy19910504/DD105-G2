@@ -41,8 +41,6 @@ function getAttractionInfo(info) {
         `;
         attrTable.innerHTML = attrRow;
     }
-    // checkbox();
-
 }
 
 window.addEventListener("load", function () {
@@ -52,7 +50,7 @@ window.addEventListener("load", function () {
         if (xhr.status == 200) {
             alert("資料庫中有 " + JSON.parse(xhr.responseText).length + " 筆景點資料。");
             getAttractionInfo(xhr.responseText);
-            register();
+            checkAttrStatus();
             // console.log(xhr.responseText);
         } else {
             alert(xhr.status);
@@ -62,7 +60,7 @@ window.addEventListener("load", function () {
     xhr.send(null);
 }, false);
 
-function register() {
+function checkAttrStatus() {
     let checkMeLabels = document.getElementsByClassName("custom-control-label");
     let checkMe = document.getElementsByClassName("checkMe");
     let checkStatus = document.getElementsByClassName("checkStatus");
