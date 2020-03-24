@@ -4,7 +4,7 @@ function getRouteInfo(info) {
     let routeInfo = JSON.parse(info);
     console.log(routeInfo);
     let routeRow = "";
-    for (i = 0; i < routeInfo.length; i++) {
+    for (i = 1; i < routeInfo.length; i++) {
         routeRow += `
             <tr>
                 <th scope="row"><div>${routeInfo[i].route_number}</div></th>
@@ -20,7 +20,7 @@ function getRouteInfo(info) {
                 <td>
                     <div>路線各景點名稱
                     <div class="routeAttrName">${routeInfo[i].attraction_name}</div>
-                    <div class="routeAttrName">${routeInfo[i].attraction_name}</div>
+                    <div class="routeAttrName"></div>
                     <div class="routeAttrName"></div>
                     <div class="routeAttrName"></div>
                     <div class="routeAttrName"></div>
