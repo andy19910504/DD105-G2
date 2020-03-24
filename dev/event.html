@@ -529,67 +529,7 @@
             </div>
             <!-- //燈箱們-揪團詳情 -->
             <div id="eventinfoLight">
-                <!--<div class="eventinfo_back" id="eventinfo_back"> 
-                 <div class="lightbox_detailevent">
-                    <div class="lightbox_detailevent_info">
-                        <div class="close">✘</div>
-                        <div class="detaileventContent">
-                            <div class="detaileventPic">
-                                <div class="title">
-                                    <div class="eventInfotitle">故宮好好玩</div>
-                                    <div class=" dotWrap lightReport ">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="detaileventPicbox">
-                                    <img src="./img/event/event_museum.jpg" alt="">
-                                </div>
-                                <div class="detaileventRoute">
-                                    <p>官方路線二</p>
-                                    <p>台北101 -> 台北101 -> 台北101</p>
-                                </div>
-                            </div>
-                            <div class="detaileventText">
-                                <form action="">
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動日期</div>
-                                        <div>2020-03-01(日)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">報名截止日</div>
-                                        <div>2020-02-28(五)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合時間</div>
-                                        <div>8:30</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合地點</div>
-                                        <div>信義新光三越</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">報名人數上限</div>
-                                        <div>5位</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動介紹</div>
-                                        <div>故宮好好玩喔~~</div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="enroll">
-                            @@include('./layout/btnRed.html',{
-                            "link":"#",
-                            "innerText":"我要報名"
-                            })
-                        </div>
-                    </div>
-                </div> 
-            </div>-->
-                <!-- <div class="backDrop eventinfo_back" id="eventinfo_back">
+                <!-- <div id="event${eventTable[i].event_number}" class="eventinfo_back" >
                 <div class="lightbox_detailevent">
                     <div class="lightbox_detailevent_info">
                         <div class="close">✘</div>
@@ -683,7 +623,9 @@
     </div>
     <script src="./js/jquery-3.4.1.min.js "></script>
     <script src="./js/common.js"></script>
-    <script src="./js/eventCard.js"></script>
+    <script src="./js/eventCardList.js"></script>
+    <script src="./js/eventLightDetail.js"></script>
+    <script src="./js/eventLightReport.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
     <script src="./js/swiper.min.js"></script>

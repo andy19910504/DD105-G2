@@ -5,7 +5,6 @@ $sql="
  DELETE FROM `attractions` 
  WHERE attraction_number = :attrNum 
  ";
-
 $edit = $pdo->prepare($sql);
 $edit->bindValue(":attrNum",$_POST["editNumber"]);
 // $edit->bindValue(":attrName",$_POST["editName"]);

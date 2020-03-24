@@ -9,12 +9,13 @@ function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
+        console.log(member)
         if (member.memAcc) {
             // 登入 換成 登出
             $(".sign").text("登出");
         }
     }
-    xhr.open("get", "./php/getLoginInfo.php", true);
+    xhr.open("get", "./php/loginInfoForFront.php", true);
     xhr.send(null);
 }; //
 
@@ -54,7 +55,7 @@ window.addEventListener("load", function () {
         let login_acc = $id("login_acc").value;
         let login_psw = $id("login_psw").value;
         // 登入資訊
-        let data_info = `memberAccount=${login_acc}&memberPassword=${login_psw}`;
+        let data_info = `login_acc=${login_acc}&login_psw=${login_psw}`;
         // let data_info = `memAcc=${login_acc}&memPsw=${login_psw}`;
         console.log(data_info);
         if (login_acc.length == 0) {
@@ -88,7 +89,7 @@ window.addEventListener("load", function () {
 
         }
         xhr.open("Post", "./php/loginForFront.php", true);
-        // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         xhr.send(data_info);
 
         // 將登入表單上的資料清空，並隱藏起來
