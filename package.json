@@ -12,6 +12,7 @@
     "browser-sync": "^2.26.7",
     "gulp-cache": "^1.1.1",
     "gulp-clean-css": "^4.2.0",
+    "gulp-connect-php": "^1.0.3",
     "gulp-file-include": "^2.1.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^4.0.2",
@@ -20,7 +21,6 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "gulp": "^3.9.1",
-    "gulp-connect-php": "^1.0.3",
     "gulp-sourcemaps": "^2.6.5"
   },
   "description": ""
