@@ -25,7 +25,7 @@ function eventCard(event) {
             html += `<div class="starMark"></div>`
         }
         html += `
-                <div class="dotWrap lightReport">
+                <div class="dotWrap">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>

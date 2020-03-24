@@ -13,10 +13,10 @@ function showList(eventReport) {
             <td class="col-2">${eventReportTable[i].event_number}</td>
             <td class="col-2">${eventReportTable[i].origin_member_number}</td>
             <td class="col-3">${eventReportTable[i].event_name}</td>
-            <td class="col-3">${eventReportTable[i].event_reprt_reason}</td>
-            <td class="col-1">${eventReportTable[i].event_reprt_reason}
+            <td class="col-2">${eventReportTable[i].event_report_reason}</td>
+            <td class="col-2">
                 <button class="btn btn-outline-success btn-sm updateBtn">保留</button>
-                <button class="btn btn-outline-danger btn-sm deleteBtn">刪除</button>
+                <button class="btn btn-outline-danger btn-sm deleteBtn">屏蔽</button>
             </td>
         </tr>
         `
