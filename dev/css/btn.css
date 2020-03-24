@@ -80,7 +80,7 @@
   width: 50px;
   height: 200px;
   position: absolute;
-  top: 0;
+  top: -200px;
   right: 40px;
   display: inline-block;
   background-image: url("../img/element/btnGoTop.png");
@@ -91,6 +91,13 @@
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  #btnGoTop {
+    width: 45px;
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -124,6 +131,8 @@
   transition: -webkit-filter .1s;
   transition: filter .1s;
   transition: filter .1s, -webkit-filter .1s;
+  -webkit-animation: flutter 0.8s cubic-bezier(0.04, 0.49, 0.94, 0.44) alternate infinite;
+          animation: flutter 0.8s cubic-bezier(0.04, 0.49, 0.94, 0.44) alternate infinite;
   cursor: pointer;
 }
 
@@ -145,6 +154,28 @@
     line-height: 110px;
     width: 85px;
     height: 85px;
+  }
+}
+
+@-webkit-keyframes flutter {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes flutter {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
   }
 }
 /*# sourceMappingURL=btn.css.map */

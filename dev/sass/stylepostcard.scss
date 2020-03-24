@@ -74,6 +74,14 @@ div.postcardimg4 {
 
     @media screen and(max-width:$medium) {
         width: 100%;
+        margin: 0px auto;
+        height: 100%;
+    }
+
+    @media screen and(max-width:$small) {
+        width: 100%;
+        margin: 0px auto;
+        height: 100%;
     }
 }
 
@@ -90,17 +98,33 @@ div.postcardimg4 {
         background-repeat: no-repeat;
         text-align: center;
 
+        @media screen and (max-width:800px) {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 5px;
+            width: 100%;
+        }
     }
+
 }
 
-    .step_yellow {
-        width: 100%;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+.step_yellow {
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: url(../img/postcard/yellow.png);
+
+    @media screen and (max-width:800px) {
+        display: flex;
+        justify-content: center;
         text-align: center;
-        background-image: url(../img/postcard/yellow.png);
+        margin: 5px;
+        width: 100%;
     }
+}
 
 
 
@@ -114,7 +138,6 @@ div.postcardimg4 {
     background-repeat: no-repeat;
     text-align: center;
 
-<<<<<<< HEAD
     @media screen and (max-width:1200px) {
         display: none;
     }
@@ -122,8 +145,6 @@ div.postcardimg4 {
     @media screen and (max-width:800px) {
         display: none;
     }
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 
 }
 
@@ -134,20 +155,17 @@ div.postcardimg4 {
     color: $fcContent;
     line-height: 30px;
 
-<<<<<<< HEAD
     @media screen and (max-width:1025px) {
         margin-top: 20px;
         margin-bottom: 20px;
-=======
-    @media screen and (max-width:1000px) {
-        font-size: 100%;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
         line-height: 25px;
+        font-size: 16px;
     }
 
-    @media screen and (max-width:800px) {
-        margin-top: 55px;
-        line-height: 20px;
+    @media screen and (max-width:600px) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        line-height: 18px;
         font-size: 12px;
     }
 }
@@ -159,10 +177,17 @@ div.postcardimg4 {
     display: flex;
     margin: 0px auto;
     max-width: 1200px;
-    height: 800px;
-    // border: solid 1px red;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 
     @media screen and (max-width:1200px) {
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    @media screen and (max-width:800px) {
         flex-wrap: wrap;
         height: 100%;
     }
@@ -176,12 +201,11 @@ div.postcardimg4 {
     justify-content: center;
     width: 75%;
     height: 100%;
-    margin-right: 15px;
+    margin-right: 10px;
 
     @media screen and (max-width:1200px) {
         width: 100%;
         height: 100%;
-<<<<<<< HEAD
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -191,8 +215,6 @@ div.postcardimg4 {
         height: 95%;
         margin-top: 10px;
         margin-bottom: 10px;
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
     }
 
 }
@@ -217,20 +239,11 @@ div.postcardimg4 {
 }
 
 
-/*畫布畫面*/
-#postcardCanvas {
-    width: 95%;
-    height: 95%;
-    // border: solid 1px red;
-}
-
-
 /*明信片外框畫面*/
 .postWhiteBack {
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
     width: 900px;
     height: 560px;
     box-shadow: $heavierShadow;
@@ -282,72 +295,7 @@ div.postcardimg4 {
 // .postcardCanvas:hover{
 //     transform:rotateY(180deg);
 // }
-=======
-    width: 1060px;
-    height: 675px;
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: $mediumShadow;
-    background-image: url(../img/postcard/hip-square.png);
 
-    @media screen and (max-width:1200px) {
-        width: 795px;
-        height: 596px;
-    }
-
-    @media screen and (max-width:800px) {
-        width: 480px;
-        height: 360px;
-    }
-}
-
-/*橢圓*/
-// background-size: 80%;
-// background-position: center;
-// background-repeat: no-repeat;
-// background-image: url(../img/postcard/postcardLOGO.png);
-.Oval {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    background-color: #fff;
-    width: 30%;
-    height: 150px;
-    border-radius: 200px 200px 0 0;
-    position: absolute;
-    bottom: 32px;
-    transform: scaleY(0.6);
-    // border: solid 1px red;
-    background-image: url(../img/postcard/hip-square.png);
-
-    @media screen and (max-width:1200px) {
-        width: 240px;
-        position: absolute;
-        bottom: -30px;
-        // border: solid 1px red;
-    }
-
-    @media screen and (max-width:800px) {
-        width: 30%;
-        height: 100px;
-        position: absolute;
-        bottom: -20px;
-    }
-}
-
-/*橢圓裡面LOGO*/
-.Oval img {
-    // border: solid 1px red;
-    width: 80%;
-    height: 70%;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
-
-    @media screen and (max-width:800px) {
-        width: 90%;
-        height: 70%;
-    }
-
-}
 
 
 
@@ -372,9 +320,7 @@ div.postcardimg4 {
 .BGCchoose {
     text-align: center;
     width: 100%;
-    height: 600px;
-    margin-bottom: 30px;
-
+    height: 420px;
 
     @media screen and (max-width:1200px) {
         display: flex;
@@ -383,15 +329,15 @@ div.postcardimg4 {
         flex-wrap: nowrap;
         position: relative;
         width: 100%;
-        height: 300px;
+        height: 100%;
     }
 
     @media screen and (max-width:600px) {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 100%;
         overflow-y: scroll;
     }
 }
@@ -402,17 +348,15 @@ _2,
 _3 {
     .postBGC#{$var} {
         margin: 0 auto;
-        height: 200px;
+        height: 140px;
         width: 250px;
         transition: all 0.5s;
         position: relative;
-        margin-top: 10px;
-        margin-bottom: 10px;
         overflow: hidden;
-        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
-        box-sizing: border-box;
+        filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
         padding: 20px;
         text-align: center;
+
     }
 
     .postBGC#{$var} img {
@@ -420,17 +364,15 @@ _3 {
         height: 100%;
         transform: scale(0.8, 0.8);
         transition: all 0.3s ease-out;
+        // box-shadow: $heavierShadow;
     }
-  
-
-
-
 
     .postBGC#{$var} img:hover {
         transform: scale(1, 1);
     }
 
 }
+
 .postBGC_1_foucs {
     border: solid 5px lightcoral;
 }
@@ -454,7 +396,7 @@ _3 {
 .step_btnbox1 {
     display: flex;
     justify-content: center;
-    
+    margin-bottom: 20px;
 
     @media screen and (max-width:1200px) {
         margin-top: 10px;
@@ -476,43 +418,39 @@ _3 {
 #step_btn7,
 #step_btn8,
 #step_btn9 {
-    margin: 10px;
+    margin: 5px;
 }
 
 
-/*步驟2畫面--------------------------------------------------2*/
+/*步驟2畫面--------------------------------------------------*/
 
 .photochoose {
     text-align: center;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     overflow-y: scroll;
     width: 100%;
-    height: 600px;
+    height: 420px;
 
     @media screen and (max-width:1200px) {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        position: relative;
-        // border: solid red 1px;
         width: 100%;
-        height: 300px;
-        overflow-y: scroll;
+        height: 150px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     @media screen and (max-width:800px) {
         display: flex;
         flex-wrap: wrap;
-        position: relative;
-        // border: solid red 1px;
         width: 100%;
-        height: 400px;
-        overflow-y: scroll;
+        height: 150px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 }
-
-
 
 /*
  scrollbar
@@ -522,6 +460,7 @@ _3 {
     border-radius: 10px;
     background-color: #F5F5F5;
 }
+
 .BGCchoose::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;
@@ -560,14 +499,14 @@ _4 {
 
     .postphoto#{$var} {
         margin: 0 auto;
-        height: 180px;
+        height: 140px;
         width: 250px;
         transition: all 0.5s;
         position: relative;
         margin-top: 5px;
         margin-bottom: 5px;
         overflow: hidden;
-        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
     }
 
     .postphoto#{$var} img {
@@ -594,12 +533,12 @@ _4 {
         transition: all 0.3s ease-out;
         border: solid 5px lightcoral;
     }
-
 }
 
 .step_btnbox2 {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 
     @media screen and (max-width:1200px) {
         margin-bottom: 30px;
@@ -613,7 +552,6 @@ _4 {
 .step_btn2,
 .step_btn3 {
     margin: 10px;
-<<<<<<< HEAD
 }
 
 /*步驟3畫面--------------------------------------------------*/
@@ -668,7 +606,7 @@ _4 {
     .icon#{$var} {
         margin: 0 auto;
         height: 140px;
-        width: 250px;
+        width: 180px;
         transition: all 0.5s;
         position: relative;
         margin-top: 5px;
@@ -879,9 +817,6 @@ _4 {
 }
 
 /*步驟5畫面--------------------------------------------------*/
-.postRightDIY5{
-    // display: flex;
-}
 .info {
     line-height: 30px;
     // height: 100%;
@@ -892,9 +827,10 @@ _4 {
         // align-items: center;
 
     }
-    @media screen and (max-width:800px) {
-    }
+
+    @media screen and (max-width:800px) {}
 }
+
 // #name1{
 //     width: calc(100% - 10px)
 // }
@@ -906,14 +842,17 @@ _4 {
     margin-right: 0px;
     width: calc(100% - 10px)
 }
-.cityform-control{
-margin: 5px;
-border-radius: 5px;
-}
-.town_form-control{
+
+.cityform-control {
     margin: 5px;
     border-radius: 5px;
 }
+
+.town_form-control {
+    margin: 5px;
+    border-radius: 5px;
+}
+
 .inputform {
     border-radius: 5px;
     border: 1px solid darkgray;
@@ -935,7 +874,7 @@ border-radius: 5px;
     justify-content: center;
     margin-bottom: 20px;
 
-  
+
     @media screen and (max-width:1200px) {
         margin-top: 0px;
         margin-bottom: 10px;
@@ -954,6 +893,56 @@ border-radius: 5px;
     margin: 10px;
 }
 
-=======
+/*燈箱*/
+
+// manual-modal
+.manual-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    font-size: 24px;
+    // desktop manual
+
+    .about {
+        width: 800px;
+        flex-wrap: wrap;
+        border: 1px solid #a5361c;
+        align-items: center;
+        display: flex;
+        position: relative;
+        top: 30%;
+        margin: 0 auto;
+        background-color: #555;
+        @media screen and (max-width:1200px) {
+            width: 600px;
+        }
+    
+        @media screen and (max-width:800px) {
+            width: 393px;
+        }
+
+    }
+
+    .icontext{
+        line-height: 50px;
+        text-align: left;
+        width: 200px;
+        color: #F5F5F5;
+    }
 }
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
+
+.scroll-lock {
+    overflow: hidden;
+}
+
+.header-backward {
+    z-index: 0;
+}
+
+.hide-manual-modal {
+    display: none;
+}

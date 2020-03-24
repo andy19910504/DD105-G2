@@ -9,10 +9,20 @@
   z-index: 1000;
   background-color: #fff;
   background-image: url(../img/index/linedpaper.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 .cls-1 {
   fill: none;
@@ -20,7 +30,9 @@
   stroke-width: 2px;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
-  animation: drawing-svg 1.5s forwards; }
+  -webkit-animation: drawing-svg 1.5s forwards;
+          animation: drawing-svg 1.5s forwards;
+}
 
 .cls-2 {
   fill: none;
@@ -28,9 +40,13 @@
   stroke-width: 2px;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
-  transform: translateX(100px);
-  animation: drawing-svg 1.5s forwards;
-  animation-delay: .8s; }
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+  -webkit-animation: drawing-svg 1.5s forwards;
+          animation: drawing-svg 1.5s forwards;
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
 
 .cls-3 {
   fill: none;
@@ -38,9 +54,13 @@
   stroke-width: 2px;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
-  transform: translateX(210px);
-  animation: drawing-svg 1.5s forwards;
-  animation-delay: 1.6s; }
+  -webkit-transform: translateX(210px);
+          transform: translateX(210px);
+  -webkit-animation: drawing-svg 1.5s forwards;
+          animation: drawing-svg 1.5s forwards;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
 
 .cls-4 {
   fill: none;
@@ -48,36 +68,87 @@
   stroke-width: 2px;
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  transform: translateX(330px);
-  animation: drawing-svg 1.5s forwards;
-  animation-delay: 2.4s; }
+  -webkit-transform: translateX(330px);
+          transform: translateX(330px);
+  -webkit-animation: drawing-svg 1.5s forwards;
+          animation: drawing-svg 1.5s forwards;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+
+@-webkit-keyframes drawing-svg {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
 @keyframes drawing-svg {
   100% {
-    stroke-dashoffset: 0; } }
+    stroke-dashoffset: 0;
+  }
+}
 
 div.loadingText {
   margin-top: 50px;
-  font-size: 24px; }
-  div.loadingText span {
-    display: inline-block;
-    color: #646464;
-    animation: loadingTextAni 1.5s infinite alternate; }
-  div.loadingText span:nth-child(2) {
-    animation-delay: 0.3s; }
-  div.loadingText span:nth-child(3) {
-    animation-delay: 0.6s; }
-  div.loadingText span:nth-child(4) {
-    animation-delay: 0.9s; }
-  div.loadingText span:nth-child(5) {
-    animation-delay: 1.2s; }
-  div.loadingText span:nth-child(6) {
-    animation-delay: 1.5s; }
-  div.loadingText span:nth-child(7) {
-    animation-delay: 1.8s; }
+  font-size: 24px;
+}
+
+div.loadingText span {
+  display: inline-block;
+  color: #646464;
+  -webkit-animation: loadingTextAni 1.5s infinite alternate;
+          animation: loadingTextAni 1.5s infinite alternate;
+}
+
+div.loadingText span:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+div.loadingText span:nth-child(3) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+div.loadingText span:nth-child(4) {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+div.loadingText span:nth-child(5) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+div.loadingText span:nth-child(6) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+div.loadingText span:nth-child(7) {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+@-webkit-keyframes loadingTextAni {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
 
 @keyframes loadingTextAni {
   from {
-    transform: translateY(0); }
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
   to {
-    transform: translateY(20px); } }
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+/*# sourceMappingURL=loadingPage.css.map */
