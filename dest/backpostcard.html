@@ -70,7 +70,8 @@
         /* color: white; */
         border-bottom: unset;
     }
-    .trfirst{
+
+    .trfirst {
         color: white;
     }
 
@@ -155,23 +156,25 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="">
+                                <form>
                                     <div class="fieldBlock"><label for="IconPoint">商品部件點數</label><input type="text"
                                             name="IconPoint" id="IconPoint"></div>
                                     <div class="fieldBlock"><label for="IconUrl">商品部件路徑</label><textarea name="IconUrl"
                                             id="IconUrl" cols="" rows=""></textarea>
                                     </div>
                                     <div class="fieldBlock"><label for="IconPhoto">插圖圖片</label><input type="file"
-                                            name="IconPhoto" id="IconPhoto" class="btn-sm"></div>
+                                            name="upFile" id="upFile" class="btn-sm"><br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" value="儲存" class="btn btn-secondary btn-sm btnAddIcon"
+                                            id="btnAddIcon">
+                                    </div>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-sm btnAddIcon" id="btnAddIcon">儲存</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <table class="table table-responsive-sm table-striped"  id="mem_product_icon">
+                <table class="table table-responsive-sm table-striped" id="mem_product_icon">
                     <thead>
                         <tr class="row trfirst">
                             <th class="col-1">商品部件編號</th>
@@ -191,15 +194,15 @@
                                 </div>
                             </th>
                             <th class="col-2"><button class="btnDelIcon">刪除</button></th>
-                        </tr> --> 
+                        </tr> -->
                     </tbody>
                 </table>
 
             </div>
-   <!-- 隱藏的表單，用來傳送資料到PHP -->
-   <form id="myForm" style="display:hidden">
-    <input type="hidden" name="Icon_num" id="Icon_num">
-</form>
+            <!-- 隱藏的表單，用來傳送資料到PHP -->
+            <form id="myForm" style="display:hidden">
+                <input type="hidden" name="Icon_num" id="Icon_num">
+            </form>
 
 
         </main>
