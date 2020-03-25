@@ -2,7 +2,8 @@
 function getRouteInfo(info) {
     let routeTable = document.getElementById("routeTable");
     let routeInfo = JSON.parse(info);
-    console.log(routeInfo);
+    console.log(routeInfo.routeInfo[0]['route_number']);
+    console.log(routeInfo.attraction_name[1]['route_number']);
     let key = Object.keys(routeInfo.attraction_name);
     console.log(key)
 
@@ -16,19 +17,21 @@ function getRouteInfo(info) {
                     <div class="routeNameBlock"><input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="${routeInfo.routeInfo[i].route_name}"></div>
                 </td>
                 <td>
-                    <div class="routeInfoBlock"><textarea class="form-control">${routeInfo.routeInfo[i].route_information}</textarea></div>
+                    <div class="routeInfoBlock"><textarea class="form-control" value="${routeInfo.routeInfo[i].route_information}">${routeInfo.routeInfo[i].route_information}</textarea></div>
                 </td>
                 <td>
-                    <div class="routePhotoBlock"><img class="routePhoto" src="./img/attractions/${routeInfo.routeInfo[i].route_photo}"></div>
+                    <div class="routePhotoBlock"><img class="routePhoto" src="./img/routes/${routeInfo.routeInfo[i].route_photo}.png"></div>
                 </td>
                 <td>
                     <div>
                 `
-        for (let j = 1; j <= key.length; j++) {
-            routeRow +=
-                `
-                    <div class="routeAttrName">${routeInfo.attraction_name[j % 6]}</div>
-                `
+        for (let j = 0; j < key.length; j++) {
+
+            if (routeInfo.routeInfo[i]['route_number'] == routeInfo.attraction_name[j]['route_number']) {
+                routeRow += `
+                    <div class="routeAttrName">${routeInfo.attraction_name[j]['attraction_name']}</div>
+                            `
+            }
         }
         routeRow +=
             `

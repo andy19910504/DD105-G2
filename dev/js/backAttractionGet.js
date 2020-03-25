@@ -2,7 +2,8 @@
 function getAttractionInfo(info) {
     let attrTable = document.getElementById("attractionTable");
     let attrInfo = JSON.parse(info);
-    // console.log(attrInfo);
+
+    console.log(attrInfo);
     let attrRow = "";
     for (i = 0; i < attrInfo.length; i++) {
         attrRow += `
@@ -39,12 +40,13 @@ function getAttractionInfo(info) {
             </td>
         </tr>
         `;
+        
         attrTable.innerHTML = attrRow;
     }
 }
 
 window.addEventListener("load", function () {
-
+    
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
