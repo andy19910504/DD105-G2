@@ -3,7 +3,7 @@ function $id(id) {
 }
 
 
-// 動態新增卡片資料
+// 動態新增卡片
 function eventCard(event) {
     let cardBox = $id("cardBox");
     let eventTable = JSON.parse(event);//把JSON字串翻譯成JS
@@ -25,7 +25,7 @@ function eventCard(event) {
             html += `<div class="starMark"></div>`
         }
         html += `
-                <div class="dotWrap lightReport">
+                <div class="dotWrap">
                     <span class="dot"></span>
                     <span class="dot"></span>
                     <span class="dot"></span>
@@ -49,6 +49,7 @@ function eventCard(event) {
     cardBox.innerHTML = html;
 }
 
+// 確定是否有撈到資料
 function check() {
     let xhr = new XMLHttpRequest();
 

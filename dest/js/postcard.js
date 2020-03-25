@@ -1,20 +1,41 @@
-// /*第一支程式: 切換步驟窗格--點擊時需要(1)切換postRight  (2)切換步驟的黃底postStepYellow
-$(document).ready(function () {
-    $("#postRight_1").css("display", "block");
-    $("#postRight_2").css("display", "none");
-    $("#step1").addClass("step_yellow");
+function doFirst() {
 
-    $("#step_btn1").on("click", function () {
-        $("#postRight_1").css("display", "none");
-        $("#postRight_2").css("display", "block");
-        $("#step2").addClass("step_yellow");
-        $("#step1").removeClass("step_yellow");
-    });
-    $("#step_btn2").on("click", function () {
+
+    function iconblack() {
+        if (localStorage.getItem("hasRunBefore") === null) {
+            // show manual-modal
+            $('header.fullHeader').addClass('header-backward');
+            window.scrollTo(0, 556);
+            $('.manual-modal').css({
+                top: '556px'
+            });
+            $('body').addClass('scroll-lock');
+            
+            // localStorage.setItem("hasRunBefore", true);
+        } 
+        else {
+            $('.fullHeader').removeClass('header-backward');
+            $('.manual-modal').addClass('hide-manual-modal');
+            $('body').removeClass('scroll-lock');
+        }
+        // remove manual-modal
+        $('.manual-modal').click(function(){
+            $('.fullHeader').removeClass('header-backward');
+            $('.manual-modal').addClass('hide-manual-modal');
+            $('body').removeClass('scroll-lock');
+        });
+    }
+       
+        document.getElementById("step_btn3").addEventListener("click", iconblack);
+
+    // /*第一支程式: 切換步驟窗格--點擊時需要(1)切換postRight  (2)切換步驟的黃底postStepYellow
+    $(document).ready(function () {
         $("#postRight_1").css("display", "block");
         $("#postRight_2").css("display", "none");
+        $("#postRight_3").css("display", "none");
+        $("#postRight_4").css("display", "none");
+        $("#postRight_5").css("display", "none");
         $("#step1").addClass("step_yellow");
-<<<<<<< HEAD
         $("#postcardCanvas").css("display", "block");
         $("#postcardback").css("display", "none");
         $(".canvas-container").css("display", "none");
@@ -47,6 +68,10 @@ $(document).ready(function () {
             $("#postcardCanvas").css("display", "none");
             $("#postcardback").css("display", "block");
             $(".canvas-container").css("display", "block");
+
+
+
+
         });
         /*步驟3~步驟2*/
         $("#step_btn4").on("click", function () {
@@ -111,60 +136,12 @@ $(document).ready(function () {
                 document.form.submit();
             }
         });
-=======
-        $("#step2").removeClass("step_yellow");
     });
-    $("#step_btn3").on("click", function () {
-        $("#postRight_2").css("display", "none");
-        $("#postRight_3").css("display", "block");
-        $("#step3").addClass("step_yellow");
-        $("#step2").removeClass("step_yellow");
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
-    });
-});
 
-<<<<<<< HEAD
     /*步驟一畫圖 */
-=======
-// // /*第二支程式: 操作畫面步驟一(換背景)
-// //   (1)換背景 (2)加框框標示*/
-function doFirst() {
-    let canvas = document.getElementById('postcardCanvas');
-    let context = canvas.getContext('2d');
 
-
-    let img = new Image();
-    let postBGC_1 = document.getElementById("postBGC_1");
-    let postBGC_2 = document.getElementById("postBGC_2");
-    let postBGC_3 = document.getElementById("postBGC_3");
-
-    $(postBGC_1).click(function () {
-        img.src = './img/postcard/hip-square.png';
-        context.drawImage(img, 0, 0, canvas.clientWidth, canvas.height); //drawImage(img,x,y,width,height)
-    });
-    $(postBGC_2).click(function () {
-        img.src = './img/postcard/squared_metal_@2X.png';
-        context.drawImage(img, 0, 0, canvas.clientWidth, canvas.height); //drawImage(img,x,y,width,height)
-    });
-    $(postBGC_3).click(function () {
-        img.src = './img/postcard/p0126_m.png';
-        context.drawImage(img, 0, 0, canvas.clientWidth, canvas.height); //drawImage(img,x,y,width,height)
-    });
-
-}
-window.addEventListener('load', doFirst);
-
-function doFirst() {
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
-
-    let bgc = document.getElementById('postWhiteBack');
-    let Oval = document.getElementById('Oval');
-    let postBGC_1 = document.getElementById("postBGC_1");
-    let postBGC_2 = document.getElementById("postBGC_2");
-    let postBGC_3 = document.getElementById("postBGC_3");
 
     $(document).ready(function () {
-<<<<<<< HEAD
         var getPixelRatio = function (context) {
             var backingStore = context.backingStorePixelRatio ||
                 context.webkitBackingStorePixelRatio ||
@@ -262,21 +239,74 @@ function doFirst() {
 
 
 
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
         $(postBGC_1).click(function () {
-            bgc.style.backgroundImage = "url('./img/postcard/hip-square.png')";
-            Oval.style.backgroundImage = "url('./img/postcard/hip-square.png')";
+            context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 1;
         });
         $(postBGC_2).click(function () {
-            bgc.style.backgroundImage = "url('./img/postcard/squared_metal_@2X.png')";
-            Oval.style.backgroundImage = "url('./img/postcard/squared_metal_@2X.png')";
+            context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 2;
         });
         $(postBGC_3).click(function () {
-            bgc.style.backgroundImage = "url('./img/postcard/p0126_m.png')";
-            Oval.style.backgroundImage = "url('./img/postcard/p0126_m.png')";
+            context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            postBGC = 3;
         });
-<<<<<<< HEAD
+
+
+        $(postphoto_1).click(function () {
+            if (postBGC == 1) {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi1 = new Image();
+                bgi1.src = './img/postcard/taipei101-1.jpg';
+                context.drawImage(bgi1, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
+        });
+        $(postphoto_2).click(function () {
+            if (postBGC == 1) {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi2 = new Image();
+                bgi2.src = './img/postcard/taipei101-2.jpg';
+                context.drawImage(bgi2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
+        });
+        $(postphoto_3).click(function () {
+            if (postBGC == 1) {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else if (postBGC == 2) {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img2, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            } else {
+                let bgi3 = new Image();
+                bgi3.src = './img/postcard/taipei101-3.jpg';
+                context.drawImage(bgi3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+                context.drawImage(img3, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
+            }
+        });
 
     });
 
@@ -422,6 +452,7 @@ function doFirst() {
     var postcardback = new fabric.Canvas('postcardback', {
         hoverCursor: 'progress', // 移動時鼠標顯示
         freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
+        
     });
 
     postcardback.setWidth(postcardbackW);
@@ -471,7 +502,6 @@ function doFirst() {
                 scaleX: postcardback.width / img.width / 4,
                 scaleY: postcardback.height / img.height / 4,
                 hasControls: true, // 是否开启图层的控件
-
             })
             postcardback.add(img) // 加進canvas
         })
@@ -510,6 +540,8 @@ function doFirst() {
 
     //ICON4
     function IconChangeBGI_4() {
+        // confirm("這個貼圖需花50點，是否確定購買？");
+        // $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
         document.getElementById("icon_1").classList.remove("icon_1_Selected");
         document.getElementById("icon_2").classList.remove("icon_2_Selected");
         document.getElementById("icon_3").classList.remove("icon_3_Selected");
@@ -526,7 +558,10 @@ function doFirst() {
     }
 
 
-
+    $('.black').click(function () {
+        confirm("這個貼圖需花50點，是否確定購買？");
+        $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
+    });
 
     $(document).ready(function () {
         document.getElementById("icon_1").addEventListener("click", IconChangeBGI_1);
@@ -544,7 +579,7 @@ function doFirst() {
             postcardback.renderAll();
         }
     })
- 
+
 
 
     //操作畫面步驟四(寫文字)
@@ -684,7 +719,7 @@ function doFirst() {
         countyName: "city", // 自訂城市 select 標籤的 name 值
         districtName: "town" // 自訂區別 select 標籤的 name 值
     });
-    
+
     // var butSave = document.getElementById("save");
     // butSave.onclick=function(){
     //     var svaeHref = document.getElementById("save_href");
@@ -693,7 +728,7 @@ function doFirst() {
     //     var tempSrc = postcardCanvas.toDataURL("image/png");
     //     var tempSrc2 = postcardback.toDataURL("image/png");
     //     svaeHref.href=['tempSrc,tempSrc2']; 
-       
+
     //     var img = document.getElementById("save_img");
     //     var img2 = document.getElementById("save_img2");
     //     img.src=tempSrc; 
@@ -709,114 +744,3 @@ function doFirst() {
 
 }
 window.addEventListener('load', doFirst);
-=======
-    });
-}
-window.addEventListener('load', doFirst);
-
-//背景1
-function PostcardChangeBGI_1() {
-    document.getElementById("postBGC_1").classList.add("postBGC_1_Selected");
-    document.getElementById("postBGC_2").classList.remove("postBGC_2_Selected");
-    document.getElementById("postBGC_3").classList.remove("postBGC_3_Selected");
-}
-//背景2
-function PostcardChangeBGI_2() {
-    document.getElementById("postBGC_1").classList.remove("postBGC_1_Selected");
-    document.getElementById("postBGC_1_foucs").classList.remove("postBGC_1_foucs");
-    document.getElementById("postBGC_2").classList.add("postBGC_2_Selected");
-    document.getElementById("postBGC_3").classList.remove("postBGC_3_Selected");
-
-}
-
-//背景3
-function PostcardChangeBGI_3() {
-    document.getElementById("postBGC_1").classList.remove("postBGC_1_Selected");
-    document.getElementById("postBGC_2").classList.remove("postBGC_2_Selected");
-    document.getElementById("postBGC_3").classList.add("postBGC_3_Selected");
-    document.getElementById("postBGC_1_foucs").classList.remove("postBGC_1_foucs");
-}
-
-$(document).ready(function () {
-    document.getElementById("postBGC_1").addEventListener("click", PostcardChangeBGI_1);
-    document.getElementById("postBGC_2").addEventListener("click", PostcardChangeBGI_2);
-    document.getElementById("postBGC_3").addEventListener("click", PostcardChangeBGI_3);
-
-});
-
-//步驟2_________________________________________________________________________________
-
-//風景1
-function PhotoChangeBGI_1() {
-    document.getElementById("postphoto_1").classList.add("postphoto_1_Selected");
-    document.getElementById("postphoto_2").classList.remove("postphoto_2_Selected");
-    document.getElementById("postphoto_3").classList.remove("postphoto_3_Selected");
-    document.getElementById("postphoto_4").classList.remove("postphoto_4_Selected");
-}
-//風景2
-function PhotoChangeBGI_2() {
-    document.getElementById("postphoto_1").classList.remove("postphoto_1_Selected");
-    document.getElementById("postphoto_2").classList.add("postphoto_2_Selected");
-    document.getElementById("postphoto_3").classList.remove("postphoto_3_Selected");
-    document.getElementById("postphoto_4").classList.remove("postphoto_4_Selected");
-}
-
-//風景3
-function PhotoChangeBGI_3() {
-    document.getElementById("postphoto_1").classList.remove("postphoto_1_Selected");
-    document.getElementById("postphoto_2").classList.remove("postphoto_2_Selected");
-    document.getElementById("postphoto_3").classList.add("postphoto_3_Selected");
-    document.getElementById("postphoto_4").classList.remove("postphoto_4_Selected");
-}
-
-//風景4
-function PhotoChangeBGI_4() {
-    document.getElementById("postphoto_1").classList.remove("postphoto_1_Selected");
-    document.getElementById("postphoto_2").classList.remove("postphoto_2_Selected");
-    document.getElementById("postphoto_3").classList.remove("postphoto_3_Selected");
-    document.getElementById("postphoto_4").classList.add("postphoto_4_Selected");
-}
-
-$(document).ready(function () {
-    document.getElementById("postphoto_1").addEventListener("click", PhotoChangeBGI_1);
-    document.getElementById("postphoto_2").addEventListener("click", PhotoChangeBGI_2);
-    document.getElementById("postphoto_3").addEventListener("click", PhotoChangeBGI_3);
-    document.getElementById("postphoto_4").addEventListener("click", PhotoChangeBGI_4);
-});
-
-
-// // /*第三支程式: 操作畫面步驟二(換風景圖)
-$(document).ready(function () {
-    let canvas = document.getElementById('postcardCanvas');
-    let context = canvas.getContext('2d');
-
-    let cw = window.innerWidth - 800;
-    let ch = cw * (3 / 4);
-    canvas.width = cw;
-    canvas.height = ch;
-
-    let img = new Image();
-    let postphoto_1 = document.getElementById("postphoto_1");
-    let postphoto_2 = document.getElementById("postphoto_2");
-    let postphoto_3 = document.getElementById("postphoto_3");
-    let postphoto_4 = document.getElementById("postphoto_4");
-
-
-    $(postphoto_1).click(function () {
-        img.src = './img/postcard/taipei101-1.jpg';
-        context.drawImage(img, 0, 0, cw, ch); //drawImage(img,x,y,width,height)
-    });
-    $(postphoto_2).click(function () {
-        img.src = './img/postcard/taipei101-2.jpg';
-        context.drawImage(img, 0, 0, cw, ch); //drawImage(img,x,y,width,height)
-    });
-    $(postphoto_3).click(function () {
-        img.src = './img/postcard/taipei101-3.jpg';
-        context.drawImage(img, 0, 0, cw, ch); //drawImage(img,x,y,width,height)
-    });
-    $(postphoto_4).click(function () {
-        img.src = './img/postcard/event_slider3.png';
-        context.drawImage(img, 0, 0, cw, ch); //drawImage(img,x,y,width,height)
-    });
-});
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba

@@ -9,6 +9,7 @@ function getLoginInfo() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
+        console.log(member)
         if (member.memAcc) {
             // 登入 換成 登出
             $(".sign").text("登出");
