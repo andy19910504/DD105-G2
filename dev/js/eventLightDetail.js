@@ -6,6 +6,7 @@ function $id(id) {
 function showEventInfo() {
     let eventinfo_back = document.querySelectorAll(".eventinfo_back");
     let lightDetail = document.querySelectorAll(".lightDetail");
+
     for (let j = 0; j <eventinfo_back.length; j++) {
         lightDetail[j].onclick = function(){
             　 eventinfo_back[j].style.display = "flex";
@@ -31,7 +32,7 @@ function LightEventinfo(event) {
 
     for (i = 0; i < eventTable.length; i++) {
         html += `
-        <div id="event${eventTable[i].event_number}" class="eventinfo_back" >
+        <div id="event${eventTable[i].event_number}" class="eventinfo_back" psn="${eventTable[i].event_number}">
         <div class="lightbox_detailevent">
             <div class="lightbox_detailevent_info">
                     <div class="close eventinfoClose">✘</div>
@@ -39,7 +40,7 @@ function LightEventinfo(event) {
                         <div class="detaileventPic">
                             <div class="title">
                                 <div class="eventInfotitle">${eventTable[i].event_name}</div>
-                                <div class=" dotWrap lightReport ">
+                                <div class=" dotWrap lightReport">
                                     <span class="dot"></span>
                                     <span class="dot"></span>
                                     <span class="dot"></span>
@@ -65,7 +66,7 @@ function LightEventinfo(event) {
                                 </div>
                                 <div class="eventInforow">
                                     <div class="eventrowTitle">集合時間</div>
-                                    <div>${eventTable[i].enroll_end_date}</div>
+                                    <div></div>
                                 </div>
                                 <div class="eventInforow">
                                     <div class="eventrowTitle">集合地點</div>
@@ -95,7 +96,6 @@ function LightEventinfo(event) {
     eventinfoLight.innerHTML = html;
     showEventInfo();
 }
-
 
 
 function check() {

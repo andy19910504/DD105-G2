@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @charset "UTF-8";
 .filterBlock {
   width: 100%;
@@ -891,31 +890,35 @@ div.eventCard div.cardText span:hover {
 
 .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
   width: 110px;
-=======
-.wrapper {
-  background-image: url("../img/element/bgImage.png");
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 }
 
-.banner_01 .routeTitle {
+.detaileventContent {
   width: 100%;
-  height: 100%;
+  font-size: 18px;
+  color: #1e1e1e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 100px;
+  letter-spacing: 1.2px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  line-height: 1.75;
 }
 
-.banner_01 .routeTitleMoveBlock {
+.detaileventContent .detaileventPic {
+  width: 50%;
+  padding: 10px 10px 10px 25px;
+}
+
+.detaileventContent .detaileventPic .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
 }
 
-<<<<<<< HEAD
 .detaileventContent .detaileventPic .title .eventInfotitle {
   font-size: 24px;
   font-weight: 550;
@@ -1046,8 +1049,6 @@ div.eventCard div.cardText span:hover {
   background-image: url("../img/element/bgGrid.png");
 }
 
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 .banner_01 .routeTitleImage2 {
   position: absolute;
   top: 0;
@@ -1081,15 +1082,6 @@ div.eventCard div.cardText span:hover {
 }
 
 @media screen and (max-width: 575px) {
-  .banner_01 .routeTitle {
-    width: unset;
-    height: unset;
-  }
-  .banner_01 .routeTitleMoveBlock {
-    width: 375px;
-    position: absolute;
-    top: 200px;
-  }
   .banner_01 .routeTitleImage1 {
     width: 100%;
   }
@@ -1101,14 +1093,13 @@ div.eventCard div.cardText span:hover {
 
 .sloganBlock {
   width: 100%;
-<<<<<<< HEAD
-=======
+  max-width: 1200px;
+  margin: auto;
   position: relative;
->>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1117,16 +1108,56 @@ div.eventCard div.cardText span:hover {
           align-items: center;
 }
 
-<<<<<<< HEAD
-=======
+@media screen and (max-width: 375px) {
+  .sloganBlock {
+    overflow: hidden;
+    padding-top: 60px;
+    margin-bottom: 20px;
+  }
+}
+
 .sloganBlock .routeShineAnimation {
   width: 300px;
   height: 150px;
   position: absolute;
   top: 0;
-  right: 560px;
+  right: 120px;
   overflow: hidden;
   opacity: .85;
+}
+
+@media screen and (max-width: 1023px) {
+  .sloganBlock .routeShineAnimation {
+    right: 60px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .sloganBlock .routeShineAnimation {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sloganBlock .routeShineAnimation {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .sloganBlock .routeShineAnimation {
+    top: -45px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .sloganBlock .routeShineAnimation {
+    width: 200px;
+    top: 0;
+    overflow: hidden;
+    -webkit-transform: translate(66px, -18px);
+            transform: translate(66px, -18px);
+  }
 }
 
 .routeShineAnimation .cloud {
@@ -1166,12 +1197,24 @@ div.eventCard div.cardText span:hover {
           animation: sunShineLeft 5s alternate infinite;
 }
 
+@media screen and (max-width: 575px) {
+  .routeShineAnimation .cloud.left {
+    font-size: 12px;
+  }
+}
+
 .routeShineAnimation .cloud.right {
   left: 65%;
   z-index: 1;
   font-size: 12px;
   -webkit-animation: sunShineRight 5s alternate infinite;
           animation: sunShineRight 5s alternate infinite;
+}
+
+@media screen and (max-width: 575px) {
+  .routeShineAnimation .cloud.right {
+    font-size: 8px;
+  }
 }
 
 @-webkit-keyframes sunShineLeft {
@@ -1235,6 +1278,12 @@ div.eventCard div.cardText span:hover {
           animation: spin 18s infinite linear;
 }
 
+@media screen and (max-width: 575px) {
+  .routeShineAnimation .sun {
+    font-size: 18px;
+  }
+}
+
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
@@ -1291,12 +1340,23 @@ div.eventCard div.cardText span:hover {
           box-shadow: 0 5.375em #f29341;
 }
 
+@media screen and (max-width: 575px) {
+  .sun .rays::before, .sun .rays::after {
+    font-size: 18px;
+  }
+}
+
 .sun .rays::before {
   -webkit-transform: rotate(120deg);
           transform: rotate(120deg);
 }
 
->>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
+@media screen and (max-width: 575px) {
+  .sun .rays {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 1023px) {
   .routeSloganImage {
     width: 550px;
@@ -1309,64 +1369,8 @@ div.eventCard div.cardText span:hover {
   }
 }
 
-.routeFilterBlock {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.routeFilterBlock .routeFilter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.routeFilterBlock .routeFilter li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 230px;
-  height: 52px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.showFilter {
-  background-image: url("../img/route/showFilterImage.png");
-}
-
-.filterBgImage {
-  width: 100%;
-  max-width: 1200px;
-}
-
-@media screen and (max-width: 575px) {
-  .routeFilterBlock .routeFilter li {
-    font-size: 18px;
-  }
-}
-
 .routeContent {
-  margin: 60px 0;
+  margin: 60px 0 0px;
 }
 
 .routeContent .routeBlockBgImage {
@@ -1376,12 +1380,8 @@ div.eventCard div.cardText span:hover {
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
-<<<<<<< HEAD
   padding: 80px 0;
   position: relative;
-=======
-  padding: 60px 0;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 }
 
 @media screen and (max-width: 991px) {
@@ -1619,7 +1619,7 @@ div.eventCard div.cardText span:hover {
   border-radius: 50%;
 }
 
-.attractionImage a {
+.attractionImage .attractionMask {
   width: 95%;
   height: 95%;
   border-radius: 50%;
@@ -1634,16 +1634,17 @@ div.eventCard div.cardText span:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 575px) {
-  .attractionImage a {
+  .attractionImage .attractionMask {
     width: 90%;
     height: 90%;
   }
 }
 
-.attractionImage a::after {
+.attractionImage .attractionMask::after {
   content: "";
   position: absolute;
   top: -20px;
@@ -1661,7 +1662,7 @@ div.eventCard div.cardText span:hover {
   transition: transform 1s, -webkit-transform 1s;
 }
 
-.attractionImage a:hover::after {
+.attractionImage .attractionMask:hover::after {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
@@ -1669,7 +1670,6 @@ div.eventCard div.cardText span:hover {
 .routeAttractionBlock2 {
   width: 400px;
   height: 350px;
-<<<<<<< HEAD
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1716,16 +1716,12 @@ div.eventCard div.cardText span:hover {
 #cls-3 {
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
-=======
-  border: 1px solid #ccc;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 }
 
 #cls-4 {
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
 }
-<<<<<<< HEAD
 
 #cls-5 {
   stroke-dasharray: 1200;
@@ -2376,10 +2372,6 @@ div.eventCard div.cardText span:hover {
     height: 260px;
   }
 }
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 
 .otherLinkBlock {
   width: 100%;
@@ -2392,6 +2384,9 @@ div.eventCard div.cardText span:hover {
 }
 
 .otherLink .otherLinkTitle {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
   font-size: 24px;
   font-weight: bold;
   display: -webkit-box;
@@ -2403,8 +2398,43 @@ div.eventCard div.cardText span:hover {
   margin-bottom: 60px;
 }
 
-.otherLink .otherLinkTitle p {
+@media screen and (max-width: 767px) {
+  .otherLink .otherLinkTitle {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+  .otherLink .otherLinkTitle :first-child {
+    display: none;
+  }
+}
+
+.otherLinkTitle .routeOtherTitleImage {
+  width: 300px;
+  height: 30px;
+  background-image: url(../img/route/routeOtherTitleBlock.png);
+}
+
+@media screen and (max-width: 860px) {
+  .otherLinkTitle .routeOtherTitleImage {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .otherLinkTitle .routeOtherTitleImage {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+}
+
+.otherLinkTitle p {
   margin: 0 40px;
 }
->>>>>>> 005e6ae31a076513c73aeb9c269008ef66c4ef10
 /*# sourceMappingURL=route.css.map */

@@ -13,22 +13,15 @@
 }
 
 .login_all {
-<<<<<<< HEAD
   border-radius: 6px;
   position: relative;
   background-color: #fff;
   width: 450px;
-=======
-  position: relative;
-  background-image: url(../img/login/267836-1F31110113738.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 25%;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
   margin: 10% auto 0% auto;
 }
 
 .login_all_all {
+  height: 426px;
   padding: 8% 0;
 }
 
@@ -53,7 +46,6 @@
   margin-top: 5%;
 }
 
-<<<<<<< HEAD
 .login_all_all input::-webkit-input-placeholder {
   font-family: "微軟正黑體";
 }
@@ -71,10 +63,6 @@
 }
 
 .findpsw {
-=======
-.login_all_all a:nth-child(3) {
-  color: black;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
   padding: 1% 2% 1% 1%;
   text-align: right;
   width: 18%;
@@ -83,7 +71,6 @@
   font-size: 16px;
   color: #646464;
   margin-top: 5%;
-<<<<<<< HEAD
   cursor: pointer;
 }
 
@@ -157,21 +144,15 @@
     width: 26%;
     margin-left: 61.5%;
   }
-=======
-  background-image: url(../img/member/hip-square.png);
-  border: 1px dashed #a5361c;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 }
 
-.login_login {
-  display: block;
-  margin: 0 auto;
+.login_bottom {
+  text-align: center;
   margin-top: 8%;
 }
 
 .login_register {
-  display: block;
-  margin: 3% auto 0% auto;
+  margin-left: 3%;
 }
 
 .login_close {
@@ -201,7 +182,6 @@
 .register p {
   text-align: center;
   font-size: 24px;
-<<<<<<< HEAD
   font-weight: bold;
   color: #a5361c;
   margin-bottom: 6%;
@@ -209,25 +189,10 @@
 
 .register_item label {
   text-align: right;
-=======
-  margin-bottom: 3%;
-}
-
-.register_item {
-  font-size: 0px;
-  padding: 4% 0;
-}
-
-.register_item label {
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
   height: 46px;
   display: inline-block;
   font-size: 18px;
   width: 25%;
-<<<<<<< HEAD
-=======
-  padding: 3% 1% 3% 5%;
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 }
 
 .register_item input {
@@ -238,7 +203,6 @@
   display: inline-block;
   font-size: 18px;
 }
-<<<<<<< HEAD
 
 .register_item input::-webkit-input-placeholder {
   font-family: "微軟正黑體";
@@ -271,6 +235,4 @@
     font-size: 16px;
   }
 }
-=======
->>>>>>> 80f28dec1c38a3ff2860c6585dedceafce6743ba
 /*# sourceMappingURL=login.css.map */

@@ -8,6 +8,19 @@
   display: flex;
   padding-left: 20px;
   margin: 20px auto;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1023px) {
+  .breadCrumb {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .breadCrumb {
+    margin-bottom: 40px;
+  }
 }
 
 .breadCrumb li {
@@ -35,5 +48,7 @@
 .breadCrumb li:last-child a {
   font-weight: bold;
   color: #a5361c;
+  pointer-events: none;
+  cursor: default;
 }
 /*# sourceMappingURL=breadCrumb.css.map */

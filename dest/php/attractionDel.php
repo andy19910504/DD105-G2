@@ -22,3 +22,4 @@ echo "刪除成功！";
 }catch(PDOException $e){
     echo $e->getMessage();
 }
+?>

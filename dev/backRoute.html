@@ -16,38 +16,41 @@
             color: #fff;
             border: unset;
         }
-
         .btnAddRoute:hover {
             filter: brightness(1.1);
         }
-
         .btnAddRoute:focus {
             outline: none;
         }
-
-        .btnDel {
+        .btnDel,.btnSave {
             border: 1px solid rgba(0, 0, 0, .1);
         }
-
         .titleColor {
             font-weight: bold;
             color: #A5361C;
         }
-
         .titleBlock {
             display: flex;
             margin-bottom: 10px;
             align-items: center;
         }
-
         .titleBlock h3 {
             margin-bottom: 0;
             margin-right: 10px;
         }
-
         .privateBlock {
             margin-top: 80px;
         }
+
+        .routeNameBlock input{
+            width: 180px;
+        }
+        .routeInfoBlock textarea{
+            height: 120px;
+        }
+        .routePhotoBlock .routePhoto{
+            width: 150px;
+        } 
 
         .fieldBlock {
             display: flex;
@@ -64,9 +67,9 @@
 <body>
     <div class="wrapper">
         @@include("./layout/backHeader.html",{
-        "nowPage0": "nowPage",
+        "nowPage0": "",
         "nowPage1": "",
-        "nowPage2": "",
+        "nowPage2": "nowPage",
         "nowPage3": "",
         "nowPage4": "",
         "nowPage5": "",
@@ -112,6 +115,12 @@
                         </div>
                     </div>
                 </div>
+                <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
+                    <input type="text" class="attrNumber" name="editNumber" id="editNumber">
+                    <input type="text" name="editName" id="editName">
+                    <textarea name="editInfo" id="editInfo"></textarea>
+                    <input type="text" name="editStatus" id="editStatus">
+                </form>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -125,8 +134,8 @@
                             <th scope="col">路線設定</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody id="routeTable">
+                        <!-- <tr>
                             <th scope="row">1</th>
                             <td>
                                 <div>日式舊屋行</div>
@@ -148,7 +157,7 @@
                             </td>
                             <td></td>
                             <td><button type="button" class="btn btn-light btn-sm btnDel">刪除</button></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <div class="titleBlock privateBlock">
@@ -175,16 +184,14 @@
         </main>
     </div>
 
-
-
-
-
-
     <!-- ------------ js ------------ -->
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
+    <script src="./js/backRouteGet.js"></script>
+    <script src="./js/backRouteEdit.js"></script>
+    <script src="./js/backRouteAdd.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);
