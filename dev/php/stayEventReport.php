@@ -13,7 +13,7 @@ try{
 
     $event_report_number->execute();
     
-    echo "成功處理了", $event_report_number->rowCount(), "筆檢舉";
+    // echo "成功處理了", $event_report_number->rowCount(), "筆檢舉";
 
 
 }catch(PDOException $e){

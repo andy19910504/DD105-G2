@@ -36,19 +36,11 @@ var web = {
     ]
 }
     var options = {
-<<<<<<< HEAD
-        base: './dest', /*从打包目录访问*/
-        debug: true, /*调试信息*/
-        bin: 'C:/php-7.4.3/php.exe',/*自本地php.exe路径地址*/
-        ini: 'C:/php-7.4.3/php.ini',/*自本地php.ini路径地址*/
-        port: 8080, /*自定义端口*/
-=======
         base: './dest', // 檔案位置
         debug: true, 
         bin: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.exe', // php執行檔的路徑
         ini: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.ini', // php的ini檔的路徑
         port: 8080,  // 自行定義端口
->>>>>>> 09d7be1e1d5a801ff903f91e068b7b2d8c64ebd7
     };
 
 //流程
@@ -112,20 +104,12 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
     // });
     browserSync.init({
         server: {
-<<<<<<< HEAD
-            baseDir: "./dest",
-            proxy:'localhost:8080',
-            port:3000,
-            watch:true,
-            index: "welcome.html"
-=======
             baseDir: './dest',
             proxy: 'localhost:8080', // 網址路徑必須跟php端口一樣
             port:3000,
             watch: true,
             index: "./welcome.html"
 
->>>>>>> 09d7be1e1d5a801ff903f91e068b7b2d8c64ebd7
         }
     });
     connectPhp.server(options); // 啟動

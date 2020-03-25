@@ -7,9 +7,12 @@ function showEventInfo() {
     let eventinfo_back = document.querySelectorAll(".eventinfo_back");
     let lightDetail = document.querySelectorAll(".lightDetail");
 
-    for (let j = 0; j <eventinfo_back.length; j++) {
-        lightDetail[j].onclick = function(){
-            　 eventinfo_back[j].style.display = "flex";
+    console.log(eventinfo_back);
+    console.log(lightDetail)
+    for (let j = 0; j < eventinfo_back.length; j++) {
+        lightDetail[j].onclick = function (e) {
+            e.preventDefault();
+            eventinfo_back[j].style.display = "flex";
 
         }
     }
@@ -18,8 +21,8 @@ function showEventInfo() {
 // 關燈箱-活動詳情
 function closeEventInfo() {
     let eventinfo_back = document.querySelectorAll(".eventinfo_back");
-    for (let j = 0; j <eventinfo_back.length; j++) {
-            　 eventinfo_back[j].style.display = "none";
+    for (let j = 0; j < eventinfo_back.length; j++) {
+        eventinfo_back[j].style.display = "none";
 
     }
 }
@@ -32,7 +35,7 @@ function LightEventinfo(event) {
 
     for (i = 0; i < eventTable.length; i++) {
         html += `
-        <div id="event${eventTable[i].event_number}" class="eventinfo_back" psn="${eventTable[i].event_number}">
+    <div id="event${eventTable[i].event_number}" class="eventinfo_back" psn="${eventTable[i].event_number}">
         <div class="lightbox_detailevent">
             <div class="lightbox_detailevent_info">
                     <div class="close eventinfoClose">✘</div>
@@ -84,13 +87,13 @@ function LightEventinfo(event) {
                         </div>
                     </div>
                     <div class="enroll">
-                            <a href="#" class="btnRed">
+                            <a href="#" class="btnRed btnEnroll">
                             我要報名
                             </a>
                     </div>
-                </div>
             </div>
         </div>
+    </div>
         `;
     }
     eventinfoLight.innerHTML = html;
@@ -115,7 +118,7 @@ function check() {
     xhr.send(null);
 }
 
-//註冊每個more的click事件
+//註冊活動詳情燈箱關閉click事件
 $(document).on('click', '.eventinfoClose', closeEventInfo);
 
 window.addEventListener("load", check());

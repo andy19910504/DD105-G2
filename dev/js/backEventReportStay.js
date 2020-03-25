@@ -11,7 +11,7 @@ function stayRow(event_report_number) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            alert(xhr.responseText);
+            // alert(xhr.responseText);
         } else {
             alert(xhr.status + "失敗");
         }
