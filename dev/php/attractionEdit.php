@@ -30,3 +30,4 @@ echo "修改成功！";
 }catch(PDOException $e){
     echo $e->getMessage();
 }
+?>

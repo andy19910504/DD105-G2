@@ -5,14 +5,13 @@ function showPhoto() {
         btnShow[i].onchange = function (e) {
             let file = e.target.files[0];
             let reader = new FileReader();
-            reader.onload=function(e){
-                showPhoto[i].src=reader.result;
+            reader.onload = function (e) {
+                showPhoto[i].src = reader.result;
             }
             reader.readAsDataURL(file);
         }
     }
 }
-
 
 window.addEventListener("load", function () {
     showPhoto();
@@ -28,7 +27,6 @@ window.addEventListener("load", function () {
         let attrLongitude = document.getElementById("attrLongitude").value;
         let attrLatitude = document.getElementById("attrLatitude").value;
         let attrStatus = document.getElementById("attrStatus").value;
-
         // 確認
         console.log(attrName);
         console.log(attrAddress);
@@ -39,6 +37,7 @@ window.addEventListener("load", function () {
         console.log(attrLongitude);
         console.log(attrLatitude);
         console.log(attrStatus);
+
         var editForm = new FormData();
         // 檢驗
         if (attrName == "") {
@@ -69,8 +68,8 @@ window.addEventListener("load", function () {
             alert("請確實填寫狀態！");
             return;
         } else {
-            // 建一個表單物件，將值放入表單物件中
 
+            // 建一個表單物件，將值放入表單物件中
             editForm.append('attrName', attrName);
             editForm.append('attrAddress', attrAddress);
             editForm.append('attrInfo1', attrInfo1);
