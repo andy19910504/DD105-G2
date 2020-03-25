@@ -2,7 +2,10 @@ $(document).ready(function(){
     var geocoder;
     var map;
     var markers = [];
+    var addresses = [];
     var spots = [];
+    var customRouteName = '';
+    var customRouteDesc = '';
     var infowindows = [];
     var styles = [];
     var daytime = [];
@@ -128,22 +131,30 @@ $(document).ready(function(){
 
     //儲存路線
     $('.confirm').click(function(e){
-      console.log(spots);
-      var spotsString = JSON.stringify(spots);
-      console.log(spotsString);
-      //AJAX
-      var xhr = new XMLHttpRequest();
-      //POST
-      xhr.open("POST", ".php", true);
-      xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-      xhr.send(spotsString);
-      xhr.onload=function (){
-          if( xhr.status == 200 ){
-            
-          }else{
-            alert(xhr.status+'請聯繫客服人員，謝謝！');
-          }
-      }
+      if($('.routeName').val() != '' && $('.routeDesc').val() != ''){
+        customRouteName = $('.routeName').val();
+        customRouteDesc = $('.routeDesc').val();
+        var routeInfo = [];
+        routeInfo.push(customRouteName, customRouteDesc, addresses, spots);
+        console.log(routeInfo);
+        var routeString = JSON.stringify(routeInfo);
+        console.log(routeString);
+        //AJAX
+        var xhr = new XMLHttpRequest();
+        //POST
+        xhr.open("POST", ".php", true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhr.send(routeString);
+        xhr.onload=function (){
+            if( xhr.status == 200 ){
+              
+            }else{
+              alert(xhr.status+'請聯繫客服人員，謝謝！');
+            }
+        }
+        } else {
+          alert('請填寫自訂路線名稱和簡介！！！！');
+        }
     });
 
     const directions = (origin, dest, waypts) => {
@@ -198,6 +209,7 @@ $(document).ready(function(){
                 animation: google.maps.Animation.DROP
             });
             //暫存景點
+            addresses.push(address);
             for(var i=0;i<=markers.length-1;i++){
               spots[i] = markers[i];
             }
@@ -207,6 +219,7 @@ $(document).ready(function(){
                 e.preventDefault();
                 marker.setMap(null);
                 markers = [];
+                spots = [];
             });
           } else {
             alert('錯誤原因: ' + status + '。請聯繫客服人員，謝謝！');
