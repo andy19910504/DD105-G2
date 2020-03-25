@@ -131,7 +131,9 @@ $(document).ready(function(){
 
     //儲存路線
     $('.confirm').click(function(e){
+      //判斷自訂路線名稱和簡介填寫了沒？
       if($('.routeName').val() != '' && $('.routeDesc').val() != ''){
+        //存入使用者輸入的自訂路線名稱和簡介
         customRouteName = $('.routeName').val();
         customRouteDesc = $('.routeDesc').val();
         var routeInfo = [];
