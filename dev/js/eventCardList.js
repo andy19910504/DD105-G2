@@ -3,7 +3,7 @@ function $id(id) {
 }
 
 
-// 動態新增卡片資料
+// 動態新增卡片
 function eventCard(event) {
     let cardBox = $id("cardBox");
     let eventTable = JSON.parse(event);//把JSON字串翻譯成JS

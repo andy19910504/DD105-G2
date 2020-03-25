@@ -166,7 +166,7 @@ function $id(id) {
 }
 
 window.addEventListener("load", function () {
-    let holdevent = document.querySelectorAll(".lightbox")
+    let holdevent = document.querySelectorAll(".eventEnroll")
     let lightBoxs = document.querySelectorAll(".backDrop");
     let closes = document.querySelectorAll(".close");
 

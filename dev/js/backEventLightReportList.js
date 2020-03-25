@@ -20,7 +20,7 @@ function showList(eventReport) {
             </td>
         </tr>
         `
-        }   
+    }   
     eventReportList.innerHTML = html;
 }
 
