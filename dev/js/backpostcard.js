@@ -8,21 +8,10 @@ window.addEventListener("load", function () {
     xhr.onload = function () {
         mem_product = JSON.parse(xhr.responseText);
         console.log(mem_product);
-        let mem_products_icon = document.getElementById("mem_product_icon");
-        let mem_productRow = 
-        `           <thead>
-                         <tr class="row trfirst">
-                            <th class="col-1">商品部件編號</th>
-                            <th class="col-1">商品部件點數</th>
-                            <th class="col-4">商品部件路徑</th>
-                            <th class="col-4">商品部件插圖</th>
-                            <th class="col-2">編輯</th>
-                        </tr>
-                    </thead>
-        `;
+        let iconList = document.getElementById("iconList");
+        let mem_productRow = ``;
         for (i = 0; i < mem_product.length; i++) {
             mem_productRow += `
-            <tbody>
             <tr class="row">
                 <th class="col-1">${mem_product[i].customized_product_number}</th>
                 <th class="col-1">${mem_product[i].customized_product_point}</th>
@@ -31,10 +20,10 @@ window.addEventListener("load", function () {
                     <div class="icon"><img class="iconimg" src="${mem_product[i].customized_product_url}" alt="icon1">
                     </div>
                 </th>
-                <th class="col-2"><button>刪除</button></th>
-            </tbody>
+                <th class="col-2"><button class="btnDelIcon">刪除</button></th>
+            </tr>
         `;
-            mem_product_icon.innerHTML = mem_productRow;
+            iconList.innerHTML = mem_productRow;
         }
     }
     xhr.open("get", "./php/mem_product.php", true);
@@ -52,11 +41,6 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
         document.getElementById("IconUrl").focus();
         return
     }
-    // if (document.getElementById("newma_psw").value.length == 0) {
-    //     alert("密碼不能為空");
-    //     document.getElementById("newma_psw").focus();
-    //     return
-    // }
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
@@ -67,9 +51,29 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
             alert(xhr.status);
         }
     }
-    var url = "./php/newicon.php?point=" + document.getElementById("IconPoint").value
-        + "&url=" + document.getElementById("IconUrl").value;
+    var url = "./php/newicon.php?point=" + document.getElementById("IconPoint").value +
+        "&url=" + document.getElementById("IconUrl").value;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 });
+
+// document.getElementById("btnDelIcon").addEventListener("click", function () {
+//     console('1')
+//     alert('1')
+//     let xhr = new XMLHttpRequest();
+//     xhr.onload = function () {
+//         if (xhr.status == 200) {
+//             //modify here
+//             alert(xhr.responseText);
+//             location.reload();
+//         } else {
+//             alert(xhr.status);
+//         }
+//     }
+//     var url = "./php/delicon.php?number=" + document.getElementById("IconPoint").value
+//         + "&url=" + document.getElementById("IconUrl").value;
+//     console.log(url);
+//     xhr.open("Get", url, true);
+//     xhr.send(null);
+// });

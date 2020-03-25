@@ -36,11 +36,11 @@ var web = {
     ]
 }
     var options = {
-        base: './dest', 
-        debug: true,
-        bin: 'C:/php/php.exe',
-        ini: 'C:/php/php.ini',
-        port: 8080
+        base: './dest', /*从打包目录访问*/
+        debug: true, /*调试信息*/
+        bin: 'C:/php-7.4.3/php.exe',/*自本地php.exe路径地址*/
+        ini: 'C:/php-7.4.3/php.ini',/*自本地php.ini路径地址*/
+        port: 8080, /*自定义端口*/
     };
 
 //流程
@@ -108,7 +108,7 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
             proxy:'localhost:8080',
             port:3000,
             watch:true,
-            index: "./welcome.html"
+            index: "backpostcard.html"
         }
     });
     connectPhp.server(options); // 啟動

@@ -159,53 +159,36 @@
                             <th class="col-2">編輯</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    <tr class="row">
-                        <th class="col-1">1</th>
-                        <th class="col-1">50</th>
-                        <th class="col-4">/456.jpg</th>
-                        <th class="col-4">
-                            <div class="icon"><img class="iconimg" src="./img/postcard/postIcon01.png" alt="icon1">
-                            </div>
-                        </th>
-                        <th class="col-2"><button>刪除</button></th>
-                    </tr>
-                        <tr class="row">
-                            <th class="col-1">2</th>
-                            <th class="col-1">50</th>
-                            <th class="col-4">/123.jpg</th>
+                    <tbody id="iconList">
+                        <!-- <tr class="row">
+                            <th class="col-1">${mem_product[i].customized_product_number}</th>
+                           <th class="col-1">${mem_product[i].customized_product_point}</th>
+                            <th class="col-4">${mem_product[i].customized_product_url}</th>
                             <th class="col-4">
-                                <div class="icon"><img class="iconimg" src="./img/postcard/postIcon02.png" alt="icon2">
+                                <div class="icon"><img class="iconimg" src="${mem_product[i].customized_product_url}" alt="icon1">
                                 </div>
                             </th>
-                            <th class="col-2"><button>刪除</button></th>
-                        </tr>
-                    </tbody>
-                    <!-- 要帶入資料的容器 -->
-                    <tbody id="keywordList">
+                            <th class="col-2"><button class="btnDelIcon">刪除</button></th>
+                        </tr> --> 
                     </tbody>
                 </table>
 
             </div>
-
+   <!-- 隱藏的表單，用來傳送資料到PHP -->
+   <form id="myForm" style="display:hidden">
+    <input type="hidden" name="Icon_num" id="Icon_num">
+</form>
 
 
         </main>
     </div>
-
-    <!-- 隱藏的表單，用來傳送資料到PHP -->
-    <!-- <form id="myForm" style="display:hidden">
-        <input type="hidden" name="keywordNo" id="keywordNo">
-        <input type="hidden" name="keywordWord" id="keywordWord">
-        <input type="hidden" name="keywordAns" id="keywordAns">
-        <input type="hidden" name="keywordStatus" id="keywordStatus">
-    </form> -->
     <!-- ------------ js ------------ -->
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
     <script src="./js/backpostcard.js"></script>
+    <script src="./js/backIconDelete.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);
