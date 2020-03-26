@@ -58,6 +58,8 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
     xhr.send(null);
 });
 
+
+
 // document.getElementById("btnDelIcon").addEventListener("click", function () {
 //     console('1')
 //     alert('1')

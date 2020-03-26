@@ -767,8 +767,6 @@ blockquote, q {
     width: 100%; } }
 
 @media screen and (max-width: 575px) {
-  .member_info_open_all_all > form > input {
-    font-size: 18px; }
   .member_info_open_all_right {
     font-size: 16px; }
   .member_info_open_all_bottom a:nth-child(3) {

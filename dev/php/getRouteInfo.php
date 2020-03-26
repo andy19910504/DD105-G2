@@ -72,14 +72,26 @@
 <?php
 try {
     require_once("./connectBooks.php");
+    // 顯示官方路線
     $sql = "select * from `routes` r 
     join `routes_list` l on(r.route_number = l.route_number) 
     join `attractions` a on(l.attraction_number =a.attraction_number)
+    where  member_number is null
     group by r.route_number order by r.route_number
     ;";
     $routes = $pdo->query($sql);
     $routesRow = $routes->fetchAll(PDO::FETCH_ASSOC);
+    // 顯示自訂路線
+    $sql = "select * from `routes` r 
+    join `routes_list` l on(r.route_number = l.route_number) 
+    join `attractions` a on(l.attraction_number =a.attraction_number)
+    where  member_number is not null
+    group by r.route_number order by r.route_number
+    ;";
+    $custom = $pdo->query($sql);
+    $customRow = $custom->fetchAll(PDO::FETCH_ASSOC);
 
+    // 顯示各路線景點
     $sql = "select * from `routes_list` l  
             join `attractions` a on(l.attraction_number =a.attraction_number)
             ;";
@@ -103,7 +115,7 @@ try {
         }
     }
 
-    echo json_encode(array('attraction_name' => $attrRow, 'routeInfo' => $routesRow));
+    echo json_encode(array('attractions' => $attrRow, 'routeInfo' => $routesRow,'customInfo'=>$customRow));
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
