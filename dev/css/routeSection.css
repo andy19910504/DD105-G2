@@ -17,6 +17,25 @@ div.psyTestWrap {
   color: #1e1e1e;
 }
 
+div.psyTestWrap #question {
+  width: 60%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #156692;
+  background-image: url(../img/index/questionBg.png);
+  background-size: cover;
+}
+
+div.psyTestWrap #question span {
+  display: inline-block;
+  color: #A5361C;
+  font-size: 46px;
+  font-weight: bold;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
 div.psyTestWrap div.answerBox {
   width: 100%;
   display: -webkit-inline-box;
@@ -56,11 +75,11 @@ div.psyTestWrap div.answerBox div.ansOption span.ansText {
 }
 
 div.psyTestWrap div.answerBox div.ansOption span.blueTag {
-  background-image: url(../../../img/index/ansTextBlue.png);
+  background-image: url(../img/index/ansTextBlue.png);
 }
 
 div.psyTestWrap div.answerBox div.ansOption span.pinkTag {
-  background-image: url(../../../img/index/ansTextpink.png);
+  background-image: url(../img/index/ansTextpink.png);
 }
 
 @media screen and (max-width: 1023px) {
@@ -73,7 +92,7 @@ div.psyTestWrap div.answerBox div.ansOption span.pinkTag {
 }
 
 div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
-  background-image: url(../../../img/index/blueWave.png);
+  background-image: url(../img/index/blueWave.png);
   position: relative;
   padding: 20px;
   text-align: center;
@@ -146,7 +165,7 @@ div.psyTestWrap div.answerBox div.ansOption div.ansBubble img.ansImg {
     margin-top: 20px;
   }
   div.psyTestWrap div.answerBox div.ansOption {
-    width: 48%;
+    width: 45%;
   }
   div.psyTestWrap div.answerBox div.ansOption div.ansBubble {
     padding: 0px;
@@ -161,13 +180,22 @@ div.psyTestWrap div.answerBox div.ansOption div.ansBubble img.ansImg {
 
 @media screen and (max-width: 767px) {
   div.psyTestWrap {
-    margin-top: 150px;
+    margin-top: 20px;
+  }
+  div.psyTestWrap #question {
+    width: 95%;
+    font-size: 24px;
+  }
+  div.psyTestWrap #question span {
+    font-size: 30px;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
   }
 }
 
 div.routeWrap {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 200px;
   position: relative;
   letter-spacing: 1.5px;
   font-size: 24px;
@@ -215,7 +243,7 @@ div.routeWrap div.routeBox div.routeData {
   -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
           box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
   border-radius: 5px;
-  background-image: url(../../../img/index/linedpaper.png);
+  background-image: url(../img/index/linedpaper.png);
   display: inline-block;
   padding: 20px 0px;
   width: 700px;
@@ -288,7 +316,7 @@ div.routeWrap img.grassLine {
 
 @media screen and (max-width: 767px) {
   div.routeWrap {
-    margin-top: 160px;
+    margin-top: 50px;
   }
 }
 
@@ -433,6 +461,12 @@ img.routeSubTitle {
 @media screen and (max-width: 1023px) {
   img.routeSubTitle {
     width: 170px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  img.routeSubTitle {
+    display: none;
   }
 }
 
