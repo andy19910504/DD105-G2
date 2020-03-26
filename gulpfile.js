@@ -38,8 +38,8 @@ var web = {
     var options = {
         base: './dest', /*从打包目录访问*/
         debug: true, /*调试信息*/
-        bin: 'C:/php/php.exe',/*自本地php.exe路径地址*/
-        ini: 'C:/php/php.ini',/*自本地php.ini路径地址*/
+        bin: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.exe',/*自本地php.exe路径地址*/
+        ini: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.ini',/*自本地php.ini路径地址*/
         port: 8080, /*自定义端口*/
     };
 
@@ -99,16 +99,11 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
 
     browserSync.init({
         server: {
-<<<<<<< HEAD
-            baseDir: "./dest",
-            index: "route.html"
-=======
             baseDir: './dest',
             proxy: 'localhost:8080',/*代理到上面php的地址，这个非常重要，否则不能同时支持php和页面时时刷新！*/
             port:3000,
             watch: true,
             index: "./welcome.html"
->>>>>>> origin/master
         }
     });
     connectPhp.server(options);/*启动服务*/
