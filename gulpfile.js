@@ -108,7 +108,7 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
             proxy:'localhost:8080',
             port:3000,
             watch:true,
-            index: "backpostcard.html"
+            index: "welcome.html"
         }
     });
     connectPhp.server(options); // 啟動

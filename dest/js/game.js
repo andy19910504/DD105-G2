@@ -28,11 +28,23 @@ $(document).ready(function(){
         $('.option .label').addClass('hide-label');
         $(this).find('.label').toggleClass('hide-label');
         if($(this).find('.route-name').text() == '日式舊屋行'){
-            $('.map').replaceWith('<img src="./img/mapgame/map.jpg" alt="" class="map">');
+            $('.spot1').attr('src', './img/mapgame/spot/route1/青田七六.jpg');
+            $('.spot2').attr('src', './img/mapgame/spot/route1/長慶廟.jpg');
+            $('.spot3').attr('src', './img/mapgame/spot/route1/紀州庵.jpg');
+            $('.spot4').attr('src', './img/mapgame/spot/route1/野草居食屋.jpg');
+            $('.spot5').attr('src', './img/mapgame/spot/route1/梁實秋故居.jpg');
         } else if($(this).find('.route-name').text() == '文青品味旅'){
-            $('.map').replaceWith('<img src="./img/mapgame/map1.jpg" alt="" class="map">');
+            $('.spot1').attr('src', './img/mapgame/spot/route2/宅jai風格生活.jpg');
+            $('.spot2').attr('src', './img/mapgame/spot/route2/有肉Succulent_Gift1.jpg');
+            $('.spot3').attr('src', './img/mapgame/spot/route2/讀字書店.jpg');
+            $('.spot4').attr('src', './img/mapgame/spot/route2/SturnLandingTurkishCoffee2.jpg');
+            $('.spot5').attr('src', './img/mapgame/spot/route2/SwellCo.Cafe.jpg');
         } else if($(this).find('.route-name').text() == '職人散步去'){
-            $('.map').replaceWith('<img src="./img/mapgame/map2.jpg" alt="" class="map">');
+            $('.spot1').attr('src', './img/mapgame/spot/route3/小廢墟.jpg');
+            $('.spot2').attr('src', './img/mapgame/spot/route3/化南新村.png');
+            $('.spot3').attr('src', './img/mapgame/spot/route3/文山公民會館.JPG');
+            $('.spot4').attr('src', './img/mapgame/spot/route3/岸汐職人聚落.jpg');
+            $('.spot5').attr('src', './img/mapgame/spot/route3/TAIGA針葉林2.jpg');
         }
     });
 
@@ -132,14 +144,14 @@ $(document).ready(function(){
             var coordY = getTransValues('game-map-container', 'y');
             if(e.keyCode == 37 && coordX >= -4126){
                 $('.walking').css('transform','scaleX(-1)');
-                $('.game-map-container').css('transform', `translate(${coordX+10}px, ${coordY}px)`);
+                $('.game-map-container').css('transform', `translate(${coordX+50}px, ${coordY}px)`);
             } else if(e.keyCode == 39 && coordX <= -968){
                 $('.walking').css('transform','scaleX(1)');
-                $('.game-map-container').css('transform', `translate(${coordX-10}px, ${coordY}px)`);
+                $('.game-map-container').css('transform', `translate(${coordX-50}px, ${coordY}px)`);
             } else if(e.keyCode == 38 && coordY <= -704){
-                $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY+10}px)`);
+                $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY+50}px)`);
             } else if(e.keyCode == 40 && coordY >= -2588){
-                $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY-10}px)`);
+                $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY-50}px)`);
             }
             console.log(`coordX:${coordX}, coordY:${coordY}`);
             //spot1 trigger
@@ -147,6 +159,7 @@ $(document).ready(function(){
                 $('.spot1').css({
                     filter: 'brightness(2.8)'
                 });
+                getQuizContent();
                 setTimeout(function(){
                     if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342){
                         $('.game-modal').removeClass('hide-game-modal');
@@ -157,38 +170,121 @@ $(document).ready(function(){
                     filter: 'brightness(1)'
                 });
             }
+            //spot2 trigger
+            if(coordX >= -1810 && coordY >= -1242 && coordX <= -1560 && coordY <= -1142){
+                $('.spot2').css({
+                    filter: 'brightness(2.8)'
+                });
+                getQuizContent();
+                setTimeout(function(){
+                    if(coordX >= -1810 && coordY >= -1242 && coordX <= -1560 && coordY <= -1142){
+                        $('.game-modal').removeClass('hide-game-modal');
+                    }
+                }, 3000);
+            } else {
+                $('.spot2').css({
+                    filter: 'brightness(1)'
+                });
+            }
+            //spot3 trigger
+            if(coordX >= -3010 && coordY >= -1242 && coordX <= -2760 && coordY <= -1092){
+                $('.spot3').css({
+                    filter: 'brightness(2.8)'
+                });
+                getQuizContent();
+                setTimeout(function(){
+                    if(coordX >= -3010 && coordY >= -1242 && coordX <= -2760 && coordY <= -1092){
+                        $('.game-modal').removeClass('hide-game-modal');
+                    }
+                }, 3000);
+            } else {
+                $('.spot3').css({
+                    filter: 'brightness(1)'
+                });
+            }
+            //spot4 trigger
+            if(coordX >= -2910 && coordY >= -1892 && coordX <= -2810 && coordY <= -1792){
+                $('.spot4').css({
+                    filter: 'brightness(2.8)'
+                });
+                getQuizContent();
+                setTimeout(function(){
+                    if(coordX >= -2910 && coordY >= -1892 && coordX <= -2810 && coordY <= -1792){
+                        $('.game-modal').removeClass('hide-game-modal');
+                    }
+                }, 3000);
+            } else {
+                $('.spot4').css({
+                    filter: 'brightness(1)'
+                });
+            }
+            //spot5 trigger
+            if(coordX >= -1660 && coordY >= -1892 && coordX <= -1560 && coordY <= -1792){
+                $('.spot5').css({
+                    filter: 'brightness(2.8)'
+                });
+                getQuizContent();
+                setTimeout(function(){
+                    if(coordX >= -1660 && coordY >= -1892 && coordX <= -1560 && coordY <= -1792){
+                        $('.game-modal').removeClass('hide-game-modal');
+                    }
+                }, 3000);
+            } else {
+                $('.spot5').css({
+                    filter: 'brightness(1)'
+                });
+            }
         });
 
-        //spot1 quiz
-        $('.test-area-spot1 .opt1, .test-area-spot1 .opt2, .test-area-spot1 .opt3').click(function(){
-            if($(this).hasClass('opt3')){
+        //get quiz content
+        function getQuizContent(){
+            $('.opt1, .opt2, .opt3').removeClass('click-disabled');
+            $('.opt1, .opt2, .opt3').removeClass('right');
+            $('.opt1, .opt2, .opt3').removeClass('wrong');
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://jsonplaceholder.typicode.com/posts/1', true);
+            xhr.send(null);
+            xhr.onload = function(){
+                if(xhr.status == 200){
+                    $('.test').text(JSON.parse(xhr.responseText).title);
+                    $('.opt1').text(JSON.parse(xhr.responseText).body);
+                    $('.opt2').text();
+                    $('.opt3').text();
+                    for(var i=1;i<=3;i++){
+                        if($(`.opt${i}`).text() == JSON.parse(xhr.responseText).answer_item){
+                            $(`.opt${i}`).addClass('ans');
+                        }
+                    }
+                } else {
+                    alert('抱歉，有東西出錯了。請聯繫客服人員！！');
+                }
+            }
+            //fetch
+            fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json())
+            .then(json => console.log(json));
+        }
+
+        //spots' quiz
+        $('.opt1, .opt2, .opt3').click(function(){
+            if($(this).hasClass('ans')){
                 $('.test').text('恭喜答對！！！');
-                $(this).css({
-                    'background-color': '#D3E9F0',
-                    border: '1px solid #D3E9F0',
-                    'border-radius': '5px'
-                });
+                $(this).addClass('right');
                 $('.close-modal').click(function(){
                     $('.game-modal').addClass('hide-game-modal');
                 });
                 $('.check-box').eq(1).find('img').addClass('show-check');
             } else {
-                $('.test-area-spot1 .test').text('你答錯了！！！！正確答案如下！！');
-                $(this).css({
-                    'background-color': '#A9381D',
-                    border: '1px solid #A9381D',
-                    'border-radius': '5px'
-                });
-                $('.test-area-spot1 .opt3').css({
-                    'background-color': '#D3E9F0',
-                    border: '1px solid #D3E9F0',
-                    'border-radius': '5px'
-                });
+                $('.test').text('你答錯了！！！！正確答案如下藍底選項所示！！');
+                $(this).addClass('wrong');
+                $('.ans').addClass('right');
                 $('.close-modal').click(function(){
                     $('.game-modal').addClass('hide-game-modal');
                 });
             }
-            $('.test-area-spot1 .opt1, .test-area-spot1 .opt2, .test-area-spot1 .opt3').addClass('click-disabled');
+            //移除解答class，並且不能重選
+            $('.opt1, .opt2, .opt3').removeClass('ans');
+            $('.opt1, .opt2, .opt3').addClass('click-disabled');
             updateProgress();
         });
 

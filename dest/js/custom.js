@@ -131,7 +131,9 @@ $(document).ready(function(){
 
     //儲存路線
     $('.confirm').click(function(e){
+      //判斷自訂路線名稱和簡介填寫了沒？
       if($('.routeName').val() != '' && $('.routeDesc').val() != ''){
+        //存入使用者輸入的自訂路線名稱和簡介
         customRouteName = $('.routeName').val();
         customRouteDesc = $('.routeDesc').val();
         var routeInfo = [];
@@ -147,7 +149,7 @@ $(document).ready(function(){
         xhr.send(routeString);
         xhr.onload=function (){
             if( xhr.status == 200 ){
-              
+              alert('您的路線已儲存，請到會員專區查看。謝謝！');
             }else{
               alert(xhr.status+'請聯繫客服人員，謝謝！');
             }
