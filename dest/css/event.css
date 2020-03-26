@@ -516,25 +516,24 @@ div.eventCard {
         margin-bottom: 5px; }
       .lightbox_holdevent_info .holdevent_step div .stepBox, .lightbox_detailevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
-    .lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
+    .lightbox_holdevent_info .holdevent_step .color, .lightbox_detailevent_info .holdevent_step .color {
       background-image: url(../img/event/event_stepOn.png); }
 
 @media screen and (max-width: 1200px) {
   .lightbox_holdevent_info {
     width: 90%; } }
 
-.color {
-  background-image: url(../img/event/event_stepOn.png); }
-
 .holdevent_step1content {
   height: 536px;
-  display: block; }
+  display: flex;
+  flex-direction: column; }
 
 .chooseRoute {
   margin: 30px auto;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  width: 100%; }
   .chooseRoute .sliderWrap {
     width: 100%;
     position: relative;
@@ -648,10 +647,13 @@ div.eventCard {
   .stepBtn div {
     margin: 0px 80px; }
 
+.stepStop {
+  pointer-events: none; }
+
 .holdevent_step2content {
   display: none;
   height: 536px;
-  width: 100%; }
+  flex-direction: column; }
   .holdevent_step2content .step2Info {
     width: 100%;
     display: flex;
@@ -719,6 +721,7 @@ div.eventCard {
 
 .holdevent_step3content {
   display: none;
+  flex-direction: column;
   font-size: 18px;
   color: #646464;
   height: 536px;
