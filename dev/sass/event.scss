@@ -675,7 +675,7 @@ div.eventCard{
                     }
                     
                 }
-                .step1{
+                .color{
                         background-image: url(../img/event/event_stepOn.png);
                 }
     }
@@ -688,15 +688,13 @@ div.eventCard{
       
 }
 
-// 步驟圈圈color
-.color{
-    background-image: url(../img/event/event_stepOn.png);
-}
+
 //第一步驟block
 .holdevent_step1content{
     //border: 1px solid purple;
     height: 536px;
-    display: block;
+    display: flex;
+    flex-direction: column;
    
 }
 .chooseRoute{
@@ -704,6 +702,7 @@ div.eventCard{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     .sliderWrap{
         width: 100%;
         position: relative;
@@ -866,11 +865,14 @@ div.eventCard{
         margin: 0px 80px;
     }
 }
+.stepStop{
+    pointer-events: none;
+}
 // 第2步驟block
 .holdevent_step2content{
     display: none;
     height: 536px;
-    width: 100%;
+    flex-direction: column;
     .step2Info{
         width: 100%;
         display: flex;
@@ -956,6 +958,7 @@ div.eventCard{
 // 第3步驟block
 .holdevent_step3content{
     display: none;//
+    flex-direction: column;
     font-size: $fzContent;
     color: $fcInfo;
     height: 536px;
@@ -1088,7 +1091,6 @@ div.eventCard{
         }
     }
 }
-
 //我要報名
 .enroll{
     position: absolute;
