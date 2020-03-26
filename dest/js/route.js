@@ -1,52 +1,52 @@
-// attractionsLightBox
-window.addEventListener("load", function () {
-    let attractions = document.querySelectorAll(".attractionImage")
-    let lightBoxs = document.querySelectorAll(".attractionBgImage");
-    let cancels = document.querySelectorAll(".cancelLightBox");
+// // attractionsLightBox
+// function attractionsLightBox() {
+//     let attractions = document.querySelectorAll(".attractionImage")
+//     let lightBoxs = document.querySelectorAll(".attractionBgImage");
+//     let cancels = document.querySelectorAll(".cancelLightBox");
 
-    for (let i = 0; i < attractions.length; i++) {
+//     for (let i = 0; i < attractions.length; i++) {
 
-        attractions[i].addEventListener("click", function () {
-            lightBoxs[i].style.display = "flex";
-        });
-        cancels[i].addEventListener("click", function () {
-            lightBoxs[i].style.display = "none";
-        });
-    }
-});
+//         attractions[i].addEventListener("click", function () {
+//             lightBoxs[i].style.display = "flex";
+//         });
+//         cancels[i].addEventListener("click", function () {
+//             lightBoxs[i].style.display = "none";
+//         });
+//     }
+// }
+
 
 // attractionsSlider
-window.addEventListener("load", function () {
-    let attractionSlider = document.querySelectorAll(".attractionAll");
-    let left = document.querySelectorAll(".arrowLeft");
-    let right = document.querySelectorAll(".arrowRight");
+// function attractionsSlider() {
+//     let attractionSlider = document.querySelectorAll(".attractionAll");
+//     let left = document.querySelectorAll(".arrowLeft");
+//     let right = document.querySelectorAll(".arrowRight");
 
 
-    for (let j = 0; j < attractionSlider.length; j++) {
-        left[j].addEventListener("click", function () {
-            attractionSlider[j].style.transform = "translateX(0px)";
-            right[j].style.filter = "unset";
-            right[j].style.animation = "";
-            left[j].style.filter = "grayscale(1)";
-            left[j].style.animation = "unset";
-        });
-        right[j].addEventListener("click", function () {
-            attractionSlider[j].style.transform = "translateX(-50%)";
-            left[j].style.filter = "unset";
-            left[j].style.animation = " moveLeft .5s alternate infinite";
-            right[j].style.filter = "grayscale(1)";
-            right[j].style.animation = "unset";
-        });
+//     for (let j = 0; j < attractionSlider.length; j++) {
+//         left[j].addEventListener("click", function () {
+//             attractionSlider[j].style.transform = "translateX(0px)";
+//             right[j].style.filter = "unset";
+//             right[j].style.animation = "";
+//             left[j].style.filter = "grayscale(1)";
+//             left[j].style.animation = "unset";
+//         });
+//         right[j].addEventListener("click", function () {
+//             attractionSlider[j].style.transform = "translateX(-50%)";
+//             left[j].style.filter = "unset";
+//             left[j].style.animation = " moveLeft .5s alternate infinite";
+//             right[j].style.filter = "grayscale(1)";
+//             right[j].style.animation = "unset";
+//         });
 
-    }
-
-});
+//     }
+// }
 
 // scrollMagic with SVG
 function pathPrepare($el) {
     var lineLength = $el[0].getTotalLength() * 1.355;
-        $el.css("stroke-dasharray", lineLength);
-        $el.css("stroke-dashoffset", lineLength);
+    $el.css("stroke-dasharray", lineLength);
+    $el.css("stroke-dashoffset", lineLength);
 }
 
 var $roadPath1 = $("path#cls-1");
@@ -102,27 +102,27 @@ var scene5 = new ScrollMagic.Scene({ triggerElement: "#trigger5", duration: 50, 
 
 // scrollMagic and animation
 // build scene
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger1",offset:130})
+var scene = new ScrollMagic.Scene({ triggerElement: "#trigger1", offset: 130 })
     .setClassToggle(".groupA", "disPlay")
     // .addIndicators()
-    .addTo(controller);   
+    .addTo(controller);
 //
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger2",offset:130})
+var scene = new ScrollMagic.Scene({ triggerElement: "#trigger2", offset: 130 })
     .setClassToggle(".groupB", "disPlay")
     // .addIndicators()
     .addTo(controller);
 //
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger3",offset:130})
+var scene = new ScrollMagic.Scene({ triggerElement: "#trigger3", offset: 130 })
     .setClassToggle(".groupC", "disPlay")
     // .addIndicators()
     .addTo(controller);
 //
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger4",offset:130})
+var scene = new ScrollMagic.Scene({ triggerElement: "#trigger4", offset: 130 })
     .setClassToggle(".groupD", "disPlay")
     // .addIndicators()
     .addTo(controller);
 //
-var scene = new ScrollMagic.Scene({triggerElement: "#trigger5",offset:130})
+var scene = new ScrollMagic.Scene({ triggerElement: "#trigger5", offset: 130 })
     .setClassToggle(".groupE", "disPlay")
     // .addIndicators()
     .addTo(controller);

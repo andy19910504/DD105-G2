@@ -15,41 +15,48 @@ function showPhoto() {
 
 window.addEventListener("load", function () {
     showPhoto();
-
     // 按下新增按鈕，資料會存到資料庫中
     $(document).on('click', '.btnAdd', function editBackRoute() {
         // 取得新增表單的值
+        let options = document.querySelectorAll('.optionAttr');
+        let arr = "";
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].checked == true) {
+                arr += options[i].value + "|";
+            };
+        };
         let routeName = document.getElementById("routeName").value;
         let routeInfo = document.getElementById("routeInfo").value;
         let routePhoto = document.getElementById("routePhoto").files[0];
-        // let routeAttr = document.getElementById("routeAttr").value;
+        let routeAttr = arr;
         let routeStatus = document.getElementById("routeStatus").value;
         // 確認
         console.log(routeName);
         console.log(routeInfo);
         console.log(routePhoto);
-        // console.log(routeAttr);
+        console.log(routeAttr);
         console.log(routeStatus);
 
         // 建一個表單物件，將值放入表單物件中
-        let editForm = new FormData();
+        var editForm = new FormData();
         editForm.append('routeName', routeName);
         editForm.append('routeInfo', routeInfo);
         editForm.append('routePhoto', routePhoto);
-        // editForm.append('routeAttr', routeAttr);
+        editForm.append('routeAttr', routeAttr);
         editForm.append('routeStatus', routeStatus);
+
         console.log(editForm);
 
         // let xhr = new XMLHttpRequest();
         // xhr.onload = function () {
         //     if (xhr.status == 200) {
-        //         alert(xhr.responseText);
+        //         alert('路線新增成功!');
 
         //     } else {
         //         alert(xhr.status);
         //     }
         // }
-        // xhr.open("post", "./php/routeAdd.php", true);
+        // xhr.open("post", "../php/routeAdd.php", true);
         // xhr.send(editForm); // 傳送表單物件
         // location.reload();
     });

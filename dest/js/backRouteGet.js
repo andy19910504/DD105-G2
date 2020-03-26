@@ -3,14 +3,13 @@ function getRouteInfo(info) {
     let routeTable = document.getElementById("routeTable");
     let customTable = document.getElementById("customTable");
     let routeInfo = JSON.parse(info);
-    console.log(routeInfo)
-    console.log(routeInfo.customInfo)
-    console.log(routeInfo.routeInfo[0]['route_number']);
-    console.log(routeInfo.attractions[1]['route_number']);
     let key = Object.keys(routeInfo.attractions);
-    console.log(key)
-
-    console.log(routeInfo.routeInfo.length)
+    // console.log(routeInfo)
+    // console.log(routeInfo.customInfo)
+    // console.log(routeInfo.routeInfo[0]['route_number']);
+    // console.log(routeInfo.attractions[1]['route_number']);
+    // console.log(key)
+    // console.log(routeInfo.routeInfo.length)
     let routeRow = "";
     for (let i = 0; i < routeInfo.routeInfo.length; i++) {
         routeRow += `
@@ -104,26 +103,17 @@ function getRouteInfo(info) {
         `;
         customTable.innerHTML = customRow;
     }
-
-}
-
-window.addEventListener("load", function () {
-
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            alert("資料庫中有 " + JSON.parse(xhr.responseText).routeInfo.length + " 筆景點資料。");
-            getRouteInfo(xhr.responseText);
-            checkRouteStatus();
-            // console.log(xhr.responseText);
-        } else {
-            alert(xhr.status);
-        }
+    // 取得新增表單的景點資料
+    let options = document.getElementById("options");
+    let optionRow = "";
+    for (let o = 0; o < key.length; o++) {
+        optionRow += `
+        <label for="attr${o}"><input type="checkbox" id="attr${o}" class="optionAttr" name="${routeInfo.attractions[o]['attraction_number']}" value="${routeInfo.attractions[o]['attraction_number']}">${routeInfo.attractions[o]['attraction_name']}</label>
+        `
+        options.innerHTML = optionRow;
     }
-    xhr.open("get", "./php/getRouteInfo.php", true);
-    xhr.send(null);
-}, false);
-
+}
+// 確認路線狀態
 function checkRouteStatus() {
     let checkMeLabels = document.getElementsByClassName("custom-control-label");
     let checkMe = document.getElementsByClassName("checkMe");
@@ -149,5 +139,46 @@ function checkRouteStatus() {
         }
     }
 }
+
+// 限制路線選取景點的數量
+var c = 0;
+var limit = 5;
+function limitAttr() {
+    let option = document.querySelectorAll('.optionAttr');
+    for (let i = 0; i < option.length; i++) {
+        option[i].onchange = function () {
+            if (this.checked == true) {
+                c++;
+            } else if (this.checked == false) {
+                c--;
+            } if (c > limit) {
+                this.checked = false;
+                alert("最多只能選取五個!");
+                c = limit;
+            }
+            console.log(c);
+        }
+    }
+
+}
+
+window.addEventListener("load", function () {
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            alert("資料庫中有 " + JSON.parse(xhr.responseText).routeInfo.length + " 筆景點資料。");
+            getRouteInfo(xhr.responseText);
+            checkRouteStatus();
+            limitAttr();
+            // console.log(xhr.responseText);
+        } else {
+            alert(xhr.status);
+        }
+    }
+    xhr.open("get", "./php/getRouteInfo.php", true);
+    xhr.send(null);
+}, false);
+
 
 
