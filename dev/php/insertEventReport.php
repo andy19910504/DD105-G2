@@ -12,7 +12,6 @@ try{
     $event_Report->bindValue(":event_report_reason",$_POST["event_report_reason"]);
     $event_Report->execute();
     
-    // echo "成功新增了", $event_Report->rowCount(), "個關鍵字";
 
 }catch(PDOException $e){
     echo $e->getMessage();
