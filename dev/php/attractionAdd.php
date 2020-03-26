@@ -8,8 +8,8 @@ INSERT INTO `attractions`
   `attraction_information2`, `attraction_photo1`, 
   `attraction_photo2`, `attraction_latitude`, 
   `attraction_longitude`, `attraction_status`) VALUES 
-  (NULL, :attrName,:attrAddress, :attrInfo1, :attrInfo2, :attrPhoto1, :attrPhoto2, :attrLat,:attrLot, :attrStatus);
- ";
+  (NULL, :attrName,:attrAddress, :attrInfo1, :attrInfo2, :attrPhoto1, :attrPhoto2, :attrLat,:attrLot, :attrStatus)
+  ;";
 
     $edit = $pdo->prepare($sql);
     $edit->bindValue(":attrName", $_POST["attrName"]);
