@@ -1,4 +1,3 @@
-
 window.addEventListener("load", function () {
     $(document).on('click', '.btnDel', function editBackAttraction() {
 

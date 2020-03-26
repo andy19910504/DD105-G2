@@ -3,7 +3,7 @@
 //     require_once("./connectBooks.php");
 //     $sql = "select * from `routes` r 
 //             join `routes_list` l on(r.route_number = l.route_number) 
-//             join `attractions` a on(l.attraction_number =a.attraction_number) group by r.route_number";
+//             join `attractions` a on(l.attraction_number =a.attraction_number)";
 //     $attractions = $pdo->query($sql);
 //     $attrRow = $attractions->fetchAll(PDO::FETCH_ASSOC);
 
@@ -63,7 +63,6 @@
 
 
 //     echo json_encode(array('route_number' => $arr, 'route_name' => $arrA, 'route_information' => $arrB, 'route_photo' => $arrC, 'attraction_name' => $arrD, 'route_status' => $arrE, 'member_number' => $arrF));
-//     echo json_encode(array('attraction_name' => $arrD,'routeRow' => $attrRow));
 
 // } catch (PDOException $e) {
 //     echo $e->getMessage();
@@ -73,33 +72,50 @@
 <?php
 try {
     require_once("./connectBooks.php");
+    // 顯示官方路線
     $sql = "select * from `routes` r 
     join `routes_list` l on(r.route_number = l.route_number) 
     join `attractions` a on(l.attraction_number =a.attraction_number)
-    group by r.route_number
+    where  member_number is null
+    group by r.route_number order by r.route_number
     ;";
     $routes = $pdo->query($sql);
     $routesRow = $routes->fetchAll(PDO::FETCH_ASSOC);
-
+    // 顯示自訂路線
     $sql = "select * from `routes` r 
-            join `routes_list` l on(r.route_number = l.route_number) 
+    join `routes_list` l on(r.route_number = l.route_number) 
+    join `attractions` a on(l.attraction_number =a.attraction_number)
+    where  member_number is not null
+    group by r.route_number order by r.route_number
+    ;";
+    $custom = $pdo->query($sql);
+    $customRow = $custom->fetchAll(PDO::FETCH_ASSOC);
+
+    // 顯示各路線景點
+    $sql = "select * from `routes_list` l  
             join `attractions` a on(l.attraction_number =a.attraction_number)
             ;";
     $attractions = $pdo->query($sql);
     $attrRow = $attractions->fetchAll(PDO::FETCH_ASSOC);
 
-    $arr = array();
+    $arrA = array();
+    $arrB = array();
     $x = 0;
+    $y = 0;
     foreach ($attrRow as $key => $val) {
+        $routeNum[$key] = $val['route_number'];
         $attrName[$key] = $val['attraction_name'];
-
-        if (array_search($attrName[$key], $arr) == false) {
+        if (array_search($routeNum[$key], $arrA) == false) {
             $x++;
-            $arr[$x] = $attrName[$key];
+            $arrA[$x] = $routeNum[$key];
+        }
+        if (array_search($attrName[$key], $arrB) == false) {
+            $y++;
+            $arrB[$x] = $attrName[$key];
         }
     }
 
-    echo json_encode(array('attraction_name' => $arr, 'routeInfo' => $routesRow));
+    echo json_encode(array('attractions' => $attrRow, 'routeInfo' => $routesRow,'customInfo'=>$customRow));
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

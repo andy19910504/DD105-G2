@@ -41,7 +41,6 @@
         .privateBlock {
             margin-top: 80px;
         }
-
         .routeNameBlock input{
             width: 180px;
         }
@@ -51,15 +50,24 @@
         .routePhotoBlock .routePhoto{
             width: 150px;
         } 
-
         .fieldBlock {
             display: flex;
             align-items: flex-start;
             margin-bottom: 10px;
         }
-
         .fieldBlock label {
             margin-right: 10px;
+        }
+        .fieldBlock:nth-child(3){
+            flex-direction: column;
+        }
+        .fieldBlock:nth-child(3) .showPhoto{
+            width: 200px;
+        }
+        #routeTable .routeAttrName{
+            margin-bottom: 5px;
+        }#routeTable .routeAttrName:last-child{
+            margin-bottom: 0px;
         }
     </style>
 </head>
@@ -120,25 +128,35 @@
                             </div>
                             <div class="modal-body">
                                 <form action="">
-                                    <div class="fieldBlock"><label for="routeName">路線名稱</label><input type="text"
-                                            name="routeName" id="routeName"></div>
-                                    <div class="fieldBlock"><label for="routeIntroduction">路線介紹</label><textarea
-                                            name="routeIntroduction" id="routeIntroduction" cols="" rows=""></textarea>
+                                    <div class="fieldBlock">
+                                        <label for="routeName">路線名稱</label>
+                                        <input type="text" name="routeName" id="routeName">
                                     </div>
-                                    <div class="fieldBlock"><label for="routePhoto">路線照片</label><input type="file"
-                                            name="routephoto" id="routephoto" class="btn-sm"></div>
-                                    <div class="fieldBlock"></div>
-                                    <div class="fieldBlock"></div>
+                                    <div class="fieldBlock">
+                                        <label for="routeInfo">路線介紹</label>
+                                        <textarea name="routeInfo" id="routeInfo" cols="" rows=""></textarea>
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routePhoto">路線照片</label><input type="file" name="routePhoto" id="routePhoto" class="btn-sm btnShow">
+                                        <img class="showPhoto">
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routeAttr">路線景點</label>
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routeStatus">路線狀態</label>
+                                        <input type="text" name="routeStatus" id="routeStatus">
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-sm">儲存</button>
+                                <button type="button" class="btn btn-secondary btn-sm btnAdd">新增</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
-                    <input type="text" class="attrNumber" name="editNumber" id="editNumber">
+                    <input type="text" name="editNumber" id="editNumber">
                     <input type="text" name="editName" id="editName">
                     <textarea name="editInfo" id="editInfo"></textarea>
                     <input type="text" name="editStatus" id="editStatus">
@@ -191,16 +209,13 @@
                             <th scope="col">路線編號</th>
                             <th scope="col">路線名稱</th>
                             <th scope="col">路線介紹</th>
-                            <th scope="col">路線照片</th>
                             <th scope="col">路線景點</th>
                             <th scope="col">路線狀態</th>
                             <th scope="col">會員編號</th>
                             <th scope="col">路線設定</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                    </tbody>
+                    <tbody id="customTable"></tbody>
                 </table>
             </div>
         </main>
@@ -214,6 +229,7 @@
     <script src="./js/backRouteGet.js"></script>
     <script src="./js/backRouteEdit.js"></script>
     <script src="./js/backRouteAdd.js"></script>
+    <script src="./js/backRouteDel.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);

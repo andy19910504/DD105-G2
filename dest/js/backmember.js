@@ -73,6 +73,14 @@ window.addEventListener("load", function () {
         for (let i = 1; i < 100; i++) {
             $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(7)>button`).click(function () {
                 // $(this).css("border","10px solid red");
+                //跳窗給他反悔的機會
+                if(confirm("確認刪除管理員嗎??")==true){
+                    if(confirm("真的嗎!!")==false){
+                        return
+                    }
+                }else{
+                    return
+                }
                 let num = $(`#manager>tbody>tr:nth-child(${i})>td:nth-child(1)`).text();
                 // alert(num);
                 delmenager(num);
@@ -156,7 +164,7 @@ window.addEventListener("load", function () {
                     <td>${memberall[j].member_account}</td>
                     <td>${memberall[j].member_password}</td>
                     <td>${memberall[j].member_email}</td>
-                    <td><img src="${memberall[j].member_photo}" alt=""></td>
+                    <td><img src="./img/memberPhoto/${memberall[j].member_photo}" alt=""></td>
                     <td>${memberall[j].member_point}</td>
                     <td style="display:none"><button>${memberall[j].member_sataus}</button></td>
                     <td><button class="btn member_status">${status}</button></td>
