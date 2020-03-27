@@ -591,14 +591,6 @@ div.eventCard {
           cursor: pointer; }
       .chooseRoute .sliderWrap .routeAllBox .routeBox:hover {
         opacity: 0.75; }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(1) {
-        background-image: url(../img/event/event_route1_2.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(2) {
-        background-image: url(../img/event/event_route2_2.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(3) {
-        background-image: url(../img/event/event_route3.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
-        background-image: url(../img/event/event_cusRout.jpg); }
       @media screen and (max-width: 1200px) {
         .chooseRoute .sliderWrap .routeAllBox .routeBox {
           width: 200px; } }

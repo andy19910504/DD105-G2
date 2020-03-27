@@ -242,9 +242,9 @@
                                 </div>
                                 <!-- 選擇路線框 -->
                                 <div class="sliderWrap">
-                                    <div class="routeAllBox">
+                                    <div class="routeAllBox" id="routeAllBox">
                                         <!-- 撈路線 -->
-                                        <div class="routeBox routeChose">
+                                        <!-- <div class="routeBox routeChose">
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">官方路線1</p>
                                             </div>
@@ -268,33 +268,15 @@
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">自訂路線2</p>
                                             </div>
-                                        </div>
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線3</p>
-                                                </div>
-                                            </div> -->
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線4</p>
-                                                </div>
-                                            </div> -->
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線5</p>
-                                                </div>
-                                            </div> -->
-
-                                        <div class="routeBox">
+                                        </div> -->
+                                        <!-- 自訂路線放最後 -->
+                                        <!-- <div class="routeBox">
                                             <div class="addroute">
                                                 <a href="#">
                                                     自訂路線
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <!-- 右邊按鈕 -->
@@ -582,6 +564,19 @@
                 </div> -->
             </div>
 
+            <!-- 隱藏的發揪團表單，用來傳送資料到PHP -->
+            <form id="eventInsertForm" style="display:hidden">
+                <input type="hidden" name="route_number" id="route_number">
+                <input type="hidden" name="origin_member_number" id="origin_member_number">
+                <input type="hidden" name="event_name" id="event_name">
+                <input type="hidden" name="enroll_start_date" id="enroll_start_date">
+                <input type="hidden" name="enroll_end_date" id="enroll_end_date">
+                <input type="hidden" name="event_date" id="event_date">
+                <input type="hidden" name="max_attendance" id="max_attendance">
+                <input type="hidden" name="event_information" id="event_information">
+                <input type="hidden" name="event_cover_url" id="event_cover_url">
+            </form>
+
             <!-- 隱藏的揪團報名表單，用來傳送資料到PHP -->
             <form id="eventEnrollForm" style="display:hidden">
                 <input type="hidden" name="enroll_event_number" id="enroll_event_number">
@@ -633,8 +628,9 @@
     <script src="./js/eventLightDetail.js"></script>
     <script src="./js/eventLightReport.js"></script>
     <script src="./js/eventEnroll.js"></script>
+    <!-- <script src="./js/memberRouteGet.js"></script> -->
     <script src="./js/eventInsert.js"></script>
-    <!-- <script src="./js/event.js"></script> -->
+    <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
     <script src="./js/swiper.min.js"></script>
 

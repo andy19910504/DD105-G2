@@ -11,39 +11,39 @@ $(document).ready(function () {
     // });
     // 上下一步
     // ----1------
-    $(".1_nextStep").on("click", function () {
-        // $(".step1").removeClass('color');
-        $(".step1").css("background-image", "url(../img/event/event_step3.png)");
-        $(".holdevent_step1content").css("display", "none");
-        $(".holdevent_step2content").css("display", "block");
-        $(".step2").addClass('color');
-    });
-    // ----2------
-    $(".2_backStep").on("click", function () {
-        $(".step1").addClass('color');
-        $(".holdevent_step1content").css("display", "block");
-        $(".holdevent_step2content").css("display", "none");
-        $(".step2").removeClass('color');
-    });
+    // $(".1_nextStep").on("click", function () {
+    //     // $(".step1").removeClass('color');
+    //     $(".step1").css("background-image", "url(../img/event/event_step3.png)");
+    //     $(".holdevent_step1content").css("display", "none");
+    //     $(".holdevent_step2content").css("display", "block");
+    //     $(".step2").addClass('color');
+    // });
+    // // ----2------
+    // $(".2_backStep").on("click", function () {
+    //     $(".step1").addClass('color');
+    //     $(".holdevent_step1content").css("display", "block");
+    //     $(".holdevent_step2content").css("display", "none");
+    //     $(".step2").removeClass('color');
+    // });
 
-    $(".2_nextStep").on("click", function () {
-        $(".step3").addClass('color');
-        $(".holdevent_step3content").css("display", "block");
-        $(".holdevent_step2content").css("display", "none");
-        $(".step2").removeClass('color');
-    });
-    // ----3------
-    $(".3_backStep").on("click", function () {
-        $(".step2").addClass('color');
-        $(".holdevent_step2content").css("display", "block");
-        $(".holdevent_step3content").css("display", "none");
-        $(".step3").removeClass('color');
-    });
+    // $(".2_nextStep").on("click", function () {
+    //     $(".step3").addClass('color');
+    //     $(".holdevent_step3content").css("display", "block");
+    //     $(".holdevent_step2content").css("display", "none");
+    //     $(".step2").removeClass('color');
+    // });
+    // // ----3------
+    // $(".3_backStep").on("click", function () {
+    //     $(".step2").addClass('color');
+    //     $(".holdevent_step2content").css("display", "block");
+    //     $(".holdevent_step3content").css("display", "none");
+    //     $(".step3").removeClass('color');
+    // });
 
-    $(".3_nextStep").on("click", function () {
+    // $(".3_nextStep").on("click", function () {
 
-        closeBox();
-    });
+    //     closeBox();
+    // });
 
 
 
@@ -165,27 +165,27 @@ function $id(id) {
     return document.getElementById(id);
 }
 
-window.addEventListener("load", function () {
-    let holdevent = document.querySelectorAll(".eventEnroll")
-    let lightBoxs = document.querySelectorAll(".backDrop");
-    let closes = document.querySelectorAll(".close");
+// window.addEventListener("load", function () {
+//     let holdevent = document.querySelectorAll(".eventEnroll")
+//     let lightBoxs = document.querySelectorAll(".backDrop");
+//     let closes = document.querySelectorAll(".close");
 
-    let eventDetails = document.querySelectorAll(".lightDetail");
+//     let eventDetails = document.querySelectorAll(".lightDetail");
 
-    let eventReports = document.querySelectorAll(".dotWrap");
-    let eventReportclose = document.querySelectorAll(".cancel");
-    // 發起揪團
+//     let eventReports = document.querySelectorAll(".dotWrap");
+//     let eventReportclose = document.querySelectorAll(".cancel");
+//     // 發起揪團
 
-    for (let i = 0; i < holdevent.length; i++) {
+    // for (let i = 0; i < holdevent.length; i++) {
 
-        holdevent[i].addEventListener("click", function () {
-            lightBoxs[i].style.display = "flex";
+    //     holdevent[i].addEventListener("click", function () {
+    //         lightBoxs[i].style.display = "flex";
 
-        });
-        closes[i].addEventListener("click", function () {
-            lightBoxs[i].style.display = "none";
-        });
-    }
+    //     });
+    //     closes[i].addEventListener("click", function () {
+    //         lightBoxs[i].style.display = "none";
+    //     });
+    // }
 
 
 
@@ -214,35 +214,35 @@ window.addEventListener("load", function () {
     //     });
     // }
 
-});
+// });
 
 //-----------------燈箱步驟一選路線slider-----------------//
 
-// window.addEventListener("load", function () {
-//     let curIndex = 0; //先將最左第一張圖標為0號 (依序標記)
-//     let routeAllBox = document.querySelector(".routeAllBox"); 
-//     let routeBox = document.querySelectorAll(".routeBox"); 
-//     //-------------btnRight.onclick
-//     $id("btnRight").onclick = function () {
-//         curIndex++;
-//         routeAllBox.style.left = -50 * curIndex + "%"; //要加單位
-//         $id("btnLeft").disabled = false // 變可以按
-//         if (curIndex == (routeBox.length-4)) {
-//             $id("btnRight").disabled = true; //最左邊圖變5號圖時 btnRight要變不能按 
-//         }
-//     }
-//     //-------------btnLeft.onclick
-//     $id("btnLeft").onclick = function () {
-//         curIndex--;
-//         routeAllBox.style.left = -25 * curIndex + "%"; //要加單位
-//         $id("btnRight").disabled = false // 變可以按
-//         if (curIndex == "0") {
-//             $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
-//         }
-//     }
-//     let routeChose = document.querySelectorAll(".routeChose");
+window.addEventListener("load", function () {
+    let curIndex = 0; //先將最左第一張圖標為0號 (依序標記)
+    let routeAllBox = document.querySelector(".routeAllBox"); 
+    let routeBox = document.querySelectorAll(".routeBox"); 
+    //-------------btnRight.onclick
+    $id("btnRight").onclick = function () {
+        curIndex++;
+        routeAllBox.style.left = -50 * curIndex + "%"; //要加單位
+        $id("btnLeft").disabled = false // 變可以按
+        if (curIndex == (routeBox.length-4)) {
+            $id("btnRight").disabled = true; //最左邊圖變5號圖時 btnRight要變不能按 
+        }
+    }
+    //-------------btnLeft.onclick
+    $id("btnLeft").onclick = function () {
+        curIndex--;
+        routeAllBox.style.left = -25 * curIndex + "%"; //要加單位
+        $id("btnRight").disabled = false // 變可以按
+        if (curIndex == "0") {
+            $id("btnLeft").disabled = true; //最左邊圖變0號圖時 btnLeft要變不能按  
+        }
+    }
+    let routeChose = document.querySelectorAll(".routeChose");
 
-// });
+});
 //-----------------燈箱步驟一選路線下面show出路線名稱+景點-----------------//
 $(document).ready(function () {
     $('.routeChose').click(function () {
@@ -254,23 +254,23 @@ $(document).ready(function () {
 
 
     //調整視窗-抓寬度
-    $(window).resize(function () {
-        getRouteWidth();
-        $('.sliderWrap').css({
-            left: routeBoxWidth * curIndex * -1,
-            //調整後size圖片位置不會跑掉
-        });
-    });
-    getRouteWidth();
+    // $(window).resize(function () {
+    //     getRouteWidth();
+    //     $('.sliderWrap').css({
+    //         left: routeBoxWidth * curIndex * -1,
+    //         //調整後size圖片位置不會跑掉
+    //     });
+    // });
+    // getRouteWidth();
 
-    function getRouteWidth() {
+    // function getRouteWidth() {
 
-        routeBoxWidth = $('.routeBox').width(); // div的寬度
-        imgRouteCount = $('.routeBox').length;
-        $('.sliderWrap').width(routeBoxWidth * imgRouteCount); // ul的寬度
+    //     routeBoxWidth = $('.routeBox').width(); // div的寬度
+    //     imgRouteCount = $('.routeBox').length;
+    //     $('.sliderWrap').width(routeBoxWidth * imgRouteCount); // ul的寬度
 
-        // $('.newSliderBox').width(divWidth); // li的寬度
-    }
+    //     // $('.newSliderBox').width(divWidth); // li的寬度
+    // }
 
 
     // for (let i = 0; i < imgCount; i++) {
