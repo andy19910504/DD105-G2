@@ -16,41 +16,51 @@
             color: #fff;
             border: unset;
         }
+
         .btnAddRoute:hover {
             filter: brightness(1.1);
         }
+
         .btnAddRoute:focus {
             outline: none;
         }
-        .btnDel,.btnSave {
+
+        .btnDel,
+        .btnSave {
             border: 1px solid rgba(0, 0, 0, .1);
         }
+
         .titleColor {
             font-weight: bold;
             color: #A5361C;
         }
+
         .titleBlock {
             display: flex;
             margin-bottom: 10px;
             align-items: center;
         }
+
         .titleBlock h3 {
             margin-bottom: 0;
             margin-right: 10px;
         }
+
         .privateBlock {
             margin-top: 80px;
         }
 
-        .routeNameBlock input{
+        .routeNameBlock input {
             width: 180px;
         }
-        .routeInfoBlock textarea{
+
+        .routeInfoBlock textarea {
             height: 120px;
         }
-        .routePhotoBlock .routePhoto{
+
+        .routePhotoBlock .routePhoto {
             width: 150px;
-        } 
+        }
 
         .fieldBlock {
             display: flex;
@@ -60,6 +70,37 @@
 
         .fieldBlock label {
             margin-right: 10px;
+        }
+
+        .fieldBlock:nth-child(3) {
+            flex-direction: column;
+        }
+
+        .fieldBlock:nth-child(3) .showPhoto {
+            width: 200px;
+        }
+
+        .fieldBlock:nth-child(4) {
+            flex-direction: column;
+        }
+        .fieldBlock:nth-child(4) .optionsBlock{
+            width: 300px;
+            height: 300px;
+            overflow: scroll;
+        }
+        .optionsBlock .options {
+            display: flex;
+            flex-direction: column;
+        }
+        .options input[type='checkbox']{
+            margin-right: 10px;
+        }
+        #routeTable .routeAttrName {
+            margin-bottom: 5px;
+        }
+
+        #routeTable .routeAttrName:last-child {
+            margin-bottom: 0px;
         }
     </style>
 </head>
@@ -98,19 +139,33 @@
                             </div>
                             <div class="modal-body">
                                 <form action="">
-                                    <div class="fieldBlock"><label for="routeName">路線名稱</label><input type="text"
-                                            name="routeName" id="routeName"></div>
-                                    <div class="fieldBlock"><label for="routeIntroduction">路線介紹</label><textarea
-                                            name="routeIntroduction" id="routeIntroduction" cols="" rows=""></textarea>
+                                    <div class="fieldBlock">
+                                        <label for="routeName">路線名稱</label>
+                                        <input type="text" name="routeName" id="routeName">
                                     </div>
-                                    <div class="fieldBlock"><label for="routePhoto">路線照片</label><input type="file"
-                                            name="routephoto" id="routephoto" class="btn-sm"></div>
-                                    <div class="fieldBlock"></div>
-                                    <div class="fieldBlock"></div>
+                                    <div class="fieldBlock">
+                                        <label for="routeInfo">路線介紹</label>
+                                        <textarea name="routeInfo" id="routeInfo" cols="" rows=""></textarea>
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routePhoto">路線照片</label><input type="file" name="routePhoto"
+                                            id="routePhoto" class="btn-sm btnShow">
+                                        <img class="showPhoto">
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routeAttr">路線景點</label>
+                                        <div class="optionsBlock">
+                                            <div class="options" id="options"></div>
+                                        </div>
+                                    </div>
+                                    <div class="fieldBlock">
+                                        <label for="routeStatus">路線狀態</label>
+                                        <input type="text" name="routeStatus" id="routeStatus">
+                                    </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary btn-sm">儲存</button>
+                                <button type="button" class="btn btn-secondary btn-sm btnAdd">新增</button>
                             </div>
                         </div>
                     </div>
@@ -169,16 +224,13 @@
                             <th scope="col">路線編號</th>
                             <th scope="col">路線名稱</th>
                             <th scope="col">路線介紹</th>
-                            <th scope="col">路線照片</th>
                             <th scope="col">路線景點</th>
                             <th scope="col">路線狀態</th>
                             <th scope="col">會員編號</th>
                             <th scope="col">路線設定</th>
                         </tr>
                     </thead>
-                    <tbody>
-
-                    </tbody>
+                    <tbody id="customTable"></tbody>
                 </table>
             </div>
         </main>
@@ -192,6 +244,7 @@
     <script src="./js/backRouteGet.js"></script>
     <script src="./js/backRouteEdit.js"></script>
     <script src="./js/backRouteAdd.js"></script>
+    <script src="./js/backRouteDel.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);

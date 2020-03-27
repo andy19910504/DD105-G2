@@ -4,7 +4,7 @@ require_once("./connectBooks.php");
 $sql="
  DELETE FROM `attractions` 
  WHERE attraction_number = :attrNum 
- ";
+ ;";
 $edit = $pdo->prepare($sql);
 $edit->bindValue(":attrNum",$_POST["editNumber"]);
 // $edit->bindValue(":attrName",$_POST["editName"]);
@@ -17,7 +17,7 @@ $edit->bindValue(":attrNum",$_POST["editNumber"]);
 
 $edit->execute();
 
-echo "刪除成功！";
+echo "刪除成功!";
 
 }catch(PDOException $e){
     echo $e->getMessage();

@@ -10,23 +10,22 @@ function doFirst() {
                 top: '556px'
             });
             $('body').addClass('scroll-lock');
-            
+
             // localStorage.setItem("hasRunBefore", true);
-        } 
-        else {
+        } else {
             $('.fullHeader').removeClass('header-backward');
             $('.manual-modal').addClass('hide-manual-modal');
             $('body').removeClass('scroll-lock');
         }
         // remove manual-modal
-        $('.manual-modal').click(function(){
+        $('.manual-modal').click(function () {
             $('.fullHeader').removeClass('header-backward');
             $('.manual-modal').addClass('hide-manual-modal');
             $('body').removeClass('scroll-lock');
         });
     }
-       
-        document.getElementById("step_btn3").addEventListener("click", iconblack);
+
+    document.getElementById("step_btn3").addEventListener("click", iconblack);
 
     // /*第一支程式: 切換步驟窗格--點擊時需要(1)切換postRight  (2)切換步驟的黃底postStepYellow
     $(document).ready(function () {
@@ -452,7 +451,7 @@ function doFirst() {
     var postcardback = new fabric.Canvas('postcardback', {
         hoverCursor: 'progress', // 移動時鼠標顯示
         freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
-        
+
     });
 
     postcardback.setWidth(postcardbackW);
@@ -490,14 +489,31 @@ function doFirst() {
         borderColor: 'black',
 
     });
+
+    // $(".icon").click(function () {
+    //     let aaa = $(this).attr("id");
+    //     console.log(aaa);
+    //     $(this).addClass("Selected");
+
+    // });
+
+    // //註冊每個刪除button的click事件
+    // $(document).on('click', '.icon', IconChangeBGI_1);
+    $(".icon").click(function () {
+        iconclick = $(this).children().attr("src");
+        console.log(iconclick);
+    });
+
+    $(document).on('click', `.icon`, IconChangeBGI);
+
+
+ 
+    
     //ICON1
-    function IconChangeBGI_1() {
-        document.getElementById("icon_1").classList.add("icon_1_Selected");
-        document.getElementById("icon_2").classList.remove("icon_2_Selected");
-        document.getElementById("icon_3").classList.remove("icon_3_Selected");
-        document.getElementById("icon_4").classList.remove("icon_4_Selected");
-
-        fabric.Image.fromURL('./img/postcard/postIcon01.png', (img) => {
+    function IconChangeBGI() {
+            $(this).addClass("Selected");
+            $(this).siblings().removeClass("Selected");
+        fabric.Image.fromURL(iconclick, (img) => {
             img.set({
                 scaleX: postcardback.width / img.width / 4,
                 scaleY: postcardback.height / img.height / 4,
@@ -506,56 +522,7 @@ function doFirst() {
             postcardback.add(img) // 加進canvas
         })
     }
-    //ICON2
-    function IconChangeBGI_2() {
-        document.getElementById("icon_1").classList.remove("icon_1_Selected");
-        document.getElementById("icon_2").classList.add("icon_2_Selected");
-        document.getElementById("icon_3").classList.remove("icon_3_Selected");
-        document.getElementById("icon_4").classList.remove("icon_4_Selected");
-        fabric.Image.fromURL('./img/postcard/postIcon02.png', (img) => {
-            img.set({
-                scaleX: postcardback.width / img.width / 4,
-                scaleY: postcardback.height / img.height / 4,
-                hasControls: true, // 是否开启图层的控件
-            })
-            postcardback.add(img) // 加進canvas
-        })
-    }
-
-    //ICON3
-    function IconChangeBGI_3() {
-        document.getElementById("icon_1").classList.remove("icon_1_Selected");
-        document.getElementById("icon_2").classList.remove("icon_2_Selected");
-        document.getElementById("icon_3").classList.add("icon_3_Selected");
-        document.getElementById("icon_4").classList.remove("icon_4_Selected");
-        fabric.Image.fromURL('./img/postcard/postIcon03.png', (img) => {
-            img.set({
-                scaleX: postcardback.width / img.width / 4,
-                scaleY: postcardback.height / img.height / 4,
-                hasControls: true, // 是否开启图层的控件
-            })
-            postcardback.add(img) // 加進canvas
-        })
-    }
-
-    //ICON4
-    function IconChangeBGI_4() {
-        // confirm("這個貼圖需花50點，是否確定購買？");
-        // $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
-        document.getElementById("icon_1").classList.remove("icon_1_Selected");
-        document.getElementById("icon_2").classList.remove("icon_2_Selected");
-        document.getElementById("icon_3").classList.remove("icon_3_Selected");
-        document.getElementById("icon_4").classList.add("icon_4_Selected");
-        fabric.Image.fromURL('./img/postcard/postIcon06.png', (img) => {
-            img.set({
-                scaleX: postcardback.width / img.width / 4,
-                scaleY: postcardback.height / img.height / 4,
-                hasControls: true, // 是否开启图层的控件
-
-            })
-            postcardback.add(img) // 加進canvas
-        })
-    }
+    
 
 
     $('.black').click(function () {
@@ -563,12 +530,13 @@ function doFirst() {
         $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
     });
 
-    $(document).ready(function () {
-        document.getElementById("icon_1").addEventListener("click", IconChangeBGI_1);
-        document.getElementById("icon_2").addEventListener("click", IconChangeBGI_2);
-        document.getElementById("icon_3").addEventListener("click", IconChangeBGI_3);
-        document.getElementById("icon_4").addEventListener("click", IconChangeBGI_4);
-    });
+
+   
+
+
+
+
+
 
     postcardback.on('mouse:dblclick', e => {
         console.log(e)

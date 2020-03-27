@@ -38,6 +38,7 @@ window.addEventListener("load", function () {
         console.log(attrLatitude);
         console.log(attrStatus);
 
+            // 建一個表單物件，將值放入表單物件中
         var editForm = new FormData();
         // 檢驗
         if (attrName == "") {
@@ -69,7 +70,6 @@ window.addEventListener("load", function () {
             return;
         } else {
 
-            // 建一個表單物件，將值放入表單物件中
             editForm.append('attrName', attrName);
             editForm.append('attrAddress', attrAddress);
             editForm.append('attrInfo1', attrInfo1);
@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
             editForm.append('attrLongitude', attrLongitude);
             editForm.append('attrLatitude', attrLatitude);
             editForm.append('attrStatus', attrStatus);
-
+            console.log(editForm)
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status == 200) {
