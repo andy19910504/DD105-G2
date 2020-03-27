@@ -42,6 +42,7 @@
 //     }
 // }
 
+
 // scrollMagic with SVG
 function pathPrepare($el) {
     var lineLength = $el[0].getTotalLength() * 1.355;

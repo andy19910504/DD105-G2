@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
                 alert(xhr.status);
             }
         }
-        xhr.open("post", "./php/routeDel.php", true);
+        xhr.open("post", "./php/backRouteDel.php", true);
         xhr.send(editForm); // 傳送表單
         location.reload();
     }
