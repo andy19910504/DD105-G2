@@ -24,7 +24,8 @@
             outline: none;
         }
 
-        .btnDel,.btnSave {
+        .btnDel,
+        .btnSave {
             border: 1px solid rgba(0, 0, 0, .1);
         }
 
@@ -43,43 +44,56 @@
             margin-bottom: 0;
             margin-right: 10px;
         }
+
         .fieldBlock {
             display: flex;
             align-items: flex-start;
             margin-bottom: 10px;
         }
-        .fieldBlock .photoBlock{
+
+        .fieldBlock .photoBlock {
             display: flex;
             flex-direction: column;
         }
-        .photoBlock .showPhoto{
+
+        .photoBlock .showPhoto {
             width: 150px;
         }
-        .photoBlock .btnShow{
+
+        .photoBlock .btnShow {
             width: 200px;
         }
+
         .fieldBlock label {
             width: 100px;
             margin-right: 10px;
         }
-        .attrInfoBlock{
+
+        .attrInfoBlock {
             margin-bottom: 10px;
 
-        }.attrInfoBlock:nth-child(2){
+        }
+
+        .attrInfoBlock:nth-child(2) {
             margin-bottom: 0px;
-        } .attrInfoBlock textarea{
+        }
+
+        .attrInfoBlock textarea {
             height: 120px;
         }
-        .attrPhotoBlock{
-            width:180px;
+
+        .attrPhotoBlock {
+            width: 180px;
             margin-bottom: 10px;
-        } .attrPhotoBlock:nth-child(2){
-            margin-bottom: 0px;
-        }
-        .attrPhoto{
-            width: 100%;
         }
 
+        .attrPhotoBlock:nth-child(2) {
+            margin-bottom: 0px;
+        }
+
+        .attrPhoto {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -122,7 +136,7 @@
         <main class="col-md-10">
             <h2>景點管理</h2>
             <div class="content">
-                <div class="titleBlock officalBlock">
+                <div class="titleBlock">
                     <h3>景點編輯</h3><button type="button" class="btnAddRoute btn-sm" data-toggle="modal"
                         data-target="#exampleModalCenter">新增景點</button>
                 </div>
@@ -147,16 +161,18 @@
                                             name="attrInfo1" id="attrInfo1"></textarea></div>
                                     <div class="fieldBlock"><label for="attrInfo2">景點介紹2</label><textarea
                                             name="attrInfo2" id="attrInfo2"></textarea></div>
-                                <div class="fieldBlock">
-                                    <div class="photoBlock">
-                                        <label for="attrPhoto1">景點照片1</label><input type="file" name="attrPhoto1" id="attrPhoto1" class="btn btn-sm btnShow">
-                                        <img class="showPhoto">    
+                                    <div class="fieldBlock">
+                                        <div class="photoBlock">
+                                            <label for="attrPhoto1">景點照片1</label><input type="file" name="attrPhoto1"
+                                                id="attrPhoto1" class="btn btn-sm btnShow">
+                                            <img class="showPhoto">
+                                        </div>
+                                        <div class="photoBlock">
+                                            <label for="attrPhoto2">景點照片2</label><input type="file" name="attrPhoto2"
+                                                id="attrPhoto2" class="btn btn-sm btnShow">
+                                            <img class="showPhoto">
+                                        </div>
                                     </div>
-                                    <div class="photoBlock">
-                                        <label for="attrPhoto2">景點照片2</label><input type="file" name="attrPhoto2" id="attrPhoto2" class="btn btn-sm btnShow">
-                                        <img class="showPhoto">
-                                    </div>
-                                </div>
                                     <div class="fieldBlock"><label for="attrLongitude">景點經度</label><input type="text"
                                             name="attrLongitude" id="attrLongitude"></div>
                                     <div class="fieldBlock"><label for="attrLatitude">景點緯度</label><input type="text"
@@ -171,6 +187,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 隱藏表單 -->
                 <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
                     <input type="text" class="attrNumber" name="editNumber" id="editNumber">
                     <input type="text" name="editName" id="editName">
@@ -225,7 +242,7 @@
                         </tr> -->
                     </tbody>
                 </table>
-
+            </div>
         </main>
     </div>
     <!-- ------------ js ------------ -->
