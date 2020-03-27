@@ -43,6 +43,7 @@ window.addEventListener("load", function () {
             }
             xhr.open("get", "./php/logout.php", true);
             xhr.send(null);
+            location.reload();
 
         }
     });
@@ -96,6 +97,7 @@ window.addEventListener("load", function () {
         $id('loginBlock').style.display = 'none';
         $id('login_acc').value = '';
         $id('login_psw').value = '';
+        location.reload();
     });
 
     // 註冊事件
