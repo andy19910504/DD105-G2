@@ -18,24 +18,23 @@ window.addEventListener("load", function () {
     // 按下新增按鈕，資料會存到資料庫中
     $(document).on('click', '.btnAdd', function editBackRoute() {
         // 取得新增表單的值
-        let options = document.querySelectorAll('.optionAttr');
-        let arr = "";
-        for (let i = 0; i < options.length; i++) {
-            if (options[i].checked == true) {
-                arr += options[i].value + "|";
-            };
-        };
         let routeName = document.getElementById("routeName").value;
         let routeInfo = document.getElementById("routeInfo").value;
         let routePhoto = document.getElementById("routePhoto").files[0];
-        let routeAttr = arr;
         let routeStatus = document.getElementById("routeStatus").value;
+        let option = document.querySelectorAll('.option');
+        let routeAttr = [];
+        for (let i = 0; i < option.length; i++) {
+            if (option[i].checked == true) {
+                routeAttr.push(option[i].value);
+            }
+        }
         // 確認
         console.log(routeName);
         console.log(routeInfo);
         console.log(routePhoto);
-        console.log(routeAttr);
         console.log(routeStatus);
+        console.log(routeAttr);
 
         // 建一個表單物件，將值放入表單物件中
         var editForm = new FormData();
@@ -47,17 +46,17 @@ window.addEventListener("load", function () {
 
         console.log(editForm);
 
-        // let xhr = new XMLHttpRequest();
-        // xhr.onload = function () {
-        //     if (xhr.status == 200) {
-        //         alert('路線新增成功!');
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                alert('路線新增成功!');
 
-        //     } else {
-        //         alert(xhr.status);
-        //     }
-        // }
-        // xhr.open("post", "../php/routeAdd.php", true);
-        // xhr.send(editForm); // 傳送表單物件
-        // location.reload();
+            } else {
+                alert(xhr.status);
+            }
+        }
+        xhr.open("post", "../php/backRouteAdd.php", true);
+        xhr.send(editForm); // 傳送表單物件
+        location.reload();
     });
 });

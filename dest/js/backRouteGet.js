@@ -108,7 +108,7 @@ function getRouteInfo(info) {
     let optionRow = "";
     for (let o = 0; o < key.length; o++) {
         optionRow += `
-        <label for="attr${o}"><input type="checkbox" id="attr${o}" class="optionAttr" name="${routeInfo.attractions[o]['attraction_number']}" value="${routeInfo.attractions[o]['attraction_number']}">${routeInfo.attractions[o]['attraction_name']}</label>
+        <label for="attr${o}"><input type="checkbox" id="attr${o}" class="option" name="${routeInfo.attractions[o]['attraction_number']}" value="${routeInfo.attractions[o]['attraction_number']}">${routeInfo.attractions[o]['attraction_name']}</label>
         `
         options.innerHTML = optionRow;
     }
