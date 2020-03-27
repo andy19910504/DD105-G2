@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
                     alert(xhr.status);
                 }
             }
-            xhr.open("post", "./php/routeEdit.php", true);
+            xhr.open("post", "./php/backRouteEdit.php", true);
             xhr.send(editForm);
             location.reload();
         }
