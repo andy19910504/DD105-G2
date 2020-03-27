@@ -10,8 +10,13 @@ $(document).on('click', '.filter', function filterClick() {
             let routeInfo = JSON.parse(xhr.responseText);
             console.log(routeInfo)
             let routeAttractionBlock = document.querySelectorAll('.routeAttractionBlock');
+            let routeTilteBlock = document.querySelector('.routeTilteBlock');
+
+            routeTilteBlock.innerHTML =
+                `<img src="./img/routes/${routeInfo[0].route_photo}"></img>`;
+
             routeAttractionBlock[0].innerHTML =
-            `
+                `
     <div class="attractionTitle">
         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
         <p>${routeInfo[0].attraction_name}</p>
@@ -22,8 +27,8 @@ $(document).on('click', '.filter', function filterClick() {
         </div>
     </div>
         `;
-        routeAttractionBlock[1].innerHTML =
-            `
+            routeAttractionBlock[1].innerHTML =
+                `
     <div class="attractionTitle">
         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
         <p>${routeInfo[1].attraction_name}</p>
@@ -34,8 +39,8 @@ $(document).on('click', '.filter', function filterClick() {
         </div>
     </div>
     `;
-        routeAttractionBlock[2].innerHTML =
-            `
+            routeAttractionBlock[2].innerHTML =
+                `
     <div class="attractionTitle">
         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
         <p>${routeInfo[2].attraction_name}</p>
@@ -46,8 +51,8 @@ $(document).on('click', '.filter', function filterClick() {
         </div>
     </div>
     `;
-        routeAttractionBlock[3].innerHTML =
-            `
+            routeAttractionBlock[3].innerHTML =
+                `
     <div class="attractionTitle">
         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
         <p>${routeInfo[3].attraction_name}</p>
@@ -58,8 +63,8 @@ $(document).on('click', '.filter', function filterClick() {
         </div>
     </div>
     `;
-        routeAttractionBlock[4].innerHTML =
-            `
+            routeAttractionBlock[4].innerHTML =
+                `
     <div class="attractionTitle">
         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
         <p>${routeInfo[4].attraction_name}</p>

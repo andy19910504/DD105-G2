@@ -1,3 +1,4 @@
+// 路線的分類filter
 function getFilter(info) {
     let routeInfo = JSON.parse(info);
     let filter = document.querySelector('.filterBlock');
@@ -25,9 +26,15 @@ function getFilter(info) {
         $(this).addClass("showFilter");
     });
 }
+// 取得一開始顯示在頁面上路線的資訊
 function getRouteInfo(info) {
     let routeInfo = JSON.parse(info);
     let routeAttractionBlock = document.querySelectorAll('.routeAttractionBlock');
+    let routeTilteBlock = document.querySelector('.routeTilteBlock');
+
+    routeTilteBlock.innerHTML =
+        `<img src="./img/routes/${routeInfo.routeInfo[0]['route_photo']}"></img>`;
+
     routeAttractionBlock[0].innerHTML =
         `
 <div class="attractionTitle">
@@ -88,7 +95,6 @@ function getRouteInfo(info) {
     </div>
 </div>
 `;
-
 }
 
 window.addEventListener("load", function () {
