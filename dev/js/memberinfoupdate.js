@@ -1,6 +1,4 @@
 let memNum;
- 
-
 /////////////////////////////////////////////////////////////////////第二頁放路線
 function getLineInfo(memNum) {
     let xhr = new XMLHttpRequest();
@@ -411,9 +409,9 @@ function getLoginInfo() {
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
         memNum = member.memNum
-        alert(memNum);
-        getMemberInfo(memNum);
-        getLineInfo(memNum);
+        // alert(memNum);
+        getMemberInfo(2);
+        getLineInfo(2);
     }
     xhr.open("get", "./php/loginInfoForFront.php", true);
     xhr.send(null);

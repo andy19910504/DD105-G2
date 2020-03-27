@@ -38,13 +38,8 @@ var web = {
     var options = {
         base: './dest', // 檔案位置
         debug: true, 
-<<<<<<< HEAD
         bin: 'C:/php-7.4.3-Win32-vc15-x64/php.exe', // php執行檔的路徑
         ini: 'C:/php-7.4.3-Win32-vc15-x64/php.ini', // php的ini檔的路徑
-=======
-        bin: 'C:/php/php.exe', // php執行檔的路徑
-        ini: 'C:/php/php.ini', // php的ini檔的路徑
->>>>>>> 89e68ec95fae20ec479f9634206dacd754bda929
         port: 8080,  // 自行定義端口
     };
 
