@@ -9,6 +9,7 @@
     position: relative;
     display: inline-block;
     border-radius: 25px;
+    font-family: $fontFamily;
     font-size: $fzTitle;
     font-weight: bold;
     color: #fff;
@@ -32,6 +33,7 @@
     position: relative;
     display: inline-block;
     border-radius: 15px;
+    font-family: $fontFamily;
     font-size: $fzContent;
     font-weight: bold;
     color: #fff;
@@ -53,6 +55,7 @@
     position: relative;
     display: inline-block;
     border-radius: 15px;
+    font-family: $fontFamily;
     font-size: $fzContent;
     font-weight: bold;
     color: #fff;

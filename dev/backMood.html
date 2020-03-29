@@ -5,50 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>台北散步 | 後台</title>
+    <title>台北散步 | 後台 | 心情檢舉管理</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/back.css">
     <style>
-        table {
-            margin: 0 auto;
-            margin-bottom: 20px;
-        }
-
-        tr:first-of-type {
-            background-color: #a5361c;
-            color: white;
-            border-bottom: unset;
-        }
-         td {
-            padding: 10px;
-            border-bottom: 1px solid #646464;
-            width: 3000px;
-            text-align: center;
-        }
-        td img{width: 100%;}
-        .new_mana_acc {
-            padding: 20px;
-            border: 3px solid #a5361c;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .new_mana_acc input {
-            margin-left: 2%;
-            margin-right: 2%;
-        }
-
-        .new_mana_acc button {
-            margin-left: 2%;
-        }
-
-        @media screen and (max-width:1200px) {
-            .new_mana_acc input {
-                display: block;
-                margin: 0 auto;
-                margin-bottom: 10px;
-            }
-        }        
+               
     </style>
 </head>
 
@@ -67,142 +28,25 @@
         "nowPage9": ""
         })
         <main class="col-md-10">
-            <h2>心情分享管理</h2>
-            <div class="content">
-                <table>
-                    <tr>
-                        <td>心情分享編號</td>
-                        <td>會員編號</td>
-                        <td>路線編號</td>
-                        <td>發布時間</td>
-                        <td>最後修改時間</td>
-                        <td>愛心數</td>
-                        <td>文字內容</td>
-                        <td>圖片路徑</td>
-                        <td>是否下架</td>
-                    </tr>
-                    <tr>
-                        <form action=""></form>
-                            <td>001</td>
-                            <td>655321</td>
-                            <td>1</td>
-                            <td>2020-02-02 02:02</td>
-                            <td>2020-02-02 04:02</td>
-                            <td>1</td>
-                            <td>hello world</td>
-                            <td>/123.jpg</td>
-                            <td><button>下架</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action=""></form>
-                            <td>002</td>
-                            <td>655321</td>
-                            <td>1</td>
-                            <td>2020-02-02 03:02</td>
-                            <td>2020-02-02 03:02</td>
-                            <td>1</td>
-                            <td>檢舉我啊</td>
-                            <td>/456.jpg</td>
-                            <td><button>下架</button></td>
-                        </form>
-                    </tr>
-                </table>
-            </div>
             <h2>心情檢舉管理</h2>
             <div class="content">
-                <table>
-                    <tr>
-                        <td>心情分享檢舉編號</td>
-                        <td>心情分享編號</td>
-                        <td>會員編號</td>
-                        <td>檢舉分類</td>
-                        <td>檢舉心情分享狀態</td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>001</td>
-                            <td>002</td>
-                            <td>655321</td>
-                            <td>2與主題無關</td>
-                            <td><button>完成</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>002</td>
-                            <td>002</td>
-                            <td>655321</td>
-                            <td>2與主題無關</td>
-                            <td><button>完成</button></td>
-                        </form>
-                    </tr>
+                <table class="table table-responsive-sm table-striped">
+                    <thead>
+                        <tr class="row">
+                            <th class="col-1">檢舉編號</th>
+                            <th class="col-1">心情編號</th>
+                            <th class="col-7">心情內容</th>
+                            <th class="col-2">檢舉原因</th>
+                            <th class="col-1">處理方式</th>
+                        </tr>
+                    </thead>
+                    <!-- 要帶入資料的容器 -->
+                    <tbody id="reportList">
+                        
+                    </tbody>
                 </table>
             </div>
-            <h2>留言管理</h2>
-            <div class="content">
-                <table>
-                    <tr>
-                        <td>留言編號</td>
-                        <td>心情分享編號</td>
-                        <td>會員編號</td>
-                        <td>發布時間</td>
-                        <td>留言內容</td>
-                        <td>是否下架</td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>001</td>
-                            <td>001</td>
-                            <td>665321</td>
-                            <td>2020-02-02 03:03</td>
-                            <td>哈囉</td>
-                            <td><button>下架</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>002</td>
-                            <td>001</td>
-                            <td>665321</td>
-                            <td>2020-02-02 03:04</td>
-                            <td>: )</td>
-                            <td><button>下架</button></td>
-                        </form>
-                    </tr>
-                </table>
-            </div>
-            <h2>留言檢舉</h2>
-            <div class="content">
-                <table>
-                    <tr>
-                        <td>檢舉留言編號</td>
-                        <td>留言編號</td>
-                        <td>會員編號</td>
-                        <td>檢舉分類</td>
-                        <td>檢舉留言狀態</td>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>001</td>
-                            <td>002</td>
-                            <td>665321</td>
-                            <td>4其他</td>
-                            <td><button>完成</button></td>
-                        </form>
-                    </tr>
-                    <tr>
-                        <form action="">
-                            <td>002</td>
-                            <td>002</td>
-                            <td>665321</td>
-                            <td>4其他</td>
-                            <td><button>完成</button></td>
-                        </form>
-                    </tr>
-                </table>
-            </div>
-            </main>
+        </main>
     </div>
 
 
@@ -215,6 +59,7 @@
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
+    <script src="./js/backMood.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);
