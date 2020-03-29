@@ -914,7 +914,7 @@ div.eventCard div.cardText span:hover {
   margin-bottom: 10px;
 }
 
-.lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
+.lightbox_holdevent_info .holdevent_step .color, .lightbox_detailevent_info .holdevent_step .color {
   background-image: url(../img/event/event_stepOn.png);
 }
 
@@ -924,13 +924,15 @@ div.eventCard div.cardText span:hover {
   }
 }
 
-.color {
-  background-image: url(../img/event/event_stepOn.png);
-}
-
 .holdevent_step1content {
   height: 536px;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .chooseRoute {
@@ -944,6 +946,7 @@ div.eventCard div.cardText span:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .chooseRoute .sliderWrap {
@@ -1123,10 +1126,17 @@ div.eventCard div.cardText span:hover {
   margin: 0px 80px;
 }
 
+.stepStop {
+  pointer-events: none;
+}
+
 .holdevent_step2content {
   display: none;
   height: 536px;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .holdevent_step2content .step2Info {
@@ -1222,6 +1232,10 @@ div.eventCard div.cardText span:hover {
 
 .holdevent_step3content {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 18px;
   color: #646464;
   height: 536px;

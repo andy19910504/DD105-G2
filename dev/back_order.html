@@ -14,10 +14,11 @@
         margin: 0 auto;
         margin-bottom: 20px;
     }
+    
 
     tr:first-of-type {
         background-color: #a5361c;
-        color: white;
+        /* color: white; */
         border-bottom: unset;
     }
 
@@ -45,6 +46,9 @@
         width: 100%;
         height: 100%;
     }
+     thead{
+         color: white;
+     }
 </style>
 
 <body>
@@ -86,14 +90,20 @@
                 <table class="table table-responsive-sm table-striped">
                     <thead>
                         <tr class="row">
-                            <th class="col-2">訂單編號</th>
-                            <th class="col-2">會員編號</th>
-                            <th class="col-2">訂單成立時間</th>
-                            <th class="col-2">訂單花費點數</th>
-                            <th class="col-2">訂單出貨狀態(1:是 0:否)</th>
-                            <th class="col-2">編輯</th>
+                            <th class="col-1">訂單編號</th>
+                            <th class="col-1">會員編號</th>
+                            <th class="col-1">訂單成立時間</th>
+                            <th class="col-1">訂單花費點數</th>
+                            <th class="col-2">卡片正面路徑</th>
+                            <th class="col-2">卡片背面路徑</th>
+                            <th class="col-1">收件人姓名</th>
+                            <th class="col-1">收件人地址</th>
+                            <th class="col-1">訂單出貨狀態(1:是 0:否)</th> 
+                            <th class="col-1">編輯</th>
                         </tr>
-                        <tr class="row">
+                    </thead>
+                    <tbody id="OrderList">
+                        <!-- <tr class="row">
                             <th class="col-2">1</th>
                             <th class="col-2">1599</th>
                             <th class="col-2">2020-03-25</th>
@@ -103,22 +113,7 @@
                                 <option value="1">已出貨</option>
                                 </select></th>
                             <th class="col-2"><button>儲存</button></th>
-                        </tr>
-                        <tr class="row">
-                            <th class="col-2">2</th>
-                            <th class="col-2">1560</th>
-                            <th class="col-2">2020-03-25</th>
-                            <th class="col-2">50</th>
-                            <th class="col-2"><select class="form-control" id="satausInsert">
-                                    <option value="0">待出貨</option>
-                                    <option value="1">已出貨</option>
-                                </select></th>
-                            <th class="col-2"><button>儲存</button></th>
-                        </tr>
-                    </thead>
-
-                    <!-- 要帶入資料的容器 -->
-                    <tbody id="keywordList">
+                        </tr> -->
                     </tbody>
                 </table>
 
@@ -128,16 +123,15 @@
 
     <!-- 隱藏的表單，用來傳送資料到PHP -->
     <form id="myForm" style="display:hidden">
-        <input type="hidden" name="keywordNo" id="keywordNo">
-        <input type="hidden" name="keywordWord" id="keywordWord">
-        <input type="hidden" name="keywordAns" id="keywordAns">
-        <input type="hidden" name="keywordStatus" id="keywordStatus">
+        <input type="hidden" name="OrderNo" id="OrderNo">
+        <input type="hidden" name="status" id="status">
     </form>
     <!-- ------------ js ------------ -->
     <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
+    <script src="./js/backOrder.js"></script>
     <script>
         function $id(id) {
             return document.getElementById(id);
