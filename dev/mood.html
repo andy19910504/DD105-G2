@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,16 @@
     <link rel="stylesheet" href="css/mood.css">
     <script src="./js/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
     <!-- 導覽列 -->
     @@include('./layout/header.html',{
-        "display1":"",
-        "display2":"",
-        "display3":"show",
-        "display4":"",
-        "display5":""
-        })
+    "display1":"",
+    "display2":"",
+    "display3":"show",
+    "display4":"",
+    "display5":""
+    })
 
     <!-- banner-->
     <div class="banner_03">
@@ -51,19 +53,21 @@
 
     <!-- filter 心情分類篩選器 -->
     <div class="filterBlock">
-        <ul class="filterAll">
-            <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
-            <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
-            <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
-            <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
-        </ul>
+        <div class="filterMask">
+            <ul class="filterAll">
+                <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
+                <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
+                <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
+                <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
+            </ul>
+        </div>
         <img src="./img/route/filterBgimage.png" class="filterBgImage">
     </div>
 
-    
+
     <div class="wrapper">
         <section>
-             <!-- 下拉選單 -->
+            <!-- 下拉選單 -->
             <div class="selector">
                 排序方式：
                 <form>
@@ -75,11 +79,11 @@
             </div>
             <!-- 卡片撈資料容器 -->
             <div class="moodCardsWrap" id="moodCardsWrap">
-                
+
             </div>
         </section>
     </div>
-    
+
     <!-- 新增心情 燈箱 -->
     <div class="newMoodLightBox" id="newMoodLightBox">
         <div class="newMoodBlock">
@@ -113,7 +117,7 @@
 
     <!-- 心情詳細 燈箱 -->
     <div class="moodLightBox" id="moodLightBox">
-        
+
     </div>
 
     <form id="moodNumForm" style="display: none;">
@@ -128,6 +132,7 @@
     <script src="./js/common.js"></script>
     <script src="./js/mood.js"></script>
     <script src="./js/mood_message.js"></script>
-    
+
 </body>
+
 </html>

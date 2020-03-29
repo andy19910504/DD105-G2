@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/mood.css">
     <script src="./js/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
     <!-- 導覽列 -->
     <!-- 1200px上 滿版時，使用的選單 -->
@@ -34,10 +36,11 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
             <div class="point">&nbsp;</div>
         </div>
     </div>
@@ -61,12 +64,13 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">666</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -173,19 +177,21 @@
 
     <!-- filter 心情分類篩選器 -->
     <div class="filterBlock">
-        <ul class="filterAll">
-            <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
-            <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
-            <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
-            <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
-        </ul>
+        <div class="filterMask">
+            <ul class="filterAll">
+                <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
+                <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
+                <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
+                <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
+            </ul>
+        </div>
         <img src="./img/route/filterBgimage.png" class="filterBgImage">
     </div>
 
-    
+
     <div class="wrapper">
         <section>
-             <!-- 下拉選單 -->
+            <!-- 下拉選單 -->
             <div class="selector">
                 排序方式：
                 <form>
@@ -197,11 +203,11 @@
             </div>
             <!-- 卡片撈資料容器 -->
             <div class="moodCardsWrap" id="moodCardsWrap">
-                
+
             </div>
         </section>
     </div>
-    
+
     <!-- 新增心情 燈箱 -->
     <div class="newMoodLightBox" id="newMoodLightBox">
         <div class="newMoodBlock">
@@ -235,7 +241,7 @@
 
     <!-- 心情詳細 燈箱 -->
     <div class="moodLightBox" id="moodLightBox">
-        
+
     </div>
 
     <form id="moodNumForm" style="display: none;">
@@ -281,6 +287,7 @@
     <script src="./js/common.js"></script>
     <script src="./js/mood.js"></script>
     <script src="./js/mood_message.js"></script>
-    
+
 </body>
+
 </html>
