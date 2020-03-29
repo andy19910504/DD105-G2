@@ -109,6 +109,6 @@ window.addEventListener("load", function () {
             alert(xhr.status);
         }
     }
-    xhr.open("get", "./php/getRouteInfo.php", true);
+    xhr.open("get", "./php/frontRouteGet.php", true);
     xhr.send(null);
 }, false);
