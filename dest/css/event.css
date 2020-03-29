@@ -551,17 +551,19 @@ div.eventCard {
       .chooseRoute .sliderWrap .routeAllBox .routeBox {
         cursor: pointer;
         border-radius: 10px;
-        display: flex;
         align-items: center;
-        justify-content: space-around;
+        overflow: hidden;
         width: 200px;
         height: 250px;
         margin: 0px 30px;
         font-size: 18px;
-        background-position: unset;
-        background-size: contain;
-        background-repeat: no-repeat;
         transition: 0.5s; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg {
+          width: 200px;
+          height: 200px;
+          overflow: hidden; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
+          width: 100%; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
           background-color: #9ecf78;
           align-self: flex-end;
@@ -614,13 +616,6 @@ div.eventCard {
   .chooseRoute #btnLeft[disabled], .chooseRoute #btnRight[disabled] {
     opacity: 0.6;
     text-align: center; }
-
-.routeBoxImg {
-  width: 200px;
-  height: 200px; }
-
-div.routeBoxImg img {
-  width: 100%; }
 
 .routeClick {
   margin: 60px auto;

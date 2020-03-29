@@ -369,15 +369,16 @@
                                 <div class="sliderWrap">
                                     <div class="routeAllBox" id="routeAllBox">
                                         <!-- 撈路線 -->
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="1">
                                             <div class="routeBoxImg">
                                                 <img src="./img/event/event_route1.jpg" alt="">
                                             </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">官方路線1</p>
+                                                <input type="hidden" name="route" id="route1" value="12345->54321">
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="2">
                                             <div class="routeBoxImg">
                                                 <img src="./img/event/event_route2.jpg" alt="">
                                             </div>
@@ -385,7 +386,7 @@
                                                 <p class="routeName">官方路線2</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="3">
                                             <div class="routeBoxImg">
                                                 <img src="./img/event/event_route3.jpg" alt="">
                                             </div>
@@ -393,7 +394,7 @@
                                                 <p class="routeName">官方路線3</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="4">
                                             <div class="routeBoxImg">
                                                 <img src="./img/event/event_cusRout.jpg" alt="">
                                             </div>
@@ -401,7 +402,7 @@
                                                 <p class="routeName">自訂路線1</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="5">
                                             <div class="routeBoxImg">
                                                 <img src="./img/event/event_cusRout.jpg" alt="">
                                             </div>
@@ -428,6 +429,7 @@
                             <div class="routeClick">
                                 <!-- <p class="clickedRoute">選擇路線 : </p> -->
                                 <!-- <p>景點 : 台北101 -> 台北101 -> 台北101</p> -->
+                                <!-- <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}"> -->
                             </div>
                             <!-- 上下一步 -->
                             <div class="stepBtn">
@@ -462,7 +464,7 @@
                                 <div class="holderPic">
                                     <label class="eventCoverPic" for="">
                                         <br>
-                                        <input type="file">
+                                        <input type="file" name="eventImg" id="eventImg">
                                     </label>
                                     <div class="holderPicBox">
                                         <p>揪團封面照片</p>
@@ -470,14 +472,14 @@
                                 </div>
                                 <div class="holderInfo">
                                     <div>
-                                        <label class="label2" for="">揪團名稱 :</label>
-                                        <input type="text" name="actTitle" placeholder="">
+                                        <label class="label2">揪團名稱 :</label>
+                                        <input type="text" name="actTitle" id="actTitle">
                                     </div>
                                     <div>
-                                        <label class="label2" for="">活動日期 :</label>
-                                        <input type="date" name="actTitle" placeholder="">
+                                        <label class="label2">活動日期 :</label>
+                                        <input type="date" name="actDate" id="actDate">
                                     </div>
-                                    <div>
+                                    <!-- <div>
                                         <label class="label2" for="">集合時間 :</label>
                                         <select class="time" name="actTitle">
                                             <option value="0:00">0:00</option>
@@ -529,14 +531,14 @@
                                             <option value="23:00">23:00</option>
                                             <option value="23:30">23:30</option>
                                         </select>
+                                    </div> -->
+                                    <div>
+                                        <label class="label2">集合地點 :</label>
+                                        <input type="text" name="meetPlace" id="meetPlace">
                                     </div>
                                     <div>
-                                        <label class="label2" for="">集合地點 :</label>
-                                        <input type="text" name="actTitle" placeholder="">
-                                    </div>
-                                    <div>
-                                        <label class="label2" for="">報名人數上限 :</label>
-                                        <select class="pelple" name="actTitle">
+                                        <label class="label2">報名人數上限 :</label>
+                                        <select class="people" name="maxPeople" id="maxPeople">
                                             <option value="1">1位</option>
                                             <option value="2">2位</option>
                                             <option value="3">3位</option>
@@ -550,8 +552,8 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <div><label class="label2" for="">活動介紹 :</label></div>
-                                        <textarea name="" id="" style="width:380px;height:80px;"></textarea>
+                                        <div><label class="label2">活動介紹 :</label></div>
+                                        <textarea name="eventInfo" id="eventInfo" style="width:380px;height:80px;"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -584,7 +586,6 @@
                                 </div>
                             </div>
                             <div class="step3Info">
-
                                 <div class="holderCover">
                                     <!-- 抓第二步驟照片 -->
                                     <div class="holderCoverPic">
@@ -592,8 +593,8 @@
                                     </div>
                                     <!-- 抓第一步驟選擇路線+景點 -->
                                     <div class="holderCoverText">
-                                        <p class="title">官方路線2</p>
-                                        <p>景點 : 台北101 -> 台北101 -> 台北101</p>
+                                        <p class="title" id="checkRoute"></p>
+                                        <p class="title" id="checkAtractions"></p>
                                     </div>
                                 </div>
                                 <!-- 抓第二步驟資料 -->
@@ -602,27 +603,23 @@
                                         <table>
                                             <tr>
                                                 <td>揪團名稱 :</td>
-                                                <td>故宮好好玩</td>
+                                                <td id="checkTitle"></td>
                                             </tr>
                                             <tr>
                                                 <td>活動日期 :</td>
-                                                <td>2020-03-01(日)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>集合時間 :</td>
-                                                <td>7:30</td>
+                                                <td id="checkDate"></td>
                                             </tr>
                                             <tr>
                                                 <td>集合地點 :</td>
-                                                <td>信義麥當勞</td>
+                                                <td id="checkPlace"></td>
                                             </tr>
                                             <tr>
                                                 <td>報名人數上限 :</td>
-                                                <td>5位</td>
+                                                <td id="checkPeople"></td>
                                             </tr>
                                             <tr>
                                                 <td>活動介紹 :</td>
-                                                <td>故宮好好玩~~~~~~</td>
+                                                <td id="checkInfo"></td>
                                             </tr>
                                         </table>
                                     </form>
@@ -711,6 +708,7 @@
                 <input type="hidden" name="enroll_start_date" id="enroll_start_date">
                 <input type="hidden" name="enroll_end_date" id="enroll_end_date">
                 <input type="hidden" name="event_date" id="event_date">
+                <input type="hidden" name="meeting_place" id="meeting_place">
                 <input type="hidden" name="max_attendance" id="max_attendance">
                 <input type="hidden" name="event_information" id="event_information">
                 <input type="hidden" name="event_cover_url" id="event_cover_url">

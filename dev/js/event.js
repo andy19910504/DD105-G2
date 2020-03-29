@@ -245,12 +245,12 @@ window.addEventListener("load", function () {
 });
 //-----------------燈箱步驟一選路線下面show出路線名稱+景點-----------------//
 $(document).ready(function () {
-    $('.routeChose').click(function () {
-        let name = $(this).text();
-        $('.routeClick').text('');
-        $(`<p>選擇路線:${name}</p>`).appendTo('.routeClick');
-        //還沒有抓景點...
-    })
+    // $('.routeChose').click(function () {
+    //     let name = $(this).text();
+    //     $('.routeClick').text('');
+    //     $(`<p>選擇路線:${name}</p>`).appendTo('.routeClick');
+    //     //還沒有抓景點...
+    // })
 
 
     //調整視窗-抓寬度
