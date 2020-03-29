@@ -708,7 +708,6 @@ div.eventCard{
         position: relative;
         overflow: hidden;
         height: 250px;
-        
         //border: 1px solid red;
         .routeAllBox{
         text-align: center;
@@ -769,6 +768,11 @@ div.eventCard{
                     cursor: pointer;
                 }
                 
+                
+            }
+            .addRoutebtn{
+                display: flex;
+               justify-content: center;
             }
             .routeBox:hover{
                 opacity: 0.75; 
@@ -822,7 +826,7 @@ div.eventCard{
                   
 //選擇路線下方文字
 .routeClick{
-    margin: 60px auto;
+    margin: 10px auto;
     padding:  0px 95px;
     // border: 1px solid #6a9cb0;
     width: 100%;
@@ -867,7 +871,9 @@ div.eventCard{
         padding: 10px 40px;
         .holderPic{
             width: 50%;
-            //border: 1px solid purple;
+            display: flex;
+            flex-direction: column;
+            padding: 0px 45px;
             input{
                 font-size: $fzContent;
                 color: $fcInfo;
@@ -875,7 +881,6 @@ div.eventCard{
                 padding-left: 5px;
                 cursor: pointer;
                 outline-style: none;
-
             }
             div{ //圖框
                 border-radius: 5px;
@@ -883,7 +888,7 @@ div.eventCard{
                 background-color: #f5eec2;
                 border: 1px dashed #5b8f60;
                 width:480px;
-                height:265px;
+                height:270px;
             }
             .holderPicBox{
                 text-align: center;
@@ -891,6 +896,10 @@ div.eventCard{
                 font-size: 20px;
                 letter-spacing: 2px;
                 color: $fcInfo;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                }
             }
         }
         .holderInfo{

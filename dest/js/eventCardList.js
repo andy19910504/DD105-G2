@@ -32,7 +32,7 @@ function eventCard(event) {
                 </div>
             </div>
             <div class="eventPicWrap">
-                <img src="./img/event/eventPic${eventTable[i].event_cover_url}" class="eventPic">
+                <img src="./img/eventPhoto/${eventTable[i].event_cover_url}" class="eventPic">
             </div>
             <div class="cardText">
                 <h1>${eventTable[i].event_name}</h1>
