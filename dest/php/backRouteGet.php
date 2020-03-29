@@ -23,7 +23,6 @@ try {
     // 顯示各路線景點
     $sql = "select * from `attractions` a 
     join `routes_list` l on(a.attraction_number = l.attraction_number)
-    group by a.attraction_name
     ;";
     $attractions = $pdo->query($sql);
     $attrsRow = $attractions->fetchAll(PDO::FETCH_ASSOC);

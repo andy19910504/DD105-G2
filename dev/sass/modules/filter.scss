@@ -1,15 +1,19 @@
 // FilterBlock
 .filterBlock{
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
+.filterBlock .filterMask{
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    overflow: auto;
+}
 .filterBlock .filterAll{
     display: flex;
-    width: 100%;
     max-width: 1200px;
     // border: 1px solid red;
 }
@@ -32,9 +36,9 @@
     max-width: 1200px;
 }
 // routeFilterBlock RWD
-@media screen and (max-width:$small){
-    .filterBlock .filterAll li{
-        font-size: $fzContent;
-    }
+// @media screen and (max-width:$small){
+//     .filterBlock .filterAll li{
+//         font-size: $fzContent;
+//     }
 
-}
+// }

@@ -4,7 +4,7 @@ function getRouteInfo(info) {
     let customTable = document.getElementById("customTable");
     let routeInfo = JSON.parse(info);
     let keys = Object.keys(routeInfo.attractions);
-    // console.log(routeInfo)
+    console.log(routeInfo)
     // console.log(routeInfo.customInfo)
     // console.log(routeInfo.routeInfo[0]['route_number']);
     // console.log(routeInfo.attractions[1]['route_number']);

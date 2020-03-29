@@ -14,69 +14,33 @@ $(document).on('click', '.filter', function filterClick() {
 
             routeTilteBlock.innerHTML =
                 `<img src="./img/routes/${routeInfo[0].route_photo}"></img>`;
-
-            routeAttractionBlock[0].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${routeInfo[0].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${routeInfo[0].attraction_photo1}"></div>
-        </div>
-    </div>
-        `;
-            routeAttractionBlock[1].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${routeInfo[1].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${routeInfo[1].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[2].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${routeInfo[2].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${routeInfo[2].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[3].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${routeInfo[3].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${routeInfo[3].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[4].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${routeInfo[4].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${routeInfo[4].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-
-
+            for (let i = 0; i < 5; i++) {
+                if (routeInfo[i] == null) {
+                    routeAttractionBlock[i].innerHTML =`
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p></p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/"></div>
+                        </div>
+                    </div>
+                    `;
+                } else {
+                    routeAttractionBlock[i].innerHTML =`
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p>${routeInfo[i].attraction_name}</p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/${routeInfo[i].attraction_photo1}"></div>
+                        </div>
+                    </div>
+                    `;
+                }
+            }
         } else {
             alert(xhr.status);
         }
