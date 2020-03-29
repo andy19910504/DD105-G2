@@ -675,7 +675,7 @@ div.eventCard{
                     }
                     
                 }
-                .step1{
+                .color{
                         background-image: url(../img/event/event_stepOn.png);
                 }
     }
@@ -688,15 +688,13 @@ div.eventCard{
       
 }
 
-// 步驟圈圈color
-.color{
-    background-image: url(../img/event/event_stepOn.png);
-}
+
 //第一步驟block
 .holdevent_step1content{
     //border: 1px solid purple;
     height: 536px;
-    display: block;
+    display: flex;
+    flex-direction: column;
    
 }
 .chooseRoute{
@@ -704,6 +702,7 @@ div.eventCard{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     .sliderWrap{
         width: 100%;
         position: relative;
@@ -724,18 +723,21 @@ div.eventCard{
             .routeBox{
                 cursor: pointer;
                 border-radius: 10px;
-                display: flex;
                 align-items: center;
-                justify-content: space-around;;
+                overflow: hidden;
                 width: 200px;
                 height: 250px;
                 margin:0px 30px;
                 font-size: $fzContent;
-                background-position: unset;
-                background-size: contain;
-                background-repeat: no-repeat;
-                transition: 0.5s;
-                
+                transition: 0.5s; 
+                .routeBoxImg{
+                    width: 200px;
+                    height: 200px; 
+                    overflow: hidden;       
+                }
+                div.routeBoxImg img{
+                    width: 100%;
+                }
                 .routeBoxBottom{
                     background-color:rgb(158, 207, 120);
                     align-self: flex-end;
@@ -747,7 +749,6 @@ div.eventCard{
                     color: white;
                     line-height: 50px;
                     letter-spacing: 2.2px;
-                   
                     }
                 }
                 .addroute{
@@ -759,8 +760,6 @@ div.eventCard{
                     font-weight: bold;
                     text-align: center;
                     line-height: 160px;
-                    
-                    
                     display: inline-block;
                     border-radius: 50%;
                     background-image: url(../img/element/btnCust.png);
@@ -771,23 +770,10 @@ div.eventCard{
                 }
                 
             }
-           
             .routeBox:hover{
                 opacity: 0.75; 
                
-            }
-            .routeBox:nth-child(1){
-                background-image: url(../img/event/event_route1_2.jpg);
-            }
-            .routeBox:nth-child(2){
-                background-image: url(../img/event/event_route2_2.jpg);
-            }
-            .routeBox:nth-child(3){
-                background-image: url(../img/event/event_route3.jpg);
-            }
-            .routeBox:nth-child(4),.routeBox:nth-child(5){
-                background-image: url(../img/event/event_cusRout.jpg);
-            }
+            }          
             @media screen and (max-width:1200px){
                 .routeBox{
                     width:200px;
@@ -833,7 +819,7 @@ div.eventCard{
     }
     
 }
-
+                  
 //選擇路線下方文字
 .routeClick{
     margin: 60px auto;
@@ -866,11 +852,14 @@ div.eventCard{
         margin: 0px 80px;
     }
 }
+.stepStop{
+    pointer-events: none;
+}
 // 第2步驟block
 .holdevent_step2content{
     display: none;
     height: 536px;
-    width: 100%;
+    flex-direction: column;
     .step2Info{
         width: 100%;
         display: flex;
@@ -956,6 +945,7 @@ div.eventCard{
 // 第3步驟block
 .holdevent_step3content{
     display: none;//
+    flex-direction: column;
     font-size: $fzContent;
     color: $fcInfo;
     height: 536px;
@@ -1088,7 +1078,6 @@ div.eventCard{
         }
     }
 }
-
 //我要報名
 .enroll{
     position: absolute;

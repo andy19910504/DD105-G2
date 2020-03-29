@@ -31,6 +31,11 @@ window.addEventListener("load", function () {
 })
 
 document.getElementById("btnAddIcon").addEventListener("click", function () {
+    if (document.getElementById("IconNum").value.length == 0) {
+        alert("商品部件編號不能為空");
+        document.getElementById("IconNum").focus();
+        return
+    }
     if (document.getElementById("IconPoint").value.length == 0) {
         alert("商品部件點數不能為空");
         document.getElementById("IconPoint").focus();
@@ -51,9 +56,8 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
             alert(xhr.status);
         }
     }
-    var url = "./php/newicon.php?point=" + document.getElementById("IconPoint").value +
+    var url = "./php/newicon.php?num=" + document.getElementById("IconNum").value + "&point=" + document.getElementById("IconPoint").value +
         "&url=" + document.getElementById("IconUrl").value;
-    console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 });
