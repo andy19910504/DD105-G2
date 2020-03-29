@@ -1,37 +1,4 @@
 @charset "UTF-8";
-.filterBlock {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.filterBlock .filterAll {
-  display: flex;
-  width: 100%;
-  max-width: 1200px; }
-
-.filterBlock .filterAll li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 230px;
-  height: 52px;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer; }
-
-.showFilter {
-  background-image: url("../img/route/showFilterImage.png"); }
-
-.filterBgImage {
-  width: 100%;
-  max-width: 1200px; }
-
-@media screen and (max-width: 575px) {
-  .filterBlock .filterAll li {
-    font-size: 18px; } }
-
 /*
      卡片：首頁、路線、心情、揪團，要使用的sample
     
@@ -912,7 +879,7 @@ div.eventCard {
   font-weight: bold;
   position: absolute;
   bottom: 0;
-  transform: translateY(30px); }
+  transform: translateY(45px); }
 
 .attractionTitle .landMark {
   animation: markMove 1.5s alternate infinite; }

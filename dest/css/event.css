@@ -551,17 +551,19 @@ div.eventCard {
       .chooseRoute .sliderWrap .routeAllBox .routeBox {
         cursor: pointer;
         border-radius: 10px;
-        display: flex;
         align-items: center;
-        justify-content: space-around;
+        overflow: hidden;
         width: 200px;
         height: 250px;
         margin: 0px 30px;
         font-size: 18px;
-        background-position: unset;
-        background-size: contain;
-        background-repeat: no-repeat;
         transition: 0.5s; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg {
+          width: 200px;
+          height: 200px;
+          overflow: hidden; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
+          width: 100%; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
           background-color: #9ecf78;
           align-self: flex-end;
@@ -589,16 +591,11 @@ div.eventCard {
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
           transition: filter .1s;
           cursor: pointer; }
+      .chooseRoute .sliderWrap .routeAllBox .addRoutebtn {
+        display: flex;
+        justify-content: center; }
       .chooseRoute .sliderWrap .routeAllBox .routeBox:hover {
         opacity: 0.75; }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(1) {
-        background-image: url(../img/event/event_route1_2.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(2) {
-        background-image: url(../img/event/event_route2_2.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(3) {
-        background-image: url(../img/event/event_route3.jpg); }
-      .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
-        background-image: url(../img/event/event_cusRout.jpg); }
       @media screen and (max-width: 1200px) {
         .chooseRoute .sliderWrap .routeAllBox .routeBox {
           width: 200px; } }
@@ -624,7 +621,7 @@ div.eventCard {
     text-align: center; }
 
 .routeClick {
-  margin: 60px auto;
+  margin: 10px auto;
   padding: 0px 95px;
   width: 100%; }
   .routeClick p {
@@ -659,7 +656,10 @@ div.eventCard {
     display: flex;
     padding: 10px 40px; }
     .holdevent_step2content .step2Info .holderPic {
-      width: 50%; }
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      padding: 0px 45px; }
       .holdevent_step2content .step2Info .holderPic input {
         font-size: 18px;
         color: #646464;
@@ -673,13 +673,16 @@ div.eventCard {
         background-color: #f5eec2;
         border: 1px dashed #5b8f60;
         width: 480px;
-        height: 265px; }
+        height: 270px; }
       .holdevent_step2content .step2Info .holderPic .holderPicBox {
         text-align: center;
         line-height: 265px;
         font-size: 20px;
         letter-spacing: 2px;
-        color: #646464; }
+        color: #646464;
+        overflow: hidden; }
+        .holdevent_step2content .step2Info .holderPic .holderPicBox img {
+          height: 100%; }
     .holdevent_step2content .step2Info .holderInfo {
       max-width: 50%;
       font-size: 18px;

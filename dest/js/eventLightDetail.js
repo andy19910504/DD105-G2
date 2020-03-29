@@ -50,7 +50,7 @@ function LightEventinfo(event) {
                                 </div>
                             </div>
                             <div class="detaileventPicbox">
-                                <img src="./img/event/eventPic${eventTable[i].event_cover_url}" alt="">
+                                <img src="./img/eventPhoto/${eventTable[i].event_cover_url}">
                             </div>
                             <div class="detaileventRoute">
                                 <p>${eventTable[i].route_name}</p>

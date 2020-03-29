@@ -3,8 +3,9 @@ function getRouteInfo(info) {
     let routeTable = document.getElementById("routeTable");
     let customTable = document.getElementById("customTable");
     let routeInfo = JSON.parse(info);
-    let key = Object.keys(routeInfo.attractions);
-    // console.log(routeInfo)
+    let keys = Object.keys(routeInfo.attractions);
+    let customKeys = Object.keys(routeInfo.customAttr);
+    console.log(routeInfo)
     // console.log(routeInfo.customInfo)
     // console.log(routeInfo.routeInfo[0]['route_number']);
     // console.log(routeInfo.attractions[1]['route_number']);
@@ -27,7 +28,7 @@ function getRouteInfo(info) {
                 <td>
                     <div>
                 `
-        for (let j = 0; j < key.length; j++) {
+        for (let j = 0; j < keys.length; j++) {
 
             if (routeInfo.routeInfo[i]['route_number'] == routeInfo.attractions[j]['route_number']) {
                 routeRow += `
@@ -73,11 +74,11 @@ function getRouteInfo(info) {
                 <td>
                     <div>
                 `
-        for (let n = 0; n < key.length; n++) {
+        for (let n = 0; n < customKeys.length; n++) {
 
-            if (routeInfo.customInfo[c]['route_number'] == routeInfo.attractions[n]['route_number']) {
+            if (routeInfo.customInfo[c]['route_number'] == routeInfo.customAttr[n]['route_number']) {
                 customRow += `
-                    <div class="routeAttrName">${routeInfo.attractions[n]['attraction_name']}</div>
+                    <div class="routeAttrName">${routeInfo.customAttr[n]['custom_attraction_name']}</div>
                             `
             }
         }
@@ -106,9 +107,9 @@ function getRouteInfo(info) {
     // 取得新增表單的景點資料
     let options = document.getElementById("options");
     let optionRow = "";
-    for (let o = 0; o < key.length; o++) {
+    for (let o = 0; o < routeInfo.attraction.length; o++) {
         optionRow += `
-        <label for="attr${o}"><input type="checkbox" id="attr${o}" class="optionAttr" name="${routeInfo.attractions[o]['attraction_number']}" value="${routeInfo.attractions[o]['attraction_number']}">${routeInfo.attractions[o]['attraction_name']}</label>
+        <label for="attr${o}"><input type="checkbox" id="attr${o}" class="option" name="${routeInfo.attraction[o]['attraction_number']}" value="${routeInfo.attraction[o]['attraction_number']}">${routeInfo.attraction[o]['attraction_name']}</label>
         `
         options.innerHTML = optionRow;
     }
@@ -144,7 +145,7 @@ function checkRouteStatus() {
 var c = 0;
 var limit = 5;
 function limitAttr() {
-    let option = document.querySelectorAll('.optionAttr');
+    let option = document.querySelectorAll('.option');
     for (let i = 0; i < option.length; i++) {
         option[i].onchange = function () {
             if (this.checked == true) {
@@ -167,7 +168,9 @@ window.addEventListener("load", function () {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            alert("資料庫中有 " + JSON.parse(xhr.responseText).routeInfo.length + " 筆景點資料。");
+            alert(`
+            資料庫中，有 ${JSON.parse(xhr.responseText).routeInfo.length} 筆官方路線資料、${JSON.parse(xhr.responseText).customInfo.length} 筆自訂路線資料。
+            `);
             getRouteInfo(xhr.responseText);
             checkRouteStatus();
             limitAttr();
@@ -176,7 +179,7 @@ window.addEventListener("load", function () {
             alert(xhr.status);
         }
     }
-    xhr.open("get", "./php/getRouteInfo.php", true);
+    xhr.open("get", "./php/backRouteGet.php", true);
     xhr.send(null);
 }, false);
 

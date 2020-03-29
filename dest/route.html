@@ -35,10 +35,11 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
             <div class="point">&nbsp;</div>
         </div>
     </div>
@@ -62,12 +63,13 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">666</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -185,11 +187,13 @@
         </div>
         <!-- routeFilterBlock -->
         <div class="filterBlock">
-    <ul class="filterAll">
-        <li id="filter1" class="filter showFilter">日式舊屋行</li>
-        <li id="filter2" class="filter">文青品味旅</li>
-        <li id="filter3" class="filter">職人散步去</li>
-    </ul>
+    <div class="filterMask">
+        <ul class="filterAll">
+            <li id="filter1" class="filter showFilter"></li>
+            <li id="filter2" class="filter"></li>
+            <li id="filter3" class="filter"></li>
+        </ul>
+    </div>
     <img src="./img/route/filterBgimage.png" class="filterBgImage">
 </div>
         <div class="routeContent">
@@ -377,7 +381,7 @@
                         <div class="attractionMask">
                             <img src="./img/route/cancel.png" alt="" class="cancelLightBox">
                             <div class="attractionAll">
-                                <div class="attractionInfoBlock">
+                                <!-- <div class="attractionInfoBlock">
                                     <div class="attractionInfoImage" id="attractionInfoImage1">
                                         <img src="./img/route/attractions/attraction01.jpg" alt="">
                                     </div>
@@ -410,12 +414,12 @@
                                             那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <img src="./img/route/arrowRight.png" alt="" class="arrowRight">
                     </div>
-                    <div class="attractionBgImage">
+                    <!-- <div class="attractionBgImage">
                         <img src="./img/route/arrowLeft.png" alt="" class="arrowLeft">
                         <div class="attractionMask">
                             <img src="./img/route/cancel.png" alt="" class="cancelLightBox">
@@ -586,7 +590,7 @@
                             </div>
                         </div>
                         <img src="./img/route/arrowRight.png" alt="" class="arrowRight">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -898,6 +902,7 @@
     <script src="./js/routeInfoGet.js"></script>
     <script src="./js/route.js"></script>
     <script src="./js/routeFilterClick.js"></script>
+    <script src="./js/routeAttrLightBox.js"></script>
 </body>
 
 </html>

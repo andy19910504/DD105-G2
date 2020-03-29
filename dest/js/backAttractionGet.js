@@ -44,24 +44,6 @@ function getAttractionInfo(info) {
         attrTable.innerHTML = attrRow;
     }
 }
-
-window.addEventListener("load", function () {
-    
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            alert("資料庫中有 " + JSON.parse(xhr.responseText).length + " 筆景點資料。");
-            getAttractionInfo(xhr.responseText);
-            checkAttrStatus();
-            // console.log(xhr.responseText);
-        } else {
-            alert(xhr.status);
-        }
-    }
-    xhr.open("get", "./php/getAttractionInfo.php", true);
-    xhr.send(null);
-}, false);
-
 function checkAttrStatus() {
     let checkMeLabels = document.getElementsByClassName("custom-control-label");
     let checkMe = document.getElementsByClassName("checkMe");
@@ -87,5 +69,22 @@ function checkAttrStatus() {
         }
     }
 }
+
+window.addEventListener("load", function () {
+    
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            alert("資料庫中有 " + JSON.parse(xhr.responseText).length + " 筆景點資料。");
+            getAttractionInfo(xhr.responseText);
+            checkAttrStatus();
+            // console.log(xhr.responseText);
+        } else {
+            alert(xhr.status);
+        }
+    }
+    xhr.open("get", "./php/attractionGet.php", true);
+    xhr.send(null);
+}, false);
 
 

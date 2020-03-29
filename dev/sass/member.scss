@@ -628,25 +628,58 @@
 .member_info_line_all_all:hover {
     box-shadow: $heavierShadow;
 }
-
 .member_info_line_all_left {
-    width: 50%;
-    padding-left: 10%;
+    width: 70%;
     // border: 1px solid green;
     display: inline-block;
     font-size: $fzTitle;
+    input{
+        text-align: center;
+        padding: 2%;
+        display: block;
+        width: 100%;
+        font-size: $fzTitle;
+        background-color: unset;
+        border: 3px solid transparent;
+        pointer-events:none;
+    }
+    input:focus{
+        border: 3px dashed $importantColor;
+    }
+    textarea{
+        font-size: $fzInfo;
+        text-indent: 32px;
+        word-break: break-all;
+        padding: 2%;
+        display: block;
+        width: 100%;
+        resize:none;
+        background-color: unset;
+        border: 3px solid transparent;
+        pointer-events:none;
+    }
+    textarea:focus{
+        border: 3px dashed $importantColor;
+    }
+    
 }
 
 .member_info_line_all_right {
-    width: 50%;
+    width: 30%;
     // border: 1px solid red;
     display: inline-block;
     text-align: center;
-
-    a:nth-child(2) {
-        // border: 1px solid red;
-        margin-left: 5%;
+    vertical-align: top;
+    div{
+        margin: 0 auto;
+        display: block;
+        margin-top: 5%;
     }
+
+    // div:nth-child(2) {
+    //     // border: 1px solid red;
+    //     // margin-bottom: 5%;
+    // }
 }
 
 .member_info_line_all_bottom {
@@ -657,6 +690,7 @@
     // padding: 3%;
     // text-align: center;
     height: 500px;
+    border: 1px solid red;
 
     // img {
     //     // border-radius: 50%;
@@ -668,7 +702,7 @@
 
 @media screen and (max-width:767px) {
     .member_info_line_all_left {
-        padding: 0 0 5% 0;
+        padding:0 0 5% 0;
         width: 100%;
         padding-left: 0%;
         text-align: center;
@@ -676,6 +710,13 @@
 
     .member_info_line_all_right {
         width: 100%;
+        div{
+            margin-top: 0;
+            display: inline-block;
+        }
+        div:nth-child(2){
+            margin-left: 5%;
+        }
     }
 
     .member_info_line_all_bottom {
@@ -1072,7 +1113,7 @@
         display: block;
         background-color: unset;
         // background-image: url(../img/member/hip-square.png);
-        border: unset;
+        border: 3px solid transparent;
         // border: 1px solid red;
 }
 .member_info_open_all_all>form>input:focus{
@@ -1219,7 +1260,7 @@
     // background-image: url(../img/member/memphis-colorful.png);
     text-align: center;
 
-    a:nth-child(3) {
+    div:nth-child(3) {
         margin-left: 10%;
     }
 }
@@ -1293,7 +1334,7 @@
         font-size: $fzInfo;
     }
 
-    .member_info_open_all_bottom a:nth-child(3) {
+    .member_info_open_all_bottom div:nth-child(3) {
         margin-left: 5%;
     }
 }
@@ -1347,7 +1388,7 @@
         display: block;
         background-color: unset;
         // background-image: url(../img/member/hip-square.png);
-        border: unset;
+        border: 3px solid transparent;
 }
 
 .member_info_open_all_left>div>div>img {
