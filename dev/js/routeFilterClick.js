@@ -11,12 +11,16 @@ $(document).on('click', '.filter', function filterClick() {
             console.log(routeInfo)
             let routeAttractionBlock = document.querySelectorAll('.routeAttractionBlock');
             let routeTilteBlock = document.querySelector('.routeTilteBlock');
-
-            routeTilteBlock.innerHTML =
-                `<img src="./img/routes/${routeInfo[0].route_photo}"></img>`;
+            if (routeInfo[0] == null) {
+                routeTilteBlock.innerHTML =
+                    `<img src="./img/routes/"></img>`;
+            } else {
+                routeTilteBlock.innerHTML =
+                    `<img src="./img/routes/${routeInfo[0].route_photo}"></img>`;
+            }
             for (let i = 0; i < 5; i++) {
                 if (routeInfo[i] == null) {
-                    routeAttractionBlock[i].innerHTML =`
+                    routeAttractionBlock[i].innerHTML = `
                     <div class="attractionTitle">
                         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
                         <p></p>
@@ -28,7 +32,7 @@ $(document).on('click', '.filter', function filterClick() {
                     </div>
                     `;
                 } else {
-                    routeAttractionBlock[i].innerHTML =`
+                    routeAttractionBlock[i].innerHTML = `
                     <div class="attractionTitle">
                         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
                         <p>${routeInfo[i].attraction_name}</p>

@@ -13,6 +13,10 @@ function getLoginInfo() {
         if (member.memAcc) {
             // 登入 換成 登出
             $(".sign").text("登出");
+            let memPhoto = `<img src="./img/memberPhoto/${member.memPhoto}">`;
+            $('.memberPhoto').html(memPhoto);
+            let memPoint = member.memPoint + "點";
+            $(".point").html(memPoint);
         }
     }
     xhr.open("get", "./php/loginInfoForFront.php", true);
@@ -37,6 +41,11 @@ window.addEventListener("load", function () {
             xhr.onload = function () {
                 if (xhr.status == 200) {  //自server正確的登出
                     $('.sign').text("登入");
+                    let memPhoto = `<img src="./img/header/navMember.png">`;
+                    $('.memberPhoto').html(memPhoto);
+                    let memPoint = "";
+                    $(".point").html(memPoint);
+
                 } else {
                     alert(xhr.status);
                 }
@@ -83,6 +92,10 @@ window.addEventListener("load", function () {
                     member = JSON.parse(xhr.responseText);
                     console.log(member);
                     $(".sign").text("登出");
+                    let memPhoto = `<img src="./img/memberPhoto/${member.memPhoto}">`;
+                    $('.memberPhoto').html(memPhoto);
+                    let memPoint = member.memPoint + "點";
+                    $(".point").html(memPoint);
                 }
             } else {
                 alert(xhr.status);
@@ -158,33 +171,33 @@ window.addEventListener("load", function () {
         //檢查完 去註冊
         // document.getElementById("member_register").submit();
         let xhr = new XMLHttpRequest();
-        xhr.onload=function (){
-            if( xhr.status == 200 ){
-             //modify here
-             alert(xhr.responseText);
-            //  location.reload();
-            //清空註冊頁之值&&關掉登入燈箱
-            $id('register_acc').value = '';
-            $id('register_nam').value = '';
-            $id('register_email').value = '';
-            $id('register_psw').value = '';
-            $id('register_psw_dou').value = '';
-            $(".register").css("display","none");
-            $(".login_all_all").css("display","block");
-            $("#loginBlock").css("display","none");
-            }else{
-               alert( xhr.status );
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                //modify here
+                alert(xhr.responseText);
+                //  location.reload();
+                //清空註冊頁之值&&關掉登入燈箱
+                $id('register_acc').value = '';
+                $id('register_nam').value = '';
+                $id('register_email').value = '';
+                $id('register_psw').value = '';
+                $id('register_psw_dou').value = '';
+                $(".register").css("display", "none");
+                $(".login_all_all").css("display", "block");
+                $("#loginBlock").css("display", "none");
+            } else {
+                alert(xhr.status);
             }
-       }
-       var url = "./php/member/register.php?register_acc=" + document.getElementById("register_acc").value
-       + "&register_nam=" + document.getElementById("register_nam").value
-       + "&register_email=" + document.getElementById("register_email").value
-       + "&register_psw=" + document.getElementById("register_psw").value;
-       console.log(url);
-       xhr.open("Get", url, true);
-       xhr.send( null );
+        }
+        var url = "./php/member/register.php?register_acc=" + document.getElementById("register_acc").value
+            + "&register_nam=" + document.getElementById("register_nam").value
+            + "&register_email=" + document.getElementById("register_email").value
+            + "&register_psw=" + document.getElementById("register_psw").value;
+        console.log(url);
+        xhr.open("Get", url, true);
+        xhr.send(null);
     })
-    
+
     //找回密碼事件
     // 登入頁的找回密碼按鈕
     $(".findpsw").click(function () {

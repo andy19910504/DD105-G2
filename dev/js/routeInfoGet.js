@@ -6,14 +6,16 @@ function getFilterName(info) {
     let filterRows = "";
 
     for (let i = 0; i < routeInfo.length; i++) {
-        filterRows += `
+        if (routeInfo[i].route_status == 1) {
+            filterRows += `
         <li id="filter${i}" class="filter">${routeInfo[i].route_name}</li>
         `
+        }
     }
     filter.innerHTML = filterRows;
 
     // 傳送地一個filter的值來取得第一條路線資訊
-    let firstRoute = document.getElementById('filter0').innerHTML;
+    let firstRoute = document.querySelectorAll('.filter')[0].innerHTML;
     console.log(firstRoute)
     let firstRouteForm = new FormData();
     firstRouteForm.append('firstRoute', firstRoute);
@@ -97,7 +99,7 @@ function getFilterName(info) {
     }
     xhr2.open("Post", "./php/firstRouteGet.php", true);
     xhr2.send(firstRouteForm);
-    
+
     // 點選 filter
     document.querySelectorAll('.filter')[0].setAttribute('class', 'filter showFilter');
     $('.filterAll li').click(function (e) {

@@ -12,20 +12,27 @@ try {
     $routesRow = $routes->fetchAll(PDO::FETCH_ASSOC);
     // 顯示自訂路線
     $sql = "select * from `routes` r 
-    join `routes_list` l on(r.route_number = l.route_number) 
-    join `attractions` a on(l.attraction_number =a.attraction_number)
+    join `custom_attraction_list` c on(r.route_number = c.route_number) 
+    join `custom_attraction` a on(c.custom_attraction_number =a.custom_attraction_number)
     where  member_number is not null
     group by r.route_number order by r.route_number
     ;";
     $custom = $pdo->query($sql);
     $customRow = $custom->fetchAll(PDO::FETCH_ASSOC);
 
-    // 顯示各路線景點
+    // 顯示官方路線各路線景點
     $sql = "select * from `attractions` a 
     join `routes_list` l on(a.attraction_number = l.attraction_number)
     ;";
     $attractions = $pdo->query($sql);
     $attrsRow = $attractions->fetchAll(PDO::FETCH_ASSOC);
+
+     // 顯示自訂路線各路線景點
+     $sql = "select * from `custom_attraction` c 
+     join `custom_attraction_list` l on(c.custom_attraction_number = l.custom_attraction_number)
+     ;";
+     $customAttractions = $pdo->query($sql);
+     $customAttrsRow = $customAttractions->fetchAll(PDO::FETCH_ASSOC);
 
     // 顯示路線景點
     $sql = "select * from `attractions`
@@ -50,7 +57,7 @@ try {
     //     }
     // }
 
-    echo json_encode(array('attraction' => $attrRow, 'attractions' => $attrsRow, 'routeInfo' => $routesRow, 'customInfo' => $customRow));
+    echo json_encode(array('customAttr'=>$customAttrsRow,'attraction' => $attrRow, 'attractions' => $attrsRow, 'routeInfo' => $routesRow, 'customInfo' => $customRow));
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
