@@ -615,6 +615,13 @@ div.eventCard {
     opacity: 0.6;
     text-align: center; }
 
+.routeBoxImg {
+  width: 200px;
+  height: 200px; }
+
+div.routeBoxImg img {
+  width: 100%; }
+
 .routeClick {
   margin: 60px auto;
   padding: 0px 95px;

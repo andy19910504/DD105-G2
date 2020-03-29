@@ -41,24 +41,68 @@
 //     alert("發揪團成功!");
 // }
 
-
 // 動態新增路線
 function LightEventRouteinfo(routes) {
     let routeAllBox = $id("routeAllBox");
-    let routesTable = JSON.parse(routes);//把JSON字串翻譯成JS
-    let html = "";
+    let routetable = JSON.parse(routes);//把JSON字串翻譯成JS物件
 
-    for (i = 0; i < routeInfo.routesTable.length; i++) {
-        html += `
-        <div class="routeBox routeChose">
-            <div class="routeBoxBottom">
-                <p class="routeName">${routeInfo.routesTable[i].route_name}</p>
-                <input type="hidden" name="attractions" class="attractions">
-            </div>
-        </div>
-        `;
-    }
-    routeAllBox.innerHTML = html;
+    // ---------------官方路線---------------
+    let routeOfficial = routetable.routeInfo; //取出官方路線
+    let officialRouteTable = []; //先建一個新陣列,要把同官方路線的景點串一起
+    routeOfficial.forEach((item) => {
+        //避免陣列第0筆就上傳,所以預設-1
+        const str = item.route_number - 1;
+        if (typeof officialRouteTable[str] === 'undefined') { //放入新陣列
+            officialRouteTable[str] = item;
+        }
+        else {
+            officialRouteTable[str].attraction_name += `->${item.attraction_name}`;
+        }
+    });
+    console.log(officialRouteTable);
+
+    // ---------------自訂路線---------------
+    let routeMember = routetable.customInfo; //取出官方路線
+    let memberRouteTable = []; //先建一個新陣列,要把同官方路線的景點串一起
+    routeMember.forEach((item) => {
+        //避免陣列第0筆就上傳,所以預設-1
+        const a = item.route_number; // 0
+        if (typeof memberRouteTable[a] === 'undefined') { //放入新陣列
+            memberRouteTable[a] = item;
+        }
+        else {
+            memberRouteTable[a].custom_attraction_name += `->${item.custom_attraction_name}`;
+        }
+
+    });
+    let memberRouteNew = memberRouteTable.filter(item => item); //清除中間空陣列
+    console.log(memberRouteNew);
+
+    // let html = "";
+
+
+    // for (i = 0; i < officialRouteTable.length; i++) {
+    //     html += `
+    //     <div class="routeBox routeChose">
+    //         <div class="routeBoxBottom">
+    //             <p class="routeName">${officialRouteTable[i]['route_name']}</p>
+    //             <input type="hidden" name="route" id="officialRoute${officialRouteTable[i]['route_number']}" value="${officialRouteTable[i]['attraction_name']}">
+    //         </div>    
+    //     </div>
+    //     `
+    // }
+    // for (j = 0; j <memberRouteNew.length; j++) {
+    //     html += `
+    //     <div class="routeBox routeChose">
+    //         <div class="routeBoxBottom">
+    //             <p class="routeName">${memberRouteNew[j]['route_name']}</p>
+    //             <input type="hidden" name="route" id="memberRoute${memberRouteNew[j]['route_number']}" value="${memberRouteNew[j]['custom_attraction_name']}">
+    //         </div>
+    //     </div>
+    //     `
+    // }
+
+    // routeAllBox.innerHTML = html;
 }
 
 // 確認有撈到路線資料
@@ -121,22 +165,3 @@ $(document).on('click', '.eventInsert', showLightBox);
 $(document).on('click', '.eventhold_close', closeLightBox);
 //送出表單
 // $(document).on('click', '.send', insertRow);
-
-
-
-// 判斷各頁面是否再登入狀態
-let origin_member_number;
-function getLoginInfo() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        origin_member_number = JSON.parse(xhr.responseText);
-        console.log(origin_member_number)
-        
-    }
-    xhr.open("get", "./php/loginInfoForFront.php", true);
-    xhr.send(null);
-};
-window.addEventListener("load", function () {
-    // // 檢查是否為登入狀態
-    getLoginInfo();
-});
