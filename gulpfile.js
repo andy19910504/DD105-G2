@@ -38,8 +38,8 @@ var web = {
     var options = {
         base: './dest', /*从打包目录访问*/
         debug: true, /*调试信息*/
-        bin: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.exe',/*自本地php.exe路径地址*/
-        ini: 'C:/php-7.4.2-nts-Win32-vc15-x64/php.ini',/*自本地php.ini路径地址*/
+        bin: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.exe',/*自本地php.exe路径地址*/
+        ini: 'C:/php-7.4.3-nts-Win32-vc15-x64/php.ini',/*自本地php.ini路径地址*/
         port: 8080, /*自定义端口*/
     };
 
