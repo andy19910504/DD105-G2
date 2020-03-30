@@ -7,6 +7,7 @@
     <title>台北散步 | 慢步寫心情</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="css/mood.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
     <script src="./js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -173,12 +174,14 @@
 
     <!-- filter 心情分類篩選器 -->
     <div class="filterBlock">
-        <ul class="filterAll">
-            <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
-            <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
-            <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
-            <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
-        </ul>
+        <div class="filterMask">
+            <ul class="filterAll">
+                <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
+                <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
+                <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
+                <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
+            </ul>
+        </div>
         <img src="./img/route/filterBgimage.png" class="filterBgImage">
     </div>
 
@@ -281,6 +284,9 @@
     <script src="./js/common.js"></script>
     <script src="./js/mood.js"></script>
     <script src="./js/mood_message.js"></script>
-    
+    <script src="./js/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 </html>
