@@ -84,8 +84,7 @@ function LightEventinfo(events) {
 }
 
 window.addEventListener("load", function () {
-    
-    firstRouteEvent();
+
     // 當點選filter時，顯示對應的揪團資訊
     $(document).on('click', '.filter', function () {
         let eventConcat = $(this).text();

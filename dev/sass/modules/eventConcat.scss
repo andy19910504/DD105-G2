@@ -88,6 +88,9 @@ div.eventCard{
     div.eventWrap{
         margin: 0px auto;
     }
+    div.cardBox{
+        justify-content: center;
+    }
 }
 .eventCard:hover{
     transform: translateY(-10px);

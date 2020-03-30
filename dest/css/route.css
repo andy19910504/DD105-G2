@@ -260,7 +260,9 @@ div.eventCard {
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin: 0px auto; } }
+    margin: 0px auto; }
+  div.cardBox {
+    justify-content: center; } }
 
 .eventCard:hover {
   transform: translateY(-10px); }
