@@ -72,7 +72,7 @@
         </div>
         <div class="navPoint">
             <a><img src="./img/header/navPoint.png"></a>
-            <div class="point">666</div>
+            <div class="point">&nbsp;</div>
         </div>
     </div>
 </header>
@@ -251,24 +251,31 @@
                 <img src="./img/event/event_firework3.png" class="firework3">
                 <img src="./img/event/event_skylight1.png" class="skyLight1">
                 <img src="./img/event/event_skylight2.png" class="skyLight2">
+
                 <!-- routeFilterBlock -->
                 <div class="filterBlock">
-    <div class="filterMask">
-        <ul class="filterAll">
-            <li id="filter1" class="filter showFilter">全部揪團</li>
-            <li id="filter2" class="filter">官方路線揪團</li>
-            <li id="filter3" class="filter">自訂路線揪團</li>
-        </ul>
-    </div>
-    <img src="./img/route/filterBgimage.png" class="filterBgImage">
-</div>
+                    <div class="filterMask">
+                        <ul class="filterAll">
+                            <li id="filter1" class="filter showFilter">全部揪團
+                                <input type="hidden" name="filterSort" value="all">
+                            </li>
+                            <li id="filter2" class="filter">官方路線揪團
+                                <input type="hidden" name="filterSort" value="official">
+                            </li>
+                            <li id="filter3" class="filter">自訂路線揪團
+                                <input type="hidden" name="filterSort" value="member">
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./img/route/filterBgimage.png" class="filterBgImage">
+                </div>
                 <!-- 下拉選單 -->
                 <div class="selector">
+                    排序方式：
                     <form>
-                        <select name="eventSort">
-                            <option value="按截止日期排列">按截止日期排列</option>
-                            <option value="按發起時間排列">按發起時間排列</option>
-                            <!--<option value=""></option> -->
+                        <select name="eventSort" id="orderSelect">
+                            <option value="event_number desc">最新揪團</option>
+                            <option value="enroll_end_date">即將截止</option>
                         </select>
                     </form>
                 </div>
@@ -703,24 +710,9 @@
                 </div> -->
             </div>
 
-            <!-- 隱藏的發揪團表單，用來傳送資料到PHP -->
-            <form id="eventInsertForm" style="display:hidden">
-                <input type="hidden" name="route_number" id="route_number">
-                <!-- <input type="hidden" name="origin_member_number" id="origin_member_number"> -->
-                <input type="hidden" name="event_name" id="event_name">
-                <input type="hidden" name="enroll_start_date" id="enroll_start_date">
-                <input type="hidden" name="enroll_end_date" id="enroll_end_date">
-                <input type="hidden" name="event_date" id="event_date">
-                <input type="hidden" name="meeting_place" id="meeting_place">
-                <input type="hidden" name="max_attendance" id="max_attendance">
-                <input type="hidden" name="event_information" id="event_information">
-                <input type="hidden" name="event_cover_url" id="event_cover_url">
-            </form>
-
             <!-- 隱藏的揪團報名表單，用來傳送資料到PHP -->
             <form id="eventEnrollForm" style="display:hidden">
                 <input type="hidden" name="enroll_event_number" id="enroll_event_number">
-                <input type="hidden" name="member_number" id="member_number">
                 <input type="hidden" name="enroll_date" id="enroll_date">
             </form>
 

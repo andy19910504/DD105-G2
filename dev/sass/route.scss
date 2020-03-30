@@ -300,6 +300,7 @@
 }
 .routeAttractionBlock{
     position: relative;
+    margin: 0 30px;
     @media screen and (max-width:860px) {
         margin-bottom: 60px;
     }
@@ -310,7 +311,7 @@
     font-weight: bold;
     position: absolute;
     bottom: 0;
-    transform: translateY(45px);
+    transform: translate(-35px,60px);
 }
 .attractionTitle .landMark{
     animation: markMove 1.5s alternate infinite;

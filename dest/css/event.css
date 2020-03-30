@@ -293,7 +293,10 @@
       display: none; } }
 
 .selector {
-  display: flex; }
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 20px 0px;
+  font-size: 18px; }
 
 @media screen and (max-width: 768px) {
   .selector {
@@ -303,7 +306,7 @@
 .selector select {
   width: 190px;
   height: 30px;
-  margin: 10px 0;
+  margin: 10px 5px;
   color: #646464;
   font-size: 16px; }
 
@@ -680,9 +683,11 @@ div.eventCard {
         font-size: 20px;
         letter-spacing: 2px;
         color: #646464;
-        overflow: hidden; }
+        overflow: hidden;
+        align-items: center;
+        display: flex; }
         .holdevent_step2content .step2Info .holderPic .holderPicBox img {
-          height: 100%; }
+          width: 100%; }
     .holdevent_step2content .step2Info .holderInfo {
       max-width: 50%;
       font-size: 18px;

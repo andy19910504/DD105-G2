@@ -48,9 +48,12 @@
 
 .customForm {
   border: 2px solid #ccc;
+  border-radius: 6px;
   width: 100%;
   max-width: 800px;
-  padding: 60px 20px; }
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column; }
 
 .fieldBlock {
   display: flex;
@@ -61,32 +64,39 @@
     display: block;
     width: 250px;
     text-align: right; }
+  .fieldBlock .customRouteTitle {
+    width: 100%;
+    margin-bottom: 60px;
+    padding-right: 40px;
+    text-align: right; }
+    .fieldBlock .customRouteTitle img {
+      filter: brightness(0.3); }
 
-.fieldBlock:nth-child(2) {
+.fieldBlock:nth-child(3) {
   align-items: flex-start; }
 
-.fieldBlock:nth-child(4) {
+.fieldBlock:nth-child(5) {
   flex-direction: column; }
-  .fieldBlock:nth-child(4) .map-container {
+  .fieldBlock:nth-child(5) .map-container {
     margin: 10px auto;
     width: 100%;
     max-width: 800px;
     height: 600px;
     border-radius: 6px;
     overflow: hidden; }
-    .fieldBlock:nth-child(4) .map-container #map {
+    .fieldBlock:nth-child(5) .map-container #map {
       width: 100%;
       height: 100%; }
-  .fieldBlock:nth-child(4) .saveBtn {
+  .fieldBlock:nth-child(5) .saveBtn {
     margin-top: 10px;
     margin-right: 20px;
     align-self: flex-end; }
-    .fieldBlock:nth-child(4) .saveBtn input[type="button"]:first-child {
+    .fieldBlock:nth-child(5) .saveBtn input[type="button"]:first-child {
       margin-right: 10px; }
 
-.fieldBlock:nth-child(5) {
+.fieldBlock:nth-child(6) {
   justify-content: center; }
-  .fieldBlock:nth-child(5) .confirmBtn {
+  .fieldBlock:nth-child(6) .confirmBtn {
     margin-top: 60px;
     display: flex;
     justify-content: center; }
@@ -96,7 +106,7 @@
   height: 30px;
   padding: 2px 0 0 10px;
   border: 2px solid #ccc;
-  border-radius: 5px; }
+  border-radius: 6px; }
 
 .routeDesc {
   height: 100px; }

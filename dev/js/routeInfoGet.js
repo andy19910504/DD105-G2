@@ -1,3 +1,4 @@
+
 // 路線的分類filter，有幾條官方路線就要顯示幾個 filter
 function getFilterName(info) {
     let routeInfo = JSON.parse(info);
@@ -31,67 +32,19 @@ function getFilterName(info) {
 
             routeTilteBlock.innerHTML =
                 `<img src="./img/routes/${firstRouteInfo[0].route_photo}"></img>`;
-
-            routeAttractionBlock[0].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${firstRouteInfo[0].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[0].attraction_photo1}"></div>
-        </div>
-    </div>
-        `;
-            routeAttractionBlock[1].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${firstRouteInfo[1].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[1].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[2].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${firstRouteInfo[2].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[2].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[3].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${firstRouteInfo[3].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[3].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
-            routeAttractionBlock[4].innerHTML =
-                `
-    <div class="attractionTitle">
-        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
-        <p>${firstRouteInfo[4].attraction_name}</p>
-    </div>
-    <div class="attractionImageBlock">
-        <div class="attractionImage">
-        <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[4].attraction_photo1}"></div>
-        </div>
-    </div>
-    `;
+            for (let i = 0; i < firstRouteInfo.length; i++) {
+                routeAttractionBlock[i].innerHTML = `
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p>${firstRouteInfo[i].attraction_name}</p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[i].attraction_photo1}"></div>
+                        </div>
+                    </div>
+                `;
+            }
         } else {
             alert(xhr2.status);
         }
@@ -111,7 +64,6 @@ function getFilterName(info) {
 }
 
 // 取得一開始顯示在頁面上路線的資訊
-
 
 window.addEventListener("load", function () {
 
