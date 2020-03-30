@@ -209,9 +209,10 @@ section {
         width: 300px;
         margin: 15px 0px; }
         section div.moodCardsWrap div.moodCard div.cardInfoBar {
+          justify-content: flex-start;
           width: 270px; }
           section div.moodCardsWrap div.moodCard div.cardInfoBar div.infoTextWrap {
-            width: 180px; }
+            width: 220px; }
             section div.moodCardsWrap div.moodCard div.cardInfoBar div.infoTextWrap div.moodInfoBox {
               flex-direction: row; }
         section div.moodCardsWrap div.moodCard div.moodPicWrap {
@@ -476,10 +477,16 @@ div.moodLightBox {
               line-height: 1.5;
               font-size: 16px; }
       div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailPhotoWrap {
+        height: 430px;
         width: 100%;
-        margin: 15px 0px; }
+        margin: 15px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
         div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailPhotoWrap img {
-          width: 100%; }
+          max-height: 100%;
+          max-width: 100%;
+          vertical-align: middle; }
       div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailContent {
         font-size: 18px;
         color: #646464;

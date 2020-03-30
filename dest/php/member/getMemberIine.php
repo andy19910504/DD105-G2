@@ -2,7 +2,7 @@
 try {
     require_once("connectBooks.php");
     $memNum=$_GET["number"];
-    $sql = "select * from `routes`  where member_number=:memNum";
+    $sql = "select * from `routes`  where member_number=:memNum ORDER BY `routes`.`route_number` DESC";
     $memberline = $pdo->prepare($sql);
     $memberline->bindvalue(":memNum",$memNum);
     $memberline->execute();
