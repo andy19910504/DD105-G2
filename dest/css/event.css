@@ -508,17 +508,19 @@ div.eventCard {
   overflow: hidden; }
   .lightbox_holdevent_info .holdevent_title {
     text-align: center;
-    color: #1e1e1e;
-    font-size: 24px;
-    font-weight: bold;
     margin-top: 35px;
     letter-spacing: 1.875px;
-    width: 200px; }
+    font-size: 36px;
+    color: #A5361C;
+    font-weight: bolder;
+    text-align: center; }
+    .lightbox_holdevent_info .holdevent_title h2 {
+      font-size: 36px;
+      color: #A5361C; }
   .lightbox_holdevent_info .stepALL {
-    margin: 50px 0;
+    margin: 45px 0;
     width: 100%; }
   .lightbox_holdevent_info .holdevent_step {
-    margin: 10px auto;
     text-align: center;
     display: flex;
     justify-content: center; }
@@ -532,14 +534,14 @@ div.eventCard {
       justify-content: center;
       background-size: contain;
       background-position: center;
-      background-image: url(../img/event/event_step3.png);
+      background-image: url(../img/event/step.png);
       font-size: 18px; }
       .lightbox_holdevent_info .holdevent_step div p {
         margin-bottom: 5px; }
       .lightbox_holdevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
     .lightbox_holdevent_info .holdevent_step .color {
-      background-image: url(../img/event/event_stepOn.png); }
+      background-image: url(../img/event/stepOn.png); }
 
 @media screen and (max-width: 767px) {
   .lightbox_holdevent_info {
@@ -559,7 +561,7 @@ div.eventCard {
   flex-direction: column; }
 
 .chooseRoute {
-  margin: 30px auto;
+  margin: 45px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -595,7 +597,7 @@ div.eventCard {
         .chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
           width: 100%; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
-          background-color: #9ecf78;
+          background-color: #5f96ab;
           align-self: flex-end;
           width: 200px;
           height: 50px;
@@ -640,7 +642,7 @@ div.eventCard {
       font-size: 24px;
       outline: none;
       border: none;
-      background-color: #98cf6e;
+      background-color: #5895ad;
       width: 40px;
       height: 40px;
       border-radius: 50%;

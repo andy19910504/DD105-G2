@@ -63,6 +63,10 @@ function LightEventinfo(events) {
                                     <div>${eventTable[i].meeting_place}</div>
                                 </div>
                                 <div class="eventInforow">
+                                    <div class="eventrowTitle">目前報名人數</div>
+                                     <div>${eventTable[i].now_attendance}位</div>
+                                </div>
+                                <div class="eventInforow">
                                     <div class="eventrowTitle">報名人數上限</div>
                                      <div>${eventTable[i].max_attendance}位</div>
                                 </div>
