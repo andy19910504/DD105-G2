@@ -813,15 +813,14 @@ _4 {
 // .postRightDIY5{
 //     // display: flex;
 // }
->>>>>>> a72d03deee95c342b078ccabac4557dad0fb7421
+>>>>>>> 2efa99b60925d4664bffeb7e04089abe07691e8c
 .info {
     line-height: 30px;
     // height: 100%;
     // width: 100%;
 
     @media screen and (max-width:1200px) {
-        // justify-content: center;
-        // align-items: center;
+        line-height: 20px;
 
     }
 
@@ -865,12 +864,27 @@ _4 {
 //     width: 200px;
 //     height: 100px;
 // }
+.download{
+    margin-top: 10px;
+    @media screen and (max-width:1200px) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    @media screen and (max-width:800px) {
+        margin-bottom: 0px;
+    }
+}
+
+
 
 
 .step_btnbox5 {
-    justify-content: center;
+    margin-top: 240px;
     margin-bottom: 20px;
-
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
     @media screen and (max-width:1200px) {
         margin-top: 0px;

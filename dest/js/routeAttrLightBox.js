@@ -40,30 +40,49 @@ window.addEventListener('load', function () {
                 let right = document.querySelector(".arrowRight");
                 let attrRows = "";
                 lightBoxs.style.display = "flex";
-                attrRows = `
-            <div class="attractionInfoBlock">
-                <div class="attractionInfoImage" id="attractionInfoImage1">
-                    <img src="./img/attractions/${attrInfo[0].attraction_photo1}">
-                </div>
-                <div class="attractionInfoText" id="attractionInfoText1">
-                    <h2>${attrInfo[0].attraction_name}</h2>
-                    <p>
-                    ${attrInfo[0].attraction_information1}
-                    </p>
-                </div>
-            </div>
-            <div class="attractionInfoBlock">
-                <div class="attractionInfoImage" id="attractionInfoImage2">
-                    <img src="./img/attractions/${attrInfo[0].attraction_photo2}">
-                </div>
-                <div class="attractionInfoText" id="attractionInfoText2">
-                    <h2>${attrInfo[0].attraction_name}</h2>
-                    <p>
-                    ${attrInfo[0].attraction_information2}
-                    </p>
-                </div>
-            </div>
-            `;
+                if (attrInfo[0] == null) {
+                    attrRows = `
+                    <div class="attractionInfoBlock">
+                        <div class="attractionInfoImage" id="attractionInfoImage1">
+                            <img src="./img/attractions/">
+                        </div>
+                        <div class="attractionInfoText" id="attractionInfoText1">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="attractionInfoBlock">
+                        <div class="attractionInfoImage" id="attractionInfoImage2">
+                            <img src="./img/attractions/">
+                        </div>
+                        <div class="attractionInfoText" id="attractionInfoText2">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                `;
+                } else {
+                    attrRows = `
+                        <div class="attractionInfoBlock">
+                            <div class="attractionInfoImage" id="attractionInfoImage1">
+                                <img src="./img/attractions/${attrInfo[0].attraction_photo1}">
+                            </div>
+                            <div class="attractionInfoText" id="attractionInfoText1">
+                                <h2>${attrInfo[0].attraction_name}</h2>
+                                <p>${attrInfo[0].attraction_information1}</p>
+                            </div>
+                        </div>
+                        <div class="attractionInfoBlock">
+                            <div class="attractionInfoImage" id="attractionInfoImage2">
+                                <img src="./img/attractions/${attrInfo[0].attraction_photo2}">
+                            </div>
+                            <div class="attractionInfoText" id="attractionInfoText2">
+                                <h2>${attrInfo[0].attraction_name}</h2>
+                                <p>${attrInfo[0].attraction_information2}</p>
+                            </div>
+                        </div>
+                    `;
+                }
                 attractionAll.innerHTML = attrRows
 
 

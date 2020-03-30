@@ -39,10 +39,11 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
             <div class="point">&nbsp;</div>
         </div>
     </div>
@@ -66,12 +67,13 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">&nbsp;</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -249,22 +251,31 @@
                 <img src="./img/event/event_firework3.png" class="firework3">
                 <img src="./img/event/event_skylight1.png" class="skyLight1">
                 <img src="./img/event/event_skylight2.png" class="skyLight2">
+
                 <!-- routeFilterBlock -->
                 <div class="filterBlock">
-    <ul class="filterAll">
-        <li id="filter1" class="filter showFilter">全部揪團</li>
-        <li id="filter2" class="filter">官方路線揪團</li>
-        <li id="filter3" class="filter">自訂路線揪團</li>
-    </ul>
-    <img src="./img/route/filterBgimage.png" class="filterBgImage">
-</div>
+                    <div class="filterMask">
+                        <ul class="filterAll">
+                            <li id="filter1" class="filter showFilter">全部揪團
+                                <input type="hidden" name="filterSort" value="all">
+                            </li>
+                            <li id="filter2" class="filter">官方路線揪團
+                                <input type="hidden" name="filterSort" value="official">
+                            </li>
+                            <li id="filter3" class="filter">自訂路線揪團
+                                <input type="hidden" name="filterSort" value="member">
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./img/route/filterBgimage.png" class="filterBgImage">
+                </div>
                 <!-- 下拉選單 -->
                 <div class="selector">
+                    排序方式：
                     <form>
-                        <select name="eventSort">
-                            <option value="按截止日期排列">按截止日期排列</option>
-                            <option value="按發起時間排列">按發起時間排列</option>
-                            <!--<option value=""></option> -->
+                        <select name="eventSort" id="orderSelect">
+                            <option value="event_number desc">最新揪團</option>
+                            <option value="enroll_end_date">即將截止</option>
                         </select>
                     </form>
                 </div>
@@ -342,145 +353,143 @@
                         <h2>我要揪團</h2>
                     </div>
                     <div class="stepALL">
-                        <!-- 第一步 -->
-                        <div class="holdevent_step1content stepContent">
-                            <div class="holdevent_step ">
-                                <div class="color" psn="0">
-                                    <p class="stepBox">STEP1</p>
-                                    <p>選擇路線</p>
+                        <form id="newEventForm">
+                            <!-- 第一步 -->
+                            <div class="holdevent_step1content stepContent">
+                                <div class="holdevent_step ">
+                                    <div class="color" psn="0">
+                                        <p class="stepBox">STEP1</p>
+                                        <p>選擇路線</p>
+                                    </div>
+                                    <div class="step2">
+                                        <p class="stepBox">STEP2</p>
+                                        <p>上傳照片</p>
+                                        <p>填寫資料</p>
+                                    </div>
+                                    <div class="step3">
+                                        <p class="stepBox">STEP3</p>
+                                        <p>確定</p>
+                                        <p>揪團資訊</p>
+                                    </div>
                                 </div>
-                                <div class="step2">
-                                    <p class="stepBox">STEP2</p>
-                                    <p>上傳照片</p>
-                                    <p>填寫資料</p>
-                                </div>
-                                <div class="step3">
-                                    <p class="stepBox">STEP3</p>
-                                    <p>確定</p>
-                                    <p>揪團資訊</p>
-                                </div>
-                            </div>
-                            <div class="chooseRoute">
-                                <!-- 左邊按鈕 -->
-                                <div class="slideBtn">
-                                    <input type="button" id="btnLeft" value="<" disabled>
-                                </div>
-                                <!-- 選擇路線框 -->
-                                <div class="sliderWrap">
-                                    <div class="routeAllBox">
-                                        <!-- 撈路線 -->
-                                        <div class="routeBox routeChose">
+                                <div class="chooseRoute">
+                                    <!-- 左邊按鈕 -->
+                                    <div class="slideBtn">
+                                        <input type="button" id="btnLeft" value="<" disabled>
+                                    </div>
+                                    <!-- 選擇路線框 -->
+                                    <div class="sliderWrap">
+                                        <div class="routeAllBox" id="routeAllBox">
+                                            <!-- 撈路線 -->
+                                            <!-- <div class="routeBox routeChose" psn="1">
+                                            <div class="routeBoxImg">
+                                                <img src="./img/event/event_route1.jpg" alt="">
+                                            </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">官方路線1</p>
+                                                <input type="hidden" name="route" id="route1" value="12345->54321">
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="2">
+                                            <div class="routeBoxImg">
+                                                <img src="./img/event/event_route2.jpg" alt="">
+                                            </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">官方路線2</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="3">
+                                            <div class="routeBoxImg">
+                                                <img src="./img/event/event_route3.jpg" alt="">
+                                            </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">官方路線3</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="4">
+                                            <div class="routeBoxImg">
+                                                <img src="./img/event/event_cusRout.jpg" alt="">
+                                            </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">自訂路線1</p>
                                             </div>
                                         </div>
-                                        <div class="routeBox routeChose">
+                                        <div class="routeBox routeChose" psn="5">
+                                            <div class="routeBoxImg">
+                                                <img src="./img/event/event_cusRout.jpg" alt="">
+                                            </div>
                                             <div class="routeBoxBottom">
                                                 <p class="routeName">自訂路線2</p>
                                             </div>
-                                        </div>
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線3</p>
-                                                </div>
-                                            </div> -->
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線4</p>
-                                                </div>
-                                            </div> -->
-
-                                        <!-- <div class="routeBox routeChose">
-                                                <div class="routeBoxBottom">
-                                                    <p class="routeName">自訂路線5</p>
-                                                </div>
-                                            </div> -->
-
-                                        <div class="routeBox">
+                                        </div> -->
+                                            <!-- 自訂路線放最後 -->
+                                            <!-- <div class="routeBox addRoutebtn">
                                             <div class="addroute">
                                                 <a href="#">
                                                     自訂路線
                                                 </a>
                                             </div>
+                                        </div> -->
                                         </div>
                                     </div>
-                                </div>
-                                <!-- 右邊按鈕 -->
-                                <div class="slideBtn">
-                                    <input type="button" id="btnRight" value=">">
-                                </div>
-                            </div>
-                            <!-- 顯示選到的路線+景點 -->
-                            <div class="routeClick">
-                                <!-- <p class="clickedRoute">選擇路線 : </p> -->
-                                <!-- <p>景點 : 台北101 -> 台北101 -> 台北101</p> -->
-                            </div>
-                            <!-- 上下一步 -->
-                            <div class="stepBtn">
-                                <div class="backStep stepStop">
-                                    <a href="#" class="btnPinkStop">上一步</a>
-                                </div>
-                                <div class="nextStep">
-                                    <a href="#" class="btnPink">下一步</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 第二步驟內容 -->
-                        <div class="holdevent_step2content stepContent">
-                            <div class="holdevent_step">
-                                <div class="step1">
-                                    <p class="stepBox">STEP1</p>
-                                    <p>選擇路線</p>
-                                </div>
-                                <div class="color" psn="1">
-                                    <p class="stepBox">STEP2</p>
-                                    <p>上傳照片</p>
-                                    <p>填寫資料</p>
-                                </div>
-                                <div class="step3">
-                                    <p class="stepBox">STEP3</p>
-                                    <p>確定</p>
-                                    <p>揪團資訊</p>
-                                </div>
-                            </div>
-                            <div class="step2Info">
-
-                                <div class="holderPic">
-                                    <label class="eventCoverPic" for="">
-                                        <br>
-                                        <input type="file">
-                                    </label>
-                                    <div class="holderPicBox">
-                                        <p>揪團封面照片</p>
+                                    <!-- 右邊按鈕 -->
+                                    <div class="slideBtn">
+                                        <input type="button" id="btnRight" value=">">
                                     </div>
                                 </div>
-                                <div class="holderInfo">
-                                    <div>
-                                        <label class="label2" for="">揪團名稱 :</label>
-                                        <input type="text" name="actTitle" placeholder="">
+                                <!-- 顯示選到的路線+景點 -->
+                                <div class="routeClick">
+                                    <!-- <p class="clickedRoute">選擇路線 : </p> -->
+                                    <!-- <p>景點 : 台北101 -> 台北101 -> 台北101</p> -->
+                                    <!-- <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}"> -->
+                                </div>
+                                <!-- 上下一步 -->
+                                <div class="stepBtn">
+                                    <div class="backStep stepStop">
+                                        <a href="#" class="btnPinkStop">上一步</a>
                                     </div>
-                                    <div>
-                                        <label class="label2" for="">活動日期 :</label>
-                                        <input type="date" name="actTitle" placeholder="">
+                                    <div class="nextStep">
+                                        <a href="#" class="btnPink">下一步</a>
                                     </div>
-                                    <div>
+                                </div>
+                            </div>
+                            <!-- 第二步驟內容 -->
+                            <div class="holdevent_step2content stepContent">
+                                <div class="holdevent_step">
+                                    <div class="step1">
+                                        <p class="stepBox">STEP1</p>
+                                        <p>選擇路線</p>
+                                    </div>
+                                    <div class="color" psn="1">
+                                        <p class="stepBox">STEP2</p>
+                                        <p>上傳照片</p>
+                                        <p>填寫資料</p>
+                                    </div>
+                                    <div class="step3">
+                                        <p class="stepBox">STEP3</p>
+                                        <p>確定</p>
+                                        <p>揪團資訊</p>
+                                    </div>
+                                </div>
+                                <div class="step2Info">
+                                    <div class="holderPic">
+                                        <label class="eventCoverPic">
+                                            <input type="file" name="eventImg" id="eventImg">
+                                        </label>
+                                        <div class="holderPicBox">
+                                            <img src="./img/mood/newMoodPic.png" id="viewImg">
+                                        </div>
+                                    </div>
+                                    <div class="holderInfo">
+                                        <div>
+                                            <label class="label2">揪團名稱 :</label>
+                                            <input type="text" name="actTitle" id="actTitle">
+                                        </div>
+                                        <div>
+                                            <label class="label2">活動日期 :</label>
+                                            <input type="date" name="actDate" id="actDate">
+                                        </div>
+                                        <!-- <div>
                                         <label class="label2" for="">集合時間 :</label>
                                         <select class="time" name="actTitle">
                                             <option value="0:00">0:00</option>
@@ -532,114 +541,109 @@
                                             <option value="23:00">23:00</option>
                                             <option value="23:30">23:30</option>
                                         </select>
+                                    </div> -->
+                                        <div>
+                                            <label class="label2">集合地點 :</label>
+                                            <input type="text" name="meetPlace" id="meetPlace">
+                                        </div>
+                                        <div>
+                                            <label class="label2">報名人數上限 :</label>
+                                            <select class="people" name="maxPeople" id="maxPeople">
+                                                <option value="1">1位</option>
+                                                <option value="2">2位</option>
+                                                <option value="3">3位</option>
+                                                <option value="4">4位</option>
+                                                <option value="5">5位</option>
+                                                <option value="6">6位</option>
+                                                <option value="7">7位</option>
+                                                <option value="8">8位</option>
+                                                <option value="9">9位</option>
+                                                <option value="10">10位</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <div><label class="label2">活動介紹 :</label></div>
+                                            <textarea name="eventInfo" id="eventInfo"
+                                                style="width:380px;height:80px;"></textarea>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <label class="label2" for="">集合地點 :</label>
-                                        <input type="text" name="actTitle" placeholder="">
+                                </div>
+                                <!-- 按鈕 -->
+                                <div class="stepBtn">
+                                    <div class="backStep">
+                                        <a href="#" class="btnPink">上一步</a>
                                     </div>
-                                    <div>
-                                        <label class="label2" for="">報名人數上限 :</label>
-                                        <select class="pelple" name="actTitle">
-                                            <option value="1">1位</option>
-                                            <option value="2">2位</option>
-                                            <option value="3">3位</option>
-                                            <option value="4">4位</option>
-                                            <option value="5">5位</option>
-                                            <option value="6">6位</option>
-                                            <option value="7">7位</option>
-                                            <option value="8">8位</option>
-                                            <option value="9">9位</option>
-                                            <option value="10">10位</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <div><label class="label2" for="">活動介紹 :</label></div>
-                                        <textarea name="" id="" style="width:380px;height:80px;"></textarea>
+                                    <div class="nextStep twoNextStep">
+                                        <a href="#" class="btnPink">下一步</a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- 按鈕 -->
-                            <div class="stepBtn">
-                                <div class="backStep">
-                                    <a href="#" class="btnPink">上一步</a>
-                                </div>
-                                <div class="nextStep">
-                                    <a href="#" class="btnPink">下一步</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 第三步驟內容 -->
-                        <div class="holdevent_step3content stepContent">
-                            <div class="holdevent_step">
-                                <div class="step1">
-                                    <p class="stepBox">STEP1</p>
-                                    <p>選擇路線</p>
-                                </div>
-                                <div class="step2">
-                                    <p class="stepBox">STEP2</p>
-                                    <p>上傳照片</p>
-                                    <p>填寫資料</p>
-                                </div>
-                                <div class="color" psn="2">
-                                    <p class="stepBox">STEP3</p>
-                                    <p>確定</p>
-                                    <p>揪團資訊</p>
-                                </div>
-                            </div>
-                            <div class="step3Info">
-
-                                <div class="holderCover">
-                                    <!-- 抓第二步驟照片 -->
-                                    <div class="holderCoverPic">
-                                        <img src="./img/event/event_museum.jpg" alt="">
+                            <!-- 第三步驟內容 -->
+                            <div class="holdevent_step3content stepContent">
+                                <div class="holdevent_step">
+                                    <div class="step1">
+                                        <p class="stepBox">STEP1</p>
+                                        <p>選擇路線</p>
                                     </div>
-                                    <!-- 抓第一步驟選擇路線+景點 -->
-                                    <div class="holderCoverText">
-                                        <p class="title">官方路線2</p>
-                                        <p>景點 : 台北101 -> 台北101 -> 台北101</p>
+                                    <div class="step2">
+                                        <p class="stepBox">STEP2</p>
+                                        <p>上傳照片</p>
+                                        <p>填寫資料</p>
+                                    </div>
+                                    <div class="color" psn="2">
+                                        <p class="stepBox">STEP3</p>
+                                        <p>確定</p>
+                                        <p>揪團資訊</p>
                                     </div>
                                 </div>
-                                <!-- 抓第二步驟資料 -->
-                                <div class="holderCoverInfo">
-                                    <form action="">
+                                <div class="step3Info">
+                                    <div class="holderCover">
+                                        <!-- 抓第二步驟照片 -->
+                                        <div class="holderCoverPic">
+                                            <img src="./img/mood/newMoodPic.png" id="viewCheckImg">
+                                        </div>
+                                        <!-- 抓第一步驟選擇路線+景點 -->
+                                        <div class="holderCoverText">
+                                            <p class="title" id="checkRoute"></p>
+                                            <p class="title" id="checkAtractions"></p>
+                                        </div>
+                                    </div>
+                                    <!-- 抓第二步驟資料 -->
+                                    <div class="holderCoverInfo">
                                         <table>
                                             <tr>
                                                 <td>揪團名稱 :</td>
-                                                <td>故宮好好玩</td>
+                                                <td id="checkTitle"></td>
                                             </tr>
                                             <tr>
                                                 <td>活動日期 :</td>
-                                                <td>2020-03-01(日)</td>
-                                            </tr>
-                                            <tr>
-                                                <td>集合時間 :</td>
-                                                <td>7:30</td>
+                                                <td id="checkDate"></td>
                                             </tr>
                                             <tr>
                                                 <td>集合地點 :</td>
-                                                <td>信義麥當勞</td>
+                                                <td id="checkPlace"></td>
                                             </tr>
                                             <tr>
                                                 <td>報名人數上限 :</td>
-                                                <td>5位</td>
+                                                <td id="checkPeople"></td>
                                             </tr>
                                             <tr>
                                                 <td>活動介紹 :</td>
-                                                <td>故宮好好玩~~~~~~</td>
+                                                <td id="checkInfo"></td>
                                             </tr>
                                         </table>
-                                    </form>
+                                    </div>
+                                </div>
+                                <div class="stepBtn">
+                                    <div class="backStep">
+                                        <a href="#" class="btnPink">上一步</a>
+                                    </div>
+                                    <div class="send">
+                                        <a href="#" class="btnPink">提交</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="stepBtn">
-                                <div class="backStep">
-                                    <a href="#" class="btnPink">上一步</a>
-                                </div>
-                                <div class="send">
-                                    <a href="#" class="btnPink">提交</a>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -709,7 +713,6 @@
             <!-- 隱藏的揪團報名表單，用來傳送資料到PHP -->
             <form id="eventEnrollForm" style="display:hidden">
                 <input type="hidden" name="enroll_event_number" id="enroll_event_number">
-                <input type="hidden" name="member_number" id="member_number">
                 <input type="hidden" name="enroll_date" id="enroll_date">
             </form>
 
@@ -789,7 +792,7 @@
     <script src="./js/eventLightReport.js"></script>
     <script src="./js/eventEnroll.js"></script>
     <script src="./js/eventInsert.js"></script>
-    <!-- <script src="./js/event.js"></script> -->
+    <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
     <script src="./js/swiper.min.js"></script>
 

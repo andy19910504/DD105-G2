@@ -83,18 +83,22 @@
         .fieldBlock:nth-child(4) {
             flex-direction: column;
         }
-        .fieldBlock:nth-child(4) .optionsBlock{
+
+        .fieldBlock:nth-child(4) .optionsBlock {
             width: 300px;
             height: 300px;
-            overflow: scroll;
+            overflow: auto;
         }
+
         .optionsBlock .options {
             display: flex;
             flex-direction: column;
         }
-        .options input[type='checkbox']{
+
+        .options input[type='checkbox'] {
             margin-right: 10px;
         }
+
         #routeTable .routeAttrName {
             margin-bottom: 5px;
         }
@@ -123,7 +127,8 @@
             <h2>路線管理</h2>
             <div class="content">
                 <div class="titleBlock officalBlock">
-                    <h3>官方路線</h3><button type="button" class="btnAddRoute btn-sm" data-toggle="modal"
+                    <h3>官方路線</h3>
+                    <button type="button" class="btnAddRoute btn-sm" data-toggle="modal"
                         data-target="#exampleModalCenter">新增路線</button>
                 </div>
                 <!-- 燈箱 -->
@@ -170,6 +175,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 隱藏表單 -->
                 <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
                     <input type="text" name="editNumber" id="editNumber">
                     <input type="text" name="editName" id="editName">

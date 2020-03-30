@@ -8,7 +8,7 @@ try {
      `route_information`, `route_photo`,
      `route_status`, `member_number`) VALUES
     (NULL, :routeName, :routeInfo, :routePhoto, :routeStatus, NULL)
- ;";
+    ;";
     $edit = $pdo->prepare($sql);
     $edit->bindValue(":routeName", $_POST["routeName"]);
     $edit->bindValue(":routeInfo", $_POST["routeInfo"]);
@@ -23,14 +23,14 @@ try {
     $attr = explode(',', $_POST["routeAttr"]);
     for ($i = 0; $i < count($attr); $i++) {
         $sql2 = "
-    INSERT INTO `routes_list`
-    (`route_number`, `attraction_number`) VALUES
-    ($num, $attr[$i])
-    ;";
-    $edit2 = $pdo->prepare($sql2);
-    $edit2->execute();
+        INSERT INTO `routes_list`
+        (`route_number`, `attraction_number`) VALUES
+        ($num, $attr[$i])
+        ;";
+    $attrInsert = $pdo->prepare($sql2);
+    $attrInsert->execute();
     }
-   
+   // 修改存取的路線照片名稱
     switch ($_FILES['routePhoto']['error']) {
         case 0:
             if (file_exists("../img/routes") === false) {
@@ -65,6 +65,9 @@ try {
             echo "error.....: ", $_FILES['routePhoto']['error'], "<br>"; // 發生的錯誤代碼
     }
     echo "修改成功!";
+
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+?>

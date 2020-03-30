@@ -1,7 +1,5 @@
 @import './base/var.scss';
 
-@import './modules/filter.scss';
-
 @import './modules/moodConcat.scss';
 
 @import './modules/eventConcat.scss';
@@ -14,7 +12,6 @@
 
 
 // banner 
-
 .banner_01 .routeTitleImage2{
     position: absolute;
     top: 0;
@@ -303,6 +300,7 @@
 }
 .routeAttractionBlock{
     position: relative;
+    margin: 0 30px;
     @media screen and (max-width:860px) {
         margin-bottom: 60px;
     }
@@ -313,7 +311,7 @@
     font-weight: bold;
     position: absolute;
     bottom: 0;
-    transform: translateY(45px);
+    transform: translate(-35px,60px);
 }
 .attractionTitle .landMark{
     animation: markMove 1.5s alternate infinite;

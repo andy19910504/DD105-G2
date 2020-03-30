@@ -64,9 +64,7 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
 
 
 
-// document.getElementById("btnDelIcon").addEventListener("click", function () {
-//     console('1')
-//     alert('1')
+// document.getElementById("step_btn9").addEventListener("click", function () {
 //     let xhr = new XMLHttpRequest();
 //     xhr.onload = function () {
 //         if (xhr.status == 200) {
@@ -77,9 +75,10 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
 //             alert(xhr.status);
 //         }
 //     }
-//     var url = "./php/delicon.php?number=" + document.getElementById("IconPoint").value
-//         + "&url=" + document.getElementById("IconUrl").value;
-//     console.log(url);
+//     var url = "./php/newicon.php?num=" + document.getElementById("IconNum").value + "&point=" + document.getElementById("IconPoint").value +
+//         "&url=" + document.getElementById("IconUrl").value;
 //     xhr.open("Get", url, true);
 //     xhr.send(null);
 // });
+
+

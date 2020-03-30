@@ -83,18 +83,22 @@
         .fieldBlock:nth-child(4) {
             flex-direction: column;
         }
-        .fieldBlock:nth-child(4) .optionsBlock{
+
+        .fieldBlock:nth-child(4) .optionsBlock {
             width: 300px;
             height: 300px;
-            overflow: scroll;
+            overflow: auto;
         }
+
         .optionsBlock .options {
             display: flex;
             flex-direction: column;
         }
-        .options input[type='checkbox']{
+
+        .options input[type='checkbox'] {
             margin-right: 10px;
         }
+
         #routeTable .routeAttrName {
             margin-bottom: 5px;
         }
@@ -122,16 +126,16 @@
 <nav class="col-md-2  d-md-block bg-light sideNav">
     <div class="sidebarContent">
        <ul class="nav flex-column">
-           <li class="navItem"><a href="" class="">帳號管理</a></li>
+           <li class="navItem"><a href="./backMember.html" class="">帳號管理</a></li>
            <li class="navItem"><a href="" class="">心理測驗管理</a></li>
            <li class="navItem"><a href="./backRoute.html" class="nowPage">路線管理</a></li>
            <li class="navItem"><a href="./backAttraction.html" class="">景點管理</a></li>
            <li class="navItem"><a href="" class="">地圖攻略管理</a></li>
-           <li class="navItem"><a href="" class="">心情檢舉管理</a></li>
-           <li class="navItem"><a href="" class="">揪團檢舉管理</a></li>
-           <li class="navItem"><a href="" class="">客製化管理</a></li>
-           <li class="navItem"><a href="" class="">訂單管理</a></li>
-           <li class="navItem"><a href="" class="">機器人管理</a></li>
+           <li class="navItem"><a href="./backMood.html" class="">心情檢舉管理</a></li>
+           <li class="navItem"><a href="./backEvent.html" class="">揪團檢舉管理</a></li>
+           <li class="navItem"><a href="./backpostcard.html" class="">客製化管理</a></li>
+           <li class="navItem"><a href="./back_order.html" class="">訂單管理</a></li>
+           <li class="navItem"><a href="./backRobot.html" class="">機器人管理</a></li>
        </ul>
     </div>
 </nav>
@@ -145,7 +149,8 @@
             <h2>路線管理</h2>
             <div class="content">
                 <div class="titleBlock officalBlock">
-                    <h3>官方路線</h3><button type="button" class="btnAddRoute btn-sm" data-toggle="modal"
+                    <h3>官方路線</h3>
+                    <button type="button" class="btnAddRoute btn-sm" data-toggle="modal"
                         data-target="#exampleModalCenter">新增路線</button>
                 </div>
                 <!-- 燈箱 -->
@@ -192,6 +197,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 隱藏表單 -->
                 <form id="editForm" style="visibility: hidden;width: 0;height: 0;">
                     <input type="text" name="editNumber" id="editNumber">
                     <input type="text" name="editName" id="editName">

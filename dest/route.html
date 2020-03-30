@@ -7,6 +7,7 @@
     <title>台北散步｜散步遊台北</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/route.css">
+    <script src="./js/getLoginInfo.js"></script>
 </head>
 
 <body><a name="GoTop"></a>
@@ -35,10 +36,11 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
             <div class="point">&nbsp;</div>
         </div>
     </div>
@@ -62,12 +64,13 @@
     </nav>
     <div class="memberIcon">
         <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">&nbsp;</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -179,17 +182,19 @@
                     <div class="rays"></div>
                 </div>
             </div>
-            <a href="customRoute.html" class="btnCust">
+            <a href="./customRoute.html" class="btnCust">
     自訂路線
 </a>
         </div>
         <!-- routeFilterBlock -->
         <div class="filterBlock">
-    <ul class="filterAll">
-        <li id="filter1" class="filter showFilter">日式舊屋行</li>
-        <li id="filter2" class="filter">文青品味旅</li>
-        <li id="filter3" class="filter">職人散步去</li>
-    </ul>
+    <div class="filterMask">
+        <ul class="filterAll">
+            <li id="filter1" class="filter showFilter"></li>
+            <li id="filter2" class="filter"></li>
+            <li id="filter3" class="filter"></li>
+        </ul>
+    </div>
     <img src="./img/route/filterBgimage.png" class="filterBgImage">
 </div>
         <div class="routeContent">
@@ -591,7 +596,7 @@
             </div>
 
             <!-- 其他相關分頁的連結 -->
-            <!-- <div class="otherLinkBlock">
+            <div class="otherLinkBlock">
                 <div class="otherLink">
                     <div class="otherLinkTitle">
                         <div class="routeOtherTitleImage"></div>
@@ -853,7 +858,7 @@
             </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <!-- footer -->
         <!-- chatbot -->

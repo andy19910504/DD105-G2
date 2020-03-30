@@ -6,10 +6,10 @@ try{
     select * 
     from `mood` mo 
     join `member` me on (mo.member_number = me.member_number) 
-    :whereSql
+    WHERE mo.mood_class = :moodClass and mo.mood_status = 1
     order by :orderSelect desc";
     $moodCards = $pdo->prepare($sql);
-    $moodCards -> bindValue(":whereSql",$_POST["whereSql"]);
+    $moodCards -> bindValue(":moodClass",$_POST["moodClass"]);
     $moodCards -> bindValue(":orderSelect",$_POST["orderSelect"]);
     $moodCards -> execute();
     
@@ -19,11 +19,11 @@ try{
     $sql2="
     SELECT mo.mood_number,COUNT(ms.mood_number) as 'moodMsgCount'
     FROM `mood` mo LEFT JOIN mood_message ms on mo.mood_number = ms.mood_number 
-    :whereSql
+    WHERE mo.mood_class = :moodClass and mo.mood_status = 1
     GROUP BY mo.mood_number
     ORDER BY :orderSelect desc";
     $moodMsgs = $pdo->prepare($sql2);
-    $moodMsgs -> bindValue(":whereSql",$_POST["whereSql"]);
+    $moodMsgs -> bindValue(":moodClass",$_POST["moodClass"]);
     $moodMsgs -> bindValue(":orderSelect",$_POST["orderSelect"]);
     $moodMsgs -> execute();
 
