@@ -215,6 +215,7 @@
   width: 200px;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 .select .option .route-name {
@@ -245,6 +246,7 @@
   border-radius: 15px;
   background-color: #fff;
   position: relative;
+  cursor: pointer;
 }
 
 .select .switch .button {
@@ -322,6 +324,54 @@
   transition: all 2s;
 }
 
+.game-container .game-map-container .spot2 {
+  position: absolute;
+  top: 1051px;
+  left: 1534px;
+  width: 250px;
+  height: 250px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.game-container .game-map-container .spot3 {
+  position: absolute;
+  top: 1028px;
+  left: 2727px;
+  width: 250px;
+  height: 250px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.game-container .game-map-container .spot4 {
+  position: absolute;
+  top: 1707px;
+  left: 2696px;
+  width: 250px;
+  height: 250px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
+.game-container .game-map-container .spot5 {
+  position: absolute;
+  top: 1688px;
+  left: 1458px;
+  width: 250px;
+  height: 250px;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+}
+
 .game-container .btnRed {
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -356,8 +406,8 @@
 }
 
 .game-container .test-area {
-  width: 200px;
-  height: 300px;
+  width: 70%;
+  height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -373,12 +423,15 @@
           flex-direction: column;
   background-image: url(../img/mapgame/graphy_@2X.png);
   position: relative;
+  border: 4px solid #eee;
+  border-radius: 8px;
 }
 
 .game-container .close-modal {
   position: absolute;
   top: 20px;
   right: 15px;
+  cursor: pointer;
 }
 
 .game-container .test {
@@ -394,6 +447,18 @@
 .game-container .opt1:hover, .game-container .opt2:hover, .game-container .opt3:hover {
   background-color: #D3E9F0;
   border: 1px solid #D3E9F0;
+  border-radius: 5px;
+}
+
+.game-container .right {
+  background-color: #D3E9F0;
+  border: 1px solid #D3E9F0;
+  border-radius: 5px;
+}
+
+.game-container .wrong {
+  background-color: #A9381D;
+  border: 1px solid #A9381D;
   border-radius: 5px;
 }
 

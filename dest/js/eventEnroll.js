@@ -1,28 +1,10 @@
-let member_number;
-
-// 判斷各頁面是否再登入狀態
-function getLoginInfo() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        member_number = JSON.parse(xhr.responseText);
-        console.log(member_number)
-    }
-    xhr.open("get", "./php/loginInfoForFront.php", true);
-    xhr.send(null);
-}; 
-
-window.addEventListener("load", function () {
-    // // 檢查是否為登入狀態
-    getLoginInfo();
-
-});
 function insertEnroll(e) {
     //阻止預設送出事件
     e.preventDefault();
 
     //先抓取被選到的 揪團編號+會員編號
     let enroll_event_number = $(this).parent().parent().parent().parent().attr('psn'); //揪團編號
-    let member_number = member_number.memNum; //會員編號
+    // let member_number = member_number.memNum; //會員編號
 
     
     //先判斷是否有登入會員
@@ -36,12 +18,12 @@ function insertEnroll(e) {
    
     //把抓到的值放到html中一個隱藏的表單內
     document.getElementById("enroll_event_number").value =  enroll_event_number;
-    document.getElementById("member_number").value = member_number ;
+    // document.getElementById("member_number").value = member_number ;
 
     // -------------------測試值是否正確放入表單--------------------
     console.log("----------------------");
     console.log(document.getElementById("enroll_event_number").value);
-    console.log(document.getElementById("member_number").value);
+    // console.log(document.getElementById("member_number").value);
     console.log("----------------------");
     // ------------------------------------------------------------
 
@@ -52,7 +34,7 @@ function insertEnroll(e) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            //alert(xhr.responseText);
+            alert(xhr.responseText);
         } else {
             alert(xhr.status + "失敗");
         }

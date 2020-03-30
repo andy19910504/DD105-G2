@@ -52,11 +52,16 @@
     transform: rotate(30deg);
     position: absolute;
 }
+
 .customForm{
     border: 2px solid #ccc;
+    border-radius: $radius;
     width: 100%;
     max-width: 800px;
     padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+
 }
 .fieldBlock{
     display: flex;
@@ -68,18 +73,27 @@
         width: 250px;
         text-align: right;
     }
+    .customRouteTitle{
+        width: 100%;
+        margin-bottom: 60px;
+        padding-right: 40px;
+        text-align: right;
+        img{
+            filter: brightness(.3);
+        }
+    }
 }
-.fieldBlock:nth-child(2){
+.fieldBlock:nth-child(3){
     align-items: flex-start;
 }
-.fieldBlock:nth-child(4){
+.fieldBlock:nth-child(5){
     flex-direction: column;
     .map-container {
         margin: 10px auto;
         width: 100%;
         max-width: 800px;
         height: 600px;
-        border-radius: 6px;
+        border-radius: $radius;
         overflow: hidden;
         #map {
             width: 100%;
@@ -95,7 +109,7 @@
         }
     }
 }
-.fieldBlock:nth-child(5){
+.fieldBlock:nth-child(6){
     justify-content: center;
     .confirmBtn{
         margin-top: 60px ;
@@ -108,7 +122,7 @@
     height: 30px;
     padding: 2px 0 0 10px;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: $radius;
 }
 .routeDesc {
     height: 100px;

@@ -4,6 +4,7 @@ function getRouteInfo(info) {
     let customTable = document.getElementById("customTable");
     let routeInfo = JSON.parse(info);
     let keys = Object.keys(routeInfo.attractions);
+    let customKeys = Object.keys(routeInfo.customAttr);
     console.log(routeInfo)
     // console.log(routeInfo.customInfo)
     // console.log(routeInfo.routeInfo[0]['route_number']);
@@ -73,11 +74,11 @@ function getRouteInfo(info) {
                 <td>
                     <div>
                 `
-        for (let n = 0; n < keys.length; n++) {
+        for (let n = 0; n < customKeys.length; n++) {
 
-            if (routeInfo.customInfo[c]['route_number'] == routeInfo.attractions[n]['route_number']) {
+            if (routeInfo.customInfo[c]['route_number'] == routeInfo.customAttr[n]['route_number']) {
                 customRow += `
-                    <div class="routeAttrName">${routeInfo.attractions[n]['attraction_name']}</div>
+                    <div class="routeAttrName">${routeInfo.customAttr[n]['custom_attraction_name']}</div>
                             `
             }
         }
