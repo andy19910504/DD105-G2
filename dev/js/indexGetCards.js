@@ -10,7 +10,7 @@ function getLoginInfo() {
     xhr.send(null);
 }; 
 
-//檢舉 函式
+//檢舉心情 函式
 function reportMood(){
     loginStatus = $(".sign").text();
     let moodNum = $("#msgMoodNum").val();
@@ -194,7 +194,6 @@ function showMoodDatail(moodDatailData){
     })
 }
 
-
 //動態新增心情卡片 函式
 function showCards(moodData){
     let moodCardsWrap = document.getElementById('moodCardsWrap');
@@ -288,7 +287,7 @@ function showCards(moodData){
     })
    
 }
-
+//撈取心情卡片 函式
 function getMoodCards() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -305,17 +304,16 @@ function getMoodCards() {
 }
 
 
-
-
-
 window.addEventListener('load', function () {
     
-    //撈取心情卡片---------------------------------
-    getMoodCards();
-
     //取得登入資料---------------------------------
     getLoginInfo();
 
+    //撈取心情卡片---------------------------------
+    getMoodCards();
+
+    //撈取揪團卡片---------------------------------
+    // getEventCards();
     
     
 })
