@@ -138,7 +138,7 @@ function LightEventRouteinfo(routes) {
         html += `
         <div class="routeBox routeChose" psn="${officialRouteTable[i]['route_number']}">
             <div class="routeBoxImg">
-                <img src="./img/event/event_${officialRouteTable[i]['route_photo']}" alt="">
+                <img src="./img/event/event_route00${i+1}.jpg" alt="">
             </div>
             <div class="routeBoxBottom">
                 <p class="routeName">${officialRouteTable[i]['route_name']}</p>
