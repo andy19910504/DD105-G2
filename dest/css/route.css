@@ -258,9 +258,19 @@ div.eventCard {
       div.eventCard div.cardText span:hover {
         color: #A5361C; }
 
+@media screen and (max-width: 1210px) {
+  div.eventCard {
+    margin: 25px auto;
+    flex-wrap: wrap; } }
+
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin: 0px auto; } }
+    margin: 0px auto; }
+  div.eventCard {
+    margin: 35px auto;
+    flex-wrap: wrap; }
+  div.cardBox {
+    justify-content: center; } }
 
 .eventCard:hover {
   transform: translateY(-10px); }
@@ -330,43 +340,52 @@ div.eventCard {
   right: 10px;
   font-size: 32px;
   margin: 10px;
+  top: 0px;
   position: absolute; }
 
-.lightbox_holdevent_info, .lightbox_detailevent_info {
+.lightbox_detailevent_info {
   position: relative;
   border-radius: 6px;
-  padding: 0 1% 1.5%;
-  background-image: url(../img/event/greenBg2.png);
-  background-size: cover;
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 1200px;
-  height: 750px;
+  justify-content: center;
+  width: 1000px;
+  height: 700px;
   border-radius: 15px;
-  align-items: center;
   overflow: hidden; }
-  .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
+
+.lightbox_holdevent_info {
+  position: relative;
+  border-radius: 6px;
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 780px;
+  border-radius: 15px;
+  overflow: hidden; }
+  .lightbox_holdevent_info .holdevent_title {
     text-align: center;
     color: #1e1e1e;
     font-size: 24px;
     font-weight: bold;
-    margin: 30px auto 15px auto;
-    padding: 10px 20px;
+    margin-top: 35px;
     letter-spacing: 1.875px;
     width: 200px; }
-  .lightbox_holdevent_info .stepALL, .lightbox_detailevent_info .stepALL {
-    height: 536px;
+  .lightbox_holdevent_info .stepALL {
+    margin: 50px 0;
     width: 100%; }
-  .lightbox_holdevent_info form, .lightbox_detailevent_info form {
-    height: 536px; }
-  .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
+  .lightbox_holdevent_info .holdevent_step {
     margin: 10px auto;
     text-align: center;
     display: flex;
     justify-content: center; }
-    .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
+    .lightbox_holdevent_info .holdevent_step div {
       margin: 0 55px;
       width: 120px;
       height: 120px;
@@ -378,35 +397,50 @@ div.eventCard {
       background-position: center;
       background-image: url(../img/event/event_step3.png);
       font-size: 18px; }
-      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
+      .lightbox_holdevent_info .holdevent_step div p {
         margin-bottom: 5px; }
-      .lightbox_holdevent_info .holdevent_step div .stepBox, .lightbox_detailevent_info .holdevent_step div .stepBox {
+      .lightbox_holdevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
-    .lightbox_holdevent_info .holdevent_step .color, .lightbox_detailevent_info .holdevent_step .color {
+    .lightbox_holdevent_info .holdevent_step .color {
       background-image: url(../img/event/event_stepOn.png); }
+
+@media screen and (max-width: 767px) {
+  .lightbox_holdevent_info {
+    overflow-y: scroll; } }
 
 @media screen and (max-width: 1200px) {
   .lightbox_holdevent_info {
     width: 90%; } }
 
+@media screen and (max-width: 767px) {
+  div.holdevent_step1content .step2, div.holdevent_step1content .step3 {
+    display: none; } }
+
 .detaileventContent {
-  width: 100%;
   font-size: 18px;
+  padding: 0px 50px;
+  width: 100%;
   color: #1e1e1e;
   display: flex;
-  padding-top: 85px;
   letter-spacing: 1.2px;
-  justify-content: center;
-  line-height: 1.75; }
+  align-items: center;
+  justify-content: center; }
   .detaileventContent .detaileventPic {
-    padding: 10px 10px 10px 25px;
-    margin: 0px 30px 0px 0px; }
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    padding-left: 20px; }
     .detaileventContent .detaileventPic .title {
+      font-size: 24px;
+      color: #206B95;
+      font-weight: bolder;
       display: flex;
+      margin-bottom: 30px;
       position: relative; }
       .detaileventContent .detaileventPic .title .eventInfotitle {
         font-size: 24px;
-        font-weight: 550; }
+        color: #206B95;
+        font-weight: bolder; }
       .detaileventContent .detaileventPic .title .dotWrap {
         right: 25px;
         width: 40px;
@@ -424,20 +458,23 @@ div.eventCard {
         border-radius: 100%;
         background-color: #646464; }
     .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 500px;
-      margin: 15px 0;
-      padding-top: 20px; }
+      width: 400px;
+      height: 300px;
+      border-radius: 5px;
+      overflow: hidden; }
       .detaileventContent .detaileventPic .detaileventPicbox img {
-        width: 100%;
-        border-radius: 5px; }
+        width: 100%; }
     .detaileventContent .detaileventPic .detaileventRoute {
-      margin: 0px 0 20px 0px;
+      margin: 25px 0 0px 0px;
       font-size: 20px;
       letter-spacing: 2px;
       color: #646464; }
   .detaileventContent .detaileventText {
-    padding: 95px 0px 0px 55px;
-    width: 45%; }
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0 0 60px; }
     .detaileventContent .detaileventText .eventInforow {
       height: 45px;
       line-height: 45px;
@@ -455,15 +492,16 @@ div.eventCard {
 
 .enroll {
   position: absolute;
-  bottom: 58px; }
+  bottom: 40px; }
 
 .lightbox_report_info {
   position: fixed;
   background-color: #d4d3d3;
-  background-image: url(../img/event/greenBg2.png);
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
-  width: 20%;
-  height: 40%;
+  width: 300px;
+  height: 300px;
   margin: auto;
   top: 15%;
   left: 0;
