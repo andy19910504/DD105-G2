@@ -3,7 +3,10 @@
 
 
 
-
+.height_auto{
+    // transition: all 0.8s;
+    height: auto  !important;
+}
 .minheightbig {
     min-height: 656px;
 
@@ -714,7 +717,7 @@
             margin-top: 0;
             display: inline-block;
         }
-        div:nth-child(2){
+        div:nth-child(3){
             margin-left: 5%;
         }
     }
@@ -742,33 +745,71 @@
     font-size: 0;
 }
 
-.member_info_share_all {
+.member_info_share_all_all {
     border-radius: 5px;
     border: 1px solid $fcInfo;
     background-image: url(../img/member/hip-square.png);
     margin-left: 1.5%;
     margin-right: 1.5%;
-    margin-bottom: 3%;
+    margin-bottom: 2.375%;
     padding: 1% 1% 2% 1%;
     display: inline-block;
     width: 30%;
-    font-size: 16px;
+    font-size: 18px;
     // border-radius: 15px;
+    // width: 47%;
+    // margin-left: 1.5%;
+    // margin-right: 1.5%;
 }
 
 .member_info_share_kind {
     // border: 1px solid red;
-    padding: 1%;
+    padding: 2%;
+    select{
+        font-size: 18px;
+        width: 100%;
+        background-image: url(../img/member/hip-square.png);
+        border: 3px dashed transparent;
+        pointer-events: none;
+    }
+    select:focus{
+        border: 3px dashed $importantColor
+    }
 }
 
 .member_info_share_image {
+    // pointer-events: none;
     // border: 1px solid red;
     padding: 1% 0;
+    // cursor: pointer;
 }
+.member_info_share_image img {
+    transition: all 0.8s;
+}
+.member_info_share_image>label{
+    pointer-events: none;
+    cursor: pointer;
+}
+.member_info_share_image>label>div>div{
+
+    padding: 2%;
+    background-image: url(../img/member/memphis-colorful.png);
+}
+.member_info_share_image>label>div>div>div{
+    overflow: hidden;
+}
+.member_info_share_image>label>div>div:nth-child(2){
+    text-align: center;
+    img{
+        width: 27px;
+    vertical-align: text-bottom;
+    }
+}
+
 
 .member_info_share_heart {
     // border: 1px solid red;
-    padding: 1% 0;
+    padding: 2% 0;
 
     img {
         width: 13%;
@@ -784,7 +825,22 @@
 }
 .member_info_share_word{
     // border: 1px solid red;
-    padding: 2% ;
+    // padding: 5% 0 ;
+    textarea{
+        padding: 1%;
+        // border: 1px solid blue;
+        width: 100%;
+        font-size: 18px;
+        background-image: url(../img/member/hip-square.png);
+        resize: none;
+        text-indent: 36px;
+        border: 3px dashed transparent;
+        pointer-events: none;
+
+    }
+    textarea:focus{
+        border: 3px dashed $importantColor;
+    }
 }
 .member_info_share_button{
     text-align: center;
@@ -794,13 +850,17 @@
 // .member_info_share_button>a:nth-child(2){
 //     border: 1px solid red;
 // }
-.member_info_share_all:hover {
+.member_info_share_all_all:hover {
     box-shadow: $heavierShadow;
+    .member_info_share_image>label>div>div>div>img {
+        transform: scale(1.1);
+    }
+
 }
 
 
 @media screen and (max-width:1200px) {
-    .member_info_share_all {
+    .member_info_share_all_all {
         width: 47%;
         margin-left: 1.5%;
         margin-right: 1.5%;
@@ -809,19 +869,19 @@
     // .member_info_share div div div p{
     //     padding-left: 16%;
     // }
-    .member_info_share_button>a:nth-child(2){
+    .member_info_share_button>div:nth-child(3){
         margin-left: 12%;
     }
 }
 
 @media screen and (max-width:$medium) {
-    .member_info_share_button>a:nth-child(2) {
+    .member_info_share_button>div:nth-child(3) {
         margin-left: 6%;
     }
 }
 
 @media screen and (max-width:767px) {
-    .member_info_share_all {
+    .member_info_share_all_all {
         // border: 1px solid red;
         width: 100%;
         margin-left: auto;
@@ -829,7 +889,7 @@
         padding: 1% 3% 2% 3%;
     }
 
-    .member_info_share_button>a:nth-child(2){
+    .member_info_share_button>div:nth-child(3){
         margin-left: 17%;
     }
 }
@@ -843,7 +903,7 @@
 
     // }
 
-    .member_info_share_button>a:nth-child(2){
+    .member_info_share_button>div:nth-child(3){
         margin-left: 2%;
     }
 }
@@ -866,7 +926,15 @@
     background-image: url(../img/member/hip-square.png);
     // border: 1px solid green;
     border-radius: 5px;
+    margin-bottom: 2.375%;
+    height: 100px;
+    overflow: hidden;
+    // transition: all 8s;
 }
+
+// .member_info_order>div>div:nth-child(2){
+//     height: 200px;
+// }
 
 .member_info_order>div>div:hover {
     box-shadow: $heavierShadow;
@@ -1032,6 +1100,9 @@
             padding-bottom: 20px;
         }
     }
+    .member_info_order>div>div{
+        height: 135px;
+    }
 
     // .member_info_order_bottom>div{
     //     // border: 1px solid red;
@@ -1048,6 +1119,9 @@
     //     margin-left: 15%;
     //     margin-right: 15%;
     // }
+    .member_info_order>div>div{
+        height: 100px;
+    }
 }
 
 @media screen and (max-width:$small) {
@@ -1063,6 +1137,9 @@
             width: 100%;
             padding-bottom: 20px;
         }
+    }
+    .member_info_order>div>div{
+        height: 170px;
     }
 }
 
@@ -1086,6 +1163,7 @@
     border: 1px solid $fcInfo;
     background-image: url(../img/member/hip-square.png);
     font-size: 0px;
+    padding-top: 30px;
     border-radius: 5px;
 
     // h1 {
@@ -1182,6 +1260,34 @@
     font-size: $fzContent;
     vertical-align: top;
     padding-left:2%;
+    div:nth-child(1){
+        // border:1px solid red;
+        // font-size: 0px;
+        // height: 51px;
+        label{
+            vertical-align: top;
+            padding-top: 5px;        
+            // border:1px solid rgb(152, 152, 161);
+            
+
+        }
+        div{
+            font-size: $fzContent;
+            display: inline-block;
+            // border:1px solid blue;
+            width: 70%;
+            // text-align:center;
+            // height: 30px;
+            // text-indent: 36px;
+            margin-left: 5%;
+            font: 400 Arial;
+            div{
+                // border:1px solid green;
+                height: 30px;
+                margin-left: 0;
+            }
+        }
+    }
 
     // p {
     //     border-bottom: 1px solid $fcInfo;
@@ -1202,10 +1308,10 @@
     }
     textarea{
         text-indent: 36px;
-        border:unset;
-        text-decoration:underline;
+        border:3px dashed transparent;
+        // text-decoration:underline;
         background-image: url(../img/member/hip-square.png);
-        padding: 1% 0;
+        padding: 1% ;
         font-size: $fzContent;
         display: inline-block;
         // border: 1px solid green;
@@ -1229,12 +1335,28 @@
         width: 20%;
     }
     input{
-        text-indent: 36px;
+        // text-indent: 36px;
         // padding: 1% 0;
         font-size: $fzContent;
         display: inline-block;
         // border: 1px solid green;
-        width: 75%;
+        width: 70%;
+        margin-left: 5%;
+        // padding-left: 2%;
+        border:unset;
+        // border-bottom: 1px solid $fcInfo;
+        background-color: unset;
+        height: 30px;
+        pointer-events: none;
+    }
+    select{
+         // text-indent: 36px;
+        // padding: 1% 0;
+        font-size: $fzContent;
+        display: inline-block;
+        // border: 1px solid green;
+        width: 70%;
+        margin-left: 5%;
         // padding-left: 2%;
         border:unset;
         // border-bottom: 1px solid $fcInfo;
@@ -1250,6 +1372,28 @@
     }
     textarea:focus{
         border:3px dashed $importantColor;
+    }
+}
+.member_info_open_all_right>div:nth-child(7){
+    // border: 1px solid red;
+    label{
+        vertical-align: top;
+    }
+    div{
+        // border: 1px solid blue;
+        display: inline-block;
+        width: 75%;
+        div{
+            font-size: $fzContent;
+            display: inline-block;
+            // border:1px solid green;
+            // text-align:center;
+            height: 30px;
+            // text-indent: 36px;
+            margin-left: 5%;
+            font: 400 Arial;
+            padding-left: 2%;
+        }
     }
 }
 
@@ -1300,6 +1444,7 @@
     }
 }
 @media screen and (max-width:767px){
+
     .member_info_open_all_right > div label{
         // border: 1px solid red;
         width: 100%;
@@ -1310,10 +1455,26 @@
         // padding: 1%;
         margin-top: 10px;
         // padding: 0%;
-        text-align: center;
+        // text-align: center;
         // border: 1px solid red;
         width: 100%;
-        text-indent: unset;
+        text-indent: 36px;
+    }
+    .member_info_open_all_right > div input[type=date]{
+        text-indent: 18px;
+    }
+    .member_info_open_all_right > div select{
+        text-indent: 36px;
+    }
+    .member_info_open_all_right > div:nth-child(1) div{
+        text-indent: 36px;
+        // border: 1px solid red;
+
+    }
+    .member_info_open_all_right > div:nth-child(1) div:nth-child(2)>div:nth-child(1){
+        text-indent: 0px;
+        // border: 1px solid red;
+
     }
     .member_info_open_all_right > div:nth-child(9) textarea{
         // padding: 1%;
@@ -1323,6 +1484,12 @@
         // border: 1px solid red;
         width: 100%;
         // text-indent: unset;
+        text-indent: 36px;
+}
+.member_info_open_all_right > div:nth-child(7)> div:nth-child(2) div{
+    // border:1px solid red;
+    text-indent: 36px;
+
 }
 }
 @media screen and (max-width:$small) {
@@ -1362,6 +1529,9 @@
     font-size: 0px;
     border-radius: 5px;
     // border: 1px solid red;
+    padding-top: 30px;
+    height: 110px;
+    overflow: hidden;
 
     // h1 {
     //     // border: 1px solid red;
@@ -1456,21 +1626,37 @@
 // .member_info_join_all_right>div{
 // border-bottom: 1px solid $fcInfo;
 // }
+.member_info_join_all_right>div:nth-child(7){
+    // border: 1px solid red;
+    label{
+        vertical-align: top;
+        // border: 1px solid green; 
+    }
+    div{
+        width: 75%;
+        display: inline-block;
+        // border: 1px solid blue;
+        input{
+            padding-left: 2%;
+        }
+    }
+}
 .member_info_join_all_right>div:nth-child(9){
     label{
         vertical-align: top;
     }
     textarea{
-        text-indent: 36px;
+        // text-indent: 36px;
         border:unset;
-        text-decoration:underline;
+        // text-decoration:underline;
         background-image: url(../img/member/hip-square.png);
-        padding: 1% 0;
+        padding: 1% ;
         font-size: $fzContent;
         display: inline-block;
         // border: 1px solid green;
-        width: 75%;
-        padding-left: 2%;
+        width: 70%;
+        margin-left: 5%;
+        // padding-left: 2%;
         resize:none;
     }
 }
@@ -1490,11 +1676,12 @@
         width: 20%;
     }
     input{
-        text-indent: 36px;
+        // text-indent: 36px;
         // padding: 1% 0;
         font-size: $fzContent;
         display: inline-block;
-        width: 75%;
+        margin-left:5%;
+        width: 70%;
         // padding-left: 2%;
         border:unset;
         // border-bottom: 1px solid $fcInfo;
@@ -1531,7 +1718,6 @@
     //     width: 80%;
     //     padding-left: 0px;
     // }
-}
 
 @media screen and (max-width:$medium) {
     .member_info_join_all_left {
@@ -1548,6 +1734,9 @@
         width: 100%;
         padding-left: 0px;
     }
+    .member_info_join_all_all{
+        height: 105px;
+    }
 }
 @media screen and (max-width:767px){
     .member_info_join_all_right > div label{
@@ -1561,10 +1750,13 @@
         // padding: 1%;
         margin-top: 10px;
         // padding: 0%;
-        text-align: center;
+        text-indent: 36px;
+        // text-align: center;
         // border: 1px solid red;
         width: 100%;
-        text-indent: unset;
+    }
+    .member_info_join_all_right > div input[type=date]{
+        text-indent: 18px;
     }
     .member_info_join_all_right > div:nth-child(9) textarea{
                 // padding: 1%;
@@ -1573,10 +1765,19 @@
                 text-align: left;
                 // border: 1px solid red;
                 width: 100%;
-                // text-indent: unset;
+                text-indent: 36px;
+    }
+    .member_info_join_all_all{
+        padding-top: 20px;
+    height: 85px;
+    // margin-bottom: 5%;
     }
 }
 @media screen and (max-width:$small) {
+    // .member_info_join_all_all{
+    //     padding-top: 17px;
+    //     height: 70px;
+    // }
     .member_info_join_all_all h1 {
         font-size: $fzContent;
     }
@@ -1584,8 +1785,13 @@
     .member_info_join_all_right {
         font-size: $fzInfo;
     }
-
-    .member_info_join_all_bottom a:nth-child(2) {
-        margin-left: 5%;
+    .member_info_join_all_all{
+        padding-top: 10px;
+    height: 65px;
     }
+
+    // .member_info_join_all_bottom a:nth-child(2) {
+    //     margin-left: 5%;
+    // }
+}
 }
