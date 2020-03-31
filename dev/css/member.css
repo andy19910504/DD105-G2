@@ -638,20 +638,54 @@ blockquote, q {
 }
 
 .member_info_line_all_left {
-  width: 50%;
-  padding-left: 10%;
+  width: 70%;
   display: inline-block;
   font-size: 24px;
 }
 
-.member_info_line_all_right {
-  width: 50%;
-  display: inline-block;
+.member_info_line_all_left input {
   text-align: center;
+  padding: 2%;
+  display: block;
+  width: 100%;
+  font-size: 24px;
+  background-color: unset;
+  border: 3px solid transparent;
+  pointer-events: none;
 }
 
-.member_info_line_all_right a:nth-child(2) {
-  margin-left: 5%;
+.member_info_line_all_left input:focus {
+  border: 3px dashed #a5361c;
+}
+
+.member_info_line_all_left textarea {
+  font-size: 16px;
+  text-indent: 32px;
+  word-break: break-all;
+  padding: 2%;
+  display: block;
+  width: 100%;
+  resize: none;
+  background-color: unset;
+  border: 3px solid transparent;
+  pointer-events: none;
+}
+
+.member_info_line_all_left textarea:focus {
+  border: 3px dashed #a5361c;
+}
+
+.member_info_line_all_right {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.member_info_line_all_right div {
+  margin: 0 auto;
+  display: block;
+  margin-top: 5%;
 }
 
 .member_info_line_all_bottom {
@@ -659,6 +693,7 @@ blockquote, q {
   border: 6px solid #ccc;
   border-radius: 6px;
   height: 500px;
+  border: 1px solid red;
 }
 
 @media screen and (max-width: 767px) {
@@ -670,6 +705,13 @@ blockquote, q {
   }
   .member_info_line_all_right {
     width: 100%;
+  }
+  .member_info_line_all_right div {
+    margin-top: 0;
+    display: inline-block;
+  }
+  .member_info_line_all_right div:nth-child(2) {
+    margin-left: 5%;
   }
   .member_info_line_all_bottom {
     margin: 0 auto;
@@ -926,7 +968,7 @@ blockquote, q {
   margin-bottom: 3%;
   display: block;
   background-color: unset;
-  border: unset;
+  border: 3px solid transparent;
 }
 
 .member_info_open_all_all > form > input:focus {
@@ -1052,7 +1094,7 @@ blockquote, q {
   text-align: center;
 }
 
-.member_info_open_all_bottom a:nth-child(3) {
+.member_info_open_all_bottom div:nth-child(3) {
   margin-left: 10%;
 }
 
@@ -1097,7 +1139,7 @@ blockquote, q {
   .member_info_open_all_right {
     font-size: 16px;
   }
-  .member_info_open_all_bottom a:nth-child(3) {
+  .member_info_open_all_bottom div:nth-child(3) {
     margin-left: 5%;
   }
 }
@@ -1132,7 +1174,7 @@ blockquote, q {
   margin-bottom: 3%;
   display: block;
   background-color: unset;
-  border: unset;
+  border: 3px solid transparent;
 }
 
 .member_info_open_all_left > div > div > img {
