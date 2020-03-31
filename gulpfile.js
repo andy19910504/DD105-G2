@@ -103,7 +103,7 @@ gulp.task('default', function () { // default 只要打gulp 即可執行
             proxy: 'localhost:8080',/*代理到上面php的地址，这个非常重要，否则不能同时支持php和页面时时刷新！*/
             port:3000,
             watch: true,
-            index: "backpostcard.html"
+            index: "welcome.html"
         }
     });
     connectPhp.server(options);/*启动服务*/

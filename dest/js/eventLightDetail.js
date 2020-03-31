@@ -19,13 +19,7 @@ function $id(id) {
 // }
 
 // 關燈箱-活動詳情
-function closeEventInfo() {
-    let eventinfo_back = document.querySelectorAll(".eventinfo_back");
-    for (let j = 0; j < eventinfo_back.length; j++) {
-        eventinfo_back[j].style.display = "none";
 
-    }
-}
 
 // // 動態新增燈箱-活動詳情
 // function LightEventinfo(event) {
@@ -118,7 +112,5 @@ function closeEventInfo() {
 //     xhr.send(null);
 // }
 
-//註冊活動詳情燈箱關閉click事件
-$(document).on('click', '.eventinfoClose', closeEventInfo);
 
 window.addEventListener("load", check());

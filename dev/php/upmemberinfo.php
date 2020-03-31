@@ -22,10 +22,10 @@ try {
         if($_FILES['photo_up']['error']==0){
             echo "修改會員資料成功1";
             //存不存在
-		    if( file_exists("../../img/memberPhoto") === false){
+		    if( file_exists("../img/memberPhoto") === false){
 			    //make directory
 			    //新增資料夾
-                mkdir("../../img/memberPhoto");		
+                mkdir("../img/memberPhoto");		
             }
             $from = $_FILES['photo_up']['tmp_name'];
             echo $from;
@@ -33,14 +33,14 @@ try {
             $namee = explode(".",$_FILES['photo_up']['name']);//00.jpg
             // echo $namee[0];
             echo $namee[1];
-            $to = "../../img/memberPhoto/$number.$namee[1]";
+            $to = "../img/memberPhoto/$number.$namee[1]";
             // $to = "images/{$_FILES['upFile']['name']}";
             echo $to;
             echo $number.$namee[1];
             
             if(copy($from, $to)){
                 echo "上傳成功00";
-                header("Location:../../member.html"); 
+                header("Location:../member.html"); 
                 //回寫照片的檔名為會員編號
                 $sql = "update `member` set member_photo=:photo where member_number=:number";
                     $upmemberpho = $pdo->prepare($sql);
@@ -49,7 +49,7 @@ try {
                         $upmemberpho->execute();
                 if($upmemberpho->rowCount() == 1){
                     echo "上傳成功11";
-                    header("Location:../../member.html"); 
+                    header("Location:../member.html"); 
                 }
                 }else{
                     echo "修改會員資料失敗11";
@@ -57,7 +57,7 @@ try {
 
         }else{
             echo $_FILES['photo_up']['error'];
-            header("Location:../../member.html"); 
+            header("Location:../member.html"); 
         }
     
 } catch (PDOException $e) {

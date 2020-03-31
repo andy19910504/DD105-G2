@@ -27,6 +27,7 @@ function insertRow(e) {
     xhr.onload = function () {
         if (xhr.status == 200) {
             // alert(xhr.responseText);
+            location.reload();
         } else {
             alert(xhr.status + "失敗");
         }
@@ -62,7 +63,7 @@ function imgChange() {
 //把第二步驟抓到的值放到第三步驟
 function stepCheck() {
 
-    let checkRoute = $('.routeClickName').text().substring(5);//抓被點選的路線名稱
+    let checkRoute = $('.routeClickName').text();//抓被點選的路線名稱
     let checkAtractions = $('.attractions').text().substring(3);//抓被點選的景點
     let event_name = $('#actTitle').val();
     let event_date = $('#actDate').val();
@@ -90,7 +91,7 @@ function routeClick() {
         //每次點選都清空
         $('.routeClick').text('');
         //append 點選到的路線和景點+路線編號
-        $(`<p class="routeClickName">選擇路線:${routeName}</p> <p class="attractions">景點:${attractions}</p> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
+        $(`<div><i class="fas fa-map-signs"></i> <p class="routeClickName">路線:${routeName}</p></div><div> <i class="fas fa-map-pin"></i> <p class="attractions">景點:${attractions}</p></div> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
 
     });
 }

@@ -24,29 +24,28 @@ function LightEventinfo(events) {
     let eventinfoLight = $id("eventinfoLight");
     let eventTable = JSON.parse(events);//把JSON字串翻譯成JS
     let html = "";
-
+    console.log(eventTable);
     for (i = 0; i < eventTable.length; i++) {
         html += `
     <div id="event${eventTable[i].event_number}" class="eventinfo_back" psn="${eventTable[i].event_number}">
         <div class="lightbox_detailevent">
             <div class="lightbox_detailevent_info">
+                    <div  class="lightReport">
+                        <span class="dot1"></span>
+                        <span class="dot2"></span>
+                    </div>
                     <div class="close eventinfoClose">✘</div>
                     <div class="detaileventContent">
                         <div class="detaileventPic">
                             <div class="title">
                                 <div class="eventInfotitle">${eventTable[i].event_name}</div>
-                                <div class=" dotWrap lightReport">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
                             </div>
                             <div class="detaileventPicbox">
                                 <img src="./img/eventPhoto/${eventTable[i].event_cover_url}">
                             </div>
                             <div class="detaileventRoute">
-                                <p>${eventTable[i].route_name}</p>
-                                <p>台北101 -> 台北101 -> 台北101</p>
+                                <p>路線: ${eventTable[i].route_name}</p>
+                                <p>景點: </p>
                             </div>
                         </div>
                         <div class="detaileventText">
@@ -154,6 +153,15 @@ function check() {
     xhr.send(data_info);
     // console.log(data_info)
 }
+function closeEventInfo() {
+    let eventinfo_back = document.querySelectorAll(".eventinfo_back");
+    for (let j = 0; j < eventinfo_back.length; j++) {
+        eventinfo_back[j].style.display = "none";
+
+    }
+}
+//註冊活動詳情燈箱關閉click事件
+$(document).on('click', '.eventinfoClose', closeEventInfo);
 
 window.addEventListener("load", check());
 

@@ -29,10 +29,10 @@ try {
         if($_FILES['event_pho']['error']==0){
             echo "修改路線成功1";
             //存不存在
-		    if( file_exists("../../img/eventPhoto") === false){
+		    if( file_exists("../img/eventPhoto") === false){
 			    //make directory
 			    //新增資料夾
-                mkdir("../../img/eventPhoto");		
+                mkdir("../img/eventPhoto");		
             }
             $from = $_FILES['event_pho']['tmp_name'];
             echo $from;
@@ -40,14 +40,14 @@ try {
             $namee = explode(".",$_FILES['event_pho']['name']);//00.jpg
             // echo $namee[0];
             echo $namee[1];
-            $to = "../../img/eventPhoto/event_cover_url$event_number.$namee[1]";
+            $to = "../img/eventPhoto/event_cover_url$event_number.$namee[1]";
             // $to = "images/{$_FILES['upFile']['name']}";
             echo $to;
             // echo `event_cover_url$event_number.$namee[1]`;
             
             if(copy($from, $to)){
                 echo "上傳成功00";
-                header("Location:../../member.html"); 
+                header("Location:../member.html"); 
                 //回寫照片的檔名為會員編號
                 $sql = "update `event` set event_cover_url=:photo where event_number=:event_number";
                     $upopenpho = $pdo->prepare($sql);
@@ -56,7 +56,7 @@ try {
                         $upopenpho->execute();
                 if($upopenpho->rowCount() == 1){
                     echo "上傳成功11";
-                    header("Location:../../member.html"); 
+                    header("Location:../member.html"); 
                 }
                 }else{
                     echo "修改路線失敗11";
@@ -64,7 +64,7 @@ try {
 
         }else{
             echo $_FILES['event_pho']['error'];
-            header("Location:../../member.html"); 
+            header("Location:../member.html"); 
         }
     
 } catch (PDOException $e) {
