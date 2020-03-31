@@ -99,6 +99,8 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        //顯示手機方向鍵
+        $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
         if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
             // show manual-modal
             $('header.fullHeader').addClass('header-backward');
@@ -156,6 +158,19 @@ $(document).ready(function(){
         $('.full-screen-btn').toggleClass('hide-full-screen-btn');
     });
 
+    //取得目前登入的會員資料
+    var loginStatus = $('.sign').text();
+    var member;
+    getLoginInfo();
+    function getLoginInfo() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "./php/loginInfoForFront.php", true);
+        xhr.send(null);
+        xhr.onload = function() {
+            member = JSON.parse(xhr.responseText);
+        }
+    };
+
     //Start button
     $('.btnRed').click(function(e){
         e.preventDefault();
@@ -184,26 +199,77 @@ $(document).ready(function(){
             } else if(e.keyCode == 40 && coordY >= -2588){
                 $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY-10}px)`);
             }
+            spotsTrigger();
+        });
+
+        goSanpo();
+        //go!
+        function goSanpo(){
+            $('.left').click(function(){
+                var coordX = getTransValues('game-map-container', 'x');
+                var coordY = getTransValues('game-map-container', 'y');
+                if(coordX >= -4126){
+                    $('.walking').css('transform','scaleX(-1)');
+                    $('.game-map-container').css('transform', `translate(${coordX+30}px, ${coordY}px)`);
+                }
+                spotsTrigger();
+            });
+            $('.right-dir').click(function(){
+                var coordX = getTransValues('game-map-container', 'x');
+                var coordY = getTransValues('game-map-container', 'y');
+                if(coordX <= -968){
+                    $('.walking').css('transform','scaleX(1)');
+                    $('.game-map-container').css('transform', `translate(${coordX-30}px, ${coordY}px)`);
+                }
+                spotsTrigger();
+            });
+            $('.up').click(function(){
+                var coordX = getTransValues('game-map-container', 'x');
+                var coordY = getTransValues('game-map-container', 'y');
+                if(coordY <= -704){
+                    $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY+30}px)`);
+                }
+                spotsTrigger();
+            });
+            $('.down').click(function(){
+                var coordX = getTransValues('game-map-container', 'x');
+                var coordY = getTransValues('game-map-container', 'y');
+                if(coordY >= -2588){
+                    $('.game-map-container').css('transform', `translate(${coordX}px, ${coordY-30}px)`);
+                }
+                spotsTrigger();
+            });
+        }
+
+        function spotsTrigger(){
+            var status = 'outside';
+            var coordX = getTransValues('game-map-container', 'x');
+            var coordY = getTransValues('game-map-container', 'y');
             //spot1 trigger
             if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342){
                 $('.spot1').css({
                     filter: 'brightness(2.8)'
                 });
-                setTimeout(function(){
-                    if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342){
-                        checkpoint[1] = '';
-                        if(checkpoint[0] == '日式舊屋行'){
-                            checkpoint[1] = '青田七六';
-                        } else if(checkpoint[0] == '文青品味旅'){
-                            checkpoint[1] = '宅jai風格生活';
-                        } else if(checkpoint[0] == '職人散步去'){
-                            checkpoint[1] = '小廢墟';
+                if(status == 'outside'){
+                    setTimeout(function(){
+                        if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342){
+                            checkpoint[1] = '';
+                            if(checkpoint[0] == '日式舊屋行'){
+                                checkpoint[1] = '青田七六';
+                            } else if(checkpoint[0] == '文青品味旅'){
+                                checkpoint[1] = '宅jai風格生活';
+                            } else if(checkpoint[0] == '職人散步去'){
+                                checkpoint[1] = '小廢墟';
+                            }
+                            getQuizContent(checkpoint);
+                            $('.game-modal').removeClass('hide-game-modal');
                         }
-                        getQuizContent(checkpoint);
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+                        status = 'inside';
+                    }, 3000);
+                }
+                
             } else {
+                status = 'outside';
                 $('.spot1').css({
                     filter: 'brightness(1)'
                 });
@@ -213,21 +279,26 @@ $(document).ready(function(){
                 $('.spot2').css({
                     filter: 'brightness(2.8)'
                 });
-                setTimeout(function(){
-                    if(coordX >= -1810 && coordY >= -1242 && coordX <= -1560 && coordY <= -1142){
-                        checkpoint[1] = '';
-                        if(checkpoint[0] == '日式舊屋行'){
-                            checkpoint[1] = '長慶廟';
-                        } else if(checkpoint[0] == '文青品味旅'){
-                            checkpoint[1] = '有肉專賣';
-                        } else if(checkpoint[0] == '職人散步去'){
-                            checkpoint[1] = '化南新村';
+                if(status == 'outside'){
+                    setTimeout(function(){
+                        if(coordX >= -1810 && coordY >= -1242 && coordX <= -1560 && coordY <= -1142){
+                            checkpoint[1] = '';
+                            if(checkpoint[0] == '日式舊屋行'){
+                                checkpoint[1] = '長慶廟';
+                            } else if(checkpoint[0] == '文青品味旅'){
+                                checkpoint[1] = '有肉專賣';
+                            } else if(checkpoint[0] == '職人散步去'){
+                                checkpoint[1] = '化南新村';
+                            }
+                            getQuizContent(checkpoint);
+                            $('.game-modal').removeClass('hide-game-modal');
                         }
-                        getQuizContent(checkpoint);
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+                        status = 'inside';
+                    }, 3000);
+                }
+                
             } else {
+                status = 'outside';
                 $('.spot2').css({
                     filter: 'brightness(1)'
                 });
@@ -237,21 +308,26 @@ $(document).ready(function(){
                 $('.spot3').css({
                     filter: 'brightness(2.8)'
                 });
-                setTimeout(function(){
-                    if(coordX >= -3010 && coordY >= -1242 && coordX <= -2760 && coordY <= -1092){
-                        checkpoint[1] = '';
-                        if(checkpoint[0] == '日式舊屋行'){
-                            checkpoint[1] = '紀州庵';
-                        } else if(checkpoint[0] == '文青品味旅'){
-                            checkpoint[1] = '讀字書店';
-                        } else if(checkpoint[0] == '職人散步去'){
-                            checkpoint[1] = '文山公民會館';
+                if(status == 'outside'){
+                    setTimeout(function(){
+                        if(coordX >= -3010 && coordY >= -1242 && coordX <= -2760 && coordY <= -1092){
+                            checkpoint[1] = '';
+                            if(checkpoint[0] == '日式舊屋行'){
+                                checkpoint[1] = '紀州庵';
+                            } else if(checkpoint[0] == '文青品味旅'){
+                                checkpoint[1] = '讀字書店';
+                            } else if(checkpoint[0] == '職人散步去'){
+                                checkpoint[1] = '文山公民會館';
+                            }
+                            getQuizContent(checkpoint);
+                            $('.game-modal').removeClass('hide-game-modal');
                         }
-                        getQuizContent(checkpoint);
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+                        status = 'inside';
+                    }, 3000);
+                }
+                
             } else {
+                status = 'outside';
                 $('.spot3').css({
                     filter: 'brightness(1)'
                 });
@@ -261,21 +337,26 @@ $(document).ready(function(){
                 $('.spot4').css({
                     filter: 'brightness(2.8)'
                 });
-                setTimeout(function(){
-                    if(coordX >= -2910 && coordY >= -1892 && coordX <= -2810 && coordY <= -1792){
-                        checkpoint[1] = '';
-                        if(checkpoint[0] == '日式舊屋行'){
-                            checkpoint[1] = '野草居食屋';
-                        } else if(checkpoint[0] == '文青品味旅'){
-                            checkpoint[1] = '登陸土星';
-                        } else if(checkpoint[0] == '職人散步去'){
-                            checkpoint[1] = '岸汐職人聚落';
+                if(status == 'outside'){
+                    setTimeout(function(){
+                        if(coordX >= -2910 && coordY >= -1892 && coordX <= -2810 && coordY <= -1792){
+                            checkpoint[1] = '';
+                            if(checkpoint[0] == '日式舊屋行'){
+                                checkpoint[1] = '野草居食屋';
+                            } else if(checkpoint[0] == '文青品味旅'){
+                                checkpoint[1] = '登陸土星';
+                            } else if(checkpoint[0] == '職人散步去'){
+                                checkpoint[1] = '岸汐職人聚落';
+                            }
+                            getQuizContent(checkpoint);
+                            $('.game-modal').removeClass('hide-game-modal');
                         }
-                        getQuizContent(checkpoint);
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+                        status = 'inside';
+                    }, 3000);
+                }
+                
             } else {
+                status = 'outside';
                 $('.spot4').css({
                     filter: 'brightness(1)'
                 });
@@ -285,26 +366,31 @@ $(document).ready(function(){
                 $('.spot5').css({
                     filter: 'brightness(2.8)'
                 });
-                setTimeout(function(){
-                    if(coordX >= -1660 && coordY >= -1892 && coordX <= -1560 && coordY <= -1792){
-                        checkpoint[1] = '';
-                        if(checkpoint[0] == '日式舊屋行'){
-                            checkpoint[1] = '梁實秋故居';
-                        } else if(checkpoint[0] == '文青品味旅'){
-                            checkpoint[1] = 'Swell Co.';
-                        } else if(checkpoint[0] == '職人散步去'){
-                            checkpoint[1] = 'TAIGA 針葉林';
+                if(status == 'outside'){
+                    setTimeout(function(){
+                        if(coordX >= -1660 && coordY >= -1892 && coordX <= -1560 && coordY <= -1792){
+                            checkpoint[1] = '';
+                            if(checkpoint[0] == '日式舊屋行'){
+                                checkpoint[1] = '梁實秋故居';
+                            } else if(checkpoint[0] == '文青品味旅'){
+                                checkpoint[1] = 'Swell Co.';
+                            } else if(checkpoint[0] == '職人散步去'){
+                                checkpoint[1] = 'TAIGA 針葉林';
+                            }
+                            getQuizContent(checkpoint);
+                            $('.game-modal').removeClass('hide-game-modal');
                         }
-                        getQuizContent(checkpoint);
-                        $('.game-modal').removeClass('hide-game-modal');
-                    }
-                }, 3000);
+                        status = 'inside';
+                    }, 3000);
+                }
+                
             } else {
+                status = 'outside';
                 $('.spot5').css({
                     filter: 'brightness(1)'
                 });
             }
-        });
+        }
 
         //get quiz content
         function getQuizContent(checkpoint){
@@ -312,20 +398,6 @@ $(document).ready(function(){
             $('.opt1, .opt2, .opt3').removeClass('right');
             $('.opt1, .opt2, .opt3').removeClass('wrong');
             //AJAX
-            // var checkpointString = JSON.stringify(checkpoint);
-            // var xhr = new XMLHttpRequest();
-            // //POST 送出現在所在的關卡
-            // xhr.open('POST', './php/getQuizzes.php', true);
-            // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-            // xhr.send(checkpointString);
-            // xhr.onload = function(){
-            //     if(xhr.status == 200){
-            //         console.log('成功送出所在的關卡');
-            //     } else {
-            //         alert('抱歉，有東西出錯了，客戶端未成功送出所在關卡資訊。請聯繫客服人員！！');
-            //     }
-            // }
-            //GET
             var xhr = new XMLHttpRequest();
             xhr.open('GET', './php/getQuizzes.php', true);
             xhr.send(null);
@@ -362,28 +434,35 @@ $(document).ready(function(){
             }
         }
 
+        //close game modal
+        $('.close-modal').click(function(){
+            $('.game-modal').addClass('hide-game-modal');
+        });
+
         //spots' quiz
         $('.opt1, .opt2, .opt3').click(function(){
             if($(this).hasClass('ans')){
                 $('.test').text('恭喜答對！！！');
                 $(this).addClass('right');
-                $('.close-modal').click(function(){
-                    $('.game-modal').addClass('hide-game-modal');
-                });
                 for(var i=0;i<=4;i++){
                     if($('.spot').eq(i).text().toString() == checkpoint[1].toString()){
                         $('.check-box').eq(i).find('img').addClass('show-check');
                     }
                 }
-                
             } else {
                 $('.test').text('你答錯了！！！！正確答案如下藍底選項所示！！');
                 $(this).addClass('wrong');
                 $('.ans').addClass('right');
-                $('.close-modal').click(function(){
-                    $('.game-modal').addClass('hide-game-modal');
-                });
             }
+            //close game modal
+            $('.close-modal').click(function(){
+                $('.game-modal').addClass('hide-game-modal');
+            });
+            $('.continue').removeClass('hide-continue-btn');
+            $('.continue').click(function(){
+                $('.game-modal').addClass('hide-game-modal');
+                $('.continue').addClass('hide-continue-btn');
+            });
             //移除解答class，並且不能重選
             $('.opt1, .opt2, .opt3').removeClass('ans');
             $('.opt1, .opt2, .opt3').addClass('click-disabled');
@@ -403,17 +482,103 @@ $(document).ready(function(){
             $('.progress').css({
                 width: `${(checks-1)*22}%`
             });
+            $('.indicator').text(`闖關進度：${checks*20}%`);
             for(var j=0;j<=checks;j++){
                 $('.index').eq(j-1).css({
                     'background-color': '#c45c5c'
                 });
             }
+            //get point
+            if(checks == 5){
+                $('.test').text('恭喜您完成本路線所有關卡！！！');
+                $('.continue').text('好的。');
+                if(loginStatus == '登出登出'){
+                    $('.opt1').text(`您原本有${member['memPoint']}點。`);
+                    $('.opt2').text(`您現在有${parseInt(member['memPoint']) + 300}點。`);
+                    $('.opt3').text('真是太棒了！');
+                    //AJAX
+                    var memInfo = [];
+                    memInfo.push(member['memNum']);
+                    memInfo.push(member['memPoint']);
+                    var memInfo = JSON.stringify(memInfo);
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', './php/getPoints.php', true);
+                    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                    xhr.send(memNum);
+                    xhr.onload = function(){
+                        if(xhr.status == 200){
+                            console.log(JSON.parse(xhr.responseText));
+                        } else {
+                            console.log('失敗了！ＱＱ');
+                        }
+                    }
+                } else {
+                    $('.opt1').text('');
+                    $('.opt2').text('');
+                    $('.opt3').text('');
+                }
+                $('.game-modal').removeClass('hide-game-modal');
+                $('.continue').click(function(){
+                    $('.game-modal').addClass('hide-game-modal');
+                });
+            }
         }
     });
+
+    //官方景點經緯度
+    //route1
+    r1s1 = {lat: 25.0280558, lng: 121.5303483};
+    r1s2 = {lat: 25.0238285, lng: 121.52569};
+    r1s3 = {lat: 25.0250419, lng: 121.519615};
+    r1s4 = {lat: 25.0248451, lng: 121.5194386};
+    r1s5 = {lat: 25.0213759, lng: 121.5183262};
+    //route2
+    r2s1 = {lat: 25.0295304, lng: 121.539476};
+    r2s2 = {lat: 25.0343324, lng: 121.5442234};
+    r2s3 = {lat: 25.0265961, lng: 121.5226881};
+    r2s4 = {lat: 25.0310503, lng: 121.5446709};
+    r2s5 = {lat: 25.0355961, lng: 121.5459665};
+    //route3
+    r3s1 = {lat: 24.9907327, lng: 121.568855};
+    r3s2 = {lat: 24.9910739, lng: 121.5724933};
+    r3s3 = {lat: 24.9900048, lng: 121.5675335};
+    r3s4 = {lat: 24.9891648, lng: 121.5658933};
+    r3s5 = {lat: 24.9889868, lng: 121.5662633};
 
     //Google map mode
     $('.switch').on('click', function(){
         if(!($('.map-container').hasClass('hide-container'))){
+            spot1 = r1s1;
+            spot2 = r1s2;
+            spot3 = r1s3;
+            spot4 = r1s4;
+            spot5 = r1s5;
+            //route tab
+            $('.option').click(function(e){
+                $('.option .label').addClass('hide-label');
+                $(this).find('.label').toggleClass('hide-label');
+                if($(this).find('.route-name').text() == '日式舊屋行'){
+                    spot1 = r1s1;
+                    spot2 = r1s2;
+                    spot3 = r1s3;
+                    spot4 = r1s4;
+                    spot5 = r1s5;
+                } else if($(this).find('.route-name').text() == '文青品味旅'){
+                    spot1 = r2s1;
+                    spot2 = r2s2;
+                    spot3 = r2s3;
+                    spot4 = r2s4;
+                    spot5 = r2s5;
+                } else if($(this).find('.route-name').text() == '職人散步去'){
+                    spot1 = r3s1;
+                    spot2 = r3s2;
+                    spot3 = r3s3;
+                    spot4 = r3s4;
+                    spot5 = r3s5;
+                }
+                //產生地圖和導航功能
+                googleMapCreater();
+            });
             //產生地圖和導航功能
             googleMapCreater();
         }
@@ -429,7 +594,7 @@ $(document).ready(function(){
         } else if(coord == 'y'){
             return parseInt(y);
         }
-      };
+    };
 
     //google map function
     function googleMapCreater(){
@@ -446,11 +611,11 @@ $(document).ready(function(){
                 //將地標和路線指示清空
                 markers = [];
                 infowindows = [];
-                directions(start, {lat: 25.0213759, lng: 121.5183262}, [
-                {location: {lat: 25.0280558, lng: 121.5303483}, stopover: true},
-                {location: {lat: 25.0238285, lng: 121.52569}, stopover: true},
-                {location: {lat: 25.0250419, lng: 121.519615}, stopover: true},
-                {location: {lat: 25.0248451, lng: 121.5194386}, stopover: true}
+                directions(start, spot5, [
+                {location: spot1, stopover: true},
+                {location: spot2, stopover: true},
+                {location: spot3, stopover: true},
+                {location: spot4, stopover: true}
                 ]);
             }
             xhr.send();

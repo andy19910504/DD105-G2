@@ -607,7 +607,7 @@ div.eventCard {
   margin: -1.84375em;
   background: currentColor;
   border-radius: 50%;
-  box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #ccc, -2.1875em 0.6875em 0 -0.3125em #ccc, 2.0625em 0.9375em 0 -0.5625em #ccc; }
+  box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #ccc, -2.1875em 0.6875em 0 -0.3125em #ccc, 2.0625em 0.9375em 0 -0.5625em #ccc; }
   .routeShineAnimation .cloud::after {
     content: '';
     position: absolute;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/fontello.css">
     <link rel="stylesheet" href="./css/mapgame.css">
     <script src="./js/getLoginInfo.js"></script>
     <title>攻略地圖趣</title>
@@ -154,10 +155,12 @@
         
         <!-- banner -->
         <div class="banner_02">
+            <!-- 各分頁的bannerTitle格式，可以複製貼上再改中間的標題圖片 -->
             <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
-            <div class="routeTitle">
-                <div class="routeTitleMoveBlock">
-                    <img src="./img/banner/bannerTitle2.png" alt="" srcset="">
+            <div class="pageBannerTitle">
+                <div class="bannerTitleMoveBlock">
+                    <!-- 這裡的圖片改成自己分頁的圖片，再想想要怎麼動，不一定要一樣，也可以直接參考 -->
+                    <img src="./img/banner/bannerTitle2.png" class="routeTitleImage1">
                 </div>
             </div>
             <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
@@ -205,9 +208,7 @@
                     <img src="./img/mapgame/spot/route1/野草居食屋.jpg" alt="" class="spot4">
                     <img src="./img/mapgame/spot/route1/梁實秋故居.jpg" alt="" class="spot5">
                 </div>
-                <a href="#" class="btnRed">
-    start
-</a>
+                <a href="#" class="btnRed">start</a>
                 <img src="./img/mapgame/gou.gif" alt="" class="walking">
                 <div class="game-modal hide-game-modal">
                     <div class="test-area">
@@ -216,10 +217,18 @@
                         <div class="opt1">1. 是</div>
                         <div class="opt2">2. 不是</div>
                         <div class="opt3">3. 介於是和不是之間</div>
+                        <div class="continue hide-continue-btn">繼續闖關！</div>
                     </div>
                 </div>
-                <div class="full-screen-btn">#</div>
-                <div class="normal-screen-btn hide-full-screen-btn">#</div>
+                <div class="full-screen-btn"><i class="icon-resize-full"></i></div>
+                <div class="normal-screen-btn hide-full-screen-btn"><i class="icon-resize-normal"></i></div>
+                <div class="mobile-control-wrapper hide-mobile-control-wrapper">
+                    <div class="up"></div>
+                    <div class="down"></div>
+                    <div class="left"></div>
+                    <div class="right-dir"></div>
+                    <img src="./img/mapgame/arrowKeys.png" alt="" class="arrows">
+                </div>
             </div>
             <div class="map-container hide-container">
                 <div id="map"></div>
@@ -227,7 +236,7 @@
             <div class="fuda-container">
                 <table>
                     <tr>
-                        <td class="spot">青田六七</td>
+                        <td class="spot">青田七六</td>
                         <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
@@ -239,7 +248,7 @@
                         <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
-                        <td class="spot">野草居食堂</td>
+                        <td class="spot">野草居食屋</td>
                         <td class="check-box"><img src="./img/mapgame/check.png" alt="" class="check"></td>
                     </tr>
                     <tr>
@@ -256,7 +265,7 @@
                                 <div class="index"></div>
                                 <div class="index"></div>
                             </div>
-                            <div class="indicator">闖關進度：20％</div>
+                            <div class="indicator">闖關進度：0％</div>
                         </td>
                     </tr>
                 </table>
@@ -272,7 +281,7 @@
                     <div class="index"></div>
                     <div class="index"></div>
                 </div>
-                <div class="indicator">闖關進度：20％</div>
+                <div class="indicator">闖關進度：0％</div>
             </div>
             <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
