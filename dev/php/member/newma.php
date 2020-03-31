@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $name=$_GET["name"];
     $account=$_GET["account"];
     $password=$_GET["password"];

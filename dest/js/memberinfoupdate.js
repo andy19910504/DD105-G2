@@ -1,17 +1,19 @@
 let memNum;
 /////////////////////////////////////////////////////////////////////第三頁放心情
 ///心情照片
-function moodphoto(){
-    document.getElementById("mood_pho").onchange = function () {
-        // alert("00");
-        let file = document.getElementById("mood_pho").files[0];
-        let readFile = new FileReader();
-        readFile.readAsDataURL(file);
-        readFile.addEventListener("load", function () {
-            image = document.getElementById("moodpho")
-            image.src = this.result;
-        })
-    };
+function moodphoto() {
+    for (let i = 0; i < 100; i++) {
+        document.getElementById(`mood_pho${i}`).onchange = function () {
+            // alert("00");
+            let file = document.getElementById(`mood_pho${i}`).files[0];
+            let readFile = new FileReader();
+            readFile.readAsDataURL(file);
+            readFile.addEventListener("load", function () {
+                image = document.getElementById(`moodpho${i}`)
+                image.src = this.result;
+            })
+        };
+    }
 };
 //心情修改
 function moodmodify() {
@@ -33,7 +35,8 @@ function moodmodify() {
         })
         //送出
         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(2)`).click(function () {
-            document.getElementById("mood_upload").submit();
+            // document.getElementById("mood_upload").submit();
+            $(`.member_info_share_all>div:nth-child(${i})>form`).submit();
         });
         //刪除
         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(3)`).click(function () {
@@ -56,7 +59,7 @@ function moodmodify() {
                     alert(xhr.status);
                 }
             }
-            var url = "./php/member/delmembermood.php?number=" + delmoodnum
+            var url = "./php/delmembermood.php?number=" + delmoodnum
             console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
@@ -70,49 +73,57 @@ function getMoodInfo(memNum) {
         moodinfo = JSON.parse(xhr.responseText);
         console.log(moodinfo);
         console.log(moodinfo.moodinfoRow);
-        console.log(moodinfo.moodlineoffRow);
-        console.log(moodinfo.moodlinecusRow);
         console.log(moodinfo.moodinfocommentRow);
-        console.log(moodinfo.moodinfoRow[0].post_number);
+        // console.log(moodinfo.moodinfoRow[0].post_number);
         console.log(moodinfo.moodinfocommentRow[0].comment_total)
         let member_info_share_all = document.getElementById("member_info_share_all");
         let membermoodRow = " ";
+        let moodclass = ["散步日記", "吃貨手札", "隨筆心情"]
         for (let i = 0; i < moodinfo.moodinfoRow.length; i++) {
             membermoodRow += `
         <div class="member_info_share_all_all">
-        <form action="./php/member/upmoodinfo.php" method="post" enctype="multipart/form-data" id="mood_upload">
+        <form action="./php/upmoodinfo.php" method="post" enctype="multipart/form-data" id="mood_upload">
                 <div class="member_info_share_kind">
-                    <select name="route_number" id="">`
-            for (let k = 0; k < moodinfo.moodlineoffRow.length; k++) {
-                if (moodinfo.moodinfoRow[i].route_number == moodinfo.moodlineoffRow[k].route_number) {
-                    membermoodRow += `<option value="${moodinfo.moodlineoffRow[k].route_number}" selected >${moodinfo.moodlineoffRow[k].route_name}</option>`
-                } else {
-                    membermoodRow += `<option value="${moodinfo.moodlineoffRow[k].route_number}">${moodinfo.moodlineoffRow[k].route_name}</option>`
+                    <select name="mood_class" id="">`
+            for (let k = 0; k < moodclass.length; k++) {
+                if (moodclass[k] == moodinfo.moodinfoRow[i].mood_class) {
+                    membermoodRow += `<option value="${moodclass[k]}" selected >${moodclass[k]}</option>`
+                }
+                else {
+                    membermoodRow += `<option value="${moodclass[k]}" >${moodclass[k]}</option>`
                 }
             }
-            for (let l = 0; l < moodinfo.moodlinecusRow.length; l++) {
-                if (moodinfo.moodinfoRow[i].route_number == moodinfo.moodlinecusRow[l].route_number) {
-                    membermoodRow += `<option value="${moodinfo.moodlinecusRow[l].route_number}" selected >${moodinfo.moodlinecusRow[l].route_name}</option>`
-                } else {
-                    membermoodRow += `<option value="${moodinfo.moodlinecusRow[l].route_number}">${moodinfo.moodlinecusRow[l].route_name}</option>`
-                }
-            }
+
+            // for (let k = 0; k < moodinfo.moodlineoffRow.length; k++) {
+            //     if (moodinfo.moodinfoRow[i].route_number == moodinfo.moodlineoffRow[k].route_number) {
+            //         membermoodRow += `<option value="${moodinfo.moodlineoffRow[k].route_number}" selected >${moodinfo.moodlineoffRow[k].route_name}</option>`
+            //     } else {
+            //         membermoodRow += `<option value="${moodinfo.moodlineoffRow[k].route_number}">${moodinfo.moodlineoffRow[k].route_name}</option>`
+            //     }
+            // }
+            // for (let l = 0; l < moodinfo.moodlinecusRow.length; l++) {
+            //     if (moodinfo.moodinfoRow[i].route_number == moodinfo.moodlinecusRow[l].route_number) {
+            //         membermoodRow += `<option value="${moodinfo.moodlinecusRow[l].route_number}" selected >${moodinfo.moodlinecusRow[l].route_name}</option>`
+            //     } else {
+            //         membermoodRow += `<option value="${moodinfo.moodlinecusRow[l].route_number}">${moodinfo.moodlinecusRow[l].route_name}</option>`
+            //     }
+            // }
             membermoodRow += `
                     </select>
                 </div>
                 <div class="member_info_share_image">
-                    <label for="mood_pho">
+                    <label for="mood_pho${i}">
                         <div>
                             <div>
                                 <div>
-                                    <img src="./img/moodPhoto/${moodinfo.moodinfoRow[i].post_image_url}" alt="" id="moodpho">
+                                    <img src="./img/moodPhoto/${moodinfo.moodinfoRow[i].mood_photo}" alt="" id="moodpho${i}">
                                 </div>
                             </div>
                             <div style="visibility: hidden;">
-                                <label for="mood_pho">上傳照片
+                                <label for="mood_pho${i}">上傳照片
                                     <img src="./img/member/membercamera.png" alt="">
                                 </label>
-                                <input type="file" name="mood_pho" id="mood_pho" style="display: none;">
+                                <input type="file" name="mood_pho" id="mood_pho${i}" style="display: none;">
                             </div>
                         </div>
                     </label>
@@ -120,29 +131,29 @@ function getMoodInfo(memNum) {
                 <div class="member_info_share_heart">
                     <p>
                         <img src="./img/member/memberheart.png" alt="">
-                        <span>${moodinfo.moodinfoRow[i].heart_count}</span>
+                        <span>${moodinfo.moodinfoRow[i].mood_heart}</span>
                         <img src="./img/member/moodChatIcon.png" alt="">
                         <span>`
-                        // for(let g =0;g<moodinfo.moodinfocommentRow.length;g++){
-                        //     if(moodinfo.moodinfoRow[i].post_number==moodinfo.moodinfocommentRow[g].post_number){
-                        //         membermoodRow += `${moodinfo.moodinfocommentRow[g].comment_total}`; 
-                        //     }
-                        // }
-                        let aa=0;
-                        for(let g =0;g<moodinfo.moodinfocommentRow.length;g++){
-                            if(moodinfo.moodinfoRow[i].post_number==moodinfo.moodinfocommentRow[g].post_number){
-                                aa += parseInt(`${moodinfo.moodinfocommentRow[g].comment_total}`); 
-                            }else{
-                                aa += parseInt(0);
-                            }
-                        }
-                        membermoodRow +=`${aa}`
-                        membermoodRow += `
+            // for(let g =0;g<moodinfo.moodinfocommentRow.length;g++){
+            //     if(moodinfo.moodinfoRow[i].post_number==moodinfo.moodinfocommentRow[g].post_number){
+            //         membermoodRow += `${moodinfo.moodinfocommentRow[g].comment_total}`; 
+            //     }
+            // }
+            let aa = 0;
+            for (let g = 0; g < moodinfo.moodinfocommentRow.length; g++) {
+                if (moodinfo.moodinfoRow[i].mood_number == moodinfo.moodinfocommentRow[g].mood_number) {
+                    aa += parseInt(`${moodinfo.moodinfocommentRow[g].comment_total}`);
+                } else {
+                    aa += parseInt(0);
+                }
+            }
+            membermoodRow += `${aa}`
+            membermoodRow += `
                         </span>
                     </p>
                 </div>
                 <div class="member_info_share_word">
-                    <textarea name="post_text" id="" rows="5">${moodinfo.moodinfoRow[i].post_text}
+                    <textarea name="mood_content" id="" rows="5">${moodinfo.moodinfoRow[i].mood_content}
                 </textarea>
                 </div>
                 <div class="member_info_share_button">
@@ -156,7 +167,7 @@ function getMoodInfo(memNum) {
                         刪除
                     </div>
                 </div>
-                <input style="display:none" type="text" value="${moodinfo.moodinfoRow[i].post_number}" name="post_number">
+                <input style="display:none" type="text" value="${moodinfo.moodinfoRow[i].mood_number}" name="mood_number">
             </form>
         </div>`
         }
@@ -166,15 +177,16 @@ function getMoodInfo(memNum) {
         ///心情照片
         moodphoto();
     };
-    let url = "./php/member/getMoodInfo.php?number=" + memNum;
+    let url = "./php/getMoodInfo.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 }
 /////////////////////////////////////////////////////////////////////第五頁放開團
 //修改路線
-function openlinechange(linenum, num) {
+function openlinechange(linenum, num, memNum) {
     // alert(linenum,num+1)
+    // alert(num+1)
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         linepointinfo = JSON.parse(xhr.responseText);
@@ -187,9 +199,9 @@ function openlinechange(linenum, num) {
                 linepointRow += `<div>${linepointinfo.linepointoffRow[i].attraction_name}</div>`
             }
         };
-        for (let i = 0; i < linepointinfo.linepointcusRow.length; i++) {
-            if (linenum == linepointinfo.linepointcusRow[i].route_number) {
-                linepointRow += `<div>${linepointinfo.linepointcusRow[i].custom_attraction_name}</div>`
+        for (let j = 0; j < linepointinfo.linepointcusRow.length; j++) {
+            if (linenum == linepointinfo.linepointcusRow[j].route_number) {
+                linepointRow += `<div>${linepointinfo.linepointcusRow[j].custom_attraction_name}</div>`
             }
         };
         // alert(linepointRow);
@@ -198,7 +210,7 @@ function openlinechange(linenum, num) {
 
 
     }
-    let url = "./php/member/getMoodInfo.php?number=" + memNum;
+    let url = "./php/openlinechange.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
@@ -240,7 +252,8 @@ function openmodify() {
 
         });
         $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(2)`).click(function () {
-            document.getElementById("open_upload").submit();
+            // document.getElementById("open_upload").submit();
+            $(`.member_info_open_all>div:nth-child(${i})>form`).submit();
             // // alert("00");
             // $(this).css("display","none");
             // $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(1)`).css("display","inline-block");
@@ -278,7 +291,7 @@ function openmodify() {
                     alert(xhr.status);
                 }
             }
-            var url = "./php/member/delmemberopen.php?number=" + delopennum
+            var url = "./php/delmemberopen.php?number=" + delopennum
             console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
@@ -287,16 +300,38 @@ function openmodify() {
 }
 //上傳圖片會顯示
 function openphoto() {
-    document.getElementById("event_pho").onchange = function () {
-        // alert("00");
-        let file = document.getElementById("event_pho").files[0];
-        let readFile = new FileReader();
-        readFile.readAsDataURL(file);
-        readFile.addEventListener("load", function () {
-            image = document.getElementById("eventpho")
-            image.src = this.result;
-        })
-    };
+    for (let i = 0; i < 100; i++) {
+        // $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label:nth-child(1)>div:nth-child(1)>div:nth-child(2)>input:nth-child(2)`).onchange = function () {
+        //     alert("00");
+        //     // let file = document.getElementById(`event_pho${i}`).files[0];
+        //     // let readFile = new FileReader();
+        //     // readFile.readAsDataURL(file);
+        //     // readFile.addEventListener("load", function () {
+        //     //     image = document.getElementById(`event_pho${i}`)
+        //     //     image.src = this.result;
+        //     // })
+        // };
+        document.getElementById(`event_pho${i}`).onchange = function () {
+            // alert("00");
+            let file = document.getElementById(`event_pho${i}`).files[0];
+            let readFile = new FileReader();
+            readFile.readAsDataURL(file);
+            readFile.addEventListener("load", function () {
+                image = document.getElementById(`eventpho${i}`)
+                image.src = this.result;
+            })
+        };
+    }
+    // document.getElementById("event_pho").onchange = function () {
+    //     // alert("00");
+    //     let file = document.getElementById("event_pho").files[0];
+    //     let readFile = new FileReader();
+    //     readFile.readAsDataURL(file);
+    //     readFile.addEventListener("load", function () {
+    //         image = document.getElementById("eventpho")
+    //         image.src = this.result;
+    //     })
+    // };
 };
 
 function getOpenInfo(memNum) {
@@ -318,19 +353,19 @@ function getOpenInfo(memNum) {
         for (let i = 0; i < memberopeninfo.memberopen.length; i++) {
             memberopenRow += `
         <div class="member_info_open_all_all">
-        <form action="./php/member/upopeninfo.php" method="post" enctype="multipart/form-data" id="open_upload">
+        <form action="./php/upopeninfo.php" method="post" enctype="multipart/form-data" id="open_upload">
                 <input type="text" value="${memberopeninfo.memberopen[i].event_name}" readonly name="event_name">
                 <div class="member_info_open_all_left">
-                    <label for="event_pho">
+                    <label for="event_pho${i}">
                         <div>
                             <div>
-                                <img src="./img/eventPhoto/${memberopeninfo.memberopen[i].event_cover_url}" alt="" id="eventpho">
+                                <img src="./img/eventPhoto/${memberopeninfo.memberopen[i].event_cover_url}" alt="" id="eventpho${i}">
                             </div>
                             <div style="display: none;">
-                                <label for="event_pho">上傳照片
+                                <label for="event_pho${i}">上傳照片
                                     <img src="./img/member/membercamera.png" alt="">
                                 </label>
-                                <input type="file" name="event_pho" id="event_pho" style="display: none;">
+                                <input type="file" name="event_pho" id="event_pho${i}" style="display: none;">
                             </div>
                         </div>
                     </label>
@@ -365,7 +400,7 @@ function getOpenInfo(memNum) {
                     </div>
                     <div>
                         <label for="lines">路線 :</label>
-                        <select name="route_number" id="" onchange="openlinechange(this.options[this.options.selectedIndex].value,${i})">`
+                        <select name="route_number" id="" onchange="openlinechange(this.options[this.options.selectedIndex].value,${i},${memNum})">`
             for (let k = 0; k < memberopeninfo.memberopenoff.length; k++) {
                 if (memberopeninfo.memberopen[i].route_number == memberopeninfo.memberopenoff[k].route_number) {
                     memberopenRow += `<option value="${memberopeninfo.memberopenoff[k].route_number}" selected >${memberopeninfo.memberopenoff[k].route_name}</option>`
@@ -434,7 +469,7 @@ function getOpenInfo(memNum) {
         openphoto();
 
     }
-    let url = "./php/member/getOpenInfo.php?number=" + memNum;
+    let url = "./php/getOpenInfo.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
@@ -557,7 +592,7 @@ function getJoinInfo(memNum) {
                             alert(xhr.status);
                         }
                     }
-                    var url = "./php/member/delmemberjoin.php?number=" + memNum
+                    var url = "./php/delmemberjoin.php?number=" + memNum
                         + "&joinnumber=" + joinnumber;
                     console.log(url);
                     xhr.open("Get", url, true);
@@ -580,7 +615,7 @@ function getJoinInfo(memNum) {
         joinmodify();
 
     }
-    let url = "./php/member/getJoinInfo.php?number=" + memNum;
+    let url = "./php/getJoinInfo.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
@@ -591,14 +626,14 @@ function getOrderInfo(memNum) {
     xhr.onload = function () {
         memberorderinfo = JSON.parse(xhr.responseText);
         console.log(memberorderinfo);
-        console.log(memberorderinfo.memberorder);
-        console.log(memberorderinfo.memberorder[0].order_number);
-        console.log(memberorderinfo.memberorderlist);
+        // console.log(memberorderinfo.memberorder);
+        // console.log(memberorderinfo.memberorder[0].order_number);
+        // console.log(memberorderinfo.memberorderlist);
         let memberorder = document.getElementById("memberorder");
         let memberorderRow = " ";
         let status = "";
-        for (let i = 0; i < memberorderinfo.memberorder.length; i++) {
-            if (memberorderinfo.memberorder[i].shopping_status == 1) {
+        for (let i = 0; i < memberorderinfo.length; i++) {
+            if (memberorderinfo[i].shopping_status == 1) {
                 status = "已出貨";
             } else {
                 status = "未出貨";
@@ -606,60 +641,56 @@ function getOrderInfo(memNum) {
             memberorderRow += `
         <div>
             <div class="member_info_order_up">
-                <p>訂單編號 :<span>NO.${memberorderinfo.memberorder[i].order_number}</span></p>
-                <p>訂單日期 :<span>${memberorderinfo.memberorder[i].order_time}</span></p>
-                <p>訂單金額 :<span>${memberorderinfo.memberorder[i].order_point}元</span></p>
+                <p>訂單編號 :<span>NO.${memberorderinfo[i].order_number}</span></p>
+                <p>訂單日期 :<span>${memberorderinfo[i].order_time}</span></p>
+                <p>訂單金額 :<span>${memberorderinfo[i].order_point}元</span></p>
                 <p>訂單狀態 :<span>${status}</span></p>
-            </div>`
-            for (let j = 0; j < memberorderinfo.memberorderlist.length; j++) {
-                if (memberorderinfo.memberorder[i].order_number == memberorderinfo.memberorderlist[j].order_number) {
-                    memberorderRow += `
+            </div>
             <div class="member_info_order_bottom">
                 <div>
                     <div class="member_info_order_bottom_front">
                         <div>
-                            <img src="./img/memberPhoto/${memberorderinfo.memberorderlist[j].product_images_url}" alt="">
+                            <img src="./img/postcardPhoto/${memberorderinfo[i].product_images_url_front}" alt="">
                         </div>
                     </div>
                     <div class="member_info_order_bottom_contrary">
                         <div>
-                            <img src="./img/memberPhoto/${memberorderinfo.memberorderlist[j].product_images_url_two}" alt="">
+                            <img src="./img/postcardPhoto/${memberorderinfo[i].product_images_url_back}" alt="">
                         </div>
                     </div>
                     <div class="member_info_order_bottom_word">
-                        <p>收件之人 :<span>${memberorderinfo.memberorderlist[j].receiver_name}</span></p>
-                        <p>收件地址 :<span>${memberorderinfo.memberorderlist[j].receiver_address}</span></p>
+                        <p>收件之人 :<span>${memberorderinfo[i].receiver_name}</span></p>
+                        <p>收件地址 :<span>${memberorderinfo[i].receiver_address}</span></p>
                     </div>
                 </div>
             </div>`
-                        ;
-                }
+                ;
 
-            }
-            memberorderRow += `</div>`;
-            ;
-        }
-        memberorder.innerHTML = memberorderRow;
-
-        function ordermodify() {
-            for (let i = 0; i < 100; i++) {
-                $(`.member_info_order>div>div:nth-child(${i})`).click(function () {
-                    $(this).toggleClass("height_auto")
-                    // alert(00)
-                })
-            }
-        };
-
-
-        //訂單太長 讓他點了再開
-        ordermodify();
-
-
+        
+        memberorderRow += `</div>`;
+        ;
     }
-    let url = "./php/member/getOrderInfo.php?number=" + memNum;
-    console.log(url);
-    xhr.open("Get", url, true);
-    xhr.send(null);
+    memberorder.innerHTML = memberorderRow;
+
+    // function ordermodify() {
+    //     for (let i = 0; i < 100; i++) {
+    //         $(`.member_info_order>div>div:nth-child(${i})`).click(function () {
+    //             $(this).toggleClass("height_auto")
+    //             // alert(00)
+    //         })
+    //     }
+    // };
+
+
+    // //訂單太長 讓他點了再開
+    // ordermodify();
+
+
+}
+let url = "./php/getOrderInfo.php?number=" + memNum;
+console.log(url);
+xhr.open("Get", url, true);
+xhr.send(null);
 }
 /////////////////////////////////////////////////////////////////////第二頁放路線
 function getLineInfo(memNum) {
@@ -794,7 +825,7 @@ function getLineInfo(memNum) {
                     });
                     //   console.log(map);
                 } else {
-                    alert("00");
+                    alert("OPPS!!");
                 }
             });
         }
@@ -880,7 +911,7 @@ function getLineInfo(memNum) {
                             alert(xhr.status);
                         }
                     }
-                    var url = "./php/member/upmemberline.php?number=" + number
+                    var url = "./php/upmemberline.php?number=" + number
                         + "&title=" + title
                         + "&word=" + word;
                     console.log(url);
@@ -909,7 +940,7 @@ function getLineInfo(memNum) {
                             alert(xhr.status);
                         }
                     }
-                    var url = "./php/member/delmemberline.php?number=" + number;
+                    var url = "./php/delmemberline.php?number=" + number;
                     console.log(url);
                     xhr.open("Get", url, true);
                     xhr.send(null);
@@ -923,7 +954,7 @@ function getLineInfo(memNum) {
         memberlinemodify();
 
     }
-    let url = "./php/member/getMemberIine.php?number=" + memNum;
+    let url = "./php/getMemberIine.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
@@ -996,10 +1027,11 @@ function membermodify() {
 }
 ///////////////////////////////////////////////////////////////////////////第一頁放資料
 function getMemberInfo(memNum) {
-    // alert(memNum);
+    alert(memNum);
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         memberinfo = JSON.parse(xhr.responseText);
+        // JSON.parse(JSON.stringify(xhr.responseText))
         console.log(memberinfo);
         //點數更新
         let point = document.getElementById("member_point_point");
@@ -1007,7 +1039,7 @@ function getMemberInfo(memNum) {
         //會員資料更新
         let member_info_info_all = document.getElementById("member_info_info_all");
         member_info_info_all.innerHTML = `
-        <form action="./php/member/upmemberinfo.php" method="post" enctype="multipart/form-data" id="member_upload">
+        <form action="./php/upmemberinfo.php" method="post" enctype="multipart/form-data" id="member_upload">
                                 <div class="member_info_info_left">
                                     <div>
                                         <span>我的資料</span>
@@ -1067,7 +1099,7 @@ function getMemberInfo(memNum) {
         //上傳圖片會顯示
         memberphoto();
     }
-    let url = "./php/member/getMemberInfo.php?number=" + memNum;
+    let url = "./php/getMemberInfo.php?number=" + memNum;
     console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
@@ -1079,15 +1111,21 @@ function getLoginInfo() {
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
         memNum = member.memNum
-        // alert(memNum);
+         alert(memNum);
         getMemberInfo(memNum);
         getLineInfo(memNum);
         getOrderInfo(memNum);
         getJoinInfo(memNum);
         getOpenInfo(memNum);
         getMoodInfo(memNum);
+        // getMemberInfo(2);
+        // getLineInfo(2);
+        // getOrderInfo(2);
+        // getJoinInfo(2);
+        // getOpenInfo(2);
+        // getMoodInfo(2);
     }
-    xhr.open("get", "./php/loginInfoForFront.php", true);
+    xhr.open("get", "./php/logininfoForFront.php", true);
     xhr.send(null);
 }; //
 window.addEventListener("load", function () {

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 .filterBlock {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,11 +15,19 @@
           align-items: center;
 }
 
+.filterBlock .filterMask {
+  width: 100%;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+}
+
 .filterBlock .filterAll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   max-width: 1200px;
 }
 
@@ -48,12 +55,6 @@
 .filterBgImage {
   width: 100%;
   max-width: 1200px;
-}
-
-@media screen and (max-width: 575px) {
-  .filterBlock .filterAll li {
-    font-size: 18px;
-  }
 }
 
 /*

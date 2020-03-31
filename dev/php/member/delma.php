@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $number=$_GET["number"];
     $sql = "delete from `staff` where staff_number=:number ";
 

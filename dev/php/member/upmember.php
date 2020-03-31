@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $number=$_GET["number"];
     $updatenum=$_GET["updatenum"];
     $sql = "update `member` set member_sataus=:updatenum where member_number=:number";
