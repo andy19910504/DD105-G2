@@ -185,27 +185,25 @@ div.moodCard {
      先用include card(設定height) 在做其他設定，我會再增加卡片的間距
 
     */
-div.eventCardsWrap {
-  width: 100%;
+div.cardBox {
   display: flex;
-  justify-content: space-around; }
-
-@media screen and (max-width: 767px) {
-  div.eventCardsWrap {
-    flex-direction: column;
-    align-items: center; } }
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
 
 div.eventCard {
   width: 340px;
   height: unset;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(145, 131, 131, 0.4);
-  background-image: url(../img/index/eventCardBg.png);
+  background-image: url(../img/event/event_cardback.png);
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start; }
+  justify-content: start;
+  transition: 1s;
+  margin: 25px 30px; }
   div.eventCard div.dotWrap {
     width: 40px;
     height: 40px;
@@ -233,15 +231,13 @@ div.eventCard {
       vertical-align: middle; }
   div.eventCard div.cardText {
     width: 300px;
-    height: 150px;
     margin: 0 auto;
     text-align: center;
     letter-spacing: 2px;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between; }
+    align-items: center; }
     div.eventCard div.cardText h1 {
       width: 100%;
       font-size: 24px;
@@ -252,8 +248,7 @@ div.eventCard {
     div.eventCard div.cardText p {
       font-size: 18px;
       color: #646464;
-      text-align: left;
-      overflow: hidden; }
+      text-align: left; }
     div.eventCard div.cardText span {
       color: #646464;
       font-size: 16px;
@@ -263,61 +258,71 @@ div.eventCard {
       div.eventCard div.cardText span:hover {
         color: #A5361C; }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1210px) {
   div.eventCard {
-    width: 300px; }
-    div.eventCard div.dotWrap {
-      margin: 5px 18px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.eventCard div.cardText {
-      width: 270px; } }
-
-@media screen and (max-width: 1023px) {
-  div.eventCard {
-    width: 230px; }
-    div.eventCard div.dotWrap {
-      margin: 0px 15px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 200px;
-      height: 200px; }
-    div.eventCard div.cardText {
-      width: 200px; }
-      div.eventCard div.cardText h1 {
-        font-size: 20px; }
-      div.eventCard div.cardText p {
-        font-size: 16px;
-        letter-spacing: 1px; } }
-
-@media screen and (max-width: 767px) {
-  div.eventCard {
-    width: 300px;
-    margin: 7px 0px; }
-    div.eventCard div.dotWrap {
-      margin: 5px 18px 0px 0px; }
-    div.eventCard div.eventPicWrap {
-      width: 270px;
-      height: 270px; }
-    div.eventCard div.cardText {
-      width: 270px;
-      margin: 0 auto;
-      text-align: center;
-      letter-spacing: 2px;
-      line-height: 1.5; }
-      div.eventCard div.cardText h1 {
-        font-size: 24px; }
-      div.eventCard div.cardText p {
-        font-size: 18px; } }
+    margin: 25px auto;
+    flex-wrap: wrap; } }
 
 @media screen and (max-width: 767px) {
   div.eventWrap {
-    margin-top: 130px; } }
+    margin: 0px auto; }
+  div.eventCard {
+    margin: 35px auto;
+    flex-wrap: wrap; }
+  div.cardBox {
+    justify-content: center; } }
+
+.eventCard:hover {
+  transform: translateY(-10px); }
+
+.cardTop {
+  display: flex; }
+
+.starMark {
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  width: 270px;
+  padding-top: 6px;
+  padding-left: 3px;
+  font-size: 18px;
+  color: #646464; }
+
+@media screen and (max-width: 1199px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 250px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 1023px) {
+  .starMark {
+    padding: 5px 0 0px 15px;
+    width: 190px;
+    font-size: 16px; } }
+
+@media screen and (max-width: 767px) {
+  .starMark {
+    padding: 5px 0 0px 10px;
+    width: 250px;
+    font-size: 16px; } }
+
+.eventinfo_back {
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; }
 
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);
   display: none;
-  filter: alpha(opacity=0);
   height: 100%;
   width: 100%;
   z-index: 200;
@@ -335,195 +340,107 @@ div.eventCard {
   right: 10px;
   font-size: 32px;
   margin: 10px;
+  top: 0px;
   position: absolute; }
 
-.lightbox_holdevent_info, .lightbox_detailevent_info {
+.lightbox_detailevent_info {
   position: relative;
-  background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
+  border-radius: 6px;
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1000px;
+  height: 700px;
+  border-radius: 15px;
+  overflow: hidden; }
+
+.lightbox_holdevent_info {
+  position: relative;
+  border-radius: 6px;
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
   width: 1200px;
-  height: 750px;
+  height: 780px;
   border-radius: 15px;
-  align-items: center; }
-  .lightbox_holdevent_info .holdevent_title, .lightbox_detailevent_info .holdevent_title {
+  overflow: hidden; }
+  .lightbox_holdevent_info .holdevent_title {
     text-align: center;
     color: #1e1e1e;
     font-size: 24px;
     font-weight: bold;
-    margin: 40px auto 20px auto; }
-  .lightbox_holdevent_info form, .lightbox_detailevent_info form {
-    height: 536px; }
-    .lightbox_holdevent_info form .stepALL, .lightbox_detailevent_info form .stepALL {
-      height: 536px; }
-  .lightbox_holdevent_info .holdevent_step, .lightbox_detailevent_info .holdevent_step {
+    margin-top: 35px;
+    letter-spacing: 1.875px;
+    width: 200px; }
+  .lightbox_holdevent_info .stepALL {
+    margin: 50px 0;
+    width: 100%; }
+  .lightbox_holdevent_info .holdevent_step {
     margin: 10px auto;
     text-align: center;
     display: flex;
     justify-content: center; }
-    .lightbox_holdevent_info .holdevent_step div, .lightbox_detailevent_info .holdevent_step div {
+    .lightbox_holdevent_info .holdevent_step div {
       margin: 0 55px;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       display: flex;
       flex-direction: column;
+      text-align: center;
       justify-content: center;
-      border-radius: 50%;
-      font-size: 18px;
-      border: 1px solid #6a9cb0; }
-      .lightbox_holdevent_info .holdevent_step div p, .lightbox_detailevent_info .holdevent_step div p {
+      background-size: contain;
+      background-position: center;
+      background-image: url(../img/event/event_step3.png);
+      font-size: 18px; }
+      .lightbox_holdevent_info .holdevent_step div p {
+        margin-bottom: 5px; }
+      .lightbox_holdevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
+    .lightbox_holdevent_info .holdevent_step .color {
+      background-image: url(../img/event/event_stepOn.png); }
 
-.color {
-  background-color: #FFD66A; }
+@media screen and (max-width: 767px) {
+  .lightbox_holdevent_info {
+    overflow-y: scroll; } }
 
-.holdevent_step1content {
-  height: 536px;
-  display: block; }
+@media screen and (max-width: 1200px) {
+  .lightbox_holdevent_info {
+    width: 90%; } }
 
-.chooseRoute {
-  margin: 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .chooseRoute .sliderWrap {
-    width: 1100px;
-    overflow: hidden; }
-    .chooseRoute .sliderWrap .routeBox {
-      text-align: center;
-      display: flex;
-      flex-direction: row;
-      width: 1600px; }
-      .chooseRoute .sliderWrap .routeBox div {
-        cursor: pointer;
-        background-color: #cce6f0;
-        border-radius: 3px;
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        line-height: 200px;
-        font-size: 18px;
-        color: #646464; }
-  .chooseRoute .slideBtn {
-    margin: 0 10px;
-    cursor: pointer; }
-    .chooseRoute .slideBtn img {
-      width: 100%; }
-
-.routeClick {
-  margin: 60px auto;
-  padding: 0px 95px;
-  width: 100%; }
-  .routeClick p {
-    margin: 20px 0 20px 0px;
-    font-size: 18px;
-    color: #646464; }
-
-.stepBtn {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50px; }
-  .stepBtn div {
-    margin: 0px 80px; }
-
-.holdevent_step2content {
-  display: none;
-  height: 536px;
-  width: 100%; }
-  .holdevent_step2content .step2Info {
-    width: 100%;
-    display: flex;
-    padding: 10px 40px; }
-    .holdevent_step2content .step2Info .holderPic {
-      width: 50%; }
-      .holdevent_step2content .step2Info .holderPic input {
-        font-size: 18px;
-        color: #646464; }
-      .holdevent_step2content .step2Info .holderPic div {
-        border-radius: 5px;
-        margin-top: 20px;
-        border: 3px dashed #6a9cb0;
-        width: 480px;
-        height: 265px; }
-    .holdevent_step2content .step2Info .holderPicBox {
-      text-align: center;
-      line-height: 265px;
-      font-size: 18px;
-      color: #646464; }
-  .holdevent_step2content .holderInfo {
-    width: 50%;
-    font-size: 18px;
-    align-items: center;
-    color: #646464;
-    padding: 0px 70px; }
-    .holdevent_step2content .holderInfo div {
-      margin: 15px 0; }
-      .holdevent_step2content .holderInfo div input {
-        width: 220px;
-        height: 35px; }
-      .holdevent_step2content .holderInfo div label {
-        margin-right: 10px; }
-
-.holdevent_step3content {
-  display: none;
-  font-size: 18px;
-  color: #646464;
-  height: 536px;
-  width: 100%; }
-  .holdevent_step3content .step3Info {
-    display: flex;
-    padding: 10px 40px; }
-    .holdevent_step3content .step3Info .holderCover {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      padding: 15px 60px; }
-      .holdevent_step3content .step3Info .holderCover .holderCoverPic {
-        margin-top: 10px; }
-        .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
-          border-radius: 5px;
-          width: 100%; }
-      .holdevent_step3content .step3Info .holderCover .holderCoverText {
-        margin: 20px 0;
-        letter-spacing: 1.2px; }
-        .holdevent_step3content .step3Info .holderCover .holderCoverText .title {
-          font-weight: 550;
-          font-size: 20px;
-          margin: 15px 0; }
-    .holdevent_step3content .step3Info .holderCoverInfo {
-      line-height: 2;
-      letter-spacing: 1.2px;
-      padding: 45px 85px;
-      width: 50%; }
-      .holdevent_step3content .step3Info .holderCoverInfo table tr {
-        height: 60px; }
-        .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
-          width: 110px; }
+@media screen and (max-width: 767px) {
+  div.holdevent_step1content .step2, div.holdevent_step1content .step3 {
+    display: none; } }
 
 .detaileventContent {
-  width: 100%;
   font-size: 18px;
+  padding: 0px 50px;
+  width: 100%;
   color: #1e1e1e;
   display: flex;
-  padding-top: 100px;
   letter-spacing: 1.2px;
-  justify-content: center;
-  line-height: 1.75; }
+  align-items: center;
+  justify-content: center; }
   .detaileventContent .detaileventPic {
+    display: flex;
     width: 50%;
-    padding: 10px 10px 10px 25px; }
+    flex-direction: column;
+    padding-left: 20px; }
     .detaileventContent .detaileventPic .title {
+      font-size: 24px;
+      color: #206B95;
+      font-weight: bolder;
       display: flex;
+      margin-bottom: 30px;
       position: relative; }
       .detaileventContent .detaileventPic .title .eventInfotitle {
         font-size: 24px;
-        font-weight: 550;
-        margin-right: 150px; }
+        color: #206B95;
+        font-weight: bolder; }
       .detaileventContent .detaileventPic .title .dotWrap {
         right: 25px;
         width: 40px;
@@ -541,18 +458,27 @@ div.eventCard {
         border-radius: 100%;
         background-color: #646464; }
     .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 550px;
-      padding-top: 20px; }
+      width: 400px;
+      height: 300px;
+      border-radius: 5px;
+      overflow: hidden; }
       .detaileventContent .detaileventPic .detaileventPicbox img {
-        width: 100%;
-        border-radius: 5px; }
+        width: 100%; }
+    .detaileventContent .detaileventPic .detaileventRoute {
+      margin: 25px 0 0px 0px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: #646464; }
   .detaileventContent .detaileventText {
-    padding: 70px 0px 0px 20px;
-    width: 45%; }
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0 0 60px; }
     .detaileventContent .detaileventText .eventInforow {
       height: 45px;
       line-height: 45px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       display: flex;
       justify-content: center; }
       .detaileventContent .detaileventText .eventInforow .eventrowTitle {
@@ -566,15 +492,16 @@ div.eventCard {
 
 .enroll {
   position: absolute;
-  bottom: 58px; }
+  bottom: 40px; }
 
 .lightbox_report_info {
   position: fixed;
   background-color: #d4d3d3;
-  background-image: url(../img/event/event_cardback.png);
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.363);
-  width: 20%;
-  height: 40%;
+  background-image: url(../img/index/linedpaper.png);
+  align-items: center;
+  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
+  width: 300px;
+  height: 300px;
   margin: auto;
   top: 15%;
   left: 0;
@@ -584,11 +511,14 @@ div.eventCard {
   .lightbox_report_info .reportTitle {
     font-size: 24px;
     margin: 30px 0;
-    text-align: center; }
+    text-align: center;
+    color: #646464;
+    font-size: bold; }
   .lightbox_report_info form {
     font-size: 20px;
-    padding: 0 25px;
-    margin: 35px auto; }
+    padding: 0 35px;
+    margin: 35px auto;
+    color: #646464; }
     .lightbox_report_info form input {
       margin: 15px; }
   .lightbox_report_info .reportSent {
@@ -793,7 +723,7 @@ div.eventCard {
   max-width: 1200px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin: auto;
-  padding: 80px 0;
+  padding: 80px 0 130px;
   position: relative; }
   @media screen and (max-width: 991px) {
     .routeContent .routeBlockBgImage {
@@ -864,23 +794,64 @@ div.eventCard {
 .routeBlock .routeBlockPart:first-child {
   margin-top: unset; }
 
+.routeBlock .routeBlockPart:nth-child(odd) .routeAttractionBlock {
+  transform: translateX(-40px); }
+  .routeBlock .routeBlockPart:nth-child(odd) .routeAttractionBlock .attractionTitle {
+    transform: translateX(-40px); }
+  @media screen and (max-width: 1000px) {
+    .routeBlock .routeBlockPart:nth-child(odd) .routeAttractionBlock {
+      transform: translateX(0px); } }
+  @media screen and (max-width: 860px) {
+    .routeBlock .routeBlockPart:nth-child(odd) .routeAttractionBlock .attractionTitle {
+      transform: translateX(0px); } }
+
 .routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock {
-  order: 2; }
+  order: 2;
+  transform: translateX(40px); }
+  .routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock .attractionTitle {
+    transform: translateX(40px); }
+  @media screen and (max-width: 1000px) {
+    .routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock {
+      transform: translateX(0px); } }
+  @media screen and (max-width: 860px) {
+    .routeBlock .routeBlockPart:nth-child(even) .routeAttractionBlock .attractionTitle {
+      transform: translateX(0px); } }
 
 .routeAttractionBlock {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
   margin: 0 30px; }
+  @media screen and (max-width: 992px) {
+    .routeAttractionBlock {
+      margin: 0px; } }
   @media screen and (max-width: 860px) {
     .routeAttractionBlock {
-      margin-bottom: 60px; } }
+      margin-bottom: 80px; } }
 
 .routeAttractionBlock .attractionTitle {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   font-size: 18px;
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  transform: translate(-35px, 60px); }
+  font-weight: bold; }
+  .routeAttractionBlock .attractionTitle :nth-child(3), .routeAttractionBlock .attractionTitle :nth-child(4) {
+    margin-top: 10px; }
+  .routeAttractionBlock .attractionTitle :nth-child(4) {
+    color: #a5361c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .routeAttractionBlock .attractionTitle :nth-child(4) img {
+      height: 24px;
+      margin-right: 2px;
+      transform: translateY(-3px); }
 
 .attractionTitle .landMark {
   animation: markMove 1.5s alternate infinite; }

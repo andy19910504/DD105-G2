@@ -33,10 +33,13 @@ function getFilterName(info) {
             routeTilteBlock.innerHTML =
                 `<img src="./img/routes/${firstRouteInfo[0].route_photo}"></img>`;
             for (let i = 0; i < firstRouteInfo.length; i++) {
-                routeAttractionBlock[i].innerHTML = `
+                if (firstRouteInfo[i].attraction_status == 0) {
+                    routeAttractionBlock[i].innerHTML = `
                     <div class="attractionTitle">
-                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <img src="./img/route/landMark.png" class="landMark">
                         <p>${firstRouteInfo[i].attraction_name}</p>
+                        <p>${firstRouteInfo[i].attraction_address}</p>
+                        <p><img src="./img/element/note.png">景點目前關閉中</p>
                     </div>
                     <div class="attractionImageBlock">
                         <div class="attractionImage">
@@ -44,6 +47,20 @@ function getFilterName(info) {
                         </div>
                     </div>
                 `;
+                }else{
+                    routeAttractionBlock[i].innerHTML = `
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p>${firstRouteInfo[i].attraction_name}</p>
+                        <p>${firstRouteInfo[i].attraction_address}</p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[i].attraction_photo1}"></div>
+                        </div>
+                    </div>
+                `;
+                }
             }
         } else {
             alert(xhr2.status);
@@ -63,6 +80,67 @@ function getFilterName(info) {
     });
 }
 
+// 當頁面載入顯示第一條路線的揪團資訊
+function firstRouteEvent() {
+    // 當頁面載入顯示地一條路線的揪團資訊
+    let firstRoute = document.querySelectorAll('.filter')[0].innerHTML;
+    let firstRouteForm = new FormData();
+    firstRouteForm.append('eventConcat', firstRoute);
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            // 新增卡片
+            let cardBox = $id("cardBox");
+            let eventTable = JSON.parse(xhr.responseText);//把JSON字串翻譯成JS
+            console.log(eventTable);
+            let html = "";
+            for (i = 0; i < eventTable.length; i++) {
+                html += `
+         <div class="eventCard wow zoomIn">
+             <div class="cardTop">
+             `
+                if (eventTable[i].member_number == null) {
+                    html += `
+                 <div class="starMark">
+                     <div><img src="./img/event/event_star.png" alt=""></div>
+                     <div class="markWord">官方路線</div>
+                 </div>
+                 `
+                } else {
+                    html += `<div class="starMark"></div>`
+                }
+                html += `
+                 <div class="dotWrap">
+                 </div>
+             </div>
+             <div class="eventPicWrap">
+                 <img src="./img/eventPhoto/${eventTable[i].event_cover_url}" class="eventPic">
+             </div>
+             <div class="cardText">
+                 <h1>${eventTable[i].event_name}</h1>
+                 <p>
+                     活動日期:${eventTable[i].event_date}<br>
+                     報名截止:${eventTable[i].enroll_end_date}<br>
+                     集合地點:${eventTable[i].meeting_place}
+                 </p>
+                 <span id="more${eventTable[i].event_number}" class="lightDetail">more</span>
+             </div>
+         </div> 
+         `;
+            }
+            cardBox.innerHTML = html;
+
+        } else {
+            alert(xhr.status);
+        }
+        LightEventinfo(xhr.responseText);
+    }
+    xhr.open("post", "./php/getEventForConcat.php", true);
+    xhr.send(firstRouteForm);
+
+}
+
 // 取得一開始顯示在頁面上路線的資訊
 
 window.addEventListener("load", function () {
@@ -71,7 +149,7 @@ window.addEventListener("load", function () {
     xhr.onload = function () {
         if (xhr.status == 200) {
             getFilterName(xhr.responseText);
-
+            firstRouteEvent();
         } else {
             alert(xhr.status);
         }

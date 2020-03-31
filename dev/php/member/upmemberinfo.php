@@ -1,6 +1,10 @@
 <?php
 try {
+<<<<<<< HEAD
     require_once("./connectBooks.php");
+=======
+    require_once("connectBooks.php");
+>>>>>>> 539dba2f4dc4f1cf7a323173141522a9c57f3c41
     $number=$_POST["member_number"];
     $account=$_POST["member_account"];
     $password=$_POST["member_password"];

@@ -50,7 +50,6 @@ function LightEventinfo(events) {
                             </div>
                         </div>
                         <div class="detaileventText">
-                            <form action="">
                                 <div class="eventInforow">
                                     <div class="eventrowTitle">活動日期</div>
                                     <div>${eventTable[i].event_date}</div>
@@ -59,10 +58,13 @@ function LightEventinfo(events) {
                                     <div class="eventrowTitle">報名截止日</div>
                                     <div>${eventTable[i].enroll_end_date}</div>
                                 </div>
-
                                 <div class="eventInforow">
                                     <div class="eventrowTitle">集合地點</div>
                                     <div>${eventTable[i].meeting_place}</div>
+                                </div>
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">目前報名人數</div>
+                                     <div>${eventTable[i].now_attendance}位</div>
                                 </div>
                                 <div class="eventInforow">
                                     <div class="eventrowTitle">報名人數上限</div>
@@ -72,7 +74,6 @@ function LightEventinfo(events) {
                                     <div class="eventrowTitle">活動介紹</div>
                                     <div>${eventTable[i].event_information}</div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                     <div class="enroll">

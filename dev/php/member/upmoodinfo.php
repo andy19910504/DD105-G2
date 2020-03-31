@@ -1,5 +1,6 @@
 <?php
 try {
+<<<<<<< HEAD
     require_once("./connectBooks.php");
     $mood_class=$_POST["mood_class"];
     $mood_content=$_POST["mood_content"];
@@ -12,6 +13,20 @@ try {
     $upmoodinfo->bindvalue(":mood_class",$mood_class);
     $upmoodinfo->bindvalue(":mood_content",$mood_content);
     $upmoodinfo->bindvalue(":mood_number",$mood_number);
+=======
+    require_once("connectBooks.php");
+    $route_number=$_POST["route_number"];
+    $post_text=$_POST["post_text"];
+    $post_number=$_POST["post_number"];
+ 
+    // $photo=$_POST["photo"];
+    $sql = "update `posts` set route_number=:route_number,post_text=:post_text where post_number=:post_number";
+
+    $upmoodinfo = $pdo->prepare($sql);
+    $upmoodinfo->bindvalue(":route_number",$route_number);
+    $upmoodinfo->bindvalue(":post_text",$post_text);
+    $upmoodinfo->bindvalue(":post_number",$post_number);
+>>>>>>> 539dba2f4dc4f1cf7a323173141522a9c57f3c41
     // $upmemberinfo->bindvalue(":photo",$photo);
     $upmoodinfo->execute();
     // if($upmemberinfo->rowCount() == 1){
@@ -39,10 +54,17 @@ try {
                 echo "上傳成功00";
                 header("Location:../../member.html"); 
                 //回寫照片的檔名為會員編號
+<<<<<<< HEAD
                 $sql = "update `mood` set mood_photo=:photo where mood_number=:mood_number";
                     $upopenpho = $pdo->prepare($sql);
                         $upopenpho->bindvalue(":photo","moodPic$post_number.$namee[1]");
                         $upopenpho->bindvalue(":mood_number",$mood_number);
+=======
+                $sql = "update `posts` set post_image_url=:photo where post_number=:post_number";
+                    $upopenpho = $pdo->prepare($sql);
+                        $upopenpho->bindvalue(":photo","moodPic$post_number.$namee[1]");
+                        $upopenpho->bindvalue(":post_number",$post_number);
+>>>>>>> 539dba2f4dc4f1cf7a323173141522a9c57f3c41
                         $upopenpho->execute();
                 if($upopenpho->rowCount() == 1){
                     echo "上傳成功11";

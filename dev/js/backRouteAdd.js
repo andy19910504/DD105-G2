@@ -30,11 +30,11 @@ window.addEventListener("load", function () {
             }
         }
         // 確認
-        console.log(routeName);
-        console.log(routeInfo);
-        console.log(routePhoto);
-        console.log(routeStatus);
-        console.log(routeAttr);
+        // console.log(routeName);
+        // console.log(routeInfo);
+        // console.log(routePhoto);
+        // console.log(routeStatus);
+        // console.log(routeAttr);
 
         // 建一個表單物件，將值放入表單物件中
         var editForm = new FormData();
@@ -49,14 +49,16 @@ window.addEventListener("load", function () {
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
-                alert('路線新增成功!');
-
+               if(xhr.responseText == "成功"){
+                   alert("新增路線成功!");
+               }
+                location.reload();
             } else {
                 alert(xhr.status);
             }
         }
-        xhr.open("post", "../php/backRouteAdd.php", true);
+        xhr.open("Post", "./php/backRouteAdd.php", true);
         xhr.send(editForm); // 傳送表單物件
-        location.reload();
+
     });
 });

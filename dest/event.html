@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/event.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/swiper.min.css">
+    <script src="./js/getLoginInfo.js"></script>
 </head>
 
 <body>
@@ -38,13 +39,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
         <div class="navPoint">
+            <div class="point">點數</div>
             <a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
         </div>
     </div>
 </header>
@@ -66,13 +68,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
         <div class="navPoint">
             <a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+            <div class="point">點數</div>
         </div>
     </div>
 </header>
@@ -102,7 +105,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -116,7 +119,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -148,7 +151,7 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
@@ -339,9 +342,9 @@
                     </div> -->
                 </div>
                 <!-- viewMore次要按鈕 // btnPink link：連結的網址 innerText：按鈕名稱 -->
-                <div class="viewMore">
+                <!-- <div class="viewMore">
                     <div class="btnPink">View More</div>
-                </div>
+                </div> -->
             </section>
             <!-- //燈箱們-我要揪團 -->
             <div class="backDrop" id="eventhold_back">
@@ -672,7 +675,6 @@
                                     </div>
                                 </div>
                                 <div class="detaileventText">
-                                    <form action="">
                                         <div class="eventInforow">
                                             <div class="eventrowTitle">活動日期</div>
                                             <div>2020-03-01(日)</div>
@@ -697,7 +699,6 @@
                                             <div class="eventrowTitle">活動介紹</div>
                                             <div>故宮好好玩喔~~</div>
                                         </div>
-                                    </form>
                                 </div>
                             </div>
                             <div class="enroll">

@@ -1,6 +1,10 @@
 <?php
 try {
+<<<<<<< HEAD
     require_once("./connectBooks.php");
+=======
+    require_once("connectBooks.php");
+>>>>>>> 539dba2f4dc4f1cf7a323173141522a9c57f3c41
     $memNum=$_GET["number"];
     $sql = "select * from`event_record` a join `event` b on(a.event_number=b.event_number) join `member`c on(b.origin_member_number=c.member_number) join `routes` d on(b.route_number=d.route_number) where a.member_number=:memNum ORDER BY `a`.`event_number` DESC";
     $joininfo = $pdo->prepare($sql);

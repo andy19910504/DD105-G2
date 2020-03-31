@@ -296,7 +296,7 @@ img.milkTea{
     width: 100px;
     position: absolute;
     right: -200px;
-    top: 500px;
+    top: 900px;
     transform: rotate(8deg);
 }
 //相機
@@ -304,7 +304,7 @@ img.camera{
     width: 160px;
     position: absolute;
     right: -320px;
-    top: 650px;
+    top: 1050px;
     transform: rotate(10deg);
 }
 //小星星
@@ -312,7 +312,7 @@ img.star01{
     width: 40px;
     position: absolute;
     right: -325px;
-    top: 590px;
+    top: 990px;
     animation: starAni .8s infinite alternate;
 }
 //大星星
@@ -320,7 +320,7 @@ img.star02{
     width: 50px;
     position: absolute;
     right: -180px;
-    top: 720px;
+    top: 1120px;
     animation: starAni 1s infinite alternate-reverse;
 }
 @keyframes starAni{
@@ -332,7 +332,7 @@ img.skyLight01{
     width: 120px;
     position: absolute;
     left: -250px;
-    top: 850px;
+    top: 1350px;
     animation: skyLightAni 2s infinite alternate-reverse linear;
 }
 //天燈 (外圍2顆
@@ -340,7 +340,7 @@ img.skyLight02{
     width: 300px;
     position: absolute;
     left: -320px;
-    top: 720px;
+    top: 1220px;
     animation: skyLightAni 1s infinite alternate-reverse linear;
 }
 @keyframes skyLightAni{
@@ -352,7 +352,7 @@ img.eggBread{
     width: 130px;
     position: absolute;
     right: -180px;
-    top: 1450px;
+    top: 1650px;
     animation: skyLightAni 1.2s infinite alternate linear;
 }
 //糖葫蘆
@@ -360,7 +360,7 @@ img.candyFruit{
     width: 120px;
     position: absolute;
     right: -280px;
-    top: 1550px;
+    top: 1750px;
     animation: skyLightAni 1s infinite alternate linear;
 }
 

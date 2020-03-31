@@ -85,43 +85,49 @@ header.fullHeader nav ul li a .navHover.show{
 header.fullHeader .memberIcon{
     display: flex;
     align-items: flex-start;
-    transform: translate(300px,-30px);
-}
-header.fullHeader .memberIcon div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    cursor: pointer;
-    a{
-      display: inline-block;
-      margin-bottom: 4px;
+    transform: translate(300px,-20px);
+    &>div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        div{
+            margin-right: 5px;
+        }
+        a{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            img{
+                height: 85%;
+            }
+        }
     }
-}header.fullHeader .memberIcon div:last-child{
-    margin-right: 0px;
-    cursor: unset;
-}
-.navMember .memberPhoto{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
-    img{
-        width: 100%;
+    :last-child{
+        margin-right: 0px;
+        cursor: unset;
     }
 }
+
 
 // 1200px 以下為 漢堡選單
 header.hamburgerHeader{
     width: 100%;
     height: 100%;
+    min-height: 800px;
+    padding-top: 120px;
     overflow: hidden;
     background-color: rgba(255,255,255,.95);
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     position: fixed;
     z-index: 100;
     transform: translateY(-100%);
@@ -129,6 +135,9 @@ header.hamburgerHeader{
 }
 header.hamburgerHeader.showHeader{
     transform: translateY(0%);
+}
+header.hamburgerHeader nav{
+    transform: translateX(-15px);
 }
 header.hamburgerHeader nav ul li{
     width: 180px;
@@ -154,21 +163,36 @@ header.hamburgerHeader .memberIcon{
     align-items: flex-start;
     margin-top: 80px;
     cursor: pointer;
-}
-header.hamburgerHeader .memberIcon div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    cursor: pointer;
-    a{
-      display: inline-block;
-      margin-bottom: 4px;
+    &>div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        div{
+            margin-top: 5px;
+        }
+        a{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            img{
+                height: 85%;
+            }
+        }
     }
-}header.hamburgerHeader .memberIcon div:last-child{
-    margin-right: 0px;
+    :last-child{
+        margin-right: 0px;
+        cursor: unset;
+    }
 }
+
 h1.smartPhoneLogo{
     width: 120px;
     display: none;

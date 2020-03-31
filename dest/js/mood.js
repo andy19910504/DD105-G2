@@ -209,7 +209,7 @@ function showCards(moodData){
     for (i = 0; i < moodAll.moodCard.length; i++) {
 
         html += `
-                <div class="moodCard">
+                <div class="moodCard wow fadeInUp">
                     <input type="hidden" name="cardMoodNum" class="cardMoodNum" value="${moodAll.moodCard[i].mood_number}">
                     <div class="cardInfoBar">
                         <div class="moodMemberPhoto"><img src="./img/memberPhoto/${moodAll.moodCard[i].member_photo}"></div>

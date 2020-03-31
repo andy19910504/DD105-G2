@@ -8,21 +8,296 @@ function getLoginInfo() {
     }
     xhr.open("get", "./php/loginInfoForFront.php", true);
     xhr.send(null);
-}; 
+};
 
-//檢舉 函式
-function reportMood(){
+// 顯示揪團
+function $id(id) {
+    return document.getElementById(id);
+}
+function showEventInfo() {
+    let eventinfo_back = document.querySelectorAll(".eventinfo_back");
+    let lightDetail = document.querySelectorAll(".lightDetail");
+
+    for (let j = 0; j < eventinfo_back.length; j++) {
+        lightDetail[j].onclick = function (e) {
+            e.preventDefault();
+            eventinfo_back[j].style.display = "flex";
+
+        }
+    }
+}
+// 動態新增燈箱-活動詳情
+function LightEventinfo(events) {
+    let eventinfoLight = $id("eventinfoLight");
+    let eventTable = JSON.parse(events);//把JSON字串翻譯成JS
+    let html = "";
+
+    for (i = 0; i < eventTable.length; i++) {
+        html += `
+    <div id="event${eventTable[i].event_number}" class="eventinfo_back" psn="${eventTable[i].event_number}">
+        <div class="lightbox_detailevent">
+            <div class="lightbox_detailevent_info">
+                    <div class="close eventinfoClose">✘</div>
+                    <div class="detaileventContent">
+                        <div class="detaileventPic">
+                            <div class="title">
+                                <div class="eventInfotitle">${eventTable[i].event_name}</div>
+                                <div class=" dotWrap lightReport">
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                </div>
+                            </div>
+                            <div class="detaileventPicbox">
+                                <img src="./img/eventPhoto/${eventTable[i].event_cover_url}">
+                            </div>
+                            <div class="detaileventRoute">
+                                <p>${eventTable[i].route_name}</p>
+                                <p>台北101 -> 台北101 -> 台北101</p>
+                            </div>
+                        </div>
+                        <div class="detaileventText">
+                            <form action="">
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">活動日期</div>
+                                    <div>${eventTable[i].event_date}</div>
+                                </div>
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">報名截止日</div>
+                                    <div>${eventTable[i].enroll_end_date}</div>
+                                </div>
+
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">集合地點</div>
+                                    <div>${eventTable[i].meeting_place}</div>
+                                </div>
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">報名人數上限</div>
+                                     <div>${eventTable[i].max_attendance}位</div>
+                                </div>
+                                <div class="eventInforow">
+                                    <div class="eventrowTitle">活動介紹</div>
+                                    <div>${eventTable[i].event_information}</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="enroll">
+                            <a href="#" class="btnRed btnEnroll">
+                            我要報名
+                            </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+        `;
+    }
+    eventinfoLight.innerHTML = html;
+    showEventInfo();
+}
+function getEventCards() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            // 新增卡片
+            let cardBox = document.getElementById("cardBox");
+            let eventTable = JSON.parse(xhr.responseText);//把JSON字串翻譯成JS
+            console.log(eventTable);
+            let html = "";
+            for (i = 0; i < eventTable.length; i++) {
+                html += `
+             <div class="eventCard wow zoomIn">
+                 <div class="cardTop">
+                 `
+                if (eventTable[i].member_number == null) {
+                    html += `
+                     <div class="starMark">
+                         <div><img src="./img/event/event_star.png" alt=""></div>
+                         <div class="markWord">官方路線</div>
+                     </div>
+                     `
+                } else {
+                    html += `<div class="starMark"></div>`
+                }
+                html += `
+                     <div class="dotWrap">
+                     </div>
+                 </div>
+                 <div class="eventPicWrap">
+                     <img src="./img/eventPhoto/${eventTable[i].event_cover_url}" class="eventPic">
+                 </div>
+                 <div class="cardText">
+                     <h1>${eventTable[i].event_name}</h1>
+                     <p>
+                         活動日期:${eventTable[i].event_date}<br>
+                         報名截止:${eventTable[i].enroll_end_date}<br>
+                         集合地點:${eventTable[i].meeting_place}
+                     </p>
+                     <span id="more${eventTable[i].event_number}" class="lightDetail">more</span>
+                 </div>
+             </div> 
+             `;
+            }
+            cardBox.innerHTML = html;
+        } else {
+            alert(xhr.status);
+        }
+
+        // 開關詳細揪團資訊的燈箱
+        $(document).on('click', '.eventinfoClose', function () {
+            let eventinfo_back = document.querySelectorAll(".eventinfo_back");
+            for (let j = 0; j < eventinfo_back.length; j++) {
+                eventinfo_back[j].style.display = "none";
+            }
+        })
+
+        // 檢舉揪團
+        //註冊開檢舉燈箱...的click事件
+        $(document).on('click', '.lightReport', function showEventReport() {
+            let eventreport_back = $('#eventreport_back');
+            eventreport_back.css('display', 'flex');
+        });
+
+        //註冊關閉檢舉燈箱的click事件
+        $(document).on('click', '.reportCancel', function closeEventReport() {
+            let eventreport_back = $('#eventreport_back');
+            eventreport_back.css('display', 'none');
+
+        });
+        //註冊送出檢舉的click事件
+        $(document).on('click', '.reportEnter', function insertRow(e) {
+            //阻止預設送出事件
+            e.preventDefault();
+
+            //先抓取被選到的 揪團編號
+            let event_number;
+            children = $('#eventinfoLight').children().length; //6
+            for (i = 0; i < children; i++) {
+                theCSS = $(`.eventinfo_back:nth-child(${i + 1})`).css('display');
+                console.log(theCSS)
+                if (theCSS == 'flex') {
+                    event_number = $(`.eventinfo_back:nth-child(${i + 1})`).attr('psn')
+                }
+
+            }
+            //再抓檢舉原因
+            let eventReportReason = $('input[name=reason]:checked').val();
+            //先判斷是否有登入會員
+            let login = $('.sign').text();
+            console.log(login);
+            if (login == "登入登入") {  //顯示登入登入--->未登入跳出提醒
+                alert("請先登入喔~!");
+                return;
+            }
+            //先判斷是否有選檢舉原因
+            if (eventReportReason == null) { //沒選檢舉原因
+                alert("原因一定要選喔~~~~");
+                return;
+            }
+
+            ////把抓到的值放到html中一個隱藏的表單內
+            document.getElementById("event_number").value = event_number;
+            document.getElementById("event_report_reason").value = eventReportReason;
+
+            //-------------------測試值是否正確放入表單--------------------
+            console.log("----------------------");
+            console.log(document.getElementById("event_number").value);
+            console.log(document.getElementById("event_report_reason").value);
+            console.log("----------------------");
+            //------------------------------------------------------------
+
+            //用那個表單建立一個JS表單物件
+            var updateFormData = new FormData(document.getElementById("eventReportForm"));
+
+            //將表單物件的資料送到insertKeyword.php中執行修改資料內容的SQL指令
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    //alert(xhr.responseText);
+                } else {
+                    alert(xhr.status + "失敗");
+                }
+            }
+
+            xhr.open("Post", "./php/insertEventReport.php", true);
+            xhr.send(updateFormData);
+            let eventreport_back = $('#eventreport_back');
+            eventreport_back.css('display', 'none');
+
+            alert("檢舉成功!");
+
+        });
+        //註冊我要報名click事件
+        $(document).on('click', '.btnEnroll', function insertEnroll(e) {
+            //阻止預設送出事件
+            e.preventDefault();
+
+            //先抓取被選到的 揪團編號+會員編號
+            let enroll_event_number = $(this).parent().parent().parent().parent().attr('psn'); //揪團編號
+            // let member_number = member_number.memNum; //會員編號
+
+
+            //先判斷是否有登入會員
+            let login = $('.sign').text();
+            console.log(login);
+
+            if (login == "登入登入") {  //顯示登入登入--->未登入跳出提醒
+                alert("請先登入喔~!");
+                return;
+            }
+
+            //把抓到的值放到html中一個隱藏的表單內
+            document.getElementById("enroll_event_number").value = enroll_event_number;
+            // document.getElementById("member_number").value = member_number ;
+
+            // -------------------測試值是否正確放入表單--------------------
+            console.log("----------------------");
+            console.log(document.getElementById("enroll_event_number").value);
+            // console.log(document.getElementById("member_number").value);
+            console.log("----------------------");
+            // ------------------------------------------------------------
+
+            // 用那個表單建立一個JS表單物件
+            var updateFormData = new FormData(document.getElementById("eventEnrollForm"));
+
+            // 將表單物件的資料送到insertKeyword.php中執行修改資料內容的SQL指令
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    alert(xhr.responseText);
+                } else {
+                    alert(xhr.status + "失敗");
+                }
+            }
+
+            xhr.open("Post", "./php/enrollEvent.php", true);
+            xhr.send(updateFormData);
+            let eventreport_back = $('.eventinfo_back');
+            eventreport_back.css('display', 'none');
+
+            alert("報名成功!");
+
+        });
+        LightEventinfo(xhr.responseText);
+    }
+    xhr.open("post", "./php/getEventForIndex.php", true);
+    xhr.send(null);
+
+}
+
+//檢舉心情 函式
+function reportMood() {
     loginStatus = $(".sign").text();
     let moodNum = $("#msgMoodNum").val();
     let reason = $('input[name=reportReason]:checked').val();
-    if(loginStatus == "登入登入"){
+    if (loginStatus == "登入登入") {
         $("#loginBlock").css("display", "block");
-    }else if(reason == null){
+    } else if (reason == null) {
         alert("請選擇檢舉原因");
-    }else{
+    } else {
         let reportForm = new FormData();
-        reportForm.append('moodNum',moodNum);
-        reportForm.append('reason',reason);
+        reportForm.append('moodNum', moodNum);
+        reportForm.append('reason', reason);
 
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
@@ -40,21 +315,21 @@ function reportMood(){
 }
 
 //留言 函式
-function leaveMsg(){
+function leaveMsg() {
     loginStatus = $(".sign").text();
     let msg = $("#leaveMsg").val();
     let moodNum = $("#msgMoodNum").val();
-    if(loginStatus == "登入登入"){
+    if (loginStatus == "登入登入") {
         $("#loginBlock").css("display", "block");
-    }else if(msg == ""){
+    } else if (msg == "") {
         alert("請輸入留言內容");
-    }else{
+    } else {
         let msgFrom = member.memName; //抓到目前登入的會員暱稱
         let leaveMsgForm = new FormData();
-        leaveMsgForm.append('msgFrom',msgFrom);
-        leaveMsgForm.append('leaveMsg',msg);
-        leaveMsgForm.append('msgMoodNum',moodNum);
-        
+        leaveMsgForm.append('msgFrom', msgFrom);
+        leaveMsgForm.append('leaveMsg', msg);
+        leaveMsgForm.append('msgMoodNum', moodNum);
+
         //即時新增一個留言div
         let messageWrap = document.getElementById("messageWrap");
         let msgHtml = "";
@@ -85,12 +360,12 @@ function leaveMsg(){
 }
 
 //動態顯示心情燈箱內資料 函式
-function showMoodDatail(moodDatailData){
+function showMoodDatail(moodDatailData) {
     let moodLightBox = document.getElementById('moodLightBox');
     let DatailAll = JSON.parse(moodDatailData);
     console.log(DatailAll);
     let html = "";
-    html +=`
+    html += `
         <div class="moodDetailBlock">
             <!-- 檢舉按鈕 -->
             <div id="reportBtn">
@@ -127,15 +402,15 @@ function showMoodDatail(moodDatailData){
             <div class="moodDetailRightBox">
                 <h2>留言板</h2>
                 <div class="messageWrap" id="messageWrap">`
-                    for(m = 0; m<DatailAll.moodMsg.length; m++){
-                        html += `
+    for (m = 0; m < DatailAll.moodMsg.length; m++) {
+        html += `
                         <div class="messageBox">
                             <span>${DatailAll.moodMsg[m].message_from}</span> 說: <br>
                             <p>${DatailAll.moodMsg[m].message_content}</p>
                         </div>
                         `
-                    }
-        html +=`</div>
+    }
+    html += `</div>
                 <form id="leaveMsgForm">
                     <input type="text" name="msgContent" id="leaveMsg" placeholder="寫下留言">
                     <input type="hidden" name="msgMoodNum" id="msgMoodNum" value="${DatailAll.moodData.mood_number}">
@@ -184,19 +459,18 @@ function showMoodDatail(moodDatailData){
     })
 
     //檢舉 確定按鈕的click事件
-    $("#newReportBtn").on("click",function(){
+    $("#newReportBtn").on("click", function () {
         reportMood();
     })
 
     //留言 送出按鈕的click事件
-    $("#leaveMsgBtn").on("click",function(){
+    $("#leaveMsgBtn").on("click", function () {
         leaveMsg();
     })
 }
 
-
 //動態新增心情卡片 函式
-function showCards(moodData){
+function showCards(moodData) {
     let moodCardsWrap = document.getElementById('moodCardsWrap');
     let moodAll = JSON.parse(moodData) //把JSON字串翻譯成JS物件，物件有兩個屬性，屬性的內容是陣列，陣列的一個索引指向一張卡片
     // console.log(moodAll);
@@ -261,21 +535,21 @@ function showCards(moodData){
     })
 
     //愛心icon的click事件
-    $(".heartIcon").on("click",function(e){
+    $(".heartIcon").on("click", function (e) {
         e.target.src = "./img/index/moodLikeIcon.png"
         let thisMoodNum = $(this).parent().parent().children().first().val();
         let thisHeartCount = $(this).next().text();
         $(this).next().text(parseInt(thisHeartCount) + 1);
         let heartFormData = new FormData();
-        heartFormData.append('moodNum',thisMoodNum);
-        heartFormData.append('heartCount',thisHeartCount);
+        heartFormData.append('moodNum', thisMoodNum);
+        heartFormData.append('heartCount', thisHeartCount);
 
 
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
             if (xhr.status == 200) {
                 //即時更新網頁上的愛心數
-                
+
             } else {
                 alert(xhr.status + "失敗");
             }
@@ -286,9 +560,9 @@ function showCards(moodData){
 
         $(this).off("click");
     })
-   
-}
 
+}
+//撈取心情卡片 函式
 function getMoodCards() {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -305,17 +579,16 @@ function getMoodCards() {
 }
 
 
-
-
-
 window.addEventListener('load', function () {
-    
-    //撈取心情卡片---------------------------------
-    getMoodCards();
 
     //取得登入資料---------------------------------
     getLoginInfo();
 
-    
-    
+    //撈取心情卡片---------------------------------
+    getMoodCards();
+
+    //撈取揪團卡片---------------------------------
+    getEventCards();
+
+
 })

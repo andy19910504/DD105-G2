@@ -508,6 +508,19 @@ div.eventCard{
         }
     }
 }
+@media screen and (max-width:1210px){
+    div.eventCard{
+        margin: 25px auto;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:767px){
+    div.eventCard{
+        margin: 35px auto;
+        flex-wrap: wrap;
+    }
+}
 @media screen and (max-width:767px){
     div.eventWrap{
         margin: 0px auto;
@@ -611,47 +624,62 @@ div.eventCard{
     right:10px;
     font-size: 32px;
     margin: 10px;
+    top: 0px;
     position: absolute;
   }
-  
-//   內容
-.lightbox_holdevent_info,.lightbox_detailevent_info{
+.lightbox_detailevent_info{
     position: relative;
+    // border: 1px solid red;
     //background-color: #ffedcf;
     // border: 5px solid #fff;
     border-radius: 6px;
-    padding: 0 1% 1.5%;
-    background-image: url(../img/event/greenBg2.png);
-    background-size: cover;
+    background-image: url(../img/index/linedpaper.png);
+    align-items: center;
     box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
     display: flex;//
     flex-direction: column;
-    width:100%;
-    max-width: 1200px;
-    height:750px;
+    justify-content: center;
+    width: 1000px;
+    height:700px;
     border-radius: 15px;
+    overflow: hidden;
+}
+//   內容
+.lightbox_holdevent_info{
+    position: relative;
+    // border: 1px solid red;
+    //background-color: #ffedcf;
+    // border: 5px solid #fff;
+    border-radius: 6px;
+    background-image: url(../img/index/linedpaper.png);
     align-items: center;
+    box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
+    display: flex;//
+    flex-direction: column;
+    // justify-content: center;
+    width: 1200px;
+    height:780px;
+    border-radius: 15px;
     overflow: hidden;
     .holdevent_title{
         text-align: center;
-        color:$fcContent;
-        font-size: 24px;
-        font-weight: bold;
-        margin: 30px auto 15px auto;
-        padding: 10px 20px;
+        // margin: 30px auto 15px auto;
+        margin-top: 35px;
         letter-spacing: 1.875px;
-        width: 200px;
+        font-size: 36px;
+        color: #A5361C;
+        font-weight: bolder;
+        text-align: center;
+        h2{
+            font-size: 36px;
+            color: #A5361C;
+        }
     }
     .stepALL{
-        height: 536px;
+        margin: 45px 0;
         width: 100%;
     }
-    form{
-        height: 536px;
-        
-    }
     .holdevent_step{
-        margin: 10px auto;
         // border: 1px solid red;
         text-align: center;
         display: flex;
@@ -666,7 +694,7 @@ div.eventCard{
                     justify-content: center;
                     background-size: contain;
                     background-position: center;
-                    background-image: url(../img/event/event_step3.png);
+                    background-image: url(../img/event/step.png);
                     font-size: $fzContent;
                     
                     p{
@@ -678,10 +706,16 @@ div.eventCard{
                     
                 }
                 .color{
-                        background-image: url(../img/event/event_stepOn.png);
+                        background-image: url(../img/event/stepOn.png);
                 }
     }
 
+}
+@media screen and (max-width:767px){
+    .lightbox_holdevent_info{
+     overflow-y: scroll;
+    }
+      
 }
 @media screen and (max-width:1200px){
     .lightbox_holdevent_info{
@@ -689,18 +723,22 @@ div.eventCard{
     }
       
 }
-
+@media screen and (max-width:767px){
+    div.holdevent_step1content .step2,div.holdevent_step1content .step3{
+        display: none;
+    }
+}
 
 //第一步驟block
 .holdevent_step1content{
-    //border: 1px solid purple;
+    // border: 1px solid purple;
     height: 536px;
     display: flex;
     flex-direction: column;
    
 }
 .chooseRoute{
-    margin: 30px auto;
+    margin: 45px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -740,7 +778,7 @@ div.eventCard{
                     width: 100%;
                 }
                 .routeBoxBottom{
-                    background-color:rgb(158, 207, 120);
+                    background-color: #5f96ab;
                     align-self: flex-end;
                     width: 200px;
                     height: 50px;
@@ -810,7 +848,7 @@ div.eventCard{
             font-size: 24px;
             outline: none;
             border: none;
-            background-color: rgb(152, 207, 110);
+            background-color: #5895ad;
             width: 40px;
             height: 40px;
             border-radius:50%;
@@ -858,13 +896,25 @@ div.eventCard{
         margin: 0px 80px;
     }
 }
+@media screen and (max-width:767px){
+    .chooseRoute {
+        margin: 25px auto;
+    }
+      
+}
+@media screen and (max-width:767px){
+    .stepBtn div{
+        margin: 0px 15px;
+    }
+      
+}
 .stepStop{
     pointer-events: none;
 }
 // 第2步驟block
 .holdevent_step2content{
     display: none;
-    height: 536px;
+    // height: 536px;
     flex-direction: column;
     .step2Info{
         width: 100%;
@@ -906,6 +956,7 @@ div.eventCard{
                 }
             }
         }
+
         .holderInfo{
         //border: 1px solid purple;
         max-width: 50%;
@@ -955,6 +1006,48 @@ div.eventCard{
         }
     }   
 }
+@media screen and (max-width:767px){
+    .step2Info {
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+      
+}
+@media screen and (max-width:767px){
+    div.holderPic{
+       width: 100%;
+       margin: 0 auto;
+       padding: 0;
+    }
+}
+@media screen and (max-width:767px){
+    .eventCoverPic {
+       width: 100%;
+       margin: 0 auto;
+    }
+      
+}
+@media screen and (max-width:767px){
+    .holderPicBox {
+       width: 100%;
+       margin: 0 auto;
+    }
+      
+}
+@media screen and (max-width:767px){
+    .holderInfo {
+       width: 100%;
+    }
+      
+}
+@media screen and (max-width:767px){
+    div.holdevent_step2content .step1,div.holdevent_step2content .step3{
+        display: none;
+    }
+}
 // 第3步驟block
 .holdevent_step3content{
     display: none;//
@@ -964,16 +1057,40 @@ div.eventCard{
     height: 536px;
     width: 100%;
     .step3Info{
+        // display: flex;
+        // padding: 10px 40px;
+
+        width: 100%;
         display: flex;
+        //border: 1px solid green;
         padding: 10px 40px;
         //左邊
        .holderCover{
-           width: 50%;
-           display: flex;
-           flex-direction: column;
-           padding: 15px 60px;
+        //    width: 50%;
+        //    display: flex;
+        //    flex-direction: column;
+        //    padding: 15px 60px;
+            padding: 20px 45px;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
            .holderCoverPic{
-               
+            text-align: center;
+            line-height: 265px;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: $fcInfo;
+            overflow: hidden;
+            align-items: center;
+            display: flex;
+            border-radius: 5px;
+            margin-top: 20px;
+            background-color: #f5eec2;
+            border: 1px dashed #5b8f60;
+            width:480px;
+            height:270px;
+        
+
                img{
                     border-radius: 5px;
                     width: 100%;
@@ -983,7 +1100,7 @@ div.eventCard{
                 margin: 10px 0;
                 letter-spacing: 1.2px;
                 .title{
-                    font-weight: 550;
+                    // font-weight: 550;
                     font-size: 20px;
                     margin: 15px 0;
                 }             
@@ -991,10 +1108,15 @@ div.eventCard{
        }
        //右邊
        .holderCoverInfo{
-            line-height: 2;
-            letter-spacing: 1.2px;
-            padding:12px 75px;
+            // line-height: 2;
+            // letter-spacing: 1.2px;
+            // padding:12px 75px;
+            // width: 50%;
+            padding: 60px 80px;
             width: 50%;
+            font-size: $fzContent;
+            align-items: center;
+            color: $fcInfo;
             table{
                
                
@@ -1012,25 +1134,30 @@ div.eventCard{
 //燈箱-活動詳細介紹
 .detaileventContent{
     //border: 1px solid red;
-    width:100% ;
     font-size: $fzContent;
+    padding: 0px 50px;
+    width: 100%;
     color: $fcContent;
     display: flex;
-    padding-top: 85px;
     letter-spacing: 1.2px;
+    align-items: center;
     justify-content: center;
-    line-height: 1.75;
-    
     .detaileventPic{
-        padding: 10px 10px 10px 25px;
-        margin: 0px 30px 0px 0px;
+       display: flex;
+       width: 50%;
+       flex-direction: column;
+       padding-left: 20px;
         .title{
+            font-size: 24px;
+            color: #206B95;
+            font-weight: bolder;
             display:flex;
+            margin-bottom: 30px;
             position: relative;
-            .eventInfotitle{
-                font-size: $fzTitle;
-                font-weight: 550;
-              
+            .eventInfotitle{    
+                font-size: 24px;
+                color: #206B95;
+                font-weight: bolder;
             }
             .dotWrap{
                 right: 25px;
@@ -1052,24 +1179,27 @@ div.eventCard{
             }
         }
         .detaileventPicbox{
-            width: 500px;
-            margin: 15px 0;
-            padding-top: 20px;
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            overflow: hidden;
             img{
                 width:100%;
-                border-radius: 5px;
             }
         }
         .detaileventRoute{
-            margin: 0px 0 20px 0px;
+            margin:25px 0 0px 0px;
             font-size: 20px;
             letter-spacing: 2px;
             color: $fcInfo;
         }
     }
     .detaileventText{
-        padding: 95px 0px 0px 55px;
-        width: 45%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 0 0 60px;
         .eventInforow{
             height: 45px;
             line-height: 45px;
@@ -1086,7 +1216,6 @@ div.eventCard{
             div:nth-child(2){
                 width: 60%;
                 
-
             }
         }
     }
@@ -1094,16 +1223,17 @@ div.eventCard{
 //我要報名
 .enroll{
     position: absolute;
-    bottom: 58px;
+    bottom: 40px;
 }
 //檢舉燈箱
 .lightbox_report_info{
     position: fixed;
     background-color: #d4d3d3;
-    background-image: url(../img/event/greenBg2.png);
+    background-image: url(../img/index/linedpaper.png);
+    align-items: center;
     box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
-    width: 20%;
-    height:40%;
+    width: 300px;
+    height: 300px;
     margin: auto;
     top: 15%;
     left: 0;
