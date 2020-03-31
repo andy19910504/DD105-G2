@@ -1,8 +1,8 @@
 let memNum;
 /////////////////////////////////////////////////////////////////////第三頁放心情
 ///心情照片
-function moodphoto() {
-    for (let i = 0; i < 100; i++) {
+function moodphoto(length) {
+    for (let i = 0; i < length; i++) {
         document.getElementById(`mood_pho${i}`).onchange = function () {
             // alert("00");
             let file = document.getElementById(`mood_pho${i}`).files[0];
@@ -12,6 +12,8 @@ function moodphoto() {
                 image = document.getElementById(`moodpho${i}`)
                 image.src = this.result;
             })
+            $(`.member_info_share_all>div:nth-child(${i+1})>form>div:nth-child(2)>label>div`).css("border", "unset");
+            
         };
     }
 };
@@ -28,7 +30,7 @@ function moodmodify() {
             $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label`).css("pointer-events", "auto");
             $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div:nth-child(1)>div:nth-child(2)`).css("visibility", "visible");
             $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div`).click(function () {
-                $(this).css("border", "3px dashed #a5361c");
+                $(this).css("border", "3px solid #ccc");
             });
             $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div>div:nth-child(2)`).css("display", "block");
             $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(4)>textarea`).css("pointer-events", "auto");
@@ -60,7 +62,7 @@ function moodmodify() {
                 }
             }
             var url = "./php/delmembermood.php?number=" + delmoodnum
-            console.log(url);
+            // console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
         });
@@ -71,11 +73,11 @@ function getMoodInfo(memNum) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         moodinfo = JSON.parse(xhr.responseText);
-        console.log(moodinfo);
-        console.log(moodinfo.moodinfoRow);
-        console.log(moodinfo.moodinfocommentRow);
+        // console.log(moodinfo);
+        // console.log(moodinfo.moodinfoRow);
+        // console.log(moodinfo.moodinfocommentRow);
         // console.log(moodinfo.moodinfoRow[0].post_number);
-        console.log(moodinfo.moodinfocommentRow[0].comment_total)
+        // console.log(moodinfo.moodinfocommentRow[0].comment_total)
         let member_info_share_all = document.getElementById("member_info_share_all");
         let membermoodRow = " ";
         let moodclass = ["散步日記", "吃貨手札", "隨筆心情"]
@@ -175,10 +177,10 @@ function getMoodInfo(memNum) {
         //心情修改
         moodmodify();
         ///心情照片
-        moodphoto();
+        moodphoto(moodinfo.moodinfoRow.length);
     };
     let url = "./php/getMoodInfo.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 }
@@ -190,9 +192,9 @@ function openlinechange(linenum, num, memNum) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         linepointinfo = JSON.parse(xhr.responseText);
-        console.log(linepointinfo);
-        console.log(linepointinfo.linepointoffRow);
-        console.log(linepointinfo.linepointcusRow);
+        // console.log(linepointinfo);
+        // console.log(linepointinfo.linepointoffRow);
+        // console.log(linepointinfo.linepointcusRow);
         let linepointRow = " ";
         for (let i = 0; i < linepointinfo.linepointoffRow.length; i++) {
             if (linenum == linepointinfo.linepointoffRow[i].route_number) {
@@ -211,16 +213,31 @@ function openlinechange(linenum, num, memNum) {
 
     }
     let url = "./php/openlinechange.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 };
 //修改開團資訊&&刪除
 function openmodify() {
     for (let i = 1; i < 100; i++) {
+        //停止冒泡
+        $(`.member_info_open_all>div:nth-child(${i}) input`).click(function(e){
+            e.stopPropagation();
+        })
+        $(`.member_info_open_all>div:nth-child(${i}) select`).click(function(e){
+            e.stopPropagation();
+        })
+        $(`.member_info_open_all>div:nth-child(${i}) textarea`).click(function(e){
+            e.stopPropagation();
+        })
+
         // $(`.member_info_open_all>div:nth-child(${i})`).css("border","10px solid red");
         // $(`.member_info_open_all>div:nth-child(${i})>div:nth-child(4)>div`).css("border","10px solid red");
-        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(1)`).click(function () {
+        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(1)`).click(function (e) {
+            $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)`).click(function(e){
+                e.stopPropagation();
+            })
+            e.stopPropagation();
             //修改隱藏
             $(this).css("display", "none");
             //確認出現
@@ -247,11 +264,12 @@ function openmodify() {
             //可更新相片
             $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label`).css("pointer-events", "auto");
             $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label>div`).click(function () {
-                $(this).css("border", "3px dashed #a5361c");
+                $(this).css("border", "3px solid #ccc");
             })
 
         });
-        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(2)`).click(function () {
+        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(2)`).click(function (e) {
+            e.stopPropagation();
             // document.getElementById("open_upload").submit();
             $(`.member_info_open_all>div:nth-child(${i})>form`).submit();
             // // alert("00");
@@ -270,7 +288,8 @@ function openmodify() {
             // $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>a:nth-child(3)`).css("display","inline-block");
             // $(`.member_info_open_all>div:nth-child(${i})>form>input:nth-child(1)`).css("pointer-events","none");
         })
-        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(3)`).click(function () {
+        $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(4)>div:nth-child(3)`).click(function (e) {
+            e.stopPropagation();
             let delopennum = $(`.member_info_open_all>div:nth-child(${i})>form>input:nth-child(5)`).val()
             if (confirm("真的要刪除嗎??") == true) {
                 if (confirm("真的嗎!!") == false) {
@@ -292,15 +311,15 @@ function openmodify() {
                 }
             }
             var url = "./php/delmemberopen.php?number=" + delopennum
-            console.log(url);
+            // console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
         })
     }
 }
 //上傳圖片會顯示
-function openphoto() {
-    for (let i = 0; i < 100; i++) {
+function openphoto(length) {
+    for (let i = 0; i < length; i++) {
         // $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label:nth-child(1)>div:nth-child(1)>div:nth-child(2)>input:nth-child(2)`).onchange = function () {
         //     alert("00");
         //     // let file = document.getElementById(`event_pho${i}`).files[0];
@@ -320,6 +339,7 @@ function openphoto() {
                 image = document.getElementById(`eventpho${i}`)
                 image.src = this.result;
             })
+            $(`.member_info_open_all>div:nth-child(${i+1})>form>div:nth-child(2)>label>div`).css("border", "unset");
         };
     }
     // document.getElementById("event_pho").onchange = function () {
@@ -339,13 +359,13 @@ function getOpenInfo(memNum) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         memberopeninfo = JSON.parse(xhr.responseText);
-        console.log(memberopeninfo);
-        console.log(memberopeninfo.memberopen);
-        console.log(memberopeninfo.openjoinmember);
-        console.log(memberopeninfo.memberopenlistoff);
-        console.log(memberopeninfo.memberopenlistcus);
-        console.log(memberopeninfo.memberopenoff);
-        console.log(memberopeninfo.memberopencus);
+        // console.log(memberopeninfo);
+        // console.log(memberopeninfo.memberopen);
+        // console.log(memberopeninfo.openjoinmember);
+        // console.log(memberopeninfo.memberopenlistoff);
+        // console.log(memberopeninfo.memberopenlistcus);
+        // console.log(memberopeninfo.memberopenoff);
+        // console.log(memberopeninfo.memberopencus);
 
 
         let member_info_open_all = document.getElementById("member_info_open_all");
@@ -390,7 +410,7 @@ function getOpenInfo(memNum) {
                         <label for="event_dday">報名截止日 :</label>
                         <input type="date" id="event_dday" readonly value="${memberopeninfo.memberopen[i].enroll_end_date}" name="enroll_end_date">
                     </div>
-                    <div>
+                    <div style="display:none">
                         <label for="togethertime">集合時間 :</label>
                         <input type="text" id="togethertime" readonly value="">
                     </div>
@@ -466,11 +486,21 @@ function getOpenInfo(memNum) {
         //開團修改
         openmodify();
         ///開團照片
-        openphoto();
+        openphoto(memberopeninfo.memberopen.length);
+        function openheight() {
+            for (let i = 0; i < 100; i++) {
+                $(`.member_info_open_all>div:nth-child(${i})`).click(function () {
+                    $(this).toggleClass("height_auto")
+                    // alert(00)
+                })
+            }
+        };
+        //參加太長 讓他點了再開
+        openheight();
 
     }
     let url = "./php/getOpenInfo.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 };
@@ -510,7 +540,7 @@ function getJoinInfo(memNum) {
                                         <label for="event_dday">報名截止日 :</label>
                                         <input type="date" id="event_dday" readonly value="${memberjoininfo.memberjoin[i].enroll_end_date}">
                                     </div>
-                                    <div>
+                                    <div style="display:none">
                                         <label for="togethertime">集合時間 :</label>
                                         <input type="text" id="togethertime" readonly>
                                     </div>
@@ -594,14 +624,14 @@ function getJoinInfo(memNum) {
                     }
                     var url = "./php/delmemberjoin.php?number=" + memNum
                         + "&joinnumber=" + joinnumber;
-                    console.log(url);
+                    // console.log(url);
                     xhr.open("Get", url, true);
                     xhr.send(null);
 
                 })
             }
         }
-        function joinmodify() {
+        function joinheight() {
             for (let i = 0; i < 100; i++) {
                 $(`.member_info_join_all>div:nth-child(${i})`).click(function () {
                     $(this).toggleClass("height_auto")
@@ -612,11 +642,11 @@ function getJoinInfo(memNum) {
         //刪除參加
         deljoin();
         //參加太長 讓他點了再開
-        joinmodify();
+        joinheight();
 
     }
     let url = "./php/getJoinInfo.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 };
@@ -625,7 +655,7 @@ function getOrderInfo(memNum) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         memberorderinfo = JSON.parse(xhr.responseText);
-        console.log(memberorderinfo);
+        // console.log(memberorderinfo);
         // console.log(memberorderinfo.memberorder);
         // console.log(memberorderinfo.memberorder[0].order_number);
         // console.log(memberorderinfo.memberorderlist);
@@ -688,7 +718,7 @@ function getOrderInfo(memNum) {
 
 }
 let url = "./php/getOrderInfo.php?number=" + memNum;
-console.log(url);
+// console.log(url);
 xhr.open("Get", url, true);
 xhr.send(null);
 }
@@ -802,9 +832,9 @@ function getLineInfo(memNum) {
 
 
         memberline = JSON.parse(xhr.responseText);
-        console.log(memberline);
-        console.log(memberline.memberline[1]);
-        console.log(memberline.memberlinelist[1]);
+        // console.log(memberline);
+        // console.log(memberline.memberline[1]);
+        // console.log(memberline.memberlinelist[1]);
         let member_info_line_all = document.getElementById("member_info_line_all");
         let memberlineRow = " ";
 
@@ -815,8 +845,8 @@ function getLineInfo(memNum) {
             // alert("000");
             // console.log(spot);
             geocoder.geocode({ 'address': spot }, function (results, status) {
-                console.log(spot);
-                console.log(status);
+                // console.log(spot);
+                // console.log(status);
                 if (status == 'OK') {
                     var marker = new google.maps.Marker({
                         map: map,
@@ -860,8 +890,8 @@ function getLineInfo(memNum) {
             map = new google.maps.Map(document.getElementById(`member_map${memberline.memberline[i].route_number}`), mapOptions);
             for (let j = 0; j < memberline.memberlinelist.length; j++) {
                 if (memberline.memberlinelist[j]["route_number"] == memberline.memberline[i]["route_number"]) {
-                    console.log(memberline.memberlinelist[j]["custom_attraction_name"]);
-                    console.log(map);
+                    // console.log(memberline.memberlinelist[j]["custom_attraction_name"]);
+                    // console.log(map);
                     addpost(memberline.memberlinelist[j]["custom_attraction_name"], map);
                 }
             }
@@ -914,7 +944,7 @@ function getLineInfo(memNum) {
                     var url = "./php/upmemberline.php?number=" + number
                         + "&title=" + title
                         + "&word=" + word;
-                    console.log(url);
+                    // console.log(url);
                     xhr.open("Get", url, true);
                     xhr.send(null);
                 })
@@ -941,7 +971,7 @@ function getLineInfo(memNum) {
                         }
                     }
                     var url = "./php/delmemberline.php?number=" + number;
-                    console.log(url);
+                    // console.log(url);
                     xhr.open("Get", url, true);
                     xhr.send(null);
                 })
@@ -955,7 +985,7 @@ function getLineInfo(memNum) {
 
     }
     let url = "./php/getMemberIine.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 
@@ -971,7 +1001,9 @@ function memberphoto() {
         readFile.addEventListener("load", function () {
             image = document.getElementById("photoup")
             image.src = this.result;
-        })
+               
+        });
+        $(".member_info_info_left>label>div").css("border", "unset");
     };
 };
 //編輯會員資料的js
@@ -1000,7 +1032,7 @@ function membermodify() {
         // $(".member_info_info_left>label>div").css("border","1px solid #646464");
         $(".member_info_info_left>label").css("pointer-events", "auto");
         $(".member_info_info_left>label>div").click(function () {
-            $(this).css("border", "3px dashed #a5361c");
+            $(this).css("border", "3px solid #ccc");
         })
         //focus
         // $(".member_info_info_right input").focus().css("border","3px dashed $importantColor");
@@ -1027,12 +1059,12 @@ function membermodify() {
 }
 ///////////////////////////////////////////////////////////////////////////第一頁放資料
 function getMemberInfo(memNum) {
-    alert(memNum);
+    // alert(memNum);
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         memberinfo = JSON.parse(xhr.responseText);
         // JSON.parse(JSON.stringify(xhr.responseText))
-        console.log(memberinfo);
+        // console.log(memberinfo);
         //點數更新
         let point = document.getElementById("member_point_point");
         point.innerText = `${memberinfo[0].member_point}`;
@@ -1100,7 +1132,7 @@ function getMemberInfo(memNum) {
         memberphoto();
     }
     let url = "./php/getMemberInfo.php?number=" + memNum;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 }
@@ -1111,7 +1143,7 @@ function getLoginInfo() {
     xhr.onload = function () {
         member = JSON.parse(xhr.responseText);
         memNum = member.memNum
-         alert(memNum);
+        //  alert(memNum);
         getMemberInfo(memNum);
         getLineInfo(memNum);
         getOrderInfo(memNum);
