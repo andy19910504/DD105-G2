@@ -189,6 +189,31 @@ $(document).ready(function(){
                 $('.spot1').css({
                     filter: 'brightness(2.8)'
                 });
+                // var timeStamp1 = Date.now();
+                // $(window).on('keyup', function(){
+                //     var timeStamp2 = Date.now();
+                //     var deltaTime = timeStamp2 - timeStamp1;
+                //     console.log('d');
+                //     console.log(timeStamp1, timeStamp2);
+                //     console.log(deltaTime);
+                //     timeStamp1 = Date.now();
+                //     timeStamp2 = Date.now();
+                //     deltaTime = 0;
+                //     console.log(deltaTime);
+                //     if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342 && deltaTime >= 3000){
+                //         checkpoint[1] = '';
+                //         if(checkpoint[0] == '日式舊屋行'){
+                //             checkpoint[1] = '青田七六';
+                //         } else if(checkpoint[0] == '文青品味旅'){
+                //             checkpoint[1] = '宅jai風格生活';
+                //         } else if(checkpoint[0] == '職人散步去'){
+                //             checkpoint[1] = '小廢墟';
+                //         }
+                //         getQuizContent(checkpoint);
+                //         $('.game-modal').removeClass('hide-game-modal');
+                //     }
+                // });
+
                 setTimeout(function(){
                     if(coordX >= -2400 && coordY >= -1512 && coordX <= -2210 && coordY <= -1342){
                         checkpoint[1] = '';
