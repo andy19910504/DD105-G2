@@ -31,7 +31,10 @@ function getFilterName(info) {
             let routeTilteBlock = document.querySelector('.routeTilteBlock');
 
             routeTilteBlock.innerHTML =
-                `<img src="./img/routes/${firstRouteInfo[0].route_photo}"></img>`;
+                `
+                <img src="./img/route/routeInfo.png" class="routeInfo">
+                <img src="./img/routes/${firstRouteInfo[0].route_photo}">
+                `;
             for (let i = 0; i < firstRouteInfo.length; i++) {
                 if (firstRouteInfo[i].attraction_status == 0) {
                     routeAttractionBlock[i].innerHTML = `

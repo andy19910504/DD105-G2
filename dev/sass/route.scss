@@ -268,15 +268,30 @@
 }
 
 .routeBlockBgImage .routeTilteBlock{
-    width: 100%;
+    // width: 100%;
     text-align: right;
     padding-right: 60px;
-@media screen and (max-width:860px) {
-    margin-bottom: 60px;
-}
-}
-.routeBlockBgImage .routeTilteBlock img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    .routeInfo{
+        width: 120px;
+        position: relative;
+        left: -65px;
+        cursor: pointer;
+        animation: sharks 1s alternate infinite;
+    }
+    img:nth-child(2){
     filter:brightness(0.3);
+    }
+    @media screen and (max-width:860px) {
+    margin-bottom: 60px;
+    }
+}
+@keyframes sharks{
+    from{transform: translateY(0px);}
+    to{transform: translateY(-10px);}
 }
 .routeBlockBgImage .routeBlock{
     display: flex;

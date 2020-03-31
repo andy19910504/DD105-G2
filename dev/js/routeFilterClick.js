@@ -1,3 +1,4 @@
+
 $(document).on('click', '.filter', function filterClick() {
     let routeName = $(this).text();
     console.log(routeName)
@@ -13,10 +14,13 @@ $(document).on('click', '.filter', function filterClick() {
             let routeTilteBlock = document.querySelector('.routeTilteBlock');
             if (routeInfo[0] == null) {
                 routeTilteBlock.innerHTML =
-                    `<img src="./img/routes/"></img>`;
+                    `<img src="./img/routes/">`;
             } else {
                 routeTilteBlock.innerHTML =
-                    `<img src="./img/routes/${routeInfo[0].route_photo}"></img>`;
+                    `
+                    <img src="./img/route/routeInfo.png" class="routeInfo">
+                    <img src="./img/routes/${routeInfo[0].route_photo}">
+                    `;
             }
             for (let i = 0; i < 5; i++) {
                 if (routeInfo[i] == null) {
