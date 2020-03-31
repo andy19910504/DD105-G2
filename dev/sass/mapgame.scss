@@ -120,7 +120,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: #c45c5c;
+            background-color: #fff;
         }
         .index:nth-child(3) {
             position: absolute;
@@ -368,6 +368,14 @@
             border-radius: 5px;
         }
     }
+    .continue {
+        margin-top: 25px;
+        padding: 15px;
+        background-color: #D3E9F0;
+        border: 1px solid #D3E9F0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
     .right {
         background-color: #D3E9F0;
         border: 1px solid #D3E9F0;
@@ -378,26 +386,67 @@
         border: 1px solid #A9381D;
         border-radius: 5px;
     }
+    .hide-continue-btn {
+        display: none;
+    }
     .hide-game-modal {
         display: none;
     }
     .full-screen-btn {
         position: absolute;
         bottom: 10px;
-        right: 20px;
+        right: 10px;
         cursor: pointer;
+        font-size: 20px;
     }
     .normal-screen-btn {
         position: absolute;
         bottom: 10px;
-        right: 20px;
+        right: 10px;
         cursor: pointer;
+        font-size: 20px;
     }
 }
 .click-disabled {
     pointer-events: none;
 }
 .hide-full-screen-btn {
+    display: none;
+}
+.mobile-control-wrapper {
+    width: 150px;
+    right: 10px;
+    bottom: 35px;
+    position: absolute;
+    .up, .down, .left, .right-dir {
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+        position: absolute;
+    }
+    .up {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .left {
+        left: 0;
+        bottom: 0;
+    }
+    .down {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .right-dir {
+        right: 0;
+        bottom: 0;
+    }
+    .arrows {
+        width: 100%;
+    }
+}
+.hide-mobile-control-wrapper {
     display: none;
 }
 .map-container {

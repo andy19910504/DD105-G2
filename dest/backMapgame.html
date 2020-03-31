@@ -126,7 +126,7 @@
                 $id("managerId").innerHTML = member.memName;
             }
             xhr.open("get", "./php/loginInfoForBack.php", true);
-            xhr.send(null);
+            xdel(null);
             // 註冊登出按鈕，回到後台登陸頁面
             $id("btnLogout").onclick = function () {
                 let xhr = new XMLHttpRequest();
