@@ -32,10 +32,13 @@ $(document).on('click', '.filter', function filterClick() {
                     </div>
                     `;
                 } else {
-                    routeAttractionBlock[i].innerHTML = `
+                    if (routeInfo[i].attraction_status == 0) {
+                        routeAttractionBlock[i].innerHTML = `
                     <div class="attractionTitle">
                         <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
                         <p>${routeInfo[i].attraction_name}</p>
+                        <p>地址：${routeInfo[i].attraction_address}</p>
+                        <p><img src="./img/element/note.png">景點目前關閉中</p>
                     </div>
                     <div class="attractionImageBlock">
                         <div class="attractionImage">
@@ -43,6 +46,20 @@ $(document).on('click', '.filter', function filterClick() {
                         </div>
                     </div>
                     `;
+                    } else {
+                        routeAttractionBlock[i].innerHTML = `
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p>${routeInfo[i].attraction_name}</p>
+                        <p>地址：${routeInfo[i].attraction_address}</p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/${routeInfo[i].attraction_photo1}"></div>
+                        </div>
+                    </div>
+                    `;
+                    }
                 }
             }
         } else {

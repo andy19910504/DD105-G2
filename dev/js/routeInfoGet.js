@@ -33,10 +33,13 @@ function getFilterName(info) {
             routeTilteBlock.innerHTML =
                 `<img src="./img/routes/${firstRouteInfo[0].route_photo}"></img>`;
             for (let i = 0; i < firstRouteInfo.length; i++) {
-                routeAttractionBlock[i].innerHTML = `
+                if (firstRouteInfo[i].attraction_status == 0) {
+                    routeAttractionBlock[i].innerHTML = `
                     <div class="attractionTitle">
-                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <img src="./img/route/landMark.png" class="landMark">
                         <p>${firstRouteInfo[i].attraction_name}</p>
+                        <p>${firstRouteInfo[i].attraction_address}</p>
+                        <p><img src="./img/element/note.png">景點目前關閉中</p>
                     </div>
                     <div class="attractionImageBlock">
                         <div class="attractionImage">
@@ -44,6 +47,20 @@ function getFilterName(info) {
                         </div>
                     </div>
                 `;
+                }else{
+                    routeAttractionBlock[i].innerHTML = `
+                    <div class="attractionTitle">
+                        <img src="./img/route/landMark.png" alt="" srcset="" class="landMark">
+                        <p>${firstRouteInfo[i].attraction_name}</p>
+                        <p>${firstRouteInfo[i].attraction_address}</p>
+                    </div>
+                    <div class="attractionImageBlock">
+                        <div class="attractionImage">
+                            <div class="attractionMask"><img src="./img/attractions/${firstRouteInfo[i].attraction_photo1}"></div>
+                        </div>
+                    </div>
+                `;
+                }
             }
         } else {
             alert(xhr2.status);
