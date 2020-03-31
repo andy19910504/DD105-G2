@@ -35,13 +35,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
         <div class="navPoint">
+            <div class="point">點數</div>
             <a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
         </div>
     </div>
 </header>
@@ -63,13 +64,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
         <div class="navPoint">
             <a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+            <div class="point">點數</div>
         </div>
     </div>
 </header>
@@ -99,7 +101,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -113,7 +115,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -145,7 +147,7 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
@@ -205,7 +207,7 @@
                 <img src="./img/route/tape.png" class="tape tape3">
                 <img src="./img/route/tape.png" class="tape tape4">
                 <div class="routeTilteBlock">
-                    <img src="./img/route/routeNameImage1.png" alt="" srcset="">
+                    <!-- <img src="./img/route/routeNameImage1.png" alt="" srcset=""> -->
                 </div>
                 <!-- attractionsBlock -->
                 <div class="routeBlock">
@@ -597,7 +599,7 @@
 
             <!-- 其他相關分頁的連結 -->
             <div class="otherLinkBlock">
-                <div class="otherLink">
+                <!-- <div class="otherLink">
                     <div class="otherLinkTitle">
                         <div class="routeOtherTitleImage"></div>
                         <p>相關心情分享</p>
@@ -696,7 +698,7 @@
     </div>
 </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="otherLink">
                     <div class="otherLinkTitle">
                         <div class="routeOtherTitleImage"></div>
@@ -704,158 +706,42 @@
                         <div class="routeOtherTitleImage"></div>
                     </div>
                     <div class="otherLinkContent">
-                        <div class="eventCardsWrap">
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic01.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>職人散步GoGo團</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
-        </div>
-    </div>
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic02.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>信義一日遊</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
-        </div>
-    </div>
-    <div class="eventCard">
-        <div class="dotWrap lightReport">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="eventPicWrap">
-            <img src="./img/index/eventPic03.jpg" class="eventPic">
-        </div>
-        <div class="cardText">
-            <h1>一起去陽明山散步吧</h1>
-            <p>
-                活動日期:2020-03-01(日) <br>
-                報名截止:2020-02-28(五) <br>
-                集合地點:信義新光三越
-            </p>
-            <span class="lightDetail">more</span>
+                        <div class="eventCardBlock">
+    <!-- 撈資料新增卡片 -->
+    <div class="cardBox" id="cardBox"></div>
+    <!-- //燈箱們-揪團詳情(撈資料庫) -->
+    <div id="eventinfoLight"></div>
+
+    <!-- //燈箱們-揪團詳情(撈資料庫) -->
+    <div id="eventinfoLight"></div>
+
+    <!-- //燈箱們-揪團檢舉 -->
+    <div class="backDrop" id="eventreport_back">
+        <div class="lightbox_report">
+            <div class="lightbox_report_info">
+                <div class="reportTitle">
+                    <h2>協助我們了解情況?</h2>
+                </div>
+                <form>
+                    <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
+                    <br>
+                    <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
+                    <br>
+                    <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
+                    <br>
+                    <div class="reportSent">
+                        <div class="reportEnter">
+                            <a class="btnPink">確定</a>
+                        </div>
+                        <div class="reportCancel">
+                            <a class="btnPink">取消</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-            <!-- 燈箱/揪團詳情 -->
-            <div class="backDrop">
-                <div class="lightbox_detailevent">
-                    <div class="lightbox_detailevent_info">
-                        <div class="close">✘</div>
-                        <div class="detaileventContent">
-                            <div class="detaileventPic">
-                                <div class="title">
-                                    <div class="eventInfotitle">故宮好好玩</div>
-                                    <div class=" dotWrap lightReport ">
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                    </div>
-                                </div>
-                                <div class="detaileventPicbox">
-                                    <img src="./img/event/event_museum.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="detaileventText">
-                                <form action="">
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動日期</div>
-                                        <div>2020-03-01(日)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">報名截止日</div>
-                                        <div>2020-02-28(五)</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合時間</div>
-                                        <div>早上 8:30</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">集合地點</div>
-                                        <div>信義新光三越</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">活動介紹</div>
-                                        <div>故宮好好玩</div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">路線</div>
-                                        <div>
-                                            官方路線二
-                                        </div>
-                                    </div>
-                                    <div class="eventInforow">
-                                        <div class="eventrowTitle">景點</div>
-                                        <div>
-                                            台北101 -> 台北101 -> 台北101
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="enroll">
-                            <a href="#" class="btnRed">
-    我要報名
-</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 燈箱/揪團檢舉 -->
-            <div class="backDrop">
-                <div class="lightbox_report">
-                    <div class="lightbox_report_info">
-
-
-                        <div class="reportTitle">
-                            <h2>協助我們了解情況?</h2>
-                        </div>
-                        <form>
-                            <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
-                            <br>
-                            <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
-                            <br>
-                            <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
-                            <br>
-                            <div class="reportSent">
-                                <div class="enter">
-                                    <a class="btnPink">確定</a>
-                                </div>
-                                <div class="cancel">
-                                    <a class="btnPink">取消</a>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
                     </div>
                 </div>
             </div>
@@ -904,6 +790,7 @@
     <script src="./js/route.js"></script>
     <script src="./js/routeFilterClick.js"></script>
     <script src="./js/routeAttrLightBox.js"></script>
+    <script src="./js/eventConcat.js"></script>
 </body>
 
 </html>

@@ -14,7 +14,11 @@
     align-items: center;
     justify-content: center;
 }
-
+@media screen and (max-width: 767px){
+    #loadingPage{
+        display: none;
+    }
+}
 
 .cls-1{
     fill:none;
