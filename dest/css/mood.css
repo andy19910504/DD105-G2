@@ -328,14 +328,12 @@ div.newMoodLightBox {
       font-size: 24px;
       margin: 10px; }
     div.newMoodLightBox div.newMoodBlock #newMoodForm {
-      border: 1px solid red;
       flex-direction: column-reverse;
       align-items: center; }
       div.newMoodLightBox div.newMoodBlock #newMoodForm label {
         font-size: 20px;
         margin: 5px auto; }
       div.newMoodLightBox div.newMoodBlock #newMoodForm div.moodBox {
-        border: 1px solid green;
         width: 100%;
         display: flex;
         flex-direction: column;
