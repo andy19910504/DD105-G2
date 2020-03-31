@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     // $acc=$_POST["register_acc"];
     // $nam=$_POST["register_nam"];
     // $email=$_POST["register_email"];

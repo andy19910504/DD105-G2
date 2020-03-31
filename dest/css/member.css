@@ -616,9 +616,7 @@ blockquote, q {
   padding: 0 3% 3% 3%;
   background-image: url(../img/member/hip-square.png);
   border-radius: 5px;
-  margin-bottom: 2.375%;
-  height: 100px;
-  overflow: hidden; }
+  margin-bottom: 2.375%; }
 
 .member_info_order > div > div:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
