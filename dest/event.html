@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/event.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
     <script src="./js/getLoginInfo.js"></script>
 </head>
 
@@ -483,72 +483,19 @@
                                     </div>
                                     <div class="holderInfo">
                                         <div>
-                                            <label class="label2">揪團名稱 :</label>
+                                            <label class="label2"><i class="far fa-flag"></i> 揪團名稱 :</label>
                                             <input type="text" name="actTitle" id="actTitle">
                                         </div>
                                         <div>
-                                            <label class="label2">活動日期 :</label>
+                                            <label class="label2"><i class="far fa-calendar"></i> 活動日期 :</label>
                                             <input type="date" name="actDate" id="actDate">
                                         </div>
-                                        <!-- <div>
-                                        <label class="label2" for="">集合時間 :</label>
-                                        <select class="time" name="actTitle">
-                                            <option value="0:00">0:00</option>
-                                            <option value="0:30">0:30</option>
-                                            <option value="1:00">1:00</option>
-                                            <option value="1:30">1:30</option>
-                                            <option value="2:00">2:00</option>
-                                            <option value="2:30">2:30</option>
-                                            <option value="3:00">3:00</option>
-                                            <option value="3:30">3:30</option>
-                                            <option value="4:00">4:00</option>
-                                            <option value="4:30">4:30</option>
-                                            <option value="5:00">5:00</option>
-                                            <option value="5:30">5:30</option>
-                                            <option value="6:00">6:00</option>
-                                            <option value="6:30">6:30</option>
-                                            <option value="7:00">7:00</option>
-                                            <option value="7:30" selected>7:30</option>
-                                            <option value="8:00">8:00</option>
-                                            <option value="8:30">8:30</option>
-                                            <option value="9:00">9:00</option>
-                                            <option value="9:30">9:30</option>
-                                            <option value="10:00">10:00</option>
-                                            <option value="10:30">10:30</option>
-                                            <option value="11:00">11:00</option>
-                                            <option value="11:30">11:30</option>
-                                            <option value="12:00">12:00</option>
-                                            <option value="12:30">12:30</option>
-                                            <option value="13:00">13:00</option>
-                                            <option value="13:30">13:30</option>
-                                            <option value="14:00">14:00</option>
-                                            <option value="14:30">14:30</option>
-                                            <option value="15:00">15:00</option>
-                                            <option value="15:30">15:30</option>
-                                            <option value="16:00">16:00</option>
-                                            <option value="16:30">16:30</option>
-                                            <option value="17:00">17:00</option>
-                                            <option value="17:30">17:30</option>
-                                            <option value="18:00">18:00</option>
-                                            <option value="18:30">18:30</option>
-                                            <option value="19:00">19:00</option>
-                                            <option value="19:30">19:30</option>
-                                            <option value="20:00">20:00</option>
-                                            <option value="20:30">20:30</option>
-                                            <option value="21:00">21:00</option>
-                                            <option value="21:30">21:30</option>
-                                            <option value="22:00">22:00</option>
-                                            <option value="22:30">22:30</option>
-                                            <option value="23:00">23:00</option>
-                                            <option value="23:30">23:30</option>
-                                        </select>
-                                    </div> -->
                                         <div>
-                                            <label class="label2">集合地點 :</label>
+                                            <label class="label2"><i class="fas fa-map-marker-alt"></i> 集合地點 :</label>
                                             <input type="text" name="meetPlace" id="meetPlace">
                                         </div>
                                         <div>
-                                            <label class="label2">報名人數上限 :</label>
+                                            <label class="label2"><i class="fas fa-male"></i> 報名人數上限 :</label>
                                             <select class="people" name="maxPeople" id="maxPeople">
                                                 <option value="1">1位</option>
                                                 <option value="2">2位</option>
@@ -563,9 +510,9 @@
                                             </select>
                                         </div>
                                         <div>
-                                            <div><label class="label2">活動介紹 :</label></div>
+                                            <div><label class="label2"><i class="far fa-map"></i> 活動介紹 :</label></div>
                                             <textarea name="eventInfo" id="eventInfo"
-                                                style="width:380px;height:80px;"></textarea>
+                                                style="width:380px;height:118px;"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -603,33 +550,38 @@
                                         <div class="holderCoverPic">
                                             <img src="./img/mood/newMoodPic.png" id="viewCheckImg">
                                         </div>
-                                        <!-- 抓第一步驟選擇路線+景點 -->
-                                        <div class="holderCoverText">
-                                            <p class="title" id="checkRoute"></p>
-                                            <p class="title" id="checkAtractions"></p>
-                                        </div>
+                                        
                                     </div>
                                     <!-- 抓第二步驟資料 -->
                                     <div class="holderCoverInfo">
+                                        <!-- 抓第一步驟選擇路線+景點 -->
+                                        <div class="holderCoverText">
+                                            <div>
+                                                <i class="fas fa-map-signs"></i> <p class="title" id="checkRoute"></p>
+                                            </div>
+                                            <div>
+                                                <i class="fas fa-map-pin"></i> 景點:<p class="title" id="checkAtractions"></p>
+                                            </div>
+                                        </div>
                                         <table>
                                             <tr>
-                                                <td>揪團名稱 :</td>
+                                                <td><i class="far fa-flag"></i> 揪團名稱 :</td>
                                                 <td id="checkTitle"></td>
                                             </tr>
                                             <tr>
-                                                <td>活動日期 :</td>
+                                                <td><i class="far fa-calendar"></i> 活動日期 :</td>
                                                 <td id="checkDate"></td>
                                             </tr>
                                             <tr>
-                                                <td>集合地點 :</td>
+                                                <td><i class="fas fa-map-marker-alt"></i> 集合地點 :</td>
                                                 <td id="checkPlace"></td>
                                             </tr>
                                             <tr>
-                                                <td>報名人數上限 :</td>
+                                                <td><i class="fas fa-male"></i> 報名人數上限 :</td>
                                                 <td id="checkPeople"></td>
                                             </tr>
                                             <tr>
-                                                <td>活動介紹 :</td>
+                                                <td><i class="far fa-map"></i> 活動介紹 :</td>
                                                 <td id="checkInfo"></td>
                                             </tr>
                                         </table>
@@ -787,13 +739,11 @@
     <script src="./js/jquery-3.4.1.min.js "></script>
     <script src="./js/common.js"></script>
     <script src="./js/eventCardList.js"></script>
-    <script src="./js/eventLightDetail.js"></script>
     <script src="./js/eventLightReport.js"></script>
     <script src="./js/eventEnroll.js"></script>
     <script src="./js/eventInsert.js"></script>
     <script src="./js/event.js"></script>
     <script src="./js/wow.js"></script>
-    <script src="./js/swiper.min.js"></script>
 
     <script>
         new WOW().init();
