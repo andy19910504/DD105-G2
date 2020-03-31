@@ -1,97 +1,226 @@
+
 function insertRow(e) {
     //阻止預設送出事件
     e.preventDefault();
-    //先抓取新增關鍵字表單內被填入的值
-    let keywordWord = $('#keywordInsert').val();
-    let keywordAns = $('#answerInsert').val();
-    let keywordStatus = $('#satausInsert').val();
-    console.log(keywordWord, keywordAns, keywordStatus);
+    //先抓被填入的值
+    let route_number = $('#routeNum').val(); //抓被點選的路線編號
+    let event_name = $('#actTitle').val();
+    let event_dateAll = $('#actDate').val().split('-'); //2020-03-29 先切割
+    let event_date = event_dateAll[0] + event_dateAll[1] + event_dateAll[2];
+    let meeting_place = $('#meetPlace').val();
+    let max_attendance = $('#maxPeople :selected').val();
+    let event_information = $('#eventInfo').val();
+    let event_cover_url = document.getElementById('eventImg').files[0];
+    console.log(event_cover_url);
 
-    ////把抓到的值放到html中一個隱藏的表單內
-    document.getElementById("keywordWord").value = keywordWord;
-    document.getElementById("keywordAns").value = keywordAns;
-    document.getElementById("keywordStatus").value = keywordStatus;
-
-    //-------------------測試值是否正確放入表單--------------------
-    console.log("----------------------");
-    console.log(document.getElementById("keywordWord").value);
-    console.log(document.getElementById("keywordAns").value);
-    console.log(document.getElementById("keywordStatus").value);
-    console.log("----------------------");
-    //------------------------------------------------------------
-
-    //用那個表單建立一個JS表單物件
-    var updateFormData = new FormData(document.getElementById("myForm"));
+    let newEventForm = new FormData();
+    newEventForm.append('route_number', route_number);
+    newEventForm.append('event_cover_url', event_cover_url);
+    newEventForm.append('event_name', event_name);
+    newEventForm.append('event_date', event_date);
+    newEventForm.append('meeting_place', meeting_place);
+    newEventForm.append('max_attendance', max_attendance);
+    newEventForm.append('event_information', event_information);
 
     //將表單物件的資料送到insertKeyword.php中執行修改資料內容的SQL指令
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            alert(xhr.responseText);
+            // alert(xhr.responseText);
         } else {
             alert(xhr.status + "失敗");
         }
     }
 
-    xhr.open("Post", "./php/insertKeyword.php", true);
-    xhr.send(updateFormData);
-
-    location.reload();
-    alert("新增關鍵字成功!");
+    xhr.open("Post", "./php/insertEvent.php", true);
+    xhr.send(newEventForm);
+    alert("發揪團成功!");
+    closeLightBox();
 }
 
+
+//新增揪團 註冊預覽上傳圖片---------------------------
+document.getElementById('eventImg').onchange = imgChange;
+
+//新增揪團  預覽上傳圖片處理函式
+function imgChange() {
+    let file = document.getElementById('eventImg').files[0];
+    //============讀取檔案內容(圖片)
+    let readFile = new FileReader();  //---物件
+    readFile.readAsDataURL(file);
+    readFile.addEventListener('load', function () {
+        let image = document.getElementById('viewImg');
+        // image = document.getElementById('viewCheckImg');
+        image.src = this.result;
+        //再把第二步驟的圖片帶到第三步驟
+        let checkImg = document.getElementById('viewCheckImg');
+        checkImg.src = image.src;
+    });
+    
+}
+
+//把第二步驟抓到的值放到第三步驟
+function stepCheck() {
+
+    let checkRoute = $('.routeClickName').text().substring(5);//抓被點選的路線名稱
+    let checkAtractions = $('.attractions').text().substring(3);//抓被點選的景點
+    let event_name = $('#actTitle').val();
+    let event_date = $('#actDate').val();
+    let meeting_place = $('#meetPlace').val();
+    let max_attendance = $('#maxPeople :selected').val();
+    let event_information = $('#eventInfo').val();
+    // console.log(checkAtractions, event_name, event_date, meeting_place, max_attendance, event_information);
+    document.getElementById('checkRoute').innerText = checkRoute;
+    document.getElementById('checkAtractions').innerText = checkAtractions;
+    document.getElementById('checkTitle').innerText = event_name;
+    document.getElementById('checkDate').innerText = event_date;
+    document.getElementById('checkPlace').innerText = meeting_place;
+    document.getElementById('checkPeople').innerText = max_attendance;
+    document.getElementById('checkInfo').innerText = event_information;
+}
+
+
+//步驟一 點擊路線跳出路線名稱+景點
+function routeClick() {
+    $('.routeChose').click(function () {
+        let routeName = $(this).children().last().children('p').text();
+        let attractions = $(this).children().last().children('input').val();
+        let routeNum = $(this).attr('psn');
+        console.log(routeNum)
+        //每次點選都清空
+        $('.routeClick').text('');
+        //append 點選到的路線和景點+路線編號
+        $(`<p class="routeClickName">選擇路線:${routeName}</p> <p class="attractions">景點:${attractions}</p> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
+
+    });
+}
+
+// 動態新增路線
+function LightEventRouteinfo(routes) {
+    let routeAllBox = $id("routeAllBox");
+    let routetable = JSON.parse(routes);//把JSON字串翻譯成JS物件
+
+    // ---------------官方路線---------------
+    let routeOfficial = routetable.routeInfo; //取出官方路線
+    let officialRouteTable = []; //先建一個新陣列,要把同官方路線的景點串一起
+    routeOfficial.forEach((item) => {
+        //避免陣列第0筆就上傳,所以預設-1
+        const str = item.route_number - 1;
+        if (typeof officialRouteTable[str] === 'undefined') { //放入新陣列
+            officialRouteTable[str] = item;
+        }
+        else {
+            officialRouteTable[str].attraction_name += `->${item.attraction_name}`;
+        }
+    });
+    console.log(officialRouteTable);
+
+    // ---------------自訂路線---------------
+    let routeMember = routetable.customInfo; //取出官方路線
+    let memberRouteTable = []; //先建一個新陣列,要把同官方路線的景點串一起
+    routeMember.forEach((item) => {
+        //避免陣列第0筆就上傳,所以預設-1
+        const a = item.route_number; // 0
+        if (typeof memberRouteTable[a] === 'undefined') { //放入新陣列
+            memberRouteTable[a] = item;
+        }
+        else {
+            memberRouteTable[a].custom_attraction_name += `->${item.custom_attraction_name}`;
+        }
+
+    });
+    let memberRouteNew = memberRouteTable.filter(item => item); //清除中間空陣列
+    console.log(memberRouteNew);
+
+    let html = "";
+
+    for (i = 0; i < officialRouteTable.length; i++) {
+        html += `
+        <div class="routeBox routeChose" psn="${officialRouteTable[i]['route_number']}">
+            <div class="routeBoxImg">
+                <img src="./img/event/event_route00${officialRouteTable[i]['route_number']}.jpg" alt="">
+            </div>
+            <div class="routeBoxBottom">
+                <p class="routeName">${officialRouteTable[i]['route_name']}</p>
+                <input type="hidden" name="route" id="officialRoute${officialRouteTable[i]['route_number']}" value="${officialRouteTable[i]['attraction_name']}">
+            </div>
+        </div>
+        `
+    }
+    for (j = 0; j < memberRouteNew.length; j++) {
+        html += `
+        <div class="routeBox routeChose" psn="${memberRouteNew[j]['route_number']}">
+            <div class="routeBoxImg">
+                <img src="./img/event/event_cusRout.jpg">
+            </div>
+            <div class="routeBoxBottom">
+                <p class="routeName">${memberRouteNew[j]['route_name']}</p>
+                <input type="hidden" name="route" id="memberRoute${memberRouteNew[j]['route_number']}" value="${memberRouteNew[j]['custom_attraction_name']}">
+            </div>
+        </div> 
+        `
+    }
+    html += `
+    <div class="routeBox addRoutebtn">
+        <div class="addroute">
+            <a href="./customRoute.html">
+                自訂路線
+            </a>
+        </div>
+    </div>
+    `
+    routeAllBox.innerHTML = html;
+    routeClick();
+}
+
+// 確認有撈到路線資料
+function checkRoute() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            //正確到php撈資料
+            LightEventRouteinfo(xhr.responseText);
+
+        } else {
+            alert(xhr.status);
+        }
+
+    };
+    xhr.open("Get", "./php/getEventRouteList.php", true);
+    xhr.send(null);
+}
 
 //點擊上下一步
-
-
-//開燈箱
-
-function showLightBox() {
-    $('#eventhold_back').css('display', 'flex');
-    step();
-
-}
-
 function step() {
-    let curIndex=0;
-    let contentLength = $(".stepContent").length; //3
-    console.log(curIndex, "關又開燈箱後")
-
     //上一步
     $(".backStep").click(function () {
         //換div
-        curIndex--;
         $(this).parent().parent().prev().css('display', 'flex');
 
         $(this).parent().parent().css('display', 'none');
-        // if (curIndex == 0) {
-        //     $(this).parent().parent().prev().css('display', 'flex');
 
-        // }
-
-        console.log(curIndex, "prebtn")
     });
-
     //下一步
     $(".nextStep").click(function () {
         //換div
         $(this).parent().parent().next().css('display', 'flex');
         $(this).parent().parent().css('display', 'none');
-
-        curIndex++;
-
-        //送出
-        if (curIndex == contentLength) {
-            $(this).parent().parent().css('display', 'none');
-            $('#eventhold_back').css('display', 'none');
-
-            $(this).parent().parent().parent().children().first().css('display', 'flex');
-            curIndex = 0;
-        }
-        console.log(curIndex, "nextbtn")
     });
-}
 
+}
+//開燈箱
+function showLightBox() {
+    let login = $('.sign').text();
+
+    if (login == "登入登入") { //顯示登入登入--->未登入跳出提醒
+        $("#loginBlock").css("display", "block");
+    }
+    else {  //已登入則打開燈箱
+        $('#eventhold_back').css('display', 'flex');
+        checkRoute(); //撈官方+自訂路線
+        step(); //上下一步btn
+    }
+}
 //關燈箱
 function closeLightBox() {
     $('#eventhold_back').css('display', 'none');
@@ -99,6 +228,9 @@ function closeLightBox() {
 
 // 開啟燈箱
 $(document).on('click', '.eventInsert', showLightBox);
-
+//關燈箱
 $(document).on('click', '.eventhold_close', closeLightBox);
-
+//把第二步驟資料放到第三步驟
+$(document).on('click', '.twoNextStep', stepCheck);
+//送出表單
+$(document).on('click', '.send', insertRow);

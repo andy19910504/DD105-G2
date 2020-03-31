@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/stylepostcard.css">
+    <script src="./js/getLoginInfo.js"></script>
     <title>情繫明信片</title>
 </head>
 
@@ -34,12 +35,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+        <div class="navPoint">
+            <div class="point">點數</div>
+            <a><img src="./img/header/navPoint.png"></a>
         </div>
     </div>
 </header>
@@ -61,13 +64,15 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">點數</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -96,7 +101,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -110,7 +115,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -142,7 +147,7 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
@@ -346,22 +351,25 @@
                                 <label for='name' id="name1">收件人</label><br>
                                 <input type='text' id='name' class='inputform' placeholder="輸入收件人姓名"><br>
                                 <label for="address">收件地址</label><br>
-                                <div>
+                                <input type='text' id='address' class='inputform' placeholder="輸入收件地址">
+                                <!-- <div>
                                     <div id="address1"></div>
-                                    <input type='text' id='address' class='inputform' placeholder="輸入收件地址">
-                                </div>
+                                    
+                                </div> -->
                             </form>
+                            <div class="download">
                             <a href="#" class="btnPink" type="button" download="卡片正面.png"
                                 onclick="this.href=document.getElementById('postcardCanvas').toDataURL()">正面存圖</a>
                             <a href="#" class="btnPink" type="button" download="卡片背面.png"
                                 onclick="this.href=document.getElementById('postcardback').toDataURL()">背面存圖</a>
+                            </div>
                         </div>
-                        <!-- <button class="btnPink" id="save">save</button>
-                        <br />
-                        <a href="" download="canvas_love.png"  id="save_href">
-                            <img src="" id="save_img" />
-                            <img src="" id="save_img2" />
-                        </a> -->
+                        <!-- <form method="post" id="form1">
+                            <input name="hidden_data" id='hidden_data' type="hidden" />
+                            <input type="button" id="saveImage" value="save image">
+                        </form> -->
+                        <!-- <img src="" id="testImg">
+                        <button class="btnPink" id="save">save</button> -->
                         <div class="step_btnbox5">
                             <button class="btnPink" id="step_btn8">上一步</button>
                             <input type="submit" value="完成" class="btnPink" id="step_btn9">

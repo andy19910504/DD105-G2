@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/member.css">
     <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/getLoginInfo.js"></script>
     <title>台北散步｜會員中心</title>
 
 </head>
@@ -37,12 +38,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+        <div class="navPoint">
+            <div class="point">點數</div>
+            <a><img src="./img/header/navPoint.png"></a>
         </div>
     </div>
 </header>
@@ -64,13 +67,15 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">點數</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -99,7 +104,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -113,7 +118,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -145,16 +150,17 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
 </div>
-        <div class="banner_06">
+        <div class="banner_01">
             <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
-            <div class="routeTitle">
-                <div class="routeTitleMoveBlock">
-                    <img src="./img/banner/bannerTitle6.png" alt="">
+            <div class="pageBannerTitle">
+                <div class="bannerTitleMoveBlock">
+                    <img src="./img/banner/bannerTitle6.png" class="routeTitleImage1">
+
                 </div>
             </div>
             <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
@@ -233,79 +239,88 @@
                     </nav>
                     <div class="member_info_info">
                         <div class="member_info_info_all" id="member_info_info_all">
-                                <div class="member_info_info_left">
+                            <div class="member_info_info_left">
+                                <div>
+                                    <span>我的資料</span>
+                                    <img src="./img/member/memberchange.png" alt="" class="pen">
+                                </div>
+                                <label for="photo_up">
                                     <div>
-                                        <span>我的資料</span>
-                                        <img src="./img/member/memberchange.png" alt="" class="pen">
-                                    </div>
-                                    <label for="photo_up">
                                         <div>
-                                            <div>
-                                                <img src="./img/member/memberphoto.jpg" alt="">
-                                            </div>
-                                            <div>
-                                                <label for="photo_up">上傳大頭照
-                                                    <img src="./img/member/membercamera.png" alt="">
-                                                </label>
-                                                <input style="display: none;" type="file" name="" id="photo_up">
-                                            </div>
+                                            <img src="./img/member/memberphoto.jpg" alt="">
                                         </div>
-                                    </label>
+                                        <div>
+                                            <label for="photo_up">上傳大頭照
+                                                <img src="./img/member/membercamera.png" alt="">
+                                            </label>
+                                            <input style="display: none;" type="file" name="" id="photo_up">
+                                        </div>
+                                    </div>
+                                </label>
 
 
+
+                            </div>
+                            <div class="member_info_info_line"></div>
+                            <div class="member_info_info_right">
+                                <div>
+                                    <span>我的資料</span>
+                                    <img src="./img/member/memberchange.png" alt="" class="pen">
 
                                 </div>
-                                <div class="member_info_info_line"></div>
-                                <div class="member_info_info_right">
-                                    <div>
-                                        <span>我的資料</span>
-                                        <img src="./img/member/memberchange.png" alt="" class="pen">
-
-                                    </div>
-                                    <div>
-                                        <label for="">帳號 :</label>
-                                        <input type="text" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="">密碼 :</label>
-                                        <input type="text" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="">暱稱 :</label>
-                                        <input type="text" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="">手機 :</label>
-                                        <input type="text" readonly>
-                                    </div>
-                                    <div>
-                                        <label for="">信箱 :</label>
-                                        <input type="text" readonly>
-                                    </div>
+                                <div>
+                                    <label for="">帳號 :</label>
+                                    <input type="text" readonly>
                                 </div>
-                                <div class="member_info_info_button ">
-                                    <a class="btnPink" style="visibility: hidden;">
-                                        確認
-                                    </a>
-                                    <!-- <input type="submit" class="btnPinkStop" value="修改確認"> -->
+                                <div>
+                                    <label for="">密碼 :</label>
+                                    <input type="text" readonly>
                                 </div>
+                                <div>
+                                    <label for="">暱稱 :</label>
+                                    <input type="text" readonly>
+                                </div>
+                                <div>
+                                    <label for="">手機 :</label>
+                                    <input type="text" readonly>
+                                </div>
+                                <div>
+                                    <label for="">信箱 :</label>
+                                    <input type="text" readonly>
+                                </div>
+                            </div>
+                            <div class="member_info_info_button ">
+                                <a class="btnPink" style="visibility: hidden;">
+                                    確認
+                                </a>
+                                <!-- <input type="submit" class="btnPinkStop" value="修改確認"> -->
+                            </div>
                         </div>
                     </div>
                     <div class="member_info_line minheightbig " style="display: none;">
-                        <div class="member_info_line_all minheightmiddle">
+                        <div id="member_info_line_all" class="member_info_line_all minheightmiddle">
                             <div class="member_info_line_all_all">
-                                <p class="member_info_line_all_left">吃貨之行</p>
-                                <div class="member_info_line_all_right">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                    修改
-                                </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                    刪除
-                                </button> -->
+                                <div class="member_info_line_all_left">
+                                    <input type="text" value="吃貨之行" readonly>
+                                    <textarea name="" id="" cols="" rows=""
+                                        readonly>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</textarea>
+
                                 </div>
+                                <div class="member_info_line_all_right">
+                                    <!-- <a class="btnPink" href="#">修改</a> -->
+                                    <div class="btnPink">
+                                        修改
+                                    </div>
+                                    <div style="display: none;" class="btnPink">
+                                        確認
+                                    </div>
+                                    <!-- <a class="btnPink" href="#">刪除</a> -->
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <div class="btnPink">
+                                        刪除
+                                    </div>
+                                </div>
+
                                 <div class="member_info_line_all_bottom" id="member_map">
                                     <!-- <img src="./img/member/memberdarkness.png" alt="">
                                     <img src="./img/member/memberdarkness.png" alt="">
@@ -316,18 +331,27 @@
 
                             </div>
                             <div class="member_info_line_all_all">
-                                <p class="member_info_line_all_left">吃貨之行</p>
-                                <div class="member_info_line_all_right">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                    修改
-                                </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                    刪除
-                                </button> -->
+                                <div class="member_info_line_all_left">
+                                    <input type="text" value="吃貨之行">
+                                    <textarea name="" id="" cols=""
+                                        rows="">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</textarea>
+
                                 </div>
+                                <div class="member_info_line_all_right">
+                                    <!-- <a class="btnPink" href="#">修改</a> -->
+                                    <div class="btnPink">
+                                        修改
+                                    </div>
+                                    <div class="btnPink">
+                                        確認
+                                    </div>
+                                    <!-- <a class="btnPink" href="#">刪除</a> -->
+                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
+                                    <div class="btnPink">
+                                        刪除
+                                    </div>
+                                </div>
+
                                 <div class="member_info_line_all_bottom" id="member_map">
                                     <!-- <img src="./img/member/memberdarkness.png" alt="">
                                     <img src="./img/member/memberdarkness.png" alt="">
@@ -338,137 +362,225 @@
 
                             </div>
                         </div>
-
                     </div>
                     <div class="member_info_share minheightbig" style="display: none;">
-                        <div class="minheightmiddle">
-                            <div class="member_info_share_all">
-                                <div class="member_info_share_kind">
-                                    <p>#職人散步去</p>
-                                </div>
-                                <div class="member_info_share_image">
-                                    <img src="./img/member/membersharephoto.jpg" alt="">
-                                </div>
-                                <div class="member_info_share_heart">
-                                    <p>
-                                        <img src="./img/member/memberheart.png" alt="">
-                                        <span>112</span>
-                                        <img src="./img/member/moodChatIcon.png" alt="">
-                                        <span>112</span>
-                                    </p>
-                                </div>
-                                <div class="member_info_share_word">
-                                    <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
-                                </div>
-                                <div class="member_info_share_button">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                        修改
-                                    </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                        刪除
-                                    </button> -->
-                                </div>
-                            </div>
-                            <div class="member_info_share_all">
-                                <div class="member_info_share_kind">
-                                    <p>#職人散步去</p>
-                                </div>
-                                <div class="member_info_share_image">
-                                    <img src="./img/member/membersharephoto.jpg" alt="">
-                                </div>
-                                <div class="member_info_share_heart">
-                                    <p>
-                                        <img src="./img/member/memberheart.png" alt="">
-                                        <span>112</span>
-                                        <img src="./img/member/moodChatIcon.png" alt="">
-                                        <span>112</span>
-                                    </p>
-                                </div>
-                                <div class="member_info_share_word">
-                                    <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
-                                </div>
-                                <div class="member_info_share_button">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                        修改
-                                    </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                        刪除
-                                    </button> -->
-                                </div>
-                            </div>
-                            <div class="member_info_share_all">
-                                <div class="member_info_share_kind">
-                                    <p>#職人散步去</p>
-                                </div>
-                                <div class="member_info_share_image">
-                                    <img src="./img/member/membersharephoto.jpg" alt="">
-                                </div>
-                                <div class="member_info_share_heart">
-                                    <p>
-                                        <img src="./img/member/memberheart.png" alt="">
-                                        <span>112</span>
-                                        <img src="./img/member/moodChatIcon.png" alt="">
-                                        <span>112</span>
-                                    </p>
-                                </div>
-                                <div class="member_info_share_word">
-                                    <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
-                                </div>
-                                <div class="member_info_share_button">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                        修改
-                                    </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                        刪除
-                                    </button> -->
-                                </div>
-                            </div>
-                            <div class="member_info_share_all">
-                                <div class="member_info_share_kind">
-                                    <p>#職人散步去</p>
-                                </div>
-                                <div class="member_info_share_image">
-                                    <img src="./img/member/membersharephoto.jpg" alt="">
-                                </div>
-                                <div class="member_info_share_heart">
-                                    <p>
-                                        <img src="./img/member/memberheart.png" alt="">
-                                        <span>112</span>
-                                        <img src="./img/member/moodChatIcon.png" alt="">
-                                        <span>112</span>
-                                    </p>
-                                </div>
-                                <div class="member_info_share_word">
-                                    <p>把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…</p>
-                                </div>
-                                <div class="member_info_share_button">
-                                    <a class="btnPink" href="#">修改</a>
-                                    <!-- <div class="btnPink">
-                                        修改
-                                    </div> -->
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                        刪除
-                                    </button> -->
-                                </div>
-                            </div>
+                        <div class="member_info_share_all minheightmiddle" id="member_info_share_all">
+                            <div class="member_info_share_all_all">
+                                <form action="">
+                                    <div class="member_info_share_kind">
+                                        <!-- <p>#職人散步去</p> -->
+                                        <select name="" id="">
+                                            <option value="">AA</option>
+                                            <option value="">bb</option>
+                                            <option value="">cc</option>
 
+                                        </select>
+                                    </div>
+                                    <div class="member_info_share_image">
+                                        <!-- <img src="./img/member/membersharephoto.jpg" alt=""> -->
+                                        <label for="mood_pho">
+                                            <div>
+                                                <div>
+                                                    <div>
+                                                        <img src="./img/member/event_card3.png" alt="">
+                                                    </div>
+                                                </div>
+                                                <div style="display: none;">
+                                                    <label for="mood_pho">上傳照片
+                                                        <img src="./img/member/membercamera.png" alt="">
+                                                    </label>
+                                                    <input type="file" id="mood_pho" style="display: none;">
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="member_info_share_heart">
+                                        <p>
+                                            <img src="./img/member/memberheart.png" alt="">
+                                            <span>112</span>
+                                            <img src="./img/member/moodChatIcon.png" alt="">
+                                            <span>112</span>
+                                        </p>
+                                    </div>
+                                    <div class="member_info_share_word">
+                                        <textarea name="" id="" rows="5">把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
+                                    </textarea>
+                                    </div>
+                                    <div class="member_info_share_button">
+                                        <div class="btnPink">
+                                            修改
+                                        </div>
+                                        <div style="display: none;" class="btnPink">
+                                            確認
+                                        </div>
+                                        <div class="btnPink">
+                                            刪除
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="member_info_share_all_all">
+                                <div class="member_info_share_kind">
+                                    <!-- <p>#職人散步去</p> -->
+                                    <select name="" id="">
+                                        <option value="">AA</option>
+                                        <option value="">bb</option>
+                                        <option value="">cc</option>
+
+                                    </select>
+                                </div>
+                                <div class="member_info_share_image">
+                                    <!-- <img src="./img/member/membersharephoto.jpg" alt=""> -->
+                                    <label for="mood_pho">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <img src="./img/member/event_card3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div style="display: none;">
+                                                <label for="mood_pho">上傳照片
+                                                    <img src="./img/member/membercamera.png" alt="">
+                                                </label>
+                                                <input type="file" id="mood_pho" style="display: none;">
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="member_info_share_heart">
+                                    <p>
+                                        <img src="./img/member/memberheart.png" alt="">
+                                        <span>112</span>
+                                        <img src="./img/member/moodChatIcon.png" alt="">
+                                        <span>112</span>
+                                    </p>
+                                </div>
+                                <div class="member_info_share_word">
+                                    <textarea name="" id="" rows="5">把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
+                                    </textarea>
+                                </div>
+                                <div class="member_info_share_button">
+                                    <div class="btnPink">
+                                        修改
+                                    </div>
+                                    <div style="display: none;" class="btnPink">
+                                        確認
+                                    </div>
+                                    <div class="btnPink">
+                                        刪除
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member_info_share_all_all">
+                                <div class="member_info_share_kind">
+                                    <!-- <p>#職人散步去</p> -->
+                                    <select name="" id="">
+                                        <option value="">AA</option>
+                                        <option value="">bb</option>
+                                        <option value="">cc</option>
+
+                                    </select>
+                                </div>
+                                <div class="member_info_share_image">
+                                    <!-- <img src="./img/member/membersharephoto.jpg" alt=""> -->
+                                    <label for="mood_pho">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <img src="./img/member/event_card3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div style="display: none;">
+                                                <label for="mood_pho">上傳照片
+                                                    <img src="./img/member/membercamera.png" alt="">
+                                                </label>
+                                                <input type="file" id="mood_pho" style="display: none;">
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="member_info_share_heart">
+                                    <p>
+                                        <img src="./img/member/memberheart.png" alt="">
+                                        <span>112</span>
+                                        <img src="./img/member/moodChatIcon.png" alt="">
+                                        <span>112</span>
+                                    </p>
+                                </div>
+                                <div class="member_info_share_word">
+                                    <textarea name="" id="" rows="5">把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
+                                    </textarea>
+                                </div>
+                                <div class="member_info_share_button">
+                                    <div class="btnPink">
+                                        修改
+                                    </div>
+                                    <div style="display: none;" class="btnPink">
+                                        確認
+                                    </div>
+                                    <div class="btnPink">
+                                        刪除
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member_info_share_all_all">
+                                <div class="member_info_share_kind">
+                                    <!-- <p>#職人散步去</p> -->
+                                    <select name="" id="">
+                                        <option value="">AA</option>
+                                        <option value="">bb</option>
+                                        <option value="">cc</option>
+
+                                    </select>
+                                </div>
+                                <div class="member_info_share_image">
+                                    <!-- <img src="./img/member/membersharephoto.jpg" alt=""> -->
+                                    <label for="mood_pho">
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <img src="./img/member/event_card3.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div style="display: none;">
+                                                <label for="mood_pho">上傳照片
+                                                    <img src="./img/member/membercamera.png" alt="">
+                                                </label>
+                                                <input type="file" id="mood_pho" style="display: none;">
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="member_info_share_heart">
+                                    <p>
+                                        <img src="./img/member/memberheart.png" alt="">
+                                        <span>112</span>
+                                        <img src="./img/member/moodChatIcon.png" alt="">
+                                        <span>112</span>
+                                    </p>
+                                </div>
+                                <div class="member_info_share_word">
+                                    <textarea name="" id="" rows="5">把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
+                                    </textarea>
+                                </div>
+                                <div class="member_info_share_button">
+                                    <div class="btnPink">
+                                        修改
+                                    </div>
+                                    <div style="display: none;" class="btnPink">
+                                        確認
+                                    </div>
+                                    <div class="btnPink">
+                                        刪除
+                                    </div>
+                                </div>
+                            </div>
 
 
                         </div>
                     </div>
                     <div class="member_info_order minheightbig" style="display: none;">
-                        <div class="minheightmiddle">
+                        <div class="minheightmiddle" id="memberorder">
                             <div>
                                 <div class="member_info_order_up">
                                     <p>訂單編號 :<span>NO.61</span></p>
@@ -500,7 +612,7 @@
                         </div>
                     </div>
                     <div class="member_info_open minheightbig" style="display: none;">
-                        <div class="member_info_open_all minheightmiddle">
+                        <div class="member_info_open_all minheightmiddle" id="member_info_open_all">
                             <div class="member_info_open_all_all">
                                 <form action="">
                                     <!-- <h1>
@@ -525,38 +637,56 @@
                                     <div class="member_info_open_all_right">
                                         <div>
                                             <label for="join_member">參與會員 :</label>
-                                            <input type="text" value="XXX XXX XXX" id="join_member" readonly>
+                                            <div>
+                                                <div>zz</div>
+                                                <div>aa</div>
+                                                <div>ssss</div>
+                                            </div>
+                                            <!-- <input type="text" value="XXX XXX XXX" id="join_member" readonly> -->
                                         </div>
                                         <div>
                                             <label for="event_day">活動日期 :</label>
-                                            <input type="date" id="event_day" readonly>
+                                            <input type="date" id="event_day" readonly value="0000000000000000000">
                                         </div>
                                         <div>
                                             <label for="event_dday">報名截止日 :</label>
-                                            <input type="date" id="event_dday" readonly>
+                                            <input type="date" id="event_dday" readonly value="0000000000000000000">
                                         </div>
                                         <div>
                                             <label for="togethertime">集合時間 :</label>
-                                            <input type="text" id="togethertime" readonly>
+                                            <input type="text" id="togethertime" readonly value="0000000000000000000">
                                         </div>
                                         <div>
                                             <label for="togetherposition">集合地點 :</label>
-                                            <input type="text" id="togetherposition" readonly>
+                                            <input type="text" id="togetherposition" readonly
+                                                value="0000000000000000000">
                                         </div>
                                         <div>
                                             <label for="lines">路線 :</label>
-                                            <input type="text" id="lines" readonly>
+                                            <select name="" id="">
+                                                <option value="1">aaa</option>
+                                                <option value="1">bbb</option>
+                                                <option value="1">ccc</option>
+                                            </select>
+                                            <!-- <input type="text" id="lines" readonly value="0000000000000000000"> -->
                                         </div>
                                         <div>
                                             <label for="viewpoints">景點 :</label>
-                                            <input type="text" id="viewpoints" readonly>
+                                            <div>
+                                                <div>aaaaaaaaaaaa</div>
+                                                <div>asdasdasd</div>
+                                                <div>asdasdasd</div>
+                                                <div>asdasdasd</div>
+                                                <div>asdasdsd</div>
+                                            </div>
+                                            <!-- <input type="text" id="viewpoints" readonly value="0000000000000000000"> -->
                                         </div>
                                         <div>
                                             <label for="people">人數 :</label>
-                                            <input type="text" id="people" readonly>
+                                            <input type="text" id="people" readonly value="0000000000000000000">
                                         </div>
                                         <div>
-                                            <label for="event_introduce">活動介紹 :</label>
+                                            <label for="event_introduce">活動介紹 :</label value="0000000000000000000">
                                             <textarea name="" id="" cols="30" rows="5" id="event_introduce"
                                                 readonly></textarea>
                                         </div>
@@ -568,11 +698,11 @@
                                     </div>
                                     <div class="member_info_open_all_bottom">
                                         <div class="btnPink">修改</div>
-                                        <a class="btnPink" href="#" style="display: none;">確認</a>
+                                        <div class="btnPink" href="#" style="display: none;">確認</div>
                                         <!-- <div class="btnPink">
                                         修改
                                     </div> -->
-                                        <a class="btnPink" href="#">刪除</a>
+                                        <div class="btnPink" href="#">刪除</div>
                                         <!-- <input type="submit" class="btnPink" value="刪除"> -->
                                         <!-- <button class="btnPink">
                                         刪除
@@ -663,7 +793,7 @@
                         </div>
                     </div>
                     <div class="member_info_join minheightbig" style="display: none;">
-                        <div class="member_info_join_all minheightmiddle">
+                        <div class="member_info_join_all minheightmiddle" id="member_info_join_all">
                             <div class="member_info_join_all_all">
                                 <input type="text" value="今天心情好所以想出門走走" readonly>
                                 <div class="member_info_join_all_left">
@@ -700,7 +830,14 @@
                                     </div>
                                     <div>
                                         <label for="viewpoints">景點 :</label>
-                                        <input type="text" id="viewpoints" readonly>
+                                        <div>
+                                            <input type="text" id="viewpoints" readonly value="">
+                                            <input type="text" id="viewpoints" readonly value="">
+                                            <input type="text" id="viewpoints" readonly value="">
+                                            <input type="text" id="viewpoints" readonly value="">
+                                            <input type="text" id="viewpoints" readonly value="">
+
+                                        </div>
                                     </div>
                                     <div>
                                         <label for="people">人數 :</label>
@@ -711,18 +848,9 @@
                                         <textarea name="" id="" cols="30" rows="5" id="event_introduce"
                                             readonly></textarea>
                                     </div>
-                                    <!-- <p>參與會員 :<span>XXX/XXX/XXX</span></p>
-                                    <p>活動日期 :<span>2020/02/29</span></p>
-                                    <p>集合時間 :<span>12:00</span></p>
-                                    <p>集合地點 :<span>XXXXXX</span></p>
-                                    <p>揪團期程 :<span>4小時</span></p> -->
                                 </div>
                                 <div class="member_info_join_all_bottom">
-                                    <a class="btnPink" href="#">刪除</a>
-                                    <!-- <input type="submit" class="btnPink" value="刪除"> -->
-                                    <!-- <button class="btnPink">
-                                        刪除
-                                    </button> -->
+                                    <div class="btnPink" href="#">刪除</div>
                                 </div>
                             </div>
                         </div>
@@ -770,14 +898,14 @@
                 <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
             </div>
         </footer>
-        
+
 
 
         <script src="./js/jquery-3.4.1.min.js"></script>
-        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxHAzDuEADlkr21Aqm0ng4BqfQ3LfmD6c"></script>
         <script src="./js/common.js"></script>
-        <!-- <script src="./js/loginForFront.js"></script> -->
         <script src="./js/member.js"></script>
-        <script src="./js/memberforphp.js"></script>
+        <script src="./js/memberinfoupdate.js"></script>
 </body>
+
 </html>

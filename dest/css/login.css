@@ -101,16 +101,18 @@
   margin-left: 3%; }
 
 .login_close {
-  padding: 1%;
-  border-radius: 50%;
-  background-color: #a5361c;
+  background-size: cover;
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 6%;
+  right: 15px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer; }
   .login_close img {
-    width: 100%; }
+    width: 75%; }
 
 .btnBack {
   margin-left: 3%; }

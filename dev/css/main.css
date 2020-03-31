@@ -69,6 +69,7 @@ blockquote, q {
   position: relative;
   display: inline-block;
   border-radius: 25px;
+  font-family: "微軟正黑體";
   font-size: 24px;
   font-weight: bold;
   color: #fff;
@@ -98,6 +99,7 @@ blockquote, q {
   position: relative;
   display: inline-block;
   border-radius: 15px;
+  font-family: "微軟正黑體";
   font-size: 18px;
   font-weight: bold;
   color: #fff;
@@ -125,6 +127,7 @@ blockquote, q {
   position: relative;
   display: inline-block;
   border-radius: 15px;
+  font-family: "微軟正黑體";
   font-size: 18px;
   font-weight: bold;
   color: #fff;
@@ -389,17 +392,34 @@ header.fullHeader .memberIcon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-transform: translate(300px, -30px);
           transform: translate(300px, -30px);
 }
 
 header.fullHeader .memberIcon div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 15px;
   cursor: pointer;
 }
 
 header.fullHeader .memberIcon div a {
   display: inline-block;
+  margin-bottom: 4px;
 }
 
 header.fullHeader .memberIcon div:last-child {
@@ -407,9 +427,21 @@ header.fullHeader .memberIcon div:last-child {
   cursor: unset;
 }
 
+.navMember .memberPhoto {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.navMember .memberPhoto img {
+  width: 100%;
+}
+
 header.hamburgerHeader {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.95);
   display: none;
   -webkit-box-orient: vertical;
@@ -470,12 +502,34 @@ header.hamburgerHeader .memberIcon {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-top: 80px;
   cursor: pointer;
 }
 
 header.hamburgerHeader .memberIcon div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 15px;
+  cursor: pointer;
+}
+
+header.hamburgerHeader .memberIcon div a {
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 header.hamburgerHeader .memberIcon div:last-child {
@@ -1152,7 +1206,6 @@ footer .footerText p {
 }
 
 .filterBlock {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1168,11 +1221,19 @@ footer .footerText p {
           align-items: center;
 }
 
+.filterBlock .filterMask {
+  width: 100%;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+}
+
 .filterBlock .filterAll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   max-width: 1200px;
 }
 
@@ -1200,12 +1261,6 @@ footer .footerText p {
 .filterBgImage {
   width: 100%;
   max-width: 1200px;
-}
-
-@media screen and (max-width: 575px) {
-  .filterBlock .filterAll li {
-    font-size: 18px;
-  }
 }
 
 div.chatBot {

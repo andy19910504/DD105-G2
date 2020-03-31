@@ -151,7 +151,7 @@ div.psyTestWrap{
 div.routeWrap{
     // border: 1px solid blue;
     width: 100%;
-    margin-top: 200px;
+    margin-top: 70px;
     position: relative;
     letter-spacing: 1.5px;
     font-size: $fzTitle;
@@ -160,74 +160,166 @@ div.routeWrap{
     flex-direction: column;
     align-items: center;
 
-    div.routeBox{
-        // border: 1px solid green;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        width: 100%;
+    // div.routeBox{
+    //     // border: 1px solid green;
+    //     display: flex;
+    //     justify-content: center;
+    //     position: relative;
+    //     width: 100%;
         
-            a.routeLink{
-                // border: 1px solid palevioletred;
-                display: inline-block;
-                margin: 0px 20px;
-                &:hover + div.routeData{
-                    opacity: 1;
-                    z-index: 5;
-                }
-            }
-            @media screen and (max-width:1199px){
-                a.routeLink{
-                    margin: 0px;
-                }
-            }
-            div.routeData{
-                box-shadow: 5px 5px 10px 0px rgba($color: #000000, $alpha: .13);
-                border-radius: 5px;
-                background-image: url(../img/index/linedpaper.png);
-                display: inline-block;
-                padding: 20px 0px;
-                width: 700px;
-                opacity: 0;
-                position: absolute;
-                left: 20%;
-                bottom: -130px;
+    //         div.routeLink{
+    //             // border: 1px solid palevioletred;
+    //             display: inline-block;
+    //             margin: 0px 20px;
+    //             &:hover + div.routeData{
+    //                 opacity: 1;
+    //                 z-index: 5;
+    //             }
+    //         }
+    //         @media screen and (max-width:1199px){
+    //             div.routeLink{
+    //                 margin: 0px;
+    //             }
+    //         }
+    //         div.routeData{
+    //             box-shadow: 5px 5px 10px 0px rgba($color: #000000, $alpha: .13);
+    //             border-radius: 5px;
+    //             background-image: url(../img/index/linedpaper.png);
+    //             display: inline-block;
+    //             padding: 20px 0px;
+    //             width: 700px;
+    //             opacity: 0;
+    //             position: absolute;
+    //             left: 20%;
+    //             bottom: -130px;
 
-                img.routeArrow01{
-                    position: absolute;
-                    top: -100px;
-                    left: 0px;
-                }
-                img.routeArrow02{
-                    position: absolute;
-                    top: -110px;
-                    left: 300px;
-                    transform: rotate(65deg);
-                }
-                img.routeArrow03{
-                    position: absolute;
-                    top: -100px;
-                    left: 600px;
-                    transform: rotate(100deg);
-                }
-                p{
-                    text-align: center;
-                    font-size: 18px;
-                    letter-spacing: 1.5px;
-                    line-height: 1.5;
-                    color: #1e1e1e;
-                    span{
-                        font-size: 24px;
-                        font-weight: bold;
+    //             img.routeArrow01{
+    //                 position: absolute;
+    //                 top: -100px;
+    //                 left: 0px;
+    //             }
+    //             img.routeArrow02{
+    //                 position: absolute;
+    //                 top: -110px;
+    //                 left: 300px;
+    //                 transform: rotate(65deg);
+    //             }
+    //             img.routeArrow03{
+    //                 position: absolute;
+    //                 top: -100px;
+    //                 left: 600px;
+    //                 transform: rotate(100deg);
+    //             }
+    //             p{
+    //                 text-align: center;
+    //                 font-size: 18px;
+    //                 letter-spacing: 1.5px;
+    //                 line-height: 1.5;
+    //                 color: #1e1e1e;
+    //                 span{
+    //                     font-size: 24px;
+    //                     font-weight: bold;
+    //                 }
+    //             }
+    //         }
+    //         @media screen and (max-width:1199px){
+    //             div.routeData{
+    //                 left: 15%;
+    //             }
+    //         }
+    // }
+
+    #slideBoard {
+        width: 100%;
+        overflow: hidden;
+
+         #content {
+             position: relative;
+             display: flex;
+                 .newSliderBox {
+                     position: relative;
+                     display: flex;
+                     justify-content: space-between;
+
+                     div.picBubble{
+                        width: 48%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-image: url(../img/index/blueWave.png);
+                        position: relative;
+                        padding: 20px;
+                        text-align: center;
+                        box-shadow: 5px 5px 10px 3px rgba($color: #000000, $alpha: 0.13);
+                        animation: ansAni 3s infinite linear alternate-reverse;
+
+                        img.routeImg{
+                            width: 95%;
+                            animation: ansAni 2s infinite linear alternate-reverse;
+                            transition: all 0.3s;
+                        }
                     }
-                }
+                    @keyframes ansAni {
+                        0%{border-radius: 35% 40% 22% 42%/ 51% 47% 42% 42%;}
+                        33%{border-radius: 29% 45% 30% 31%/ 51% 47% 42% 42%;}
+                        66%{border-radius: 40% 50% 32% 27%/ 51% 47% 42% 42%;}
+                        100%{border-radius: 31% 40% 24% 38%/ 51% 47% 42% 42%;}
+                    }
+
+                     div.routeDatailText {
+                        width: 47%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        span{
+                            font-size: 36px;
+                            font-weight: bold;
+                            color: #1e1e1e;
+                            margin-bottom: 15px;
+                            letter-spacing: 3px;
+                        }
+                         p {
+                             font-size: 20px;
+                             color: $fcInfo;
+                             margin: 10px 0px;
+                             text-align: center;
+                         }
+                     }
+                 }
+                 
+
+         }
+     }
+
+    @media screen and (max-width:767px){
+        #slideBoard {
+            #content {
+                    .newSliderBox {
+                         flex-direction: column;
+                         align-items: center;
+    
+                         div.picBubble{
+                            width: 95%;
+                         }
+                         div.routeDatailText {
+                            width: 95%;
+                            span{
+                                font-size: 30px;
+                                margin-top: 20px;
+                            }
+                             p {
+                                 font-size: 18px;
+                                 margin: 5px 0px;
+                             }
+                         }
+                    }
             }
-            @media screen and (max-width:1199px){
-                div.routeData{
-                    left: 15%;
-                }
-            }
+        }
     }
+
+
+
     div.moreRoute{
         margin: 60px 0px 30px 0px;
     }
@@ -249,91 +341,91 @@ div.routeWrap{
 
 @media screen and (max-width:767px){
     div.routeWrap{
-        margin-top: 50px
+        margin-top: 0px
     }
 }
 
-@media screen and (max-width:1024px){
-    div.routeBox{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        div.routePaper{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+// @media screen and (max-width:1024px){
+//     div.routeBox{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         position: relative;
+//         width: 100%;
+//         div.routePaper{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-around;
             
-            a.routeLink{
-                width: 30%;
-                display: inline-block;
-                img{
-                    width: 100%;
-                }
-            }          
-            div.routeData{
-                align-self: center;
-                width: 65%;
-                position: relative;
-                opacity: 1;
-                left: 0px;
-                top: 0px;
-                bottom: unset;
+//             div.routeLink{
+//                 width: 30%;
+//                 display: inline-block;
+//                 img{
+//                     width: 100%;
+//                 }
+//             }          
+//             div.routeData{
+//                 align-self: center;
+//                 width: 65%;
+//                 position: relative;
+//                 opacity: 1;
+//                 left: 0px;
+//                 top: 0px;
+//                 bottom: unset;
 
-                img.routeArrow01{
-                    width: 60px;
-                    top: -0px;
-                    left: -30px;
-                    transform: rotate(-20deg);
-                }
-                img.routeArrow02{
-                    width: 60px;
-                    top: -0px;
-                    left: unset;
-                    right: -30px;
-                    transform: rotate(130deg);
-                }
-                img.routeArrow03{
-                    width: 60px;
-                    top: -0px;
-                    left: -30px;
-                    transform: rotate(-20deg);
-                }
-                p{
-                    font-size: 16px;
-                }
-            }
-        }    
-    }
-    //-----第二條路線反向排列
-    div.routeBox div:nth-child(2) a{
-        order: 2;
-    }
-}
+//                 img.routeArrow01{
+//                     width: 60px;
+//                     top: -0px;
+//                     left: -30px;
+//                     transform: rotate(-20deg);
+//                 }
+//                 img.routeArrow02{
+//                     width: 60px;
+//                     top: -0px;
+//                     left: unset;
+//                     right: -30px;
+//                     transform: rotate(130deg);
+//                 }
+//                 img.routeArrow03{
+//                     width: 60px;
+//                     top: -0px;
+//                     left: -30px;
+//                     transform: rotate(-20deg);
+//                 }
+//                 p{
+//                     font-size: 16px;
+//                 }
+//             }
+//         }    
+//     }
+//     //-----第二條路線反向排列
+//     div.routeBox div:nth-child(2) a{
+//         order: 2;
+//     }
+// }
 
-@media screen and (max-width:767px){
-    div.routeBox{
+// @media screen and (max-width:767px){
+//     div.routeBox{
         
-        div.routePaper{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
+//         div.routePaper{
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-around;
             
-            a.routeLink{
-                width: 100%;
-                display: inline-block;
-                text-align: center;
-                img{
-                    max-width: 335px;
-                }
-            }          
-            div.routeData{
-                display: none;
-            }
-        }    
-    }
-}
+//             div.routeLink{
+//                 width: 100%;
+//                 display: inline-block;
+//                 text-align: center;
+//                 img{
+//                     max-width: 335px;
+//                 }
+//             }          
+//             div.routeData{
+//                 display: none;
+//             }
+//         }    
+//     }
+// }
 
 
 //-----共用小標題泡泡-----

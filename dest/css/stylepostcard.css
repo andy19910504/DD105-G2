@@ -804,6 +804,9 @@ div.postcardimg4 {
 /*步驟5畫面--------------------------------------------------*/
 .info {
   line-height: 30px; }
+  @media screen and (max-width: 1200px) {
+    .info {
+      line-height: 20px; } }
 
 #address1 {
   outline: none;
@@ -830,9 +833,22 @@ div.postcardimg4 {
   outline: none;
   margin: 5px 0; }
 
+.download {
+  margin-top: 10px; }
+  @media screen and (max-width: 1200px) {
+    .download {
+      margin-top: 0px;
+      margin-bottom: 0px; } }
+  @media screen and (max-width: 800px) {
+    .download {
+      margin-bottom: 0px; } }
+
 .step_btnbox5 {
+  margin-top: 240px;
+  margin-bottom: 20px;
+  display: flex;
   justify-content: center;
-  margin-bottom: 20px; }
+  width: 100%; }
   @media screen and (max-width: 1200px) {
     .step_btnbox5 {
       margin-top: 0px;

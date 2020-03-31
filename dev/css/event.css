@@ -914,7 +914,7 @@ div.eventCard div.cardText span:hover {
   margin-bottom: 10px;
 }
 
-.lightbox_holdevent_info .holdevent_step .step1, .lightbox_detailevent_info .holdevent_step .step1 {
+.lightbox_holdevent_info .holdevent_step .color, .lightbox_detailevent_info .holdevent_step .color {
   background-image: url(../img/event/event_stepOn.png);
 }
 
@@ -924,13 +924,15 @@ div.eventCard div.cardText span:hover {
   }
 }
 
-.color {
-  background-image: url(../img/event/event_stepOn.png);
-}
-
 .holdevent_step1content {
   height: 536px;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .chooseRoute {
@@ -944,6 +946,7 @@ div.eventCard div.cardText span:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
 }
 
 .chooseRoute .sliderWrap {
@@ -974,23 +977,26 @@ div.eventCard div.cardText span:hover {
 .chooseRoute .sliderWrap .routeAllBox .routeBox {
   cursor: pointer;
   border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  overflow: hidden;
   width: 200px;
   height: 250px;
   margin: 0px 30px;
   font-size: 18px;
-  background-position: unset;
-  background-size: contain;
-  background-repeat: no-repeat;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
+  width: 100%;
 }
 
 .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
@@ -1032,24 +1038,17 @@ div.eventCard div.cardText span:hover {
   cursor: pointer;
 }
 
+.chooseRoute .sliderWrap .routeAllBox .addRoutebtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .chooseRoute .sliderWrap .routeAllBox .routeBox:hover {
   opacity: 0.75;
-}
-
-.chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(1) {
-  background-image: url(../img/event/event_route1_2.jpg);
-}
-
-.chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(2) {
-  background-image: url(../img/event/event_route2_2.jpg);
-}
-
-.chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(3) {
-  background-image: url(../img/event/event_route3.jpg);
-}
-
-.chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(4), .chooseRoute .sliderWrap .routeAllBox .routeBox:nth-child(5) {
-  background-image: url(../img/event/event_cusRout.jpg);
 }
 
 @media screen and (max-width: 1200px) {
@@ -1088,7 +1087,7 @@ div.eventCard div.cardText span:hover {
 }
 
 .routeClick {
-  margin: 60px auto;
+  margin: 10px auto;
   padding: 0px 95px;
   width: 100%;
 }
@@ -1123,10 +1122,17 @@ div.eventCard div.cardText span:hover {
   margin: 0px 80px;
 }
 
+.stepStop {
+  pointer-events: none;
+}
+
 .holdevent_step2content {
   display: none;
   height: 536px;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .holdevent_step2content .step2Info {
@@ -1139,6 +1145,14 @@ div.eventCard div.cardText span:hover {
 
 .holdevent_step2content .step2Info .holderPic {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0px 45px;
 }
 
 .holdevent_step2content .step2Info .holderPic input {
@@ -1156,7 +1170,7 @@ div.eventCard div.cardText span:hover {
   background-color: #f5eec2;
   border: 1px dashed #5b8f60;
   width: 480px;
-  height: 265px;
+  height: 270px;
 }
 
 .holdevent_step2content .step2Info .holderPic .holderPicBox {
@@ -1165,6 +1179,11 @@ div.eventCard div.cardText span:hover {
   font-size: 20px;
   letter-spacing: 2px;
   color: #646464;
+  overflow: hidden;
+}
+
+.holdevent_step2content .step2Info .holderPic .holderPicBox img {
+  height: 100%;
 }
 
 .holdevent_step2content .step2Info .holderInfo {
@@ -1222,6 +1241,10 @@ div.eventCard div.cardText span:hover {
 
 .holdevent_step3content {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 18px;
   color: #646464;
   height: 536px;

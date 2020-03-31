@@ -11,7 +11,7 @@ function doFirst() {
             });
             $('body').addClass('scroll-lock');
 
-            // localStorage.setItem("hasRunBefore", true);
+            localStorage.setItem("hasRunBefore", true);
         } else {
             $('.fullHeader').removeClass('header-backward');
             $('.manual-modal').addClass('hide-manual-modal');
@@ -130,9 +130,12 @@ function doFirst() {
             } else if ($("#address").val() == "") {
                 alert("你尚未填寫地址");
                 eval("document.form['address'].focus()");
+            } else if ($("#address1").val() == "") {
+                alert("你尚未填寫地址");
+                eval("document.form['address1'].focus()");
             } else {
                 alert('已將商品加入購物車囉!!!');
-                document.form.submit();
+                document.getElementById("form").submit()
             }
         });
     });
@@ -490,12 +493,7 @@ function doFirst() {
 
     });
 
-    // $(".icon").click(function () {
-    //     let aaa = $(this).attr("id");
-    //     console.log(aaa);
-    //     $(this).addClass("Selected");
 
-    // });
 
     // //註冊每個刪除button的click事件
     // $(document).on('click', '.icon', IconChangeBGI_1);
@@ -506,13 +504,10 @@ function doFirst() {
 
     $(document).on('click', `.icon`, IconChangeBGI);
 
-
- 
-    
     //ICON1
     function IconChangeBGI() {
-            $(this).addClass("Selected");
-            $(this).siblings().removeClass("Selected");
+        $(this).addClass("Selected");
+        $(this).siblings().removeClass("Selected");
         fabric.Image.fromURL(iconclick, (img) => {
             img.set({
                 scaleX: postcardback.width / img.width / 4,
@@ -522,7 +517,7 @@ function doFirst() {
             postcardback.add(img) // 加進canvas
         })
     }
-    
+
 
 
     $('.black').click(function () {
@@ -531,7 +526,7 @@ function doFirst() {
     });
 
 
-   
+
 
 
 
@@ -687,7 +682,13 @@ function doFirst() {
         countyName: "city", // 自訂城市 select 標籤的 name 值
         districtName: "town" // 自訂區別 select 標籤的 name 值
     });
-
+    // $("#step_btn9").click(function () {
+    //     let yyy = document.getElementById("name");
+    //      yyy = yyy.value;
+    //     let zzz = document.getElementById("address");
+    //      zzz = zzz.value;
+    //     alert("你的姓名是 " + yyy + "\n電子郵件是 " + zzz);
+    // });
     // var butSave = document.getElementById("save");
     // butSave.onclick=function(){
     //     var svaeHref = document.getElementById("save_href");
@@ -703,7 +704,33 @@ function doFirst() {
     //     img2.src=tempSrc2;  
     // }
 
+    $('#saveImage').click(saveImage);
 
+    function saveImage() {
+        var canvas = document.getElementById("postcardCanvas");
+        var dataURL = canvas.toDataURL("image/png");
+        document.getElementById('hidden_data').value = dataURL;
+        document.getElementById("testImg").src = dataURL;
+        var formData = new FormData(document.getElementById("form1"));
+        console.log(formData)
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+
+                if (xhr.responseText == "error") {
+                    alert("Error");
+                } else {
+                    alert('Succesfully uploaded');
+
+                }
+            } else {
+                alert(xhr.status)
+            }
+        }
+
+        xhr.open('POST', 'canvas_load_save.php', true);
+        xhr.send(formData);
+    }
 
 
 

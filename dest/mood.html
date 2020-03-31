@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
     <title>台北散步 | 慢步寫心情</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="css/mood.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" />
     <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/getLoginInfo.js"></script>
 </head>
+
 <body>
     <!-- 導覽列 -->
     <!-- 1200px上 滿版時，使用的選單 -->
@@ -33,12 +37,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+        <div class="navPoint">
+            <div class="point">點數</div>
+            <a><img src="./img/header/navPoint.png"></a>
         </div>
     </div>
 </header>
@@ -60,13 +66,15 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">點數</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -95,7 +103,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -109,7 +117,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -141,7 +149,7 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
@@ -173,62 +181,37 @@
 
     <!-- filter 心情分類篩選器 -->
     <div class="filterBlock">
-        <ul class="filterAll">
-            <li id="filter1" class="filter showFilter" value="all">全部</li>
-            <li id="filter2" class="filter">隨筆心情</li>
-            <li id="filter3" class="filter">散步日記</li>
-            <li id="filter4" class="filter">吃貨手札</li>
-        </ul>
+        <div class="filterMask">
+            <ul class="filterAll">
+                <li id="filter1" class="filter showFilter" value="all">全部<input type="hidden" name="" value="all"></li>
+                <li id="filter2" class="filter"><input type="hidden" name="" value="隨筆心情">隨筆心情</li>
+                <li id="filter3" class="filter"><input type="hidden" name="" value="散步日記">散步日記</li>
+                <li id="filter4" class="filter"><input type="hidden" name="" value="吃貨手札">吃貨手札</li>
+            </ul>
+        </div>
         <img src="./img/route/filterBgimage.png" class="filterBgImage">
     </div>
 
-    
+
     <div class="wrapper">
         <section>
-             <!-- 下拉選單 -->
+            <!-- 下拉選單 -->
             <div class="selector">
                 排序方式：
                 <form>
                     <select name="switchingBtn" id="orderSelect">
-                        <option value="mo.mood_number">最新貼文</option>
-                        <option value="mo.mood_heart">最多愛心</option>
+                        <option value="mood_number">最新貼文</option>
+                        <option value="mood_heart">最多愛心</option>
                     </select>
                 </form>
             </div>
             <!-- 卡片撈資料容器 -->
             <div class="moodCardsWrap" id="moodCardsWrap">
-                <!-- <div class="moodCard">
-                    <input type="hidden" name="cardMoodNum" class="cardMoodNum" value="1">
-                    <div class="cardInfoBar">
-                        <div class="moodMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
-                        <div class="infoTextWrap">
-                            <span class="moodClass">#職人散步去</span>
-                            <div class="moodInfoBox">
-                                <span class="moodMemId">IU2020</span>
-                                <span class="moodDate">2020/10/22</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="moodPicWrap">
-                        <img src="./img/index/moodPic01.jpg" class="moodPic">
-                    </div>
-                    <div class="heartBar">
-                        <img src="./img/index/moodLikeIconGray.png"class="moodIcon">
-                        <span>1025</span>
-                        <img src="./img/index/moodChatIcon.png"class="moodIcon">
-                        <span>50</span>
-                    </div>
-                    <div class="cardText">
-                        <p>
-                            把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                        </p>
-                        <span class="cardMoreBtn">more</span>
-                    </div>
-                </div>-->
+
             </div>
         </section>
     </div>
-    
+
     <!-- 新增心情 燈箱 -->
     <div class="newMoodLightBox" id="newMoodLightBox">
         <div class="newMoodBlock">
@@ -248,9 +231,9 @@
                 <div class="moodBox">
                     <label>選擇分類</label>
                     <select name="moodClass" id="moodClass">
-                        <option value="1">隨筆心情</option>
-                        <option value="2">散步日記</option>
-                        <option value="3">吃貨手札</option>
+                        <option value="隨筆心情">隨筆心情</option>
+                        <option value="散步日記">散步日記</option>
+                        <option value="吃貨手札">吃貨手札</option>
                     </select>
                     <label>寫下心情</label>
                     <textarea name="moodContent" id="moodContent"></textarea>
@@ -262,119 +245,7 @@
 
     <!-- 心情詳細 燈箱 -->
     <div class="moodLightBox" id="moodLightBox">
-        <!-- <div class="moodDetailBlock">
-            
-            <div id="reportBtn">
-                <span class="dot1"></span>
-                <span class="dot2"></span>
-            </div>
-            
-            <div id="closeMoodBtn">
-                <span class="line1"></span>
-                <span class="line2"></span>
-            </div>
-            
-            <div class="moodDetailLeftBox">
-                <div class="moodDetailInfoBar">
-                    <div class="moodDetailMemberPhoto"><img src="./img/index/moodMemberPhoto01.png"></div>
-                    <div class="moodDetailInfoWrap">
-                        <span class="moodDetailClass">#職人散步去</span>
-                        <div class="moodDetailInfoBox">
-                            <span class="moodDetailMemId">IU2020</span>
-                            <span class="moodDetailDate">2020/10/22</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="moodDetailPhotoWrap">
-                    <img src="./img/mood/moodPic01.jpg">
-                </div>
-                
-                <div class="moodDetailContent">
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                    把多肉植物各種形式的美好分享給你，就像好友之間訴說彼此的種植經驗、以及對於美好生活的想像…
-                </div>
-            </div>
-            
-            <div class="moodDetailRightBox">
-                <h2>留言板</h2>
-                <div class="messageWrap">
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美
-                    </div>
-                    <div class="messageBox">
-                        <span>Jaysqer</span> 說: <br>
-                        IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美IU人真好~~~~人美心也美
-                    </div>
-                </div>
-                <form id="leaveMsgForm">
-                    <input type="text" name="leaveMsg" id="leaveMsg" placeholder="寫下留言">
-                    <input type="hidden" name="leaveMsgMoodNum">
-                </form>
-                
-                <button class="btnPink" id="leaveMsgBtn">送出</button>
-  
-            </div>
-        </div>
-
-        
-        <div class="reportLightBox">
-            <div class="reportBlock">
-                <h2>協助我們了解情況?</h2>
-                <form id="reportForm">
-                    <div>
-                        <input type="radio" name="reportReason" id="reason1" value="色情暴力等不當內容"> <label for="reason1">色情暴力等不當內容</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="reportReason" id="reason2" value="歧視謾罵他人"> <label for="reason2">歧視謾罵他人</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="reportReason" id="reason3" value="其他違規違法項目"> <label for="reason3">其他違規違法項目</label>
-                    </div>
-                    <input type="hidden" name="reportMoodNum" value="心情編號">
-                </form>
-                <div>
-                    <button class="btnPink" id="newReportBtn">確定</button>
-                    <button class="btnPink" id="closeReportBtn">取消</button>
-                </div>
-            </div>
-        </div> -->
     </div>
 
     <form id="moodNumForm" style="display: none;">
@@ -420,6 +291,10 @@
     <script src="./js/common.js"></script>
     <script src="./js/mood.js"></script>
     <script src="./js/mood_message.js"></script>
-    
+    <script src="./js/wow.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
+
 </html>

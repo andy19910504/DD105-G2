@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <title>自訂路線</title>
+    <script src="./js/getLoginInfo.js"></script>
+    <title>台北散步｜自訂路線</title>
 </head>
+
 <body>
     <div class="wrapper">
         <!-- header -->
@@ -20,9 +22,9 @@
     </h1>
     <nav>
         <ul>
-            <li><a href="route.html"><img src="./img/header/navHover.png" class="navHover @@display1"><img
+            <li><a href="route.html"><img src="./img/header/navHover.png" class="navHover show"><img
                         src="./img/header/navIcon1.png" class="navIcon">散步遊台北</a></li>
-            <li><a href="mapgame.html"><img src="./img/header/navHover.png" class="navHover show"><img
+            <li><a href="mapgame.html"><img src="./img/header/navHover.png" class="navHover @@display2"><img
                         src="./img/header/navIcon2.png" class="navIcon">攻略地圖趣</a></li>
             <li><a href="mood.html"><img src="./img/header/navHover.png" class="navHover @@display3"><img
                         src="./img/header/navIcon3.png" class="navIcon">慢步寫心情</a></li>
@@ -33,12 +35,14 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
             <div class="sign">登入</div>
+            <a href="./member.html" class="memberPhoto"><img src="./img/header/navMember.png"></a>
         </div>
-        <div class="navPoint"><a><img src="./img/header/navPoint.png"></a>
-            <div class="point">&nbsp;</div>
+        <div class="navPoint">
+            <div class="point">點數</div>
+            <a><img src="./img/header/navPoint.png"></a>
         </div>
     </div>
 </header>
@@ -60,13 +64,15 @@
         </ul>
     </nav>
     <div class="memberIcon">
-        <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div>
-        <div class="navMember"><a><img src="./img/header/navMember.png" id="memPhoto"></a>
+        <!-- <div class="navCart"><a href=""><img src="./img/header/navCart.png"></a></div> -->
+        <div class="navMember">
+            <a class="memberPhoto" href="./member.html"><img src="./img/header/navMember.png"></a>
             <div class="sign">登入</div>
         </div>
-        <div class="navPoint"><a href=""><img src="./img/header/navPoint.png">
-                <div class="point">666</div>
-            </a></div>
+        <div class="navPoint">
+            <a><img src="./img/header/navPoint.png"></a>
+            <div class="point">點數</div>
+        </div>
     </div>
 </header>
 <h1 class="smartPhoneLogo">
@@ -95,7 +101,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="forgetpsw">
@@ -109,7 +115,7 @@
                 </div>
             </form>
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
         <div class="register">
@@ -141,49 +147,72 @@
             </form>
 
             <div class="login_close">
-                <img src="./img/login/XX.png" alt="">
+                <img src="./img/element/closed.png" alt="">
             </div>
         </div>
     </div>
 </div>
-        
-        <!-- banner -->
-        <div class="banner_02">
-            <img src="./img/mapgame/title-game.png" alt="" class="banner-title">
-        </div>
 
-         <!-- breadCrumb -->
-         <ul class="breadCrumb">
+        <!-- banner -->
+        <div class="banner_01">
+            <img src="./img/banner/dottedLine1.png" alt="" srcset="" class="dottedLine">
+            <div class="pageBannerTitle">
+                <div class="bannerTitleMoveBlock">
+                    <img src="./img/route/routeTitle1.png" class="routeTitleImage1">
+                    <img src="./img/route/routeTitle2.png" class="routeTitleImage2">
+                </div>
+            </div>
+            <img src="./img/banner/dottedLine2.png" alt="" srcset="" class="dottedLine">
+        </div>
+        <!-- breadCrumb -->
+        <ul class="breadCrumb">
     <li><a href="./index.html">台北散步</a></li>
+    <li><a href="./route.html">散步遊台北</a></li>
     <li><a href="./customRoute.html">自訂路線</a></li>
-    <li><a href="./google.com.tw"></a></li>
     <li><a href="./google.com.tw"></a></li>
     <li><a href="./google.com.tw"></a></li>
     <li><a href="./google.com.tw"></a></li>
 </ul>
 
         <div class="pic-container">
-            <img src="./img/mapgame/customBubble.png" alt="" class="bubble">
-            <h1 class="title">選擇自訂景點</h1>
-            <div class="search-area">
-                <input type="text" class="search">
-                <input type="button" class="btnPink addSpot" value="加入景點">
-                <input type="button" class="btnPink removeSpot" value="清除地點">
-                <input type="button" class="btnRed plan" value="規劃路線">
+            <div class="customForm">
+                <div class="fieldBlock">
+                    <div class="customRouteTitle">
+                        <img src="./img/route/customRouteTitle.png">
+                    </div>
+                </div>
+                <!-- <img src="./img/mapgame/customBubble.png" alt="" class="bubble">
+                     <h1 class="title">選擇自訂景點</h1> -->
+                <div class="fieldBlock">
+                    <label for="routeName">自訂路線名稱：</label>
+                    <input type="text" class="routeName" id="routeName">
+                </div>
+                <div class="fieldBlock">
+                    <label for="routeDesc">自訂路線簡介：</label>
+                    <textarea class="routeDesc" id="routeDesc"></textarea>
+                </div>
+                <div class="fieldBlock">
+                    <label for="searchBlock">加入景點：</label>
+                    <input type="text" id="searchBlock" class="search">
+                    <input type="button" class="btnPink addSpot" value="加入景點">
+                </div>
+                <div class="fieldBlock">
+                    <div class="map-container">
+                        <div id="map"></div>
+                    </div>
+                    <div class="saveBtn">
+                        <input type="button" class="btnPink removeSpot" value="清除地點">
+                        <input type="button" class="btnPink plan" value="規劃路線">
+                    </div>
+                </div>
+                <div class="fieldBlock">
+                    <div class="confirmBtn">
+                        <input type="button" class="btnRed confirm" value="儲存路線">
+                    </div>
+                </div>
             </div>
-            <div class="map-container">
-                <div id="map"></div>
-            </div>
-            <div class="confirm-area">
-                <label for="routeName">自訂路線名稱：</label>
-                <input type="text" class="routeName" id="routeName">
-                <input type="button" class="btnRed confirm" value="儲存路線">
-                <br>
-                <label for="routeDesc">自訂路線簡介：</label>
-                <textarea class="routeDesc" id="" cols="30" rows="10" id="routeDesc"></textarea>
-            </div>
-            <img src="./img/mapgame/campus.png" alt="" class="campus">
         </div>
+        <!-- <img src="./img/mapgame/campus.png" alt="" class="campus"> -->
         <!-- footer // -->
         <!-- chatbot -->
 <div class="chatBot" id="chatBot">
@@ -217,7 +246,7 @@
         <p>Copyright (C) 2020 TAIPEI WALKING All Rights Reserved.</p>
     </div>
 </footer>
-        <div class="image"></div>
+        <!-- <div class="image"></div> -->
     </div>
 
     <script src="./js/jquery-3.4.1.min.js"></script>
@@ -225,4 +254,5 @@
     <script src="./js/common.js"></script>
     <script src="./js/custom.js"></script>
 </body>
+
 </html>

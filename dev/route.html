@@ -7,6 +7,7 @@
     <title>台北散步｜散步遊台北</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/route.css">
+    <script src="./js/getLoginInfo.js"></script>
 </head>
 
 <body><a name="GoTop"></a>
@@ -58,15 +59,15 @@
                 </div>
             </div>
             @@include('./layout/btnCust.html',{
-            "link":"customRoute.html",
+            "link":"./customRoute.html",
             "innerText":"自訂路線"
             })
         </div>
         <!-- routeFilterBlock -->
         @@include('./layout/filter.html',{
-        "innerText1":"日式舊屋行",
-        "innerText2":"文青品味旅",
-        "innerText3":"職人散步去"
+        "innerText1":"",
+        "innerText2":"",
+        "innerText3":""
         })
         <div class="routeContent">
             <div class="routeBlockBgImage">
@@ -76,7 +77,7 @@
                 <img src="./img/route/tape.png" class="tape tape3">
                 <img src="./img/route/tape.png" class="tape tape4">
                 <div class="routeTilteBlock">
-                    <img src="./img/route/routeNameImage1.png" alt="" srcset="">
+                    <!-- <img src="./img/route/routeNameImage1.png" alt="" srcset=""> -->
                 </div>
                 <!-- attractionsBlock -->
                 <div class="routeBlock">
@@ -253,7 +254,7 @@
                         <div class="attractionMask">
                             <img src="./img/route/cancel.png" alt="" class="cancelLightBox">
                             <div class="attractionAll">
-                                <div class="attractionInfoBlock">
+                                <!-- <div class="attractionInfoBlock">
                                     <div class="attractionInfoImage" id="attractionInfoImage1">
                                         <img src="./img/route/attractions/attraction01.jpg" alt="">
                                     </div>
@@ -286,12 +287,12 @@
                                             那個時代的女人，總是堅忍地擔負起家計與管教小孩的責任。
                                         </p>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <img src="./img/route/arrowRight.png" alt="" class="arrowRight">
                     </div>
-                    <div class="attractionBgImage">
+                    <!-- <div class="attractionBgImage">
                         <img src="./img/route/arrowLeft.png" alt="" class="arrowLeft">
                         <div class="attractionMask">
                             <img src="./img/route/cancel.png" alt="" class="cancelLightBox">
@@ -462,13 +463,13 @@
                             </div>
                         </div>
                         <img src="./img/route/arrowRight.png" alt="" class="arrowRight">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
             <!-- 其他相關分頁的連結 -->
-            <!-- <div class="otherLinkBlock">
-                <div class="otherLink">
+            <div class="otherLinkBlock">
+                <!-- <div class="otherLink">
                     <div class="otherLinkTitle">
                         <div class="routeOtherTitleImage"></div>
                         <p>相關心情分享</p>
@@ -477,7 +478,7 @@
                     <div class="otherLinkContent">
                         @@include('./layout/moodConcat.html')
                     </div>
-                </div>
+                </div> -->
                 <div class="otherLink">
                     <div class="otherLinkTitle">
                         <div class="routeOtherTitleImage"></div>
@@ -488,7 +489,7 @@
                         @@include('./layout/eventConcat.html')
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <!-- footer -->
         @@include('./layout/footer.html')
@@ -502,6 +503,8 @@
     <script src="./js/routeInfoGet.js"></script>
     <script src="./js/route.js"></script>
     <script src="./js/routeFilterClick.js"></script>
+    <script src="./js/routeAttrLightBox.js"></script>
+    <script src="./js/eventConcat.js"></script>
 </body>
 
 </html>

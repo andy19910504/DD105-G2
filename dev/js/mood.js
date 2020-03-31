@@ -1,6 +1,90 @@
+let filterClass = "all";
+let filterOrder = "mood_number";
+
+//取得目前登入的會員資料 函式
+let loginStatus = $(".sign").text();
+let member;
+function getLoginInfo() {
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        member = JSON.parse(xhr.responseText);
+    }
+    xhr.open("get", "./php/loginInfoForFront.php", true);
+    xhr.send(null);
+}; 
+
+//檢舉 函式
+function reportMood(){
+    loginStatus = $(".sign").text();
+    let moodNum = $("#msgMoodNum").val();
+    let reason = $('input[name=reportReason]:checked').val();
+    if(loginStatus == "登入登入"){
+        $("#loginBlock").css("display", "block");
+    }else if(reason == null){
+        alert("請選擇檢舉原因");
+    }else{
+        let reportForm = new FormData();
+        reportForm.append('moodNum',moodNum);
+        reportForm.append('reason',reason);
+
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                alert("謝謝您的檢舉!我們會盡快處理");
+                $(".reportLightBox").css("display", "none");
+            } else {
+                alert(xhr.status + "失敗");
+            }
+        }
+
+        xhr.open("Post", "./php/insertMoodReport.php", true);
+        xhr.send(reportForm);
+    }
+}
+
 //留言 函式
 function leaveMsg(){
-    alert(111)
+    loginStatus = $(".sign").text();
+    let msg = $("#leaveMsg").val();
+    let moodNum = $("#msgMoodNum").val();
+    if(loginStatus == "登入登入"){
+        $("#loginBlock").css("display", "block");
+    }else if(msg == ""){
+        alert("請輸入留言內容");
+    }else{
+        let msgFrom = member.memName; //抓到目前登入的會員暱稱
+        let leaveMsgForm = new FormData();
+        leaveMsgForm.append('msgFrom',msgFrom);
+        leaveMsgForm.append('leaveMsg',msg);
+        leaveMsgForm.append('msgMoodNum',moodNum);
+        
+        //即時新增一個留言div
+        let messageWrap = document.getElementById("messageWrap");
+        let msgHtml = "";
+        msgHtml += `
+                    <span>${msgFrom}</span> 說: <br>
+                    <p>${msg}</p>
+                `;
+        let msgBox = document.createElement("div");
+        msgBox.setAttribute("class", "messageBox");
+        msgBox.innerHTML = msgHtml;
+        messageWrap.append(msgBox);
+
+        //留言資料送到insertMessage.php執行 寫入資料庫
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                // alert(xhr.responseText);
+            } else {
+                alert(xhr.status + "失敗");
+            }
+        }
+
+        xhr.open("Post", "./php/insertMessage.php", true);
+        xhr.send(leaveMsgForm);
+
+        $("#leaveMsg").val(""); //留言輸入框重置
+    }
 }
 
 //動態顯示心情燈箱內資料 函式
@@ -26,7 +110,7 @@ function showMoodDatail(moodDatailData){
                 <div class="moodDetailInfoBar">
                     <div class="moodDetailMemberPhoto"><img src="./img/memberPhoto/${DatailAll.moodData.member_photo}"></div>
                     <div class="moodDetailInfoWrap">
-                        <span class="moodDetailClass">${DatailAll.moodData.mood_class}</span>
+                        <span class="moodDetailClass">#${DatailAll.moodData.mood_class}</span>
                         <div class="moodDetailInfoBox">
                             <span class="moodDetailMemId">${DatailAll.moodData.member_name}</span>
                             <span class="moodDetailDate">${DatailAll.moodData.mood_date}</span>
@@ -45,7 +129,7 @@ function showMoodDatail(moodDatailData){
             <!-- 右邊區塊 -->
             <div class="moodDetailRightBox">
                 <h2>留言板</h2>
-                <div class="messageWrap">`
+                <div class="messageWrap" id="messageWrap">`
                     for(m = 0; m<DatailAll.moodMsg.length; m++){
                         html += `
                         <div class="messageBox">
@@ -56,8 +140,9 @@ function showMoodDatail(moodDatailData){
                     }
         html +=`</div>
                 <form id="leaveMsgForm">
-                    <input type="text" name="leaveMsg" id="leaveMsg" placeholder="寫下留言">
-                    <input type="hidden" name="leaveMsgMoodNum" value="${DatailAll.moodData.mood_number}">
+                    <input type="text" name="msgContent" id="leaveMsg" placeholder="寫下留言">
+                    <input type="hidden" name="msgMoodNum" id="msgMoodNum" value="${DatailAll.moodData.mood_number}">
+                    <input type="hidden" name="msgFrom" id="msgFrom" value="">
                 </form>
                 <button class="btnPink" id="leaveMsgBtn">送出</button>
             </div>
@@ -101,7 +186,12 @@ function showMoodDatail(moodDatailData){
         $(".reportLightBox").css("display", "none");
     })
 
-    //留言
+    //檢舉 確定按鈕的click事件
+    $("#newReportBtn").on("click",function(){
+        reportMood();
+    })
+
+    //留言 送出按鈕的click事件
     $("#leaveMsgBtn").on("click",function(){
         leaveMsg();
     })
@@ -119,7 +209,7 @@ function showCards(moodData){
     for (i = 0; i < moodAll.moodCard.length; i++) {
 
         html += `
-                <div class="moodCard">
+                <div class="moodCard wow fadeInUp">
                     <input type="hidden" name="cardMoodNum" class="cardMoodNum" value="${moodAll.moodCard[i].mood_number}">
                     <div class="cardInfoBar">
                         <div class="moodMemberPhoto"><img src="./img/memberPhoto/${moodAll.moodCard[i].member_photo}"></div>
@@ -206,17 +296,12 @@ function showCards(moodData){
 //更改排序方式 函式
 // function changeOrder(){
 //     let moodClass = $(".showFilter")[0].innerText;
-//     let whereSql = "where mo.mood_status = 1";
-//     if(moodClass != "全部"){
-//         whereSql += ` and mo.mood_class = '${moodClass}' `
-//     }
 //     let orderSelect = $("#orderSelect").val(); 
-//     console.log(moodClass,orderSelect,whereSql);
+//     console.log(moodClass,orderSelect);
 
-//     // let dataInfo = `whereSql=${whereSql}&orderSelect=${orderSelect}`
-//     let Orderform = new FormData()
-//     Orderform.append('whereSql',whereSql);
-//     Orderform.append('orderSelect',orderSelect);
+//     let formData = new FormData()
+//     formData.append('moodClass',moodClass);
+//     formData.append('orderSelect',orderSelect);
 
 //     let xhr = new XMLHttpRequest();
 //     xhr.onload = function () {
@@ -228,26 +313,43 @@ function showCards(moodData){
 //         }
 //     }
 //     xhr.open("Post", "./php/getMoodCardsOrderBy.php", true);
-//     xhr.send(Orderform);
+//     xhr.send(formData);
 // }
 
 //撈取心情卡片 函式
-function getMoodCards(moodClass) {
+// function getMoodCards(moodClass) {
+//     let xhr = new XMLHttpRequest();
+//     let url = "./php/getMoodCards" + moodClass + ".php";
+//     console.log(url);
+//     xhr.onload = function () {
+//         if (xhr.status == 200) {
+//             //到php撈所有心情的資料，送到showCards函式中執行
+//             showCards(xhr.responseText);
+//             console.log(JSON.parse(xhr.responseText));
+//         } else {
+//             alert(xhr.status + "失敗");
+//         }
+//     }
+//     xhr.open("Get", url, true);
+//     xhr.send(null);
+// }
+function getMoodCards() {
+    // console.log(filterClass,filterOrder)
+    let data_info = `moodOrder=${filterOrder}&moodClass=${filterClass}`;
+    // console.log(data_info)
     let xhr = new XMLHttpRequest();
-    let url = "./php/getMoodCards" + moodClass + ".php";
-    console.log(url);
     xhr.onload = function () {
         if (xhr.status == 200) {
             //到php撈所有心情的資料，送到showCards函式中執行
             showCards(xhr.responseText);
+            // console.log(JSON.parse(xhr.responseText));
         } else {
             alert(xhr.status + "失敗");
         }
     }
-    xhr.open("Get", url, true);
-    xhr.send(null);
+    xhr.open("Get", "./php/getMoodCards.php?"+data_info, true);
+    xhr.send(data_info);
 }
-
 
 
 
@@ -264,32 +366,33 @@ function imgChange() {
 }
 
 window.addEventListener('load', function () {
+    
     //撈取心情卡片---------------------------------
-    getMoodCards("All");
+    getMoodCards();
+
+    //取得登入資料
+    getLoginInfo();
 
     //註冊4顆心情分類按鈕的click事件
-    $("#filter1").on("click",function(){
-        getMoodCards("All");
-    });
-    $("#filter2").on("click",function(){
-        getMoodCards("Type1");
-    });
-    $("#filter3").on("click",function(){
-        getMoodCards("Type2");
-    });
-    $("#filter4").on("click",function(){
-        getMoodCards("Type3");
+    $(".filter").on("click",function(){
+        filterClass = $(this).children().first().val();
+        getMoodCards();
     });
 
     //註冊排序方式select的onchange事件
-    // $("#orderSelect").on("change",function(){
-    //     changeOrder();
-    // });
+    $("#orderSelect").on("change",function(e){
+        filterOrder = e.target.value;
+        getMoodCards();
+    });
     
 
     //新增心情 燈箱的開、關--------------------------
     $("#newMoodBtn").on("click", function () {
-        $("#newMoodLightBox").css("display", "flex");
+        if(member.memNum){
+            $("#newMoodLightBox").css("display", "flex");
+        }else{
+            $("#loginBlock").css("display", "block");
+        }
     })
     $("#closeNewMoodBtn").on("click", function () {
         $("#newMoodLightBox").css("display", "none");
@@ -298,4 +401,33 @@ window.addEventListener('load', function () {
     //新增心情 註冊預覽上傳圖片---------------------------
     document.getElementById('inputImg').onchange = imgChange;
 
+    //新增心情 送出按鈕的click事件--------
+    $("#newMoodPostBtn").on("click",function(){
+        if($("#moodContent").val() == false){
+            alert("請輸入心情內容");
+        }else if(document.getElementById('inputImg').files[0] == undefined){
+            alert("請上傳圖片");
+        }else{
+            let moodClass = $("#moodClass").val();
+            let moodContent = $("#moodContent").val();
+            let moodPic = document.getElementById('inputImg').files[0];
+            let moodMemNum = member.memNum;
+            let newMoodForm = new FormData();
+            newMoodForm.append('moodClass',moodClass);
+            newMoodForm.append('moodContent',moodContent);
+            newMoodForm.append('moodPic',moodPic);
+            newMoodForm.append('moodMemNum',moodMemNum);
+
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    location.reload();
+                } else {
+                    alert(xhr.status + "失敗");
+             }
+            }
+            xhr.open("Post", "./php/insertMood.php", true);
+            xhr.send(newMoodForm);
+        }
+    })
 })
