@@ -9,7 +9,13 @@ try {
 
     $orderRow = $orderinfo->fetchAll(PDO::FETCH_ASSOC);
 
-        echo json_encode($orderRow);
+    $sql = "select * from `order_master` a join `order_list`b on( a.order_number=b.order_number) where member_number=:memNum";
+    $orderlistinfo = $pdo->prepare($sql);
+    $orderlistinfo->bindvalue(":memNum",$memNum);
+    $orderlistinfo->execute();
+
+    $orderlistRow = $orderlistinfo->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode(array("memberorder"=>$orderRow,"memberorderlist"=>$orderlistRow));
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
