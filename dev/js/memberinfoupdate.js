@@ -655,6 +655,7 @@ function getOrderInfo(memNum) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         memberorderinfo = JSON.parse(xhr.responseText);
+        // alert(memberorderinfo);
         // console.log(memberorderinfo);
         // console.log(memberorderinfo.memberorder);
         // console.log(memberorderinfo.memberorder[0].order_number);
