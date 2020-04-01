@@ -93,7 +93,7 @@
                     </tbody>
                     <tfoot>
                         <tr class="addRow">
-                            <td colspan="10">+</td>
+                            <td colspan="10" class="add">+</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -148,18 +148,16 @@
                     var testRow = tests[i];
                     $('tbody').append(`
                         <tr>
-                            <form action="quizzesEdit.php" method="POST">
-                                <td class="quiz_number"><input type="text" value="${tests[i]['quiz_number']}" name="quiz_number"></td>
-                                <td class="route_number"><input type="text" value="${tests[i]['route_number']}" name="route_number"></td>
-                                <td class="attraction_name"><input type="text" value="${tests[i]['attraction_name']}" name="attraction_name"></td>
-                                <td class="quiz_content"><input type="text" value="${tests[i]['quiz_content']}" name="quiz_content"></td>
-                                <td class="option1_content"><input type="text" value="${tests[i]['option1_content']}" name="option1_content"></td>
-                                <td class="option2_content"><input type="text" value="${tests[i]['option2_content']}" name="option2_content"></td>
-                                <td class="option3_content"><input type="text" value="${tests[i]['option3_content']}" name="option3_content"></td>
-                                <td class="answer_item"><input type="text" value="${tests[i]['answer_item']}" name="answer_item"></td>
-                                <td class="edit"><input type="button" name="send" value="送出"></td>
-                                <td class="delete"><input type="button" name="delete" value="刪除"></td>
-                            </form>
+                            <td class="quiz_number"><input type="text" value="${tests[i]['quiz_number']}" name="quiz_number"></td>
+                            <td class="route_number"><input type="text" value="${tests[i]['route_number']}" name="route_number"></td>
+                            <td class="attraction_name"><input type="text" value="${tests[i]['attraction_name']}" name="attraction_name"></td>
+                            <td class="quiz_content"><input type="text" value="${tests[i]['quiz_content']}" name="quiz_content"></td>
+                            <td class="option1_content"><input type="text" value="${tests[i]['option1_content']}" name="option1_content"></td>
+                            <td class="option2_content"><input type="text" value="${tests[i]['option2_content']}" name="option2_content"></td>
+                            <td class="option3_content"><input type="text" value="${tests[i]['option3_content']}" name="option3_content"></td>
+                            <td class="answer_item"><input type="text" value="${tests[i]['answer_item']}" name="answer_item"></td>
+                            <td class="edit"><input type="button" name="send" class="send" value="送出"></td>
+                            <td class="delete"><input type="button" name="delete" class="delete" value="刪除"></td>
                         </tr>
                     `);
                 }
@@ -167,15 +165,99 @@
                 alert('抱歉，有東西出錯了，Server未回傳關卡題目。請聯繫客服人員！！');
             }
         }
-        //submit
-        let sendBtns = document.getElementsByName('send');
-        for(let i=0; i<sendBtns.length;i++){
-            sendBtns[i].onclick = function(e){
-                if(confirm('確定要修改資料嗎?')){
-                    e.target.form.submit();
+        //edit
+        $('.send').click(function(){
+            var quiz_number = $(this).parent().siblings('quiz_number').find('input').val();
+            var route_number = $(this).parent().siblings('route_number').find('input').val();
+            var attraction_name = $(this).parent().siblings('attraction_name').find('input').val();
+            var quiz_content = $(this).parent().siblings('quiz_content').find('input').val();
+            var option1_content = $(this).parent().siblings('option1_content').find('input').val();
+            var option2_content = $(this).parent().siblings('option2_content').find('input').val();
+            var option3_content = $(this).parent().siblings('option3_content').find('input').val();
+            var answer_item = $(this).parent().siblings('answer_item').find('input').val();
+            //AJAX
+            var editForm = new FormData();
+            editForm.append('quiz_number', quiz_number);
+            editForm.append('route_number', route_number);
+            editForm.append('attraction_name', attraction_name);
+            editForm.append('quiz_content', quiz_content);
+            editForm.append('option1_content', option1_content);
+            editForm.append('option2_content', option2_content);
+            editForm.append('option3_content', option3_content);
+            editForm.append('answer_item', answer_item);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', './php/editQuizzes.php', true);
+            xhr.send(editForm);
+            xhr.onload = function(){
+                if(xhr.status == 200){
+                    console.log('成功修改小遊戲關卡資料！');
+                } else {
+                    console.log('失敗了！ＱＱ');
                 }
             }
-        }
+        });
+        //delete
+        $('.delete').click(function(){
+            var quiz_number = $(this).parent().siblings('quiz_number').find('input').val();
+            //AJAX
+            var deleteForm = new FormData();
+            editForm.append('quiz_number', quiz_number);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', './php/editQuizzes.php', true);
+            xhr.send(deleteForm);
+            xhr.onload = function(){
+                if(xhr.status == 200){
+                    console.log('成功修改小遊戲關卡資料！');
+                } else {
+                    console.log('失敗了！ＱＱ');
+                }
+            }
+        });
+        //add
+        $('.add').click(function(){
+            $('tbody').append(`
+                <tr>
+                    <td class="quiz_number"><input type="text" value="" name="quiz_number"></td>
+                    <td class="route_number"><input type="text" value="" name="route_number"></td>
+                    <td class="attraction_name"><input type="text" value="" name="attraction_name"></td>
+                    <td class="quiz_content"><input type="text" value="" name="quiz_content"></td>
+                    <td class="option1_content"><input type="text" value="" name="option1_content"></td>
+                    <td class="option2_content"><input type="text" value="" name="option2_content"></td>
+                    <td class="option3_content"><input type="text" value="" name="option3_content"></td>
+                    <td class="answer_item"><input type="text" value="" name="answer_item"></td>
+                    <td class="edit"><input type="button" name="send" class="send" value="送出"></td>
+                    <td class="delete"><input type="button" name="delete" class="delete" value="刪除"></td>
+                </tr>
+            `);
+            var quiz_number = $(this).parent().siblings('quiz_number').find('input').val();
+            var route_number = $(this).parent().siblings('route_number').find('input').val();
+            var attraction_name = $(this).parent().siblings('attraction_name').find('input').val();
+            var quiz_content = $(this).parent().siblings('quiz_content').find('input').val();
+            var option1_content = $(this).parent().siblings('option1_content').find('input').val();
+            var option2_content = $(this).parent().siblings('option2_content').find('input').val();
+            var option3_content = $(this).parent().siblings('option3_content').find('input').val();
+            var answer_item = $(this).parent().siblings('answer_item').find('input').val();
+            //AJAX
+            var addForm = new FormData();
+            addForm.append('quiz_number', quiz_number);
+            addForm.append('route_number', route_number);
+            addForm.append('attraction_name', attraction_name);
+            addForm.append('quiz_content', quiz_content);
+            addForm.append('option1_content', option1_content);
+            addForm.append('option2_content', option2_content);
+            addForm.append('option3_content', option3_content);
+            addForm.append('answer_item', answer_item);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', './php/addQuizzes.php', true);
+            xhr.send(addForm);
+            xhr.onload = function(){
+                if(xhr.status == 200){
+                    console.log('成功修改小遊戲關卡資料！');
+                } else {
+                    console.log('失敗了！ＱＱ');
+                }
+            }
+        });
     </script>
 </body>
 
