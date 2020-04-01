@@ -111,10 +111,11 @@ function LightEventRouteinfo(routes) {
             officialRouteTable[str] = item;
         }
         else {
-            officialRouteTable[str].attraction_name += `->${item.attraction_name}`;
+            officialRouteTable[str].attraction_name += `-> ${item.attraction_name}`;
         }
     });
-    console.log(officialRouteTable);
+    let officialRouteNew = officialRouteTable.filter(item => item); //清除中間空陣列
+    console.log(officialRouteNew);
 
     // ---------------自訂路線---------------
     let routeMember = routetable.customInfo; //取出官方路線
@@ -126,7 +127,7 @@ function LightEventRouteinfo(routes) {
             memberRouteTable[a] = item;
         }
         else {
-            memberRouteTable[a].custom_attraction_name += `->${item.custom_attraction_name}`;
+            memberRouteTable[a].custom_attraction_name += `-> ${item.custom_attraction_name}`;
         }
 
     });
@@ -135,15 +136,15 @@ function LightEventRouteinfo(routes) {
 
     let html = "";
 
-    for (i = 0; i < officialRouteTable.length; i++) {
+    for (i = 0; i < officialRouteNew.length; i++) {
         html += `
-        <div class="routeBox routeChose" psn="${officialRouteTable[i]['route_number']}">
+        <div class="routeBox routeChose" psn="${officialRouteNew[i]['route_number']}">
             <div class="routeBoxImg">
-                <img src="./img/event/event_route00${officialRouteTable[i]['route_number']}.jpg" alt="">
+                <img src="./img/attractions/${officialRouteNew[i]['attraction_photo1']}">
             </div>
             <div class="routeBoxBottom">
-                <p class="routeName">${officialRouteTable[i]['route_name']}</p>
-                <input type="hidden" name="route" id="officialRoute${officialRouteTable[i]['route_number']}" value="${officialRouteTable[i]['attraction_name']}">
+                <p class="routeName">${officialRouteNew[i]['route_name']}</p>
+                <input type="hidden" name="route" id="officialRoute${officialRouteNew[i]['route_number']}" value="${officialRouteNew[i]['attraction_name']}">
             </div>
         </div>
         `
@@ -151,7 +152,7 @@ function LightEventRouteinfo(routes) {
     for (j = 0; j < memberRouteNew.length; j++) {
         html += `
         <div class="routeBox routeChose" psn="${memberRouteNew[j]['route_number']}">
-            <div class="routeBoxImg">
+            <div class="routeBoxImg memberRoute">
                 <img src="./img/event/event_cusRout.jpg">
             </div>
             <div class="routeBoxBottom">
