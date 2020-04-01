@@ -295,7 +295,7 @@ blockquote, q {
       margin: 0 auto;
       width: 228px;
       background-image: url(../img/member/hip-square.png);
-      border: 3px dashed transparent;
+      border: 1px solid transparent;
       padding: 1% 1% 1% 1%; }
       .member_info_info_left label div div:nth-child(1) {
         width: 100%;
@@ -389,7 +389,7 @@ blockquote, q {
       cursor: default;
       pointer-events: none; }
     .member_info_info_right div input:focus {
-      border: 3px dashed #a5361c; }
+      border: 1px solid #ccc; }
 
 .member_info_info_button {
   padding: 7% 0 3% 0;
@@ -441,10 +441,10 @@ blockquote, q {
     width: 100%;
     font-size: 24px;
     background-color: unset;
-    border: 3px solid transparent;
+    border: 1px solid transparent;
     pointer-events: none; }
   .member_info_line_all_left input:focus {
-    border: 3px dashed #a5361c; }
+    border: 1px solid #ccc; }
   .member_info_line_all_left textarea {
     font-size: 16px;
     text-indent: 32px;
@@ -454,10 +454,10 @@ blockquote, q {
     width: 100%;
     resize: none;
     background-color: unset;
-    border: 3px solid transparent;
+    border: 1px solid transparent;
     pointer-events: none; }
   .member_info_line_all_left textarea:focus {
-    border: 3px dashed #a5361c; }
+    border: 1px solid #ccc; }
 
 .member_info_line_all_right {
   width: 30%;
@@ -520,10 +520,10 @@ blockquote, q {
     font-size: 18px;
     width: 100%;
     background-image: url(../img/member/hip-square.png);
-    border: 3px dashed transparent;
+    border: 1px solid transparent;
     pointer-events: none; }
   .member_info_share_kind select:focus {
-    border: 3px dashed #a5361c; }
+    border: 1px solid #ccc; }
 
 .member_info_share_image {
   padding: 1% 0; }
@@ -564,11 +564,11 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   resize: none;
   text-indent: 36px;
-  border: 3px dashed transparent;
+  border: 1px solid transparent;
   pointer-events: none; }
 
 .member_info_share_word textarea:focus {
-  border: 3px dashed #a5361c; }
+  border: 1px solid #ccc; }
 
 .member_info_share_button {
   text-align: center;
@@ -616,9 +616,7 @@ blockquote, q {
   padding: 0 3% 3% 3%;
   background-image: url(../img/member/hip-square.png);
   border-radius: 5px;
-  margin-bottom: 2.375%;
-  height: 100px;
-  overflow: hidden; }
+  margin-bottom: 2.375%; }
 
 .member_info_order > div > div:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
@@ -718,7 +716,9 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
   padding-top: 30px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  height: 110px;
+  overflow: hidden; }
 
 .member_info_open_all_all > form > input {
   width: 80%;
@@ -731,10 +731,10 @@ blockquote, q {
   margin-bottom: 3%;
   display: block;
   background-color: unset;
-  border: 3px solid transparent; }
+  border: 1px solid transparent; }
 
 .member_info_open_all_all > form > input:focus {
-  border: 3px dashed #a5361c; }
+  border: 1px solid #ccc; }
 
 .member_info_open_all_all:hover {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
@@ -794,7 +794,7 @@ blockquote, q {
 
 .member_info_open_all_right > div:nth-child(9) textarea {
   text-indent: 36px;
-  border: 3px dashed transparent;
+  border: 1px solid transparent;
   background-image: url(../img/member/hip-square.png);
   padding: 1%;
   font-size: 18px;
@@ -834,9 +834,9 @@ blockquote, q {
   .member_info_open_all_right > div textarea {
     pointer-events: none; }
   .member_info_open_all_right > div input:focus {
-    border: 3px dashed #a5361c; }
+    border: 1px solid #ccc; }
   .member_info_open_all_right > div textarea:focus {
-    border: 3px dashed #a5361c; }
+    border: 1px solid #ccc; }
 
 .member_info_open_all_right > div:nth-child(7) label {
   vertical-align: top; }
@@ -871,7 +871,9 @@ blockquote, q {
     margin-bottom: 3%; }
   .member_info_open_all_right {
     width: 100%;
-    padding-left: 0px; } }
+    padding-left: 0px; }
+  .member_info_open_all_all {
+    height: 105px; } }
 
 @media screen and (max-width: 767px) {
   .member_info_open_all_right > div label {
@@ -888,20 +890,27 @@ blockquote, q {
   .member_info_open_all_right > div:nth-child(1) div {
     text-indent: 36px; }
   .member_info_open_all_right > div:nth-child(1) div:nth-child(2) > div:nth-child(1) {
-    text-indent: 0px; }
+    text-indent: 0px;
+    margin-top: 10px; }
   .member_info_open_all_right > div:nth-child(9) textarea {
     margin-top: 10px;
     text-align: left;
     width: 100%;
     text-indent: 36px; }
   .member_info_open_all_right > div:nth-child(7) > div:nth-child(2) div {
-    text-indent: 36px; } }
+    text-indent: 36px; }
+  .member_info_open_all_all {
+    padding-top: 20px;
+    height: 85px; } }
 
 @media screen and (max-width: 575px) {
   .member_info_open_all_right {
     font-size: 16px; }
   .member_info_open_all_bottom div:nth-child(3) {
-    margin-left: 5%; } }
+    margin-left: 5%; }
+  .member_info_open_all_all {
+    padding-top: 10px;
+    height: 65px; } }
 
 .member_info_join {
   padding: 4.75%; }
@@ -933,7 +942,7 @@ blockquote, q {
   margin-bottom: 3%;
   display: block;
   background-color: unset;
-  border: 3px solid transparent; }
+  border: 1px solid transparent; }
 
 .member_info_open_all_left > div > div > img {
   transition: all 0.8s; }

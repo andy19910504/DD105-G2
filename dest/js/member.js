@@ -1,24 +1,30 @@
-for(let i=0;i<100;i++){
-    //修改
-    $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(1)`).click(function(){
-        $(this).css("display","none");
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(2)`).css("display","inline-block");
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(3)`).css("display","none")
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(1)>select`).css("pointer-events","auto");
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(1)>select`).focus();
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label`).css("pointer-events","auto");
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div`).click(function(){
-            $(this).css("border","3px dashed #a5361c");
-        });
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div>div:nth-child(2)`).css("display","block");
-        $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(4)>textarea`).css("pointer-events","auto");
-    })
-    //送出
-    $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(2)`).click(function(){});
-    //刪除
-    $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(3)`).click(function(){});
-};
-
+// for(let i=0;i<100;i++){
+//     //修改
+//     $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(1)`).click(function(){
+//         $(this).css("display","none");
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(2)`).css("display","inline-block");
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(3)`).css("display","none")
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(1)>select`).css("pointer-events","auto");
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(1)>select`).focus();
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label`).css("pointer-events","auto");
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div`).click(function(){
+//             $(this).css("border","3px dashed #a5361c");
+//         });
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(2)>label>div>div:nth-child(2)`).css("display","block");
+//         $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(4)>textarea`).css("pointer-events","auto");
+//     })
+//     //送出
+//     $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(2)`).click(function(){});
+//     //刪除
+//     $(`.member_info_share_all>div:nth-child(${i})>form>div:nth-child(5)>div:nth-child(3)`).click(function(){});
+// };
+// for(let i =0;i<100;i++){
+//     // $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label:nth-child(1)>div:nth-child(1)>div:nth-child(2)>input:nth-child(2)`).onchange(function(){
+//     //     alert(0)
+//     // })
+//         $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label:nth-child(1)>div:nth-child(1)>div:nth-child(2) input`).
+//         $(`.member_info_open_all>div:nth-child(${i})>form>div:nth-child(2)>label:nth-child(1)>div:nth-child(1)>div:nth-child(2)`).css("border","1px solid red")
+// }
 
 
 

@@ -10,7 +10,7 @@ $edit->bindValue(":routeNum",$_POST["editNumber"]);
 
 $edit->execute();
 
-echo "刪除成功!";
+echo "成功";
 
 }catch(PDOException $e){
     echo $e->getMessage();
