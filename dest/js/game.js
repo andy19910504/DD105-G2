@@ -37,6 +37,16 @@ $(document).ready(function(){
             for(var i=0;i<=4;i++){
                 $('.check-box').eq(i).find('img').removeClass('show-check');
             }
+            //reset progress-bar
+            $('.progress').css({
+                width: `${0}%`
+            });
+            $('.indicator').text(`闖關進度：${0}%`);
+            for(var j=0;j<=4;j++){
+                $('.index').eq(j).css({
+                    'background-color': '#fff'
+                });
+            }
             $('.spot').eq(0).text('青田七六');
             $('.spot').eq(1).text('長慶廟');
             $('.spot').eq(2).text('紀州庵');
@@ -53,6 +63,16 @@ $(document).ready(function(){
             for(var i=0;i<=4;i++){
                 $('.check-box').eq(i).find('img').removeClass('show-check');
             }
+            //reset progress-bar
+            $('.progress').css({
+                width: `${0}%`
+            });
+            $('.indicator').text(`闖關進度：${0}%`);
+            for(var j=0;j<=4;j++){
+                $('.index').eq(j).css({
+                    'background-color': '#fff'
+                });
+            }
             $('.spot').eq(0).text('宅jai風格生活');
             $('.spot').eq(1).text('有肉專賣');
             $('.spot').eq(2).text('讀字書店');
@@ -68,6 +88,16 @@ $(document).ready(function(){
             $('.spot5').attr('src', './img/mapgame/spot/route3/TAIGA針葉林2.jpg');
             for(var i=0;i<=4;i++){
                 $('.check-box').eq(i).find('img').removeClass('show-check');
+            }
+            //reset progress-bar
+            $('.progress').css({
+                width: `${0}%`
+            });
+            $('.indicator').text(`闖關進度：${0}%`);
+            for(var j=0;j<=4;j++){
+                $('.index').eq(j).css({
+                    'background-color': '#fff'
+                });
             }
             $('.spot').eq(0).text('小廢墟');
             $('.spot').eq(1).text('化南新村');
@@ -99,8 +129,9 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
-        //顯示手機方向鍵
+        //顯示手機方向鍵、進度條
         $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
+        $('.progress-container-mobile').toggleClass('hide-progress-container-mobile');
         if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
             // show manual-modal
             $('header.fullHeader').addClass('header-backward');
@@ -157,19 +188,6 @@ $(document).ready(function(){
         $('body').toggleClass('scroll-lock');
         $('.full-screen-btn').toggleClass('hide-full-screen-btn');
     });
-
-    //取得目前登入的會員資料
-    var loginStatus = $('.sign').text();
-    var member;
-    getLoginInfo();
-    function getLoginInfo() {
-        var xhr = new XMLHttpRequest();
-        xhr.open("get", "./php/loginInfoForFront.php", true);
-        xhr.send(null);
-        xhr.onload = function() {
-            member = JSON.parse(xhr.responseText);
-        }
-    };
 
     //Start button
     $('.btnRed').click(function(e){
@@ -484,6 +502,10 @@ $(document).ready(function(){
             });
             $('.indicator').text(`闖關進度：${checks*20}%`);
             for(var j=0;j<=checks;j++){
+                //以防變成$('.index').eq(-1)，讓最後一個index變紅色
+                if(checks==0){
+                    break;
+                }
                 $('.index').eq(j-1).css({
                     'background-color': '#c45c5c'
                 });
@@ -492,31 +514,16 @@ $(document).ready(function(){
             if(checks == 5){
                 $('.test').text('恭喜您完成本路線所有關卡！！！');
                 $('.continue').text('好的。');
-                if(loginStatus == '登出登出'){
-                    $('.opt1').text(`您原本有${member['memPoint']}點。`);
-                    $('.opt2').text(`您現在有${parseInt(member['memPoint']) + 300}點。`);
-                    $('.opt3').text('真是太棒了！');
+                if($('.sign').text() == '登出登出'){
                     //AJAX
-                    var memInfo = [];
-                    memInfo.push(member['memNum']);
-                    memInfo.push(member['memPoint']);
-                    var memInfo = JSON.stringify(memInfo);
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('POST', './php/getPoints.php', true);
-                    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
-                    xhr.send(memNum);
-                    xhr.onload = function(){
-                        if(xhr.status == 200){
-                            console.log(JSON.parse(xhr.responseText));
-                        } else {
-                            console.log('失敗了！ＱＱ');
-                        }
-                    }
+                    var member;
+                    updatePoints();
                 } else {
                     $('.opt1').text('');
                     $('.opt2').text('');
                     $('.opt3').text('');
                 }
+                $('.opt1, .opt2, .opt3').removeClass('right');
                 $('.game-modal').removeClass('hide-game-modal');
                 $('.continue').click(function(){
                     $('.game-modal').addClass('hide-game-modal');
@@ -524,6 +531,32 @@ $(document).ready(function(){
             }
         }
     });
+    
+    function updatePoints(){
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "./php/loginInfoForFront.php", true);
+        xhr.send(null);
+        xhr.onload = function(){
+            member = JSON.parse(xhr.responseText);
+            var pointForm = new FormData();
+            var memNum = member.memNum;
+            var memPoint = parseInt(member.memPoint)+300;
+            pointForm.append('memNum', memNum);
+            pointForm.append('memPoint', memPoint);
+            var xhr2 = new XMLHttpRequest();
+            xhr2.open('POST', './php/getPoints.php', true);
+            xhr2.send(pointForm);
+            xhr2.onload = function(){
+                if(xhr2.status == 200){
+                    $('.opt1').text(`您原本有${member.memPoint}點。`);
+                    $('.opt2').text(`您現在有${parseInt(member.memPoint)+300}點。`);
+                    $('.opt3').text('真是太棒了！');
+                } else {
+                    console.log('失敗了！ＱＱ');
+                }
+            }
+        }
+    };
 
     //官方景點經緯度
     //route1

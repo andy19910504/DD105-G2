@@ -64,7 +64,7 @@ function imgChange() {
 function stepCheck() {
 
     let checkRoute = $('.routeClickName').text();//抓被點選的路線名稱
-    let checkAtractions = $('.attractions').text().substring(3);//抓被點選的景點
+    let checkAtractions = $('.attractions').text();//抓被點選的景點
     let event_name = $('#actTitle').val();
     let event_date = $('#actDate').val();
     let meeting_place = $('#meetPlace').val();
@@ -91,7 +91,7 @@ function routeClick() {
         //每次點選都清空
         $('.routeClick').text('');
         //append 點選到的路線和景點+路線編號
-        $(`<div><i class="fas fa-map-signs"></i> <p class="routeClickName">路線:${routeName}</p></div><div> <i class="fas fa-map-pin"></i> <p class="attractions">景點:${attractions}</p></div> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
+        $(`<div> <p class="routeClickName">${routeName}</p></div> <div> <p class="attractions">${attractions}</p></div> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
 
     });
 }

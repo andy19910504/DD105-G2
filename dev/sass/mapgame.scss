@@ -464,7 +464,6 @@
     display: none;
 }
 .progress-container-mobile {
-    display: none;
     .progress-bar {
         position: relative;
         margin-top: 22px;
@@ -539,6 +538,9 @@
         color: #444;
     }
 }
+.hide-progress-container-mobile {
+    display: none;
+}
 @media(max-width: 576px){
     //game
     .pic-container {
@@ -564,9 +566,6 @@
     .bubble {
         margin-bottom: 60px;
         position: relative;
-    }
-    .progress-container-mobile {
-        display: block;
     }
     .fuda-container {
         display: none;

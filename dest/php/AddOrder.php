@@ -1,6 +1,7 @@
 <?php
 session_start();
 $member = $_SESSION["member_number"];
+$memberPt = $_SESSION["member_point"];
 try{
 
     require_once("./connectBooks.php");
@@ -13,9 +14,8 @@ try{
     $order_master->bindValue(":receiver_name",$_POST["receiver_name"]);
     $order_master->bindValue(":receiver_address",$_POST["receiver_address"]);
     $order_master->execute();
-    
-    $num = $pdo->lastInsertId();
 
+    $num = $pdo->lastInsertId();
 
 $upload_dir = "../img/postcardPhoto//";  //檢查資料夾存不存在
 if( ! file_exists($upload_dir )){
@@ -48,6 +48,27 @@ $sql = " update `order_master` set `product_images_url_back` = :fileName2 where 
 			$changeName2 -> bindValue(":fileName2", $fileName2);
             $changeName2 -> execute();  
     echo $success ? $file : 'error';
+
+$a=(int)$memberPt;
+$b=100;
+
+$newpoint = $a - $b;
+
+
+ $sql="
+ UPDATE `member` SET
+`member_point` = $newpoint 
+ WHERE `member_number` = $member
+ ";
+ 
+$new = $pdo->query($sql);
+$new->execute();
+$memRow = $new->fetchAll(PDO::FETCH_ASSOC);
+
+
+session_start();
+$_SESSION["member_point"]= $memRow["member_point"];
+
 } 
 catch(PDOException $e){
     echo $e->getMessage();
