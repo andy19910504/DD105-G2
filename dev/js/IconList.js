@@ -22,7 +22,7 @@ function IconList(icon) {
         // }
         html += `
         <div class="icon" id="icon_${iconTable[i].customized_product_number}">
-        <img src="${ iconTable[i].customized_product_url}">
+        <img src="./img/postcard/${iconTable[i].customized_product_url}">
     </div>
         `;
     }

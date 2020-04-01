@@ -78,7 +78,7 @@
     td {
         padding: 10px;
         border-bottom: 1px solid #646464;
-        width: 3000px;
+        width: 300px;
         text-align: center;
     }
 
@@ -90,14 +90,18 @@
     .icon {
         margin: 0 auto;
         overflow: hidden;
+        width: 230px;
         height: 200px;
-        width: 250px;
+  
     }
 
-    .icon img {
+    .showPhoto {
+        width: 150px;
+    }
+    .iconimg{
         overflow: hidden;
         width: 100%;
-        height: 100%;
+        height: 100%;  
     }
 </style>
 
@@ -136,15 +140,12 @@
                             <div class="modal-body">
                                 <form>
                                     <div class="fieldBlock"><label for="IconNum">商品部件編號</label><input type="text"
-                                        name="IconNum" id="IconNum"></div>
-                                    <div class="fieldBlock"><label for="IconPoint">商品部件點數</label><input type="text"
-                                            name="IconPoint" id="IconPoint"></div>
-                                    <div class="fieldBlock"><label for="IconUrl">商品部件路徑</label><textarea name="IconUrl"
-                                            id="IconUrl" cols="" rows=""></textarea>
+                                            name="IconNum" id="IconNum"></div>
+                                    <div class="fieldBlock"><label for="IconPhoto">插圖圖片</label><input type="file"
+                                            name="upFile" id="upFile" class="btn-sm btnShow"><br>
+                                        
                                     </div>
-                                    <!-- <div class="fieldBlock"><label for="IconPhoto">插圖圖片</label><input type="file"
-                                            name="upFile" id="upFile" class="btn-sm"><br>
-                                    </div> -->
+                                    <div><img class="showPhoto"></div>
                                     <div class="modal-footer">
                                         <input type="submit" value="儲存" class="btn btn-secondary btn-sm btnAddIcon"
                                             id="btnAddIcon">
@@ -157,8 +158,7 @@
                 <table class="table table-responsive-sm table-striped" id="mem_product_icon">
                     <thead>
                         <tr class="row trfirst">
-                            <th class="col-1">商品部件編號</th>
-                            <th class="col-1">商品部件點數</th>
+                            <th class="col-2">商品部件編號</th>
                             <th class="col-4">商品部件路徑</th>
                             <th class="col-4">商品部件插圖</th>
                             <th class="col-2">編輯</th>

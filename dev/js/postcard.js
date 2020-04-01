@@ -124,18 +124,21 @@ function doFirst() {
         });
         /*完成*/
         $("#step_btn9").on("click", function () {
-            if ($("#name").val() == "") {
-                alert("你尚未填寫姓名");
-                eval("document.form['name'].focus()");
-            } else if ($("#address").val() == "") {
-                alert("你尚未填寫地址");
-                eval("document.form['address'].focus()");
-            } else if ($("#address1").val() == "") {
-                alert("你尚未填寫地址");
-                eval("document.form['address1'].focus()");
-            } else {
-                alert('已將商品加入購物車囉!!!');
-                document.getElementById("form").submit()
+            let login = $('.sign').text();
+            if (login == "登入登入") { //顯示登入登入--->未登入跳出提醒
+                $("#loginBlock").css("display", "block");
+            }
+            else {  //已登入則打開燈箱
+                if ($("#name").val() == "") {
+                    alert("你尚未填寫姓名");
+                    eval("document.form['name'].focus()");
+                } else if ($("#address").val() == "") {
+                    alert("你尚未填寫地址");
+                    eval("document.form['address'].focus()");
+                } else if ($("#address1").val() == "") {
+                    alert("你尚未填寫地址");
+                    eval("document.form['address1'].focus()");
+                } 
             }
         });
     });
@@ -703,39 +706,62 @@ function doFirst() {
     //     img.src=tempSrc; 
     //     img2.src=tempSrc2;  
     // }
+    // function saveImage() {
+    //     var canvas = document.getElementById("postcardCanvas");
+    //     var dataURL = canvas.toDataURL("image/png");
+    //     document.getElementById('hidden_data').value = dataURL;
+    //     // document.getElementById("testImg").src = dataURL;
+    //     var formData = new FormData(document.getElementById("form1"));
+    //     var xhr = new XMLHttpRequest();
 
-    $('#saveImage').click(saveImage);
+    //     xhr.onload = function () {
+    //         if (xhr.status == 200) {
+    //             if (xhr.responseText == "error") { 
+    //                 alert("Error");
+    //             } else {
+    //                 alert('Succesfully uploaded');
+    //             }
+    //         } else {
+    //             alert(xhr.status)
+    //         }
+    //     }
+    //     xhr.open('POST', './php/AddOrder.php', true);
+    //     xhr.send(formData);
+    // }
+$(document).on('click', '#step_btn9', order);
 
-    function saveImage() {
-        var canvas = document.getElementById("postcardCanvas");
-        var dataURL = canvas.toDataURL("image/png");
-        document.getElementById('hidden_data').value = dataURL;
-        document.getElementById("testImg").src = dataURL;
-        var formData = new FormData(document.getElementById("form1"));
-        console.log(formData)
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            if (xhr.status == 200) {
+function order() {
+    let receiver_name = $('#name').val(); 
+    let receiver_address = $('#address').val(); 
+    var canvas = document.getElementById("postcardCanvas");
+    var dataURL = canvas.toDataURL("image/png");
+    var canvas2 = document.getElementById("postcardback");
+    var dataURL2 = canvas2.toDataURL("image/png");
 
-                if (xhr.responseText == "error") {
-                    alert("Error");
-                } else {
-                    alert('Succesfully uploaded');
+    let neworderForm = new FormData();
+    neworderForm.append('hidden_data', dataURL);
+    neworderForm.append('hidden_data2', dataURL2);
+    neworderForm.append('receiver_name', receiver_name);
+    neworderForm.append('receiver_address', receiver_address);
 
-                }
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            if (xhr.responseText == "error") { 
+                alert("Error");
+
             } else {
-                alert(xhr.status)
+                alert('已將商品加入購物車囉!!!');
+                location.reload();
             }
+        } else {
+            alert(xhr.status)
         }
-
-        xhr.open('POST', 'canvas_load_save.php', true);
-        xhr.send(formData);
     }
-
-
-
-
-
+    xhr.open('POST', './php/AddOrder.php', true);
+    xhr.send(neworderForm);
+}
 
 }
 window.addEventListener('load', doFirst);
