@@ -359,7 +359,7 @@
                         <form id="newEventForm">
                             <!-- 第一步 -->
                             <div class="holdevent_step1content stepContent">
-                                <div class="holdevent_step ">
+                                <div class="holdevent_step">
                                     <div class="color" psn="0">
                                         <p class="stepBox">STEP1</p>
                                         <p>選擇路線</p>
@@ -546,47 +546,54 @@
                                         <p>揪團資訊</p>
                                     </div>
                                 </div>
+                                <!-- 抓第一步驟選擇路線+景點 -->
+                                <div class="routeCheck">
+                                    <div>
+                                        <p class="checkRoute" id="checkRoute"></p>
+                                    </div>
+                                    <div>
+                                        <p class="checkAtractions" id="checkAtractions"></p>
+                                    </div>
+                                </div>
                                 <div class="step3Info">
                                     <div class="holderCover">
                                         <!-- 抓第二步驟照片 -->
                                         <div class="holderCoverPic">
                                             <img src="./img/mood/newMoodPic.png" id="viewCheckImg">
                                         </div>
-                                        
                                     </div>
                                     <!-- 抓第二步驟資料 -->
                                     <div class="holderCoverInfo">
-                                        <!-- 抓第一步驟選擇路線+景點 -->
                                         <div class="holderCoverText">
                                             <div>
-                                                <i class="fas fa-map-signs"></i> <p class="title" id="checkRoute"></p>
-                                            </div>
-                                            <div>
-                                                <i class="fas fa-map-pin"></i> 景點:<p class="title" id="checkAtractions"></p>
-                                            </div>
+                                                <i class="far fa-flag"></i> 揪團名稱 :
+                                      oki      </div>
+                                            <div id="checkTitle"></div>
                                         </div>
-                                        <table>
-                                            <tr>
-                                                <td><i class="far fa-flag"></i> 揪團名稱 :</td>
-                                                <td id="checkTitle"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="far fa-calendar"></i> 活動日期 :</td>
-                                                <td id="checkDate"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="fas fa-map-marker-alt"></i> 集合地點 :</td>
-                                                <td id="checkPlace"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="fas fa-male"></i> 報名人數上限 :</td>
-                                                <td id="checkPeople"></td>
-                                            </tr>
-                                            <tr>
-                                                <td><i class="far fa-map"></i> 活動介紹 :</td>
-                                                <td id="checkInfo"></td>
-                                            </tr>
-                                        </table>
+                                        <div  class="holderCoverText">
+                                            <div>
+                                                <i class="far fa-calendar"></i> 活動日期 :
+                                            </div>
+                                            <div id="checkDate"></div>
+                                        </div>
+                                        <div  class="holderCoverText">
+                                            <div>
+                                                <i class="fas fa-map-marker-alt"></i> 集合地點 :
+                                            </div>
+                                            <div id="checkPlace"></div>
+                                        </div>
+                                        <div  class="holderCoverText">
+                                            <div>
+                                                <i class="fas fa-male"></i> 報名人數上限 :
+                                            </div>
+                                            <div id="checkPeople"></div>
+                                        </div>
+                                        <div  class="holderCoverText">
+                                            <div>
+                                                <i class="far fa-map"></i> 活動介紹 :
+                                            </div>
+                                            <div id="checkInfo"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="stepBtn">
@@ -603,7 +610,7 @@
                 </div>
             </div>
             <!-- //燈箱們-揪團詳情(撈資料庫) -->
-            <div id="eventinfoLight" >
+            <div id="eventinfoLight">
                 <!-- <div id="event1" class="eventinfo_back" psn="1">
                     <div class="lightbox_detailevent">
                         <div class="lightbox_detailevent_info">
