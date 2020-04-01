@@ -64,7 +64,7 @@ window.addEventListener("load", function () {
                     alert(xhr.status);
                 }
             }
-            var url = "./php/member/delma.php?number=" + num;
+            var url = "./php/delma.php?number=" + num;
             console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
@@ -106,7 +106,7 @@ window.addEventListener("load", function () {
                     alert(xhr.status);
                 }
             }
-            var url = "./php/member/upma.php?number=" + num
+            var url = "./php/upma.php?number=" + num
                 + "&updatenum=" + updatenum;
             console.log(url);
             xhr.open("Get", url, true);
@@ -131,7 +131,7 @@ window.addEventListener("load", function () {
         }
 
     }
-    xhr.open("get", "./php/member/backmember.php", true);
+    xhr.open("get", "./php/backmember.php", true);
     xhr.send(null);
 
     ///////會員資料
@@ -194,7 +194,7 @@ window.addEventListener("load", function () {
                     alert(xhr.status);
                 }
             }
-            var url = "./php/member/upmember.php?number=" + num
+            var url = "./php/upmember.php?number=" + num
                 + "&updatenum=" + updatenum;
             console.log(url);
             xhr.open("Get", url, true);
@@ -218,7 +218,7 @@ window.addEventListener("load", function () {
             })
         }
     }
-    xhr1.open("get", "./php/member/memberall.php", true);
+    xhr1.open("get", "./php/memberall.php", true);
     xhr1.send(null);
     // $("#manager>tbody>tr:nth-child(2)>td:nth-child(6)>button").css("border","10px solid red");
     // $(".newma_del").eq(1).css("border","10px solid red");
@@ -250,7 +250,7 @@ document.getElementById("newma").addEventListener("click", function () {
             alert(xhr.status);
         }
     }
-    var url = "./php/member/newma.php?name=" + document.getElementById("newma_nam").value
+    var url = "./php/newma.php?name=" + document.getElementById("newma_nam").value
         + "&account=" + document.getElementById("newma_acc").value
         + "&password=" + document.getElementById("newma_psw").value;
     console.log(url);
