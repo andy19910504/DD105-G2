@@ -60,6 +60,10 @@ blockquote, q {
           box-sizing: border-box;
 }
 
+.height_auto {
+  height: auto  !important;
+}
+
 .minheightbig {
   min-height: 656px;
 }
@@ -710,7 +714,7 @@ blockquote, q {
     margin-top: 0;
     display: inline-block;
   }
-  .member_info_line_all_right div:nth-child(2) {
+  .member_info_line_all_right div:nth-child(3) {
     margin-left: 5%;
   }
   .member_info_line_all_bottom {
@@ -730,29 +734,69 @@ blockquote, q {
   font-size: 0;
 }
 
-.member_info_share_all {
+.member_info_share_all_all {
   border-radius: 5px;
   border: 1px solid #646464;
   background-image: url(../img/member/hip-square.png);
   margin-left: 1.5%;
   margin-right: 1.5%;
-  margin-bottom: 3%;
+  margin-bottom: 2.375%;
   padding: 1% 1% 2% 1%;
   display: inline-block;
   width: 30%;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .member_info_share_kind {
-  padding: 1%;
+  padding: 2%;
+}
+
+.member_info_share_kind select {
+  font-size: 18px;
+  width: 100%;
+  background-image: url(../img/member/hip-square.png);
+  border: 3px dashed transparent;
+  pointer-events: none;
+}
+
+.member_info_share_kind select:focus {
+  border: 3px dashed #a5361c;
 }
 
 .member_info_share_image {
   padding: 1% 0;
 }
 
+.member_info_share_image img {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.member_info_share_image > label {
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.member_info_share_image > label > div > div {
+  padding: 2%;
+  background-image: url(../img/member/memphis-colorful.png);
+}
+
+.member_info_share_image > label > div > div > div {
+  overflow: hidden;
+}
+
+.member_info_share_image > label > div > div:nth-child(2) {
+  text-align: center;
+}
+
+.member_info_share_image > label > div > div:nth-child(2) img {
+  width: 27px;
+  vertical-align: text-bottom;
+}
+
 .member_info_share_heart {
-  padding: 1% 0;
+  padding: 2% 0;
 }
 
 .member_info_share_heart img {
@@ -764,8 +808,19 @@ blockquote, q {
   margin-left: 3%;
 }
 
-.member_info_share_word {
-  padding: 2%;
+.member_info_share_word textarea {
+  padding: 1%;
+  width: 100%;
+  font-size: 18px;
+  background-image: url(../img/member/hip-square.png);
+  resize: none;
+  text-indent: 36px;
+  border: 3px dashed transparent;
+  pointer-events: none;
+}
+
+.member_info_share_word textarea:focus {
+  border: 3px dashed #a5361c;
 }
 
 .member_info_share_button {
@@ -773,42 +828,47 @@ blockquote, q {
   padding: 1%;
 }
 
-.member_info_share_all:hover {
+.member_info_share_all_all:hover {
   -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
+.member_info_share_all_all:hover .member_info_share_image > label > div > div > div > img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 @media screen and (max-width: 1200px) {
-  .member_info_share_all {
+  .member_info_share_all_all {
     width: 47%;
     margin-left: 1.5%;
     margin-right: 1.5%;
   }
-  .member_info_share_button > a:nth-child(2) {
+  .member_info_share_button > div:nth-child(3) {
     margin-left: 12%;
   }
 }
 
 @media screen and (max-width: 1023px) {
-  .member_info_share_button > a:nth-child(2) {
+  .member_info_share_button > div:nth-child(3) {
     margin-left: 6%;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .member_info_share_all {
+  .member_info_share_all_all {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 1% 3% 2% 3%;
   }
-  .member_info_share_button > a:nth-child(2) {
+  .member_info_share_button > div:nth-child(3) {
     margin-left: 17%;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .member_info_share_button > a:nth-child(2) {
+  .member_info_share_button > div:nth-child(3) {
     margin-left: 2%;
   }
 }
@@ -827,6 +887,9 @@ blockquote, q {
   padding: 0 3% 3% 3%;
   background-image: url(../img/member/hip-square.png);
   border-radius: 5px;
+  margin-bottom: 2.375%;
+  height: 100px;
+  overflow: hidden;
 }
 
 .member_info_order > div > div:hover {
@@ -929,12 +992,24 @@ blockquote, q {
     width: 50%;
     padding-bottom: 20px;
   }
+  .member_info_order > div > div {
+    height: 135px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .member_info_order > div > div {
+    height: 100px;
+  }
 }
 
 @media screen and (max-width: 575px) {
   .member_info_order_up p {
     width: 100%;
     padding-bottom: 20px;
+  }
+  .member_info_order > div > div {
+    height: 170px;
   }
 }
 
@@ -954,6 +1029,7 @@ blockquote, q {
   border: 1px solid #646464;
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
+  padding-top: 30px;
   border-radius: 5px;
 }
 
@@ -1034,16 +1110,33 @@ blockquote, q {
   padding-left: 2%;
 }
 
+.member_info_open_all_right div:nth-child(1) label {
+  vertical-align: top;
+  padding-top: 5px;
+}
+
+.member_info_open_all_right div:nth-child(1) div {
+  font-size: 18px;
+  display: inline-block;
+  width: 70%;
+  margin-left: 5%;
+  font: 400 Arial;
+}
+
+.member_info_open_all_right div:nth-child(1) div div {
+  height: 30px;
+  margin-left: 0;
+}
+
 .member_info_open_all_right > div:nth-child(9) label {
   vertical-align: top;
 }
 
 .member_info_open_all_right > div:nth-child(9) textarea {
   text-indent: 36px;
-  border: unset;
-  text-decoration: underline;
+  border: 3px dashed transparent;
   background-image: url(../img/member/hip-square.png);
-  padding: 1% 0;
+  padding: 1%;
   font-size: 18px;
   display: inline-block;
   width: 75%;
@@ -1066,10 +1159,21 @@ blockquote, q {
 }
 
 .member_info_open_all_right > div input {
-  text-indent: 36px;
   font-size: 18px;
   display: inline-block;
-  width: 75%;
+  width: 70%;
+  margin-left: 5%;
+  border: unset;
+  background-color: unset;
+  height: 30px;
+  pointer-events: none;
+}
+
+.member_info_open_all_right > div select {
+  font-size: 18px;
+  display: inline-block;
+  width: 70%;
+  margin-left: 5%;
   border: unset;
   background-color: unset;
   height: 30px;
@@ -1086,6 +1190,24 @@ blockquote, q {
 
 .member_info_open_all_right > div textarea:focus {
   border: 3px dashed #a5361c;
+}
+
+.member_info_open_all_right > div:nth-child(7) label {
+  vertical-align: top;
+}
+
+.member_info_open_all_right > div:nth-child(7) div {
+  display: inline-block;
+  width: 75%;
+}
+
+.member_info_open_all_right > div:nth-child(7) div div {
+  font-size: 18px;
+  display: inline-block;
+  height: 30px;
+  margin-left: 5%;
+  font: 400 Arial;
+  padding-left: 2%;
 }
 
 .member_info_open_all_bottom {
@@ -1124,14 +1246,29 @@ blockquote, q {
   }
   .member_info_open_all_right > div input {
     margin-top: 10px;
-    text-align: center;
     width: 100%;
-    text-indent: unset;
+    text-indent: 36px;
+  }
+  .member_info_open_all_right > div input[type=date] {
+    text-indent: 18px;
+  }
+  .member_info_open_all_right > div select {
+    text-indent: 36px;
+  }
+  .member_info_open_all_right > div:nth-child(1) div {
+    text-indent: 36px;
+  }
+  .member_info_open_all_right > div:nth-child(1) div:nth-child(2) > div:nth-child(1) {
+    text-indent: 0px;
   }
   .member_info_open_all_right > div:nth-child(9) textarea {
     margin-top: 10px;
     text-align: left;
     width: 100%;
+    text-indent: 36px;
+  }
+  .member_info_open_all_right > div:nth-child(7) > div:nth-child(2) div {
+    text-indent: 36px;
   }
 }
 
@@ -1161,6 +1298,9 @@ blockquote, q {
   background-image: url(../img/member/hip-square.png);
   font-size: 0px;
   border-radius: 5px;
+  padding-top: 30px;
+  height: 110px;
+  overflow: hidden;
 }
 
 .member_info_join_all_all > input {
@@ -1223,20 +1363,31 @@ blockquote, q {
   padding-left: 2%;
 }
 
+.member_info_join_all_right > div:nth-child(7) label {
+  vertical-align: top;
+}
+
+.member_info_join_all_right > div:nth-child(7) div {
+  width: 75%;
+  display: inline-block;
+}
+
+.member_info_join_all_right > div:nth-child(7) div input {
+  padding-left: 2%;
+}
+
 .member_info_join_all_right > div:nth-child(9) label {
   vertical-align: top;
 }
 
 .member_info_join_all_right > div:nth-child(9) textarea {
-  text-indent: 36px;
   border: unset;
-  text-decoration: underline;
   background-image: url(../img/member/hip-square.png);
-  padding: 1% 0;
+  padding: 1%;
   font-size: 18px;
   display: inline-block;
-  width: 75%;
-  padding-left: 2%;
+  width: 70%;
+  margin-left: 5%;
   resize: none;
 }
 
@@ -1255,10 +1406,10 @@ blockquote, q {
 }
 
 .member_info_join_all_right > div input {
-  text-indent: 36px;
   font-size: 18px;
   display: inline-block;
-  width: 75%;
+  margin-left: 5%;
+  width: 70%;
   border: unset;
   background-image: url(../img/member/hip-square.png);
   height: 30px;
@@ -1281,7 +1432,7 @@ blockquote, q {
   }
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1200px) and (max-width: 1023px) {
   .member_info_join_all_left {
     width: 50%;
     margin: 0 25%;
@@ -1292,35 +1443,46 @@ blockquote, q {
     width: 100%;
     padding-left: 0px;
   }
+  .member_info_join_all_all {
+    height: 105px;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1200px) and (max-width: 767px) {
   .member_info_join_all_right > div label {
     width: 100%;
     margin-top: 20px;
   }
   .member_info_join_all_right > div input {
     margin-top: 10px;
-    text-align: center;
+    text-indent: 36px;
     width: 100%;
-    text-indent: unset;
+  }
+  .member_info_join_all_right > div input[type=date] {
+    text-indent: 18px;
   }
   .member_info_join_all_right > div:nth-child(9) textarea {
     margin-top: 10px;
     text-align: left;
     width: 100%;
+    text-indent: 36px;
+  }
+  .member_info_join_all_all {
+    padding-top: 20px;
+    height: 85px;
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1200px) and (max-width: 575px) {
   .member_info_join_all_all h1 {
     font-size: 18px;
   }
   .member_info_join_all_right {
     font-size: 16px;
   }
-  .member_info_join_all_bottom a:nth-child(2) {
-    margin-left: 5%;
+  .member_info_join_all_all {
+    padding-top: 10px;
+    height: 65px;
   }
 }
 /*# sourceMappingURL=member.css.map */

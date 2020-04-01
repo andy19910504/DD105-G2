@@ -366,10 +366,13 @@ section div.moodCardsWrap div.moodCard div.cardText span:hover {
     margin: 15px 0px;
   }
   section div.moodCardsWrap div.moodCard div.cardInfoBar {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     width: 270px;
   }
   section div.moodCardsWrap div.moodCard div.cardInfoBar div.infoTextWrap {
-    width: 180px;
+    width: 220px;
   }
   section div.moodCardsWrap div.moodCard div.cardInfoBar div.infoTextWrap div.moodInfoBox {
     -webkit-box-orient: horizontal;
@@ -831,12 +834,24 @@ div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailInfoBar
 }
 
 div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailPhotoWrap {
+  height: 430px;
   width: 100%;
   margin: 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailPhotoWrap img {
-  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 div.moodLightBox div.moodDetailBlock div.moodDetailLeftBox div.moodDetailContent {

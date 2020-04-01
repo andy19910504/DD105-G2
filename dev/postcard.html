@@ -108,12 +108,12 @@
                                     alt="postBGC1">
                             </div>
                             <div class="postBGC_2 " id="postBGC_2">
-                                點點紛灰
+                                花樣水藍
                                 <!-- <div class="postBGC_name2">點點紛灰</div> -->
                                 <img src="./img/postcard/wormz.png" alt="postBGC2">
                             </div>
                             <div class="postBGC_3 " id="postBGC_3">
-                                馬卡粉紅
+                                櫻花粉紅
                                 <!-- <div class="postBGC_name3">馬卡粉紅</div> -->
                                 <img src="./img/postcard/p0126_m.png" alt="postBGC3">
                             </div>
@@ -221,29 +221,24 @@
                     <div class="postRightDIY5">
                         <h1 class="post_text">填上目的地就完成囉!</h1>
                         <div class="info">
-                            <form method="GET" id="form">
+                            <form  id="neworderForm">
                                 <label for='name' id="name1">收件人</label><br>
                                 <input type='text' id='name' class='inputform' placeholder="輸入收件人姓名"><br>
                                 <label for="address">收件地址</label><br>
                                 <input type='text' id='address' class='inputform' placeholder="輸入收件地址">
-                                <!-- <div>
-                                    <div id="address1"></div>
-                                    
-                                </div> -->
                             </form>
                             <div class="download">
-                            <a href="#" class="btnPink" type="button" download="卡片正面.png"
-                                onclick="this.href=document.getElementById('postcardCanvas').toDataURL()">正面存圖</a>
-                            <a href="#" class="btnPink" type="button" download="卡片背面.png"
-                                onclick="this.href=document.getElementById('postcardback').toDataURL()">背面存圖</a>
+                                <a href="#" class="btnPink" type="button" download="卡片正面.png"
+                                    onclick="this.href=document.getElementById('postcardCanvas').toDataURL()">正面存圖</a>
+                                <a href="#" class="btnPink" type="button" download="卡片背面.png"
+                                    onclick="this.href=document.getElementById('postcardback').toDataURL()">背面存圖</a>
                             </div>
                         </div>
-                        <!-- <form method="post" id="form1">
-                            <input name="hidden_data" id='hidden_data' type="hidden" />
-                            <input type="button" id="saveImage" value="save image">
-                        </form> -->
-                        <!-- <img src="" id="testImg">
-                        <button class="btnPink" id="save">save</button> -->
+                        <form method="post" id="form1">
+                            <input name="hidden_data" id="hidden_data" type="hidden" />
+                        </form>
+                        <!-- <input type="button" value="save image" class="btnPink" onclick="saveImage()" /> -->
+                        <!-- <img src="" id="testImg"> -->
                         <div class="step_btnbox5">
                             <button class="btnPink" id="step_btn8">上一步</button>
                             <input type="submit" value="完成" class="btnPink" id="step_btn9">
@@ -259,7 +254,6 @@
     @@include('./layout/footer.html')
 
     <!-- manual-modal -->
-
 
 
     <script src="./js/jquery-3.4.1.min.js"></script>

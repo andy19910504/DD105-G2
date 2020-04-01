@@ -509,7 +509,7 @@ img.milkTea {
   width: 100px;
   position: absolute;
   right: -200px;
-  top: 500px;
+  top: 900px;
   -webkit-transform: rotate(8deg);
           transform: rotate(8deg);
 }
@@ -518,7 +518,7 @@ img.camera {
   width: 160px;
   position: absolute;
   right: -320px;
-  top: 650px;
+  top: 1050px;
   -webkit-transform: rotate(10deg);
           transform: rotate(10deg);
 }
@@ -527,7 +527,7 @@ img.star01 {
   width: 40px;
   position: absolute;
   right: -325px;
-  top: 590px;
+  top: 990px;
   -webkit-animation: starAni .8s infinite alternate;
           animation: starAni .8s infinite alternate;
 }
@@ -536,7 +536,7 @@ img.star02 {
   width: 50px;
   position: absolute;
   right: -180px;
-  top: 720px;
+  top: 1120px;
   animation: starAni 1s infinite alternate-reverse;
 }
 
@@ -570,7 +570,7 @@ img.skyLight01 {
   width: 120px;
   position: absolute;
   left: -250px;
-  top: 850px;
+  top: 1350px;
   animation: skyLightAni 2s infinite alternate-reverse linear;
 }
 
@@ -578,7 +578,7 @@ img.skyLight02 {
   width: 300px;
   position: absolute;
   left: -320px;
-  top: 720px;
+  top: 1220px;
   animation: skyLightAni 1s infinite alternate-reverse linear;
 }
 
@@ -608,7 +608,7 @@ img.eggBread {
   width: 130px;
   position: absolute;
   right: -180px;
-  top: 1450px;
+  top: 1650px;
   -webkit-animation: skyLightAni 1.2s infinite alternate linear;
           animation: skyLightAni 1.2s infinite alternate linear;
 }
@@ -617,7 +617,7 @@ img.candyFruit {
   width: 120px;
   position: absolute;
   right: -280px;
-  top: 1550px;
+  top: 1750px;
   -webkit-animation: skyLightAni 1s infinite alternate linear;
           animation: skyLightAni 1s infinite alternate linear;
 }

@@ -195,7 +195,7 @@ div.psyTestWrap div.answerBox div.ansOption div.ansBubble img.ansImg {
 
 div.routeWrap {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 70px;
   position: relative;
   letter-spacing: 1.5px;
   font-size: 24px;
@@ -212,85 +212,125 @@ div.routeWrap {
           align-items: center;
 }
 
-div.routeWrap div.routeBox {
+div.routeWrap #slideBoard {
+  width: 100%;
+  overflow: hidden;
+}
+
+div.routeWrap #slideBoard #content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.routeWrap #slideBoard #content .newSliderBox {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.routeWrap #slideBoard #content .newSliderBox div.picBubble {
+  width: 48%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../img/index/blueWave.png);
   position: relative;
-  width: 100%;
+  padding: 20px;
+  text-align: center;
+  -webkit-box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.13);
+          box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.13);
+  animation: ansAni 3s infinite linear alternate-reverse;
 }
 
-div.routeWrap div.routeBox a.routeLink {
-  display: inline-block;
-  margin: 0px 20px;
+div.routeWrap #slideBoard #content .newSliderBox div.picBubble img.routeImg {
+  width: 95%;
+  animation: ansAni 2s infinite linear alternate-reverse;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-div.routeWrap div.routeBox a.routeLink:hover + div.routeData {
-  opacity: 1;
-  z-index: 5;
-}
-
-@media screen and (max-width: 1199px) {
-  div.routeWrap div.routeBox a.routeLink {
-    margin: 0px;
+@keyframes ansAni {
+  0% {
+    border-radius: 35% 40% 22% 42%/ 51% 47% 42% 42%;
+  }
+  33% {
+    border-radius: 29% 45% 30% 31%/ 51% 47% 42% 42%;
+  }
+  66% {
+    border-radius: 40% 50% 32% 27%/ 51% 47% 42% 42%;
+  }
+  100% {
+    border-radius: 31% 40% 24% 38%/ 51% 47% 42% 42%;
   }
 }
 
-div.routeWrap div.routeBox div.routeData {
-  -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
-          box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.13);
-  border-radius: 5px;
-  background-image: url(../img/index/linedpaper.png);
-  display: inline-block;
-  padding: 20px 0px;
-  width: 700px;
-  opacity: 0;
-  position: absolute;
-  left: 20%;
-  bottom: -130px;
+div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText {
+  width: 47%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-div.routeWrap div.routeBox div.routeData img.routeArrow01 {
-  position: absolute;
-  top: -100px;
-  left: 0px;
-}
-
-div.routeWrap div.routeBox div.routeData img.routeArrow02 {
-  position: absolute;
-  top: -110px;
-  left: 300px;
-  -webkit-transform: rotate(65deg);
-          transform: rotate(65deg);
-}
-
-div.routeWrap div.routeBox div.routeData img.routeArrow03 {
-  position: absolute;
-  top: -100px;
-  left: 600px;
-  -webkit-transform: rotate(100deg);
-          transform: rotate(100deg);
-}
-
-div.routeWrap div.routeBox div.routeData p {
-  text-align: center;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  line-height: 1.5;
-  color: #1e1e1e;
-}
-
-div.routeWrap div.routeBox div.routeData p span {
-  font-size: 24px;
+div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText span {
+  font-size: 36px;
   font-weight: bold;
+  color: #1e1e1e;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
 }
 
-@media screen and (max-width: 1199px) {
-  div.routeWrap div.routeBox div.routeData {
-    left: 15%;
+div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText p {
+  font-size: 20px;
+  color: #646464;
+  margin: 10px 0px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  div.routeWrap #slideBoard #content .newSliderBox {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div.routeWrap #slideBoard #content .newSliderBox div.picBubble {
+    width: 95%;
+  }
+  div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText {
+    width: 95%;
+  }
+  div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText span {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  div.routeWrap #slideBoard #content .newSliderBox div.routeDatailText p {
+    font-size: 18px;
+    margin: 5px 0px;
   }
 }
 
@@ -316,108 +356,7 @@ div.routeWrap img.grassLine {
 
 @media screen and (max-width: 767px) {
   div.routeWrap {
-    margin-top: 50px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  div.routeBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    position: relative;
-    width: 100%;
-  }
-  div.routeBox div.routePaper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  div.routeBox div.routePaper a.routeLink {
-    width: 30%;
-    display: inline-block;
-  }
-  div.routeBox div.routePaper a.routeLink img {
-    width: 100%;
-  }
-  div.routeBox div.routePaper div.routeData {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    width: 65%;
-    position: relative;
-    opacity: 1;
-    left: 0px;
-    top: 0px;
-    bottom: unset;
-  }
-  div.routeBox div.routePaper div.routeData img.routeArrow01 {
-    width: 60px;
-    top: -0px;
-    left: -30px;
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-  }
-  div.routeBox div.routePaper div.routeData img.routeArrow02 {
-    width: 60px;
-    top: -0px;
-    left: unset;
-    right: -30px;
-    -webkit-transform: rotate(130deg);
-            transform: rotate(130deg);
-  }
-  div.routeBox div.routePaper div.routeData img.routeArrow03 {
-    width: 60px;
-    top: -0px;
-    left: -30px;
-    -webkit-transform: rotate(-20deg);
-            transform: rotate(-20deg);
-  }
-  div.routeBox div.routePaper div.routeData p {
-    font-size: 16px;
-  }
-  div.routeBox div:nth-child(2) a {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  div.routeBox div.routePaper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-  }
-  div.routeBox div.routePaper a.routeLink {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-  }
-  div.routeBox div.routePaper a.routeLink img {
-    max-width: 335px;
-  }
-  div.routeBox div.routePaper div.routeData {
-    display: none;
+    margin-top: 0px;
   }
 }
 
