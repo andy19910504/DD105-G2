@@ -1,3 +1,4 @@
+
 // attractionsSlider
 function attractionsSlider() {
     let attractionSlider = document.querySelector(".attractionAll");
@@ -94,6 +95,8 @@ window.addEventListener('load', function () {
                     left.style.filter = "grayscale(1)";
                     left.style.animation = "unset";
                 })
+
+
             } else {
                 alert(xhr.status);
             }

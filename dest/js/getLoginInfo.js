@@ -16,4 +16,5 @@ window.addEventListener('load', function () {
     }
     xhr.open("get", "./php/loginInfoForFront.php", true);
     xhr.send(null);
-});
+
+})

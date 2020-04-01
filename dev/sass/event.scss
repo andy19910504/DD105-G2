@@ -1236,8 +1236,8 @@ div.eventCard{
             }
         }
         .detaileventPicbox{
-            width: 400px;
-            height: 300px;
+            width: 360px;
+            height: 360px;
             border-radius: 5px;
             overflow: hidden;
             img{
@@ -1327,3 +1327,72 @@ div.eventCard{
         
     }
 }
+
+// --------------------
+
+div.eventInfotitle{
+    font-size: 32px;
+  }
+  div.lightbox_detailevent_info{
+    height:740px;
+  }
+  div.lightReport{
+    right: 55px;
+    top: 10px;
+  }
+  div.eventinfo_back{
+    display: flex;
+  }
+  div.detaileventPicbox{
+    width: 360px;
+    height: 360px;
+    align-items: center;
+  }
+  div.detaileventPicbox img{
+    height: 100%;
+    
+  }
+  div.detaileventRoute {
+    margin: 10px 0;
+  }
+  div.enroll{
+    bottom: 25px;
+  }
+  div.detaileventRoute p{
+    font-family: "微軟正黑體";
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #646464;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  div.detaileventText{
+    padding: 0px 0 45px 55px;
+  }
+  @media screen and (max-width: 1000px) {
+    div.lightbox_detailevent{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    div.detaileventContent{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    div.detaileventPic{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    div.detaileventText{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  
