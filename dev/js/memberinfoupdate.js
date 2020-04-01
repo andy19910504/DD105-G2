@@ -166,7 +166,7 @@ function getMoodInfo(memNum) {
                         確認
                     </div>
                     <div class="btnPink">
-                        刪除
+                        取消
                     </div>
                 </div>
                 <input style="display:none" type="text" value="${moodinfo.moodinfoRow[i].mood_number}" name="mood_number">
@@ -468,7 +468,7 @@ function getOpenInfo(memNum) {
                 <div class="member_info_open_all_bottom">
                     <div class="btnPink">修改</div>
                     <div class="btnPink" href="#" style="display: none;">確認</div>
-                    <div class="btnPink" href="#">刪除</div>
+                    <div class="btnPink" href="#">取消</div>
                 </div>
                 <input type="text" name="event_number" style="display:none" value="${memberopeninfo.memberopen[i].event_number}"></input>
             </form>

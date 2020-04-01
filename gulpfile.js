@@ -38,13 +38,8 @@ var web = {
     var options = {
         base: './dest',
         debug: true,
-<<<<<<< HEAD
         bin: 'C:/php-7.4.3-Win32-vc15-x64/php.exe',
         ini: 'C:/php-7.4.3-Win32-vc15-x64/php.ini',
-=======
-        bin: 'C:/php-7.4.3/php.exe',
-        ini: 'C:/php-7.4.3/php.ini',
->>>>>>> 8f0b51f7778b5aa3e412f8cfba1c7f5c56b39446
         port: 8080,
     };
 

@@ -11,11 +11,9 @@ try {
     $upmemberline->bindvalue(":title",$title);
     $upmemberline->bindvalue(":word",$word);
     $upmemberline->execute();
-    if($upmemberline->rowCount() == 1){
+
         echo "修改路線成功";
-    }else{
-        echo "修改路線失敗";
-    }
+
 } catch (PDOException $e) {
     echo $e->getMessage();
 }

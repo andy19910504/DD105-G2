@@ -797,6 +797,8 @@
 }
 .member_info_share_image>label>div>div>div{
     overflow: hidden;
+    width: 263px;
+    height: 177px;
 }
 .member_info_share_image>label>div>div:nth-child(2){
     text-align: center;
@@ -1014,6 +1016,8 @@
 
 
         overflow: hidden;
+        width: 337px;
+        height: 234px;
     }
 
     img {
@@ -1235,14 +1239,16 @@
 .member_info_open_all_left>label>div {
     background-image: url(../img/member/memphis-colorful.png);
     padding: 2%;
-    // border: 1px solid greenyellow;
+    border: 3px solid transparent;
     // max-width: 310px;
     margin: 0 auto;
 }
 
-.member_info_open_all_left>label>div>div {
+.member_info_open_all_left>label>div:nth-child(1)>div:nth-child(1) {
     overflow: hidden;
-    // margin-bottom: 1%;
+    // margin-bottom: 1%;  
+    width: 341px;
+    height: 239px;
 }
 .member_info_open_all_left>label>div>div:nth-child(2){
     margin-top: 5px;
