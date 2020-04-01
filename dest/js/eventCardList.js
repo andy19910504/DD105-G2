@@ -43,10 +43,7 @@ function LightEventinfo(events) {
                             <div class="detaileventPicbox">
                                 <img src="./img/eventPhoto/${eventTable[i].event_cover_url}">
                             </div>
-                            <div class="detaileventRoute">
-                                <p>路線: ${eventTable[i].route_name}</p>
-                                <p>景點: </p>
-                            </div>
+                            
                         </div>
                         <div class="detaileventText">
                                 <div class="eventInforow">
@@ -74,7 +71,12 @@ function LightEventinfo(events) {
                                     <div>${eventTable[i].event_information}</div>
                                 </div>
                         </div>
+
                     </div>
+                    <div class="detaileventRoute">
+                                <p>路線: ${eventTable[i].route_name}</p>
+                                <p><i class="fas fa-map-pin"></i> 梁實秋故居 -> 紀州庵 -> 長慶廟 -> 青田七六 ->野草居食屋</p>
+                        </div>
                     <div class="enroll">
                             <a href="#" class="btnRed btnEnroll">
                             我要報名
