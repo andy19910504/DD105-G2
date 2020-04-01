@@ -10,7 +10,7 @@ try {
     $moodinfoRow = $moodinfo->fetchAll(PDO::FETCH_ASSOC);
 
 
-    $sql = "select a.mood_number,count(message_number) comment_total from `mood`a join `mood_message`b on(a.mood_number=b.mood_number) where a.member_number=:memNum group by a.mood_number order by a.mood_number desc;";
+    $sql = "select a.mood_number,count(message_number) comment_total from `mood`a join `mood_message`b on(a.mood_number=b.mood_number) where a.member_number=:memNum and a.mood_status=1 group by a.mood_number order by a.mood_number desc;";
 
     $moodinfocomment = $pdo->prepare($sql);
     $moodinfocomment->bindvalue(":memNum",$memNum);

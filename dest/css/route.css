@@ -607,7 +607,7 @@ div.eventCard {
   margin: -1.84375em;
   background: currentColor;
   border-radius: 50%;
-  box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #ccc, -2.1875em 0.6875em 0 -0.3125em #ccc, 2.0625em 0.9375em 0 -0.5625em #ccc; }
+  box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #ccc, -2.1875em 0.6875em 0 -0.3125em #ccc, 2.0625em 0.9375em 0 -0.5625em #ccc; }
   .routeShineAnimation .cloud::after {
     content: '';
     position: absolute;
@@ -769,15 +769,29 @@ div.eventCard {
         transform: rotate(90deg); } }
 
 .routeBlockBgImage .routeTilteBlock {
-  width: 100%;
   text-align: right;
-  padding-right: 60px; }
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; }
+  .routeBlockBgImage .routeTilteBlock .routeInfo {
+    width: 120px;
+    position: relative;
+    left: -65px;
+    cursor: pointer;
+    animation: sharks 1s alternate infinite; }
+  .routeBlockBgImage .routeTilteBlock img:nth-child(2) {
+    filter: brightness(0.3); }
   @media screen and (max-width: 860px) {
     .routeBlockBgImage .routeTilteBlock {
       margin-bottom: 60px; } }
 
-.routeBlockBgImage .routeTilteBlock img {
-  filter: brightness(0.3); }
+@keyframes sharks {
+  from {
+    transform: translateY(0px); }
+  to {
+    transform: translateY(-10px); } }
 
 .routeBlockBgImage .routeBlock {
   display: flex;
