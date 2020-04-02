@@ -137,15 +137,12 @@ $(document).ready(function () {
       //存入使用者輸入的自訂路線名稱和簡介
       customRouteName = $('.routeName').val();
       customRouteDesc = $('.routeDesc').val();
-      console.log(customRouteName)
-      console.log(customRouteDesc)
       var routeInfo = [];
       routeInfo.push(addresses);
       let customForm = new FormData();
       customForm.append('customRouteName', customRouteName);
       customForm.append('customRouteDesc', customRouteDesc);
       customForm.append('routeInfo', routeInfo);
-      console.log(routeInfo);
 
       // AJAX
       var xhr = new XMLHttpRequest();
@@ -221,7 +218,6 @@ $(document).ready(function () {
         for (var i = 0; i <= markers.length - 1; i++) {
           spots[i] = markers[i];
         }
-        console.log(spots);
         //清除地點
         $('.removeSpot').click(function (e) {
           e.preventDefault();
