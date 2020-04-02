@@ -87,9 +87,11 @@ function routeClick() {
         let routeName = $(this).children().last().children('p').text();
         let attractions = $(this).children().last().children('input').val();
         let routeNum = $(this).attr('psn');
+        $(this).css()
         console.log(routeNum)
         //每次點選都清空
         $('.routeClick').text('');
+
         //append 點選到的路線和景點+路線編號
         $(`<div> <p class="routeClickName">${routeName}</p></div> <div> <p class="attractions">${attractions}</p></div> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
 
