@@ -17,16 +17,16 @@ function insertRow(e) {
     e.preventDefault();
 
     //先抓取被選到的 揪團編號
-    let event_number;
-    children = $('#eventinfoLight').children().length; //6
-    for (i = 0; i < children; i++) {
-        theCSS = $(`.eventinfo_back:nth-child(${i + 1})`).css('display');
-        console.log(theCSS)
-        if (theCSS == 'flex') {
-            event_number = $(`.eventinfo_back:nth-child(${i + 1})`).attr('psn')
-        }
+    let event_number = $('.eventinfo_back').attr('psn');
+    // children = $('#eventinfoLight').children().length; //6
+    // for (i = 0; i < children; i++) {
+    //     theCSS = $(`.eventinfo_back:nth-child(${i + 1})`).css('display');
+    //     console.log(theCSS)
+    //     if (theCSS == 'flex') {
+    //         event_number = $(`.eventinfo_back:nth-child(${i + 1})`).attr('psn')
+    //     }
 
-    }
+    // }
     //再抓檢舉原因
     let eventReportReason = $('input[name=reason]:checked').val();
     //先判斷是否有登入會員
