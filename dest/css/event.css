@@ -593,9 +593,12 @@ div.eventCard {
         font-size: 18px;
         transition: 0.5s; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg {
-          width: 200px;
+          height: 200px;
+          display: flex;
           height: 200px;
           overflow: hidden; }
+        .chooseRoute .sliderWrap .routeAllBox .routeBox .memberRoute {
+          display: block; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
           width: 100%; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxBottom {
@@ -833,8 +836,7 @@ div.eventCard {
       color: #646464; }
   .holdevent_step3content .step3Info {
     width: 100%;
-    display: flex;
-    padding: 40px 40px; }
+    display: flex; }
     .holdevent_step3content .step3Info .holderCover {
       display: flex;
       flex-direction: column;

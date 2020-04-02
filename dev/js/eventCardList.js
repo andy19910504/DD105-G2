@@ -43,7 +43,6 @@ function LightEventinfo(events) {
                             <div class="detaileventPicbox">
                                 <img src="./img/eventPhoto/${eventTable[i].event_cover_url}">
                             </div>
-                            
                         </div>
                         <div class="detaileventText">
                                 <div class="eventInforow">
@@ -74,8 +73,9 @@ function LightEventinfo(events) {
 
                     </div>
                     <div class="detaileventRoute">
-                                <p>路線: ${eventTable[i].route_name}</p>
-                                <p><i class="fas fa-map-pin"></i> 梁實秋故居 -> 紀州庵 -> 長慶廟 -> 青田七六 ->野草居食屋</p>
+                        <div>
+                            <p>${eventTable[i].route_name}</p>
+                            <p>梁實秋故居 -> 紀州庵 -> 長慶廟 -> 青田七六 ->野草居食屋</p>
                         </div>
                     <div class="enroll">
                             <a href="#" class="btnRed btnEnroll">
@@ -108,10 +108,11 @@ function eventCard(event) {
                 <div class="starMark">
                     <div><img src="./img/event/event_star.png" alt=""></div>
                     <div class="markWord">官方路線</div>
+                    <input type="hidden" name="event_sort" value="official" class="event_sort">
                 </div>
                 `
         } else {
-            html += `<div class="starMark"></div>`
+            html += `<div class="starMark"><input type="hidden" name="event_sort" value="member" class="event_sort"></div>`
         }
         html += `
                 <div class="dotWrap">
@@ -128,6 +129,7 @@ function eventCard(event) {
                     集合地點:${eventTable[i].meeting_place}
                 </p>
                 <span id="more${eventTable[i].event_number}" class="lightDetail">more</span>
+                <input type="hidden" name="event_number" value="${eventTable[i].event_number}" class="event_number">
             </div>
         </div> 
         `;

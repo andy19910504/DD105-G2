@@ -10,16 +10,7 @@ function IconList(icon) {
     let html = "";
 
     for (i = 0; i < iconTable.length; i++) {
-        // if (eventTable[i].member_number == null) {
-        //     html += `
-        //         <div class="starMark">
-        //             <div><img src="./img/event/event_star.png" alt=""></div>
-        //             <div class="markWord">官方路線</div>
-        //         </div>
-        //         `
-        // } else {
-        //     html += `<div class="starMark"></div>`
-        // }
+
         html += `
         <div class="icon" id="icon_${iconTable[i].customized_product_number}">
         <img src="./img/postcard/${iconTable[i].customized_product_url}">
