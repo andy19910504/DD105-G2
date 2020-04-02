@@ -219,7 +219,31 @@ window.addEventListener("load", function () {
             $id("find_email").focus();
             return
         }
-    })
+        // ///忘記密碼 發認證信
+        // let acc = $("#find_acc").val();
+        // let email = $("#find_email").val();
+        // // alert(acc);
+        // // alert(email);
+        // let xhr = new XMLHttpRequest();
+        // xhr.onload = function () {
+        //     if (xhr.status == 200) {
+        //         alert(xhr.responseText);
+        //     } else {
+        //         alert(xhr.status);
+        //     }
+
+        // };
+        // $.ajax({
+        //     type :"GET",
+        //     dataType: "text",
+        // });
+        // let url = "./php/forgotPassword.php?acc=" + acc
+        // + "&email=" + email;
+        // console.log(url);
+        // xhr.open("Get", url, true);
+        // xhr.send(null);
+
+        })
 
     // 按返回按鈕，回到登入頁
     $(".btnBack").click(function () {

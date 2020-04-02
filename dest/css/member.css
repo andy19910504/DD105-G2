@@ -540,7 +540,9 @@ blockquote, q {
   background-image: url(../img/member/memphis-colorful.png); }
 
 .member_info_share_image > label > div > div > div {
-  overflow: hidden; }
+  overflow: hidden;
+  width: 263px;
+  height: 177px; }
 
 .member_info_share_image > label > div > div:nth-child(2) {
   text-align: center; }
@@ -663,7 +665,9 @@ blockquote, q {
   width: 40%;
   padding: 1%; }
   .member_info_order_bottom_contrary div {
-    overflow: hidden; }
+    overflow: hidden;
+    width: 337px;
+    height: 234px; }
   .member_info_order_bottom_contrary img {
     transition: all 0.8s; }
 
@@ -758,10 +762,13 @@ blockquote, q {
 .member_info_open_all_left > label > div {
   background-image: url(../img/member/memphis-colorful.png);
   padding: 2%;
+  border: 3px solid transparent;
   margin: 0 auto; }
 
-.member_info_open_all_left > label > div > div {
-  overflow: hidden; }
+.member_info_open_all_left > label > div:nth-child(1) > div:nth-child(1) {
+  overflow: hidden;
+  width: 341px;
+  height: 239px; }
 
 .member_info_open_all_left > label > div > div:nth-child(2) {
   margin-top: 5px; }

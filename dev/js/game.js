@@ -129,8 +129,9 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
-        //顯示手機方向鍵
+        //顯示手機方向鍵、進度條
         $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
+        $('.progress-container-mobile').toggleClass('hide-progress-container-mobile');
         if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
             // show manual-modal
             $('header.fullHeader').addClass('header-backward');
@@ -501,6 +502,10 @@ $(document).ready(function(){
             });
             $('.indicator').text(`闖關進度：${checks*20}%`);
             for(var j=0;j<=checks;j++){
+                //以防變成$('.index').eq(-1)，讓最後一個index變紅色
+                if(checks==0){
+                    break;
+                }
                 $('.index').eq(j-1).css({
                     'background-color': '#c45c5c'
                 });

@@ -770,9 +770,13 @@ div.eventCard{
                 font-size: $fzContent;
                 transition: 0.5s; 
                 .routeBoxImg{
-                    width: 200px;
                     height: 200px; 
+                    display: flex;
+                    height: 200px;
                     overflow: hidden;       
+                }
+                .memberRoute{
+                    display: block;
                 }
                 div.routeBoxImg img{
                     width: 100%;
@@ -1092,7 +1096,6 @@ div.eventCard{
     .step3Info{
         width: 100%;
         display: flex;
-        padding: 40px 40px;
         //左邊
        .holderCover{
             display: flex;
