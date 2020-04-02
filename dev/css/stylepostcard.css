@@ -10,6 +10,34 @@ body {
   height: 100%;
 }
 
+.postcardimg4 {
+  z-index: 15;
+  -webkit-animation: turn 2s infinite alternate linear;
+          animation: turn 2s infinite alternate linear;
+}
+
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  55% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+}
+
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  55% {
+    -webkit-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+}
+
 .postcardimg {
   display: block;
   width: 100%;
@@ -248,7 +276,7 @@ div.postcardimg4 {
   line-height: 30px;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1020px) {
   .stepname {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -394,7 +422,6 @@ div.postcardimg4 {
 
 /*畫布畫面*/
 .postcardCanvas {
-  border: solid 1px #0e0e0e;
   width: 900px;
   height: 560px;
 }
@@ -431,6 +458,13 @@ div.postcardimg4 {
   font-size: 24px;
   color: #a5361c;
   background-color: lightyellow;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+  .post_text {
+    margin-top: 20px;
+  }
 }
 
 .BGCchoose {
@@ -604,7 +638,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox1 {
-    margin-top: 10px;
+    margin-top: 37px;
     margin-bottom: 30px;
   }
 }
@@ -713,8 +747,8 @@ div.postcardimg4 {
   margin-top: 5px;
   margin-bottom: 5px;
   overflow: hidden;
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-          filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
 }
 
 .postphoto_1 img {
@@ -741,8 +775,8 @@ div.postcardimg4 {
   margin-top: 5px;
   margin-bottom: 5px;
   overflow: hidden;
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-          filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
 }
 
 .postphoto_2 img {
@@ -769,8 +803,8 @@ div.postcardimg4 {
   margin-top: 5px;
   margin-bottom: 5px;
   overflow: hidden;
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-          filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
 }
 
 .postphoto_3 img {
@@ -797,8 +831,8 @@ div.postcardimg4 {
   margin-top: 5px;
   margin-bottom: 5px;
   overflow: hidden;
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-          filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
+  -webkit-filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
+          filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.6));
 }
 
 .postphoto_4 img {
@@ -868,6 +902,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox2 {
+    margin-top: 27px;
     margin-bottom: 30px;
   }
 }
@@ -896,9 +931,9 @@ div.postcardimg4 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -991,6 +1026,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox3 {
+    margin-top: 27px;
     margin-bottom: 30px;
   }
 }
@@ -1029,11 +1065,13 @@ div.postcardimg4 {
   font-size: 24px;
   color: #a5361c;
   background-color: lightyellow;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1200px) {
   .post_text1 {
     width: 100%;
+    margin-top: 20px;
   }
 }
 
@@ -1050,6 +1088,7 @@ div.postcardimg4 {
   font-size: 24px;
   color: #a5361c;
   background-color: lightyellow;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1173,7 +1212,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox4 {
-    margin-top: 0px;
+    margin-top: 27px;
     margin-bottom: 10px;
   }
 }
@@ -1200,12 +1239,8 @@ div.postcardimg4 {
   }
 }
 
-#address1 {
-  outline: none;
-  float: left;
-  margin-left: 0px;
-  margin-right: 0px;
-  width: calc(100% - 10px);
+#address {
+  resize: none;
 }
 
 .cityform-control {
@@ -1221,21 +1256,17 @@ div.postcardimg4 {
 .inputform {
   border-radius: 5px;
   border: 1px solid darkgray;
-  height: 25px;
-  padding-left: 10px;
+  width: 200px;
+  padding: 5px;
   font-family: 微軟正黑體;
   font-size: 16px;
   outline: none;
-  margin: 5px 0;
-}
-
-.download {
-  margin-top: 10px;
+  margin: 0;
 }
 
 @media screen and (max-width: 1200px) {
   .download {
-    margin-top: 0px;
+    margin-top: 3px;
     margin-bottom: 0px;
   }
 }
@@ -1247,7 +1278,7 @@ div.postcardimg4 {
 }
 
 .step_btnbox5 {
-  margin-top: 240px;
+  margin-top: 224px;
   margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1260,7 +1291,7 @@ div.postcardimg4 {
 
 @media screen and (max-width: 1200px) {
   .step_btnbox5 {
-    margin-top: 0px;
+    margin-top: 3px;
     margin-bottom: 10px;
   }
 }

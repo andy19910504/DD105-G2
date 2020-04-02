@@ -82,21 +82,4 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
 
 
 
-// document.getElementById("step_btn9").addEventListener("click", function () {
-//     let xhr = new XMLHttpRequest();
-//     xhr.onload = function () {
-//         if (xhr.status == 200) {
-//             //modify here
-//             alert(xhr.responseText);
-//             location.reload();
-//         } else {
-//             alert(xhr.status);
-//         }
-//     }
-//     var url = "./php/newicon.php?num=" + document.getElementById("IconNum").value + "&point=" + document.getElementById("IconPoint").value +
-//         "&url=" + document.getElementById("IconUrl").value;
-//     xhr.open("Get", url, true);
-//     xhr.send(null);
-// });
-
 

@@ -1,31 +1,6 @@
 function doFirst() {
 
 
-    function iconblack() {
-        if (localStorage.getItem("hasRunBefore") === null) {
-            // show manual-modal
-            $('header.fullHeader').addClass('header-backward');
-            window.scrollTo(0, 556);
-            $('.manual-modal').css({
-                top: '556px'
-            });
-            $('body').addClass('scroll-lock');
-
-            localStorage.setItem("hasRunBefore", true);
-        } else {
-            $('.fullHeader').removeClass('header-backward');
-            $('.manual-modal').addClass('hide-manual-modal');
-            $('body').removeClass('scroll-lock');
-        }
-        // remove manual-modal
-        $('.manual-modal').click(function () {
-            $('.fullHeader').removeClass('header-backward');
-            $('.manual-modal').addClass('hide-manual-modal');
-            $('body').removeClass('scroll-lock');
-        });
-    }
-
-    document.getElementById("step_btn3").addEventListener("click", iconblack);
 
     // /*第一支程式: 切換步驟窗格--點擊時需要(1)切換postRight  (2)切換步驟的黃底postStepYellow
     $(document).ready(function () {
@@ -67,10 +42,6 @@ function doFirst() {
             $("#postcardCanvas").css("display", "none");
             $("#postcardback").css("display", "block");
             $(".canvas-container").css("display", "block");
-
-
-
-
         });
         /*步驟3~步驟2*/
         $("#step_btn4").on("click", function () {
@@ -123,25 +94,55 @@ function doFirst() {
             $(".canvas-container").css("display", "block");
         });
         /*完成*/
-        $("#step_btn9").on("click", function () {
+        let btn = document.getElementsByName("btn");
+        btn[0].onclick = function () {
             let login = $('.sign').text();
             if (login == "登入登入") { //顯示登入登入--->未登入跳出提醒
                 $("#loginBlock").css("display", "block");
-            }
-            else {  //已登入則打開燈箱
-                if ($("#name").val() == "") {
+            } else { //已登入則打開
+                if ($("#name").val() != "" && $("#address").val() != "") {} else if ($("#name").val() == "") {
                     alert("你尚未填寫姓名");
                     eval("document.form['name'].focus()");
+
                 } else if ($("#address").val() == "") {
                     alert("你尚未填寫地址");
                     eval("document.form['address'].focus()");
-                } else if ($("#address1").val() == "") {
-                    alert("你尚未填寫地址");
-                    eval("document.form['address1'].focus()");
-                } 
+                }
             }
-        });
+            let receiver_name = $('#name').val();
+            let receiver_address = $('#address').val();
+            var canvas = document.getElementById("postcardCanvas");
+            var dataURL = canvas.toDataURL("image/png");
+            var canvas2 = document.getElementById("postcardback");
+            var dataURL2 = canvas2.toDataURL("image/png");
+
+            let neworderForm = new FormData();
+            neworderForm.append('hidden_data', dataURL);
+            neworderForm.append('hidden_data2', dataURL2);
+            neworderForm.append('receiver_name', receiver_name);
+            neworderForm.append('receiver_address', receiver_address);
+
+
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    if (xhr.responseText == "error") {
+                        alert("Error");
+
+                    } else {
+                        alert('已將商品加入訂單囉!!!');
+                        location.reload();
+                    }
+                } else {
+                    // alert()
+                }
+            }
+            xhr.open('POST', './php/AddOrder.php', true);
+            xhr.send(neworderForm);
+        }
     });
+
+
 
     /*步驟一畫圖 */
 
@@ -175,7 +176,6 @@ function doFirst() {
             canvas.style.width = canvas.width = "900";
             canvas.style.height = canvas.height = "560";
         }
-
 
         const myFile = document.querySelector('#file')
         myFile.addEventListener('change', function (e) {
@@ -220,9 +220,9 @@ function doFirst() {
         })
 
 
-
         let img = new Image();
         img.src = './img/postcard/postcardBGI_1.png';
+        context.drawImage(img, 0, 0, canvas.width, canvas.height); //drawImage(img,x,y,width,height)
         let img2 = new Image();
         img2.src = './img/postcard/postcardBGI_2.png';
         let img3 = new Image();
@@ -399,15 +399,23 @@ function doFirst() {
     let postBGC_2 = document.getElementById("postBGC_2");
     let postBGC_3 = document.getElementById("postBGC_3");
     let img = new Image();
-    img.src = './img/postcard/hip-square.png';
+    img.src = './img/postcard/line-font.png';
     let img2 = new Image();
-    img2.src = './img/postcard/wormz.png';
+    img2.src = './img/postcard/blue-font.png';
     let img3 = new Image();
-    img3.src = './img/postcard/p0126_m.png';
+    img3.src = './img/postcard/pink-font.png';
 
+
+    fabric.Image.fromURL('./img/postcard/line-back.png', (img) => {
+        const oImg = img.set({
+            scaleX: postcardback.width / img.width,
+            scaleY: postcardback.height / img.height,
+        })
+        postcardback.setBackgroundImage(oImg).renderAll()
+    })
 
     function postcardbackBGI_1() {
-        fabric.Image.fromURL('./img/postcard/hip-square.png', (img) => {
+        fabric.Image.fromURL('./img/postcard/line-back.png', (img) => {
             const oImg = img.set({
                 scaleX: postcardback.width / img.width,
                 scaleY: postcardback.height / img.height,
@@ -417,7 +425,7 @@ function doFirst() {
     }
 
     function postcardbackBGI_2() {
-        fabric.Image.fromURL('./img/postcard/wormz.png', (img) => {
+        fabric.Image.fromURL('./img/postcard/blue-back.png', (img) => {
             const oImg = img.set({
                 scaleX: postcardback.width / img.width,
                 scaleY: postcardback.height / img.height,
@@ -427,7 +435,7 @@ function doFirst() {
     }
 
     function postcardbackBGI_3() {
-        fabric.Image.fromURL('./img/postcard/p0126_m.png', (img) => {
+        fabric.Image.fromURL('./img/postcard/pink-back.png', (img) => {
             const oImg = img.set({
                 scaleX: postcardback.width / img.width,
                 scaleY: postcardback.height / img.height,
@@ -447,6 +455,36 @@ function doFirst() {
 
 
 
+
+    document.getElementById("step_btn3").addEventListener("click", iconblack);
+
+    function iconblack() {
+        if (localStorage.getItem("hasRunBefore") === null) {
+            // show manual-modal
+            $('header.fullHeader').addClass('header-backward');
+            window.scrollTo(0, 556);
+            $('.manual-modal').css({
+                top: '556px'
+            });
+            $('body').addClass('scroll-lock');
+
+            localStorage.setItem("hasRunBefore", false);
+        } else {
+            $('.fullHeader').removeClass('header-backward');
+            $('.manual-modal').addClass('hide-manual-modal');
+            $('body').removeClass('scroll-lock');
+        }
+        // remove manual-modal
+        $('.manual-modal').click(function () {
+            $('.fullHeader').removeClass('header-backward');
+            $('.manual-modal').addClass('hide-manual-modal');
+            $('body').removeClass('scroll-lock');
+        });
+    }
+
+   
+
+
     //操作畫面步驟三(選插圖)
     //步驟3_________________________________________________________________________________
     var postFather = document.getElementById("postWhiteBack");
@@ -457,7 +495,6 @@ function doFirst() {
     var postcardback = new fabric.Canvas('postcardback', {
         hoverCursor: 'progress', // 移動時鼠標顯示
         freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
-
     });
 
     postcardback.setWidth(postcardbackW);
@@ -523,18 +560,10 @@ function doFirst() {
 
 
 
-    $('.black').click(function () {
-        confirm("這個貼圖需花50點，是否確定購買？");
-        $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
-    });
-
-
-
-
-
-
-
-
+    // $('.black').click(function () {
+    //     confirm("這個貼圖需花50點，是否確定購買？");
+    //     $("#icon4").attr("src", "./img/postcard/postIcon06.png"); //要更換的圖片位置
+    // });
 
     postcardback.on('mouse:dblclick', e => {
         console.log(e)
@@ -667,24 +696,24 @@ function doFirst() {
         $('.inputform').blur(function () {
             $(this).css("border-color", "")
         })
-        var rule1 = /^.{3,5}$/;
+        var rule1 = /^.{2,16}$/;
         $("#name").blur(function () {
             if (rule1.test($(this).val())) {
                 $('.error1').text('')
                 $(this).css("border-color", "green")
             } else {
-                $('.error1').text('不符合規則，請輸入3-5個任意文字')
+                $('.error1').text('不符合規則，請輸入2~16個任意文字')
                 $(this).css("border-color", "red")
             }
         })
 
     })
-    $("#address1").twzipcode({
-        zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
-        css: ["city_form-control", "town_form-control"], // 自訂 "城市"、"地別" class 名稱 
-        countyName: "city", // 自訂城市 select 標籤的 name 值
-        districtName: "town" // 自訂區別 select 標籤的 name 值
-    });
+    // $("#address1").twzipcode({
+    //     zipcodeIntoDistrict: true, // 郵遞區號自動顯示在區別選單中
+    //     css: ["city_form-control", "town_form-control"], // 自訂 "城市"、"地別" class 名稱 
+    //     countyName: "city", // 自訂城市 select 標籤的 name 值
+    //     districtName: "town" // 自訂區別 select 標籤的 name 值
+    // });
     // $("#step_btn9").click(function () {
     //     let yyy = document.getElementById("name");
     //      yyy = yyy.value;
@@ -728,40 +757,14 @@ function doFirst() {
     //     xhr.open('POST', './php/AddOrder.php', true);
     //     xhr.send(formData);
     // }
-$(document).on('click', '#step_btn9', order);
-
-function order() {
-    let receiver_name = $('#name').val(); 
-    let receiver_address = $('#address').val(); 
-    var canvas = document.getElementById("postcardCanvas");
-    var dataURL = canvas.toDataURL("image/png");
-    var canvas2 = document.getElementById("postcardback");
-    var dataURL2 = canvas2.toDataURL("image/png");
-
-    let neworderForm = new FormData();
-    neworderForm.append('hidden_data', dataURL);
-    neworderForm.append('hidden_data2', dataURL2);
-    neworderForm.append('receiver_name', receiver_name);
-    neworderForm.append('receiver_address', receiver_address);
 
 
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-        if (xhr.status == 200) {
-            if (xhr.responseText == "error") { 
-                alert("Error");
 
-            } else {
-                alert('已將商品加入購物車囉!!!');
-                location.reload();
-            }
-        } else {
-            alert(xhr.status)
-        }
-    }
-    xhr.open('POST', './php/AddOrder.php', true);
-    xhr.send(neworderForm);
-}
+
+
+
+    // $(document).on('click', '#step_btn9', order);
+
 
 }
 window.addEventListener('load', doFirst);
