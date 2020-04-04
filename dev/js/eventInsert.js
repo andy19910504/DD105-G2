@@ -26,7 +26,7 @@ function insertRow(e) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            // alert(xhr.responseText);
+            alert(xhr.responseText);
             location.reload();
         } else {
             alert(xhr.status + "失敗");
@@ -57,12 +57,11 @@ function imgChange() {
         let checkImg = document.getElementById('viewCheckImg');
         checkImg.src = image.src;
     });
-    
+
 }
 
 //把第二步驟抓到的值放到第三步驟
 function stepCheck() {
-
     let checkRoute = $('.routeClickName').text();//抓被點選的路線名稱
     let checkAtractions = $('.attractions').text();//抓被點選的景點
     let event_name = $('#actTitle').val();
@@ -78,6 +77,7 @@ function stepCheck() {
     document.getElementById('checkPlace').innerText = meeting_place;
     document.getElementById('checkPeople').innerText = max_attendance;
     document.getElementById('checkInfo').innerText = event_information;
+
 }
 
 
@@ -90,6 +90,7 @@ function routeClick() {
         console.log(routeNum)
         //每次點選都清空
         $('.routeClick').text('');
+
         //append 點選到的路線和景點+路線編號
         $(`<div> <p class="routeClickName">${routeName}</p></div> <div> <p class="attractions">${attractions}</p></div> <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}">`).appendTo('.routeClick');
 
@@ -202,11 +203,38 @@ function step() {
         $(this).parent().parent().css('display', 'none');
 
     });
-    //下一步
     $(".nextStep").click(function () {
-        //換div
+        //換div 
         $(this).parent().parent().next().css('display', 'flex');
         $(this).parent().parent().css('display', 'none');
+
+    });
+    //下一步
+    $(".twoNextStep").click(function () {
+        //換div 
+        if (document.getElementById('eventImg').files[0] == undefined) {
+            alert("請上傳圖片");
+            return
+        } else if ($('#actTitle').val() == false) {
+            alert("請輸入揪團名稱");
+            return
+        }
+        else if ($('#actDate').val() == false) {
+            alert("請選擇活動日期");
+            return
+        }
+        else if ($('#meetPlace').val() == false) {
+            alert("請選擇集合地點");
+            return
+        }
+        else if ($('#eventInfo').val() == false) {
+            alert("請輸入活動介紹");
+            return
+        } else {
+            $(this).parent().parent().next().css('display', 'flex');
+            $(this).parent().parent().css('display', 'none');
+        }
+
     });
 
 }

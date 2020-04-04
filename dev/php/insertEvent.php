@@ -18,7 +18,7 @@ try{
     $events->bindValue(":event_cover_url",$_FILES["event_cover_url"]['name']);
     $events->execute();
     
-    // echo "成功發起了", $events->rowCount(), "個揪團";
+    echo "成功發起了", $events->rowCount(), "個揪團";
 
 }catch(PDOException $e){
     echo $e->getMessage();

@@ -412,6 +412,10 @@ $(document).ready(function(){
 
         //get quiz content
         function getQuizContent(checkpoint){
+            $('.test').text('');
+            $('.opt1').text('');
+            $('.opt2').text('');
+            $('.opt3').text('');
             $('.opt1, .opt2, .opt3').removeClass('click-disabled');
             $('.opt1, .opt2, .opt3').removeClass('right');
             $('.opt1, .opt2, .opt3').removeClass('wrong');
@@ -421,7 +425,6 @@ $(document).ready(function(){
             xhr.send(null);
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    console.log(JSON.parse(xhr.responseText));
                     var tests = JSON.parse(xhr.responseText);
                     var test = '';
                     var opt1 = '';
