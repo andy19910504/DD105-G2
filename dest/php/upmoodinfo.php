@@ -30,7 +30,7 @@ try {
             $namee = explode(".",$_FILES['mood_pho']['name']);//00.jpg
             // echo $namee[0];
             echo $namee[1];
-            $to = "../img/moodPhoto/moodPic$post_number.$namee[1]";
+            $to = "../img/moodPhoto/moodPic$mood_number.$namee[1]";
             // $to = "images/{$_FILES['upFile']['name']}";
             echo $to;
             // echo `event_cover_url$event_number.$namee[1]`;
@@ -41,7 +41,7 @@ try {
                 //回寫照片的檔名為會員編號
                 $sql = "update `mood` set mood_photo=:photo where mood_number=:mood_number";
                     $upopenpho = $pdo->prepare($sql);
-                        $upopenpho->bindvalue(":photo","moodPic$post_number.$namee[1]");
+                        $upopenpho->bindvalue(":photo","moodPic$mood_number.$namee[1]");
                         $upopenpho->bindvalue(":mood_number",$mood_number);
                         $upopenpho->execute();
                 if($upopenpho->rowCount() == 1){

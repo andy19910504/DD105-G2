@@ -184,7 +184,7 @@ window.addEventListener("load", function () {
                 alert(xhr.status);
             }
         }
-        var url = "./php/member/register.php?register_acc=" + document.getElementById("register_acc").value
+        var url = "./php/register.php?register_acc=" + document.getElementById("register_acc").value
             + "&register_nam=" + document.getElementById("register_nam").value
             + "&register_email=" + document.getElementById("register_email").value
             + "&register_psw=" + document.getElementById("register_psw").value;
