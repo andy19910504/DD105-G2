@@ -1,6 +1,6 @@
 <?php
 try{
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
 
     //判斷sql是 官方路線 or 自訂路線
     if($_POST["event_sort"] == "official"){

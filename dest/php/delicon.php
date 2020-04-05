@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $sql = "delete from `mem_product` where customized_product_number = :Icon_num ";
     $delicons = $pdo->prepare($sql);
     $delicons->bindvalue(":Icon_num",$_POST["Icon_num"]);

@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $num=$_GET["num"];
     $point=$_GET["point"];
     $url=$_GET["url"];
