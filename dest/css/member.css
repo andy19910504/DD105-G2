@@ -473,8 +473,7 @@ blockquote, q {
   margin-top: 20px;
   border: 6px solid #ccc;
   border-radius: 6px;
-  height: 500px;
-  border: 1px solid red; }
+  height: 500px; }
 
 @media screen and (max-width: 767px) {
   .member_info_line_all_left {
@@ -665,9 +664,7 @@ blockquote, q {
   width: 40%;
   padding: 1%; }
   .member_info_order_bottom_contrary div {
-    overflow: hidden;
-    width: 337px;
-    height: 234px; }
+    overflow: hidden; }
   .member_info_order_bottom_contrary img {
     transition: all 0.8s; }
 

@@ -86,7 +86,7 @@
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/backNav.js"></script>
     <script src="./js/backRobotGetList.js"></script>
-    <script src="./js/backRobotInsert1.js"></script>
+    <script src="./js/backRobotInsert.js"></script>
     <script src="./js/backRobotUpdate.js"></script>
     <script src="./js/backRobotDelete.js"></script>
     <script>
@@ -100,7 +100,7 @@
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 member = JSON.parse(xhr.responseText);
-                console.log(member);
+                // console.log(member);
                 $id("managerId").innerHTML = member.memName;
             }
             xhr.open("get", "./php/loginInfoForBack.php", true);

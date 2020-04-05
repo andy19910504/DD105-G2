@@ -3,7 +3,7 @@
     $member = $_SESSION["member_number"];
 
 try{
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     // 顯示官方路線
     $sql = "select * from `routes` r 
     join `routes_list` l on(r.route_number = l.route_number) 

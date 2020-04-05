@@ -17,21 +17,21 @@ function insertRow(e) {
     e.preventDefault();
 
     //先抓取被選到的 揪團編號
-    let event_number;
-    children = $('#eventinfoLight').children().length; //6
-    for (i = 0; i < children; i++) {
-        theCSS = $(`.eventinfo_back:nth-child(${i + 1})`).css('display');
-        console.log(theCSS)
-        if (theCSS == 'flex') {
-            event_number = $(`.eventinfo_back:nth-child(${i + 1})`).attr('psn')
-        }
+    let event_number = $('.eventinfo_back').attr('psn');
+    // children = $('#eventinfoLight').children().length; //6
+    // for (i = 0; i < children; i++) {
+    //     theCSS = $(`.eventinfo_back:nth-child(${i + 1})`).css('display');
+    //     console.log(theCSS)
+    //     if (theCSS == 'flex') {
+    //         event_number = $(`.eventinfo_back:nth-child(${i + 1})`).attr('psn')
+    //     }
 
-    }
+    // }
     //再抓檢舉原因
     let eventReportReason = $('input[name=reason]:checked').val();
     //先判斷是否有登入會員
     let login = $('.sign').text();
-    console.log(login); 
+    // console.log(login); 
     if (login == "登入登入") {  //顯示登入登入--->未登入跳出提醒
         alert("請先登入喔~!");
         return;
@@ -47,10 +47,10 @@ function insertRow(e) {
     document.getElementById("event_report_reason").value = eventReportReason;
 
     //-------------------測試值是否正確放入表單--------------------
-    console.log("----------------------");
-    console.log(document.getElementById("event_number").value);
-    console.log(document.getElementById("event_report_reason").value);
-    console.log("----------------------");
+    // console.log("----------------------");
+    // console.log(document.getElementById("event_number").value);
+    // console.log(document.getElementById("event_report_reason").value);
+    // console.log("----------------------");
     //------------------------------------------------------------
 
     //用那個表單建立一個JS表單物件
@@ -60,6 +60,9 @@ function insertRow(e) {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
+            alert("檢舉成功!");
+            location.reload();
+
             //alert(xhr.responseText);
         } else {
             alert(xhr.status + "失敗");
@@ -70,9 +73,6 @@ function insertRow(e) {
     xhr.send(updateFormData);
     let eventreport_back = $('#eventreport_back');
     eventreport_back.css('display', 'none');
-
-    alert("檢舉成功!");
-
 }
 //註冊送出檢舉的click事件
 $(document).on('click', '.reportEnter', insertRow);

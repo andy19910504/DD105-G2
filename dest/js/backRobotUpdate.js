@@ -14,12 +14,12 @@ function updateRow() {
     document.getElementById("keywordStatus").value = keywordStatus;
 
     //-------------------測試值是否正確放入表單--------------------
-    console.log("----------------------");
-    console.log(document.getElementById("keywordNo").value);
-    console.log(document.getElementById("keywordWord").value);
-    console.log(document.getElementById("keywordAns").value);
-    console.log(document.getElementById("keywordStatus").value);
-    console.log("----------------------");
+    // console.log("----------------------");
+    // console.log(document.getElementById("keywordNo").value);
+    // console.log(document.getElementById("keywordWord").value);
+    // console.log(document.getElementById("keywordAns").value);
+    // console.log(document.getElementById("keywordStatus").value);
+    // console.log("----------------------");
     //------------------------------------------------------------
 
 

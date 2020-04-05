@@ -109,7 +109,7 @@
     <div class="wrapper">
         <header>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./backMember.html">
             <img src="./img/index/LOGO.svg" width="100" class="d-inline-block align-top">
         </a>
         <div>
@@ -227,7 +227,7 @@
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 member = JSON.parse(xhr.responseText);
-                console.log(member);
+                // console.log(member);
                 $id("managerId").innerHTML = member.memName;
             }
             xhr.open("get", "./php/loginInfoForBack.php", true);

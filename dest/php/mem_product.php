@@ -1,6 +1,6 @@
 <?php
 try {
-    require_once("connectBooks.php");
+    require_once("./connectBooks.php");
     $sql = "select * from `mem_product` ";
     $mem_products = $pdo->query($sql);
 

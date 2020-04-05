@@ -152,13 +152,13 @@ $(document).ready(function () {
       xhr.send(customForm);
       xhr.onload = function () {
         if (xhr.status == 200) {
-          alert('您的路線已儲存，請到會員專區查看。謝謝！');
+          alert('您的路線已儲存，請到會員專區查看。謝謝!');
         } else {
-          alert(xhr.status + '請聯繫客服人員，謝謝！');
+          alert('似乎出了點問題哦，請重新整理!');
         }
       }
     } else {
-      alert('請填寫自訂路線名稱和簡介！！！！');
+      alert('請填寫自訂路線名稱和簡介!!!!!');
     }
   });
 
