@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
             // 取得要刪除的景點編號
             let delNum = $(this).parent().parent().children().first().children().text();
             document.getElementById("editNumber").value = delNum;
-            console.log(document.getElementById("editNumber").value)
+            // console.log(document.getElementById("editNumber").value)
             // // 放入表單中
             var editForm = new FormData(document.getElementById("editForm"));
 

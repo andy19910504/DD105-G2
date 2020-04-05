@@ -37,18 +37,10 @@
         </div>
         <!-- //breadCrumb -->
         @@include('./layout/breadCrumb.html',{
-        "link1":"./google.com.tw",
+        "link1":"./main.html",
         "innerText1":"台北散步",
-        "link2":"./google.com.tw",
-        "innerText2":"揪團散步去",
-        "link3":"./google.com.tw",
-        "innerText3":"揪團散步去",
-        "link4":"./google.com.tw",
-        "innerText4":"揪團散步去",
-        "link5":"./google.com.tw",
-        "innerText5":"揪團散步去",
-        "link6":"./google.com.tw",
-        "innerText6":"揪團散步去 "
+        "link2":"./event.html",
+        "innerText2":"揪團散步去"
         })
         <!-- //我要揪團按鈕 // btnCust link：連結的網址 innerText：按鈕名稱 -->
         <div class="btnCust eventInsert">我要揪團</div>
@@ -223,8 +215,11 @@
             <!-- //燈箱們-我要揪團 -->
             <div class="backDrop" id="eventhold_back">
                 <div class="lightbox_holdevent_info">
-                    <!-- 關閉 -->
-                    <div class="close eventhold_close">✘</div>
+                    <!-- 叉叉按鈕 -->
+                    <div id="closeMoodBtn">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                    </div>
                     <!-- 標題 -->
                     <div class="holdevent_title">
                         <h2>我要揪團</h2>
@@ -316,12 +311,12 @@
                                 </div>
                                 <!-- 顯示選到的路線+景點 -->
                                 <div class="routeClick">
-                                    <div>
+                                    <!-- <div>
                                         <p class="routeClickName"></p>
                                     </div>
                                     <div>
                                         <p class="attractions"></p>
-                                    </div>
+                                    </div> -->
                                     <!-- <input type="hidden" name="routeNum" id="routeNum" value="${routeNum}"> -->
                                 </div>
                                 <!-- 上下一步 -->
@@ -377,16 +372,16 @@
                                         <div div class="holderInfoBox">
                                             <label class="label2"><i class="fas fa-male"></i> 報名人數上限 :</label>
                                             <select class="people" name="maxPeople" id="maxPeople">
-                                                <option value="1位">1位</option>
-                                                <option value="2位">2位</option>
-                                                <option value="3位">3位</option>
-                                                <option value="4位">4位</option>
-                                                <option value="5位">5位</option>
-                                                <option value="6位">6位</option>
-                                                <option value="7位">7位</option>
-                                                <option value="8位">8位</option>
-                                                <option value="9位">9位</option>
-                                                <option value="10位">10位</option>
+                                                <option value="1">1位</option>
+                                                <option value="2">2位</option>
+                                                <option value="3">3位</option>
+                                                <option value="4">4位</option>
+                                                <option value="5">5位</option>
+                                                <option value="6">6位</option>
+                                                <option value="7">7位</option>
+                                                <option value="8">8位</option>
+                                                <option value="9">9位</option>
+                                                <option value="10">10位</option>
                                             </select>
                                         </div>
                                         <div class="holderInfoBox">
@@ -400,7 +395,7 @@
                                     <div class="backStep">
                                         <a href="#" class="btnPink">上一步</a>
                                     </div>
-                                    <div class="nextStep twoNextStep">
+                                    <div class="twoNextStep">
                                         <a href="#" class="btnPink">下一步</a>
                                     </div>
                                 </div>
@@ -558,27 +553,31 @@
 
             <!-- //燈箱們-揪團檢舉 -->
             <div class="backDrop" id="eventreport_back">
-                <div class="lightbox_report">
-                    <div class="lightbox_report_info">
-                        <div class="reportTitle">
-                            <h2>協助我們了解情況?</h2>
+                <div class="lightbox_report_info">
+                    <div class="reportTitle">
+                        <h2>協助我們了解情況?</h2>
+                    </div>
+                    <form>
+                        <div>
+                            <input type="radio" name="reason" id="reason1" value="色情暴力等不當內容">
+                            <label for="reason1">色情暴力等不當內容</label>
                         </div>
-                        <form>
-                            <input type="radio" name="reason" value="色情暴力等不當內容"> 色情暴力等不當內容
-                            <br>
-                            <input type="radio" name="reason" value="歧視謾罵他人"> 歧視謾罵他人
-                            <br>
-                            <input type="radio" name="reason" value="其他違規違法項目"> 其他違規違法項目
-                            <br>
-                            <div class="reportSent">
-                                <div class="reportEnter">
-                                    <a class="btnPink">確定</a>
-                                </div>
-                                <div class="reportCancel">
-                                    <a class="btnPink">取消</a>
-                                </div>
-                            </div>
-                        </form>
+                        <div>
+                            <input type="radio" name="reason" id="reason2" value="歧視謾罵他人">
+                            <label for="reason2">歧視謾罵他人</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="reason" id="reason3" value="其他違規違法項目">
+                            <label for="reason3">其他違規違法項目</label>
+                        </div>
+                    </form>
+                    <div class="reportSent">
+                        <div class="reportEnter">
+                            <a class="btnPink">確定</a>
+                        </div>
+                        <div class="reportCancel">
+                            <a class="btnPink">取消</a>
+                        </div>
                     </div>
                 </div>
             </div>

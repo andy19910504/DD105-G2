@@ -23,14 +23,14 @@ window.addEventListener("load", function () {
             document.getElementById("editLatitude").value = editLatitude;
             document.getElementById("editStatus").value = editStatus;
             // 檢驗
-            console.log(document.getElementById("editNumber").value);
-            console.log(document.getElementById("editName").value);
-            console.log(document.getElementById("editAddress").value);
-            console.log(document.getElementById("editInfo1").innerHTML);
-            console.log(document.getElementById("editInfo2").innerHTML);
-            console.log(document.getElementById("editLongitude").value);
-            console.log(document.getElementById("editLatitude").value);
-            console.log(document.getElementById("editStatus").value);
+            // console.log(document.getElementById("editNumber").value);
+            // console.log(document.getElementById("editName").value);
+            // console.log(document.getElementById("editAddress").value);
+            // console.log(document.getElementById("editInfo1").innerHTML);
+            // console.log(document.getElementById("editInfo2").innerHTML);
+            // console.log(document.getElementById("editLongitude").value);
+            // console.log(document.getElementById("editLatitude").value);
+            // console.log(document.getElementById("editStatus").value);
 
             var editForm = new FormData(document.getElementById("editForm"));
 

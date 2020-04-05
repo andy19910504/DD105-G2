@@ -50,7 +50,7 @@ function showAns(keyword){
     let chatContent = document.getElementById("chatContent");
     let ansTable = JSON.parse(keyword);
     let chatHtml = "";
-    console.log(ansTable);
+    // console.log(ansTable);
 
     chatHtml += `
             <div class="userSay">${ansTable.keyword_word}</div>
@@ -66,12 +66,12 @@ function showAns(keyword){
 
 function getAns(){
     let spanText = $(this).text();
-    console.log(spanText);
+    // console.log(spanText);
 
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            console.log(xhr.responseText);
+            // console.log(xhr.responseText);
             //到php撈到此關鍵字的資料，送到showAns中執行
             showAns(xhr.responseText);
         } else {
@@ -80,7 +80,7 @@ function getAns(){
     }
 
     let url = "./php/getRobotAns.php?keyword_word=" + spanText;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 }
@@ -97,7 +97,7 @@ function showAnsByInput(keyword){
     let chatContent = document.getElementById("chatContent");
     let ansTable = JSON.parse(keyword);
     let chatHtml = "";
-    console.log(ansTable);
+    // console.log(ansTable);
     if(ansTable.keyword_response){
         chatHtml += `
             <div class="userSay">${ansTable.keyword_word}</div>
@@ -124,12 +124,12 @@ function showAnsByInput(keyword){
 
 function getAnsByInput(){
     let inputText = $('#botInput').val();
-    console.log(inputText);
+    // console.log(inputText);
 
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {
-            console.log(xhr.responseText);
+            // console.log(xhr.responseText);
             //到php撈到此關鍵字的資料，送到showAnsByInput中執行
             showAnsByInput(xhr.responseText);
         } else {
@@ -138,7 +138,7 @@ function getAnsByInput(){
     }
 
     let url = "./php/getRobotAns.php?keyword_word=" + inputText;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 }

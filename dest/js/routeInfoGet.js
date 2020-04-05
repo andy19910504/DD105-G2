@@ -1,8 +1,7 @@
-
 // 路線的分類filter，有幾條官方路線就要顯示幾個 filter
 function getFilterName(info) {
     let routeInfo = JSON.parse(info);
-    console.log(routeInfo)
+    // console.log(routeInfo)
     let filter = document.querySelector('.filterAll');
     let filterRows = "";
 
@@ -17,7 +16,7 @@ function getFilterName(info) {
 
     // 傳送地一個filter的值來取得第一條路線資訊
     let firstRoute = document.querySelectorAll('.filter')[0].innerHTML;
-    console.log(firstRoute)
+    // console.log(firstRoute)
     let firstRouteForm = new FormData();
     firstRouteForm.append('firstRoute', firstRoute);
 
@@ -96,48 +95,49 @@ function firstRouteEvent() {
             // 新增卡片
             let cardBox = $id("cardBox");
             let eventTable = JSON.parse(xhr.responseText);//把JSON字串翻譯成JS
-            console.log(eventTable);
+            // console.log(eventTable);
             let html = "";
             for (i = 0; i < eventTable.length; i++) {
                 html += `
-         <div class="eventCard wow zoomIn">
-             <div class="cardTop">
-             `
+                <div class="eventCard wow zoomIn">
+                    <div class="cardTop">
+                    `
                 if (eventTable[i].member_number == null) {
                     html += `
-                 <div class="starMark">
-                     <div><img src="./img/event/event_star.png" alt=""></div>
-                     <div class="markWord">官方路線</div>
-                 </div>
-                 `
+                        <div class="starMark">
+                            <div><img src="./img/event/event_star.png" alt=""></div>
+                            <div class="markWord">官方路線</div>
+                            <input type="hidden" name="event_sort" value="official" class="event_sort">
+                        </div>
+                        `
                 } else {
-                    html += `<div class="starMark"></div>`
+                    html += `<div class="starMark"><input type="hidden" name="event_sort" value="member" class="event_sort"></div>`
                 }
                 html += `
-                 <div class="dotWrap">
-                 </div>
-             </div>
-             <div class="eventPicWrap">
-                 <img src="./img/eventPhoto/${eventTable[i].event_cover_url}" class="eventPic">
-             </div>
-             <div class="cardText">
-                 <h1>${eventTable[i].event_name}</h1>
-                 <p>
-                     活動日期:${eventTable[i].event_date}<br>
-                     報名截止:${eventTable[i].enroll_end_date}<br>
-                     集合地點:${eventTable[i].meeting_place}
-                 </p>
-                 <span id="more${eventTable[i].event_number}" class="lightDetail">more</span>
-             </div>
-         </div> 
-         `;
+                        <div class="dotWrap">
+                        </div>
+                    </div>
+                    <div class="eventPicWrap">
+                        <img src="./img/eventPhoto/${eventTable[i].event_cover_url}" class="eventPic">
+                    </div>
+                    <div class="cardText">
+                        <h1>${eventTable[i].event_name}</h1>
+                        <p>
+                            活動日期:${eventTable[i].event_date}<br>
+                            報名截止:${eventTable[i].enroll_end_date}<br>
+                            集合地點:${eventTable[i].meeting_place}
+                        </p>
+                        <span id="more${eventTable[i].event_number}" class="lightDetail">more</span>
+                        <input type="hidden" name="event_number" value="${eventTable[i].event_number}" class="event_number">
+                    </div>
+                </div> 
+                `;
             }
             cardBox.innerHTML = html;
 
         } else {
             alert(xhr.status);
         }
-        LightEventinfo(xhr.responseText);
     }
     xhr.open("post", "./php/getEventForConcat.php", true);
     xhr.send(firstRouteForm);

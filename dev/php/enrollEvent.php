@@ -15,7 +15,7 @@ try{
     $event_record->bindValue(":enroll_event_number",$_POST["enroll_event_number"]);
     $event_record->execute();
     
-
+    echo '加入成功';
 
 }catch(PDOException $e){
     echo $e->getMessage();

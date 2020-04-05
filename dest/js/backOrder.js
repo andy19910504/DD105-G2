@@ -2,7 +2,7 @@ window.addEventListener("load", function () {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         order_master = JSON.parse(xhr.responseText);
-        console.log(order_master);
+        // console.log(order_master);
         let OrderList = document.getElementById("OrderList");
         let order_masterRow = ``;
         for (i = 0; i < order_master.length; i++) {
@@ -33,16 +33,16 @@ function updateRow() {
     //先抓取被點"儲存"按鈕的那一列，每個欄位內的值
     let OrderNo = $(this).parent().parent().children().first().text();
     let status = $(this).parent().parent().children().eq(8).children().val();
-    console.log(status)
+    // console.log(status)
     //把抓到的值放到html中一個隱藏的表單內
     document.getElementById("OrderNo").value = OrderNo;
     document.getElementById("status").value = status;
 
     //-------------------測試值是否正確放入表單--------------------
-    console.log("----------------------");
-    console.log(document.getElementById("OrderNo").value);
-    console.log(document.getElementById("status").value);
-    console.log("----------------------");
+    // console.log("----------------------");
+    // console.log(document.getElementById("OrderNo").value);
+    // console.log(document.getElementById("status").value);
+    // console.log("----------------------");
     //------------------------------------------------------------
 
 

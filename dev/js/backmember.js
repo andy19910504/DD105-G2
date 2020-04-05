@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         staff = JSON.parse(xhr.responseText);
-        console.log(staff);
+        // console.log(staff);
         let status = "";
         let manager = document.getElementById("manager");
         let staffRow = `<tr>
@@ -65,7 +65,7 @@ window.addEventListener("load", function () {
                 }
             }
             var url = "./php/delma.php?number=" + num;
-            console.log(url);
+            // console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
 
@@ -108,7 +108,7 @@ window.addEventListener("load", function () {
             }
             var url = "./php/upma.php?number=" + num
                 + "&updatenum=" + updatenum;
-            console.log(url);
+            // console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
 
@@ -138,7 +138,7 @@ window.addEventListener("load", function () {
     let xhr1 = new XMLHttpRequest();
     xhr1.onload = function () {
         memberall = JSON.parse(xhr1.responseText);
-        console.log(memberall);
+        // console.log(memberall);
         let members = document.getElementById("memberall");
         let memberRow = `<tr>
                 <td>編號</td>
@@ -196,7 +196,7 @@ window.addEventListener("load", function () {
             }
             var url = "./php/upmember.php?number=" + num
                 + "&updatenum=" + updatenum;
-            console.log(url);
+            // console.log(url);
             xhr.open("Get", url, true);
             xhr.send(null);
 
@@ -253,7 +253,7 @@ document.getElementById("newma").addEventListener("click", function () {
     var url = "./php/newma.php?name=" + document.getElementById("newma_nam").value
         + "&account=" + document.getElementById("newma_acc").value
         + "&password=" + document.getElementById("newma_psw").value;
-    console.log(url);
+    // console.log(url);
     xhr.open("Get", url, true);
     xhr.send(null);
 });

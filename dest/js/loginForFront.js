@@ -22,7 +22,20 @@ function $id(id) {
 //     xhr.send(null);
 // }; //
 
+function memberCenter() {
+    let login = document.querySelectorAll('.sign')[0];
+    // console.log(login.innerHTML)
+    $(".memberPhoto").click(function () {
+        if (login.innerHTML == "登入") {
+            $(".login").attr("style", "display:block");
+        }else{
+            $(this).attr('href', './member.html');
+        }
+    })
+}
+
 window.addEventListener("load", function () {
+    memberCenter();
     let member;
     // // 檢查是否為登入狀態
     // getLoginInfo();
@@ -39,12 +52,13 @@ window.addEventListener("load", function () {
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status == 200) {  //自server正確的登出
+                    location.reload();
                     $('.sign').text("登入");
                     let memPhoto = `<img src="./img/header/navMember.png">`;
                     $('.memberPhoto').html(memPhoto);
                     let memPoint = "";
                     $(".point").html(memPoint);
-                    location.reload();
+
                 } else {
                     alert(xhr.status);
                 }
@@ -64,7 +78,7 @@ window.addEventListener("load", function () {
         let login_psw = $id("login_psw").value;
         // 登入資訊
         let data_info = `login_acc=${login_acc}&login_psw=${login_psw}`;
-        console.log(data_info);
+        // console.log(data_info);
 
         if (login_acc.length == 0) {
             alert("請填寫正確的帳號");
@@ -86,13 +100,15 @@ window.addEventListener("load", function () {
                         xhr.send(null);
                     } else {
                         member = JSON.parse(xhr.responseText);
-                        console.log(member);
+                        // console.log(member);
+                        location.reload();
                         $(".sign").text("登出");
                         let memPhoto = `<img src="./img/memberPhoto/${member.memPhoto}">`;
                         $('.memberPhoto').html(memPhoto);
 
                         let memPoint = member.memPoint + "點";
                         $(".point").html(memPoint);
+
                     }
                 } else {
                     alert(xhr.status);
@@ -188,7 +204,7 @@ window.addEventListener("load", function () {
             + "&register_nam=" + document.getElementById("register_nam").value
             + "&register_email=" + document.getElementById("register_email").value
             + "&register_psw=" + document.getElementById("register_psw").value;
-        console.log(url);
+        // console.log(url);
         xhr.open("Get", url, true);
         xhr.send(null);
     })
@@ -243,7 +259,7 @@ window.addEventListener("load", function () {
         // xhr.open("Get", url, true);
         // xhr.send(null);
 
-        })
+    })
 
     // 按返回按鈕，回到登入頁
     $(".btnBack").click(function () {

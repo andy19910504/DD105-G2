@@ -7,7 +7,7 @@ function loginInfoBack() {
     xhr.onload = function () {
 
         member = JSON.parse(xhr.responseText);
-        console.log(member);
+        // console.log(member);
         xhr.open("get", "./php/loginInfoForBack.php", true);
         xhr.send(null);
 
@@ -30,8 +30,8 @@ window.addEventListener("load", function () {
 
                 } else {
                     member = JSON.parse(xhr.responseText);
-                    console.log(member);
-                    location.href = "./backSample.html";
+                    // console.log(member);
+                    location.href = "./backMember.html";
                 }
             } else {
                 alert(xhr.status);

@@ -54,7 +54,9 @@
 }
 
 .customForm{
-    border: 2px solid #ccc;
+    background-image: url(../img/route/routeBlockImage.png);
+    // border: 2px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: $radius;
     width: 100%;
     max-width: 800px;

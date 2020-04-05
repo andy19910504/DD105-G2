@@ -28,15 +28,15 @@ window.addEventListener("load", function () {
         let attrLatitude = document.getElementById("attrLatitude").value;
         let attrStatus = document.getElementById("attrStatus").value;
         // 確認
-        console.log(attrName);
-        console.log(attrAddress);
-        console.log(attrInfo1);
-        console.log(attrInfo2);
-        console.log(attrPhoto1);
-        console.log(attrPhoto2);
-        console.log(attrLongitude);
-        console.log(attrLatitude);
-        console.log(attrStatus);
+        // console.log(attrName);
+        // console.log(attrAddress);
+        // console.log(attrInfo1);
+        // console.log(attrInfo2);
+        // console.log(attrPhoto1);
+        // console.log(attrPhoto2);
+        // console.log(attrLongitude);
+        // console.log(attrLatitude);
+        // console.log(attrStatus);
 
             // 建一個表單物件，將值放入表單物件中
         var editForm = new FormData();
@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
             editForm.append('attrLongitude', attrLongitude);
             editForm.append('attrLatitude', attrLatitude);
             editForm.append('attrStatus', attrStatus);
-            console.log(editForm)
+            // console.log(editForm)
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status == 200) {

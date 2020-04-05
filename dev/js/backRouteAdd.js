@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
         editForm.append('routeAttr', routeAttr);
         editForm.append('routeStatus', routeStatus);
 
-        console.log(editForm);
+        // console.log(editForm);
 
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
