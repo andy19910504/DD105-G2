@@ -116,9 +116,12 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
+        $('.progress-container-mobile').removeClass('hide-progress-container-mobile');
         if(!($('.map-container').hasClass('hide-container'))){
             //產生地圖和導航功能
             googleMapCreater();
+            $('.progress-container-mobile').addClass('hide-progress-container-mobile');
         }
     }
 
@@ -129,9 +132,11 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        $('.progress-container-mobile').removeClass('hide-progress-container-mobile');
+        if(window.innerWidth >= 576){
+            $('.progress-container-mobile').addClass('hide-progress-container-mobile');
+        }
         //顯示手機方向鍵、進度條
-        $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
-        $('.progress-container-mobile').toggleClass('hide-progress-container-mobile');
         if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
             // show manual-modal
             $('header.fullHeader').addClass('header-backward');
@@ -673,8 +678,8 @@ $(document).ready(function(){
         }
 
         //一直更新現在位置的導航
-        setInterval(renewStartPlace, 6000);
-        setInterval(setMapCenter, 6000);
+        setInterval(renewStartPlace, 20000);
+        setInterval(setMapCenter, 20000);
 
         //規劃路線
         var markers = [];
