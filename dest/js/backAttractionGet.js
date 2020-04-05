@@ -54,7 +54,7 @@ function checkAttrStatus() {
         } else {
             checkMe[i].checked = true;
         }
-        console.log(checkMe[i].checked)
+        // console.log(checkMe[i].checked)
 
         // console.log(i);
         checkMeLabels[i].onclick = function (e) {
@@ -64,7 +64,7 @@ function checkAttrStatus() {
 
                 checkStatus[i].value = 1;
             }
-            console.log(checkStatus[i].value);
+            // console.log(checkStatus[i].value);
             // console.log(e.target)
         }
     }

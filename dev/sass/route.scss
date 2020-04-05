@@ -276,10 +276,9 @@
     justify-content: center;
     align-items: flex-end;
     .routeInfo{
-        width: 120px;
+        width: 100px;
         position: relative;
-        left: -65px;
-        cursor: pointer;
+        left: 50px;
         animation: sharks 1s alternate infinite;
     }
     img:nth-child(2){
@@ -449,9 +448,17 @@
     transform: rotate(55deg);
     transform-origin: left top;
     transition: transform 1s;
+    @media screen and (max-width:$small){
+        background-color: rgba(255,255,255,.2);
+        transform: unset;
+        transition: unset;
+    }
 }
 .attractionImage .attractionMask:hover::after{
     transform: rotate(0deg);
+    @media screen and (max-width:$small){
+        transform: unset;
+    }
 }
 
 .routeAttractionBlock2{
@@ -810,20 +817,38 @@
     @media screen and (max-width:375px) {
         width: 280px;
     }
+    //右上叉叉
+    #closeMoodBtn{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 1;
+        right: 0px;
+        top: 0px;
+        transition: all 0.8s;
+        &:hover{
+            transform: rotate(180deg);
+        }
+        span.line1,span.line2{
+            display: inline-block;
+            width: 40px;
+            height: 5px;
+            background-color: #646464;
+            border-radius: 8px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        span.line1{
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        span.line2{
+            transform: translate(-50%,-50%) rotate(-45deg);
+        }
+    }    
 }
-.attractionMask .cancelLightBox{
-    width: 30px;
-    position: absolute;
-    right: 2%;
-    top: 2%;
-    z-index: 3;
-    cursor: pointer;
-    transition: transform .8s ease-in-out;
-    opacity: .8;
-    &:hover{
-        transform: rotate(90deg);
-    }
-}
+
 .attractionMask .attractionAll{
     width:2000px;
     display: flex;
@@ -839,9 +864,11 @@
     }
     @media screen and (max-width:$small) {
         width: 600px;
+        transition:transform .5s linear;
     }
     @media screen and (max-width:375px) {
         width: 560px;
+
     }
 }
 .attractionAll .attractionInfoBlock{

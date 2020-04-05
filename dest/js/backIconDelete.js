@@ -30,7 +30,7 @@ function deleteRow(IconNo) {
 function checkDelete(){
     //先抓取被點"刪除"按鈕的那一列，每個欄位內的值
     let IconNo = $(this).parent().parent().children().first().text();
-    console.log( IconNo )
+    // console.log( IconNo )
     //彈出確認視窗，如果選擇確定，再執行deleteRow
     if (confirm("確定要刪除貼圖嗎?")) {
         deleteRow(IconNo);

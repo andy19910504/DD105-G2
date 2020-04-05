@@ -52,6 +52,7 @@
 
         .routeNameBlock input {
             width: 180px;
+            margin: auto;
         }
 
         .routeInfoBlock textarea {
@@ -98,7 +99,9 @@
         .options input[type='checkbox'] {
             margin-right: 10px;
         }
-
+        table{
+            text-align: center;
+        }
         #routeTable .routeAttrName {
             margin-bottom: 5px;
         }
@@ -113,7 +116,7 @@
     <div class="wrapper">
         <header>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./backMember.html">
             <img src="./img/index/LOGO.svg" width="100" class="d-inline-block align-top">
         </a>
         <div>
@@ -187,7 +190,7 @@
                                     </div>
                                     <div class="fieldBlock">
                                         <label for="routeStatus">路線狀態</label>
-                                        <input type="text" name="routeStatus" id="routeStatus">
+                                        <input type="text" name="routeStatus" id="routeStatus" placeholder="未開放:0 開放:1">
                                     </div>
                                 </form>
                             </div>
@@ -284,7 +287,7 @@
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 member = JSON.parse(xhr.responseText);
-                console.log(member);
+                // console.log(member);
                 $id("managerId").innerHTML = member.memName;
             }
             xhr.open("get", "./php/loginInfoForBack.php", true);

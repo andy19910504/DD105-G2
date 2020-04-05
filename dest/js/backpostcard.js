@@ -51,9 +51,9 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
     let IconNum = document.getElementById("IconNum").value;
     // let IconPoint = document.getElementById("IconPoint").value;
     let upFile = document.getElementById("upFile").files[0];
-    console.log(IconNum);
+    // console.log(IconNum);
     // console.log(IconPoint);
-    console.log(upFile);
+    // console.log(upFile);
 
     var Addicon = new FormData();
     if (document.getElementById("IconNum").value.length == 0) {
@@ -64,7 +64,7 @@ document.getElementById("btnAddIcon").addEventListener("click", function () {
     Addicon.append('IconNum', IconNum);
     // Addicon.append('IconPoint', IconPoint);
     Addicon.append('upFile', upFile);
-    console.log(Addicon)
+    // console.log(Addicon)
     let xhr = new XMLHttpRequest();
     xhr.onload = function () {
         if (xhr.status == 200) {

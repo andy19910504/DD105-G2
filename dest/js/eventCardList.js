@@ -34,7 +34,7 @@ function LightEventinfo(events) {
     let eventinfoLight = $id("eventinfoLight");
     let eventTable = JSON.parse(events);//把JSON字串翻譯成JS
     let html = "";
-    console.log(eventTable);
+    // console.log(eventTable);
 
     // ---------------官方路線---------------
     let eventOfficialTable= [];
@@ -45,11 +45,11 @@ function LightEventinfo(events) {
             eventOfficialTable[str] = item;
         }
         else {
-            eventOfficialTable[str].attraction_name += `-> ${item.attraction_name}`;
+            eventOfficialTable[str].attraction_name += `<img src="./img/event/eventArrow.png" class="eventArrow"> ${item.attraction_name}`;
         }
     });
     let eventTableNew = eventOfficialTable.filter(item => item); //清除中間空陣列
-    console.log(eventTableNew);
+    // console.log(eventTableNew);
 
 
      // ---------------自訂路線---------------
@@ -61,15 +61,15 @@ function LightEventinfo(events) {
             eventMemberTable[a] = item;
         }
         else {
-            eventMemberTable[a].custom_attraction_name += `-> ${item.custom_attraction_name}`;
+            eventMemberTable[a].custom_attraction_name += `<img src="./img/event/eventArrow.png" class="eventArrow">${item.custom_attraction_name}`;
         }
     });
     let eventMemberNew = eventMemberTable.filter(item => item); //清除中間空陣列
-    console.log(eventMemberNew);
+    // console.log(eventMemberNew);
 
     for (i = 0; i < eventTableNew.length; i++) {
         html += `
-        <div id="event${eventTableNew[i].event_name}" class="eventinfo_back" psn="${eventTableNew[i].event_number}">
+        <div id="event${eventTableNew[i].event_number}" class="eventinfo_back" psn="${eventTableNew[i].event_number}">
                 <div class="lightbox_detailevent">
                     <div class="lightbox_detailevent_info">
                             <div class="detaileventTop">
@@ -77,7 +77,11 @@ function LightEventinfo(events) {
                                     <span class="dot1"></span>
                                     <span class="dot2"></span>
                                 </div>    
-                                <div class="close eventinfoClose">✘</div>
+                                <!-- 叉叉按鈕 -->
+                                <div id="closeMoodBtn">
+                                    <span class="line1"></span>
+                                    <span class="line2"></span>
+                                </div>
                                 <div class="title">
                                     <div class="eventInfotitle">${eventTableNew[i].event_name}</div>
                                 </div>
@@ -141,8 +145,6 @@ function LightEventinfo(events) {
     eventinfoLight.innerHTML = html;
     $(".eventinfo_back").css("display", "flex");
 }
-
-
 // 動態新增卡片
 function eventCard(event) {
     let cardBox = $id("cardBox");
@@ -218,7 +220,7 @@ function closeEventInfo() {
 //註冊活動詳情燈箱開啟click事件
 $(document).on('click', '.lightDetail', showEventInfo);
 //註冊活動詳情燈箱關閉click事件
-$(document).on('click', '.eventinfoClose', closeEventInfo);
+$(document).on('click', '#closeMoodBtn', closeEventInfo);
 
 window.addEventListener("load", check());
 

@@ -47,7 +47,11 @@ try {
                         $upmemberpho->bindvalue(":photo","$number.$namee[1]");
                         $upmemberpho->bindvalue(":number",$number);
                         $upmemberpho->execute();
+                        
+                        session_start();
+                        $_SESSION["member_photo"] = "$number.$namee[1]";
                 if($upmemberpho->rowCount() == 1){
+
                     echo "上傳成功11";
                     header("Location:../member.html"); 
                 }
@@ -63,4 +67,3 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
-?>

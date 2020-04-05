@@ -11,7 +11,7 @@ function insertRow(e) {
     let max_attendance = $('#maxPeople :selected').val();
     let event_information = $('#eventInfo').val();
     let event_cover_url = document.getElementById('eventImg').files[0];
-    console.log(event_cover_url);
+    // console.log(event_cover_url);
 
     let newEventForm = new FormData();
     newEventForm.append('route_number', route_number);
@@ -87,7 +87,7 @@ function routeClick() {
         let routeName = $(this).children().last().children('p').text();
         let attractions = $(this).children().last().children('input').val();
         let routeNum = $(this).attr('psn');
-        console.log(routeNum)
+        // console.log(routeNum)
         //每次點選都清空
         $('.routeClick').text('');
 
@@ -116,7 +116,7 @@ function LightEventRouteinfo(routes) {
         }
     });
     let officialRouteNew = officialRouteTable.filter(item => item); //清除中間空陣列
-    console.log(officialRouteNew);
+    // console.log(officialRouteNew);
 
     // ---------------自訂路線---------------
     let routeMember = routetable.customInfo; //取出官方路線
@@ -133,7 +133,7 @@ function LightEventRouteinfo(routes) {
 
     });
     let memberRouteNew = memberRouteTable.filter(item => item); //清除中間空陣列
-    console.log(memberRouteNew);
+    // console.log(memberRouteNew);
 
     let html = "";
 
@@ -259,7 +259,7 @@ function closeLightBox() {
 // 開啟燈箱
 $(document).on('click', '.eventInsert', showLightBox);
 //關燈箱
-$(document).on('click', '.eventhold_close', closeLightBox);
+$(document).on('click', '#closeMoodBtn', closeLightBox);
 //把第二步驟資料放到第三步驟
 $(document).on('click', '.twoNextStep', stepCheck);
 //送出表單

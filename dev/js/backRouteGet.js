@@ -5,7 +5,7 @@ function getRouteInfo(info) {
     let routeInfo = JSON.parse(info);
     let keys = Object.keys(routeInfo.attractions);
     let customKeys = Object.keys(routeInfo.customAttr);
-    console.log(routeInfo)
+    // console.log(routeInfo)
     // console.log(routeInfo.customInfo)
     // console.log(routeInfo.routeInfo[0]['route_number']);
     // console.log(routeInfo.attractions[1]['route_number']);
@@ -48,7 +48,13 @@ function getRouteInfo(info) {
                     </div>
                 </td>
                 <td>
-                <div>${routeInfo.routeInfo[i].member_number}</div>
+                `
+            if (routeInfo.routeInfo[i].member_number == null) {
+                routeRow += `
+                <div>官方</div>
+                `
+            }
+        routeRow += `
                 </td>
                 <td>
                     <button type="button" class="btn btn-light btn-sm btnSave">儲存</button>
@@ -125,7 +131,7 @@ function checkRouteStatus() {
         } else {
             checkMe[i].checked = true;
         }
-        console.log(checkMe[i].checked)
+        // console.log(checkMe[i].checked)
 
         // console.log(i);
         checkMeLabels[i].onclick = function (e) {
@@ -135,7 +141,7 @@ function checkRouteStatus() {
 
                 checkStatus[i].value = 1;
             }
-            console.log(checkStatus[i].value);
+            // console.log(checkStatus[i].value);
             // console.log(e.target)
         }
     }
@@ -157,7 +163,7 @@ function limitAttr() {
                 alert("最多只能選取五個!");
                 c = limit;
             }
-            console.log(c);
+            // console.log(c);
         }
     }
 

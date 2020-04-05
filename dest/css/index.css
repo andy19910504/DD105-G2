@@ -646,7 +646,8 @@ div.routeWrap {
             font-size: 20px;
             color: #646464;
             margin: 10px 0px;
-            text-align: center; }
+            text-align: center;
+            line-height: 1.5; }
   @media screen and (max-width: 767px) {
     div.routeWrap #slideBoard #content .newSliderBox {
       flex-direction: column;
@@ -2080,18 +2081,35 @@ div.eventCard {
   align-items: center;
   position: fixed; }
 
-.close {
-  color: #646464;
+#eventhold_back {
+  display: none; }
+
+#closeMoodBtn {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  right: 10px;
-  font-size: 32px;
-  margin: 10px;
+  position: absolute;
+  right: 0px;
   top: 0px;
-  position: absolute; }
+  transition: all 0.8s; }
+  #closeMoodBtn:hover {
+    transform: rotate(180deg); }
+  #closeMoodBtn span.line1, #closeMoodBtn span.line2 {
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: #646464;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%; }
+  #closeMoodBtn span.line1 {
+    transform: translate(-50%, -50%) rotate(45deg); }
+  #closeMoodBtn span.line2 {
+    transform: translate(-50%, -50%) rotate(-45deg); }
 
 .lightbox_detailevent_info {
   position: relative;
-  border-radius: 6px;
   background-image: url(../img/index/linedpaper.png);
   align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
@@ -2099,35 +2117,48 @@ div.eventCard {
   flex-direction: column;
   justify-content: center;
   width: 1000px;
-  height: 700px;
   border-radius: 15px;
+  padding: 50px 0 25px 0;
   overflow: hidden; }
+  @media screen and (max-width: 767px) {
+    .lightbox_detailevent_info {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      overflow: auto; } }
 
 .lightbox_holdevent_info {
   position: relative;
-  border-radius: 6px;
   background-image: url(../img/index/linedpaper.png);
   align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
   width: 1200px;
-  height: 780px;
-  border-radius: 15px;
-  overflow: hidden; }
+  border-radius: 15px; }
   .lightbox_holdevent_info .holdevent_title {
     text-align: center;
-    color: #1e1e1e;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 35px;
+    margin-top: 30px;
     letter-spacing: 1.875px;
-    width: 200px; }
+    font-size: 36px;
+    color: #A5361C;
+    font-weight: bolder;
+    text-align: center; }
+    .lightbox_holdevent_info .holdevent_title h2 {
+      font-size: 36px;
+      color: #A5361C; }
   .lightbox_holdevent_info .stepALL {
-    margin: 50px 0;
+    margin: 25px 0;
     width: 100%; }
+    @media screen and (max-width: 767px) {
+      .lightbox_holdevent_info .stepALL {
+        margin: 25px 0; } }
   .lightbox_holdevent_info .holdevent_step {
-    margin: 10px auto;
     text-align: center;
     display: flex;
     justify-content: center; }
@@ -2141,104 +2172,224 @@ div.eventCard {
       justify-content: center;
       background-size: contain;
       background-position: center;
-      background-image: url(../img/event/event_step3.png);
+      background-image: url(../img/event/step.png);
       font-size: 18px; }
       .lightbox_holdevent_info .holdevent_step div p {
         margin-bottom: 5px; }
       .lightbox_holdevent_info .holdevent_step div .stepBox {
         margin-bottom: 10px; }
     .lightbox_holdevent_info .holdevent_step .color {
-      background-image: url(../img/event/event_stepOn.png); }
+      background-image: url(../img/event/stepOn.png); }
+    @media screen and (max-width: 767px) {
+      .lightbox_holdevent_info .holdevent_step {
+        display: none; } }
 
 @media screen and (max-width: 767px) {
+  .lightbox_detailevent {
+    width: 100%;
+    height: 100%; }
   .lightbox_holdevent_info {
-    overflow-y: scroll; } }
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center; } }
 
-@media screen and (max-width: 1200px) {
-  .lightbox_holdevent_info {
-    width: 90%; } }
-
-@media screen and (max-width: 767px) {
-  div.holdevent_step1content .step2, div.holdevent_step1content .step3 {
-    display: none; } }
+.lightReport {
+  border: 2px solid #a5a5a5;
+  border-radius: 100%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 6px; }
+  .lightReport:hover {
+    border: 2px solid #646464; }
+    .lightReport:hover span.dot1, .lightReport:hover span.dot2 {
+      background-color: #646464; }
+  .lightReport span.dot1 {
+    width: 5px;
+    height: 18px;
+    border-radius: 20px;
+    background-color: #a5a5a5;
+    margin-bottom: 3px; }
+  .lightReport span.dot2 {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: #a5a5a5; }
 
 .detaileventContent {
   font-size: 18px;
-  padding: 0px 50px;
   width: 100%;
   color: #1e1e1e;
   display: flex;
   letter-spacing: 1.2px;
-  align-items: center;
+  align-items: flex-start;
+  margin: 30px 0;
   justify-content: center; }
+  @media screen and (max-width: 767px) {
+    .detaileventContent {
+      width: 100%;
+      flex-direction: column;
+      padding: 0;
+      align-items: center;
+      margin: 0; } }
   .detaileventContent .detaileventPic {
     display: flex;
     width: 50%;
     flex-direction: column;
-    padding-left: 20px; }
-    .detaileventContent .detaileventPic .title {
-      font-size: 24px;
-      color: #206B95;
-      font-weight: bolder;
+    align-items: center; }
+    @media screen and (max-width: 767px) {
+      .detaileventContent .detaileventPic {
+        width: 100%;
+        padding: 0; } }
+    .detaileventContent .detaileventPic .dotWrap {
+      right: 25px;
+      width: 40px;
+      height: 40px;
+      align-self: flex-end;
       display: flex;
-      margin-bottom: 30px;
-      position: relative; }
-      .detaileventContent .detaileventPic .title .eventInfotitle {
-        font-size: 24px;
-        color: #206B95;
-        font-weight: bolder; }
-      .detaileventContent .detaileventPic .title .dotWrap {
-        right: 25px;
-        width: 40px;
-        height: 40px;
-        align-self: flex-end;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        align-self: center;
-        cursor: pointer;
-        position: absolute; }
-      .detaileventContent .detaileventPic .title .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        background-color: #646464; }
+      justify-content: space-around;
+      align-items: center;
+      align-self: center;
+      cursor: pointer;
+      position: absolute; }
+    .detaileventContent .detaileventPic .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: #646464; }
     .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 400px;
-      height: 300px;
+      width: 360px;
+      height: 360px;
       border-radius: 5px;
       overflow: hidden; }
+      @media screen and (max-width: 767px) {
+        .detaileventContent .detaileventPic .detaileventPicbox {
+          width: 240px;
+          height: 240px; } }
       .detaileventContent .detaileventPic .detaileventPicbox img {
-        width: 100%; }
-    .detaileventContent .detaileventPic .detaileventRoute {
-      margin: 25px 0 0px 0px;
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: #646464; }
+        height: 100%; }
   .detaileventContent .detaileventText {
     width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 20px 0 0 60px; }
+    padding: 0 0 0 30px; }
+    @media screen and (max-width: 767px) {
+      .detaileventContent .detaileventText {
+        padding: 0;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px; } }
     .detaileventContent .detaileventText .eventInforow {
-      height: 45px;
-      line-height: 45px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: center; }
+      @media screen and (max-width: 767px) {
+        .detaileventContent .detaileventText .eventInforow {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 10px; } }
       .detaileventContent .detaileventText .eventInforow .eventrowTitle {
-        background-color: lightblue;
-        width: 30%;
+        background-color: #EDE18B;
+        width: 165px;
         margin-right: 40px;
         border-radius: 3px;
-        text-align: center; }
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        font-size: 18px;
+        color: #646464;
+        letter-spacing: 1.5px;
+        display: flex; }
+        @media screen and (max-width: 767px) {
+          .detaileventContent .detaileventText .eventInforow .eventrowTitle {
+            width: 140px;
+            margin-right: 20px;
+            padding: 10px 5px; } }
       .detaileventContent .detaileventText .eventInforow div:nth-child(2) {
-        width: 60%; }
+        width: 45%;
+        display: flex;
+        align-items: center;
+        color: #646464;
+        letter-spacing: 1.5px;
+        line-height: 1.5; }
+
+.detaileventRoute {
+  font-size: 20px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  margin: 15px 0 5px 0;
+  flex-direction: column; }
+  .detaileventRoute p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: #206b95;
+    letter-spacing: 1.5px;
+    line-height: 1.5; }
+  .detaileventRoute .detaileventattr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #646464; }
+    .detaileventRoute .detaileventattr .eventArrow {
+      width: 20px;
+      margin: 0 5px; }
+    @media screen and (max-width: 767px) {
+      .detaileventRoute .detaileventattr {
+        flex-direction: column; }
+        .detaileventRoute .detaileventattr .eventArrow {
+          width: 20px;
+          margin: 5px;
+          transform: rotate(90deg); } }
+  @media screen and (max-width: 767px) {
+    .detaileventRoute {
+      margin: 0px auto 5px auto;
+      width: 100%;
+      justify-content: center; } }
+
+.detaileventTop {
+  display: flex;
+  width: 100%;
+  padding-left: 65px; }
+  @media screen and (max-width: 767px) {
+    .detaileventTop {
+      align-items: center;
+      width: 90%;
+      margin: 15px 0;
+      padding: 0;
+      justify-content: center; }
+      .detaileventTop + div {
+        background-color: #eee;
+        width: 90%;
+        height: 300px;
+        padding: 20px;
+        border-radius: 6px;
+        overflow: scroll; } }
+
+.eventInfotitle {
+  font-weight: bold;
+  color: #A5361C;
+  font-size: 32px;
+  font-weight: bolder; }
 
 .enroll {
-  position: absolute;
-  bottom: 40px; }
+  display: flex; }
+  @media screen and (max-width: 767px) {
+    .enroll {
+      margin: 10px 0 0 0; } }
 
 .lightbox_report_info {
   position: fixed;

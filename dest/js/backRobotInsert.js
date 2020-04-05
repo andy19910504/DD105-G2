@@ -5,7 +5,7 @@ function insertRow(e){
     let keywordWord = $('#keywordInsert').val();
     let keywordAns = $('#answerInsert').val();
     let keywordStatus = $('#satausInsert').val();
-    console.log(keywordWord,keywordAns,keywordStatus);
+    // console.log(keywordWord,keywordAns,keywordStatus);
 
     ////把抓到的值放到html中一個隱藏的表單內
     document.getElementById("keywordWord").value = keywordWord;
@@ -13,11 +13,11 @@ function insertRow(e){
     document.getElementById("keywordStatus").value = keywordStatus;
     
     //-------------------測試值是否正確放入表單--------------------
-    console.log("----------------------");
-    console.log(document.getElementById("keywordWord").value);
-    console.log(document.getElementById("keywordAns").value);
-    console.log(document.getElementById("keywordStatus").value);
-    console.log("----------------------");
+    // console.log("----------------------");
+    // console.log(document.getElementById("keywordWord").value);
+    // console.log(document.getElementById("keywordAns").value);
+    // console.log(document.getElementById("keywordStatus").value);
+    // console.log("----------------------");
     //------------------------------------------------------------
 
     //用那個表單建立一個JS表單物件

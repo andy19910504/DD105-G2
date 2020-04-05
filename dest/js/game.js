@@ -555,7 +555,7 @@ $(document).ready(function(){
                     $('.opt2').text(`您現在有${parseInt(member.memPoint)+300}點。`);
                     $('.opt3').text('真是太棒了！');
                 } else {
-                    console.log('失敗了！ＱＱ');
+                    // console.log('失敗了！ＱＱ');
                 }
             }
         }
@@ -655,7 +655,7 @@ $(document).ready(function(){
                 ]);
             }
             xhr.send();
-            console.log(start);
+            // console.log(start);
         }
         //畫出地圖
         var mapOptions = {
@@ -669,7 +669,7 @@ $(document).ready(function(){
         //設定現在位置為地圖的中心
         function setMapCenter(){
             map.setCenter(start);
-            console.log('set!');
+            // console.log('set!');
         }
 
         //一直更新現在位置的導航

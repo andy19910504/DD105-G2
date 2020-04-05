@@ -473,8 +473,7 @@ blockquote, q {
   margin-top: 20px;
   border: 6px solid #ccc;
   border-radius: 6px;
-  height: 500px;
-  border: 1px solid red; }
+  height: 500px; }
 
 @media screen and (max-width: 767px) {
   .member_info_line_all_left {
