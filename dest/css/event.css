@@ -308,7 +308,8 @@
   height: 30px;
   margin: 10px 5px;
   color: #646464;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: "微軟正黑體"; }
 
 @media screen and (max-width: 768px) {
   .selector select {
@@ -396,11 +397,13 @@ div.eventCard {
 @media screen and (max-width: 767px) {
   div.eventCard {
     margin: 35px auto;
-    flex-wrap: wrap; } }
-
-@media screen and (max-width: 767px) {
+    flex-wrap: wrap; }
   div.eventWrap {
-    justify-content: center; } }
+    justify-content: center; }
+  .lightbox_detailevent {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px; } }
 
 .eventCard:hover {
   transform: translateY(-10px); }
@@ -456,6 +459,9 @@ div.eventCard {
   justify-content: center;
   align-items: center;
   position: fixed; }
+  @media screen and (max-width: 767px) {
+    .eventinfo_back {
+      align-items: flex-start; } }
 
 .backDrop {
   background-color: rgba(24, 24, 24, 0.8);
@@ -471,18 +477,35 @@ div.eventCard {
   align-items: center;
   position: fixed; }
 
-.close {
-  color: #646464;
+#eventhold_back {
+  display: none; }
+
+#closeMoodBtn {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  right: 10px;
-  font-size: 32px;
-  margin: 10px;
+  position: absolute;
+  right: 0px;
   top: 0px;
-  position: absolute; }
+  transition: all 0.8s; }
+  #closeMoodBtn:hover {
+    transform: rotate(180deg); }
+  #closeMoodBtn span.line1, #closeMoodBtn span.line2 {
+    display: inline-block;
+    width: 40px;
+    height: 5px;
+    background-color: #646464;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%; }
+  #closeMoodBtn span.line1 {
+    transform: translate(-50%, -50%) rotate(45deg); }
+  #closeMoodBtn span.line2 {
+    transform: translate(-50%, -50%) rotate(-45deg); }
 
 .lightbox_detailevent_info {
   position: relative;
-  border-radius: 6px;
   background-image: url(../img/index/linedpaper.png);
   align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
@@ -491,30 +514,32 @@ div.eventCard {
   justify-content: center;
   width: 1000px;
   border-radius: 15px;
+  padding: 50px 0 25px 0;
   overflow: hidden; }
   @media screen and (max-width: 767px) {
     .lightbox_detailevent_info {
       display: flex;
       flex-direction: column;
-      width: 95%;
+      width: 100%;
       height: 100%;
+      border-radius: 0px;
+      justify-content: space-around;
       align-items: center;
-      margin: 15px 0; } }
+      margin: 0 auto;
+      overflow: auto; } }
 
 .lightbox_holdevent_info {
   position: relative;
-  border-radius: 6px;
   background-image: url(../img/index/linedpaper.png);
   align-items: center;
   box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
   display: flex;
   flex-direction: column;
   width: 1200px;
-  height: 780px;
   border-radius: 15px; }
   .lightbox_holdevent_info .holdevent_title {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 30px;
     letter-spacing: 1.875px;
     font-size: 36px;
     color: #A5361C;
@@ -524,8 +549,11 @@ div.eventCard {
       font-size: 36px;
       color: #A5361C; }
   .lightbox_holdevent_info .stepALL {
-    margin: 45px 0;
+    margin: 25px 0;
     width: 100%; }
+    @media screen and (max-width: 767px) {
+      .lightbox_holdevent_info .stepALL {
+        margin: 25px 0; } }
   .lightbox_holdevent_info .holdevent_step {
     text-align: center;
     display: flex;
@@ -548,19 +576,24 @@ div.eventCard {
         margin-bottom: 10px; }
     .lightbox_holdevent_info .holdevent_step .color {
       background-image: url(../img/event/stepOn.png); }
+    @media screen and (max-width: 767px) {
+      .lightbox_holdevent_info .holdevent_step {
+        display: none; } }
 
 @media screen and (max-width: 767px) {
   .lightbox_holdevent_info {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    border-radius: unset;
     display: flex;
     flex-direction: column;
-    width: 95%;
-    height: 100%;
     align-items: center; } }
 
 .holdevent_step1content {
-  height: 536px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: auto; }
 
 .chooseRoute {
   margin: 45px auto;
@@ -573,6 +606,10 @@ div.eventCard {
     position: relative;
     overflow: hidden;
     height: 250px; }
+    @media screen and (max-width: 767px) {
+      .chooseRoute .sliderWrap {
+        overflow-x: scroll;
+        height: 300px; } }
     .chooseRoute .sliderWrap .routeAllBox {
       text-align: center;
       display: flex;
@@ -590,13 +627,20 @@ div.eventCard {
         width: 200px;
         height: 250px;
         margin: 0px 30px;
+        position: relative;
         font-size: 18px;
         transition: 0.5s; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg {
           height: 200px;
           display: flex;
           height: 200px;
-          overflow: hidden; }
+          overflow: hidden;
+          position: relative; }
+          .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg img {
+            transform: scale(1, 1);
+            transition: all .7s ease-out; }
+          .chooseRoute .sliderWrap .routeAllBox .routeBox .routeBoxImg img:hover {
+            transform: scale(1.2, 1.2); }
         .chooseRoute .sliderWrap .routeAllBox .routeBox .memberRoute {
           display: block; }
         .chooseRoute .sliderWrap .routeAllBox .routeBox div.routeBoxImg img {
@@ -628,6 +672,8 @@ div.eventCard {
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
           transition: filter .1s;
           cursor: pointer; }
+      .chooseRoute .sliderWrap .routeAllBox .routeChose {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); }
       .chooseRoute .sliderWrap .routeAllBox .addRoutebtn {
         display: flex;
         justify-content: center; }
@@ -636,9 +682,13 @@ div.eventCard {
       @media screen and (max-width: 1200px) {
         .chooseRoute .sliderWrap .routeAllBox .routeBox {
           width: 200px; } }
-  @media screen and (max-width: 1200px) {
-    .chooseRoute .sliderWrap {
-      width: 80%; } }
+  .chooseRoute ::-webkit-scrollbar {
+    border-radius: 10px; }
+  .chooseRoute ::-webkit-scrollbar-track {
+    border-radius: 10px; }
+  .chooseRoute ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #D89181; }
   .chooseRoute .slideBtn {
     margin: 0 10px;
     text-align: center; }
@@ -653,6 +703,9 @@ div.eventCard {
       border-radius: 50%;
       line-height: 40px;
       color: white; }
+    @media screen and (max-width: 767px) {
+      .chooseRoute .slideBtn {
+        display: none; } }
   .chooseRoute #btnLeft[disabled], .chooseRoute #btnRight[disabled] {
     opacity: 0.6;
     text-align: center; }
@@ -664,6 +717,10 @@ div.eventCard {
   flex-direction: column;
   align-items: center;
   width: 100%; }
+  @media screen and (max-width: 767px) {
+    .routeClick {
+      margin: 0;
+      padding: 0px 40px; } }
   .routeClick p {
     margin: 0px 0 20px 0px;
     font-size: 20px;
@@ -675,7 +732,8 @@ div.eventCard {
   .routeClick .attractions {
     font-size: 18px;
     font-weight: 500;
-    color: #646464; }
+    color: #646464;
+    line-height: 1.6; }
 
 @media screen and (max-width: 1200px) {
   .chooseRoute {
@@ -684,36 +742,44 @@ div.eventCard {
 .stepBtn {
   display: flex;
   justify-content: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 35px; }
+  margin-top: 25px; }
   .stepBtn div {
     margin: 0px 80px; }
+    @media screen and (max-width: 767px) {
+      .stepBtn div {
+        margin: 0px 15px; } }
+  @media screen and (max-width: 767px) {
+    .stepBtn {
+      margin-top: 20px; } }
 
 @media screen and (max-width: 767px) {
   .chooseRoute {
     margin: 25px auto; } }
-
-@media screen and (max-width: 767px) {
-  .stepBtn div {
-    margin: 0px 15px; } }
 
 .stepStop {
   pointer-events: none; }
 
 .holdevent_step2content {
   display: none;
-  flex-direction: column; }
+  flex-direction: column;
+  overflow: auto; }
   .holdevent_step2content .step2Info {
     width: 100%;
     display: flex;
     padding: 20px 40px; }
+    @media screen and (max-width: 767px) {
+      .holdevent_step2content .step2Info {
+        padding: 0px;
+        align-items: center;
+        flex-direction: column; } }
     .holdevent_step2content .step2Info .holderPic {
       width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center; }
+      @media screen and (max-width: 767px) {
+        .holdevent_step2content .step2Info .holderPic {
+          width: 100%; } }
       .holdevent_step2content .step2Info .holderPic input {
         font-size: 18px;
         color: #646464;
@@ -722,12 +788,16 @@ div.eventCard {
         color: #1e1e1e;
         text-decoration: none;
         font-family: "微軟正黑體"; }
-      .holdevent_step2content .step2Info .holderPic div {
+      .holdevent_step2content .step2Info .holderPic .holderPicBox {
         border-radius: 5px;
         margin-top: 15px;
         border: 1px dashed #5895ad;
         width: 360px;
         height: 360px; }
+        @media screen and (max-width: 767px) {
+          .holdevent_step2content .step2Info .holderPic .holderPicBox {
+            width: 240px;
+            height: 240px; } }
       .holdevent_step2content .step2Info .holderPic .holderPicBox {
         text-align: center;
         line-height: 265px;
@@ -741,16 +811,20 @@ div.eventCard {
         .holdevent_step2content .step2Info .holderPic .holderPicBox img {
           height: 100%; }
     .holdevent_step2content .step2Info .holderInfo {
-      max-width: 50%;
+      width: 50%;
       font-size: 18px;
       align-items: center;
       color: #646464;
       padding: 30px 40px 0 40px; }
-      .holdevent_step2content .step2Info .holderInfo div {
+      .holdevent_step2content .step2Info .holderInfo .holderInfoBox {
         margin: 15px 0; }
-        .holdevent_step2content .step2Info .holderInfo div input {
+        @media screen and (max-width: 767px) {
+          .holdevent_step2content .step2Info .holderInfo .holderInfoBox {
+            width: 270px;
+            display: flex;
+            margin: 5px 0; } }
+        .holdevent_step2content .step2Info .holderInfo .holderInfoBox input {
           width: 220px;
-          height: 35px;
           color: #646464;
           font-family: "微軟正黑體";
           font-size: 18px;
@@ -760,12 +834,17 @@ div.eventCard {
           transition: .3s;
           border: 1px solid #5895ad;
           padding: 1px 5px; }
-        .holdevent_step2content .step2Info .holderInfo div label {
+          @media screen and (max-width: 767px) {
+            .holdevent_step2content .step2Info .holderInfo .holderInfoBox input {
+              height: 30px;
+              font-size: 16px;
+              width: 150px; } }
+        .holdevent_step2content .step2Info .holderInfo .holderInfoBox label {
           margin-right: 10px; }
-          .holdevent_step2content .step2Info .holderInfo div label i {
+          .holdevent_step2content .step2Info .holderInfo .holderInfoBox label i {
             color: #A5361C;
             margin-right: 2px; }
-        .holdevent_step2content .step2Info .holderInfo div select {
+        .holdevent_step2content .step2Info .holderInfo .holderInfoBox select {
           border-radius: 5px;
           transition: .3s;
           height: 35px;
@@ -774,23 +853,35 @@ div.eventCard {
           color: #646464;
           font-size: 18px;
           padding: 5px 0px; }
-        .holdevent_step2content .step2Info .holderInfo div textarea {
+        .holdevent_step2content .step2Info .holderInfo .holderInfoBox #eventInfo {
           font-size: 18px;
           border-radius: 5px;
           resize: none;
+          margin-top: 15px;
           color: #646464;
+          width: 380px;
+          height: 118px;
           padding: 1px 5px;
           background-color: #fff;
           border: 1px solid #5895ad;
           font-family: "微軟正黑體"; }
+          @media screen and (max-width: 767px) {
+            .holdevent_step2content .step2Info .holderInfo .holderInfoBox #eventInfo {
+              width: 150px;
+              margin: 0px; } }
+      @media screen and (max-width: 767px) {
+        .holdevent_step2content .step2Info .holderInfo {
+          width: 100%;
+          padding: 0;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          margin: 20px 0 0 0; } }
 
 @media screen and (max-width: 767px) {
-  .step2Info {
-    flex-direction: column;
-    width: 85%;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center; } }
+  .eventCoverPic {
+    width: 240px; } }
 
 @media screen and (max-width: 767px) {
   div.holderPic {
@@ -816,12 +907,17 @@ div.eventCard {
   font-size: 18px;
   color: #646464;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  overflow: auto; }
   .holdevent_step3content .routeCheck {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 15px 0; }
+    @media screen and (max-width: 767px) {
+      .holdevent_step3content .routeCheck {
+        margin: 15px 0 0 0;
+        width: 80%; } }
     .holdevent_step3content .routeCheck p {
       margin: 0px 0 20px 0px;
       font-size: 20px;
@@ -837,6 +933,11 @@ div.eventCard {
   .holdevent_step3content .step3Info {
     width: 100%;
     display: flex; }
+    @media screen and (max-width: 767px) {
+      .holdevent_step3content .step3Info {
+        flex-direction: column;
+        align-items: center;
+        width: 95%; } }
     .holdevent_step3content .step3Info .holderCover {
       display: flex;
       flex-direction: column;
@@ -851,48 +952,53 @@ div.eventCard {
         border: 1px dashed #5895ad;
         width: 360px;
         height: 360px; }
+        @media screen and (max-width: 767px) {
+          .holdevent_step3content .step3Info .holderCover .holderCoverPic {
+            width: 240px;
+            height: 240px; } }
         .holdevent_step3content .step3Info .holderCover .holderCoverPic img {
           height: 100%; }
+      @media screen and (max-width: 767px) {
+        .holdevent_step3content .step3Info .holderCover {
+          width: 100%; } }
     .holdevent_step3content .step3Info .holderCoverInfo {
       width: 50%;
-      margin: 20px 10px;
       font-size: 18px;
       align-items: center;
       color: #646464; }
+      @media screen and (max-width: 767px) {
+        .holdevent_step3content .step3Info .holderCoverInfo {
+          margin: 10px 0 0px 0; } }
       .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText {
         color: #646464;
         font-family: "微軟正黑體";
         font-size: 18px;
-        letter-spacing: 2px; }
-        .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText p {
-          display: inline-flex;
-          line-height: 1.8; }
-        .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText .title {
+        letter-spacing: 2px;
+        display: flex;
+        margin: 0 0 15px 0;
+        width: 75%; }
+        @media screen and (max-width: 767px) {
+          .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            width: 80%; } }
+        .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText div {
+          line-height: 1.8;
+          margin-right: 10px;
           font-size: 18px;
-          color: #646464;
-          font-family: "微軟正黑體"; }
+          align-items: center;
+          color: #646464; }
         .holdevent_step3content .step3Info .holderCoverInfo .holderCoverText i {
           color: #A5361C;
           margin-right: 2px; }
-      .holdevent_step3content .step3Info .holderCoverInfo table {
-        color: #646464;
-        font-family: "微軟正黑體";
-        width: 90%; }
-        .holdevent_step3content .step3Info .holderCoverInfo table i {
-          color: #A5361C;
-          margin-right: 2px; }
-        .holdevent_step3content .step3Info .holderCoverInfo table tr {
-          color: #646464;
-          font-family: "微軟正黑體";
-          font-size: 18px;
-          height: 45px; }
-          .holdevent_step3content .step3Info .holderCoverInfo table tr td:nth-child(1) {
-            width: 145px; }
-          .holdevent_step3content .step3Info .holderCoverInfo table tr td {
-            color: #646464;
-            font-family: "微軟正黑體";
-            font-size: 18px;
-            line-height: 1.8; }
+      .holdevent_step3content .step3Info .holderCoverInfo .eventCoverText {
+        flex-direction: column; }
+      @media screen and (max-width: 767px) {
+        .holdevent_step3content .step3Info .holderCoverInfo {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column; } }
 
 .lightReport {
   border: 2px solid #a5a5a5;
@@ -907,7 +1013,7 @@ div.eventCard {
   cursor: pointer;
   position: absolute;
   right: 50px;
-  top: 10px; }
+  top: 6px; }
   .lightReport:hover {
     border: 2px solid #646464; }
     .lightReport:hover span.dot1, .lightReport:hover span.dot2 {
@@ -926,130 +1032,199 @@ div.eventCard {
 
 .detaileventContent {
   font-size: 18px;
-  padding: 50px 50px 0;
   width: 100%;
   color: #1e1e1e;
   display: flex;
   letter-spacing: 1.2px;
-  align-items: flex-end;
+  align-items: flex-start;
+  margin: 30px 0;
   justify-content: center; }
   @media screen and (max-width: 767px) {
     .detaileventContent {
       width: 100%;
       flex-direction: column;
       padding: 0;
-      align-items: center; } }
+      align-items: center;
+      margin: 0; } }
   .detaileventContent .detaileventPic {
     display: flex;
     width: 50%;
     flex-direction: column;
-    padding-left: 20px; }
+    align-items: center; }
     @media screen and (max-width: 767px) {
       .detaileventContent .detaileventPic {
         width: 100%;
         padding: 0; } }
-    .detaileventContent .detaileventPic .title {
-      font-size: 32px;
-      color: #206B95;
-      font-weight: bolder;
+    .detaileventContent .detaileventPic .dotWrap {
+      right: 25px;
+      width: 40px;
+      height: 40px;
+      align-self: flex-end;
       display: flex;
-      margin-bottom: 30px;
-      position: relative; }
-      .detaileventContent .detaileventPic .title .eventInfotitle {
-        font-size: 32px;
-        color: #206B95;
-        font-weight: bolder; }
-      .detaileventContent .detaileventPic .title .dotWrap {
-        right: 25px;
-        width: 40px;
-        height: 40px;
-        align-self: flex-end;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        align-self: center;
-        cursor: pointer;
-        position: absolute; }
-      .detaileventContent .detaileventPic .title .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 100%;
-        background-color: #646464; }
+      justify-content: space-around;
+      align-items: center;
+      align-self: center;
+      cursor: pointer;
+      position: absolute; }
+    .detaileventContent .detaileventPic .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: #646464; }
     .detaileventContent .detaileventPic .detaileventPicbox {
-      width: 300px;
+      width: 360px;
+      height: 360px;
       border-radius: 5px;
       overflow: hidden; }
+      @media screen and (max-width: 767px) {
+        .detaileventContent .detaileventPic .detaileventPicbox {
+          width: 240px;
+          height: 240px; } }
       .detaileventContent .detaileventPic .detaileventPicbox img {
-        width: 100%; }
-    .detaileventContent .detaileventPic .detaileventRoute {
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: #646464; }
-      .detaileventContent .detaileventPic .detaileventRoute p {
-        font-size: 20px;
-        margin: 10px 0;
-        color: #646464;
-        letter-spacing: 1.5px;
-        line-height: 1.5; }
+        height: 100%; }
   .detaileventContent .detaileventText {
     width: 50%;
     display: flex;
     justify-content: center;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 0 0 0 30px; }
+    @media screen and (max-width: 767px) {
+      .detaileventContent .detaileventText {
+        padding: 0;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px; } }
     .detaileventContent .detaileventText .eventInforow {
-      line-height: 50px;
       margin-bottom: 10px;
       display: flex;
       justify-content: center; }
+      @media screen and (max-width: 767px) {
+        .detaileventContent .detaileventText .eventInforow {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 10px; } }
       .detaileventContent .detaileventText .eventInforow .eventrowTitle {
         background-color: #EDE18B;
         width: 165px;
         margin-right: 40px;
         border-radius: 3px;
-        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
         font-size: 18px;
         color: #646464;
-        letter-spacing: 1.5px; }
+        letter-spacing: 1.5px;
+        display: flex; }
+        @media screen and (max-width: 767px) {
+          .detaileventContent .detaileventText .eventInforow .eventrowTitle {
+            width: 140px;
+            margin-right: 20px;
+            padding: 10px 5px; } }
       .detaileventContent .detaileventText .eventInforow div:nth-child(2) {
-        width: 60%; }
+        width: 45%;
+        display: flex;
+        align-items: center;
+        color: #646464;
+        letter-spacing: 1.5px;
+        line-height: 1.5; }
 
-.enroll {
+.detaileventRoute {
+  font-size: 20px;
+  letter-spacing: 2px;
   display: flex;
-  margin: 40px; }
-
-.lightbox_report_info {
-  position: fixed;
-  background-color: #d4d3d3;
-  background-image: url(../img/index/linedpaper.png);
   align-items: center;
-  box-shadow: 0px 15px 15px rgba(204, 209, 214, 0.15);
-  width: 300px;
-  height: 300px;
-  margin: auto;
-  top: 15%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 15px; }
-  .lightbox_report_info .reportTitle {
+  margin: 15px 0 5px 0;
+  flex-direction: column; }
+  .detaileventRoute p {
     font-size: 24px;
-    margin: 30px 0;
-    text-align: center;
-    color: #646464;
-    font-size: bold; }
-  .lightbox_report_info form {
-    font-size: 20px;
-    padding: 0 35px;
-    margin: 35px auto;
-    color: #646464; }
-    .lightbox_report_info form input {
-      margin: 15px; }
-  .lightbox_report_info .reportSent {
+    font-weight: bold;
+    margin: 5px 0;
+    color: #206b95;
+    letter-spacing: 1.5px;
+    line-height: 1.5; }
+  .detaileventRoute .detaileventattr {
     display: flex;
     justify-content: center;
-    left: 0;
-    right: 0;
-    bottom: 35px;
-    position: absolute; }
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #646464; }
+    .detaileventRoute .detaileventattr .eventArrow {
+      width: 20px;
+      margin: 0 5px; }
+    @media screen and (max-width: 767px) {
+      .detaileventRoute .detaileventattr {
+        flex-direction: column; }
+        .detaileventRoute .detaileventattr .eventArrow {
+          width: 20px;
+          margin: 5px;
+          transform: rotate(90deg); } }
+  @media screen and (max-width: 767px) {
+    .detaileventRoute {
+      margin: 0px auto 5px auto;
+      width: 100%;
+      justify-content: center; } }
+
+.detaileventTop {
+  display: flex;
+  width: 100%;
+  padding-left: 65px; }
+  @media screen and (max-width: 767px) {
+    .detaileventTop {
+      align-items: center;
+      width: 90%;
+      margin: 15px 0;
+      padding: 0;
+      justify-content: center; }
+      .detaileventTop + div {
+        background-color: #eee;
+        width: 90%;
+        height: 300px;
+        padding: 20px;
+        border-radius: 6px;
+        overflow: scroll; } }
+
+.eventInfotitle {
+  font-weight: bold;
+  color: #A5361C;
+  font-size: 32px;
+  font-weight: bolder; }
+
+.enroll {
+  display: flex; }
+  @media screen and (max-width: 767px) {
+    .enroll {
+      margin: 10px 0 0 0; } }
+
+.lightbox_report_info {
+  background-color: #d4d3d3;
+  background-image: url(../img/index/linedpaper.png);
+  width: 300px;
+  height: 300px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .lightbox_report_info .reportTitle {
+    font-size: 24px;
+    text-align: center;
+    color: #646464; }
+    .lightbox_report_info .reportTitle h2 {
+      margin: 40px 0px 20px 0px;
+      color: #a5361c;
+      font-weight: bold; }
+  .lightbox_report_info form {
+    font-size: 20px;
+    color: #646464;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px; }
+    .lightbox_report_info form div {
+      margin: 10px 0; }
+  .lightbox_report_info .reportSent {
+    display: flex;
+    justify-content: center; }
     .lightbox_report_info .reportSent div {
-      margin: 0px 13px; }
+      margin: 0px 10px; }

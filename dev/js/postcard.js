@@ -541,7 +541,7 @@ function doFirst() {
     // $(document).on('click', '.icon', IconChangeBGI_1);
     $(".icon").click(function () {
         iconclick = $(this).children().attr("src");
-        console.log(iconclick);
+        // console.log(iconclick);
     });
 
     $(document).on('click', `.icon`, IconChangeBGI);
@@ -568,7 +568,7 @@ function doFirst() {
     // });
 
     postcardback.on('mouse:dblclick', e => {
-        console.log(e)
+        // console.log(e)
         const active = e.target
         if (active) {
 

@@ -91,7 +91,7 @@ function leaveMsg(){
 function showMoodDatail(moodDatailData){
     let moodLightBox = document.getElementById('moodLightBox');
     let DatailAll = JSON.parse(moodDatailData);
-    console.log(DatailAll);
+    // console.log(DatailAll);
     let html = "";
     html +=`
         <div class="moodDetailBlock">

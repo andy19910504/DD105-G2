@@ -13,11 +13,11 @@ window.addEventListener("load", function () {
             document.getElementById("editInfo").value = editInfo;
             document.getElementById("editStatus").value = editStatus;
             // 檢驗
-            console.log(document.getElementById("editNumber").innerHTML);
-            console.log(document.getElementById("editName").value);
-            console.log(document.getElementById("editInfo").innerHTML);
-            console.log(document.getElementById("editInfo").value);
-            console.log(document.getElementById("editStatus").value);
+            // console.log(document.getElementById("editNumber").innerHTML);
+            // console.log(document.getElementById("editName").value);
+            // console.log(document.getElementById("editInfo").innerHTML);
+            // console.log(document.getElementById("editInfo").value);
+            // console.log(document.getElementById("editStatus").value);
 
             var editForm = new FormData(document.getElementById("editForm"));
 

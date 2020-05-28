@@ -1,7 +1,7 @@
 
 $(document).on('click', '.filter', function filterClick() {
     let routeName = $(this).text();
-    console.log(routeName)
+    // console.log(routeName)
     let editForm = new FormData;
     editForm.append('routeName', routeName);
 
@@ -9,7 +9,7 @@ $(document).on('click', '.filter', function filterClick() {
     xhr.onload = function () {
         if (xhr.status == 200) {
             let routeInfo = JSON.parse(xhr.responseText);
-            console.log(routeInfo)
+            // console.log(routeInfo)
             let routeAttractionBlock = document.querySelectorAll('.routeAttractionBlock');
             let routeTilteBlock = document.querySelector('.routeTilteBlock');
             if (routeInfo[0] == null) {

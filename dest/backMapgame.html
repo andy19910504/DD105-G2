@@ -122,7 +122,7 @@
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 member = JSON.parse(xhr.responseText);
-                console.log(member);
+                // console.log(member);
                 $id("managerId").innerHTML = member.memName;
             }
             xhr.open("get", "./php/loginInfoForBack.php", true);
@@ -190,9 +190,9 @@
             xhr.send(editForm);
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    console.log('成功修改小遊戲關卡資料！');
+                    // console.log('成功修改小遊戲關卡資料！');
                 } else {
-                    console.log('失敗了！ＱＱ');
+                    // console.log('失敗了！ＱＱ');
                 }
             }
         });
@@ -207,9 +207,9 @@
             xhr.send(deleteForm);
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    console.log('成功修改小遊戲關卡資料！');
+                    // console.log('成功修改小遊戲關卡資料！');
                 } else {
-                    console.log('失敗了！ＱＱ');
+                    // console.log('失敗了！ＱＱ');
                 }
             }
         });
@@ -252,9 +252,9 @@
             xhr.send(addForm);
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    console.log('成功修改小遊戲關卡資料！');
+                    // console.log('成功修改小遊戲關卡資料！');
                 } else {
-                    console.log('失敗了！ＱＱ');
+                    // console.log('失敗了！ＱＱ');
                 }
             }
         });

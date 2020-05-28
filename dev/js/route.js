@@ -1,6 +1,6 @@
 // 判斷是否登入，如果未登錄跳出登入燈箱，已登入的話跳至自訂路線功能
 let loginStatus = document.querySelectorAll(".sign");
-console.log(loginStatus[0]);
+// console.log(loginStatus[0]);
 $('.btnCust').click(function () {
     if (loginStatus[0].innerHTML == '登入') {
         $(this).removeAttr('href');

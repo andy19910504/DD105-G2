@@ -137,15 +137,12 @@ $(document).ready(function () {
       //存入使用者輸入的自訂路線名稱和簡介
       customRouteName = $('.routeName').val();
       customRouteDesc = $('.routeDesc').val();
-      console.log(customRouteName)
-      console.log(customRouteDesc)
       var routeInfo = [];
       routeInfo.push(addresses);
       let customForm = new FormData();
       customForm.append('customRouteName', customRouteName);
       customForm.append('customRouteDesc', customRouteDesc);
       customForm.append('routeInfo', routeInfo);
-      console.log(routeInfo);
 
       // AJAX
       var xhr = new XMLHttpRequest();
@@ -155,13 +152,13 @@ $(document).ready(function () {
       xhr.send(customForm);
       xhr.onload = function () {
         if (xhr.status == 200) {
-          alert('您的路線已儲存，請到會員專區查看。謝謝！');
+          alert('您的路線已儲存，請到會員專區查看。謝謝!');
         } else {
-          alert(xhr.status + '請聯繫客服人員，謝謝！');
+          alert('似乎出了點問題哦，請重新整理!');
         }
       }
     } else {
-      alert('請填寫自訂路線名稱和簡介！！！！');
+      alert('請填寫自訂路線名稱和簡介!!!!!');
     }
   });
 
@@ -221,7 +218,6 @@ $(document).ready(function () {
         for (var i = 0; i <= markers.length - 1; i++) {
           spots[i] = markers[i];
         }
-        console.log(spots);
         //清除地點
         $('.removeSpot').click(function (e) {
           e.preventDefault();

@@ -116,9 +116,12 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
+        $('.progress-container-mobile').removeClass('hide-progress-container-mobile');
         if(!($('.map-container').hasClass('hide-container'))){
             //產生地圖和導航功能
             googleMapCreater();
+            $('.progress-container-mobile').addClass('hide-progress-container-mobile');
         }
     }
 
@@ -129,9 +132,11 @@ $(document).ready(function(){
         $('.mapMode').toggleClass('off');
         $('.game-container').toggleClass('hide-container');
         $('.map-container').toggleClass('hide-container');
+        $('.progress-container-mobile').removeClass('hide-progress-container-mobile');
+        if(window.innerWidth >= 576){
+            $('.progress-container-mobile').addClass('hide-progress-container-mobile');
+        }
         //顯示手機方向鍵、進度條
-        $('.mobile-control-wrapper').removeClass('hide-mobile-control-wrapper');
-        $('.progress-container-mobile').toggleClass('hide-progress-container-mobile');
         if (window.innerWidth <= 576 && localStorage.getItem("hasSwitchedToGameBefore") === null) {
             // show manual-modal
             $('header.fullHeader').addClass('header-backward');
@@ -412,6 +417,10 @@ $(document).ready(function(){
 
         //get quiz content
         function getQuizContent(checkpoint){
+            $('.test').text('');
+            $('.opt1').text('');
+            $('.opt2').text('');
+            $('.opt3').text('');
             $('.opt1, .opt2, .opt3').removeClass('click-disabled');
             $('.opt1, .opt2, .opt3').removeClass('right');
             $('.opt1, .opt2, .opt3').removeClass('wrong');
@@ -421,7 +430,6 @@ $(document).ready(function(){
             xhr.send(null);
             xhr.onload = function(){
                 if(xhr.status == 200){
-                    console.log(JSON.parse(xhr.responseText));
                     var tests = JSON.parse(xhr.responseText);
                     var test = '';
                     var opt1 = '';
@@ -552,7 +560,7 @@ $(document).ready(function(){
                     $('.opt2').text(`您現在有${parseInt(member.memPoint)+300}點。`);
                     $('.opt3').text('真是太棒了！');
                 } else {
-                    console.log('失敗了！ＱＱ');
+                    // console.log('失敗了！ＱＱ');
                 }
             }
         }
@@ -652,7 +660,7 @@ $(document).ready(function(){
                 ]);
             }
             xhr.send();
-            console.log(start);
+            // console.log(start);
         }
         //畫出地圖
         var mapOptions = {
@@ -666,12 +674,12 @@ $(document).ready(function(){
         //設定現在位置為地圖的中心
         function setMapCenter(){
             map.setCenter(start);
-            console.log('set!');
+            // console.log('set!');
         }
 
         //一直更新現在位置的導航
-        setInterval(renewStartPlace, 6000);
-        setInterval(setMapCenter, 6000);
+        setInterval(renewStartPlace, 20000);
+        setInterval(setMapCenter, 20000);
 
         //規劃路線
         var markers = [];

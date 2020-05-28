@@ -23,9 +23,9 @@ function attractionsSlider() {
 }
 
 window.addEventListener('load', function () {
-    $(document).on('click', '.routeAttractionBlock', function lightBox() {
-        let attrName = $(this).children().first().children().first().next().text();
-        console.log(attrName)
+    $(document).on('click', '.attractionImageBlock', function lightBox() {
+        let attrName = $(this).parent().children().first().children().first().next().text();
+        // console.log(attrName)
         let attrform = new FormData();
         attrform.append('attrName', attrName);
 
@@ -33,9 +33,9 @@ window.addEventListener('load', function () {
         xhr.onload = function () {
             if (xhr.status == 200) {
                 let attrInfo = JSON.parse(xhr.responseText);
-                console.log(attrInfo)
+                // console.log(attrInfo)
                 let lightBoxs = document.querySelector(".attractionBgImage");
-                let cancels = document.querySelector(".cancelLightBox");
+                let cancels = document.getElementById("closeMoodBtn");
                 let attractionAll = document.querySelector(".attractionAll");
                 let left = document.querySelector(".arrowLeft");
                 let right = document.querySelector(".arrowRight");

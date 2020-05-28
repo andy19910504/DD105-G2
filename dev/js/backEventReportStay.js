@@ -29,7 +29,7 @@ function stayRow(event_report_number) {
 function checkStay() {
     //先抓取被點"刪除"按鈕的那一列，每個欄位內的值
     let event_report_number = $(this).parent().parent().children().first().text();
-    console.log(event_report_number)
+    // console.log(event_report_number)
     //彈出確認視窗，如果選擇確定，再執行stayRow
     if (confirm("確定保留此筆揪團嗎?")) {
         stayRow(event_report_number);
