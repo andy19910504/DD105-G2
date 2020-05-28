@@ -100,7 +100,9 @@ function doFirst() {
             if (login == "登入登入") { //顯示登入登入--->未登入跳出提醒
                 $("#loginBlock").css("display", "block");
             } else { //已登入則打開
-                if ($("#name").val() != "" && $("#address").val() != "") {} else if ($("#name").val() == "") {
+                if ($("#name").val() != "" && $("#address").val() != "") {
+                    
+                } else if ($("#name").val() == "") {
                     alert("你尚未填寫姓名");
                     eval("document.form['name'].focus()");
 
